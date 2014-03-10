@@ -1,0 +1,5380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Robrecht Siera (HolonCom) -->
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="ABI">
+		<value>ABI</value>
+	</data>
+	<data name="ABSTRACT">
+		<value>ABSTRACT</value>
+	</data>
+	<data name="ACCEPT">
+		<value>ACCEPT</value>
+	</data>
+	<data name="ACCEPT_TERMS">
+		<value>ACCEPT_TERMS</value>
+	</data>
+	<data name="ACCESS_DENIED">
+		<value>ACCESS_DENIED</value>
+	</data>
+	<data name="ACCESS_DENIED_MESSAGE">
+		<value>ACCESS_DENIED_MESSAGE</value>
+	</data>
+	<data name="ACCESSDENIED">
+		<value>ACCESSDENIED</value>
+	</data>
+	<data name="ACCOUNT_INFO">
+		<value>ACCOUNT_INFO</value>
+	</data>
+	<data name="ACCOUNT_LOGIN">
+		<value>ACCOUNT_LOGIN</value>
+	</data>
+	<data name="ADD">
+		<value>Add</value>
+	</data>
+	<data name="ADD_ARTICLE">
+		<value>ADD_ARTICLE</value>
+	</data>
+	<data name="ADD_DOCUMENT">
+		<value>ADD_DOCUMENT</value>
+	</data>
+	<data name="ADD_NEW">
+		<value>ADD_NEW</value>
+	</data>
+	<data name="ADD_NEW_USER">
+		<value>ADD_NEW_USER</value>
+	</data>
+	<data name="ADD_PORTAL">
+		<value>ADD_PORTAL</value>
+	</data>
+	<data name="ADD_VEHICLE">
+		<value>ADD_VEHICLE</value>
+	</data>
+	<data name="ADDRESS">
+		<value>ADDRESS</value>
+	</data>
+	<data name="ADDTAB">
+		<value>ADDTAB</value>
+	</data>
+	<data name="ADDUSER">
+		<value>ADDUSER</value>
+	</data>
+	<data name="ADMIN_MODULE">
+		<value>ADMIN_MODULE</value>
+	</data>
+	<data name="ADVPAYM">
+		<value>ADVPAYM</value>
+	</data>
+	<data name="ALBUMPATH">
+		<value>ALBUMPATH</value>
+	</data>
+	<data name="ALL">
+		<value>All</value>
+	</data>
+	<data name="ALLOWBULKLOAD">
+		<value>ALLOWBULKLOAD</value>
+	</data>
+	<data name="ALLOWNEWREGISTRATIONS">
+		<value>ALLOWNEWREGISTRATIONS</value>
+	</data>
+	<data name="ALLOWNEWREGISTRATIONS_DESCRIPTION">
+		<value>ALLOWNEWREGISTRATIONS_DESCRIPTION</value>
+	</data>
+	<data name="ALPHA_LIST_DESCRIPTION">
+		<value>ALPHA_LIST_DESCRIPTION</value>
+	</data>
+	<data name="ALPHA_LIST_ITEM_DETAILS">
+		<value>ALPHA_LIST_ITEM_DETAILS</value>
+	</data>
+	<data name="ALPHA_LIST_LABEL1">
+		<value>ALPHA_LIST_LABEL1</value>
+	</data>
+	<data name="ALPHA_LIST_LABEL2">
+		<value>ALPHA_LIST_LABEL2</value>
+	</data>
+	<data name="ALPHA_LIST_READMORELINK">
+		<value>ALPHA_LIST_READMORELINK</value>
+	</data>
+	<data name="ALPHA_LIST_TITLE">
+		<value>ALPHA_LIST_TITLE</value>
+	</data>
+	<data name="ALREADY_REGISTERED">
+		<value>ALREADY_REGISTERED</value>
+	</data>
+	<data name="ALREADY_REGISTERED1">
+		<value>ALREADY_REGISTERED1</value>
+	</data>
+	<data name="AM_ADDMODULE">
+		<value>AM_ADDMODULE</value>
+	</data>
+	<data name="AM_ADDMODULEBELOW">
+		<value>AM_ADDMODULEBELOW</value>
+	</data>
+	<data name="AM_ADDMODULETOTAB">
+		<value>AM_ADDMODULETOTAB</value>
+	</data>
+	<data name="AM_ADDROLE">
+		<value>AM_ADDROLE</value>
+	</data>
+	<data name="AM_BASESOLUTION">
+		<value>AM_BASESOLUTION</value>
+	</data>
+	<data name="AM_CENTERPANEL">
+		<value>AM_CENTERPANEL</value>
+	</data>
+	<data name="AM_LEFTPANEL">
+		<value>AM_LEFTPANEL</value>
+	</data>
+	<data name="AM_MOBILETAB">
+		<value>AM_MOBILETAB</value>
+	</data>
+	<data name="AM_MODULELOCATION">
+		<value>AM_MODULELOCATION</value>
+	</data>
+	<data name="AM_MODULENAME">
+		<value>AM_MODULENAME</value>
+	</data>
+	<data name="AM_MODULETYPE">
+		<value>AM_MODULETYPE</value>
+	</data>
+	<data name="AM_MODULEVISIBLETO">
+		<value>AM_MODULEVISIBLETO</value>
+	</data>
+	<data name="AM_ORGANIZEMODULE">
+		<value>AM_ORGANIZEMODULE</value>
+	</data>
+	<data name="AM_PORTALALIAS">
+		<value>AM_PORTALALIAS</value>
+	</data>
+	<data name="AM_PORTALID">
+		<value>AM_PORTALID</value>
+	</data>
+	<data name="AM_RIGHTPANEL">
+		<value>AM_RIGHTPANEL</value>
+	</data>
+	<data name="AM_ROLESAUTH">
+		<value>AM_ROLESAUTH</value>
+	</data>
+	<data name="AM_SHOWEDIT">
+		<value>AM_SHOWEDIT</value>
+	</data>
+	<data name="AM_SHOWMOBILE">
+		<value>AM_SHOWMOBILE</value>
+	</data>
+	<data name="AM_SITEPATH">
+		<value>AM_SITEPATH</value>
+	</data>
+	<data name="AM_SITETITLE">
+		<value>AM_SITETITLE</value>
+	</data>
+	<data name="AM_TABNAME">
+		<value>AM_TABNAME</value>
+	</data>
+	<data name="AM_TABNAME1">
+		<value>AM_TABNAME1</value>
+	</data>
+	<data name="AM_TABS">
+		<value>AM_TABS</value>
+	</data>
+	<data name="AM_THEME">
+		<value>AM_THEME</value>
+	</data>
+	<data name="ANNOUNCES_ADD">
+		<value>ANNOUNCES_ADD</value>
+	</data>
+	<data name="ANNOUNCES_DESCRIPTION">
+		<value>ANNOUNCES_DESCRIPTION</value>
+	</data>
+	<data name="ANNOUNCES_DETAILS">
+		<value>ANNOUNCES_DETAILS</value>
+	</data>
+	<data name="ANNOUNCES_EXPIRES">
+		<value>ANNOUNCES_EXPIRES</value>
+	</data>
+	<data name="ANNOUNCES_READ_MORE_LINK">
+		<value>ANNOUNCES_READ_MORE_LINK</value>
+	</data>
+	<data name="ANNOUNCES_READ_MORE_MOBILE">
+		<value>ANNOUNCES_READ_MORE_MOBILE</value>
+	</data>
+	<data name="ANNOUNCES_TITLE">
+		<value>ANNOUNCES_TITLE</value>
+	</data>
+	<data name="ANNOUNCES_VALID_DESCRIPTION">
+		<value>ANNOUNCES_VALID_DESCRIPTION</value>
+	</data>
+	<data name="ANNOUNCES_VALID_EXPIRE">
+		<value>ANNOUNCES_VALID_EXPIRE</value>
+	</data>
+	<data name="ANNOUNCES_VALID_TITLE">
+		<value>ANNOUNCES_VALID_TITLE</value>
+	</data>
+	<data name="APOLOGISE">
+		<value>APOLOGISE</value>
+	</data>
+	<data name="APPLY">
+		<value>APPLY</value>
+	</data>
+	<data name="APPLY_CHANGES">
+		<value>APPLY_CHANGES</value>
+	</data>
+	<data name="APPLY_MODULE_CHANGES">
+		<value>APPLY_MODULE_CHANGES</value>
+	</data>
+	<data name="APPLYBUTTON">
+		<value>APPLYBUTTON</value>
+	</data>
+	<data name="APPLYMODULECHANGES">
+		<value>APPLYMODULECHANGES</value>
+	</data>
+	<data name="APPLYNAME">
+		<value>APPLYNAME</value>
+	</data>
+	<data name="APPLYTHEME">
+		<value>APPLYTHEME</value>
+	</data>
+	<data name="APPLYTHEME_DESCRIPTION">
+		<value>APPLYTHEME_DESCRIPTION</value>
+	</data>
+	<data name="APPROVE_MODULE_CONTENT">
+		<value>APPROVE_MODULE_CONTENT</value>
+	</data>
+	<data name="AREA">
+		<value>AREA</value>
+	</data>
+	<data name="ARTICLE_DETAIL">
+		<value>ARTICLE_DETAIL</value>
+	</data>
+	<data name="AT_ADDTAB">
+		<value>AT_ADDTAB</value>
+	</data>
+	<data name="AT_JUMPTOTAB">
+		<value>AT_JUMPTOTAB</value>
+	</data>
+	<data name="AT_MOBILETABNAME">
+		<value>AT_MOBILETABNAME</value>
+	</data>
+	<data name="AT_SHOWMOBILE">
+		<value>AT_SHOWMOBILE</value>
+	</data>
+	<data name="AT_TABPARENT">
+		<value>AT_TABPARENT</value>
+	</data>
+	<data name="AT_TABTITLE">
+		<value>AT_TABTITLE</value>
+	</data>
+	<data name="AUTHOR">
+		<value>AUTHOR</value>
+	</data>
+	<data name="BACK">
+		<value>BACK</value>
+	</data>
+	<data name="BANK">
+		<value>BANK</value>
+	</data>
+	<data name="BG_BG">
+		<value>BG_BG</value>
+	</data>
+	<data name="BG_BG_DESCRIPTION">
+		<value>BG_BG_DESCRIPTION</value>
+	</data>
+	<data name="BIND_OPTION_CHILDREN">
+		<value>BIND_OPTION_CHILDREN</value>
+	</data>
+	<data name="BIND_OPTION_CURRENT_CHILDS">
+		<value>BIND_OPTION_CURRENT_CHILDS</value>
+	</data>
+	<data name="BIND_OPTION_DEFINED_PARENT">
+		<value>BIND_OPTION_DEFINED_PARENT</value>
+	</data>
+	<data name="BIND_OPTION_NONE">
+		<value>BIND_OPTION_NONE</value>
+	</data>
+	<data name="BIND_OPTION_SIBLINGS">
+		<value>BIND_OPTION_SIBLINGS</value>
+	</data>
+	<data name="BIND_OPTION_SUBTAB_SIBLING">
+		<value>BIND_OPTION_SUBTAB_SIBLING</value>
+	</data>
+	<data name="BIND_OPTION_TABSIBLING">
+		<value>BIND_OPTION_TABSIBLING</value>
+	</data>
+	<data name="BIND_OPTION_TOP">
+		<value>BIND_OPTION_TOP</value>
+	</data>
+	<data name="BINDTOTAB">
+		<value>BINDTOTAB</value>
+	</data>
+	<data name="BLACKLIST">
+		<value>BLACKLIST</value>
+	</data>
+	<data name="BLACKLIST_ADD">
+		<value>BLACKLIST_ADD</value>
+	</data>
+	<data name="BLACKLIST_ALL">
+		<value>BLACKLIST_ALL</value>
+	</data>
+	<data name="BLACKLIST_DATE">
+		<value>BLACKLIST_DATE</value>
+	</data>
+	<data name="BLACKLIST_EMAIL">
+		<value>BLACKLIST_EMAIL</value>
+	</data>
+	<data name="BLACKLIST_LASTSEND">
+		<value>BLACKLIST_LASTSEND</value>
+	</data>
+	<data name="BLACKLIST_NAME">
+		<value>BLACKLIST_NAME</value>
+	</data>
+	<data name="BLACKLIST_NONE">
+		<value>BLACKLIST_NONE</value>
+	</data>
+	<data name="BLACKLIST_REASON">
+		<value>BLACKLIST_REASON</value>
+	</data>
+	<data name="BLACKLIST_SENDNEWSLETTER">
+		<value>BLACKLIST_SENDNEWSLETTER</value>
+	</data>
+	<data name="BLACKLIST_SHOWALLUSERS">
+		<value>BLACKLIST_SHOWALLUSERS</value>
+	</data>
+	<data name="BLACKLIST_SHOWCOLUMNDATE">
+		<value>BLACKLIST_SHOWCOLUMNDATE</value>
+	</data>
+	<data name="BLACKLIST_SHOWCOLUMNEMAIL">
+		<value>BLACKLIST_SHOWCOLUMNEMAIL</value>
+	</data>
+	<data name="BLACKLIST_SHOWCOLUMNLASTSEND">
+		<value>BLACKLIST_SHOWCOLUMNLASTSEND</value>
+	</data>
+	<data name="BLACKLIST_SHOWCOLUMNNAME">
+		<value>BLACKLIST_SHOWCOLUMNNAME</value>
+	</data>
+	<data name="BLACKLIST_SHOWCOLUMNREASON">
+		<value>BLACKLIST_SHOWCOLUMNREASON</value>
+	</data>
+	<data name="BLACKLIST_SHOWCOLUMNSENDNEWSLETTER">
+		<value>BLACKLIST_SHOWCOLUMNSENDNEWSLETTER</value>
+	</data>
+	<data name="BLACKLIST_SHOWSUBSCRIBERSONLY">
+		<value>BLACKLIST_SHOWSUBSCRIBERSONLY</value>
+	</data>
+	<data name="BLACKLIST_SORTFIELD">
+		<value>BLACKLIST_SORTFIELD</value>
+	</data>
+	<data name="BLACKLISTED">
+		<value>BLACKLISTED</value>
+	</data>
+	<data name="BLOG_ARCHIVES">
+		<value>BLOG_ARCHIVES</value>
+	</data>
+	<data name="BLOG_COMMENTS">
+		<value>BLOG_COMMENTS</value>
+	</data>
+	<data name="BLOG_ENTRIES">
+		<value>BLOG_ENTRIES</value>
+	</data>
+	<data name="BLOG_ENTRY">
+		<value>BLOG_ENTRY</value>
+	</data>
+	<data name="BLOG_FEEDBACK">
+		<value>BLOG_FEEDBACK</value>
+	</data>
+	<data name="BLOG_NAME">
+		<value>BLOG_NAME</value>
+	</data>
+	<data name="BLOG_POSTED">
+		<value>BLOG_POSTED</value>
+	</data>
+	<data name="BLOG_POSTSFROM">
+		<value>BLOG_POSTSFROM</value>
+	</data>
+	<data name="BLOG_REMEMBER_ME">
+		<value>BLOG_REMEMBER_ME</value>
+	</data>
+	<data name="BLOG_STATISTICS">
+		<value>BLOG_STATISTICS</value>
+	</data>
+	<data name="BLOG_SYNDICATION">
+		<value>BLOG_SYNDICATION</value>
+	</data>
+	<data name="BLOG_TITLE">
+		<value>BLOG_TITLE</value>
+	</data>
+	<data name="BLOG_TITLE_FEEDBACK">
+		<value>BLOG_TITLE_FEEDBACK</value>
+	</data>
+	<data name="BLOG_URL">
+		<value>BLOG_URL</value>
+	</data>
+	<data name="BOTTOM">
+		<value>BOTTOM</value>
+	</data>
+	<data name="BTN_HELP">
+		<value>BTN_HELP</value>
+	</data>
+	<data name="BTN_PRINT">
+		<value>BTN_PRINT</value>
+	</data>
+	<data name="BUTTON_DISPLAY_SETTINGS">
+		<value>BUTTON_DISPLAY_SETTINGS</value>
+	</data>
+	<data name="BUYNOW">
+		<value>BUYNOW</value>
+	</data>
+	<data name="CA">
+		<value>CA</value>
+	</data>
+	<data name="CA_DESCRIPTION">
+		<value>CA_DESCRIPTION</value>
+	</data>
+	<data name="CAB">
+		<value>CAB</value>
+	</data>
+	<data name="CACHETIMEOUT">
+		<value>CACHETIMEOUT</value>
+	</data>
+	<data name="CACHETIMEOUT_DESCRIPTION">
+		<value>CACHETIMEOUT_DESCRIPTION</value>
+	</data>
+	<data name="CANCEL">
+		<value>Cancel</value>
+	</data>
+	<data name="CAPTION">
+		<value>CAPTION</value>
+	</data>
+	<data name="CAT">
+		<value>CAT</value>
+	</data>
+	<data name="CATEGORY">
+		<value>CATEGORY</value>
+	</data>
+	<data name="CATS">
+		<value>CATS</value>
+	</data>
+	<data name="CENTER">
+		<value>CENTER</value>
+	</data>
+	<data name="CFISCALE">
+		<value>CFISCALE</value>
+	</data>
+	<data name="CHANGE_DATE">
+		<value>CHANGE_DATE</value>
+	</data>
+	<data name="CHANGE_LANGUAGE">
+		<value>CHANGE_LANGUAGE</value>
+	</data>
+	<data name="CHANGE_PASSWORD">
+		<value>CHANGE_PASSWORD</value>
+	</data>
+	<data name="CHECKOUT">
+		<value>CHECKOUT</value>
+	</data>
+	<data name="CHECKOUT_ADDRESS">
+		<value>CHECKOUT_ADDRESS</value>
+	</data>
+	<data name="CHECKOUT_AUTHORIZE">
+		<value>CHECKOUT_AUTHORIZE</value>
+	</data>
+	<data name="CHECKOUT_CART_IS_EMPTY">
+		<value>CHECKOUT_CART_IS_EMPTY</value>
+	</data>
+	<data name="CHECKOUT_CC_EXPIRY">
+		<value>CHECKOUT_CC_EXPIRY</value>
+	</data>
+	<data name="CHECKOUT_CC_NAME">
+		<value>CHECKOUT_CC_NAME</value>
+	</data>
+	<data name="CHECKOUT_CC_NUMBER">
+		<value>CHECKOUT_CC_NUMBER</value>
+	</data>
+	<data name="CHECKOUT_CC_TYPE">
+		<value>CHECKOUT_CC_TYPE</value>
+	</data>
+	<data name="CHECKOUT_CFISCALE">
+		<value>CHECKOUT_CFISCALE</value>
+	</data>
+	<data name="CHECKOUT_CITY">
+		<value>CHECKOUT_CITY</value>
+	</data>
+	<data name="CHECKOUT_COMPANY">
+		<value>CHECKOUT_COMPANY</value>
+	</data>
+	<data name="CHECKOUT_COPY_TO_SHIPPING_INFO">
+		<value>CHECKOUT_COPY_TO_SHIPPING_INFO</value>
+	</data>
+	<data name="CHECKOUT_COUNTRY">
+		<value>CHECKOUT_COUNTRY</value>
+	</data>
+	<data name="CHECKOUT_EMAIL">
+		<value>CHECKOUT_EMAIL</value>
+	</data>
+	<data name="CHECKOUT_ERROR_PROCESSING_CART">
+		<value>CHECKOUT_ERROR_PROCESSING_CART</value>
+	</data>
+	<data name="CHECKOUT_ERROR_PROCESSING_SHIPPING">
+		<value>CHECKOUT_ERROR_PROCESSING_SHIPPING</value>
+	</data>
+	<data name="CHECKOUT_FAX">
+		<value>CHECKOUT_FAX</value>
+	</data>
+	<data name="CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT">
+		<value>CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT</value>
+	</data>
+	<data name="CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT_2">
+		<value>CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT_2</value>
+	</data>
+	<data name="CHECKOUT_NAME">
+		<value>CHECKOUT_NAME</value>
+	</data>
+	<data name="CHECKOUT_PHONE">
+		<value>CHECKOUT_PHONE</value>
+	</data>
+	<data name="CHECKOUT_PIVA">
+		<value>CHECKOUT_PIVA</value>
+	</data>
+	<data name="CHECKOUT_PROV_STATE">
+		<value>CHECKOUT_PROV_STATE</value>
+	</data>
+	<data name="CHECKOUT_SELECT_PAYMENT">
+		<value>CHECKOUT_SELECT_PAYMENT</value>
+	</data>
+	<data name="CHECKOUT_SEND_NEWSLETTER">
+		<value>CHECKOUT_SEND_NEWSLETTER</value>
+	</data>
+	<data name="CHECKOUT_STEP1">
+		<value>CHECKOUT_STEP1</value>
+	</data>
+	<data name="CHECKOUT_STEP2">
+		<value>CHECKOUT_STEP2</value>
+	</data>
+	<data name="CHECKOUT_STEP3">
+		<value>CHECKOUT_STEP3</value>
+	</data>
+	<data name="CHECKOUT_STEP4">
+		<value>CHECKOUT_STEP4</value>
+	</data>
+	<data name="CHECKOUT_TOTAL_PRODUCT">
+		<value>CHECKOUT_TOTAL_PRODUCT</value>
+	</data>
+	<data name="CHECKOUT_TOTAL_SHIPPING">
+		<value>CHECKOUT_TOTAL_SHIPPING</value>
+	</data>
+	<data name="CHECKOUT_VERIFY_INFORMATION">
+		<value>CHECKOUT_VERIFY_INFORMATION</value>
+	</data>
+	<data name="CHECKOUT_VERIFY_INFORMATION_CLICK_BACK">
+		<value>CHECKOUT_VERIFY_INFORMATION_CLICK_BACK</value>
+	</data>
+	<data name="CHECKOUT_ZIP">
+		<value>CHECKOUT_ZIP</value>
+	</data>
+	<data name="CITY">
+		<value>CITY</value>
+	</data>
+	<data name="CL_ABOS">
+		<value>CL_ABOS</value>
+	</data>
+	<data name="CL_ABS">
+		<value>CL_ABS</value>
+	</data>
+	<data name="CL_ACTP">
+		<value>CL_ACTP</value>
+	</data>
+	<data name="CL_ACTPROJ">
+		<value>CL_ACTPROJ</value>
+	</data>
+	<data name="CL_ADDAUT">
+		<value>CL_ADDAUT</value>
+	</data>
+	<data name="CL_ADDINFO">
+		<value>CL_ADDINFO</value>
+	</data>
+	<data name="CL_ADDTIT">
+		<value>CL_ADDTIT</value>
+	</data>
+	<data name="CL_AENDERUNG">
+		<value>CL_AENDERUNG</value>
+	</data>
+	<data name="CL_AKADEG">
+		<value>CL_AKADEG</value>
+	</data>
+	<data name="CL_ALLCAT">
+		<value>CL_ALLCAT</value>
+	</data>
+	<data name="CL_ANREDE">
+		<value>CL_ANREDE</value>
+	</data>
+	<data name="CL_ARBEITSBEREICH">
+		<value>CL_ARBEITSBEREICH</value>
+	</data>
+	<data name="CL_ARBEITSFELDER">
+		<value>CL_ARBEITSFELDER</value>
+	</data>
+	<data name="CL_ARCB">
+		<value>CL_ARCB</value>
+	</data>
+	<data name="CL_AUT">
+		<value>CL_AUT</value>
+	</data>
+	<data name="CL_AXS">
+		<value>CL_AXS</value>
+	</data>
+	<data name="CL_BACKL">
+		<value>CL_BACKL</value>
+	</data>
+	<data name="CL_beitraeger_id">
+		<value>CL_beitraeger_id</value>
+	</data>
+	<data name="CL_Beitraeger_Titel">
+		<value>CL_Beitraeger_Titel</value>
+	</data>
+	<data name="CL_BIB">
+		<value>CL_BIB</value>
+	</data>
+	<data name="CL_BIBDATA">
+		<value>CL_BIBDATA</value>
+	</data>
+	<data name="CL_BIBDESC">
+		<value>CL_BIBDESC</value>
+	</data>
+	<data name="CL_BLANKF">
+		<value>CL_BLANKF</value>
+	</data>
+	<data name="CL_BREZAUSSTELLUNG">
+		<value>CL_BREZAUSSTELLUNG</value>
+	</data>
+	<data name="CL_BREZBUCH">
+		<value>CL_BREZBUCH</value>
+	</data>
+	<data name="CL_BREZCD">
+		<value>CL_BREZCD</value>
+	</data>
+	<data name="CL_BREZWEB">
+		<value>CL_BREZWEB</value>
+	</data>
+	<data name="CL_CHANGEPW">
+		<value>CL_CHANGEPW</value>
+	</data>
+	<data name="CL_CITAT">
+		<value>CL_CITAT</value>
+	</data>
+	<data name="CL_CITY">
+		<value>CL_CITY</value>
+	</data>
+	<data name="CL_CITYOVR">
+		<value>CL_CITYOVR</value>
+	</data>
+	<data name="CL_CLASSIF">
+		<value>CL_CLASSIF</value>
+	</data>
+	<data name="CL_CNT">
+		<value>CL_CNT</value>
+	</data>
+	<data name="CL_COA">
+		<value>CL_COA</value>
+	</data>
+	<data name="CL_COL">
+		<value>CL_COL</value>
+	</data>
+	<data name="CL_COM">
+		<value>CL_COM</value>
+	</data>
+	<data name="CL_CONI">
+		<value>CL_CONI</value>
+	</data>
+	<data name="CL_CONT">
+		<value>CL_CONT</value>
+	</data>
+	<data name="CL_CORPAUT">
+		<value>CL_CORPAUT</value>
+	</data>
+	<data name="CL_COU">
+		<value>CL_COU</value>
+	</data>
+	<data name="CL_COV">
+		<value>CL_COV</value>
+	</data>
+	<data name="CL_CTC">
+		<value>CL_CTC</value>
+	</data>
+	<data name="CL_CUR">
+		<value>CL_CUR</value>
+	</data>
+	<data name="CL_CURINST">
+		<value>CL_CURINST</value>
+	</data>
+	<data name="CL_DATE">
+		<value>CL_DATE</value>
+	</data>
+	<data name="CL_DATSRC">
+		<value>CL_DATSRC</value>
+	</data>
+	<data name="CL_DDCD">
+		<value>CL_DDCD</value>
+	</data>
+	<data name="CL_DDCE">
+		<value>CL_DDCE</value>
+	</data>
+	<data name="CL_DDCR">
+		<value>CL_DDCR</value>
+	</data>
+	<data name="CL_DEP">
+		<value>CL_DEP</value>
+	</data>
+	<data name="CL_DERF">
+		<value>CL_DERF</value>
+	</data>
+	<data name="CL_DESC">
+		<value>CL_DESC</value>
+	</data>
+	<data name="CL_DFG">
+		<value>CL_DFG</value>
+	</data>
+	<data name="CL_DISCIP">
+		<value>CL_DISCIP</value>
+	</data>
+	<data name="CL_DIST">
+		<value>CL_DIST</value>
+	</data>
+	<data name="CL_EDIT">
+		<value>CL_EDIT</value>
+	</data>
+	<data name="CL_EMAIL">
+		<value>CL_EMAIL</value>
+	</data>
+	<data name="CL_EMP">
+		<value>CL_EMP</value>
+	</data>
+	<data name="CL_EMPLOY">
+		<value>CL_EMPLOY</value>
+	</data>
+	<data name="CL_EPOCH">
+		<value>CL_EPOCH</value>
+	</data>
+	<data name="CL_EVAL">
+		<value>CL_EVAL</value>
+	</data>
+	<data name="CL_EXT">
+		<value>CL_EXT</value>
+	</data>
+	<data name="CL_EXTRAS">
+		<value>CL_EXTRAS</value>
+	</data>
+	<data name="CL_FAX">
+		<value>CL_FAX</value>
+	</data>
+	<data name="CL_FMK">
+		<value>CL_FMK</value>
+	</data>
+	<data name="CL_FON">
+		<value>CL_FON</value>
+	</data>
+	<data name="CL_FORM">
+		<value>CL_FORM</value>
+	</data>
+	<data name="CL_FORMAT">
+		<value>CL_FORMAT</value>
+	</data>
+	<data name="CL_FORMP">
+		<value>CL_FORMP</value>
+	</data>
+	<data name="CL_FULLTEXT_SHORTTEXTERROR">
+		<value>CL_FULLTEXT_SHORTTEXTERROR</value>
+	</data>
+	<data name="CL_GOTO">
+		<value>CL_GOTO</value>
+	</data>
+	<data name="CL_HELP">
+		<value>CL_HELP</value>
+	</data>
+	<data name="CL_HIST">
+		<value>CL_HIST</value>
+	</data>
+	<data name="CL_HOLD">
+		<value>CL_HOLD</value>
+	</data>
+	<data name="CL_HSKCONTACTDATA">
+		<value>CL_HSKCONTACTDATA</value>
+	</data>
+	<data name="CL_HSKREVIEWER">
+		<value>CL_HSKREVIEWER</value>
+	</data>
+	<data name="CL_IMPART">
+		<value>CL_IMPART</value>
+	</data>
+	<data name="CL_IMPC">
+		<value>CL_IMPC</value>
+	</data>
+	<data name="CL_IMPP">
+		<value>CL_IMPP</value>
+	</data>
+	<data name="CL_IMPY">
+		<value>CL_IMPY</value>
+	</data>
+	<data name="CL_INDEX">
+		<value>CL_INDEX</value>
+	</data>
+	<data name="CL_INST">
+		<value>CL_INST</value>
+	</data>
+	<data name="CL_INSTDATA">
+		<value>CL_INSTDATA</value>
+	</data>
+	<data name="CL_InstID">
+		<value>CL_InstID</value>
+	</data>
+	<data name="CL_INSTITUT">
+		<value>CL_INSTITUT</value>
+	</data>
+	<data name="CL_INSTITUTIONDETAILS">
+		<value>CL_INSTITUTIONDETAILS</value>
+	</data>
+	<data name="CL_INSTSELECT">
+		<value>CL_INSTSELECT</value>
+	</data>
+	<data name="CL_INSTTIT">
+		<value>CL_INSTTIT</value>
+	</data>
+	<data name="CL_INV">
+		<value>CL_INV</value>
+	</data>
+	<data name="CL_IP_NUMMER">
+		<value>CL_IP_NUMMER</value>
+	</data>
+	<data name="CL_ISBN">
+		<value>CL_ISBN</value>
+	</data>
+	<data name="CL_ISSN">
+		<value>CL_ISSN</value>
+	</data>
+	<data name="CL_JDG">
+		<value>CL_JDG</value>
+	</data>
+	<data name="CL_JDGT">
+		<value>CL_JDGT</value>
+	</data>
+	<data name="CL_JOBCONTACT">
+		<value>CL_JOBCONTACT</value>
+	</data>
+	<data name="CL_JOBPOSITION">
+		<value>CL_JOBPOSITION</value>
+	</data>
+	<data name="CL_KEYE">
+		<value>CL_KEYE</value>
+	</data>
+	<data name="CL_KEYG">
+		<value>CL_KEYG</value>
+	</data>
+	<data name="CL_KWRD">
+		<value>CL_KWRD</value>
+	</data>
+	<data name="CL_LANG">
+		<value>CL_LANG</value>
+	</data>
+	<data name="CL_LANGO">
+		<value>CL_LANGO</value>
+	</data>
+	<data name="CL_LANGP">
+		<value>CL_LANGP</value>
+	</data>
+	<data name="CL_MAINWORK">
+		<value>CL_MAINWORK</value>
+	</data>
+	<data name="CL_METASEARCH">
+		<value>CL_METASEARCH</value>
+	</data>
+	<data name="CL_MGM">
+		<value>CL_MGM</value>
+	</data>
+	<data name="CL_MIR">
+		<value>CL_MIR</value>
+	</data>
+	<data name="CL_MONDIS">
+		<value>CL_MONDIS</value>
+	</data>
+	<data name="CL_NEWPASSWORD">
+		<value>CL_NEWPASSWORD</value>
+	</data>
+	<data name="CL_NEWS">
+		<value>CL_NEWS</value>
+	</data>
+	<data name="CL_NFH">
+		<value>CL_NFH</value>
+	</data>
+	<data name="CL_NNAME">
+		<value>CL_NNAME</value>
+	</data>
+	<data name="CL_NOTE">
+		<value>CL_NOTE</value>
+	</data>
+	<data name="CL_ORG">
+		<value>CL_ORG</value>
+	</data>
+	<data name="CL_OTHWORK">
+		<value>CL_OTHWORK</value>
+	</data>
+	<data name="CL_PARTNERS">
+		<value>CL_PARTNERS</value>
+	</data>
+	<data name="CL_PERSCONTACT">
+		<value>CL_PERSCONTACT</value>
+	</data>
+	<data name="CL_PERSDATA">
+		<value>CL_PERSDATA</value>
+	</data>
+	<data name="CL_PERSONEPOCHE">
+		<value>CL_PERSONEPOCHE</value>
+	</data>
+	<data name="CL_PERSONGESCHICHTE">
+		<value>CL_PERSONGESCHICHTE</value>
+	</data>
+	<data name="CL_PERSONREGION">
+		<value>CL_PERSONREGION</value>
+	</data>
+	<data name="CL_POX">
+		<value>CL_POX</value>
+	</data>
+	<data name="CL_PUB">
+		<value>CL_PUB</value>
+	</data>
+	<data name="CL_PUBL">
+		<value>CL_PUBL</value>
+	</data>
+	<data name="CL_PUBLCA">
+		<value>CL_PUBLCA</value>
+	</data>
+	<data name="CL_Appleseed">
+		<value>CL_Appleseed</value>
+	</data>
+	<data name="CL_REGION">
+		<value>CL_REGION</value>
+	</data>
+	<data name="CL_REM">
+		<value>CL_REM</value>
+	</data>
+	<data name="CL_RESDIR">
+		<value>CL_RESDIR</value>
+	</data>
+	<data name="CL_REST">
+		<value>CL_REST</value>
+	</data>
+	<data name="CL_REV">
+		<value>CL_REV</value>
+	</data>
+	<data name="CL_REZ">
+		<value>CL_REZ</value>
+	</data>
+	<data name="CL_REZFELDER">
+		<value>CL_REZFELDER</value>
+	</data>
+	<data name="CL_REZVORSCHLAG">
+		<value>CL_REZVORSCHLAG</value>
+	</data>
+	<data name="CL_REZWUNSCH">
+		<value>CL_REZWUNSCH</value>
+	</data>
+	<data name="CL_RSR">
+		<value>CL_RSR</value>
+	</data>
+	<data name="CL_SCHORES">
+		<value>CL_SCHORES</value>
+	</data>
+	<data name="CL_SERIES">
+		<value>CL_SERIES</value>
+	</data>
+	<data name="CL_SERVICES">
+		<value>CL_SERVICES</value>
+	</data>
+	<data name="CL_SIZE">
+		<value>CL_SIZE</value>
+	</data>
+	<data name="CL_SPECINT">
+		<value>CL_SPECINT</value>
+	</data>
+	<data name="CL_STAT">
+		<value>CL_STAT</value>
+	</data>
+	<data name="CL_STR">
+		<value>CL_STR</value>
+	</data>
+	<data name="CL_SUBURL">
+		<value>CL_SUBURL</value>
+	</data>
+	<data name="CL_SUGURL">
+		<value>CL_SUGURL</value>
+	</data>
+	<data name="CL_THISCAT">
+		<value>CL_THISCAT</value>
+	</data>
+	<data name="CL_TIT">
+		<value>CL_TIT</value>
+	</data>
+	<data name="CL_UNITIT">
+		<value>CL_UNITIT</value>
+	</data>
+	<data name="CL_UPDATESAVE">
+		<value>CL_UPDATESAVE</value>
+	</data>
+	<data name="CL_VNAME">
+		<value>CL_VNAME</value>
+	</data>
+	<data name="CL_W">
+		<value>CL_W</value>
+	</data>
+	<data name="CL_WEBDIR">
+		<value>CL_WEBDIR</value>
+	</data>
+	<data name="CL_ZIP">
+		<value>CL_ZIP</value>
+	</data>
+	<data name="COLLECTION_PROPERTIES">
+		<value>COLLECTION_PROPERTIES</value>
+	</data>
+	<data name="COMPANY">
+		<value>Company</value>
+	</data>
+	<data name="CONDITIONS">
+		<value>CONDITIONS</value>
+	</data>
+	<data name="CONFIRM">
+		<value>CONFIRM</value>
+	</data>
+	<data name="CONFIRM_DELETE">
+		<value>CONFIRM_DELETE</value>
+	</data>
+	<data name="CONTACT">
+		<value>CONTACT</value>
+	</data>
+	<data name="CONTACT_ADDRESS">
+		<value>CONTACT_ADDRESS</value>
+	</data>
+	<data name="CONTACT_CONTACT1">
+		<value>CONTACT_CONTACT1</value>
+	</data>
+	<data name="CONTACT_CONTACT2">
+		<value>CONTACT_CONTACT2</value>
+	</data>
+	<data name="CONTACT_EMAIL">
+		<value>CONTACT_EMAIL</value>
+	</data>
+	<data name="CONTACT_FAX">
+		<value>CONTACT_FAX</value>
+	</data>
+	<data name="CONTACT_NAME">
+		<value>CONTACT_NAME</value>
+	</data>
+	<data name="CONTACT_ROLE">
+		<value>CONTACT_ROLE</value>
+	</data>
+	<data name="CONTACTS_ADD">
+		<value>CONTACTS_ADD</value>
+	</data>
+	<data name="CONTACTS_ADDRESS">
+		<value>CONTACTS_ADDRESS</value>
+	</data>
+	<data name="CONTACTS_CONTACT1">
+		<value>CONTACTS_CONTACT1</value>
+	</data>
+	<data name="CONTACTS_CONTACT2">
+		<value>CONTACTS_CONTACT2</value>
+	</data>
+	<data name="CONTACTS_DETAILS">
+		<value>CONTACTS_DETAILS</value>
+	</data>
+	<data name="CONTACTS_EMAIL">
+		<value>CONTACTS_EMAIL</value>
+	</data>
+	<data name="CONTACTS_FAX">
+		<value>CONTACTS_FAX</value>
+	</data>
+	<data name="CONTACTS_NAME">
+		<value>CONTACTS_NAME</value>
+	</data>
+	<data name="CONTACTS_ROLE">
+		<value>CONTACTS_ROLE</value>
+	</data>
+	<data name="CONTACTS_VALID_NAME">
+		<value>CONTACTS_VALID_NAME</value>
+	</data>
+	<data name="CONTENTTYPE">
+		<value>CONTENTTYPE</value>
+	</data>
+	<data name="CONTINUE">
+		<value>CONTINUE</value>
+	</data>
+	<data name="COPYALL">
+		<value>COPYALL</value>
+	</data>
+	<data name="COPYITEM">
+		<value>COPYITEM</value>
+	</data>
+	<data name="COUNTRIESFILTER">
+		<value>COUNTRIESFILTER</value>
+	</data>
+	<data name="COUNTRIESFILTER_DESCRIPTION">
+		<value>COUNTRIESFILTER_DESCRIPTION</value>
+	</data>
+	<data name="COUNTRY">
+		<value>COUNTRY</value>
+	</data>
+	<data name="COUNTRY_AD">
+		<value>COUNTRY_AD</value>
+	</data>
+	<data name="COUNTRY_AE">
+		<value>COUNTRY_AE</value>
+	</data>
+	<data name="COUNTRY_AF">
+		<value>COUNTRY_AF</value>
+	</data>
+	<data name="COUNTRY_AG">
+		<value>COUNTRY_AG</value>
+	</data>
+	<data name="COUNTRY_AI">
+		<value>COUNTRY_AI</value>
+	</data>
+	<data name="COUNTRY_AL">
+		<value>COUNTRY_AL</value>
+	</data>
+	<data name="COUNTRY_AM">
+		<value>COUNTRY_AM</value>
+	</data>
+	<data name="COUNTRY_AN">
+		<value>COUNTRY_AN</value>
+	</data>
+	<data name="COUNTRY_AO">
+		<value>COUNTRY_AO</value>
+	</data>
+	<data name="COUNTRY_AQ">
+		<value>COUNTRY_AQ</value>
+	</data>
+	<data name="COUNTRY_AR">
+		<value>COUNTRY_AR</value>
+	</data>
+	<data name="COUNTRY_AS">
+		<value>COUNTRY_AS</value>
+	</data>
+	<data name="COUNTRY_AT">
+		<value>COUNTRY_AT</value>
+	</data>
+	<data name="COUNTRY_AU">
+		<value>COUNTRY_AU</value>
+	</data>
+	<data name="COUNTRY_AW">
+		<value>COUNTRY_AW</value>
+	</data>
+	<data name="COUNTRY_AZ">
+		<value>COUNTRY_AZ</value>
+	</data>
+	<data name="COUNTRY_BA">
+		<value>COUNTRY_BA</value>
+	</data>
+	<data name="COUNTRY_BB">
+		<value>COUNTRY_BB</value>
+	</data>
+	<data name="COUNTRY_BD">
+		<value>COUNTRY_BD</value>
+	</data>
+	<data name="COUNTRY_BE">
+		<value>COUNTRY_BE</value>
+	</data>
+	<data name="COUNTRY_BF">
+		<value>COUNTRY_BF</value>
+	</data>
+	<data name="COUNTRY_BG">
+		<value>COUNTRY_BG</value>
+	</data>
+	<data name="COUNTRY_BH">
+		<value>COUNTRY_BH</value>
+	</data>
+	<data name="COUNTRY_BI">
+		<value>COUNTRY_BI</value>
+	</data>
+	<data name="COUNTRY_BJ">
+		<value>COUNTRY_BJ</value>
+	</data>
+	<data name="COUNTRY_BM">
+		<value>COUNTRY_BM</value>
+	</data>
+	<data name="COUNTRY_BN">
+		<value>COUNTRY_BN</value>
+	</data>
+	<data name="COUNTRY_BO">
+		<value>COUNTRY_BO</value>
+	</data>
+	<data name="COUNTRY_BR">
+		<value>COUNTRY_BR</value>
+	</data>
+	<data name="COUNTRY_BS">
+		<value>COUNTRY_BS</value>
+	</data>
+	<data name="COUNTRY_BT">
+		<value>COUNTRY_BT</value>
+	</data>
+	<data name="COUNTRY_BV">
+		<value>COUNTRY_BV</value>
+	</data>
+	<data name="COUNTRY_BW">
+		<value>COUNTRY_BW</value>
+	</data>
+	<data name="COUNTRY_BY">
+		<value>COUNTRY_BY</value>
+	</data>
+	<data name="COUNTRY_BZ">
+		<value>COUNTRY_BZ</value>
+	</data>
+	<data name="COUNTRY_CA">
+		<value>COUNTRY_CA</value>
+	</data>
+	<data name="COUNTRY_CC">
+		<value>COUNTRY_CC</value>
+	</data>
+	<data name="COUNTRY_CD">
+		<value>COUNTRY_CD</value>
+	</data>
+	<data name="COUNTRY_CF">
+		<value>COUNTRY_CF</value>
+	</data>
+	<data name="COUNTRY_CG">
+		<value>COUNTRY_CG</value>
+	</data>
+	<data name="COUNTRY_CH">
+		<value>COUNTRY_CH</value>
+	</data>
+	<data name="COUNTRY_CI">
+		<value>COUNTRY_CI</value>
+	</data>
+	<data name="COUNTRY_CK">
+		<value>COUNTRY_CK</value>
+	</data>
+	<data name="COUNTRY_CL">
+		<value>COUNTRY_CL</value>
+	</data>
+	<data name="COUNTRY_CM">
+		<value>COUNTRY_CM</value>
+	</data>
+	<data name="COUNTRY_CN">
+		<value>COUNTRY_CN</value>
+	</data>
+	<data name="COUNTRY_CO">
+		<value>COUNTRY_CO</value>
+	</data>
+	<data name="COUNTRY_CR">
+		<value>COUNTRY_CR</value>
+	</data>
+	<data name="COUNTRY_CU">
+		<value>COUNTRY_CU</value>
+	</data>
+	<data name="COUNTRY_CV">
+		<value>COUNTRY_CV</value>
+	</data>
+	<data name="COUNTRY_CX">
+		<value>COUNTRY_CX</value>
+	</data>
+	<data name="COUNTRY_CY">
+		<value>COUNTRY_CY</value>
+	</data>
+	<data name="COUNTRY_CZ">
+		<value>COUNTRY_CZ</value>
+	</data>
+	<data name="COUNTRY_DE">
+		<value>COUNTRY_DE</value>
+	</data>
+	<data name="COUNTRY_DJ">
+		<value>COUNTRY_DJ</value>
+	</data>
+	<data name="COUNTRY_DK">
+		<value>COUNTRY_DK</value>
+	</data>
+	<data name="COUNTRY_DM">
+		<value>COUNTRY_DM</value>
+	</data>
+	<data name="COUNTRY_DO">
+		<value>COUNTRY_DO</value>
+	</data>
+	<data name="COUNTRY_DZ">
+		<value>COUNTRY_DZ</value>
+	</data>
+	<data name="COUNTRY_EC">
+		<value>COUNTRY_EC</value>
+	</data>
+	<data name="COUNTRY_EE">
+		<value>COUNTRY_EE</value>
+	</data>
+	<data name="COUNTRY_EG">
+		<value>COUNTRY_EG</value>
+	</data>
+	<data name="COUNTRY_ER">
+		<value>COUNTRY_ER</value>
+	</data>
+	<data name="COUNTRY_ES">
+		<value>COUNTRY_ES</value>
+	</data>
+	<data name="COUNTRY_ET">
+		<value>COUNTRY_ET</value>
+	</data>
+	<data name="COUNTRY_FI">
+		<value>COUNTRY_FI</value>
+	</data>
+	<data name="COUNTRY_FJ">
+		<value>COUNTRY_FJ</value>
+	</data>
+	<data name="COUNTRY_FK">
+		<value>COUNTRY_FK</value>
+	</data>
+	<data name="COUNTRY_FM">
+		<value>COUNTRY_FM</value>
+	</data>
+	<data name="COUNTRY_FO">
+		<value>COUNTRY_FO</value>
+	</data>
+	<data name="COUNTRY_FR">
+		<value>COUNTRY_FR</value>
+	</data>
+	<data name="COUNTRY_GA">
+		<value>COUNTRY_GA</value>
+	</data>
+	<data name="COUNTRY_GB">
+		<value>COUNTRY_GB</value>
+	</data>
+	<data name="COUNTRY_GD">
+		<value>COUNTRY_GD</value>
+	</data>
+	<data name="COUNTRY_GE">
+		<value>COUNTRY_GE</value>
+	</data>
+	<data name="COUNTRY_GF">
+		<value>COUNTRY_GF</value>
+	</data>
+	<data name="COUNTRY_GH">
+		<value>COUNTRY_GH</value>
+	</data>
+	<data name="COUNTRY_GI">
+		<value>COUNTRY_GI</value>
+	</data>
+	<data name="COUNTRY_GL">
+		<value>COUNTRY_GL</value>
+	</data>
+	<data name="COUNTRY_GM">
+		<value>COUNTRY_GM</value>
+	</data>
+	<data name="COUNTRY_GN">
+		<value>COUNTRY_GN</value>
+	</data>
+	<data name="COUNTRY_GP">
+		<value>COUNTRY_GP</value>
+	</data>
+	<data name="COUNTRY_GQ">
+		<value>COUNTRY_GQ</value>
+	</data>
+	<data name="COUNTRY_GR">
+		<value>COUNTRY_GR</value>
+	</data>
+	<data name="COUNTRY_GS">
+		<value>COUNTRY_GS</value>
+	</data>
+	<data name="COUNTRY_GT">
+		<value>COUNTRY_GT</value>
+	</data>
+	<data name="COUNTRY_GU">
+		<value>COUNTRY_GU</value>
+	</data>
+	<data name="COUNTRY_GW">
+		<value>COUNTRY_GW</value>
+	</data>
+	<data name="COUNTRY_GY">
+		<value>COUNTRY_GY</value>
+	</data>
+	<data name="COUNTRY_HK">
+		<value>COUNTRY_HK</value>
+	</data>
+	<data name="COUNTRY_HM">
+		<value>COUNTRY_HM</value>
+	</data>
+	<data name="COUNTRY_HN">
+		<value>COUNTRY_HN</value>
+	</data>
+	<data name="COUNTRY_HR">
+		<value>COUNTRY_HR</value>
+	</data>
+	<data name="COUNTRY_HT">
+		<value>COUNTRY_HT</value>
+	</data>
+	<data name="COUNTRY_HU">
+		<value>COUNTRY_HU</value>
+	</data>
+	<data name="COUNTRY_ID">
+		<value>COUNTRY_ID</value>
+	</data>
+	<data name="COUNTRY_IE">
+		<value>COUNTRY_IE</value>
+	</data>
+	<data name="COUNTRY_IL">
+		<value>COUNTRY_IL</value>
+	</data>
+	<data name="COUNTRY_IN">
+		<value>COUNTRY_IN</value>
+	</data>
+	<data name="COUNTRY_IO">
+		<value>COUNTRY_IO</value>
+	</data>
+	<data name="COUNTRY_IQ">
+		<value>COUNTRY_IQ</value>
+	</data>
+	<data name="COUNTRY_IR">
+		<value>COUNTRY_IR</value>
+	</data>
+	<data name="COUNTRY_IS">
+		<value>COUNTRY_IS</value>
+	</data>
+	<data name="COUNTRY_IT">
+		<value>COUNTRY_IT</value>
+	</data>
+	<data name="COUNTRY_JM">
+		<value>COUNTRY_JM</value>
+	</data>
+	<data name="COUNTRY_JO">
+		<value>COUNTRY_JO</value>
+	</data>
+	<data name="COUNTRY_JP">
+		<value>COUNTRY_JP</value>
+	</data>
+	<data name="COUNTRY_KE">
+		<value>COUNTRY_KE</value>
+	</data>
+	<data name="COUNTRY_KG">
+		<value>COUNTRY_KG</value>
+	</data>
+	<data name="COUNTRY_KH">
+		<value>COUNTRY_KH</value>
+	</data>
+	<data name="COUNTRY_KI">
+		<value>COUNTRY_KI</value>
+	</data>
+	<data name="COUNTRY_KM">
+		<value>COUNTRY_KM</value>
+	</data>
+	<data name="COUNTRY_KN">
+		<value>COUNTRY_KN</value>
+	</data>
+	<data name="COUNTRY_KP">
+		<value>COUNTRY_KP</value>
+	</data>
+	<data name="COUNTRY_KR">
+		<value>COUNTRY_KR</value>
+	</data>
+	<data name="COUNTRY_KW">
+		<value>COUNTRY_KW</value>
+	</data>
+	<data name="COUNTRY_KY">
+		<value>COUNTRY_KY</value>
+	</data>
+	<data name="COUNTRY_KZ">
+		<value>COUNTRY_KZ</value>
+	</data>
+	<data name="COUNTRY_LA">
+		<value>COUNTRY_LA</value>
+	</data>
+	<data name="COUNTRY_LB">
+		<value>COUNTRY_LB</value>
+	</data>
+	<data name="COUNTRY_LC">
+		<value>COUNTRY_LC</value>
+	</data>
+	<data name="COUNTRY_LI">
+		<value>COUNTRY_LI</value>
+	</data>
+	<data name="COUNTRY_LK">
+		<value>COUNTRY_LK</value>
+	</data>
+	<data name="COUNTRY_LR">
+		<value>COUNTRY_LR</value>
+	</data>
+	<data name="COUNTRY_LS">
+		<value>COUNTRY_LS</value>
+	</data>
+	<data name="COUNTRY_LT">
+		<value>COUNTRY_LT</value>
+	</data>
+	<data name="COUNTRY_LU">
+		<value>COUNTRY_LU</value>
+	</data>
+	<data name="COUNTRY_LV">
+		<value>COUNTRY_LV</value>
+	</data>
+	<data name="COUNTRY_LY">
+		<value>COUNTRY_LY</value>
+	</data>
+	<data name="COUNTRY_MA">
+		<value>COUNTRY_MA</value>
+	</data>
+	<data name="COUNTRY_MC">
+		<value>COUNTRY_MC</value>
+	</data>
+	<data name="COUNTRY_MD">
+		<value>COUNTRY_MD</value>
+	</data>
+	<data name="COUNTRY_MG">
+		<value>COUNTRY_MG</value>
+	</data>
+	<data name="COUNTRY_MH">
+		<value>COUNTRY_MH</value>
+	</data>
+	<data name="COUNTRY_MK">
+		<value>COUNTRY_MK</value>
+	</data>
+	<data name="COUNTRY_ML">
+		<value>COUNTRY_ML</value>
+	</data>
+	<data name="COUNTRY_MM">
+		<value>COUNTRY_MM</value>
+	</data>
+	<data name="COUNTRY_MN">
+		<value>COUNTRY_MN</value>
+	</data>
+	<data name="COUNTRY_MO">
+		<value>COUNTRY_MO</value>
+	</data>
+	<data name="COUNTRY_MP">
+		<value>COUNTRY_MP</value>
+	</data>
+	<data name="COUNTRY_MQ">
+		<value>COUNTRY_MQ</value>
+	</data>
+	<data name="COUNTRY_MR">
+		<value>COUNTRY_MR</value>
+	</data>
+	<data name="COUNTRY_MS">
+		<value>COUNTRY_MS</value>
+	</data>
+	<data name="COUNTRY_MT">
+		<value>COUNTRY_MT</value>
+	</data>
+	<data name="COUNTRY_MU">
+		<value>COUNTRY_MU</value>
+	</data>
+	<data name="COUNTRY_MV">
+		<value>COUNTRY_MV</value>
+	</data>
+	<data name="COUNTRY_MW">
+		<value>COUNTRY_MW</value>
+	</data>
+	<data name="COUNTRY_MX">
+		<value>COUNTRY_MX</value>
+	</data>
+	<data name="COUNTRY_MY">
+		<value>COUNTRY_MY</value>
+	</data>
+	<data name="COUNTRY_MZ">
+		<value>COUNTRY_MZ</value>
+	</data>
+	<data name="COUNTRY_NA">
+		<value>COUNTRY_NA</value>
+	</data>
+	<data name="COUNTRY_NC">
+		<value>COUNTRY_NC</value>
+	</data>
+	<data name="COUNTRY_NE">
+		<value>COUNTRY_NE</value>
+	</data>
+	<data name="COUNTRY_NF">
+		<value>COUNTRY_NF</value>
+	</data>
+	<data name="COUNTRY_NG">
+		<value>COUNTRY_NG</value>
+	</data>
+	<data name="COUNTRY_NI">
+		<value>COUNTRY_NI</value>
+	</data>
+	<data name="COUNTRY_NL">
+		<value>COUNTRY_NL</value>
+	</data>
+	<data name="COUNTRY_NN">
+		<value>COUNTRY_NN</value>
+	</data>
+	<data name="COUNTRY_NO">
+		<value>COUNTRY_NO</value>
+	</data>
+	<data name="COUNTRY_NP">
+		<value>COUNTRY_NP</value>
+	</data>
+	<data name="COUNTRY_NR">
+		<value>COUNTRY_NR</value>
+	</data>
+	<data name="COUNTRY_NU">
+		<value>COUNTRY_NU</value>
+	</data>
+	<data name="COUNTRY_NZ">
+		<value>COUNTRY_NZ</value>
+	</data>
+	<data name="COUNTRY_OM">
+		<value>COUNTRY_OM</value>
+	</data>
+	<data name="COUNTRY_PA">
+		<value>COUNTRY_PA</value>
+	</data>
+	<data name="COUNTRY_PE">
+		<value>COUNTRY_PE</value>
+	</data>
+	<data name="COUNTRY_PF">
+		<value>COUNTRY_PF</value>
+	</data>
+	<data name="COUNTRY_PG">
+		<value>COUNTRY_PG</value>
+	</data>
+	<data name="COUNTRY_PH">
+		<value>COUNTRY_PH</value>
+	</data>
+	<data name="COUNTRY_PK">
+		<value>COUNTRY_PK</value>
+	</data>
+	<data name="COUNTRY_PL">
+		<value>COUNTRY_PL</value>
+	</data>
+	<data name="COUNTRY_PM">
+		<value>COUNTRY_PM</value>
+	</data>
+	<data name="COUNTRY_PN">
+		<value>COUNTRY_PN</value>
+	</data>
+	<data name="COUNTRY_PR">
+		<value>COUNTRY_PR</value>
+	</data>
+	<data name="COUNTRY_PT">
+		<value>COUNTRY_PT</value>
+	</data>
+	<data name="COUNTRY_PW">
+		<value>COUNTRY_PW</value>
+	</data>
+	<data name="COUNTRY_PY">
+		<value>COUNTRY_PY</value>
+	</data>
+	<data name="COUNTRY_QA">
+		<value>COUNTRY_QA</value>
+	</data>
+	<data name="COUNTRY_RE">
+		<value>COUNTRY_RE</value>
+	</data>
+	<data name="COUNTRY_RO">
+		<value>COUNTRY_RO</value>
+	</data>
+	<data name="COUNTRY_RU">
+		<value>COUNTRY_RU</value>
+	</data>
+	<data name="COUNTRY_RW">
+		<value>COUNTRY_RW</value>
+	</data>
+	<data name="COUNTRY_SA">
+		<value>COUNTRY_SA</value>
+	</data>
+	<data name="COUNTRY_SB">
+		<value>COUNTRY_SB</value>
+	</data>
+	<data name="COUNTRY_SC">
+		<value>COUNTRY_SC</value>
+	</data>
+	<data name="COUNTRY_SD">
+		<value>COUNTRY_SD</value>
+	</data>
+	<data name="COUNTRY_SE">
+		<value>COUNTRY_SE</value>
+	</data>
+	<data name="COUNTRY_SG">
+		<value>COUNTRY_SG</value>
+	</data>
+	<data name="COUNTRY_SH">
+		<value>COUNTRY_SH</value>
+	</data>
+	<data name="COUNTRY_SI">
+		<value>COUNTRY_SI</value>
+	</data>
+	<data name="COUNTRY_SJ">
+		<value>COUNTRY_SJ</value>
+	</data>
+	<data name="COUNTRY_SK">
+		<value>COUNTRY_SK</value>
+	</data>
+	<data name="COUNTRY_SL">
+		<value>COUNTRY_SL</value>
+	</data>
+	<data name="COUNTRY_SM">
+		<value>COUNTRY_SM</value>
+	</data>
+	<data name="COUNTRY_SN">
+		<value>COUNTRY_SN</value>
+	</data>
+	<data name="COUNTRY_SO">
+		<value>COUNTRY_SO</value>
+	</data>
+	<data name="COUNTRY_SR">
+		<value>COUNTRY_SR</value>
+	</data>
+	<data name="COUNTRY_ST">
+		<value>COUNTRY_ST</value>
+	</data>
+	<data name="COUNTRY_SV">
+		<value>COUNTRY_SV</value>
+	</data>
+	<data name="COUNTRY_SY">
+		<value>COUNTRY_SY</value>
+	</data>
+	<data name="COUNTRY_SZ">
+		<value>COUNTRY_SZ</value>
+	</data>
+	<data name="COUNTRY_TC">
+		<value>COUNTRY_TC</value>
+	</data>
+	<data name="COUNTRY_TD">
+		<value>COUNTRY_TD</value>
+	</data>
+	<data name="COUNTRY_TF">
+		<value>COUNTRY_TF</value>
+	</data>
+	<data name="COUNTRY_TG">
+		<value>COUNTRY_TG</value>
+	</data>
+	<data name="COUNTRY_TH">
+		<value>COUNTRY_TH</value>
+	</data>
+	<data name="COUNTRY_TJ">
+		<value>COUNTRY_TJ</value>
+	</data>
+	<data name="COUNTRY_TK">
+		<value>COUNTRY_TK</value>
+	</data>
+	<data name="COUNTRY_TL">
+		<value>COUNTRY_TL</value>
+	</data>
+	<data name="COUNTRY_TM">
+		<value>COUNTRY_TM</value>
+	</data>
+	<data name="COUNTRY_TN">
+		<value>COUNTRY_TN</value>
+	</data>
+	<data name="COUNTRY_TO">
+		<value>COUNTRY_TO</value>
+	</data>
+	<data name="COUNTRY_TR">
+		<value>COUNTRY_TR</value>
+	</data>
+	<data name="COUNTRY_TT">
+		<value>COUNTRY_TT</value>
+	</data>
+	<data name="COUNTRY_TV">
+		<value>COUNTRY_TV</value>
+	</data>
+	<data name="COUNTRY_TW">
+		<value>COUNTRY_TW</value>
+	</data>
+	<data name="COUNTRY_TZ">
+		<value>COUNTRY_TZ</value>
+	</data>
+	<data name="COUNTRY_UA">
+		<value>COUNTRY_UA</value>
+	</data>
+	<data name="COUNTRY_UG">
+		<value>COUNTRY_UG</value>
+	</data>
+	<data name="COUNTRY_UM">
+		<value>COUNTRY_UM</value>
+	</data>
+	<data name="COUNTRY_US">
+		<value>COUNTRY_US</value>
+	</data>
+	<data name="COUNTRY_UY">
+		<value>COUNTRY_UY</value>
+	</data>
+	<data name="COUNTRY_UZ">
+		<value>COUNTRY_UZ</value>
+	</data>
+	<data name="COUNTRY_VA">
+		<value>COUNTRY_VA</value>
+	</data>
+	<data name="COUNTRY_VC">
+		<value>COUNTRY_VC</value>
+	</data>
+	<data name="COUNTRY_VE">
+		<value>COUNTRY_VE</value>
+	</data>
+	<data name="COUNTRY_VG">
+		<value>COUNTRY_VG</value>
+	</data>
+	<data name="COUNTRY_VI">
+		<value>COUNTRY_VI</value>
+	</data>
+	<data name="COUNTRY_VN">
+		<value>COUNTRY_VN</value>
+	</data>
+	<data name="COUNTRY_VU">
+		<value>COUNTRY_VU</value>
+	</data>
+	<data name="COUNTRY_WF">
+		<value>COUNTRY_WF</value>
+	</data>
+	<data name="COUNTRY_WS">
+		<value>COUNTRY_WS</value>
+	</data>
+	<data name="COUNTRY_YE">
+		<value>COUNTRY_YE</value>
+	</data>
+	<data name="COUNTRY_YT">
+		<value>COUNTRY_YT</value>
+	</data>
+	<data name="COUNTRY_YU">
+		<value>COUNTRY_YU</value>
+	</data>
+	<data name="COUNTRY_ZA">
+		<value>COUNTRY_ZA</value>
+	</data>
+	<data name="COUNTRY_ZM">
+		<value>COUNTRY_ZM</value>
+	</data>
+	<data name="COUNTRY_ZW">
+		<value>COUNTRY_ZW</value>
+	</data>
+	<data name="CREATED_BY">
+		<value>CREATED_BY</value>
+	</data>
+	<data name="CREATED_ON">
+		<value>CREATED_ON</value>
+	</data>
+	<data name="CREATEDBY">
+		<value>CREATEDBY</value>
+	</data>
+	<data name="CREDITTRANSFER">
+		<value>CREDITTRANSFER</value>
+	</data>
+	<data name="CREDITTRANSFER_DESCRIPTION">
+		<value>CREDITTRANSFER_DESCRIPTION</value>
+	</data>
+	<data name="CULTURE">
+		<value>Culture</value>
+	</data>
+	<data name="CULTURE_DESCRIPTION">
+		<value>CULTURE_DESCRIPTION</value>
+	</data>
+	<data name="CULTURE_SETTINGS">
+		<value>CULTURE_SETTINGS</value>
+	</data>
+	<data name="CULTUREIMGPORTAL">
+		<value>CULTUREIMGPORTAL</value>
+	</data>
+	<data name="CULTUREIMGPORTAL_DESCRIPTION">
+		<value>CULTUREIMGPORTAL_DESCRIPTION</value>
+	</data>
+	<data name="CULTURELIST">
+		<value>CULTURELIST</value>
+	</data>
+	<data name="CUSTOMLAYOUT">
+		<value>CUSTOMLAYOUT</value>
+	</data>
+	<data name="CUSTOMLAYOUT_DESCRIPTION">
+		<value>CUSTOMLAYOUT_DESCRIPTION</value>
+	</data>
+	<data name="CUSTOMMENUIMAGE">
+		<value>CUSTOMMENUIMAGE</value>
+	</data>
+	<data name="CUSTOMMENUIMAGE_DESCRIPTION">
+		<value>CUSTOMMENUIMAGE_DESCRIPTION</value>
+	</data>
+	<data name="CUSTOMTHEME">
+		<value>CUSTOMTHEME</value>
+	</data>
+	<data name="CUSTOMTHEME_DESCRIPTION">
+		<value>CUSTOMTHEME_DESCRIPTION</value>
+	</data>
+	<data name="CUSTOMTHEMEALT">
+		<value>CUSTOMTHEMEALT</value>
+	</data>
+	<data name="CUSTOMTHEMEALT_DESCRIPTION">
+		<value>CUSTOMTHEMEALT_DESCRIPTION</value>
+	</data>
+	<data name="DA_DK">
+		<value>DA_DK</value>
+	</data>
+	<data name="DA_DK_DESCRIPTION">
+		<value>DA_DK_DESCRIPTION</value>
+	</data>
+	<data name="DATE">
+		<value>Date</value>
+	</data>
+	<data name="DBTOOL_GETDATA">
+		<value>DBTOOL_GETDATA</value>
+	</data>
+	<data name="DBTOOL_GETINFO">
+		<value>DBTOOL_GETINFO</value>
+	</data>
+	<data name="DBTOOL_GETINFOEXTENDED">
+		<value>DBTOOL_GETINFOEXTENDED</value>
+	</data>
+	<data name="DBTOOL_GETPROPERTIES">
+		<value>DBTOOL_GETPROPERTIES</value>
+	</data>
+	<data name="DBTOOL_OWNER">
+		<value>DBTOOL_OWNER</value>
+	</data>
+	<data name="DBTOOL_QUERYEXECUTE">
+		<value>DBTOOL_QUERYEXECUTE</value>
+	</data>
+	<data name="DE_CH">
+		<value>DE_CH</value>
+	</data>
+	<data name="DE_CH_DESCRIPTION">
+		<value>DE_CH_DESCRIPTION</value>
+	</data>
+	<data name="DE_DE">
+		<value>DE_DE</value>
+	</data>
+	<data name="DE_DE_DESCRIPTION">
+		<value>DE_DE_DESCRIPTION</value>
+	</data>
+	<data name="DECLINE">
+		<value>DECLINE</value>
+	</data>
+	<data name="DEFAULT_IMAGE_EDITOR">
+		<value>DEFAULT_IMAGE_EDITOR</value>
+	</data>
+	<data name="DEFAULTEMAIL">
+		<value>DEFAULTEMAIL</value>
+	</data>
+	<data name="DEFAULTNAME">
+		<value>DEFAULTNAME</value>
+	</data>
+	<data name="DEFAULTVISIBLEDAYS">
+		<value>DEFAULTVISIBLEDAYS</value>
+	</data>
+	<data name="DELAYEXPIRE">
+		<value>DELAYEXPIRE</value>
+	</data>
+	<data name="DELETE">
+		<value>Delete</value>
+	</data>
+	<data name="DELETE_PORTAL">
+		<value>DELETE_PORTAL</value>
+	</data>
+	<data name="DELETE_THIS_ITEM">
+		<value>DELETE_THIS_ITEM</value>
+	</data>
+	<data name="DELETE_THIS_MODULE_TYPE">
+		<value>DELETE_THIS_MODULE_TYPE</value>
+	</data>
+	<data name="DELETE_USER">
+		<value>DELETE_USER</value>
+	</data>
+	<data name="DELETEBTN">
+		<value>DELETEBTN</value>
+	</data>
+	<data name="DELETEITEM">
+		<value>DELETEITEM</value>
+	</data>
+	<data name="DELETEMODULE">
+		<value>DELETEMODULE</value>
+	</data>
+	<data name="DELUSER">
+		<value>DELUSER</value>
+	</data>
+	<data name="DESCRIPTION">
+		<value>Description</value>
+	</data>
+	<data name="DESKTOP_SOURCE">
+		<value>DESKTOP_SOURCE</value>
+	</data>
+	<data name="DIRECTURL">
+		<value>DIRECTURL</value>
+	</data>
+	<data name="DISCUSION_AUTHOR">
+		<value>DISCUSION_AUTHOR</value>
+	</data>
+	<data name="DISCUSION_LAST_UPDATE">
+		<value>DISCUSION_LAST_UPDATE</value>
+	</data>
+	<data name="DISCUSION_TITLE">
+		<value>DISCUSION_TITLE</value>
+	</data>
+	<data name="DISCUSSION_DELETE_RESPONSE">
+		<value>DISCUSSION_DELETE_RESPONSE</value>
+	</data>
+	<data name="DISCUSSION_LAST_UPDATE">
+		<value>DISCUSSION_LAST_UPDATE</value>
+	</data>
+	<data name="DISCUSSION_MSGCOLLAPSE">
+		<value>DISCUSSION_MSGCOLLAPSE</value>
+	</data>
+	<data name="DISCUSSION_MSGEXPAND">
+		<value>DISCUSSION_MSGEXPAND</value>
+	</data>
+	<data name="DISCUSSION_MSGSELECT">
+		<value>DISCUSSION_MSGSELECT</value>
+	</data>
+	<data name="DISCUSSION_REPLYS">
+		<value>DISCUSSION_REPLYS</value>
+	</data>
+	<data name="DISCUSSION_VIEWED">
+		<value>DISCUSSION_VIEWED</value>
+	</data>
+	<data name="DOCUMENT_AREA">
+		<value>DOCUMENT_AREA</value>
+	</data>
+	<data name="DOCUMENT_DETAILS">
+		<value>DOCUMENT_DETAILS</value>
+	</data>
+	<data name="DOCUMENT_LAST_UPDATED">
+		<value>DOCUMENT_LAST_UPDATED</value>
+	</data>
+	<data name="DOCUMENT_OWNER">
+		<value>DOCUMENT_OWNER</value>
+	</data>
+	<data name="DOCUMENTPATH">
+		<value>DOCUMENTPATH</value>
+	</data>
+	<data name="DOCUMENTPATH_DESCRIPTION">
+		<value>DOCUMENTPATH_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_DBSAVE">
+		<value>DOCUMENTS_DBSAVE</value>
+	</data>
+	<data name="DOCUMENTS_DBSAVE_DESCRIPTION">
+		<value>DOCUMENTS_DBSAVE_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_FOLDER">
+		<value>DOCUMENTS_FOLDER</value>
+	</data>
+	<data name="DOCUMENTS_SHOWAREA">
+		<value>DOCUMENTS_SHOWAREA</value>
+	</data>
+	<data name="DOCUMENTS_SHOWAREA_DESCRIPTION">
+		<value>DOCUMENTS_SHOWAREA_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SHOWIMAGES">
+		<value>DOCUMENTS_SHOWIMAGES</value>
+	</data>
+	<data name="DOCUMENTS_SHOWIMAGES_DESCRIPTION">
+		<value>DOCUMENTS_SHOWIMAGES_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SHOWLASTUPDATED">
+		<value>DOCUMENTS_SHOWLASTUPDATED</value>
+	</data>
+	<data name="DOCUMENTS_SHOWLASTUPDATED_DESCRIPTION">
+		<value>DOCUMENTS_SHOWLASTUPDATED_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SHOWOWNER">
+		<value>DOCUMENTS_SHOWOWNER</value>
+	</data>
+	<data name="DOCUMENTS_SHOWOWNER_DESCRIPTION">
+		<value>DOCUMENTS_SHOWOWNER_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SHOWTITLE">
+		<value>DOCUMENTS_SHOWTITLE</value>
+	</data>
+	<data name="DOCUMENTS_SHOWTITLE_DESCRIPTION">
+		<value>DOCUMENTS_SHOWTITLE_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SORTBY_DIRECTION">
+		<value>DOCUMENTS_SORTBY_DIRECTION</value>
+	</data>
+	<data name="DOCUMENTS_SORTBY_DIRECTION_DESCRIPTION">
+		<value>DOCUMENTS_SORTBY_DIRECTION_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SORTBY_DIRECTION_LIST">
+		<value>DOCUMENTS_SORTBY_DIRECTION_LIST</value>
+	</data>
+	<data name="DOCUMENTS_SORTBY_FIELD">
+		<value>DOCUMENTS_SORTBY_FIELD</value>
+	</data>
+	<data name="DOCUMENTS_SORTBY_FIELD_DESCRIPTION">
+		<value>DOCUMENTS_SORTBY_FIELD_DESCRIPTION</value>
+	</data>
+	<data name="DOCUMENTS_SORTBY_FIELD_LIST">
+		<value>DOCUMENTS_SORTBY_FIELD_LIST</value>
+	</data>
+	<data name="DOCUMENTS_SOURCE">
+		<value>DOCUMENTS_SOURCE</value>
+	</data>
+	<data name="DONOTRESENDWITHIN">
+		<value>DONOTRESENDWITHIN</value>
+	</data>
+	<data name="DONOTRESENDWITHIN_DESCRIPTION">
+		<value>DONOTRESENDWITHIN_DESCRIPTION</value>
+	</data>
+	<data name="DONT_RESIZE">
+		<value>DONT_RESIZE</value>
+	</data>
+	<data name="DS_AUTHOR">
+		<value>DS_AUTHOR</value>
+	</data>
+	<data name="DS_BODY">
+		<value>DS_BODY</value>
+	</data>
+	<data name="DS_DATE">
+		<value>DS_DATE</value>
+	</data>
+	<data name="DS_DISPLAY_THREADS">
+		<value>DS_DISPLAY_THREADS</value>
+	</data>
+	<data name="DS_LASTREPLYDATE">
+		<value>DS_LASTREPLYDATE</value>
+	</data>
+	<data name="DS_MSGDETAILS">
+		<value>DS_MSGDETAILS</value>
+	</data>
+	<data name="DS_NEWTHREAD">
+		<value>DS_NEWTHREAD</value>
+	</data>
+	<data name="DS_ORIGINALMSG">
+		<value>DS_ORIGINALMSG</value>
+	</data>
+	<data name="DS_REPLYTHISMSG">
+		<value>DS_REPLYTHISMSG</value>
+	</data>
+	<data name="DS_RETURN_LIST">
+		<value>DS_RETURN_LIST</value>
+	</data>
+	<data name="ECOMMERCE_ACCOUNT_LOGIN">
+		<value>ECOMMERCE_ACCOUNT_LOGIN</value>
+	</data>
+	<data name="ECOMMERCE_GATEWAY_CARIGE_TITLE">
+		<value>ECOMMERCE_GATEWAY_CARIGE_TITLE</value>
+	</data>
+	<data name="ECOMMERCE_GATEWAY_TITLE">
+		<value>ECOMMERCE_GATEWAY_TITLE</value>
+	</data>
+	<data name="ECOMMERCE_KO_MSG1">
+		<value>ECOMMERCE_KO_MSG1</value>
+	</data>
+	<data name="ECOMMERCE_KO_MSG2">
+		<value>ECOMMERCE_KO_MSG2</value>
+	</data>
+	<data name="ECOMMERCE_KO_MSG3">
+		<value>ECOMMERCE_KO_MSG3</value>
+	</data>
+	<data name="ECOMMERCE_LOGIN_EMAILSUBJECTOK">
+		<value>ECOMMERCE_LOGIN_EMAILSUBJECTOK</value>
+	</data>
+	<data name="ECOMMERCE_LOGIN_ENTEREMAIL">
+		<value>ECOMMERCE_LOGIN_ENTEREMAIL</value>
+	</data>
+	<data name="ECOMMERCE_LOGIN_FAILED">
+		<value>ECOMMERCE_LOGIN_FAILED</value>
+	</data>
+	<data name="ECOMMERCE_LOGON_MSGCANCEL">
+		<value>ECOMMERCE_LOGON_MSGCANCEL</value>
+	</data>
+	<data name="ECOMMERCE_LOGON_MSGREGISTER">
+		<value>ECOMMERCE_LOGON_MSGREGISTER</value>
+	</data>
+	<data name="ECOMMERCE_OK_MSG1">
+		<value>ECOMMERCE_OK_MSG1</value>
+	</data>
+	<data name="ECOMMERCE_OK_MSG2">
+		<value>ECOMMERCE_OK_MSG2</value>
+	</data>
+	<data name="ECOMMERCE_OK_MSG3">
+		<value>ECOMMERCE_OK_MSG3</value>
+	</data>
+	<data name="ECOMMERCE_SECURE_TITLE">
+		<value>ECOMMERCE_SECURE_TITLE</value>
+	</data>
+	<data name="EDIT">
+		<value>Edit</value>
+	</data>
+	<data name="EDIT_ACCESS_DENIED">
+		<value>EDIT_ACCESS_DENIED</value>
+	</data>
+	<data name="EDIT_ACCESS_DENIED_MESSAGE">
+		<value>EDIT_ACCESS_DENIED_MESSAGE</value>
+	</data>
+	<data name="EDIT_PORTAL">
+		<value>EDIT_PORTAL</value>
+	</data>
+	<data name="EDIT_PROFILE">
+		<value>EDIT_PROFILE</value>
+	</data>
+	<data name="EDIT_THIS_ITEM">
+		<value>EDIT_THIS_ITEM</value>
+	</data>
+	<data name="EDIT_USER">
+		<value>EDIT_USER</value>
+	</data>
+	<data name="EDITBTN">
+		<value>EDITBTN</value>
+	</data>
+	<data name="EDITOR">
+		<value>Editor</value>
+	</data>
+	<data name="EDITOR_DESCRIPTION">
+		<value>EDITOR_DESCRIPTION</value>
+	</data>
+	<data name="ELECTRONICDELIVERY">
+		<value>ELECTRONICDELIVERY</value>
+	</data>
+	<data name="ELECTRONICDELIVERY_DESCRIPTION">
+		<value>ELECTRONICDELIVERY_DESCRIPTION</value>
+	</data>
+	<data name="EMAIL">
+		<value>EMAIL</value>
+	</data>
+	<data name="EMAILORWINDOW">
+		<value>EMAILORWINDOW</value>
+	</data>
+	<data name="EMF_ADDRESSES_NOT_OK">
+		<value>EMF_ADDRESSES_NOT_OK</value>
+	</data>
+	<data name="EMF_BCC">
+		<value>EMF_BCC</value>
+	</data>
+	<data name="EMF_CC">
+		<value>EMF_CC</value>
+	</data>
+	<data name="EMF_HTMLBODY_ERROR">
+		<value>EMF_HTMLBODY_ERROR</value>
+	</data>
+	<data name="EMF_SUBJECT">
+		<value>EMF_SUBJECT</value>
+	</data>
+	<data name="EMF_SUBJECT_ERROR">
+		<value>EMF_SUBJECT_ERROR</value>
+	</data>
+	<data name="EMF_TEXTBODY_ERROR">
+		<value>EMF_TEXTBODY_ERROR</value>
+	</data>
+	<data name="EMF_TO">
+		<value>EMF_TO</value>
+	</data>
+	<data name="EN">
+		<value>EN</value>
+	</data>
+	<data name="EN_US">
+		<value>EN_US</value>
+	</data>
+	<data name="EN_US_DESCRIPTION">
+		<value>EN_US_DESCRIPTION</value>
+	</data>
+	<data name="EN_DESCRIPTION">
+		<value>EN_DESCRIPTION</value>
+	</data>
+	<data name="END_DATE">
+		<value>END_DATE</value>
+	</data>
+	<data name="ENHANCEDHTML_ADDINVARIANTCULTURE">
+		<value>ENHANCEDHTML_ADDINVARIANTCULTURE</value>
+	</data>
+	<data name="ENHANCEDHTML_ADDINVARIANTCULTURE_DESCRIPTION">
+		<value>ENHANCEDHTML_ADDINVARIANTCULTURE_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_ALIGNDOWNMENU">
+		<value>ENHANCEDHTML_ALIGNDOWNMENU</value>
+	</data>
+	<data name="ENHANCEDHTML_ALIGNDOWNMENU_DESCRIPTION">
+		<value>ENHANCEDHTML_ALIGNDOWNMENU_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_ALIGNUPMENU">
+		<value>ENHANCEDHTML_ALIGNUPMENU</value>
+	</data>
+	<data name="ENHANCEDHTML_ALIGNUPMENU_DESCRIPTION">
+		<value>ENHANCEDHTML_ALIGNUPMENU_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_CANCEL">
+		<value>ENHANCEDHTML_CANCEL</value>
+	</data>
+	<data name="ENHANCEDHTML_CONFIRMDELETEMESSAGE">
+		<value>ENHANCEDHTML_CONFIRMDELETEMESSAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_CONTENT_FROM">
+		<value>ENHANCEDHTML_CONTENT_FROM</value>
+	</data>
+	<data name="ENHANCEDHTML_DELETEPAGE">
+		<value>ENHANCEDHTML_DELETEPAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_EDITOR">
+		<value>ENHANCEDHTML_EDITOR</value>
+	</data>
+	<data name="ENHANCEDHTML_EDITOR_DESCRIPTION">
+		<value>ENHANCEDHTML_EDITOR_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_EDITPAGE">
+		<value>ENHANCEDHTML_EDITPAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS">
+		<value>ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS</value>
+	</data>
+	<data name="ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS_DESCRIPTION">
+		<value>ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_LANGUAGE">
+		<value>ENHANCEDHTML_LANGUAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_MULTIPAGEMODE">
+		<value>ENHANCEDHTML_MULTIPAGEMODE</value>
+	</data>
+	<data name="ENHANCEDHTML_NEWPAGE">
+		<value>ENHANCEDHTML_NEWPAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_OF">
+		<value>ENHANCEDHTML_OF</value>
+	</data>
+	<data name="ENHANCEDHTML_PAGE">
+		<value>ENHANCEDHTML_PAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_PAGENAME">
+		<value>ENHANCEDHTML_PAGENAME</value>
+	</data>
+	<data name="ENHANCEDHTML_RETURN">
+		<value>ENHANCEDHTML_RETURN</value>
+	</data>
+	<data name="ENHANCEDHTML_SELECT_MODULE">
+		<value>ENHANCEDHTML_SELECT_MODULE</value>
+	</data>
+	<data name="ENHANCEDHTML_SELECT_MODULE_PORTAL">
+		<value>ENHANCEDHTML_SELECT_MODULE_PORTAL</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWALLPAGES">
+		<value>ENHANCEDHTML_SHOWALLPAGES</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWDOWNMENU">
+		<value>ENHANCEDHTML_SHOWDOWNMENU</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWDOWNMENU_DESCRIPTION">
+		<value>ENHANCEDHTML_SHOWDOWNMENU_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWMULTIMODE">
+		<value>ENHANCEDHTML_SHOWMULTIMODE</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWMULTIMODE_DESCRIPTION">
+		<value>ENHANCEDHTML_SHOWMULTIMODE_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWTITLEPAGE">
+		<value>ENHANCEDHTML_SHOWTITLEPAGE</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWTITLEPAGE_DESCRIPTION">
+		<value>ENHANCEDHTML_SHOWTITLEPAGE_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWUPLOAD">
+		<value>ENHANCEDHTML_SHOWUPLOAD</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWUPLOAD_DESCRIPTION">
+		<value>ENHANCEDHTML_SHOWUPLOAD_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWUPMENU">
+		<value>ENHANCEDHTML_SHOWUPMENU</value>
+	</data>
+	<data name="ENHANCEDHTML_SHOWUPMENU_DESCRIPTION">
+		<value>ENHANCEDHTML_SHOWUPMENU_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDHTML_SINGLEPAGEMODE">
+		<value>ENHANCEDHTML_SINGLEPAGEMODE</value>
+	</data>
+	<data name="ENHANCEDHTML_UPDATE">
+		<value>ENHANCEDHTML_UPDATE</value>
+	</data>
+	<data name="ENHANCEDHTML_VIEWORDER">
+		<value>ENHANCEDHTML_VIEWORDER</value>
+	</data>
+	<data name="ENHANCEDLINK_GALLERYTITLE">
+		<value>ENHANCEDLINK_GALLERYTITLE</value>
+	</data>
+	<data name="ENHANCEDLINK_ICON">
+		<value>ENHANCEDLINK_ICON</value>
+	</data>
+	<data name="ENHANCEDLINK_SELECT">
+		<value>ENHANCEDLINK_SELECT</value>
+	</data>
+	<data name="ENHANCEDLINK_UPLOAD">
+		<value>ENHANCEDLINK_UPLOAD</value>
+	</data>
+	<data name="ENHANCEDLINKS_DEFAULTIMAGE">
+		<value>ENHANCEDLINKS_DEFAULTIMAGE</value>
+	</data>
+	<data name="ENHANCEDLINKS_DEFAULTIMAGE_DESCRIPTION">
+		<value>ENHANCEDLINKS_DEFAULTIMAGE_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDLINKS_DROPDOWNLIST">
+		<value>ENHANCEDLINKS_DROPDOWNLIST</value>
+	</data>
+	<data name="ENHANCEDLINKS_EDITLINK">
+		<value>ENHANCEDLINKS_EDITLINK</value>
+	</data>
+	<data name="ENHANCEDLINKS_EXPANDALL">
+		<value>ENHANCEDLINKS_EXPANDALL</value>
+	</data>
+	<data name="ENHANCEDLINKS_EXPANDALL_DESCRIPTION">
+		<value>ENHANCEDLINKS_EXPANDALL_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDLINKS_GENERALIMAGE">
+		<value>ENHANCEDLINKS_GENERALIMAGE</value>
+	</data>
+	<data name="ENHANCEDLINKS_GENERALIMAGE_DESCRIPTION">
+		<value>ENHANCEDLINKS_GENERALIMAGE_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDLINKS_ICONPATH">
+		<value>ENHANCEDLINKS_ICONPATH</value>
+	</data>
+	<data name="ENHANCEDLINKS_ICONPATH_DESCRIPTION">
+		<value>ENHANCEDLINKS_ICONPATH_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDLINKS_LINKS">
+		<value>ENHANCEDLINKS_LINKS</value>
+	</data>
+	<data name="ENHANCEDLINKS_LINKSHORIZONTAL">
+		<value>ENHANCEDLINKS_LINKSHORIZONTAL</value>
+	</data>
+	<data name="ENHANCEDLINKS_MAXCOLUMS">
+		<value>ENHANCEDLINKS_MAXCOLUMS</value>
+	</data>
+	<data name="ENHANCEDLINKS_MAXCOLUMS_DESCRIPTION">
+		<value>ENHANCEDLINKS_MAXCOLUMS_DESCRIPTION</value>
+	</data>
+	<data name="ENHANCEDLINKS_SWITCHERTYPES">
+		<value>ENHANCEDLINKS_SWITCHERTYPES</value>
+	</data>
+	<data name="ENHANCEDLINKS_SWITCHERTYPES_DESCRIPTION">
+		<value>ENHANCEDLINKS_SWITCHERTYPES_DESCRIPTION</value>
+	</data>
+	<data name="ERROR">
+		<value>ERROR</value>
+	</data>
+	<data name="ERROR_403">
+		<value>ERROR_403</value>
+	</data>
+	<data name="ERROR_403_MESSAGE">
+		<value>ERROR_403_MESSAGE</value>
+	</data>
+	<data name="ERROR_404">
+		<value>ERROR_404</value>
+	</data>
+	<data name="ERROR_404_MESSAGE">
+		<value>ERROR_404_MESSAGE</value>
+	</data>
+	<data name="ERROR_COMPLETION_DATE">
+		<value>ERROR_COMPLETION_DATE</value>
+	</data>
+	<data name="ERROR_ENTER_A_FILE_NAME">
+		<value>ERROR_ENTER_A_FILE_NAME</value>
+	</data>
+	<data name="ERROR_ENTER_A_MODULE_NAME">
+		<value>ERROR_ENTER_A_MODULE_NAME</value>
+	</data>
+	<data name="ERROR_ENTER_A_SOURCE_PATH">
+		<value>ERROR_ENTER_A_SOURCE_PATH</value>
+	</data>
+	<data name="ERROR_FILE_NAME">
+		<value>ERROR_FILE_NAME</value>
+	</data>
+	<data name="ERROR_INVALID_MODULE">
+		<value>ERROR_INVALID_MODULE</value>
+	</data>
+	<data name="ERROR_NOT_ALLOWED_PARENT">
+		<value>ERROR_NOT_ALLOWED_PARENT</value>
+	</data>
+	<data name="ERROR_QUIZ_ANSWER">
+		<value>ERROR_QUIZ_ANSWER</value>
+	</data>
+	<data name="ERROR_SUBJECT">
+		<value>ERROR_SUBJECT</value>
+	</data>
+	<data name="ERROR_VALID_COMPLETION_DATE">
+		<value>ERROR_VALID_COMPLETION_DATE</value>
+	</data>
+	<data name="ERROR_VALID_DATE">
+		<value>ERROR_VALID_DATE</value>
+	</data>
+	<data name="ERROR_VALID_DESCRIPTION">
+		<value>ERROR_VALID_DESCRIPTION</value>
+	</data>
+	<data name="ERROR_VALID_EMAIL">
+		<value>ERROR_VALID_EMAIL</value>
+	</data>
+	<data name="ERROR_VALID_ENDDATE">
+		<value>ERROR_VALID_ENDDATE</value>
+	</data>
+	<data name="ERROR_VALID_EXPIRE_DATE">
+		<value>ERROR_VALID_EXPIRE_DATE</value>
+	</data>
+	<data name="ERROR_VALID_ID">
+		<value>ERROR_VALID_ID</value>
+	</data>
+	<data name="ERROR_VALID_MESSAGE_TEXT">
+		<value>ERROR_VALID_MESSAGE_TEXT</value>
+	</data>
+	<data name="ERROR_VALID_MILESTONE_STATUS">
+		<value>ERROR_VALID_MILESTONE_STATUS</value>
+	</data>
+	<data name="ERROR_VALID_MILESTONE_TITLE">
+		<value>ERROR_VALID_MILESTONE_TITLE</value>
+	</data>
+	<data name="ERROR_VALID_NAME">
+		<value>ERROR_VALID_NAME</value>
+	</data>
+	<data name="ERROR_VALID_STARTDATE">
+		<value>ERROR_VALID_STARTDATE</value>
+	</data>
+	<data name="ERROR_VALID_TITLE">
+		<value>ERROR_VALID_TITLE</value>
+	</data>
+	<data name="ERROR_VALID_URL">
+		<value>ERROR_VALID_URL</value>
+	</data>
+	<data name="ERROR_VALID_VIEWORDER">
+		<value>ERROR_VALID_VIEWORDER</value>
+	</data>
+	<data name="ERROR_VALID_WHERE_WHEN">
+		<value>ERROR_VALID_WHERE_WHEN</value>
+	</data>
+	<data name="ERROR_VALID_WHEREWHEN">
+		<value>ERROR_VALID_WHEREWHEN</value>
+	</data>
+	<data name="ES">
+		<value>ES</value>
+	</data>
+	<data name="ES_ES">
+		<value>ES_ES</value>
+	</data>
+	<data name="ES_ES_DESCRIPTION">
+		<value>ES_ES_DESCRIPTION</value>
+	</data>
+	<data name="ES_DESCRIPTION">
+		<value>ES_DESCRIPTION</value>
+	</data>
+	<data name="EVENTS_ADD">
+		<value>EVENTS_ADD</value>
+	</data>
+	<data name="EVENTS_ALLDAY">
+		<value>EVENTS_ALLDAY</value>
+	</data>
+	<data name="EVENTS_BOOKING_REQUIRED">
+		<value>EVENTS_BOOKING_REQUIRED</value>
+	</data>
+	<data name="EVENTS_CATEGORY">
+		<value>EVENTS_CATEGORY</value>
+	</data>
+	<data name="EVENTS_DESCRIPTION">
+		<value>EVENTS_DESCRIPTION</value>
+	</data>
+	<data name="EVENTS_DETAILS">
+		<value>EVENTS_DETAILS</value>
+	</data>
+	<data name="EVENTS_EMAIL">
+		<value>EVENTS_EMAIL</value>
+	</data>
+	<data name="EVENTS_ENABLED">
+		<value>EVENTS_ENABLED</value>
+	</data>
+	<data name="EVENTS_END_DATE">
+		<value>EVENTS_END_DATE</value>
+	</data>
+	<data name="EVENTS_EXPIRES">
+		<value>EVENTS_EXPIRES</value>
+	</data>
+	<data name="EVENTS_GROUP">
+		<value>EVENTS_GROUP</value>
+	</data>
+	<data name="EVENTS_PAYMENT">
+		<value>EVENTS_PAYMENT</value>
+	</data>
+	<data name="EVENTS_PLACE">
+		<value>EVENTS_PLACE</value>
+	</data>
+	<data name="EVENTS_PRICES">
+		<value>EVENTS_PRICES</value>
+	</data>
+	<data name="EVENTS_SITEURL">
+		<value>EVENTS_SITEURL</value>
+	</data>
+	<data name="EVENTS_START_DATE">
+		<value>EVENTS_START_DATE</value>
+	</data>
+	<data name="EVENTS_STARTAT">
+		<value>EVENTS_STARTAT</value>
+	</data>
+	<data name="EVENTS_STARTDATE">
+		<value>EVENTS_STARTDATE</value>
+	</data>
+	<data name="EVENTS_STARTTIME">
+		<value>EVENTS_STARTTIME</value>
+	</data>
+	<data name="EVENTS_TIMETABLE">
+		<value>EVENTS_TIMETABLE</value>
+	</data>
+	<data name="EVENTS_TITLE">
+		<value>EVENTS_TITLE</value>
+	</data>
+	<data name="EVENTS_VALID_DESCRIPTION">
+		<value>EVENTS_VALID_DESCRIPTION</value>
+	</data>
+	<data name="EVENTS_VALID_EXPIRE">
+		<value>EVENTS_VALID_EXPIRE</value>
+	</data>
+	<data name="EVENTS_VALID_TITLE">
+		<value>EVENTS_VALID_TITLE</value>
+	</data>
+	<data name="EVENTS_VALID_WHEN-WHERE">
+		<value>EVENTS_VALID_WHEN-WHERE</value>
+	</data>
+	<data name="EVENTS_WHEN-WHERE">
+		<value>EVENTS_WHEN-WHERE</value>
+	</data>
+	<data name="EVENTS_WHEREWHEN">
+		<value>EVENTS_WHEREWHEN</value>
+	</data>
+	<data name="EXCERPT">
+		<value>EXCERPT</value>
+	</data>
+	<data name="EXPIRE_DATE">
+		<value>EXPIRE_DATE</value>
+	</data>
+	<data name="F010">
+		<value>F010</value>
+	</data>
+	<data name="F100">
+		<value>F100</value>
+	</data>
+	<data name="F200">
+		<value>F200</value>
+	</data>
+	<data name="F331">
+		<value>F331</value>
+	</data>
+	<data name="F335">
+		<value>F335</value>
+	</data>
+	<data name="F410">
+		<value>F410</value>
+	</data>
+	<data name="F412">
+		<value>F412</value>
+	</data>
+	<data name="F415">
+		<value>F415</value>
+	</data>
+	<data name="F425">
+		<value>F425</value>
+	</data>
+	<data name="F433">
+		<value>F433</value>
+	</data>
+	<data name="F435">
+		<value>F435</value>
+	</data>
+	<data name="F750">
+		<value>F750</value>
+	</data>
+	<data name="FAQ_A">
+		<value>FAQ_A</value>
+	</data>
+	<data name="FAQ_ANSWER">
+		<value>FAQ_ANSWER</value>
+	</data>
+	<data name="FAQ_ANSWER_ERR">
+		<value>FAQ_ANSWER_ERR</value>
+	</data>
+	<data name="FAQ_DETAILS">
+		<value>FAQ_DETAILS</value>
+	</data>
+	<data name="FAQ_Q">
+		<value>FAQ_Q</value>
+	</data>
+	<data name="FAQ_QUESTION">
+		<value>FAQ_QUESTION</value>
+	</data>
+	<data name="FAQ_QUESTION_ERR">
+		<value>FAQ_QUESTION_ERR</value>
+	</data>
+	<data name="FAX">
+		<value>FAX</value>
+	</data>
+	<data name="FILE_CATEGORY">
+		<value>FILE_CATEGORY</value>
+	</data>
+	<data name="FILE_NAME">
+		<value>FILE_NAME</value>
+	</data>
+	<data name="FILE_NOT_FOUND">
+		<value>FILE_NOT_FOUND</value>
+	</data>
+	<data name="FILE_UPLOAD">
+		<value>FILE_UPLOAD</value>
+	</data>
+	<data name="FILE_UPLOAD_ERROR">
+		<value>FILE_UPLOAD_ERROR</value>
+	</data>
+	<data name="FILEMAN_FILENAME">
+		<value>FILEMAN_FILENAME</value>
+	</data>
+	<data name="FILEMAN_MODIFIED">
+		<value>FILEMAN_MODIFIED</value>
+	</data>
+	<data name="FILEMAN_SIZE">
+		<value>FILEMAN_SIZE</value>
+	</data>
+	<data name="FIXED_WIDTH_AND_HEIGHT">
+		<value>FIXED_WIDTH_AND_HEIGHT</value>
+	</data>
+	<data name="FIXEDSHIPPING">
+		<value>FIXEDSHIPPING</value>
+	</data>
+	<data name="FIXEDSHIPPING_DESCRIPTION">
+		<value>FIXEDSHIPPING_DESCRIPTION</value>
+	</data>
+	<data name="FLASH_BACKGROUNDCOLOR">
+		<value>FLASH_BACKGROUNDCOLOR</value>
+	</data>
+	<data name="FLASH_GALLERY">
+		<value>FLASH_GALLERY</value>
+	</data>
+	<data name="FLASH_PATH">
+		<value>FLASH_PATH</value>
+	</data>
+	<data name="FLASH_SELECT_FILE">
+		<value>FLASH_SELECT_FILE</value>
+	</data>
+	<data name="FLASH_SETTINGS">
+		<value>FLASH_SETTINGS</value>
+	</data>
+	<data name="FLASH_UPLOAD_FILE">
+		<value>FLASH_UPLOAD_FILE</value>
+	</data>
+	<data name="FLASH_UPLOAD_TITLE">
+		<value>FLASH_UPLOAD_TITLE</value>
+	</data>
+	<data name="FRIENDLY_NAME">
+		<value>FRIENDLY_NAME</value>
+	</data>
+	<data name="FROM">
+		<value>FROM</value>
+	</data>
+	<data name="FUEL">
+		<value>FUEL</value>
+	</data>
+	<data name="GATEWAY_CREDIT_TRANSFER_MESSAGE">
+		<value>GATEWAY_CREDIT_TRANSFER_MESSAGE</value>
+	</data>
+	<data name="GATEWAY_WIRE_TRANSFER">
+		<value>GATEWAY_WIRE_TRANSFER</value>
+	</data>
+	<data name="GENERAL_ERROR_MESSAGE">
+		<value>GENERAL_ERROR_MESSAGE</value>
+	</data>
+	<data name="GOOGLE_SEARCH">
+		<value>GOOGLE_SEARCH</value>
+	</data>
+	<data name="GOOGLE_START">
+		<value>GOOGLE_START</value>
+	</data>
+	<data name="GOTO_PAGE">
+		<value>GOTO_PAGE</value>
+	</data>
+	<data name="GUID">
+		<value>GUID</value>
+	</data>
+	<data name="HEADER_EDIT_PROFILE">
+		<value>HEADER_EDIT_PROFILE</value>
+	</data>
+	<data name="HEADER_HELP">
+		<value>HEADER_HELP</value>
+	</data>
+	<data name="HEADER_LOGOFF">
+		<value>HEADER_LOGOFF</value>
+	</data>
+	<data name="HEADER_MANAGE_TAB">
+		<value>HEADER_MANAGE_TAB</value>
+	</data>
+	<data name="HEADER_SAVE_DESKTOP">
+		<value>HEADER_SAVE_DESKTOP</value>
+	</data>
+	<data name="HEADER_WELCOME">
+		<value>HEADER_WELCOME</value>
+	</data>
+	<data name="HEIGHT">
+		<value>HEIGHT</value>
+	</data>
+	<data name="HEIGHT_DESCRIPTION">
+		<value>HEIGHT_DESCRIPTION</value>
+	</data>
+	<data name="HERE">
+		<value>HERE</value>
+	</data>
+	<data name="HOME">
+		<value>Home</value>
+	</data>
+	<data name="HORIZONTAL">
+		<value>HORIZONTAL</value>
+	</data>
+	<data name="HTML_DESKTOP_CONTENT">
+		<value>HTML_DESKTOP_CONTENT</value>
+	</data>
+	<data name="HTML_EDITOR">
+		<value>HTML_EDITOR</value>
+	</data>
+	<data name="HTML_MOBILE_DETAILS">
+		<value>HTML_MOBILE_DETAILS</value>
+	</data>
+	<data name="HTML_MOBILE_SUMMARY">
+		<value>HTML_MOBILE_SUMMARY</value>
+	</data>
+	<data name="HTMLDOCUMENT_TODO_ADDCONTENT">
+		<value>HTMLDOCUMENT_TODO_ADDCONTENT</value>
+	</data>
+	<data name="HTMLTEMPLATE">
+		<value>HTMLTEMPLATE</value>
+	</data>
+	<data name="HTMLTEMPLATE_DESCRIPTION">
+		<value>HTMLTEMPLATE_DESCRIPTION</value>
+	</data>
+	<data name="HTMLTEMPLATEURL">
+		<value>HTMLTEMPLATEURL</value>
+	</data>
+	<data name="ICONFILE">
+		<value>ICONFILE</value>
+	</data>
+	<data name="IDLISTTYPE">
+		<value>IDLISTTYPE</value>
+	</data>
+	<data name="IMAGE">
+		<value>Image</value>
+	</data>
+	<data name="IMAGE_DETAIL">
+		<value>IMAGE_DETAIL</value>
+	</data>
+	<data name="IMAGE_UPLOAD_ERROR">
+		<value>IMAGE_UPLOAD_ERROR</value>
+	</data>
+	<data name="IMAGELAYOUT">
+		<value>IMAGELAYOUT</value>
+	</data>
+	<data name="IMAGELOGO">
+		<value>IMAGELOGO</value>
+	</data>
+	<data name="IMAGELOGO_DESCRIPTION">
+		<value>IMAGELOGO_DESCRIPTION</value>
+	</data>
+	<data name="IMPRESSUM">
+		<value>IMPRESSUM</value>
+	</data>
+	<data name="IN">
+		<value>In</value>
+	</data>
+	<data name="INSERT_CONFIRM">
+		<value>INSERT_CONFIRM</value>
+	</data>
+	<data name="INSERT_EMAIL">
+		<value>INSERT_EMAIL</value>
+	</data>
+	<data name="INSERT_IMAGE_FROM_GALLERY">
+		<value>INSERT_IMAGE_FROM_GALLERY</value>
+	</data>
+	<data name="INSERT_NAME">
+		<value>INSERT_NAME</value>
+	</data>
+	<data name="INSERT_PASSWORD">
+		<value>INSERT_PASSWORD</value>
+	</data>
+	<data name="INSTALL_MANUALLY">
+		<value>INSTALL_MANUALLY</value>
+	</data>
+	<data name="INSTALLER_FILE">
+		<value>INSTALLER_FILE</value>
+	</data>
+	<data name="IT">
+		<value>IT</value>
+	</data>
+	<data name="IT_IT">
+		<value>IT_IT</value>
+	</data>
+	<data name="IT_IT_DESCRIPTION">
+		<value>IT_IT_DESCRIPTION</value>
+	</data>
+	<data name="IT_DESCRIPTION">
+		<value>IT_DESCRIPTION</value>
+	</data>
+	<data name="ITEM_FOUND">
+		<value>ITEM_FOUND</value>
+	</data>
+	<data name="ITEM_ORDER">
+		<value>ITEM_ORDER</value>
+	</data>
+	<data name="ITEMS_FOUND">
+		<value>ITEMS_FOUND</value>
+	</data>
+	<data name="KEYWORD">
+		<value>KEYWORD</value>
+	</data>
+	<data name="LABEL_NO_DATA">
+		<value>LABEL_NO_DATA</value>
+	</data>
+	<data name="LANGLIST">
+		<value>LANGLIST</value>
+	</data>
+	<data name="LANGLOCK">
+		<value>LANGLOCK</value>
+	</data>
+	<data name="LANGSWITCH_TITLE">
+		<value>LANGSWITCH_TITLE</value>
+	</data>
+	<data name="LANGSWITCHAPPLYTHEME">
+		<value>LANGSWITCHAPPLYTHEME</value>
+	</data>
+	<data name="LANGSWITCHER_FLAGS">
+		<value>LANGSWITCHER_FLAGS</value>
+	</data>
+	<data name="LANGSWITCHER_FLAGSHORIZONTAL">
+		<value>LANGSWITCHER_FLAGSHORIZONTAL</value>
+	</data>
+	<data name="LANGSWITCHER_FORM">
+		<value>LANGSWITCHER_FORM</value>
+	</data>
+	<data name="LANGSWITCHER_LINKS">
+		<value>LANGSWITCHER_LINKS</value>
+	</data>
+	<data name="LANGSWITCHER_LINKSHORIZONTAL">
+		<value>LANGSWITCHER_LINKSHORIZONTAL</value>
+	</data>
+	<data name="LANGSWITCHLOCATION">
+		<value>LANGSWITCHLOCATION</value>
+	</data>
+	<data name="LANGSWITCHLOCATION_EVERYPAGE">
+		<value>LANGSWITCHLOCATION_EVERYPAGE</value>
+	</data>
+	<data name="LANGSWITCHLOCATION_HOMEONLY">
+		<value>LANGSWITCHLOCATION_HOMEONLY</value>
+	</data>
+	<data name="LANGSWITCHPOSITION">
+		<value>LANGSWITCHPOSITION</value>
+	</data>
+	<data name="LANGSWITCHPOSITION_CONTENT">
+		<value>LANGSWITCHPOSITION_CONTENT</value>
+	</data>
+	<data name="LANGSWITCHPOSITION_LEFT">
+		<value>LANGSWITCHPOSITION_LEFT</value>
+	</data>
+	<data name="LANGSWITCHPOSITION_RIGHT">
+		<value>LANGSWITCHPOSITION_RIGHT</value>
+	</data>
+	<data name="LANGSWITCHSHOWTITLE">
+		<value>LANGSWITCHSHOWTITLE</value>
+	</data>
+	<data name="LANGSWITCHTDISPLAY_CULTURELIST">
+		<value>LANGSWITCHTDISPLAY_CULTURELIST</value>
+	</data>
+	<data name="LANGSWITCHTDISPLAY_NONE">
+		<value>LANGSWITCHTDISPLAY_NONE</value>
+	</data>
+	<data name="LANGSWITCHTDISPLAY_UICULTURELIST">
+		<value>LANGSWITCHTDISPLAY_UICULTURELIST</value>
+	</data>
+	<data name="LANGSWITCHTHEME">
+		<value>LANGSWITCHTHEME</value>
+	</data>
+	<data name="LANGSWITCHTNAMES_DISPLAYNAME">
+		<value>LANGSWITCHTNAMES_DISPLAYNAME</value>
+	</data>
+	<data name="LANGSWITCHTNAMES_ENGLISHNAME">
+		<value>LANGSWITCHTNAMES_ENGLISHNAME</value>
+	</data>
+	<data name="LANGSWITCHTNAMES_NATIVENAME">
+		<value>LANGSWITCHTNAMES_NATIVENAME</value>
+	</data>
+	<data name="LANGSWITCHTYPE">
+		<value>LANGSWITCHTYPE</value>
+	</data>
+	<data name="LANGSWITCHTYPE_DISABLED">
+		<value>LANGSWITCHTYPE_DISABLED</value>
+	</data>
+	<data name="LANGSWITCHTYPE_DROPDOWNLIST">
+		<value>LANGSWITCHTYPE_DROPDOWNLIST</value>
+	</data>
+	<data name="LANGSWITCHTYPE_FLAGS">
+		<value>LANGSWITCHTYPE_FLAGS</value>
+	</data>
+	<data name="LANGSWITCHTYPE_FLAGSHORIZONTAL">
+		<value>LANGSWITCHTYPE_FLAGSHORIZONTAL</value>
+	</data>
+	<data name="LANGSWITCHTYPE_FORM">
+		<value>LANGSWITCHTYPE_FORM</value>
+	</data>
+	<data name="LANGSWITCHTYPE_LINKS">
+		<value>LANGSWITCHTYPE_LINKS</value>
+	</data>
+	<data name="LANGSWITCHTYPE_LINKSHORIZONTAL">
+		<value>LANGSWITCHTYPE_LINKSHORIZONTAL</value>
+	</data>
+	<data name="LANGUAGESWITCHER_CUSTOMFLAGS">
+		<value>LANGUAGESWITCHER_CUSTOMFLAGS</value>
+	</data>
+	<data name="LANGUAGESWITCHER_CUSTOMFLAGS_DESCRIPTION">
+		<value>LANGUAGESWITCHER_CUSTOMFLAGS_DESCRIPTION</value>
+	</data>
+	<data name="LANGUAGESWITCHER_FLAGS">
+		<value>LANGUAGESWITCHER_FLAGS</value>
+	</data>
+	<data name="LANGUAGESWITCHER_FLAGS_DESCRIPTION">
+		<value>LANGUAGESWITCHER_FLAGS_DESCRIPTION</value>
+	</data>
+	<data name="LANGUAGESWITCHER_LABELS">
+		<value>LANGUAGESWITCHER_LABELS</value>
+	</data>
+	<data name="LANGUAGESWITCHER_LABELS_DESCRIPTION">
+		<value>LANGUAGESWITCHER_LABELS_DESCRIPTION</value>
+	</data>
+	<data name="LANGUAGESWITCHER_NAMES">
+		<value>LANGUAGESWITCHER_NAMES</value>
+	</data>
+	<data name="LANGUAGESWITCHER_NAMES_DESCRIPTION">
+		<value>LANGUAGESWITCHER_NAMES_DESCRIPTION</value>
+	</data>
+	<data name="LANGUAGESWITCHER_TYPES">
+		<value>LANGUAGESWITCHER_TYPES</value>
+	</data>
+	<data name="LANGUAGESWITCHER_TYPES_DESCRIPTION">
+		<value>LANGUAGESWITCHER_TYPES_DESCRIPTION</value>
+	</data>
+	<data name="LANGUAGESWITCHTYPE">
+		<value>LANGUAGESWITCHTYPE</value>
+	</data>
+	<data name="LANGUAGESWITCHTYPE_DESCRIPTION">
+		<value>LANGUAGESWITCHTYPE_DESCRIPTION</value>
+	</data>
+	<data name="LANGUSER">
+		<value>LANGUSER</value>
+	</data>
+	<data name="LAST_UPDATED">
+		<value>LAST_UPDATED</value>
+	</data>
+	<data name="LASTNAME">
+		<value>LASTNAME</value>
+	</data>
+	<data name="LASTSEND">
+		<value>LASTSEND</value>
+	</data>
+	<data name="LAYOUT">
+		<value>LAYOUT</value>
+	</data>
+	<data name="LEFT">
+		<value>LEFT</value>
+	</data>
+	<data name="LET_USER_CHOOSE">
+		<value>LET_USER_CHOOSE</value>
+	</data>
+	<data name="LINKDETAILS">
+		<value>LINKDETAILS</value>
+	</data>
+	<data name="LINKEDMODULE">
+		<value>LINKEDMODULE</value>
+	</data>
+	<data name="LINKGROUP">
+		<value>LINKGROUP</value>
+	</data>
+	<data name="LOAD_THEME_ERROR">
+		<value>LOAD_THEME_ERROR</value>
+	</data>
+	<data name="LOCALMODE">
+		<value>LOCALMODE</value>
+	</data>
+	<data name="LOCATION">
+		<value>LOCATION</value>
+	</data>
+	<data name="LOGIN_FAILED">
+		<value>LOGIN_FAILED</value>
+	</data>
+	<data name="LOGINHOMEPAGE">
+		<value>LOGINHOMEPAGE</value>
+	</data>
+	<data name="LOGINHOMEPAGE_DESCRIPTION">
+		<value>LOGINHOMEPAGE_DESCRIPTION</value>
+	</data>
+	<data name="LOGOFF">
+		<value>LOGOFF</value>
+	</data>
+	<data name="LOGON">
+		<value>LOGON</value>
+	</data>
+	<data name="MACHINENAME">
+		<value>MACHINENAME</value>
+	</data>
+	<data name="MAINTAIN_ASPECT_FIXED_HEIGHT">
+		<value>MAINTAIN_ASPECT_FIXED_HEIGHT</value>
+	</data>
+	<data name="MAINTAIN_ASPECT_FIXED_WIDTH">
+		<value>MAINTAIN_ASPECT_FIXED_WIDTH</value>
+	</data>
+	<data name="MARK">
+		<value>MARK</value>
+	</data>
+	<data name="MAXHITS">
+		<value>MAXHITS</value>
+	</data>
+	<data name="MERCHANT">
+		<value>MERCHANT</value>
+	</data>
+	<data name="META_SETTINGS">
+		<value>META_SETTINGS</value>
+	</data>
+	<data name="MIDDLE">
+		<value>MIDDLE</value>
+	</data>
+	<data name="MILESTONE_COMPL_DATE">
+		<value>MILESTONE_COMPL_DATE</value>
+	</data>
+	<data name="MILESTONE_STATUS">
+		<value>MILESTONE_STATUS</value>
+	</data>
+	<data name="MILESTONE_TITLE">
+		<value>MILESTONE_TITLE</value>
+	</data>
+	<data name="MILESTONES_COMPLETION_DATE">
+		<value>MILESTONES_COMPLETION_DATE</value>
+	</data>
+	<data name="MILESTONES_DETAIL">
+		<value>MILESTONES_DETAIL</value>
+	</data>
+	<data name="MILESTONES_STATUS">
+		<value>MILESTONES_STATUS</value>
+	</data>
+	<data name="MILESTONES_TITLE">
+		<value>MILESTONES_TITLE</value>
+	</data>
+	<data name="MISC_SETTINGS">
+		<value>MISC_SETTINGS</value>
+	</data>
+	<data name="MOBILE_SOURCE">
+		<value>MOBILE_SOURCE</value>
+	</data>
+	<data name="MOBILEONLY">
+		<value>MOBILEONLY</value>
+	</data>
+	<data name="MOBILEURL">
+		<value>MOBILEURL</value>
+	</data>
+	<data name="MODEL">
+		<value>MODEL</value>
+	</data>
+	<data name="MODIFIED_BY">
+		<value>MODIFIED_BY</value>
+	</data>
+	<data name="MODULE_DEFINITIONS_DELETE_ERROR">
+		<value>MODULE_DEFINITIONS_DELETE_ERROR</value>
+	</data>
+	<data name="MODULE_DEFINITIONS_INSTALLING">
+		<value>MODULE_DEFINITIONS_INSTALLING</value>
+	</data>
+	<data name="MODULE_DEFS_ADMIN">
+		<value>MODULE_DEFS_ADMIN</value>
+	</data>
+	<data name="MODULE_DEFS_USER">
+		<value>MODULE_DEFS_USER</value>
+	</data>
+	<data name="MODULE_IMAGE_FOLDER">
+		<value>MODULE_IMAGE_FOLDER</value>
+	</data>
+	<data name="MODULE_IMAGE_FOLDER_DESCRIPTION">
+		<value>MODULE_IMAGE_FOLDER_DESCRIPTION</value>
+	</data>
+	<data name="MODULE_SPECIAL_SETTINGS">
+		<value>MODULE_SPECIAL_SETTINGS</value>
+	</data>
+	<data name="MODULE_TITLE">
+		<value>MODULE_TITLE</value>
+	</data>
+	<data name="MODULE_TYPE_DEFINITION">
+		<value>MODULE_TYPE_DEFINITION</value>
+	</data>
+	<data name="MODULENAME">
+		<value>MODULENAME</value>
+	</data>
+	<data name="MODULESETTINGS">
+		<value>MODULESETTINGS</value>
+	</data>
+	<data name="MODULESETTINGS__SUPPORT_WORKFLOW">
+		<value>MODULESETTINGS__SUPPORT_WORKFLOW</value>
+	</data>
+	<data name="MODULESETTINGS_APPLY_THEME">
+		<value>MODULESETTINGS_APPLY_THEME</value>
+	</data>
+	<data name="MODULESETTINGS_APPLY_THEME_DESCRIPTION">
+		<value>MODULESETTINGS_APPLY_THEME_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_BASE_SETTINGS">
+		<value>MODULESETTINGS_BASE_SETTINGS</value>
+	</data>
+	<data name="MODULESETTINGS_BUTTON_DISPLAY">
+		<value>MODULESETTINGS_BUTTON_DISPLAY</value>
+	</data>
+	<data name="MODULESETTINGS_BUTTON_DISPLAY_BOTH">
+		<value>MODULESETTINGS_BUTTON_DISPLAY_BOTH</value>
+	</data>
+	<data name="MODULESETTINGS_BUTTON_DISPLAY_DESCRIPTION">
+		<value>MODULESETTINGS_BUTTON_DISPLAY_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_BUTTON_DISPLAY_IMAGE">
+		<value>MODULESETTINGS_BUTTON_DISPLAY_IMAGE</value>
+	</data>
+	<data name="MODULESETTINGS_BUTTON_DISPLAY_IMAGECSS">
+		<value>MODULESETTINGS_BUTTON_DISPLAY_IMAGECSS</value>
+	</data>
+	<data name="MODULESETTINGS_BUTTON_DISPLAY_TEXT">
+		<value>MODULESETTINGS_BUTTON_DISPLAY_TEXT</value>
+	</data>
+	<data name="MODULESETTINGS_CACHE_TIMEOUT">
+		<value>MODULESETTINGS_CACHE_TIMEOUT</value>
+	</data>
+	<data name="MODULESETTINGS_CONTENT_HEIGHT">
+		<value>MODULESETTINGS_CONTENT_HEIGHT</value>
+	</data>
+	<data name="MODULESETTINGS_CONTENT_HEIGHT_DESCRIPTION">
+		<value>MODULESETTINGS_CONTENT_HEIGHT_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_CONTENT_SCROLLING">
+		<value>MODULESETTINGS_CONTENT_SCROLLING</value>
+	</data>
+	<data name="MODULESETTINGS_CONTENT_SCROLLING_DESCRIPTION">
+		<value>MODULESETTINGS_CONTENT_SCROLLING_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_CONTENT_WIDTH">
+		<value>MODULESETTINGS_CONTENT_WIDTH</value>
+	</data>
+	<data name="MODULESETTINGS_CONTENT_WIDTH_DESCRIPTION">
+		<value>MODULESETTINGS_CONTENT_WIDTH_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_CULTURE">
+		<value>MODULESETTINGS_CULTURE</value>
+	</data>
+	<data name="MODULESETTINGS_CULTURE_DESCRIPTION">
+		<value>MODULESETTINGS_CULTURE_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_MODULE_NAME">
+		<value>MODULESETTINGS_MODULE_NAME</value>
+	</data>
+	<data name="MODULESETTINGS_MODULE_THEME">
+		<value>MODULESETTINGS_MODULE_THEME</value>
+	</data>
+	<data name="MODULESETTINGS_MODULE_THEME_DESCRIPTION">
+		<value>MODULESETTINGS_MODULE_THEME_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_MOVE_TO_TAB">
+		<value>MODULESETTINGS_MOVE_TO_TAB</value>
+	</data>
+	<data name="MODULESETTINGS_ROLE_VIEW">
+		<value>MODULESETTINGS_ROLE_VIEW</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_ADD">
+		<value>MODULESETTINGS_ROLES_ADD</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_APPROVING">
+		<value>MODULESETTINGS_ROLES_APPROVING</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_DELETE">
+		<value>MODULESETTINGS_ROLES_DELETE</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_DELETE_MODULES">
+		<value>MODULESETTINGS_ROLES_DELETE_MODULES</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_EDIT">
+		<value>MODULESETTINGS_ROLES_EDIT</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_EDIT_COLLECTION">
+		<value>MODULESETTINGS_ROLES_EDIT_COLLECTION</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_MOVE_MODULES">
+		<value>MODULESETTINGS_ROLES_MOVE_MODULES</value>
+	</data>
+	<data name="MODULESETTINGS_ROLES_PUBLISHING">
+		<value>MODULESETTINGS_ROLES_PUBLISHING</value>
+	</data>
+	<data name="MODULESETTINGS_SETTINGS">
+		<value>MODULESETTINGS_SETTINGS</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_ARROW_BUTTONS">
+		<value>MODULESETTINGS_SHOW_ARROW_BUTTONS</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_ARROW_BUTTONS_DESCRIPTION">
+		<value>MODULESETTINGS_SHOW_ARROW_BUTTONS_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_COLLAPSABLE">
+		<value>MODULESETTINGS_SHOW_COLLAPSABLE</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_EVERYWHERE">
+		<value>MODULESETTINGS_SHOW_EVERYWHERE</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_HELP_BUTTON">
+		<value>MODULESETTINGS_SHOW_HELP_BUTTON</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_HELP_BUTTON_DESCRIPTION">
+		<value>MODULESETTINGS_SHOW_HELP_BUTTON_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_MODIFIED_BY">
+		<value>MODULESETTINGS_SHOW_MODIFIED_BY</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION">
+		<value>MODULESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_PRINT_BUTTION">
+		<value>MODULESETTINGS_SHOW_PRINT_BUTTION</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_PRINT_BUTTION_DESCRIPTION">
+		<value>MODULESETTINGS_SHOW_PRINT_BUTTION_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_TITLE">
+		<value>MODULESETTINGS_SHOW_TITLE</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_TITLE_DESCRIPTION">
+		<value>MODULESETTINGS_SHOW_TITLE_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_TITLE_PRINT">
+		<value>MODULESETTINGS_SHOW_TITLE_PRINT</value>
+	</data>
+	<data name="MODULESETTINGS_SHOW_TITLE_PRINT_DESCRIPTION">
+		<value>MODULESETTINGS_SHOW_TITLE_PRINT_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_SUPPORT_WORKFLOW">
+		<value>MODULESETTINGS_SUPPORT_WORKFLOW</value>
+	</data>
+	<data name="MODULESETTINGS_THEME">
+		<value>MODULESETTINGS_THEME</value>
+	</data>
+	<data name="MODULESETTINGS_THEME_ALT">
+		<value>MODULESETTINGS_THEME_ALT</value>
+	</data>
+	<data name="MODULESETTINGS_THEME_DEFAULT">
+		<value>MODULESETTINGS_THEME_DEFAULT</value>
+	</data>
+	<data name="MODULESETTINGS_THEME_DESCRIPTION">
+		<value>MODULESETTINGS_THEME_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_BG_BG">
+		<value>MODULESETTINGS_TITLE_BG_BG</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_BG_BG_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_BG_BG_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_CA">
+		<value>MODULESETTINGS_TITLE_CA</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_CA_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_CA_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_EN">
+		<value>MODULESETTINGS_TITLE_EN</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_EN_GB">
+		<value>MODULESETTINGS_TITLE_EN_GB</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_EN_GB_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_EN_GB_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_EN_US">
+		<value>MODULESETTINGS_TITLE_EN_US</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_EN_US_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_EN_US_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_EN_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_EN_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_ES">
+		<value>MODULESETTINGS_TITLE_ES</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_ES_ES">
+		<value>MODULESETTINGS_TITLE_ES_ES</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_ES_ES_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_ES_ES_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_ES_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_ES_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_FR">
+		<value>MODULESETTINGS_TITLE_FR</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_FR_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_FR_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_IT">
+		<value>MODULESETTINGS_TITLE_IT</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_IT_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_IT_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_NL_BE">
+		<value>MODULESETTINGS_TITLE_NL_BE</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_NL_BE_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_NL_BE_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_ZH_CN">
+		<value>MODULESETTINGS_TITLE_ZH_CN</value>
+	</data>
+	<data name="MODULESETTINGS_TITLE_ZH_CN_DESCRIPTION">
+		<value>MODULESETTINGS_TITLE_ZH_CN_DESCRIPTION</value>
+	</data>
+	<data name="MODULESETTINGS_WIDTH_STRETCHING">
+		<value>MODULESETTINGS_WIDTH_STRETCHING</value>
+	</data>
+	<data name="MODULESETTINGS_WIDTH_STRETCHING_DESCRIPTION">
+		<value>MODULESETTINGS_WIDTH_STRETCHING_DESCRIPTION</value>
+	</data>
+	<data name="MOVE_DOWN">
+		<value>MOVE_DOWN</value>
+	</data>
+	<data name="MOVE_LEFT">
+		<value>MOVE_LEFT</value>
+	</data>
+	<data name="MOVE_RIGHT">
+		<value>MOVE_RIGHT</value>
+	</data>
+	<data name="MOVE_TO">
+		<value>MOVE_TO</value>
+	</data>
+	<data name="MOVE_TO_TAB">
+		<value>MOVE_TO_TAB</value>
+	</data>
+	<data name="MOVE_UP">
+		<value>MOVE_UP</value>
+	</data>
+	<data name="MOVEDOWN">
+		<value>MOVEDOWN</value>
+	</data>
+	<data name="MOVEITEM">
+		<value>MOVEITEM</value>
+	</data>
+	<data name="MOVELEFT">
+		<value>MOVELEFT</value>
+	</data>
+	<data name="MOVERIGHT">
+		<value>MOVERIGHT</value>
+	</data>
+	<data name="MOVEUP">
+		<value>MOVEUP</value>
+	</data>
+	<data name="NAME">
+		<value>Name</value>
+	</data>
+	<data name="NAVIGATION_SETTINGS">
+		<value>NAVIGATION_SETTINGS</value>
+	</data>
+	<data name="NEW_FOLDER">
+		<value>NEW_FOLDER</value>
+	</data>
+	<data name="NEW_PORTAL_ERROR">
+		<value>NEW_PORTAL_ERROR</value>
+	</data>
+	<data name="NEWSLETTER_BLACKLISTED">
+		<value>NEWSLETTER_BLACKLISTED</value>
+	</data>
+	<data name="NEWSLETTER_DEFAULTEMAIL">
+		<value>NEWSLETTER_DEFAULTEMAIL</value>
+	</data>
+	<data name="NEWSLETTER_DEFAULTNAME">
+		<value>NEWSLETTER_DEFAULTNAME</value>
+	</data>
+	<data name="NEWSLETTER_DIRECTURL">
+		<value>NEWSLETTER_DIRECTURL</value>
+	</data>
+	<data name="NEWSLETTER_DONOTRESENDWITHIN">
+		<value>NEWSLETTER_DONOTRESENDWITHIN</value>
+	</data>
+	<data name="NEWSLETTER_DONOTRESENDWITHIN_DESCRIPTION">
+		<value>NEWSLETTER_DONOTRESENDWITHIN_DESCRIPTION</value>
+	</data>
+	<data name="NEWSLETTER_ERROR">
+		<value>NEWSLETTER_ERROR</value>
+	</data>
+	<data name="NEWSLETTER_HTML_MODE">
+		<value>NEWSLETTER_HTML_MODE</value>
+	</data>
+	<data name="NEWSLETTER_HTMLTEMPLATE">
+		<value>NEWSLETTER_HTMLTEMPLATE</value>
+	</data>
+	<data name="NEWSLETTER_HTMLTEMPLATE_DESCRIPTION">
+		<value>NEWSLETTER_HTMLTEMPLATE_DESCRIPTION</value>
+	</data>
+	<data name="NEWSLETTER_INSERT_BREAK_LINES">
+		<value>NEWSLETTER_INSERT_BREAK_LINES</value>
+	</data>
+	<data name="NEWSLETTER_INVALID_RECIPIENTS">
+		<value>NEWSLETTER_INVALID_RECIPIENTS</value>
+	</data>
+	<data name="NEWSLETTER_LOCALTIME">
+		<value>NEWSLETTER_LOCALTIME</value>
+	</data>
+	<data name="NEWSLETTER_LOGINHOMEPAGE">
+		<value>NEWSLETTER_LOGINHOMEPAGE</value>
+	</data>
+	<data name="NEWSLETTER_LOGINHOMEPAGE_DESCRIPTION">
+		<value>NEWSLETTER_LOGINHOMEPAGE_DESCRIPTION</value>
+	</data>
+	<data name="NEWSLETTER_MESSAGE_BODY">
+		<value>NEWSLETTER_MESSAGE_BODY</value>
+	</data>
+	<data name="NEWSLETTER_MSG">
+		<value>NEWSLETTER_MSG</value>
+	</data>
+	<data name="NEWSLETTER_MSG_TEST">
+		<value>NEWSLETTER_MSG_TEST</value>
+	</data>
+	<data name="NEWSLETTER_NORECIPIENTS">
+		<value>NEWSLETTER_NORECIPIENTS</value>
+	</data>
+	<data name="NEWSLETTER_PASSWORD">
+		<value>NEWSLETTER_PASSWORD</value>
+	</data>
+	<data name="NEWSLETTER_SENDDATE">
+		<value>NEWSLETTER_SENDDATE</value>
+	</data>
+	<data name="NEWSLETTER_SENDER_EMAIL_ADDRESS">
+		<value>NEWSLETTER_SENDER_EMAIL_ADDRESS</value>
+	</data>
+	<data name="NEWSLETTER_SENDER_OPTIONAL_NAME">
+		<value>NEWSLETTER_SENDER_OPTIONAL_NAME</value>
+	</data>
+	<data name="NEWSLETTER_SENDINGTO">
+		<value>NEWSLETTER_SENDINGTO</value>
+	</data>
+	<data name="NEWSLETTER_SENDTO">
+		<value>NEWSLETTER_SENDTO</value>
+	</data>
+	<data name="NEWSLETTER_SUBJECT">
+		<value>NEWSLETTER_SUBJECT</value>
+	</data>
+	<data name="NEWSLETTER_TESTSENDTO">
+		<value>NEWSLETTER_TESTSENDTO</value>
+	</data>
+	<data name="NEWSLETTER_TITLE">
+		<value>NEWSLETTER_TITLE</value>
+	</data>
+	<data name="NEWSLETTER_USERBLOCK">
+		<value>NEWSLETTER_USERBLOCK</value>
+	</data>
+	<data name="NEWSLETTER_USERBLOCK_DESCRIPTION">
+		<value>NEWSLETTER_USERBLOCK_DESCRIPTION</value>
+	</data>
+	<data name="NEWSLETTER_USEREMAIL">
+		<value>NEWSLETTER_USEREMAIL</value>
+	</data>
+	<data name="NEWSLETTER_USERNAME">
+		<value>NEWSLETTER_USERNAME</value>
+	</data>
+	<data name="NEXT">
+		<value>Next</value>
+	</data>
+	<data name="NO_ACCOUNT">
+		<value>NO_ACCOUNT</value>
+	</data>
+	<data name="NO_FILE_MESSAGE">
+		<value>NO_FILE_MESSAGE</value>
+	</data>
+	<data name="NO_FOLDER_SPECIFIED_MESSAGE">
+		<value>NO_FOLDER_SPECIFIED_MESSAGE</value>
+	</data>
+	<data name="NO_IMAGE_MESSAGE">
+		<value>NO_IMAGE_MESSAGE</value>
+	</data>
+	<data name="NO_MODULE">
+		<value>NO_MODULE</value>
+	</data>
+	<data name="NOITEMS">
+		<value>NOITEMS</value>
+	</data>
+	<data name="NONE">
+		<value>NONE</value>
+	</data>
+	<data name="NOTE">
+		<value>NOTE</value>
+	</data>
+	<data name="OF">
+		<value>OF</value>
+	</data>
+	<data name="OK">
+		<value>OK</value>
+	</data>
+	<data name="ON">
+		<value>on</value>
+	</data>
+	<data name="ONLY_FEATURED">
+		<value>ONLY_FEATURED</value>
+	</data>
+	<data name="OR">
+		<value>OR</value>
+	</data>
+	<data name="ORDER_OK">
+		<value>ORDER_OK</value>
+	</data>
+	<data name="ORDER_RECEIPT_NUMBER">
+		<value>ORDER_RECEIPT_NUMBER</value>
+	</data>
+	<data name="ORDER_WAIT_CONFIRM">
+		<value>ORDER_WAIT_CONFIRM</value>
+	</data>
+	<data name="ORIGINALHEIGHT">
+		<value>ORIGINALHEIGHT</value>
+	</data>
+	<data name="ORIGINALRESIZE">
+		<value>ORIGINALRESIZE</value>
+	</data>
+	<data name="ORIGINALWIDTH">
+		<value>ORIGINALWIDTH</value>
+	</data>
+	<data name="OWNER">
+		<value>OWNER</value>
+	</data>
+	<data name="PAGE">
+		<value>Page</value>
+	</data>
+	<data name="PAGELAYOUTENABLE">
+		<value>PAGELAYOUTENABLE</value>
+	</data>
+	<data name="PASSWORD">
+		<value>PASSWORD</value>
+	</data>
+	<data name="PASSWORD_DO_NOT_MATCH">
+		<value>PASSWORD_DO_NOT_MATCH</value>
+	</data>
+	<data name="PASSWORD_NOT_MATCH">
+		<value>PASSWORD_NOT_MATCH</value>
+	</data>
+	<data name="PHONE">
+		<value>Phone</value>
+	</data>
+	<data name="PICTURES_CAPTION">
+		<value>PICTURES_CAPTION</value>
+	</data>
+	<data name="PICTURES_DISPLAY_ORDER">
+		<value>PICTURES_DISPLAY_ORDER</value>
+	</data>
+	<data name="PICTURES_DONT_RESIZE">
+		<value>PICTURES_DONT_RESIZE</value>
+	</data>
+	<data name="PICTURES_FAILED_TO_LOAD">
+		<value>PICTURES_FAILED_TO_LOAD</value>
+	</data>
+	<data name="PICTURES_FILE">
+		<value>PICTURES_FILE</value>
+	</data>
+	<data name="PICTURES_FIXED_WIDTH_AND_HEIGHT">
+		<value>PICTURES_FIXED_WIDTH_AND_HEIGHT</value>
+	</data>
+	<data name="PICTURES_FLIP">
+		<value>PICTURES_FLIP</value>
+	</data>
+	<data name="PICTURES_HORIZONTAL">
+		<value>PICTURES_HORIZONTAL</value>
+	</data>
+	<data name="PICTURES_INCLUDE_EXIF">
+		<value>PICTURES_INCLUDE_EXIF</value>
+	</data>
+	<data name="PICTURES_KEYWORDS">
+		<value>PICTURES_KEYWORDS</value>
+	</data>
+	<data name="PICTURES_LONG_DESCRIPTION">
+		<value>PICTURES_LONG_DESCRIPTION</value>
+	</data>
+	<data name="PICTURES_MAINTAIN_ASPECT_FIXED_HEIGHT">
+		<value>PICTURES_MAINTAIN_ASPECT_FIXED_HEIGHT</value>
+	</data>
+	<data name="PICTURES_MAINTAIN_ASPECT_FIXED_WIDTH">
+		<value>PICTURES_MAINTAIN_ASPECT_FIXED_WIDTH</value>
+	</data>
+	<data name="PICTURES_ROTATE">
+		<value>PICTURES_ROTATE</value>
+	</data>
+	<data name="PICTURES_SHORT_DESCRIPTION">
+		<value>PICTURES_SHORT_DESCRIPTION</value>
+	</data>
+	<data name="PICTURES_VERTICAL">
+		<value>PICTURES_VERTICAL</value>
+	</data>
+	<data name="PICTURESPERPAGE">
+		<value>PICTURESPERPAGE</value>
+	</data>
+	<data name="PIVA">
+		<value>PIVA</value>
+	</data>
+	<data name="PORTAL_HOME">
+		<value>PORTAL_HOME</value>
+	</data>
+	<data name="PORTALS">
+		<value>PORTALS</value>
+	</data>
+	<data name="PORTALSEARCH_ALL">
+		<value>PORTALSEARCH_ALL</value>
+	</data>
+	<data name="PORTALSEARCH_FIELD">
+		<value>PORTALSEARCH_FIELD</value>
+	</data>
+	<data name="PORTALSEARCH_HIT">
+		<value>PORTALSEARCH_HIT</value>
+	</data>
+	<data name="PORTALSEARCH_HITS">
+		<value>PORTALSEARCH_HITS</value>
+	</data>
+	<data name="PORTALSEARCH_LINK">
+		<value>PORTALSEARCH_LINK</value>
+	</data>
+	<data name="PORTALSEARCH_MISSING">
+		<value>PORTALSEARCH_MISSING</value>
+	</data>
+	<data name="PORTALSEARCH_MODULE">
+		<value>PORTALSEARCH_MODULE</value>
+	</data>
+	<data name="PORTALSEARCH_MODULETITLE">
+		<value>PORTALSEARCH_MODULETITLE</value>
+	</data>
+	<data name="PORTALSEARCH_SEARCH">
+		<value>PORTALSEARCH_SEARCH</value>
+	</data>
+	<data name="PORTALSEARCH_TAB">
+		<value>PORTALSEARCH_TAB</value>
+	</data>
+	<data name="PORTALSEARCH_TESTINFO">
+		<value>PORTALSEARCH_TESTINFO</value>
+	</data>
+	<data name="PORTALSEARCH_TITLE">
+		<value>PORTALSEARCH_TITLE</value>
+	</data>
+	<data name="PORTALSEARCH_TOPIC">
+		<value>PORTALSEARCH_TOPIC</value>
+	</data>
+	<data name="PORTALSEARCH_USER">
+		<value>PORTALSEARCH_USER</value>
+	</data>
+	<data name="POSTALCODE">
+		<value>POSTALCODE</value>
+	</data>
+	<data name="POSTED_BY">
+		<value>POSTED_BY</value>
+	</data>
+	<data name="POSTED_DATE">
+		<value>POSTED_DATE</value>
+	</data>
+	<data name="PREVIEW">
+		<value>Preview</value>
+	</data>
+	<data name="PREVIOUS">
+		<value>PREVIOUS</value>
+	</data>
+	<data name="PRICE">
+		<value>PRICE</value>
+	</data>
+	<data name="PRICE_FROM">
+		<value>PRICE_FROM</value>
+	</data>
+	<data name="PRODUCT_ACCOUNT_INFORMATION">
+		<value>PRODUCT_ACCOUNT_INFORMATION</value>
+	</data>
+	<data name="PRODUCT_ADD_OPTION">
+		<value>PRODUCT_ADD_OPTION</value>
+	</data>
+	<data name="PRODUCT_ADD_TO_CART">
+		<value>PRODUCT_ADD_TO_CART</value>
+	</data>
+	<data name="PRODUCT_CANNOT_UPDATE">
+		<value>PRODUCT_CANNOT_UPDATE</value>
+	</data>
+	<data name="PRODUCT_CATEGORY">
+		<value>PRODUCT_CATEGORY</value>
+	</data>
+	<data name="PRODUCT_CATEGORY_DESCRIPTION">
+		<value>PRODUCT_CATEGORY_DESCRIPTION</value>
+	</data>
+	<data name="PRODUCT_CATEGORY_NOT_FOUND">
+		<value>PRODUCT_CATEGORY_NOT_FOUND</value>
+	</data>
+	<data name="PRODUCT_CHECKOUT">
+		<value>PRODUCT_CHECKOUT</value>
+	</data>
+	<data name="PRODUCT_CONTINUE_SHOPPING">
+		<value>PRODUCT_CONTINUE_SHOPPING</value>
+	</data>
+	<data name="PRODUCT_DELETE_OPTION">
+		<value>PRODUCT_DELETE_OPTION</value>
+	</data>
+	<data name="PRODUCT_DISPLAY_FEATURED_ITEMS">
+		<value>PRODUCT_DISPLAY_FEATURED_ITEMS</value>
+	</data>
+	<data name="PRODUCT_EMPTY_CART">
+		<value>PRODUCT_EMPTY_CART</value>
+	</data>
+	<data name="PRODUCT_FEATURED_ITEM">
+		<value>PRODUCT_FEATURED_ITEM</value>
+	</data>
+	<data name="PRODUCT_FEATURED_ITEM_DESCRIPTION">
+		<value>PRODUCT_FEATURED_ITEM_DESCRIPTION</value>
+	</data>
+	<data name="PRODUCT_HOME">
+		<value>PRODUCT_HOME</value>
+	</data>
+	<data name="PRODUCT_ID">
+		<value>PRODUCT_ID</value>
+	</data>
+	<data name="PRODUCT_INCLUDING_TAXES">
+		<value>PRODUCT_INCLUDING_TAXES</value>
+	</data>
+	<data name="PRODUCT_INPUT_PROBLEM">
+		<value>PRODUCT_INPUT_PROBLEM</value>
+	</data>
+	<data name="PRODUCT_MODELNAME">
+		<value>PRODUCT_MODELNAME</value>
+	</data>
+	<data name="PRODUCT_MODELNUMBER">
+		<value>PRODUCT_MODELNUMBER</value>
+	</data>
+	<data name="PRODUCT_MUST_LOG_IN_FOR_CHECKOUT">
+		<value>PRODUCT_MUST_LOG_IN_FOR_CHECKOUT</value>
+	</data>
+	<data name="PRODUCT_NAME">
+		<value>PRODUCT_NAME</value>
+	</data>
+	<data name="PRODUCT_OPTIONS">
+		<value>PRODUCT_OPTIONS</value>
+	</data>
+	<data name="PRODUCT_ORDER_DATE_CREATED">
+		<value>PRODUCT_ORDER_DATE_CREATED</value>
+	</data>
+	<data name="PRODUCT_ORDER_DATE_MODIFIED">
+		<value>PRODUCT_ORDER_DATE_MODIFIED</value>
+	</data>
+	<data name="PRODUCT_ORDER_REFERENCE">
+		<value>PRODUCT_ORDER_REFERENCE</value>
+	</data>
+	<data name="PRODUCT_ORDER_TOTAL">
+		<value>PRODUCT_ORDER_TOTAL</value>
+	</data>
+	<data name="PRODUCT_PAYMENT_METHOD">
+		<value>PRODUCT_PAYMENT_METHOD</value>
+	</data>
+	<data name="PRODUCT_PRICE">
+		<value>PRODUCT_PRICE</value>
+	</data>
+	<data name="PRODUCT_PRICE_NOT_AVAILABLE">
+		<value>PRODUCT_PRICE_NOT_AVAILABLE</value>
+	</data>
+	<data name="PRODUCT_PRICE_WITH_TAX">
+		<value>PRODUCT_PRICE_WITH_TAX</value>
+	</data>
+	<data name="PRODUCT_QUANTITY">
+		<value>PRODUCT_QUANTITY</value>
+	</data>
+	<data name="PRODUCT_REFERENCE">
+		<value>PRODUCT_REFERENCE</value>
+	</data>
+	<data name="PRODUCT_REMOVE">
+		<value>PRODUCT_REMOVE</value>
+	</data>
+	<data name="PRODUCT_SELECT_CATEGORY">
+		<value>PRODUCT_SELECT_CATEGORY</value>
+	</data>
+	<data name="PRODUCT_SHIPPING">
+		<value>PRODUCT_SHIPPING</value>
+	</data>
+	<data name="PRODUCT_SHIPPING_INFORMATION">
+		<value>PRODUCT_SHIPPING_INFORMATION</value>
+	</data>
+	<data name="PRODUCT_SHIPPING_METHOD">
+		<value>PRODUCT_SHIPPING_METHOD</value>
+	</data>
+	<data name="PRODUCT_SHOP_HOME">
+		<value>PRODUCT_SHOP_HOME</value>
+	</data>
+	<data name="PRODUCT_SUBTOTAL">
+		<value>PRODUCT_SUBTOTAL</value>
+	</data>
+	<data name="PRODUCT_TAXRATE">
+		<value>PRODUCT_TAXRATE</value>
+	</data>
+	<data name="PRODUCT_TOTAL">
+		<value>PRODUCT_TOTAL</value>
+	</data>
+	<data name="PRODUCT_TOTAL_EXPENSES">
+		<value>PRODUCT_TOTAL_EXPENSES</value>
+	</data>
+	<data name="PRODUCT_TOTAL_PRICE_(INC_TAXES)">
+		<value>PRODUCT_TOTAL_PRICE_(INC_TAXES)</value>
+	</data>
+	<data name="PRODUCT_TOTAL_TAXES">
+		<value>PRODUCT_TOTAL_TAXES</value>
+	</data>
+	<data name="PRODUCT_TOTAL_WEIGHT">
+		<value>PRODUCT_TOTAL_WEIGHT</value>
+	</data>
+	<data name="PRODUCT_TOTAL_WITH_TAXES">
+		<value>PRODUCT_TOTAL_WITH_TAXES</value>
+	</data>
+	<data name="PRODUCT_UNIT">
+		<value>PRODUCT_UNIT</value>
+	</data>
+	<data name="PRODUCT_UNITPRICE">
+		<value>PRODUCT_UNITPRICE</value>
+	</data>
+	<data name="PRODUCT_UPDATE">
+		<value>PRODUCT_UPDATE</value>
+	</data>
+	<data name="PRODUCT_VIEW_ACCOUNT">
+		<value>PRODUCT_VIEW_ACCOUNT</value>
+	</data>
+	<data name="PRODUCT_VIEW_CART">
+		<value>PRODUCT_VIEW_CART</value>
+	</data>
+	<data name="PRODUCT_WEIGHT">
+		<value>PRODUCT_WEIGHT</value>
+	</data>
+	<data name="PRODUCTS_DISPLAYING_ORDER">
+		<value>PRODUCTS_DISPLAYING_ORDER</value>
+	</data>
+	<data name="PRODUCTS_INSTRUCTIONS">
+		<value>PRODUCTS_INSTRUCTIONS</value>
+	</data>
+	<data name="PRODUCTS_NO_ORDERS_TO_DISPLAY">
+		<value>PRODUCTS_NO_ORDERS_TO_DISPLAY</value>
+	</data>
+	<data name="PRODUCTS_ORDER_HISTORY_DISPLAY">
+		<value>PRODUCTS_ORDER_HISTORY_DISPLAY</value>
+	</data>
+	<data name="PROFILE_INFO">
+		<value>PROFILE_INFO</value>
+	</data>
+	<data name="PROFILE_INFO_ERROR">
+		<value>PROFILE_INFO_ERROR</value>
+	</data>
+	<data name="PROPERTIES">
+		<value>PROPERTIES</value>
+	</data>
+	<data name="PROV_STATE">
+		<value>PROV_STATE</value>
+	</data>
+	<data name="QUICKSEARCH">
+		<value>QUICKSEARCH</value>
+	</data>
+	<data name="Appleseed_RUNNING_VERSION">
+		<value>Appleseed_RUNNING_VERSION</value>
+	</data>
+	<data name="READ_FULL_ANNOUNCE">
+		<value>READ_FULL_ANNOUNCE</value>
+	</data>
+	<data name="REASON">
+		<value>REASON</value>
+	</data>
+	<data name="REGION">
+		<value>REGION</value>
+	</data>
+	<data name="REGISTER">
+		<value>REGISTER</value>
+	</data>
+	<data name="REGISTER_DESCRIPTION">
+		<value>REGISTER_DESCRIPTION</value>
+	</data>
+	<data name="REGISTER_DIFFERENT">
+		<value>REGISTER_DIFFERENT</value>
+	</data>
+	<data name="REGISTER_NOW">
+		<value>REGISTER_NOW</value>
+	</data>
+	<data name="REGISTER_REQUIRED">
+		<value>REGISTER_REQUIRED</value>
+	</data>
+	<data name="RegisterApplyTheme">
+		<value>RegisterApplyTheme</value>
+	</data>
+	<data name="REGISTERED_USERS">
+		<value>REGISTERED_USERS</value>
+	</data>
+	<data name="RegisterShowTitle">
+		<value>RegisterShowTitle</value>
+	</data>
+	<data name="RegisterTheme">
+		<value>RegisterTheme</value>
+	</data>
+	<data name="REGISTRATION_FAILED">
+		<value>REGISTRATION_FAILED</value>
+	</data>
+	<data name="REGISTRATION_FAILED_EXISTING_EMAIL_ADDRESS">
+		<value>REGISTRATION_FAILED_EXISTING_EMAIL_ADDRESS</value>
+	</data>
+	<data name="REJECT_MODULE_CONTENT">
+		<value>REJECT_MODULE_CONTENT</value>
+	</data>
+	<data name="REMEMBER_LOGIN">
+		<value>REMEMBER_LOGIN</value>
+	</data>
+	<data name="REPEATCOLUMNS">
+		<value>REPEATCOLUMNS</value>
+	</data>
+	<data name="REPEATDIRECTION">
+		<value>REPEATDIRECTION</value>
+	</data>
+	<data name="REPEATDIRECTIONSETTING">
+		<value>REPEATDIRECTIONSETTING</value>
+	</data>
+	<data name="REPORT_TYPE">
+		<value>REPORT_TYPE</value>
+	</data>
+	<data name="REQUEST_MODULE_CONTENTAPPROVAL">
+		<value>REQUEST_MODULE_CONTENTAPPROVAL</value>
+	</data>
+	<data name="RETURN">
+		<value>RETURN</value>
+	</data>
+	<data name="RETURN_HOME">
+		<value>RETURN_HOME</value>
+	</data>
+	<data name="RETURNHOME">
+		<value>RETURNHOME</value>
+	</data>
+	<data name="RIGHT">
+		<value>RIGHT</value>
+	</data>
+	<data name="ROLE_ADD_NEW_USER">
+		<value>ROLE_ADD_NEW_USER</value>
+	</data>
+	<data name="ROLE_ADD_USER">
+		<value>ROLE_ADD_USER</value>
+	</data>
+	<data name="ROLE_CHANGE_MEMBERS">
+		<value>ROLE_CHANGE_MEMBERS</value>
+	</data>
+	<data name="ROLE_DELETE_FAILED">
+		<value>ROLE_DELETE_FAILED</value>
+	</data>
+	<data name="ROLE_ERROR_ADD">
+		<value>ROLE_ERROR_ADD</value>
+	</data>
+	<data name="ROLE_MEMBERSHIP">
+		<value>ROLE_MEMBERSHIP</value>
+	</data>
+	<data name="ROLE_NEW_ROLE">
+		<value>ROLE_NEW_ROLE</value>
+	</data>
+	<data name="ROLE_SAVE_CHANGES">
+		<value>ROLE_SAVE_CHANGES</value>
+	</data>
+	<data name="ROLES_DESCRIPTION">
+		<value>ROLES_DESCRIPTION</value>
+	</data>
+	<data name="ROLESADD">
+		<value>ROLESADD</value>
+	</data>
+	<data name="ROLESCOLLECTION">
+		<value>ROLESCOLLECTION</value>
+	</data>
+	<data name="ROLESDELETE">
+		<value>ROLESDELETE</value>
+	</data>
+	<data name="ROLESEDIT">
+		<value>ROLESEDIT</value>
+	</data>
+	<data name="ROLESVIEW">
+		<value>ROLESVIEW</value>
+	</data>
+	<data name="ROOM_NUMBER">
+		<value>ROOM_NUMBER</value>
+	</data>
+	<data name="ROOT_LEVEL">
+		<value>ROOT_LEVEL</value>
+	</data>
+	<data name="SAVE">
+		<value>Save</value>
+	</data>
+	<data name="SAVE_AND_CLOSE">
+		<value>SAVE_AND_CLOSE</value>
+	</data>
+	<data name="SAVE_CHANGES">
+		<value>SAVE_CHANGES</value>
+	</data>
+	<data name="SAVE_DESKTOP">
+		<value>SAVE_DESKTOP</value>
+	</data>
+	<data name="SAVEUSER">
+		<value>SAVEUSER</value>
+	</data>
+	<data name="SEARCH">
+		<value>Search</value>
+	</data>
+	<data name="SEARCH_BTN">
+		<value>SEARCH_BTN</value>
+	</data>
+	<data name="SEARCH_STRING">
+		<value>SEARCH_STRING</value>
+	</data>
+	<data name="SEARCHFIELD">
+		<value>SEARCHFIELD</value>
+	</data>
+	<data name="SECURITY">
+		<value>SECURITY</value>
+	</data>
+	<data name="SECURITY_USER_SETTINGS">
+		<value>SECURITY_USER_SETTINGS</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERADD">
+		<value>SECURITYCHECK_HEADERADD</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERADMIN">
+		<value>SECURITYCHECK_HEADERADMIN</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERDELETE">
+		<value>SECURITYCHECK_HEADERDELETE</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERDELMOD">
+		<value>SECURITYCHECK_HEADERDELMOD</value>
+	</data>
+	<data name="SECURITYCHECK_HEADEREDIT">
+		<value>SECURITYCHECK_HEADEREDIT</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERMOVE">
+		<value>SECURITYCHECK_HEADERMOVE</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERNAME">
+		<value>SECURITYCHECK_HEADERNAME</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERPROPERTIES">
+		<value>SECURITYCHECK_HEADERPROPERTIES</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERTAB">
+		<value>SECURITYCHECK_HEADERTAB</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERTYPE">
+		<value>SECURITYCHECK_HEADERTYPE</value>
+	</data>
+	<data name="SECURITYCHECK_HEADERVIEW">
+		<value>SECURITYCHECK_HEADERVIEW</value>
+	</data>
+	<data name="SECURITYCHECK_ONLYADMIN">
+		<value>SECURITYCHECK_ONLYADMIN</value>
+	</data>
+	<data name="SECURITYCHECK_SEARCH">
+		<value>SECURITYCHECK_SEARCH</value>
+	</data>
+	<data name="SELECT">
+		<value>SELECT</value>
+	</data>
+	<data name="SELECT_ALL">
+		<value>SELECT_ALL</value>
+	</data>
+	<data name="SELECT_NONE">
+		<value>SELECT_NONE</value>
+	</data>
+	<data name="SEND_NEWSLETTER">
+		<value>SEND_NEWSLETTER</value>
+	</data>
+	<data name="SENDNEWSLETTER">
+		<value>SENDNEWSLETTER</value>
+	</data>
+	<data name="SENDTHTS_BODY">
+		<value>SENDTHTS_BODY</value>
+	</data>
+	<data name="SENDTHTS_BODY_ERR">
+		<value>SENDTHTS_BODY_ERR</value>
+	</data>
+	<data name="SENDTHTS_CLEAR">
+		<value>SENDTHTS_CLEAR</value>
+	</data>
+	<data name="SENDTHTS_DES_TXT">
+		<value>SENDTHTS_DES_TXT</value>
+	</data>
+	<data name="SENDTHTS_EMAILBLANK">
+		<value>SENDTHTS_EMAILBLANK</value>
+	</data>
+	<data name="SENDTHTS_EMAILVALID">
+		<value>SENDTHTS_EMAILVALID</value>
+	</data>
+	<data name="SENDTHTS_NAME">
+		<value>SENDTHTS_NAME</value>
+	</data>
+	<data name="SENDTHTS_RECIPIENT">
+		<value>SENDTHTS_RECIPIENT</value>
+	</data>
+	<data name="SENDTHTS_REMAIL">
+		<value>SENDTHTS_REMAIL</value>
+	</data>
+	<data name="SENDTHTS_SEND">
+		<value>SENDTHTS_SEND</value>
+	</data>
+	<data name="SENDTHTS_SENT">
+		<value>SENDTHTS_SENT</value>
+	</data>
+	<data name="SENDTHTS_SUBJECT">
+		<value>SENDTHTS_SUBJECT</value>
+	</data>
+	<data name="SENDTHTS_YREMAIL">
+		<value>SENDTHTS_YREMAIL</value>
+	</data>
+	<data name="SENDTHTS_YRNAME">
+		<value>SENDTHTS_YRNAME</value>
+	</data>
+	<data name="SETTING_BETWEEN">
+		<value>SETTING_BETWEEN</value>
+	</data>
+	<data name="SETTING_REQUIRED">
+		<value>SETTING_REQUIRED</value>
+	</data>
+	<data name="SETTINGS">
+		<value>Settings</value>
+	</data>
+	<data name="SHOW_COLUMN_ADDRESS">
+		<value>SHOW_COLUMN_ADDRESS</value>
+	</data>
+	<data name="SHOW_COLUMN_ADDRESS_DESCRIPTION">
+		<value>SHOW_COLUMN_ADDRESS_DESCRIPTION</value>
+	</data>
+	<data name="SHOW_COLUMN_CONTACT1">
+		<value>SHOW_COLUMN_CONTACT1</value>
+	</data>
+	<data name="SHOW_COLUMN_CONTACT1_DESCRIPTION">
+		<value>SHOW_COLUMN_CONTACT1_DESCRIPTION</value>
+	</data>
+	<data name="SHOW_COLUMN_CONTACT2">
+		<value>SHOW_COLUMN_CONTACT2</value>
+	</data>
+	<data name="SHOW_COLUMN_CONTACT2_DESCRIPTION">
+		<value>SHOW_COLUMN_CONTACT2_DESCRIPTION</value>
+	</data>
+	<data name="SHOW_COLUMN_EMAIL">
+		<value>SHOW_COLUMN_EMAIL</value>
+	</data>
+	<data name="SHOW_COLUMN_EMAIL_DESCRIPTION">
+		<value>SHOW_COLUMN_EMAIL_DESCRIPTION</value>
+	</data>
+	<data name="SHOW_COLUMN_FAX">
+		<value>SHOW_COLUMN_FAX</value>
+	</data>
+	<data name="SHOW_COLUMN_FAX_DESCRIPTION">
+		<value>SHOW_COLUMN_FAX_DESCRIPTION</value>
+	</data>
+	<data name="SHOW_FLASH_GALLERY">
+		<value>SHOW_FLASH_GALLERY</value>
+	</data>
+	<data name="SHOWABSTRACT">
+		<value>SHOWABSTRACT</value>
+	</data>
+	<data name="SHOWADDRESS">
+		<value>SHOWADDRESS</value>
+	</data>
+	<data name="SHOWBORDER">
+		<value>SHOWBORDER</value>
+	</data>
+	<data name="SHOWCALENDAR">
+		<value>SHOWCALENDAR</value>
+	</data>
+	<data name="SHOWCOLLAPSABLE">
+		<value>SHOWCOLLAPSABLE</value>
+	</data>
+	<data name="SHOWCREATEDBYUSER">
+		<value>SHOWCREATEDBYUSER</value>
+	</data>
+	<data name="SHOWCREATEDDATE">
+		<value>SHOWCREATEDDATE</value>
+	</data>
+	<data name="SHOWDATE">
+		<value>SHOWDATE</value>
+	</data>
+	<data name="SHOWDDFIELD">
+		<value>SHOWDDFIELD</value>
+	</data>
+	<data name="SHOWDDFIELD_DESCRIPTION">
+		<value>SHOWDDFIELD_DESCRIPTION</value>
+	</data>
+	<data name="SHOWDDMODULE">
+		<value>SHOWDDMODULE</value>
+	</data>
+	<data name="SHOWDDMODULE_DESCRIPTION">
+		<value>SHOWDDMODULE_DESCRIPTION</value>
+	</data>
+	<data name="SHOWDDTOPIC">
+		<value>SHOWDDTOPIC</value>
+	</data>
+	<data name="SHOWDDTOPIC_DESCRIPTION">
+		<value>SHOWDDTOPIC_DESCRIPTION</value>
+	</data>
+	<data name="SHOWEVERYWHERE">
+		<value>SHOWEVERYWHERE</value>
+	</data>
+	<data name="SHOWID">
+		<value>SHOWID</value>
+	</data>
+	<data name="SHOWLINK">
+		<value>SHOWLINK</value>
+	</data>
+	<data name="SHOWMAP">
+		<value>SHOWMAP</value>
+	</data>
+	<data name="SHOWMOBILE">
+		<value>SHOWMOBILE</value>
+	</data>
+	<data name="SHOWMODIFIEDBY">
+		<value>SHOWMODIFIEDBY</value>
+	</data>
+	<data name="SHOWMODIFIEDBY_DESCRIPTION">
+		<value>SHOWMODIFIEDBY_DESCRIPTION</value>
+	</data>
+	<data name="SHOWMODULEFRIENDLYNAME">
+		<value>SHOWMODULEFRIENDLYNAME</value>
+	</data>
+	<data name="SHOWMODULENAME">
+		<value>SHOWMODULENAME</value>
+	</data>
+	<data name="SHOWMODULETITLE">
+		<value>SHOWMODULETITLE</value>
+	</data>
+	<data name="SHOWPRINTBUTTON">
+		<value>SHOWPRINTBUTTON</value>
+	</data>
+	<data name="SHOWPRINTBUTTON_DESCRIPTION">
+		<value>SHOWPRINTBUTTON_DESCRIPTION</value>
+	</data>
+	<data name="SHOWSEARCHTITLE">
+		<value>SHOWSEARCHTITLE</value>
+	</data>
+	<data name="SHOWTABID">
+		<value>SHOWTABID</value>
+	</data>
+	<data name="SHOWTABNAME">
+		<value>SHOWTABNAME</value>
+	</data>
+	<data name="SHOWTESTINFO">
+		<value>SHOWTESTINFO</value>
+	</data>
+	<data name="SHOWTHUMBNAILSPANEL">
+		<value>SHOWTHUMBNAILSPANEL</value>
+	</data>
+	<data name="SHOWTITLE">
+		<value>SHOWTITLE</value>
+	</data>
+	<data name="SHOWTITLE_DESCRIPTION">
+		<value>SHOWTITLE_DESCRIPTION</value>
+	</data>
+	<data name="SHOWUPLOAD">
+		<value>SHOWUPLOAD</value>
+	</data>
+	<data name="SHOWUPLOAD_DESCRIPTION">
+		<value>SHOWUPLOAD_DESCRIPTION</value>
+	</data>
+	<data name="SHOWZOOM">
+		<value>SHOWZOOM</value>
+	</data>
+	<data name="SIGNIN">
+		<value>SIGNIN</value>
+	</data>
+	<data name="SIGNIN_ALLOW_AUTOCOMPLETE">
+		<value>SIGNIN_ALLOW_AUTOCOMPLETE</value>
+	</data>
+	<data name="SIGNIN_ALLOW_AUTOCOMPLETE_DESCRIPTION">
+		<value>SIGNIN_ALLOW_AUTOCOMPLETE_DESCRIPTION</value>
+	</data>
+	<data name="SIGNIN_ALLOW_REMEMBER_LOGIN">
+		<value>SIGNIN_ALLOW_REMEMBER_LOGIN</value>
+	</data>
+	<data name="SIGNIN_ALLOW_REMEMBER_LOGIN_DESCRIPTION">
+		<value>SIGNIN_ALLOW_REMEMBER_LOGIN_DESCRIPTION</value>
+	</data>
+	<data name="SIGNIN_ALLOW_SEND_PASSWORD">
+		<value>SIGNIN_ALLOW_SEND_PASSWORD</value>
+	</data>
+	<data name="SIGNIN_ALLOW_SEND_PASSWORD_DESCRIPTION">
+		<value>SIGNIN_ALLOW_SEND_PASSWORD_DESCRIPTION</value>
+	</data>
+	<data name="SIGNIN_AUTOMATICALLYHIDE">
+		<value>SIGNIN_AUTOMATICALLYHIDE</value>
+	</data>
+	<data name="SIGNIN_ENTER_EMAIL_ADDR">
+		<value>SIGNIN_ENTER_EMAIL_ADDR</value>
+	</data>
+	<data name="SIGNIN_PWD_MISSING_IN_DB">
+		<value>SIGNIN_PWD_MISSING_IN_DB</value>
+	</data>
+	<data name="SIGNIN_PWD_REQUESTED">
+		<value>SIGNIN_PWD_REQUESTED</value>
+	</data>
+	<data name="SIGNIN_PWD_TO">
+		<value>SIGNIN_PWD_TO</value>
+	</data>
+	<data name="SIGNIN_PWD_WAS_SEND">
+		<value>SIGNIN_PWD_WAS_SEND</value>
+	</data>
+	<data name="SIGNIN_PWD_WAS_SENT">
+		<value>SIGNIN_PWD_WAS_SENT</value>
+	</data>
+	<data name="SIGNIN_SEND_PWD">
+		<value>SIGNIN_SEND_PWD</value>
+	</data>
+	<data name="SIGNIN_THANK_YOU">
+		<value>SIGNIN_THANK_YOU</value>
+	</data>
+	<data name="SIGNIN_URL_WARNING">
+		<value>SIGNIN_URL_WARNING</value>
+	</data>
+	<data name="SIGNIN_USE_DIRECT_URL">
+		<value>SIGNIN_USE_DIRECT_URL</value>
+	</data>
+	<data name="SIGNIN_YOU_CAN_LOGIN_FROM">
+		<value>SIGNIN_YOU_CAN_LOGIN_FROM</value>
+	</data>
+	<data name="SignInApplyTheme">
+		<value>SignInApplyTheme</value>
+	</data>
+	<data name="SignInLocation">
+		<value>SignInLocation</value>
+	</data>
+	<data name="SIGNINLOCATION_EVERYPAGE">
+		<value>SIGNINLOCATION_EVERYPAGE</value>
+	</data>
+	<data name="SIGNINLOCATION_HOMEONLY">
+		<value>SIGNINLOCATION_HOMEONLY</value>
+	</data>
+	<data name="SignInPosition">
+		<value>SignInPosition</value>
+	</data>
+	<data name="SIGNINPOSITION_CONTENT">
+		<value>SIGNINPOSITION_CONTENT</value>
+	</data>
+	<data name="SIGNINPOSITION_LEFT">
+		<value>SIGNINPOSITION_LEFT</value>
+	</data>
+	<data name="SIGNINPOSITION_RIGHT">
+		<value>SIGNINPOSITION_RIGHT</value>
+	</data>
+	<data name="SignInShowTitle">
+		<value>SignInShowTitle</value>
+	</data>
+	<data name="SignInTheme">
+		<value>SignInTheme</value>
+	</data>
+	<data name="SignInType">
+		<value>SignInType</value>
+	</data>
+	<data name="SIGNINTYPE_COOLFORM">
+		<value>SIGNINTYPE_COOLFORM</value>
+	</data>
+	<data name="SIGNINTYPE_DISABLED">
+		<value>SIGNINTYPE_DISABLED</value>
+	</data>
+	<data name="SIGNINTYPE_FORM">
+		<value>SIGNINTYPE_FORM</value>
+	</data>
+	<data name="SIGNINTYPE_LINK">
+		<value>SIGNINTYPE_LINK</value>
+	</data>
+	<data name="SINGNINLOCATION">
+		<value>SINGNINLOCATION</value>
+	</data>
+	<data name="SITE_PATH">
+		<value>SITE_PATH</value>
+	</data>
+	<data name="SITE_TITLE">
+		<value>SITE_TITLE</value>
+	</data>
+	<data name="SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES">
+		<value>SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES</value>
+	</data>
+	<data name="SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES_DESCRIPTION">
+		<value>SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_ALLOW_NEW_REGISTRATION">
+		<value>SITESETTINGS_ALLOW_NEW_REGISTRATION</value>
+	</data>
+	<data name="SITESETTINGS_ALLOW_NEW_REGISTRATION_DESCRIPTION">
+		<value>SITESETTINGS_ALLOW_NEW_REGISTRATION_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_ALT_THEME">
+		<value>SITESETTINGS_ALT_THEME</value>
+	</data>
+	<data name="SITESETTINGS_ALT_THEME_DESCRIPTION">
+		<value>SITESETTINGS_ALT_THEME_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_BODYATTS">
+		<value>SITESETTINGS_BODYATTS</value>
+	</data>
+	<data name="SITESETTINGS_BODYATTS_DESCRIPTION">
+		<value>SITESETTINGS_BODYATTS_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_COUNTRY_FILTER">
+		<value>SITESETTINGS_COUNTRY_FILTER</value>
+	</data>
+	<data name="SITESETTINGS_COUNTRY_FILTER_DESCRIPTION">
+		<value>SITESETTINGS_COUNTRY_FILTER_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_DEFAULT_EDITOR">
+		<value>SITESETTINGS_DEFAULT_EDITOR</value>
+	</data>
+	<data name="SITESETTINGS_DEFAULT_EDITOR_DESCRIPTION">
+		<value>SITESETTINGS_DEFAULT_EDITOR_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_DEFAULT_IMAGE_FOLDER">
+		<value>SITESETTINGS_DEFAULT_IMAGE_FOLDER</value>
+	</data>
+	<data name="SITESETTINGS_DEFAULT_IMAGE_FOLDER_DESCRIPTION">
+		<value>SITESETTINGS_DEFAULT_IMAGE_FOLDER_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_DOCTYPE">
+		<value>SITESETTINGS_DOCTYPE</value>
+	</data>
+	<data name="SITESETTINGS_DOCTYPE_DESCRIPTION">
+		<value>SITESETTINGS_DOCTYPE_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_EDITOR_HEIGHT">
+		<value>SITESETTINGS_EDITOR_HEIGHT</value>
+	</data>
+	<data name="SITESETTINGS_EDITOR_HEIGHT_DESCRIPTION">
+		<value>SITESETTINGS_EDITOR_HEIGHT_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_EDITOR_WIDTH">
+		<value>SITESETTINGS_EDITOR_WIDTH</value>
+	</data>
+	<data name="SITESETTINGS_EDITOR_WIDTH_DESCRIPTION">
+		<value>SITESETTINGS_EDITOR_WIDTH_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_LANGLIST">
+		<value>SITESETTINGS_LANGLIST</value>
+	</data>
+	<data name="SITESETTINGS_LANGLIST_DESCRIPTION">
+		<value>SITESETTINGS_LANGLIST_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_LOGO">
+		<value>SITESETTINGS_LOGO</value>
+	</data>
+	<data name="SITESETTINGS_LOGO_DESCRIPTION">
+		<value>SITESETTINGS_LOGO_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_ON_REGISTER_SEND_TO">
+		<value>SITESETTINGS_ON_REGISTER_SEND_TO</value>
+	</data>
+	<data name="SITESETTINGS_ON_REGISTER_SEND_TO_DESCRIPTION">
+		<value>SITESETTINGS_ON_REGISTER_SEND_TO_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_KEY_PHRASE">
+		<value>SITESETTINGS_PAGE_KEY_PHRASE</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_KEY_PHRASE_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_KEY_PHRASE_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_LAYOUT">
+		<value>SITESETTINGS_PAGE_LAYOUT</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_LAYOUT_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_LAYOUT_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_META_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_DESCRIPTION_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_META_DESCRIPTION_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_ENCODING">
+		<value>SITESETTINGS_PAGE_META_ENCODING</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_ENCODING_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_META_ENCODING_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_KEYWORDS">
+		<value>SITESETTINGS_PAGE_META_KEYWORDS</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_KEYWORDS_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_META_KEYWORDS_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_OTHERS">
+		<value>SITESETTINGS_PAGE_META_OTHERS</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_META_OTHERS_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_META_OTHERS_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_TITLE">
+		<value>SITESETTINGS_PAGE_TITLE</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_TITLE_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_TITLE_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_URL_KEYWORD">
+		<value>SITESETTINGS_PAGE_URL_KEYWORD</value>
+	</data>
+	<data name="SITESETTINGS_PAGE_URL_KEYWORD_DESCRIPTION">
+		<value>SITESETTINGS_PAGE_URL_KEYWORD_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_REGISTER_FULL">
+		<value>SITESETTINGS_REGISTER_FULL</value>
+	</data>
+	<data name="SITESETTINGS_REGISTER_MODULEID">
+		<value>SITESETTINGS_REGISTER_MODULEID</value>
+	</data>
+	<data name="SITESETTINGS_REGISTER_MODULEID_DESCRIPTION">
+		<value>SITESETTINGS_REGISTER_MODULEID_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_REGISTER_SIMPLE">
+		<value>SITESETTINGS_REGISTER_SIMPLE</value>
+	</data>
+	<data name="SITESETTINGS_REGISTER_TYPE">
+		<value>SITESETTINGS_REGISTER_TYPE</value>
+	</data>
+	<data name="SITESETTINGS_REGISTER_TYPE_DESCRIPTION">
+		<value>SITESETTINGS_REGISTER_TYPE_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_SHOW_MODIFIED_BY">
+		<value>SITESETTINGS_SHOW_MODIFIED_BY</value>
+	</data>
+	<data name="SITESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION">
+		<value>SITESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_SHOW_MODULE_ARROWS">
+		<value>SITESETTINGS_SHOW_MODULE_ARROWS</value>
+	</data>
+	<data name="SITESETTINGS_SHOW_MODULE_ARROWS_DESCRIPTION">
+		<value>SITESETTINGS_SHOW_MODULE_ARROWS_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_SHOWUPLOAD">
+		<value>SITESETTINGS_SHOWUPLOAD</value>
+	</data>
+	<data name="SITESETTINGS_SHOWUPLOAD_DESCRIPTION">
+		<value>SITESETTINGS_SHOWUPLOAD_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_SITE_PATH">
+		<value>SITESETTINGS_SITE_PATH</value>
+	</data>
+	<data name="SITESETTINGS_SITE_TITLE">
+		<value>SITESETTINGS_SITE_TITLE</value>
+	</data>
+	<data name="SITESETTINGS_TERMS_OF_SERVICE">
+		<value>SITESETTINGS_TERMS_OF_SERVICE</value>
+	</data>
+	<data name="SITESETTINGS_TERMS_OF_SERVICE_DESCRIPTION">
+		<value>SITESETTINGS_TERMS_OF_SERVICE_DESCRIPTION</value>
+	</data>
+	<data name="SITESETTINGS_THEME">
+		<value>SITESETTINGS_THEME</value>
+	</data>
+	<data name="SITESETTINGS_THEME_DESCRIPTION">
+		<value>SITESETTINGS_THEME_DESCRIPTION</value>
+	</data>
+	<data name="SM_MENU_REPEATDIRECTION">
+		<value>SM_MENU_REPEATDIRECTION</value>
+	</data>
+	<data name="SM_MENU_REPEATDIRECTION_DESCRIPTION">
+		<value>SM_MENU_REPEATDIRECTION_DESCRIPTION</value>
+	</data>
+	<data name="SM_MENUBINDINGTYPE">
+		<value>SM_MENUBINDINGTYPE</value>
+	</data>
+	<data name="SM_MENUTYPE">
+		<value>SM_MENUTYPE</value>
+	</data>
+	<data name="SM_MENUTYPE_DESCRIPTION">
+		<value>SM_MENUTYPE_DESCRIPTION</value>
+	</data>
+	<data name="SM_PARENTTABID">
+		<value>SM_PARENTTABID</value>
+	</data>
+	<data name="SM_PARENTTABID_DESCRIPTION">
+		<value>SM_PARENTTABID_DESCRIPTION</value>
+	</data>
+	<data name="SORTDIRECTION">
+		<value>SORTDIRECTION</value>
+	</data>
+	<data name="SORTFIELD">
+		<value>SORTFIELD</value>
+	</data>
+	<data name="SORTORDER">
+		<value>SORTORDER</value>
+	</data>
+	<data name="START_DATE">
+		<value>START_DATE</value>
+	</data>
+	<data name="STREET">
+		<value>STREET</value>
+	</data>
+	<data name="SUBJECT">
+		<value>SUBJECT</value>
+	</data>
+	<data name="SUBMIT">
+		<value>SUBMIT</value>
+	</data>
+	<data name="SUBTITLE">
+		<value>SUBTITLE</value>
+	</data>
+	<data name="SURVEY_ADDBELOW">
+		<value>SURVEY_ADDBELOW</value>
+	</data>
+	<data name="SURVEY_ADDNEWOPTION">
+		<value>SURVEY_ADDNEWOPTION</value>
+	</data>
+	<data name="SURVEY_ADDNEWQUESTION">
+		<value>SURVEY_ADDNEWQUESTION</value>
+	</data>
+	<data name="SURVEY_ADDOPTBELOW">
+		<value>SURVEY_ADDOPTBELOW</value>
+	</data>
+	<data name="SURVEY_CHECKBOXES">
+		<value>SURVEY_CHECKBOXES</value>
+	</data>
+	<data name="SURVEY_DETAILS">
+		<value>SURVEY_DETAILS</value>
+	</data>
+	<data name="SURVEY_DETAILSOPTIONS">
+		<value>SURVEY_DETAILSOPTIONS</value>
+	</data>
+	<data name="SURVEY_NEWOPTION">
+		<value>SURVEY_NEWOPTION</value>
+	</data>
+	<data name="SURVEY_NEWQUESTION">
+		<value>SURVEY_NEWQUESTION</value>
+	</data>
+	<data name="SURVEY_OPTION_ERR">
+		<value>SURVEY_OPTION_ERR</value>
+	</data>
+	<data name="SURVEY_OPTIONS">
+		<value>SURVEY_OPTIONS</value>
+	</data>
+	<data name="SURVEY_OPTIONTYPE">
+		<value>SURVEY_OPTIONTYPE</value>
+	</data>
+	<data name="SURVEY_QUESTION">
+		<value>SURVEY_QUESTION</value>
+	</data>
+	<data name="SURVEY_QUESTION_ERR">
+		<value>SURVEY_QUESTION_ERR</value>
+	</data>
+	<data name="SURVEY_QUESTIONS">
+		<value>SURVEY_QUESTIONS</value>
+	</data>
+	<data name="SURVEY_RADIOBUTTONS">
+		<value>SURVEY_RADIOBUTTONS</value>
+	</data>
+	<data name="SURVEY_SUBMIT">
+		<value>SURVEY_SUBMIT</value>
+	</data>
+	<data name="SURVEY_TITLE">
+		<value>SURVEY_TITLE</value>
+	</data>
+	<data name="SURVEY_VOTES">
+		<value>SURVEY_VOTES</value>
+	</data>
+	<data name="SWI_APPROVE">
+		<value>SWI_APPROVE</value>
+	</data>
+	<data name="SWI_APPROVESENDMAIL">
+		<value>SWI_APPROVESENDMAIL</value>
+	</data>
+	<data name="SWI_BUTTON_MAX">
+		<value>SWI_BUTTON_MAX</value>
+	</data>
+	<data name="SWI_BUTTON_MIN">
+		<value>SWI_BUTTON_MIN</value>
+	</data>
+	<data name="SWI_PUBLISH">
+		<value>SWI_PUBLISH</value>
+	</data>
+	<data name="SWI_READYTOAPPROVE">
+		<value>SWI_READYTOAPPROVE</value>
+	</data>
+	<data name="SWI_READYTOAPPROVESENDMAIL">
+		<value>SWI_READYTOAPPROVESENDMAIL</value>
+	</data>
+	<data name="SWI_REJECT">
+		<value>SWI_REJECT</value>
+	</data>
+	<data name="SWI_REJECT_BODY">
+		<value>SWI_REJECT_BODY</value>
+	</data>
+	<data name="SWI_REJECT_SUBJECT1">
+		<value>SWI_REJECT_SUBJECT1</value>
+	</data>
+	<data name="SWI_REJECT_SUBJECT2">
+		<value>SWI_REJECT_SUBJECT2</value>
+	</data>
+	<data name="SWI_REJECTSENDMAIL">
+		<value>SWI_REJECTSENDMAIL</value>
+	</data>
+	<data name="SWI_REQUEST_APPROVAL_SUBJECT">
+		<value>SWI_REQUEST_APPROVAL_SUBJECT</value>
+	</data>
+	<data name="SWI_REQUEST_BODY">
+		<value>SWI_REQUEST_BODY</value>
+	</data>
+	<data name="SWI_REQUEST_PUBLISH_SUBJECT">
+		<value>SWI_REQUEST_PUBLISH_SUBJECT</value>
+	</data>
+	<data name="SWI_REVERT">
+		<value>SWI_REVERT</value>
+	</data>
+	<data name="SWI_ROLESAPPROVING">
+		<value>SWI_ROLESAPPROVING</value>
+	</data>
+	<data name="SWI_ROLESPUBLISHING">
+		<value>SWI_ROLESPUBLISHING</value>
+	</data>
+	<data name="SWI_SUPPORTWORKFLOW">
+		<value>SWI_SUPPORTWORKFLOW</value>
+	</data>
+	<data name="SWI_SWAPTOPRODUCTION">
+		<value>SWI_SWAPTOPRODUCTION</value>
+	</data>
+	<data name="SWI_SWAPTOSTAGING">
+		<value>SWI_SWAPTOSTAGING</value>
+	</data>
+	<data name="TAB_DELETE_FAILED">
+		<value>TAB_DELETE_FAILED</value>
+	</data>
+	<data name="TAB_NAME">
+		<value>TAB_NAME</value>
+	</data>
+	<data name="TAB_PARENT">
+		<value>TAB_PARENT</value>
+	</data>
+	<data name="TAB_TITLE_Appleseed_HELP">
+		<value>TAB_TITLE_Appleseed_HELP</value>
+	</data>
+	<data name="TABKEYPHRASE">
+		<value>TABKEYPHRASE</value>
+	</data>
+	<data name="TABKEYPHRASE_BG_BG">
+		<value>TABKEYPHRASE_BG_BG</value>
+	</data>
+	<data name="TABKEYPHRASE_BG_BG_DESCRIPTION">
+		<value>TABKEYPHRASE_BG_BG_DESCRIPTION</value>
+	</data>
+	<data name="TABKEYPHRASE_DESCRIPTION">
+		<value>TABKEYPHRASE_DESCRIPTION</value>
+	</data>
+	<data name="TABKEYPHRASE_EN">
+		<value>TABKEYPHRASE_EN</value>
+	</data>
+	<data name="TABKEYPHRASE_EN_DESCRIPTION">
+		<value>TABKEYPHRASE_EN_DESCRIPTION</value>
+	</data>
+	<data name="TABKEYPHRASE_ES">
+		<value>TABKEYPHRASE_ES</value>
+	</data>
+	<data name="TABKEYPHRASE_ES_ES">
+		<value>TABKEYPHRASE_ES_ES</value>
+	</data>
+	<data name="TABKEYPHRASE_ES_ES_DESCRIPTION">
+		<value>TABKEYPHRASE_ES_ES_DESCRIPTION</value>
+	</data>
+	<data name="TABKEYPHRASE_ES_DESCRIPTION">
+		<value>TABKEYPHRASE_ES_DESCRIPTION</value>
+	</data>
+	<data name="TABLAYOUT">
+		<value>TABLAYOUT</value>
+	</data>
+	<data name="TABLEEDIT_MSG_CONNECT">
+		<value>TABLEEDIT_MSG_CONNECT</value>
+	</data>
+	<data name="TABLEEDIT_SELECT_TABLE">
+		<value>TABLEEDIT_SELECT_TABLE</value>
+	</data>
+	<data name="TABLINK">
+		<value>TABLINK</value>
+	</data>
+	<data name="TABLINK_DESCRIPTION">
+		<value>TABLINK_DESCRIPTION</value>
+	</data>
+	<data name="TABMETADESCRIPTION">
+		<value>TABMETADESCRIPTION</value>
+	</data>
+	<data name="TABMETADESCRIPTION_DESCRIPTION">
+		<value>TABMETADESCRIPTION_DESCRIPTION</value>
+	</data>
+	<data name="TABMETAENCODING">
+		<value>TABMETAENCODING</value>
+	</data>
+	<data name="TABMETAENCODING_DESCRIPTION">
+		<value>TABMETAENCODING_DESCRIPTION</value>
+	</data>
+	<data name="TABMETAKEYWORDS">
+		<value>TABMETAKEYWORDS</value>
+	</data>
+	<data name="TABMETAKEYWORDS_DESCRIPTION">
+		<value>TABMETAKEYWORDS_DESCRIPTION</value>
+	</data>
+	<data name="TABMETAOTHER">
+		<value>TABMETAOTHER</value>
+	</data>
+	<data name="TABMETAOTHER_DESCRIPTION">
+		<value>TABMETAOTHER_DESCRIPTION</value>
+	</data>
+	<data name="TABPLACEHOLDER">
+		<value>TABPLACEHOLDER</value>
+	</data>
+	<data name="TABPLACEHOLDER_DESCRIPTION">
+		<value>TABPLACEHOLDER_DESCRIPTION</value>
+	</data>
+	<data name="TABTITLE">
+		<value>TABTITLE</value>
+	</data>
+	<data name="TABTITLE_DESCRIPTION">
+		<value>TABTITLE_DESCRIPTION</value>
+	</data>
+	<data name="TABURLKEYWORD">
+		<value>TABURLKEYWORD</value>
+	</data>
+	<data name="TABURLKEYWORD_DESCRIPTION">
+		<value>TABURLKEYWORD_DESCRIPTION</value>
+	</data>
+	<data name="TARGET">
+		<value>TARGET</value>
+	</data>
+	<data name="TASK_ASSIGNEDTO">
+		<value>TASK_ASSIGNEDTO</value>
+	</data>
+	<data name="TASK_COMPLETION">
+		<value>TASK_COMPLETION</value>
+	</data>
+	<data name="TASK_COMPLETION_ERROR">
+		<value>TASK_COMPLETION_ERROR</value>
+	</data>
+	<data name="TASK_DESCRIPTION">
+		<value>TASK_DESCRIPTION</value>
+	</data>
+	<data name="TASK_DETAIL">
+		<value>TASK_DETAIL</value>
+	</data>
+	<data name="TASK_DUEDATE">
+		<value>TASK_DUEDATE</value>
+	</data>
+	<data name="TASK_DUEDATE_ERROR">
+		<value>TASK_DUEDATE_ERROR</value>
+	</data>
+	<data name="TASK_PRIORITY">
+		<value>TASK_PRIORITY</value>
+	</data>
+	<data name="TASK_PRIORITY_0">
+		<value>TASK_PRIORITY_0</value>
+	</data>
+	<data name="TASK_PRIORITY_1">
+		<value>TASK_PRIORITY_1</value>
+	</data>
+	<data name="TASK_PRIORITY_2">
+		<value>TASK_PRIORITY_2</value>
+	</data>
+	<data name="TASK_STARTDATE">
+		<value>TASK_STARTDATE</value>
+	</data>
+	<data name="TASK_STARTDATE_ERROR">
+		<value>TASK_STARTDATE_ERROR</value>
+	</data>
+	<data name="TASK_STATE_0">
+		<value>TASK_STATE_0</value>
+	</data>
+	<data name="TASK_STATE_1">
+		<value>TASK_STATE_1</value>
+	</data>
+	<data name="TASK_STATE_2">
+		<value>TASK_STATE_2</value>
+	</data>
+	<data name="TASK_STATUS">
+		<value>TASK_STATUS</value>
+	</data>
+	<data name="TASK_TITLE">
+		<value>TASK_TITLE</value>
+	</data>
+	<data name="TASK_TITLE_ERROR">
+		<value>TASK_TITLE_ERROR</value>
+	</data>
+	<data name="TERMSOFSERVICE">
+		<value>TERMSOFSERVICE</value>
+	</data>
+	<data name="TERMSOFSERVICE_DESCRIPTION">
+		<value>TERMSOFSERVICE_DESCRIPTION</value>
+	</data>
+	<data name="TESTMODE">
+		<value>TESTMODE</value>
+	</data>
+	<data name="TESTMODE_DESCRIPTION">
+		<value>TESTMODE_DESCRIPTION</value>
+	</data>
+	<data name="TESTUSERID">
+		<value>TESTUSERID</value>
+	</data>
+	<data name="THEME">
+		<value>THEME</value>
+	</data>
+	<data name="THEME_DESCRIPTION">
+		<value>THEME_DESCRIPTION</value>
+	</data>
+	<data name="THEME_LAYOUT_SETTINGS">
+		<value>THEME_LAYOUT_SETTINGS</value>
+	</data>
+	<data name="THEMEALT">
+		<value>THEMEALT</value>
+	</data>
+	<data name="THUMBNAILHEIGHT">
+		<value>THUMBNAILHEIGHT</value>
+	</data>
+	<data name="THUMBNAILLAYOUT">
+		<value>THUMBNAILLAYOUT</value>
+	</data>
+	<data name="THUMBNAILRESIZE">
+		<value>THUMBNAILRESIZE</value>
+	</data>
+	<data name="THUMBNAILWIDTH">
+		<value>THUMBNAILWIDTH</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONADDTOROLE">
+		<value>TI_ROLEADMINISTRATIONADDTOROLE</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONREMOVEFROMROLE">
+		<value>TI_ROLEADMINISTRATIONREMOVEFROMROLE</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONSELECTIONADDLABEL">
+		<value>TI_ROLEADMINISTRATIONSELECTIONADDLABEL</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONSELECTIONREMOVELABEL">
+		<value>TI_ROLEADMINISTRATIONSELECTIONREMOVELABEL</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONSELECTIONROLENAME">
+		<value>TI_ROLEADMINISTRATIONSELECTIONROLENAME</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONSELECTIONWARNING">
+		<value>TI_ROLEADMINISTRATIONSELECTIONWARNING</value>
+	</data>
+	<data name="TI_ROLEADMINISTRATIONTITLE">
+		<value>TI_ROLEADMINISTRATIONTITLE</value>
+	</data>
+	<data name="TITLE">
+		<value>TITLE</value>
+	</data>
+	<data name="TITLE_FOR_CULTURE">
+		<value>TITLE_FOR_CULTURE</value>
+	</data>
+	<data name="TITLE_FOR_CULTURE_DESCRIPTION">
+		<value>TITLE_FOR_CULTURE_DESCRIPTION</value>
+	</data>
+	<data name="TO">
+		<value>TO</value>
+	</data>
+	<data name="TOP">
+		<value>TOP</value>
+	</data>
+	<data name="TOPIC_LOC">
+		<value>TOPIC_LOC</value>
+	</data>
+	<data name="TOPICNAME">
+		<value>TOPICNAME</value>
+	</data>
+	<data name="TOPICNAME_DESCRIPTION">
+		<value>TOPICNAME_DESCRIPTION</value>
+	</data>
+	<data name="TOTAL">
+		<value>TOTAL</value>
+	</data>
+	<data name="TOURISTIC_AUTO">
+		<value>TOURISTIC_AUTO</value>
+	</data>
+	<data name="TOURISTIC_NOFILTER">
+		<value>TOURISTIC_NOFILTER</value>
+	</data>
+	<data name="TOURISTIC_THISMONTH">
+		<value>TOURISTIC_THISMONTH</value>
+	</data>
+	<data name="TOURISTIC_THISYEAR">
+		<value>TOURISTIC_THISYEAR</value>
+	</data>
+	<data name="TR">
+		<value>TR</value>
+	</data>
+	<data name="TR_TR">
+		<value>TR_TR</value>
+	</data>
+	<data name="TR_TR_DESCRIPTION">
+		<value>TR_TR_DESCRIPTION</value>
+	</data>
+	<data name="TR_DESCRIPTION">
+		<value>TR_DESCRIPTION</value>
+	</data>
+	<data name="TRANSLATOR">
+		<value>TRANSLATOR</value>
+	</data>
+	<data name="TRANSLATOR_EMAIL">
+		<value>TRANSLATOR_EMAIL</value>
+	</data>
+	<data name="TYPE">
+		<value>Type</value>
+	</data>
+	<data name="UNCHECKED_USERS">
+		<value>UNCHECKED_USERS</value>
+	</data>
+	<data name="UNKNOWN">
+		<value>UNKNOWN</value>
+	</data>
+	<data name="UP_TO">
+		<value>UP_TO</value>
+	</data>
+	<data name="UPDATE">
+		<value>Update</value>
+	</data>
+	<data name="UPDATE_YOUR_PROFILE">
+		<value>UPDATE_YOUR_PROFILE</value>
+	</data>
+	<data name="UPLOAD_FILE">
+		<value>UPLOAD_FILE</value>
+	</data>
+	<data name="UPLOAD_IMAGE">
+		<value>UPLOAD_IMAGE</value>
+	</data>
+	<data name="UPLOAD_SUCCESS_MESSAGE">
+		<value>UPLOAD_SUCCESS_MESSAGE</value>
+	</data>
+	<data name="UPLOAD_TO_WEB">
+		<value>UPLOAD_TO_WEB</value>
+	</data>
+	<data name="URL">
+		<value>URL</value>
+	</data>
+	<data name="URL_TO_BROWSE">
+		<value>URL_TO_BROWSE</value>
+	</data>
+	<data name="URLPAGENAME">
+		<value>URLPAGENAME</value>
+	</data>
+	<data name="URLPAGENAME_DESCRIPTION">
+		<value>URLPAGENAME_DESCRIPTION</value>
+	</data>
+	<data name="USE_INSTALLER">
+		<value>USE_INSTALLER</value>
+	</data>
+	<data name="USER_MANAGE">
+		<value>USER_MANAGE</value>
+	</data>
+	<data name="USER_MESSAGE1">
+		<value>USER_MESSAGE1</value>
+	</data>
+	<data name="USER_MESSAGE2">
+		<value>USER_MESSAGE2</value>
+	</data>
+	<data name="USER_MESSAGE3">
+		<value>USER_MESSAGE3</value>
+	</data>
+	<data name="USER_MESSAGE_DOMAIN1">
+		<value>USER_MESSAGE_DOMAIN1</value>
+	</data>
+	<data name="USER_MESSAGE_DOMAIN2">
+		<value>USER_MESSAGE_DOMAIN2</value>
+	</data>
+	<data name="USER_MESSAGE_DOMAIN3">
+		<value>USER_MESSAGE_DOMAIN3</value>
+	</data>
+	<data name="USER_NEW_USER">
+		<value>USER_NEW_USER</value>
+	</data>
+	<data name="USERBLOCK">
+		<value>USERBLOCK</value>
+	</data>
+	<data name="USERBLOCK_DESCRIPTION">
+		<value>USERBLOCK_DESCRIPTION</value>
+	</data>
+	<data name="USEREMAIL">
+		<value>USEREMAIL</value>
+	</data>
+	<data name="USERNAME">
+		<value>USERNAME</value>
+	</data>
+	<data name="USERTABLE_BACK">
+		<value>USERTABLE_BACK</value>
+	</data>
+	<data name="USERTABLE_EDITROW">
+		<value>USERTABLE_EDITROW</value>
+	</data>
+	<data name="USERTABLE_INASCORDER">
+		<value>USERTABLE_INASCORDER</value>
+	</data>
+	<data name="USERTABLE_INDSCORDER">
+		<value>USERTABLE_INDSCORDER</value>
+	</data>
+	<data name="USERTABLE_MANAGETABLE">
+		<value>USERTABLE_MANAGETABLE</value>
+	</data>
+	<data name="USERTABLE_MOVEFIELDDOWN">
+		<value>USERTABLE_MOVEFIELDDOWN</value>
+	</data>
+	<data name="USERTABLE_MOVEFIELDUP">
+		<value>USERTABLE_MOVEFIELDUP</value>
+	</data>
+	<data name="USERTABLE_NEWFIELD">
+		<value>USERTABLE_NEWFIELD</value>
+	</data>
+	<data name="USERTABLE_SORTEDBY">
+		<value>USERTABLE_SORTEDBY</value>
+	</data>
+	<data name="USERTABLE_TITLE">
+		<value>USERTABLE_TITLE</value>
+	</data>
+	<data name="USERTABLE_TYPE">
+		<value>USERTABLE_TYPE</value>
+	</data>
+	<data name="USERTABLE_TYPE_BOOLEAN">
+		<value>USERTABLE_TYPE_BOOLEAN</value>
+	</data>
+	<data name="USERTABLE_TYPE_DATETIME">
+		<value>USERTABLE_TYPE_DATETIME</value>
+	</data>
+	<data name="USERTABLE_TYPE_DECIMAL">
+		<value>USERTABLE_TYPE_DECIMAL</value>
+	</data>
+	<data name="USERTABLE_TYPE_FILE">
+		<value>USERTABLE_TYPE_FILE</value>
+	</data>
+	<data name="USERTABLE_TYPE_INT32">
+		<value>USERTABLE_TYPE_INT32</value>
+	</data>
+	<data name="USERTABLE_TYPE_STRING">
+		<value>USERTABLE_TYPE_STRING</value>
+	</data>
+	<data name="USERTABLE_VISIBLE">
+		<value>USERTABLE_VISIBLE</value>
+	</data>
+	<data name="VALID_ADDRESS">
+		<value>VALID_ADDRESS</value>
+	</data>
+	<data name="VALID_CITY">
+		<value>VALID_CITY</value>
+	</data>
+	<data name="VALID_CODE">
+		<value>VALID_CODE</value>
+	</data>
+	<data name="VALID_DATE">
+		<value>VALID_DATE</value>
+	</data>
+	<data name="VALID_EMAIL">
+		<value>VALID_EMAIL</value>
+	</data>
+	<data name="VALID_FIELD">
+		<value>VALID_FIELD</value>
+	</data>
+	<data name="VALID_FILE_NAME">
+		<value>VALID_FILE_NAME</value>
+	</data>
+	<data name="VALID_NAME">
+		<value>VALID_NAME</value>
+	</data>
+	<data name="VALID_NUMBER">
+		<value>VALID_NUMBER</value>
+	</data>
+	<data name="VALID_PHONE">
+		<value>VALID_PHONE</value>
+	</data>
+	<data name="VALID_TITLE">
+		<value>VALID_TITLE</value>
+	</data>
+	<data name="VALID_VIEWORDER">
+		<value>VALID_VIEWORDER</value>
+	</data>
+	<data name="VALID_ZIP">
+		<value>VALID_ZIP</value>
+	</data>
+	<data name="VALIDORDER">
+		<value>VALIDORDER</value>
+	</data>
+	<data name="VALIDTITLE">
+		<value>VALIDTITLE</value>
+	</data>
+	<data name="VALIDURL">
+		<value>VALIDURL</value>
+	</data>
+	<data name="VERTICAL">
+		<value>VERTICAL</value>
+	</data>
+	<data name="VIEW_ORDER">
+		<value>VIEW_ORDER</value>
+	</data>
+	<data name="VIEWORDER">
+		<value>VIEWORDER</value>
+	</data>
+	<data name="WEB_FARM_SUPPORT">
+		<value>WEB_FARM_SUPPORT</value>
+	</data>
+	<data name="WEBSITE">
+		<value>WEBSITE</value>
+	</data>
+	<data name="WELCOME">
+		<value>WELCOME</value>
+	</data>
+	<data name="WHOS_LOGGED_ON_1">
+		<value>WHOS_LOGGED_ON_1</value>
+	</data>
+	<data name="WHOS_LOGGED_ON_2">
+		<value>WHOS_LOGGED_ON_2</value>
+	</data>
+	<data name="WHOS_LOGGED_ON_3">
+		<value>WHOS_LOGGED_ON_3</value>
+	</data>
+	<data name="WHOSLOGGEDONCACHETIMEOUT">
+		<value>WHOSLOGGEDONCACHETIMEOUT</value>
+	</data>
+	<data name="WIDTH">
+		<value>WIDTH</value>
+	</data>
+	<data name="WIDTH_DESCRIPTION">
+		<value>WIDTH_DESCRIPTION</value>
+	</data>
+	<data name="WINDOWSADMINS">
+		<value>WINDOWSADMINS</value>
+	</data>
+	<data name="WINDOWSADMINS_DESCRIPTION">
+		<value>WINDOWSADMINS_DESCRIPTION</value>
+	</data>
+	<data name="XMLFORM_CLEAR">
+		<value>XMLFORM_CLEAR</value>
+	</data>
+	<data name="XMLFORM_NEW">
+		<value>XMLFORM_NEW</value>
+	</data>
+	<data name="XMLFORM_NO_EMAIL">
+		<value>XMLFORM_NO_EMAIL</value>
+	</data>
+	<data name="XMLFORM_SEND">
+		<value>XMLFORM_SEND</value>
+	</data>
+	<data name="XMLFORM_SUBMITTED">
+		<value>XMLFORM_SUBMITTED</value>
+	</data>
+	<data name="XMLSRC">
+		<value>XMLSRC</value>
+	</data>
+	<data name="XSLSRC">
+		<value>XSLSRC</value>
+	</data>
+	<data name="YEAR">
+		<value>YEAR</value>
+	</data>
+	<data name="YEARS">
+		<value>YEARS</value>
+	</data>
+	<data name="ZH_CN">
+		<value>ZH_CN</value>
+	</data>
+	<data name="ZH_CN_DESCRIPTION">
+		<value>ZH_CN_DESCRIPTION</value>
+	</data>
+	<data name="ZIP">
+		<value>ZIP</value>
+	</data>
+</root>

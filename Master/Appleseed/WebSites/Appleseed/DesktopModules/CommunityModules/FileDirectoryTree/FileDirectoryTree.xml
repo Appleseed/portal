@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appleseed.Modules.FileDirectoryTree</name>
+    </assembly>
+    <members>
+        <member name="T:Appleseed.Content.Web.ModulesFileDirectoryTree">
+            <summary>
+            	:::::::::::::::::::::::::
+            	::  FileDirectoryTree  ::
+            	:::::::::::::::::::::::::
+            	
+            	Developed by: Josue de la Torre, josue@jdlt.com, www.jdlt.com
+            	Module traverses and displays files and directories as an 
+            	HTML-representation of a nested file tree.
+            </summary>
+            
+            	::::::::::::::::::::::
+            	::  Module History  ::
+            	::::::::::::::::::::::
+            	
+            	07/23/2003	First Release - Josue de la Torre (josue@jdlt.com)
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesFileDirectoryTree.LiteralFileDirectoryTree">
+            <summary>
+            Literal in FDT
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesFileDirectoryTree.LinkButton1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesFileDirectoryTree.myPlaceHolder">
+            <summary>
+            File tree placeholder
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesFileDirectoryTree.treeImageDIR">
+            <summary>
+            Location of tree images
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesFileDirectoryTree.LoadAvailableImageList">
+            <summary>
+            Loads array of images available
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesFileDirectoryTree.parseDirectory(System.String)">
+            <summary>
+            This function traverses a given directory and finds all its nested directories and 
+            files.  As the function encounters nested directories, it calls a new instance of 
+            the procedure passing the new found directory as a parameter.  Files within the 
+            directories are nested and tabulated.
+            
+            </summary>
+            <param name="path">Directory path to traverse.</param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesFileDirectoryTree.Write(System.String)">
+            <summary>
+            Write the tree
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesFileDirectoryTree.#ctor">
+            <summary>
+            Constructor set module settings
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesFileDirectoryTree.OnInit(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesFileDirectoryTree.InitializeComponent">
+            <summary>
+            	Required method for Designer support - do not modify
+            	the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesFileDirectoryTree.GuidID">
+            <summary>
+            Module GUID
+            </summary>
+        </member>
+    </members>
+</doc>

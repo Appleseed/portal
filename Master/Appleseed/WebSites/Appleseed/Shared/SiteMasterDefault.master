@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Appleseed.AppleseedMaster" %>
+
+<%@ Register Src="~/Design/DesktopLayouts/DesktopFooter.ascx" TagName="Footer" TagPrefix="foot" %>
+<%@ Register Src="~/Design/DesktopLayouts/DesktopPortalBanner.ascx" TagName="Banner"
+    TagPrefix="portal" %>
+<% if (Request.Browser.Browser.StartsWith("IE"))
+   { %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<% } %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Services>
+            <asp:ServiceReference InlineScript="false" Path="~/DesktopModules/CoreModules/Admin/PortalService.asmx" />
+        </Services>
+    </asp:ScriptManager>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center">
+                <div class="rb_DefaultLayoutDiv">
+                    <table class="rb_DefaultLayoutTable" cellspacing="0" cellpadding="0" id="Table1"
+                        width="979px">
+                        <tbody>
+                            <tr valign="top">
+                                <td class="rb_DefaultPortalHeader" valign="top" valign="bottom" align="left">
+                                    <portal:Banner ID="Banner" selectedtabindex="0" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    <asp:ContentPlaceHolder ID="Content" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="rb_DefaultPortalFooter">
+                                    <foot:Footer ID="Footer1" runat="server"></foot:Footer>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

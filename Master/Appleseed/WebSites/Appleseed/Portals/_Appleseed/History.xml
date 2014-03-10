@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="History.xsl"?>
+<ChangeLog>
+	<types>
+		<type name="dev" />
+		<type name="enh" />
+		<type name="bug" />
+		<type name="fix" />
+		<type name="release" />
+	</types>
+	<notes>
+		<pre>
+			This is the Appleseed history file.
+			All development, fixes, releases and enhancments are shown here.
+		</pre>
+	</notes>
+	<Version number="2.0.0" date="2/25/2006">
+		<remarks>
+			<p>This is version 1.0 of Appleseed on .net 2.0.<br />
+			It is a fully .net 2.0 solution, with the ability to deploy any way you like, and use of several .net 2.0 features<br />
+			such as localization, ability to precompile, enhancments to web.config and more<br />
+			</p>
+			<p>Install and rebuild:</p>
+			<ol>
+				<li>Create a new IIS site or a virtual directory from a existing IIS site called Appleseed pointing to your Appleseed Installation</li>
+				<li>Create an empty database (name it for example Appleseed).</li>
+				<li>Update the database information in web.config file (ConnectionString value)</li>
+				<li>Browse to your web site, a page will prompt you for update</li>
+			</ol>
+			<p>Report any problems to <a href="http://community.Appleseedportal.net/">Appleseed Community</a>
+		</p>
+		</remarks>
+		<Subversion number="1881"  author="MGF">
+			<remarks>
+				<p>
+				</p>
+			</remarks>
+			<comment date="5/26/2006" type="DEV">Developed most of the core providers and integrated in most places</comment>
+			<comment date="5/26/2006" type="DEV">Seperated out core and community modules into disctinct locations</comment>
+		</Subversion>
+		<Subversion number="1880"  author="Jonathan F. Minond">
+			<remarks>
+				<p>There are a lot of major changes here which i disucuss in more detail<br />
+					at this blog: <a href="http://community.Appleseedportal.net/blogs/jonathans_Appleseed_blog/archive/2006/02/25/901.aspx">Blog Entry</a> <br />
+					and an open discussion here <a href="http://community.Appleseedportal.net/forums/907/ShowThread.aspx#907">Forum Thred</a>: </p>
+			</remarks>
+			<comment date="3/5/2006" type="dev">
+				extending short urls... you can call any page by only
+				pageID + '.aspx' i.e: http://superman/Appleseed/171.aspx will rewwrite to
+				http://superman/Appleseed/default.aspx?pageID=171, you can also attach any other query string params and they will be
+				passed as well.
+			</comment>
+			<comment date="3/5/2006" type="fix">corrected bug in filedirectory module where initial path is invalid</comment>
+			<comment date="3/5/2006" type="dev">
+				Removed Rewrite, replaced with easier miplementations,
+				fixed friendly url's i.e: http://superman/Appleseed/monitoring__logs.aspx?pageID=171 will
+				rewrite to http://superman/Appleseed/default.aspx?pageID=171
+			</comment>
+			<comment date="3/4/2006" type="enh">all modules converted to partial classes</comment>
+			<comment date="3/3/2006" type="dev">all strings that have missing keys, now return defualt and message to localize,
+				these should all be fixed before release</comment>
+			<comment date="2/26/2006" type="dev">Modified Users.ascx to use gridview instead of dropdown, so you can view more users.
+					Todo: add search, sort, and other features, look at conlfuence user manager as example.</comment>
+			<comment date="2/27/2006" type="dev">Added Appleseed.Framework.Core and Appleseed.Framework.Data projects
+				Both of this will probaly require you to add references to custom modules, and recompile, 
+				you may have to add using Appleseed.Framework stuff as well
+				Removed Appleseed.Settings, provider and other proejcts</comment>
+			<comment date="2/26/2006" type="fix">Cleaned up the references in the project and added missing extenesions to Appleseed.sln</comment>
+			<comment date="2/26/2006" type="fix">Sperated code from web solutions</comment>
+			<comment date="2/25/2006" type="enh">Added XSL for History.xml file</comment>
+			<comment date="2/23/2006" type="dev">language switcher loads</comment>
+			<comment date="2/23/2006" type="fix">clean install works</comment>
+			<comment date="2/23/2006" type="fix">corrected version number in DB and code dll's to be 2.0.0.1880</comment>
+			<comment date="2/21/2006" type="dev">Added Community site to update file info links, as well as cleaned up html a bit.</comment>
+			<comment date="2/21/2006" type="dev">created Appleseed.Framework.Services and moved Appleseed.services to there</comment>
+			<comment date="2/21/2006" type="dev">Several files updated to correct clean install</comment>
+			<comment date="2/21/2006" type="dev">Partial classes implemented in a few files for .net 2 fun</comment>
+			<comment date="2/21/2006" type="dev">Changed global.asax line # 102 to redirect to update if database version is behind code</comment>
+			<comment date="2/21/2006" type="dev">added #if DEBUG to global error handler for untrapped errors, 
+				if you release to prod site you should compile in release mode :-)</comment>
+			<comment date="2/20/2006" type="dev">updated ie7 scripts to version 0.9 see http://dean.edwards.name/IE7</comment>
+			<comment date="2/20/2006" type="bug">When adding module to home page you might see: 'You are currently on the homepage using the default virtual ID (The default ID is set when no specific page is selected. e.g. www.yourdomain.com. Please select your homepage from the Navigation menu e.g. 'Home' so that you can add a module against the page's actual ID.'</comment>
+			<comment date="2/20/2006" type="fix">corrected add module to home page when pageid = 0</comment>
+			<comment date="2/20/2006" type="fix">changed Appleseed.provider to write urls with pageid not tabid</comment>
+			<comment date="2/18/2006" type="dev">removed esperantus, and impleneted native .net 2.0 localization</comment>
+			<comment date="2/16/2006"  type="enh">taking bill forneys code, worked on to compile web project, Appleseed.appcode</comment>
+			<comment date="2/16/2006"  type="enh">added Appleseed.Framework.Web.UI.WebControls with things li ke localize replacement controls for esperantus and settingstable</comment>
+		</Subversion>
+	</Version>
+</ChangeLog>

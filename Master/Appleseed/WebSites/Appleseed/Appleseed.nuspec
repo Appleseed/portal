@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Appleseed</id>
+    <version>1.0.0</version>
+    <authors>Agileworks</authors>
+    <description>Appleseed CMS distribution</description>
+    <summary></summary>
+    <language>en-US</language>    
+    <projectUrl>http://appleseedapp.com/</projectUrl>
+	<iconUrl>http://updates.agileworks.com.uy/Content/Appleseed.ico</iconUrl>
+	<tags>Appleseed</tags>
+  </metadata>
+  <files>
+    <file src="**\*.aspx" target="Content" />
+    <file src="**\*.ascx" target="Content" />
+    <file src="**\*.master" target="Content" />
+    <file src="**\*.css" target="Content" />
+    <file src="**\*.js" target="Content" />
+    <file src="**\*.ico" target="Content" />    
+    <file src="**\*.html" target="Content" />
+    <file src="**\*.xsd" target="Content" />
+    <file src="**\*.sql" target="Content" />
+    <file src="**\*.png" target="Content" />    
+    <file src="**\*.jpeg" target="Content" />
+    <file src="**\*.gif" target="Content" />
+    <file src="**\*.txt" target="Content" />
+    <file src="**\*.swf" target="Content" />
+    <file src="**\*.xml" target="Content" />
+    <file src="**\*.xslt" target="Content" />
+    <file src="**\*.asax" target="Content" />   
+	<file src="**\*.resx" target="Content" />  	
+    <file src="bin\*.dll" target="Lib" />
+  </files>
+</package>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>HTML Content</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/HTMLDocument/HTMLModule.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>SignIn</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/SignIn/SignIn.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+	<Module>
+		<FriendlyName>SignInCool</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/SignIn/SignInCool.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>	
+	<Module>
+		<FriendlyName>SignInLink</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/SignIn/SignInLink.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>	
+	<Module>
+		<FriendlyName>SignInSocialNetwork</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/SignIn/SignInSocialNetwork.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+    <Module>
+        <FriendlyName>SignInWithSocialNetwork</FriendlyName>
+        <DesktopSource>DesktopModules/CoreModules/SignIn/SignInWithSocialNetwork.ascx</DesktopSource>
+        <MobileSource></MobileSource>
+    </Module>
+  <Module>
+    <FriendlyName>SignInBoth</FriendlyName>
+    <DesktopSource>DesktopModules/CoreModules/SignIn/SignInBoth.ascx</DesktopSource>
+    <MobileSource></MobileSource>
+  </Module>
+  
+</Modules>

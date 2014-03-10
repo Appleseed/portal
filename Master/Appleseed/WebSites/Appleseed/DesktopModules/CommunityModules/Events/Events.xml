@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appleseed.Modules.Events</name>
+    </assembly>
+    <members>
+        <member name="T:Appleseed.Content.Web.ModulesEvents">
+            <summary>
+            Event list
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.myDataList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.lblCalendar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.lblDisplayDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.txtDisplayMonth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.txtDisplayYear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.PreviousMonth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.NextMonth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.CalendarPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEvents.dsEventData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The	Page_Load event	handler	on this	User Control is	used to
+            obtain a DataReader	of event information from the Events
+            table, and then	databind the results to	a templated	DataList
+            server control.	 It	uses the Appleseed.EventDB()
+            data component to encapsulate all data functionality.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.#ctor">
+            <summary>
+            Public constructor.	Sets base settings for module.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.PreviousMonth_Click(System.Object,System.EventArgs)">
+            <summary>
+            PreviousMonth_Click is fired when previous is clicked
+            this function goes back one month by passing in -1 (add -1 month)
+            to calendar
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.ChangeMonth(System.Int32)">
+            <summary>
+            Main routine to handle changing the month to display relative 
+            to current display month and render it
+            </summary>
+            <param name="AddMonth">number of months to add (positive or negative allowed)</param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.NextMonth_Click(System.Object,System.EventArgs)">
+            <summary>
+            NextMonth_Click fired when next month link is clicked
+            Addes 1 month to current month by calling ChangeMonth
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.DisplayTime(System.Boolean,System.Object)">
+            <summary>
+            Wrapper to call Devsolution.Portal dll
+            If all day should not return anything
+            if time passed and not allday should display in HH:MM AM or HH:MM PM format
+            </summary>
+            <param name="AllDay"></param>
+            <param name="StartTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.RenderEvents(System.Int32,System.Int32)">
+            <summary>
+            devsolution 2003/6/17:	
+            Change to make a RenderEvents for modularity
+            Routine to add show calendar logic
+            And Clean up code as now the calendar next and previous
+            controls must re-render the display and get the data again
+            e.g. modularize the code
+            </summary>
+            <param name="DisplayMonth">Month to display 1=Jan, 2=Feb, etc</param>
+            <param name="DisplayYear">Year to display YYYY, 2003 for 2003</param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.SearchSqlSelect(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Searchable module implementation
+            </summary>
+            <param name="portalID">The portal ID</param>
+            <param name="userID">ID	of the user	is searching</param>
+            <param name="searchString">The text	to search</param>
+            <param name="searchField">The fields where perfoming the search</param>
+            <returns>The SELECT	sql	to perform a search	on the current module</returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.Install(System.Collections.IDictionary)">
+            <summary>
+                
+            </summary>
+            <param name="stateSaver" type="System.Collections.IDictionary">
+                <para>
+                    
+                </para>
+            </param>
+            <returns>
+                A void value...
+            </returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.Uninstall(System.Collections.IDictionary)">
+            <summary>
+                
+            </summary>
+            <param name="stateSaver" type="System.Collections.IDictionary">
+                <para>
+                    
+                </para>
+            </param>
+            <returns>
+                A void value...
+            </returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEvents.OnInit(System.EventArgs)">
+            <summary>
+            Raises Init	event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesEvents.GuidID">
+            <summary>
+                
+            </summary>
+            <value>
+                <para>
+                    
+                </para>
+            </value>
+            <remarks>
+                
+            </remarks>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesEvents.Searchable">
+            <summary>
+            Searchable module
+            </summary>
+        </member>
+        <member name="T:Appleseed.Content.Web.ModulesEventsDB">
+            <summary>
+            Class that encapsulates all data logic necessary to add/query/delete
+            events within the Portal database.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsDB.GetEvents(System.Int32,Appleseed.Framework.Site.Configuration.Appleseed.Framework.WorkFlowVersion)">
+            <summary>
+            The GetEvents method returns a DataSet containing all of the
+            events for a specific portal module from the events
+            database.
+            
+            NOTE: A DataSet is returned from this method to allow this method to support
+            both desktop and mobile Web UI.
+            </summary>
+            <param name="moduleID"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsDB.GetSingleEvent(System.Int32,Appleseed.Framework.Site.Configuration.Appleseed.Framework.WorkFlowVersion)">
+            <summary>
+            The GetSingleEvent method returns a SqlDataReader containing details
+            about a specific event from the events database.
+            </summary>
+            <param name="itemID"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsDB.DeleteEvent(System.Int32)">
+            <summary>
+            The DeleteEvent method deletes a specified event from
+            the events database.
+            </summary>
+            <param name="itemID"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsDB.AddEvent(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            The AddEvent method adds a new event within the Events database table, 
+            and returns the ItemID value as a result.
+            </summary>
+            <param name="moduleID"></param>
+            <param name="itemID"></param>
+            <param name="userName"></param>
+            <param name="title"></param>
+            <param name="expireDate"></param>
+            <param name="description"></param>
+            <param name="wherewhen"></param>
+            <param name="AllDay"></param>
+            <param name="StartDate"></param>
+            <param name="StartTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsDB.UpdateEvent(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            The UpdateEvent method updates the specified event within
+            the Events database table.
+            </summary>
+            <param name="moduleID"></param>
+            <param name="itemID"></param>
+            <param name="userName"></param>
+            <param name="title"></param>
+            <param name="expireDate"></param>
+            <param name="description"></param>
+            <param name="wherewhen"></param>
+            <param name="AllDay"></param>
+            <param name="StartDate"></param>
+            <param name="StartTime"></param>
+        </member>
+        <member name="T:Appleseed.Content.Web.ModulesEventsEdit">
+            <summary>
+            Edit events
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.TitleField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.RequiredTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.WhereWhenField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.RequiredWhereWhen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.ExpireField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.RequiredExpireDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.VerifyExpireDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.CreatedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.CreatedLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.OnLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.PlaceHolderHTMLEditor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.CreatedDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.DescriptionField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.AllDay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.StartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.StartHour">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.StartMinute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.Label4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.RequiredFieldValidator1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.RequiredFieldValidator2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesEventsEdit.StartAMPM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsEdit.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The	Page_Load event	on this	Page is	used to	obtain the ModuleID
+            and	ItemID of the event	to edit.
+            It then	uses the Appleseed.EventsDB()	data component
+            to populate	the	page's edit	controls with the event	details.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsEdit.AllDay_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            DevSolution 2003/6/17
+            AllDay_SelectedIndexChanged fired when AllDay or Specific Time selected
+            so that the appropriate combo boxes can be disabled for useability
+            </summary>
+            <param name="sender">Who is sending the request</param>
+            <param name="e">Standard EventArgs</param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsEdit.OnUpdate(System.EventArgs)">
+            <summary>
+            The	UpdateBtn_Click	event handler on this Page is used to either
+            create or update an	event.	It uses	the	Appleseed.EventsDB()
+            data component to encapsulate all data functionality.
+            </summary>
+            <param name="e">Standard EventArgs</param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsEdit.OnDelete(System.EventArgs)">
+            <summary>
+            The	DeleteBtn_Click	event handler on this Page is used to delete an
+            an event.  It  uses	the	Appleseed.EventsDB() data	component to
+            encapsulate	all	data functionality.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsEdit.OnInit(System.EventArgs)">
+            <summary>
+            Raises OnInitEvent
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesEventsEdit.InitializeComponent">
+            <summary>
+            Required method	for	Designer support - do not modify
+            the	contents of	this method	with the code editor.
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesEventsEdit.AllowedModules">
+            <summary>
+            Set the module guids with free access to this page
+            </summary>
+        </member>
+    </members>
+</doc>

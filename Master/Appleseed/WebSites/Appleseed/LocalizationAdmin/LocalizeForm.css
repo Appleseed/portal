@@ -1,0 +1,74 @@
+﻿#paneltranslate input { font-size: 8pt; }
+#paneltranslate textarea { font-size: 8pt; }
+
+#toolbar a { padding:4px; border: solid 1px whitesmoke; text-decoration:none; }
+#toolbar a:hover { background: #eeeeee url(images/menuhighlight.png);  border: solid 1px silver; } 
+
+.toolbarbar { vertical-align:Top;background:white;padding:4px; }
+
+.hoverbutton { text-decoration:none; padding:4px; border: solid 1px transparent;}
+.hoverbutton a { text-decoration: none; }
+.hoverbutton:hover { background: #eeeeee url(images/menuhighlight.png);  border: solid 1px silver; } 
+.blackborder { border: solid 2px darkblue; }
+.dialogcontent { padding: 15px; }
+  
+body,table,td,th,input,textarea,select
+{
+    font-family: verdana,sans-serif;
+    font-size: 8pt;
+}
+body
+{
+    margin-top: 0pt;
+    padding-top: 0pt; 
+}
+input[type="button"],input[type="submit"],input[type="file"]
+{
+	height: 23px;
+}
+.gridheader, .gridheaderbig, .gridheaderleft, .gridheaderright
+{
+	height: 20px;
+	padding: 2px 2px 2px 2px;
+	background:  #003399 url(images/vertgradient.png) repeat-x bottom;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: cornsilk;
+	font-size: 10pt;
+}
+.gridheaderleft
+{
+	text-align: left;
+}
+.gridheaderright
+{
+	text-align: right;
+}
+.gridheaderbig
+{
+	background: #003399 url(images/vertgradient40.png) repeat-x bottom;
+}
+.gridnormal
+{
+	background-color: #eeeeee;
+}
+.gridalternate
+{
+	background-color:#b5c7d6;
+}
+.errordisplay
+{
+	font-size: 10pt;
+	font-weight: normal;
+	color: darkred;
+	border:solid 2px darkred;
+	background-color:cornsilk;
+	padding-left:15pt;
+	padding-right:10pt;
+	line-height: 15pt;
+}
+.errordisplay hr
+{
+	color: darkred;
+}

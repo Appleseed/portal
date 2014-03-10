@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quiz.xsd">
+	<mchoice>
+		<question>What is the capital city of Australia?</question>
+		<answer>Sydney</answer>
+		<answer correct="yes">Canberra</answer>
+		<answer>Melbourne</answer>
+		<answer>Gold Coast</answer>
+	</mchoice>
+	<mchoice>
+		<question>Launceston is the second largest city in which Australian state?</question>
+		<answer>Victoria</answer>
+		<answer>New South Wales</answer>
+		<answer correct="yes">Tasmania</answer>
+		<answer>Western Australia</answer>
+	</mchoice>
+	<mchoice>
+		<question>Which state has the famous 'Twelve Apostles' ?</question>
+		<answer correct="yes">Victoria</answer>
+		<answer>South Australia</answer>
+		<answer>New South Wales</answer>
+		<answer>Western Australia</answer>
+	</mchoice>
+	<mchoice>
+		<question>Which is a popular ski resort in NSW?</question>
+		<answer correct="yes">Perisher Blue</answer>
+		<answer>Mt. Buller</answer>
+		<answer>Mt. Baw-Baw</answer>
+		<answer>Lake Mountain</answer>
+	</mchoice>
+	<mchoice>
+		<question>Which of the following is NOT Australian native animals?</question>
+		<answer>Kangaroo</answer>
+		<answer correct="yes">Penguin</answer>
+		<answer>Koala</answer>
+		<answer>Wombat</answer>
+	</mchoice>
+	<mchoice>
+		<question>Which city has an extensive tram network?</question>
+		<answer>Sydney</answer>
+		<answer correct="yes">Melbourne</answer>
+		<answer>Adelaide</answer>
+		<answer>Ballarat</answer>
+	</mchoice>
+	<mchoice>
+		<question>What is known as 'The Silver City' in Australia?</question>
+		<answer>Alice Springs</answer>
+		<answer correct="yes">Broken Hill</answer>
+		<answer>Ballarat</answer>
+		<answer>Silverton</answer>
+	</mchoice>
+	<mchoice>
+		<question>In which location the war movie 'Thin Red Line' was taken?</question>
+		<answer>Anglesea</answer>
+		<answer>Apollo Bay</answer>
+		<answer>Margaret River</answer>
+		<answer>Monkey Mia</answer>
+		<answer correct="yes">Townsville</answer>
+	</mchoice>
+	<mchoice>
+		<question>Which is NOT true about Uluru ?</question>
+		<answer>It is the world biggest monolith located in the centre of Australian continent</answer>
+		<answer>It was named 'Ayers Rock' by European explorer William Gosse in 1873</answer>
+		<answer correct="yes">Aboriginal people encourage tourists to climb Uluru</answer>
+		<answer>The area contains carvings and paintings by Aboriginal people</answer>
+	</mchoice>
+	<mchoice>
+		<question>What is so special about Longreach?</question>
+		<answer>The place where a blacksmith named Thomas Hiscock found the first gold that triggerred gold rush</answer>
+		<answer>The town has an expansive, well-preserved penal colony of Australia's early history</answer>
+		<answer correct="yes">The first commercial flight by Qantas took from this town in 1921</answer>
+		<answer>None of these answers are correct</answer>
+	</mchoice>
+</quiz>

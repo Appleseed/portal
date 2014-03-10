@@ -1,0 +1,1487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AppleseedFrameworkProvidersAppleseedMembershipProviderStoreContainer">
+          <EntitySet Name="aspnet_Applications" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_CustomProfile" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_CustomProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Membership" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Paths" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationAllUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationPerUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Profile" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_ResetPasswordTokens" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_ResetPasswordTokens" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_SchemaVersions" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_SchemaVersions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_WebEvent_Events" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__aspnet_Me__Appli__335592AB" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Me__Appli__335592AB">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__Appli__68F2894D" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Me__Appli__68F2894D">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__3449B6E4" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Me__UserI__3449B6E4">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__69E6AD86" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Me__UserI__69E6AD86">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pa__Appli__353DDB1D" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pa__Appli__353DDB1D">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pa__Appli__6ADAD1BF" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pa__Appli__6ADAD1BF">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__3631FF56" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pe__PathI__3631FF56">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__3726238F" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pe__PathI__3726238F">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__6BCEF5F8" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pe__PathI__6BCEF5F8">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__6CC31A31" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pe__PathI__6CC31A31">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__UserI__381A47C8" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pe__UserI__381A47C8">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__UserI__6DB73E6A" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pe__UserI__6DB73E6A">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pr__UserI__390E6C01" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pr__UserI__390E6C01">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pr__UserI__6EAB62A3" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Pr__UserI__6EAB62A3">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__3A02903A" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Ro__Appli__3A02903A">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__6F9F86DC" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Ro__Appli__6F9F86DC">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__40AF8DC9" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Us__Appli__40AF8DC9">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__7093AB15" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Us__Appli__7093AB15">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__41A3B202" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Us__RoleI__41A3B202">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__727BF387" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Us__RoleI__727BF387">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__4297D63B" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Us__UserI__4297D63B">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__7187CF4E" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK__aspnet_Us__UserI__7187CF4E">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_CustomProfile_aspnet_Users" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK_aspnet_CustomProfile_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_CustomProfile" EntitySet="aspnet_CustomProfile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_ResetPasswordTokens_aspnet_Membership" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.FK_aspnet_ResetPasswordTokens_aspnet_Membership">
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+            <End Role="aspnet_ResetPasswordTokens" EntitySet="aspnet_ResetPasswordTokens" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_CustomProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="2" />
+          <Property Name="StateId" Type="int" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="SendNewsletter" Type="bit" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Paths">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationAllUsers">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PageSettings" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationPerUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PathId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="PageSettings" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+          <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+          <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_ResetPasswordTokens">
+          <Key>
+            <PropertyRef Name="TokenId" />
+          </Key>
+          <Property Name="TokenId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_SchemaVersions">
+          <Key>
+            <PropertyRef Name="Feature" />
+            <PropertyRef Name="CompatibleSchemaVersion" />
+          </Key>
+          <Property Name="Feature" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="CompatibleSchemaVersion" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_WebEvent_Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+          <Property Name="EventTime" Type="datetime" Nullable="false" />
+          <Property Name="EventType" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="EventSequence" Type="decimal" Nullable="false" Precision="19" />
+          <Property Name="EventOccurrence" Type="decimal" Nullable="false" Precision="19" />
+          <Property Name="EventCode" Type="int" Nullable="false" />
+          <Property Name="EventDetailCode" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+          <Property Name="Details" Type="ntext" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__Appli__335592AB">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__Appli__68F2894D">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__3449B6E4">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__69E6AD86">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pa__Appli__353DDB1D">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Paths">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pa__Appli__6ADAD1BF">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Paths">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__3631FF56">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" Multiplicity="1" />
+          <End Role="aspnet_PersonalizationAllUsers" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationAllUsers">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__3726238F">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__6BCEF5F8">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" Multiplicity="1" />
+          <End Role="aspnet_PersonalizationAllUsers" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationAllUsers">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__6CC31A31">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Paths" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__UserI__381A47C8">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__UserI__6DB73E6A">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pr__UserI__390E6C01">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pr__UserI__6EAB62A3">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__3A02903A">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__6F9F86DC">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__40AF8DC9">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__7093AB15">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__41A3B202">
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__727BF387">
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__4297D63B">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__7187CF4E">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_CustomProfile_aspnet_Users">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_CustomProfile" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_CustomProfile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_CustomProfile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_ResetPasswordTokens_aspnet_Membership">
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_Membership" Multiplicity="1" />
+          <End Role="aspnet_ResetPasswordTokens" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.Store.aspnet_ResetPasswordTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_ResetPasswordTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Appleseed.Framework.Providers.AppleseedMembershipProvider" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AppleseedMembershipEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Applications" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" />
+          <EntitySet Name="aspnet_CustomProfile" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_CustomProfile" />
+          <EntitySet Name="aspnet_Membership" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" />
+          <EntitySet Name="aspnet_Paths" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" />
+          <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationAllUsers" />
+          <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser" />
+          <EntitySet Name="aspnet_Profile" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Profile" />
+          <EntitySet Name="aspnet_Roles" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles" />
+          <EntitySet Name="aspnet_SchemaVersions" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_SchemaVersions" />
+          <EntitySet Name="aspnet_Users" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles" />
+          <EntitySet Name="aspnet_WebEvent_Events" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_WebEvent_Events" />
+          <AssociationSet Name="FK__aspnet_Me__Appli__335592AB" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__335592AB">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__Appli__68F2894D" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__68F2894D">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pa__Appli__353DDB1D" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__353DDB1D">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pa__Appli__6ADAD1BF" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__6ADAD1BF">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__3A02903A" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__3A02903A">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__6F9F86DC" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__6F9F86DC">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__40AF8DC9" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__40AF8DC9">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__7093AB15" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__7093AB15">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_aspnet_CustomProfile_aspnet_Users" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_CustomProfile_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_CustomProfile" EntitySet="aspnet_CustomProfile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__3449B6E4" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__3449B6E4">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__69E6AD86" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__69E6AD86">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__3631FF56" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3631FF56">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__3726238F" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3726238F">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__6BCEF5F8" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6BCEF5F8">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__6CC31A31" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6CC31A31">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__UserI__381A47C8" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__381A47C8">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__UserI__6DB73E6A" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__6DB73E6A">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pr__UserI__390E6C01" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__390E6C01">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pr__UserI__6EAB62A3" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__6EAB62A3">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__41A3B202" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__41A3B202">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__727BF387" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__727BF387">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__4297D63B" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__4297D63B">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__7187CF4E" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__7187CF4E">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_ResetPasswordTokens" EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_ResetPasswordTokens" />
+          <AssociationSet Name="FK_aspnet_ResetPasswordTokens_aspnet_Membership" Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_ResetPasswordTokens_aspnet_Membership">
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+            <End Role="aspnet_ResetPasswordTokens" EntitySet="aspnet_ResetPasswordTokens" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__335592AB" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Membership1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__68F2894D" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__353DDB1D" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Paths1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__6ADAD1BF" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__3A02903A" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Roles1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__6F9F86DC" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__40AF8DC9" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__7093AB15" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_CustomProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="Fax" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SendNewsletter" Type="Boolean" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_CustomProfile_aspnet_Users" FromRole="aspnet_CustomProfile" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__335592AB" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Applications1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__68F2894D" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__3449B6E4" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__69E6AD86" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_ResetPasswordTokens" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_ResetPasswordTokens_aspnet_Membership" FromRole="aspnet_Membership" ToRole="aspnet_ResetPasswordTokens" />
+        </EntityType>
+        <EntityType Name="aspnet_Paths">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="PathId" Type="Guid" Nullable="false" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__353DDB1D" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Applications1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__6ADAD1BF" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3631FF56" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3726238F" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_PersonalizationAllUsers1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6BCEF5F8" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6CC31A31" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationAllUsers">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="PathId" Type="Guid" Nullable="false" />
+          <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3631FF56" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Paths1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6BCEF5F8" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationPerUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="PathId" Type="Guid" />
+          <Property Name="UserId" Type="Guid" />
+          <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3726238F" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Paths1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6CC31A31" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__381A47C8" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__6DB73E6A" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__390E6C01" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__6EAB62A3" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__3A02903A" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Applications1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__6F9F86DC" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_UsersInRoles" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__41A3B202" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+          <NavigationProperty Name="aspnet_UsersInRoles1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__727BF387" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+        </EntityType>
+        <EntityType Name="aspnet_SchemaVersions">
+          <Key>
+            <PropertyRef Name="Feature" />
+            <PropertyRef Name="CompatibleSchemaVersion" />
+          </Key>
+          <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__40AF8DC9" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Applications1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__7093AB15" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_CustomProfile" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_CustomProfile_aspnet_Users" FromRole="aspnet_Users" ToRole="aspnet_CustomProfile" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__3449B6E4" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Membership1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__69E6AD86" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__381A47C8" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__6DB73E6A" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_Profile" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__390E6C01" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+          <NavigationProperty Name="aspnet_Profile1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__6EAB62A3" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+          <NavigationProperty Name="aspnet_UsersInRoles" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__4297D63B" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+          <NavigationProperty Name="aspnet_UsersInRoles1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__7187CF4E" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__41A3B202" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Roles1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__727BF387" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__4297D63B" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users1" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__7187CF4E" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_WebEvent_Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" />
+          <Property Name="EventTime" Type="DateTime" Nullable="false" />
+          <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+          <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+          <Property Name="EventCode" Type="Int32" Nullable="false" />
+          <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="RequestUrl" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ExceptionType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__Appli__335592AB">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__Appli__68F2894D">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pa__Appli__353DDB1D">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Paths">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pa__Appli__6ADAD1BF">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Paths">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__3A02903A">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__6F9F86DC">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__40AF8DC9">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__7093AB15">
+          <End Role="aspnet_Applications" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_aspnet_CustomProfile_aspnet_Users">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_CustomProfile" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_CustomProfile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_CustomProfile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__3449B6E4">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__69E6AD86">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__3631FF56">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Multiplicity="1" />
+          <End Role="aspnet_PersonalizationAllUsers" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationAllUsers">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__3726238F">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__6BCEF5F8">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Multiplicity="1" />
+          <End Role="aspnet_PersonalizationAllUsers" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationAllUsers">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__6CC31A31">
+          <End Role="aspnet_Paths" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__UserI__381A47C8">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__UserI__6DB73E6A">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pr__UserI__390E6C01">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pr__UserI__6EAB62A3">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__41A3B202">
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__727BF387">
+          <End Role="aspnet_Roles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__4297D63B">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__7187CF4E">
+          <End Role="aspnet_Users" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="aspnet_ResetPasswordTokens">
+          <Key>
+            <PropertyRef Name="TokenId" />
+          </Key>
+          <Property Type="Guid" Name="TokenId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_ResetPasswordTokens_aspnet_Membership" FromRole="aspnet_ResetPasswordTokens" ToRole="aspnet_Membership" />
+        </EntityType>
+        <Association Name="FK_aspnet_ResetPasswordTokens_aspnet_Membership">
+          <End Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" Role="aspnet_Membership" Multiplicity="1" />
+          <End Type="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_ResetPasswordTokens" Role="aspnet_ResetPasswordTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_ResetPasswordTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppleseedFrameworkProvidersAppleseedMembershipProviderStoreContainer" CdmEntityContainer="AppleseedMembershipEntities">
+          <EntitySetMapping Name="aspnet_Applications"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications"><MappingFragment StoreEntitySet="aspnet_Applications">
+            <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+            <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_CustomProfile"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_CustomProfile"><MappingFragment StoreEntitySet="aspnet_CustomProfile">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+            <ScalarProperty Name="Company" ColumnName="Company" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="Zip" ColumnName="Zip" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+            <ScalarProperty Name="StateId" ColumnName="StateId" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="Phone" ColumnName="Phone" />
+            <ScalarProperty Name="SendNewsletter" ColumnName="SendNewsletter" />
+            <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Membership"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership"><MappingFragment StoreEntitySet="aspnet_Membership">
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+            <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+            <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+            <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+            <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+            <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+            <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+            <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+            <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+            <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+            <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+            <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+            <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+            <ScalarProperty Name="Comment" ColumnName="Comment" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Paths"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths"><MappingFragment StoreEntitySet="aspnet_Paths">
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="PathId" ColumnName="PathId" />
+            <ScalarProperty Name="Path" ColumnName="Path" />
+            <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_PersonalizationAllUsers"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationAllUsers"><MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+            <ScalarProperty Name="PathId" ColumnName="PathId" />
+            <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+            <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_PersonalizationPerUser"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser"><MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="PathId" ColumnName="PathId" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+            <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Profile"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Profile"><MappingFragment StoreEntitySet="aspnet_Profile">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+            <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+            <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+            <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles"><MappingFragment StoreEntitySet="aspnet_Roles">
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+            <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_SchemaVersions"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_SchemaVersions"><MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+            <ScalarProperty Name="Feature" ColumnName="Feature" />
+            <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+            <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users"><MappingFragment StoreEntitySet="aspnet_Users">
+            <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+            <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+            <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+            <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_UsersInRoles"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles"><MappingFragment StoreEntitySet="aspnet_UsersInRoles">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_WebEvent_Events"><EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_WebEvent_Events"><MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+            <ScalarProperty Name="EventId" ColumnName="EventId" />
+            <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+            <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+            <ScalarProperty Name="EventType" ColumnName="EventType" />
+            <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+            <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+            <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+            <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+            <ScalarProperty Name="Message" ColumnName="Message" />
+            <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+            <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+            <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+            <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+            <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+            <ScalarProperty Name="Details" ColumnName="Details" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_ResetPasswordTokens">
+            <EntityTypeMapping TypeName="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_ResetPasswordTokens">
+              <MappingFragment StoreEntitySet="aspnet_ResetPasswordTokens">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="AppleseedMembershipModel">
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Applications" Width="1.5" PointX="0.75" PointY="12.125" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_CustomProfile" Width="1.5" PointX="5.25" PointY="20.375" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Membership" Width="1.5" PointX="8.25" PointY="16.25" Height="5.8263151041666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Paths" Width="1.5" PointX="3" PointY="13.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="13.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_PersonalizationPerUser" Width="1.5" PointX="8.25" PointY="23.25" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Profile" Width="1.5" PointX="5.25" PointY="25.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Roles" Width="1.5" PointX="3" PointY="16.875" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_Users" Width="1.5" PointX="3" PointY="21.75" Height="4.4802050781250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_UsersInRoles" Width="1.5" PointX="5.25" PointY="17.375" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="0.75" Height="3.9033007812500031" IsExpanded="true" />
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__335592AB" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="15.451396484375" />
+          <ConnectorPoint PointX="1.5" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="1.6197929166666667" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="1.7864595833333332" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="19.999746093749998" />
+          <ConnectorPoint PointX="8.25" PointY="19.999746093749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__Appli__68F2894D" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="15.451396484375" />
+          <ConnectorPoint PointX="1.9062525" PointY="16.53125" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="16.53125" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="16.53125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="16.53125" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="16.53125" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="16.53125" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="16.53125" />
+          <ConnectorPoint PointX="8.25" PointY="16.53125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__353DDB1D" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.2881982421875" />
+          <ConnectorPoint PointX="3" PointY="14.2881982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pa__Appli__6ADAD1BF" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="13.644099121093749" />
+          <ConnectorPoint PointX="3" PointY="13.644099121093749" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__3A02903A" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.0937475" PointY="15.451396484375" />
+          <ConnectorPoint PointX="1.0937475" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="1.2135404166666668" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="1.3802070833333333" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="1.4166666666666667" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="1.5833333333333333" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="1.6197929166666667" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="1.7864595833333332" PointY="18.249746093749998" />
+          <ConnectorPoint PointX="3" PointY="18.249746093749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Ro__Appli__6F9F86DC" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.10937875" PointY="15.451396484375" />
+          <ConnectorPoint PointX="2.10937875" PointY="17.531120546874998" />
+          <ConnectorPoint PointX="3" PointY="17.531120546874998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__40AF8DC9" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.70312625" PointY="15.451396484375" />
+          <ConnectorPoint PointX="1.70312625" PointY="23.9901025390625" />
+          <ConnectorPoint PointX="3" PointY="23.9901025390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__Appli__7093AB15" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.29687375" PointY="15.451396484375" />
+          <ConnectorPoint PointX="1.29687375" PointY="22.838798769531259" />
+          <ConnectorPoint PointX="1.6197929166666667" PointY="22.838798769531259" />
+          <ConnectorPoint PointX="1.7864595833333332" PointY="22.838798769531259" />
+          <ConnectorPoint PointX="3" PointY="22.838798769531259" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_CustomProfile_aspnet_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="23.110301106770834" />
+          <ConnectorPoint PointX="5.25" PointY="23.110301106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__3449B6E4" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="21.77653746153846" />
+          <ConnectorPoint PointX="4.90625" PointY="21.37028746153846" />
+          <ConnectorPoint PointX="4.90625" PointY="15.9375" />
+          <ConnectorPoint PointX="7.9132692307692309" PointY="15.9375" />
+          <ConnectorPoint PointX="8.25" PointY="16.274230769230769" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Me__UserI__69E6AD86" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="21.789229769230765" />
+          <ConnectorPoint PointX="4.9375" PointY="21.351729769230765" />
+          <ConnectorPoint PointX="4.9375" PointY="15.875" />
+          <ConnectorPoint PointX="7.9003836153846159" PointY="15.875" />
+          <ConnectorPoint PointX="8.2753836153846159" PointY="16.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3631FF56" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.615143229166666" />
+          <ConnectorPoint PointX="5.25" PointY="14.615143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__3726238F" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.041408004407053" />
+          <ConnectorPoint PointX="4.5878856153846144" PointY="16.129293619791667" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="16.129293619791667" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="16.129293619791667" />
+          <ConnectorPoint PointX="8" PointY="16.129293619791667" />
+          <ConnectorPoint PointX="8" PointY="22.974616384615384" />
+          <ConnectorPoint PointX="8.2753836153846159" PointY="23.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6BCEF5F8" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.057571614583333" />
+          <ConnectorPoint PointX="5.25" PointY="14.057571614583333" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__PathI__6CC31A31" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.47576923076923" PointY="16.066793619791667" />
+          <ConnectorPoint PointX="4.6007692307692309" PointY="16.191793619791667" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="16.191793619791667" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="16.191793619791667" />
+          <ConnectorPoint PointX="7.875" PointY="16.191793619791667" />
+          <ConnectorPoint PointX="7.875" PointY="22.899230769230769" />
+          <ConnectorPoint PointX="8.25" PointY="23.274230769230769" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__381A47C8" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="24.797801106770834" />
+          <ConnectorPoint PointX="8.25" PointY="24.797801106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pe__UserI__6DB73E6A" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="24.602951660156251" />
+          <ConnectorPoint PointX="8.25" PointY="24.602951660156251" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__390E6C01" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="25.6776025390625" />
+          <ConnectorPoint PointX="5.25" PointY="25.6776025390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Pr__UserI__6EAB62A3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="25.338801269531253" />
+          <ConnectorPoint PointX="5.25" PointY="25.338801269531253" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__41A3B202" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.4612939453125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="18.4612939453125" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="18.4612939453125" />
+          <ConnectorPoint PointX="5.25" PointY="18.4612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__RoleI__727BF387" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.855646972656253" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="17.855646972656253" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="17.855646972656253" />
+          <ConnectorPoint PointX="5.25" PointY="17.855646972656253" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__4297D63B" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="21.766152846153844" />
+          <ConnectorPoint PointX="4.96875" PointY="21.297402846153844" />
+          <ConnectorPoint PointX="4.96875" PointY="19.035692917968753" />
+          <ConnectorPoint PointX="5.25" PointY="19.035692917968753" />
+        </AssociationConnector>
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK__aspnet_Us__UserI__7187CF4E" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.455" PointY="21.75" />
+          <ConnectorPoint PointX="4.875" PointY="21.33" />
+          <ConnectorPoint PointX="4.875" PointY="19.035692917968753" />
+          <ConnectorPoint PointX="5.25" PointY="19.035692917968753" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Appleseed.Framework.Providers.AppleseedMembershipProvider.aspnet_ResetPasswordTokens" Width="1.5" PointX="10.5" PointY="18.375" Height="1.7879850260416674" />
+        <AssociationConnector Association="Appleseed.Framework.Providers.AppleseedMembershipProvider.FK_aspnet_ResetPasswordTokens_aspnet_Membership" >
+          <ConnectorPoint PointX="9.75" PointY="19.268992513020834" />
+          <ConnectorPoint PointX="10.5" PointY="19.268992513020834" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

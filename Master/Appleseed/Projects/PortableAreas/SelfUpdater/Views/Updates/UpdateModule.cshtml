@@ -1,0 +1,85 @@
+﻿@model SelfUpdater.Models.UpdatesModel
+@using MvcContrib
+ 
+<script src="@Url.Resource("Scripts.SelfUpdater.js")" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="@Url.Resource("Content.SelfUpdater.css")" />
+<div>
+    @if (Model.Updates.Count == 0) {
+        <span>There are no packages installed</span>
+    } else { 
+        <table id="installed_packages">
+            <tr>
+                <th>
+                </th>
+                <th>
+                    Current
+                </th>
+                <th>
+                    Update
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var m in Model.Updates)
+            {
+                <tr class="installed_package">
+                    <td class="package_icon">
+                        <img src="@m.Installed.IconUrl" alt="" />
+                    </td>
+                    <td class="package_info">
+                        @m.Installed.Id&nbsp;@m.Installed.Version
+                    </td>
+                    <td class="package_update_info">
+                        @if(m.Update != null) {
+                            <span>@m.Update.Id&nbsp;@m.Update.Version&nbsp;</span>
+                            <a id="update@m.Update.Id" href="javascript:void(0);" onclick="checkUpdate(this)">
+                                update</a>
+                        } else {
+                            <span>(none)</span>
+                        }
+                    </td>
+                    <td class="package_update_checks">
+                        <span  class="unchekedSpan"><img src="@Url.Resource("Content.unchecked.jpg")"/></span>
+                        @if(m.Update != null)
+                        {
+                            <span class="chekedSpan" style="display: none"><img src="@Url.Resource("Content.checked.jpg")"/></span>
+
+                            <input type="hidden" class="AppleseedUpdateisCheked" value="false"/>
+
+                            <input type="hidden" class="PackageName" value="@m.Update.Id"/>
+                    
+                            <input type="hidden" class="PackageSource" value="@m.Source"/>
+                    
+                            <input type="hidden" class="PackageVersion" value="@m.Update.Version"/>
+                        }
+                
+                
+                    </td>
+                </tr>
+            } 
+        </table>
+    } 
+</div>
+
+<script>
+    function checkUpdate(object) {
+
+        var selectedTd = $(object).parent().siblings(".package_update_checks");
+        var val = $(selectedTd).children(".AppleseedUpdateisCheked").val();
+        if (val == "false") {
+            $(selectedTd).children(".AppleseedUpdateisCheked").val("true");
+            $(selectedTd).children(".unchekedSpan").hide();
+            $(selectedTd).children(".chekedSpan").show();
+            $(object).text('remove');
+
+        } else {
+            $(selectedTd).children(".AppleseedUpdateisCheked").val("false");
+            $(selectedTd).children(".unchekedSpan").show();
+            $(selectedTd).children(".chekedSpan").hide();
+            $(object).text('update');
+        }
+
+
+
+    }
+</script>

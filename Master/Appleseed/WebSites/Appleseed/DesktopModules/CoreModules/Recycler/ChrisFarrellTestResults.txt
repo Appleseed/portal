@@ -1,0 +1,50 @@
+*****************************************************************************************
+*Test Results
+*
+*By: Chris Farrell(chris@cftechconsulting.com)
+*Date:  6 Dec 2004
+*Tested on:  Windows XP, MSDE, Appleseed 178x
+*****************************************************************************************
+1:  Build Warnings.(VS.Net 2003 trial)
+C:\Appleseed\DesktopModules\Recycler\recycler.ascx.cs(74,18): warning CS0618: 'Appleseed.Framework.Web.UI.WebControls.DesktopModuleTitle.DesktopModuleTitle()' is obsolete: 'Use the corresponding properties in PortalModuleControl'
+C:\Appleseed\DesktopModules\Recycler\view.aspx.cs(48,76): warning CS0618: 'Appleseed.Framework.Site.Configuration.PortalSettings.ApplicationPath' is obsolete: 'Please use Appleseed.Framework.Settings.Path.ApplicationRoot'
+
+2:  Errors
+A:  "Access Denied Edit" when attempting to go to the view page.  Error mysteriously went away
+when running through a debugger.  
+
+3:  Naming Convention is bad.  
+A:  Appleseed uses .Net style notation which is upper first and upper middle(not sure if there 
+is a fancy name for it),this module uses middlecaps.  Ex,  bindData() shouldbe BindData().
+B:  Should use a namespace such as Appleseed.RecyclerDB instead of bowen.RecyclerDB.  Imagine
+if every module author used a different namespace how confusing things would get.
+C:  File names are supposed to be ModuleName.ascx, ModuleNameEdit.aspx, ModuleNameView.aspx.
+Should be RecyclerView.aspx instead of view.aspx.  
+
+4:  Improper use of dbo in install.sql script.  The ONLY time you use dbo is when you are
+doing a SELECT statement from the dbo.sysobjects table.  All Appleseed tables(rb_) and sprocs
+are used WITHOUT the dbo specification.
+
+Suggested Features:
+
+Notes:
+1:  You could make the DAL methods static, a decent performance boost.
+
+CHANGES:
+1:  Added GO to end of rb_GetModulesInRecycler sproc in the install.sql file!!!
+2:  Added DataGrid sorting.  This meant changes to rb_GetModulesInRecycler sproc, the DAL,
+ascx.cs codebehind and the ascx file.
+3:  Set width of datagrid to 95% and center aligned it.
+4:  Cleaned up DataGrid tags a bit and moved HeaderStyle to a single location instead of
+on every bound field.
+5:  Added the property for AdminModule to the module to make it an admin module.
+6:  Removed improper DBO usage in SQL file, removed Collation from table field.  
+7:  Uninstall.sql was blank so I wrote it.
+8:  Set it to only do a data bind when !Page.IsPostBack
+9:  Removed un-used constructor
+10:  Fixed many of the instances of improper capitalization.
+11:  Moved module to the Appleseed.DesktopModules namespace where it should be.
+
+*****************************************************************************************
+*End Test Results
+*****************************************************************************************

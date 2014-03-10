@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sales reportdate="2003-04-20 00:00:00Z" dataculture="en-GB">
+	<columns>
+		<column id="ProductCategory">
+			<label xml:lang="en">Product Category</label>
+			<label xml:lang="pt">Categoria do Produto</label>
+			<label xml:lang="fr-FR">Catégorie de Produit</label>
+		</column>
+		<column id="Revenue">
+			<label xml:lang="en">Revenue</label>
+			<label xml:lang="pt">Rendimento</label>
+			<label xml:lang="fr-FR">Revenu</label>
+		</column>
+		<column id="Growth">
+			<label xml:lang="en">Growth</label>
+			<label xml:lang="pt">Aumento</label>
+			<label xml:lang="fr-FR">Augmentation</label>
+		</column>
+	</columns>
+	<products>
+		<product id="Travel">
+			<label xml:lang="en">Travel</label>
+			<label xml:lang="pt">Viagem</label>
+			<label xml:lang="fr-FR">Voyage</label>
+			<revenue>60000000</revenue>
+			<growth>0.08</growth>
+		</product>
+		<product id="Communications">
+			<label xml:lang="en">Communications</label>
+			<label xml:lang="pt">Comunicações</label>
+			<label xml:lang="fr-FR">Communications</label>
+			<revenue>45000000</revenue>
+			<growth>-0.078</growth>
+		</product>
+		<product id="Deception">
+			<label xml:lang="en">Deception</label>
+			<label xml:lang="pt">Truques</label>
+			<label xml:lang="fr-FR">Déception</label>
+			<revenue>10000000</revenue>
+			<growth>0.9</growth>
+		</product>
+		<product id="Weapons">
+			<label xml:lang="en">Weapons</label>
+			<label xml:lang="pt">Armas</label>
+			<label xml:lang="fr-FR">Armes</label>
+			<revenue>4100000</revenue>
+			<growth>-0.03</growth>
+		</product>
+	</products>
+</sales>

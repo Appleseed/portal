@@ -1,0 +1,4823 @@
+<?xml version="1.0"?>
+<ArrayOfCountryInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CountryInfo>
+    <EnglishName>Andorra</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Abu Dhabi</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AE</TwoLetterISOCountryName>
+        <CountryCode>599</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AE-ABU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Al l'Ayn</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AE</TwoLetterISOCountryName>
+        <CountryCode>9217877</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AE-AL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ash Shariqah</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AE</TwoLetterISOCountryName>
+        <CountryCode>2082</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AE-ASH</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Dubai</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AE</TwoLetterISOCountryName>
+        <CountryCode>9470</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AE-DUB</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>United Arab Emirates</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Herat</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AF</TwoLetterISOCountryName>
+        <CountryCode>13852</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AF-HER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Kabul</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AF</TwoLetterISOCountryName>
+        <CountryCode>15851</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AF-KAB</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Kandahar</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AF</TwoLetterISOCountryName>
+        <CountryCode>16074</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AF-KAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Mazar-e Sharif</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AF</TwoLetterISOCountryName>
+        <CountryCode>20696</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AF-MAZ</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Afghanistan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Antigua And Barbuda</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Anguilla</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Albania</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Armenia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Netherlands Antilles</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Angola</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Antarctica</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AQ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AQ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Buenos Aires</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>5155</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-BUE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Catamarca</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106912</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-CAT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Chaco</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>6427</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-CHA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Chubut</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106904</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-CHU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cordoba</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>7915</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-COR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Corrientes</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>7990</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-COR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Distrito Federal</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106907</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-DIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Entre Rios</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10313</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-ENT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Formosa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106913</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-FOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Jujuy</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106914</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-JUJ</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>La Pampa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106906</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-LA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>La Rioja</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106910</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-LA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Mendoza</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>20974</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-MEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Misiones</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106911</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-MIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Neuquen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>23013</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-NEU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ro Negro</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106905</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-RO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Salta</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>29054</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-SAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>San Juan</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>29330</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>San Luis</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>10106909</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Santa Cruz</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>29642</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Santa Fe</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>29657</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Santiago del Estero</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>29744</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Tierra del Fuego Antrtida e Islas del Atlntico S</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>8983108</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-TIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Tucuman</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+        <CountryCode>34062</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>AR-TUC</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Argentina</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>American Samoa</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Austria</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Australia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Aruba</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Azerbaijan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>AZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>AZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bosnia AND Herzegovina</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Barbados</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BB</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BB</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bangladesh</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Belgium</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Burkina Faso</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bulgaria</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bahrain</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Burundi</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Benin</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BJ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BJ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bermuda</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Brunei</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bolivia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Brazil</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bahamas, The</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bhutan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Bouvet Island</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BV</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BV</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Botswana</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Belarus</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Belize</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>BZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>BZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Alberta</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>1076</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-ALB</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>British Columbia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>4934</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-BRI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Manitoba</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>20110</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-MAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>New Brunswick</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>23074</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-NEW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Newfoundland</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>23204</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-NEW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Northwest Territories</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>23766</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-NOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nova Scotia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>23841</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-NOV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nunavut</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>42096</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-NUN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ontario</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>24465</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-ONT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Prince Edward Island</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>26704</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-PRI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Quebec</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>27068</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-QUE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Saskatchewan</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>29926</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-SAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Yukon Territory</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+        <CountryCode>37348</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>CA-YUK</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Canada</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cocos (Keeling) Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Congo, Democractic Republic of the</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Central African Republic</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Congo</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Switzerland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cote D'Ivoire (Ivory Coast)</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cook Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Chile</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cameroon</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>China</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Colombia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Costa Rica</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cuba</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cape Verde</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CV</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CV</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Christmas Island</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CX</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CX</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cyprus</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Czech Republic</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>CZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>CZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Baden-Wrttemberg</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>2537</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-BAD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bayern</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8255245</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-BAY</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Berlin</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8045746</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-BER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Brandenburg</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8248738</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-BRA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bremen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>41760</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-BRE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Hamburg</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>13339</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-HAM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Hessen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8208586</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-HES</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Mecklenburg-Vorpommern</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8175722</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-MEC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Niedersachsen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>23331</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-NIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nordrhein-Westfalen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8164991</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-NOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Rheinland-Pfalz</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>27654</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-RHE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Saarland</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>28479</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-SAA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Sachsen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8145598</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-SAC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Sachsen-Anhalt</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8145597</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-SAC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Schleswig-Holstein</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8141652</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-SCH</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Thuringen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+        <CountryCode>8125502</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>DE-THU</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Germany</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>DE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>DE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Djibouti</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>DJ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>DJ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Denmark</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>DK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>DK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Dominica</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>DM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>DM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Dominican Republic</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>DO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>DO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Algeria</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>DZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>DZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Ecuador</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>EC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>EC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Estonia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>EE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>EE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Egypt</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>EG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>EG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Eritrea</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ER</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ER</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Alava</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9630421</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ALA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Albacete</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9630410</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ALB</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Alicante</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9629788</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ALI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Almeria</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9629623</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ALM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Asturias</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9605029</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-AST</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Avila</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9628030</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-AVI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Badajoz</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9627875</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-BAD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Baleares</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111303</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-BAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Barcelona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9627509</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-BAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Burgos</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9625584</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-BUR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Caceres</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9625152</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-CAC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cadiz</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9625113</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-CAD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Castellon</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111296</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-CAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ciudad Real</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9621755</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-CIU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cordoba</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9621233</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-COR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cuenca</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9620542</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-CUE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Gerona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111297</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-GER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Granada</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9615670</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-GRA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Guadalajara</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9615419</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-GUA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Guipuzcoa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9615112</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-GUI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Huelva</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9614436</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-HUE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Huesca</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9614354</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-HUE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Jaen</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9613931</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-JAE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>La Coruna</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9613207</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-LA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>La Rioja</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9610406</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-LA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Las Palmas</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9611473</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-LAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Leon</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9610926</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-LEO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lleida</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9610903</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-LLE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Madrid</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111301</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-MAD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Malaga</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9609211</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-MAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Murcia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111302</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-MUR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Navarra</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9606207</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-NAV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Orense</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9605329</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ORE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Palencia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9604804</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-PAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Provincia de Lugo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9609494</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-PRO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Provincia de Pontevedra</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9602882</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-PRO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Salamanca</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9599894</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-SAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Santa Cruz de Tenerife</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9598313</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Santander</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111300</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-SAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Segovia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9597450</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-SEG</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Sevilla</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9597150</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-SEV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Soria</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9596689</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-SOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Tarragona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9596097</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-TAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Teruel</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111298</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-TER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Toledo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9595641</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-TOL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Valencia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9593864</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-VAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Valladolid</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9593798</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-VAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vizcaya</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9591071</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-VIZ</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Zamora</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>9590886</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ZAM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Zaragoza</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+        <CountryCode>10111299</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>ES-ZAR</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Spain</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ES</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ES</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Ethiopia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ET</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ET</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Finland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>FI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>FI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Fiji Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>FJ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>FJ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Falkland Islands (Islas Malvinas)</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>FK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>FK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Micronesia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>FM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>FM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Faroe Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>FO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>FO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Ain</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8593129</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-AIN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Aisne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8593082</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-AIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Allier</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8592815</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ALL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Alpes-de-Haute-Provence</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8592754</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ALP</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Alpes-Maritimes</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8592753</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ALP</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ardeche</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8591842</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ARD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ardennes</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8591830</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ARD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ariege</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8591658</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ARI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Aube</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8591109</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-AUB</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Aude</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8590953</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-AUD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Aveyron</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8590379</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-AVE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bas-Rhin</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8589403</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-BAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bouches-du-Rhone</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8586025</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-BOU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Calvados</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8583754</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-CAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cantal</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8583450</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-CAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Charente</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8581300</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-CHA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Charente-Maritime</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8581298</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-CHA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cher</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8580134</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-CHE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Correze</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8578186</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-COR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Corse-du-Sud</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8578168</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-COR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cote-d'Or</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8578076</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-COT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cotes-d'Armor</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8578067</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-COT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Creuse</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8577167</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-CRE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Deux-Sevres</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8576149</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-DEU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Dordogne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8575688</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-DOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Doubs</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8575635</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-DOU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Drome</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8575427</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-DRO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Essonne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8574239</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ESS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Eure</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8573956</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-EUR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Eure-et-Loir</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8573955</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-EUR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Finistere</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8573109</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-FIN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Gard</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8571302</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-GAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Gers</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8570825</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-GER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Gironde</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8570578</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-GIR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Corse</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568416</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Garonne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568389</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Loire</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568382</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Marne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568379</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Hautes-Alpes</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568359</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Saone</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568358</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Savoie</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568357</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Hautes-Pyrenees</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568347</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haute-Vienne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568340</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Haut-Rhin</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568284</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Hauts-de-Seine</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568278</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Herault</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8568121</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-HER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ille-et-Vilaine</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8567467</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ILL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Indre</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8567423</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-IND</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Indre-et-Loire</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8567422</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-IND</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Isere</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8567332</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ISE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Jura</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8566665</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-JUR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Landes</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8562476</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Loire</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8552463</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Loire-Atlantique</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8552454</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Loiret</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8552450</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Loir-et-Cher</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8552449</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lot</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8552114</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lot-et-Garonne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8552113</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lozere</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8551878</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-LOZ</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Maine-et-Loire</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8551250</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MAI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Manche</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8550855</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Marne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8550187</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Mayenne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8549516</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MAY</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Meurthe-et-Moselle</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8548691</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MEU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Meuse</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8548685</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MEU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Morbihan</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8546453</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Moselle</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8546201</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-MOS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nievre</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8544940</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-NIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nord</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8544697</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-NOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Oise</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8544230</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-OIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Orne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8543814</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-ORN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Paris</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8523323</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-PAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pas-de-Calais</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8542995</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-PAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Puy-de-Dome</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8539537</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-PUY</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pyrenees-Atlantiques</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8539437</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-PYR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pyrenees-Orientales</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8539434</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-PYR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Rhone</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>10026439</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-RHO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Saone-et-Loire</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8530614</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SAO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Sarthe</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8530458</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Savoie</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8530048</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SAV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Seine-et-Marne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8529778</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SEI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Seine-Maritime</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8529777</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SEI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Seine-Saint-Denis</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8529775</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SEI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Somme</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8528825</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-SOM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Tarn</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8527882</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-TAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Tarn-et-Garonne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8527877</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-TAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Territoire-de-Belfort</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8588470</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-TER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Val-De-Marne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8525601</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Val-drOise</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8525582</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Var</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8525260</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vaucluse</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8525064</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VAU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vendee</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8524650</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vienne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8523790</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vosges</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8522188</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-VOS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Yonne</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8521729</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-YON</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Yvelines</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+        <CountryCode>8521702</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>FR-YVE</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>France</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>FR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>FR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Gabon</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>United Kingdom</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GB</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GB</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Grenada</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Georgia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>French Guiana</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Ghana</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Gibraltar</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Greenland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Gambia, The</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Guinea</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Guadeloupe</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GP</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GP</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Equatorial Guinea</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GQ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GQ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Greece</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>South Georgia And The South Sandwich Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Guatemala</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Guam</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Guinea-Bissau</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Guyana</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>GY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>GY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Hong Kong S.A.R.</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>HK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>HK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Heard AND McDonald Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>HM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>HM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Honduras</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>HN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>HN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Croatia (Hrvatska)</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>HR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>HR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Haiti</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>HT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>HT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Hungary</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>HU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>HU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Indonesia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ID</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ID</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Ireland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Israel</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>India</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>British Indian Ocean Territory</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Iraq</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IQ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IQ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Iran</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Iceland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Agrigento</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9889982</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-AGR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Alessandria</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9889853</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ALE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ancona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126883</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ANC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Aosta</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9889497</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-AOS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Arezzo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9889362</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ARE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ascoli Piceno</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126885</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ASC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Asti</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9889164</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-AST</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Avellino</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9889092</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-AVE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bari</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9888744</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Belluno</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9888582</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BEL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Benevento</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9888540</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bergamo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9888525</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Biella</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209554</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bologna</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9888257</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BOL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Bolzano</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9888241</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BOL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Brescia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9887844</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BRE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Brindisi</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9887815</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-BRI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cagliari</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9887534</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CAG</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Caltanissetta</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126889</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Campobasso</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9887202</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CAM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Caserta</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9885780</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Catania</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9885210</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CAT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Catanzaro</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9885203</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CAT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Chieti</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126886</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CHI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Como</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9883946</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-COM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cosenza</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9883595</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-COS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cremona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9883496</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CRE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Crotone</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209560</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CRO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Cuneo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9883330</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-CUN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Enna</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126890</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ENN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ferrara</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9882611</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-FER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Firenze</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9882456</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-FIR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Foggia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9882361</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-FOG</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Forli-Cesena</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9882212</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-FOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Frosinone</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9881951</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-FRO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Genova</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9881598</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-GEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Gorizia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9881297</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-GOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Grosseto</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9881066</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-GRO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Imperia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9880762</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-IMP</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Isernia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9880657</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ISE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>La Spezia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9880226</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>L'Aquila</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9880275</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-L'A</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Latina</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9880201</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LAT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lecce</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9880079</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LEC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lecco</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209557</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LEC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Livorno</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9879741</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LIV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lodi</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209556</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LOD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Lucca</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9879594</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-LUC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Macerata</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126884</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MAC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Mantova</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9879034</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Massa Carrara</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9878692</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Matera</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9878616</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MAT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Messina</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9878383</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MES</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Milano</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9878273</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MIL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Modena</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9878134</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-MOD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Napoli</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9877095</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-NAP</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Novara</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9876861</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-NOV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nuoro</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126892</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-NUO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Oristano</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126891</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ORI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Padova</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9876337</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PAD</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Palermo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9876200</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Parma</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9876000</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pavia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875893</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PAV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Perugia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875675</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pesaro e Urbino</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875668</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PES</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pescara</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875659</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PES</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Piacenza</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875535</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PIA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pisa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875081</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pistoia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9875048</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pordenone</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9874523</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-POR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Potenza</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9874381</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-POT</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Prato</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209559</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-PRA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ragusa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126888</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-RAG</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ravenna</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9873853</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-RAV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Reggio di Calabria</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9873808</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-REG</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Reggio nella Emilia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9873807</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-REG</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Rieti</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9873679</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-RIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Rimini</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209558</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-RIM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Roma</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9873306</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ROM</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Rovigo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9873060</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-ROV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Salerno</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9872871</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-SAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Sassari</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9870948</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-SAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Savona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9870868</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-SAV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Siena</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9870289</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-SIE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Siracusa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9870214</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-SIR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Sondrio</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9870080</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-SON</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Taranto</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9869522</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Teramo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10126887</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Terni</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9869351</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Torino</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9869061</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Trapani</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9868810</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TRA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Trento</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9868716</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TRE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Treviso</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9868672</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TRE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Trieste</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9868653</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-TRI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Udine</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9868517</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-UDI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Varese</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9868095</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Venezia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9867990</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Verbano-Cusio-Ossola</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209555</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vercelli</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9867950</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Verona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9867907</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vibo Valentia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>10209561</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VIB</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vicenza</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9867790</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VIC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Viterbo</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+        <CountryCode>9867354</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>IT-VIT</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Italy</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>IT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>IT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Jamaica</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>JM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>JM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Jordan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>JO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>JO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Japan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>JP</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>JP</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Kenya</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Kyrgyzstan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cambodia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Kiribati</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Comoros</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Saint Kitts And Nevis</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Korea, North</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KP</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KP</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Korea</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Kuwait</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Cayman Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Kazakhstan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>KZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>KZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Laos</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Lebanon</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LB</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LB</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Saint Lucia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Liechtenstein</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Sri Lanka</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Liberia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Lesotho</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Lithuania</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Luxembourg</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Latvia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LV</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LV</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Libya</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>LY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>LY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Morocco</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Monaco</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Moldova</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Madagascar</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Marshall Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Macedonia, Former Yugoslav Republic of</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mali</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ML</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ML</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Myanmar</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mongolia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Macau S.A.R.</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Northern Mariana Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MP</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MP</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Martinique</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MQ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MQ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mauritania</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Montserrat</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Malta</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mauritius</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Maldives</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MV</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MV</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Malawi</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mexico</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MX</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MX</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Malaysia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mozambique</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>MZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>MZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Namibia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>New Caledonia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Niger</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Norfolk Island</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Nigeria</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Nicaragua</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Netherlands, The</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Unspecified</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>NN</TwoLetterISOCountryName>
+        <CountryCode>0</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>NN-UNS</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>Unknown</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Norway</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Nepal</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NP</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NP</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Nauru</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Niue</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>New Zealand</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>NZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>NZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Oman</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>OM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>OM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Panama</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Peru</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>French Polynesia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Papua new Guinea</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Philippines</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Pakistan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Poland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Saint Pierre AND Miquelon</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Pitcairn Island</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Puerto Rico</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Portugal</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Palau</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Paraguay</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Qatar</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>QA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>QA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Reunion</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>RE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>RE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Romania</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>RO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>RO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Russia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>RU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>RU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Rwanda</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>RW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>RW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Saudi Arabia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Solomon Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SB</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SB</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Seychelles</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Sudan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Sweden</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Singapore</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Saint Helena</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Slovenia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Svalbard And Jan Mayen Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SJ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SJ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Slovakia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Sierra Leone</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>San Marino</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Senegal</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Somalia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Suriname</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Sao Tome AND Principe</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ST</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ST</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>El Salvador</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SV</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SV</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Syria</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Swaziland</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>SZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>SZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Turks And Caicos Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Chad</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TD</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TD</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>French Southern Territories</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Togo</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Thailand</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TH</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TH</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Tajikistan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TJ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TJ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Tokelau</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TK</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TK</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>East Timor</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TL</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TL</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Tunisia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Tonga</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TO</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TO</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Turkey</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TR</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TR</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Trinidad And Tobago</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Tuvalu</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TV</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TV</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Taiwan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Tanzania</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>TZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>TZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Ukraine</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>UA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>UA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Uganda</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>UG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>UG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>United States Minor Outlying Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>UM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>UM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <Childs>
+      <CountryInfo>
+        <EnglishName>Alabama</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>1003</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-ALA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Alaska</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>1040</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-ALA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Arizona</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>1945</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-ARI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Arkansas</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>1951</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-ARK</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>California</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>5599</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-CAL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Colorado</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>7636</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-COL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Connecticut</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>7798</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-CON</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Delaware</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>8831</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-DEL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>District of Columbia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>9130</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-DIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Florida</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>11032</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-FLO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Georgia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>12004</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-GEO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Hawaii</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>13656</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-HAW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Idaho</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>14713</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-IDA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Illinois</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>14808</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-ILL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Indiana</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>14882</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-IND</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Iowa</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>14987</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-IOW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Kansas</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>16121</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-KAN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Kentucky</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>16480</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-KEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Louisiana</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>19283</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-LOU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Maine</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>19840</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MAI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Maryland</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>20487</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MAR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Massachusetts</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>20543</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Michigan</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>21196</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MIC</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Minnesota</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>21412</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MIN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Mississippi</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>21502</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Missouri</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>21512</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Montana</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>21789</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-MON</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nebraska</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>22869</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NEB</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Nevada</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23035</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NEV</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>New Hampshire</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23097</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NEW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>New Jersey</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23117</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NEW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>New Mexico</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23132</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NEW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>New York</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23161</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NEW</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>North Carolina</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23611</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>North Dakota</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>23624</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-NOR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Ohio</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>24230</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-OHI</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Oklahoma</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>24293</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-OKL</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Oregon</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>24561</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-ORE</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Pennsylvania</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>25623</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-PEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Rhode Island</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>27664</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-RHO</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>South Carolina</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>31410</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-SOU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>South Dakota</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>31418</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-SOU</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Tennessee</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>33025</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-TEN</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Texas</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>33145</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-TEX</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Utah</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>34626</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-UTA</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Vermont</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>35022</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-VER</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Virginia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>35364</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-VIR</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Washington</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>35841</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-WAS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>West Virginia</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>36208</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-WES</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Wisconsin</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>36684</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-WIS</Name>
+      </CountryInfo>
+      <CountryInfo>
+        <EnglishName>Wyoming</EnglishName>
+        <ThreeLetterISOCountryName />
+        <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+        <CountryCode>36927</CountryCode>
+        <Inhabited>true</Inhabited>
+        <Name>US-WYO</Name>
+      </CountryInfo>
+    </Childs>
+    <EnglishName>United States</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>US</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>US</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Uruguay</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>UY</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>UY</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Uzbekistan</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>UZ</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>UZ</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Vatican City State (Holy See)</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Saint Vincent And The Grenadines</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VC</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VC</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Venezuela</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Virgin Islands (British)</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VG</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VG</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Virgin Islands (US)</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VI</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VI</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Vietnam</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VN</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VN</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Vanuatu</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>VU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>VU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Wallis And Futuna Islands</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>WF</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>WF</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Samoa</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>WS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>WS</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Yemen</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>YE</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>YE</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Mayotte</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>YT</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>YT</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Yugoslavia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>YU</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>YU</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>South Africa</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ZA</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ZA</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Zambia</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ZM</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ZM</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Zimbabwe</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>ZW</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>ZW</Name>
+  </CountryInfo>
+  <CountryInfo>
+    <EnglishName>Palestinian territory, Occupied</EnglishName>
+    <ThreeLetterISOCountryName />
+    <TwoLetterISOCountryName>PS</TwoLetterISOCountryName>
+    <CountryCode>0</CountryCode>
+    <Inhabited>true</Inhabited>
+    <Name>PS</Name>
+  </CountryInfo>
+</ArrayOfCountryInfo>

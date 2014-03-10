@@ -1,0 +1,23 @@
+﻿@model FileManager.Models.Files
+
+@using MvcContrib
+
+@{ var iconName = Url.Resource("Content.file.jpg");
+    var className = "FileIcon";
+    if(Model.name.EndsWith("jpg") || Model.name.EndsWith("jpeg") || Model.name.EndsWith("png"))
+    {
+        iconName = Url.Resource("Content.image.jpg");
+        className = "ImageIcon";
+
+    }
+    else if(Model.name.EndsWith("txt"))
+    {
+        className = "TextIcon";
+    }
+}
+
+<div class="@className FileMenuContext" >
+    <img src="@iconName" alt="" />
+    <div class="name">@Model.name</div>
+    @Html.Hidden("ParentFolder",Model.folder)
+</div>

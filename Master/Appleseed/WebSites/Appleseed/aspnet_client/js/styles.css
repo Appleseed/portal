@@ -1,0 +1,149 @@
+﻿* { padding:0px; margin:0px; }
+
+#menu  
+{
+    height:50px;
+    width:775px; 
+    margin:auto; 
+    padding-left:3px;
+    background-repeat:no-repeat;
+}
+
+#nav  
+{
+    list-style:none; 
+}
+#nav li 
+{ 
+    float:left; 
+    color:Silver;
+    filter:alpha(opacity=70); 
+    opacity:0.7; 
+    padding: 0px 3px 0px 3px;
+    list-style-type:none;
+}
+#nav li a 
+{ 
+    display:block;
+    padding:3px 0px 3px 10px;
+    text-decoration:none; 
+    color:#000000; 
+    width:90px;
+    background-color:#ffffff;
+}
+#nav li a:hover  
+{
+    color:#000000; 
+    background-color:#FFF600;
+    filter:alpha(opacity=70); 
+    opacity:0.7; 
+}
+/* Submenu */
+#nav ul.submenu  
+{
+    float:left;
+    margin-top:-150px;
+    position:relative;
+    list-style:none; 
+    background-color:Silver; 
+    width:100px;
+}
+#nav ul.submenu div  
+{
+    float:none;
+    overflow:hidden;
+    padding: 2px 2px 2px 2px;
+}
+
+#nav ul.submenu div a
+{
+    width:90px;
+    padding:0px;
+    background-color:Silver;
+    filter:alpha(opacity=70); 
+    opacity:0.7;
+}
+#nav ul.submenu div a:hover
+{
+    width:90px;
+    padding:0px;
+    background-color:Highlight;
+}
+#nav li ul.submenu .scrollable
+{
+    width:100px;
+    color:#000000;
+    margin:0px;
+    background-color:Transparent;
+}
+
+/* root element for scrollable */ 
+
+/* PARA IE6 */
+#nav li ul.submenu div.scrollable {   
+     
+    /* required settings */ 
+    position:relative; 
+    overflow:hidden;     
+    background-color:Transparent;
+    /* vertical scrollers have typically larger height than width */     
+    height: 114px;      
+    width: 95px;     
+} 
+
+/* PARA EL RESTO */
+html>body #nav li ul.submenu div.scrollable {   
+     
+    /* required settings */ 
+    position:relative; 
+    overflow:hidden;     
+    background-color:Transparent;
+    /* vertical scrollers have typically larger height than width */     
+    height: 114px;      
+    width: 100px;     
+} 
+
+/* root element for scrollable items */ 
+#nav li ul.submenu div.scrollable div.items {     
+    position:absolute; 
+     background-color:Transparent;
+    /* this time we have very large space for height */     
+    height:20000em;     
+}
+
+/* prev, next, prevPage and nextPage buttons */
+#nav li ul.submenu a.prev,#nav li ul.submenu a.next,#nav li ul.submenu a.prevPage,#nav li ul.submenu a.nextPage {
+	display:block;
+	width:45px;
+	height:10px;
+	cursor:pointer;
+	background-color:Transparent;
+	padding-left:45px;
+}
+
+/* prev, next, prevPage and nextPage buttons */
+html>body #nav li ul.submenu a.prev,#nav li ul.submenu a.next,#nav li ul.submenu a.prevPage,#nav li ul.submenu a.nextPage {
+	display:block;
+	width:90px;
+	height:10px;
+	cursor:pointer;
+	background-color:Transparent;
+    padding-left:45px;
+}
+
+/* mouseover state */
+#nav li ul.submenu a.prev:hover,#nav li ul.submenu a.next:hover,#nav li ul.submenu a.prevPage:hover,#nav li ul.submenu a.nextPage:hover {
+			
+}
+
+/* disabled navigational button */
+#nav ul.submenu a.disabled {
+	visibility:hidden !important;		
+}
+
+/* next button uses another background image */
+#nav li ul.submenu a.next,#nav li ul.submenu a.nextPage {
+	clear:right;	
+}
+
+

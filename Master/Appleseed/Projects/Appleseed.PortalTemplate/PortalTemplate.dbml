@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TravelAgency" Class="PortalTemplateDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Appleseed;Persist Security Info=True;User ID=sa" SettingsObjectName="Appleseed.PortalTemplate.Properties.Settings" SettingsPropertyName="Appleseed2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.rb_Portals" Member="rb_Portals">
+    <Type Name="rb_Portals">
+      <Column Name="PortalID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PortalAlias" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalPath" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AlwaysShowEditButton" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="rb_Portals_rb_Pages" Member="rb_Pages" ThisKey="PortalID" OtherKey="PortalID" Type="rb_Pages" />
+      <Association Name="rb_Portals_rb_PortalSettings" Member="rb_PortalSettings" ThisKey="PortalID" OtherKey="PortalID" Type="rb_PortalSettings" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_Modules" Member="rb_Modules">
+    <Type Name="rb_Modules">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TabID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleDefID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaneName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleTitle" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AuthorizedEditRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AuthorizedViewRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AuthorizedAddRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AuthorizedDeleteRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AuthorizedPropertiesRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CacheTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShowMobile" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AuthorizedPublishingRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="NewVersion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SupportWorkflow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AuthorizedApproveRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="WorkflowState" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastEditor" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="StagingLastModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StagingLastEditor" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="SupportCollapsable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowEveryWhere" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AuthorizedMoveModuleRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AuthorizedDeleteModuleRoles" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="rb_Modules_rb_ModuleSettings" Member="rb_ModuleSettings" ThisKey="ModuleID" OtherKey="ModuleID" Type="rb_ModuleSettings" />
+      <Association Name="rb_Pages_rb_Modules" Member="rb_Pages" Storage="_rb_Page" ThisKey="TabID" OtherKey="PageID" Type="rb_Pages" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="rb_ModuleDefinition_rb_Modules" Member="rb_ModuleDefinition" ThisKey="ModuleDefID" OtherKey="ModuleDefID" Type="rb_ModuleDefinition" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_Pages" Member="rb_Pages">
+    <Type Name="rb_Pages">
+      <Column Name="PageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentPageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PageOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PortalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePageName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorizedRoles" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="ShowMobile" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PageLayout" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PageDescription" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Association Name="rb_Pages_rb_Modules" Member="rb_Modules" ThisKey="PageID" OtherKey="TabID" Type="rb_Modules" />
+      <Association Name="rb_Pages_rb_Pages" Member="rb_Pages1" Storage="_rb_Pages" ThisKey="PageID" OtherKey="ParentPageID" Type="rb_Pages" />
+      <Association Name="rb_Pages_rb_TabSetting" Member="rb_TabSettings" ThisKey="PageID" OtherKey="TabID" Type="rb_TabSetting" />
+      <Association Name="rb_Pages_rb_Pages" Member="rb_Page1" ThisKey="ParentPageID" OtherKey="PageID" Type="rb_Pages" IsForeignKey="true" />
+      <Association Name="rb_Portals_rb_Pages" Member="rb_Portals" Storage="_rb_Portal" ThisKey="PortalID" OtherKey="PortalID" Type="rb_Portals" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_ModuleSettings" Member="rb_ModuleSettings">
+    <Type Name="rb_ModuleSettings">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingValue" Type="System.String" DbType="NVarChar(1500) NOT NULL" CanBeNull="false" />
+      <Association Name="rb_Modules_rb_ModuleSettings" Member="rb_Modules" Storage="_rb_Module" ThisKey="ModuleID" OtherKey="ModuleID" Type="rb_Modules" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_PortalSettings" Member="rb_PortalSettings">
+    <Type Name="rb_PortalSettings">
+      <Column Name="PortalID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingValue" Type="System.String" DbType="NVarChar(1500) NOT NULL" CanBeNull="false" />
+      <Association Name="rb_Portals_rb_PortalSettings" Member="rb_Portals" Storage="_rb_Portal" ThisKey="PortalID" OtherKey="PortalID" Type="rb_Portals" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_TabSettings" Member="rb_TabSettings">
+    <Type Name="rb_TabSetting">
+      <Column Name="TabID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingValue" Type="System.String" DbType="NVarChar(1500) NOT NULL" CanBeNull="false" />
+      <Association Name="rb_Pages_rb_TabSetting" Member="rb_Pages" ThisKey="TabID" OtherKey="PageID" Type="rb_Pages" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_HtmlText" Member="rb_HtmlTexts">
+    <Type Name="rb_HtmlText">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DesktopHtml" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MobileSummary" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MobileDetails" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_ModuleDefinitions" Member="rb_ModuleDefinitions">
+    <Type Name="rb_ModuleDefinition">
+      <Column Name="ModuleDefID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PortalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeneralModDefID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="rb_ModuleDefinition_rb_Modules" Member="rb_Modules" ThisKey="ModuleDefID" OtherKey="ModuleDefID" Type="rb_Modules" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_GeneralModuleDefinitions" Member="rb_GeneralModuleDefinitions">
+    <Type Name="rb_GeneralModuleDefinition">
+      <Column Name="GeneralModDefID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FriendlyName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DesktopSrc" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileSrc" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="AssemblyName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Searchable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rb_HtmlText_st" Member="rb_HtmlText_sts">
+    <Type Name="rb_HtmlText_st">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DesktopHtml" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MobileSummary" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MobileDetails" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

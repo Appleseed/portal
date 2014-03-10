@@ -1,0 +1,41 @@
+- Added By John Mandia (www.whitelightsolutions.com)
+by John Mandia - 24/1/2005
+MOD: Added Clear method in provider and implemented it in provider Implementation. This lets UrlBuilder call a Clear method to clear any stored url element settings (Whether it be in cache or session or whatever)
+     In default implementation if cache in minutes is 0 it means the setting will be stored in the cache without any expiration time in minutes.
+
+by John Mandia - 7/1/2005
+MOD: Added support for two more settings and changed code to support friendly tabid passing in the url.friendlypagename and pageidnosplitter settings added.
+
+by John Mandia - 4/1/2005
+MOD: Tried to get values to be cached with a dependancy on TabSettings Cache but it didn't work (implementation is still there but commented out. If someone knows why then I owe them a pint :D).
+MOD: Added Implementation of Caching with time limit (default 5 mins) for url elements IsPlaceHolder, TabLink, UrlKeywords and PageName.
+MOD: Added new method to retrieve all elements in one go (so only one database call is needed).
+MOD: Now settings can be taken from provider entry in web.config instead of Appleseed.config.
+MOD: Provider Implemtation now uses Appleseed.Framework.Settings.dll instead of hardcoded methods.
+
+by John Mandia - 29/12/2004
+MOD: Changed return type back to string from URI (To regain Appleseed compatibility).
+MOD: Commented out assembly changes until core can support it.
+NOTE: Thanks go to bill who improved the data access code.
+
+John Mandia - 4/9/2004
+ENH: Removed Dependancy on Appleseed.dll and cleaned up code
+John Mandia - 21/9/2004
+ENH: Added Support For Tab Page Name (A custom name that can be added to the end of the url if someone wishes. e.g. instead of default.aspx/desktopdefault.aspx you get mycustomurl.aspx
+
+by Manu
+ 1/10/2004
+- Added implementation for log provider
+
+
+by Manu and John
+ 4/10/2004
+by Manu and John
+- ENH: Changed provider pattern implementation
+- ENH: Provider solution cleaned out, now we have only 3 projects:
+       System.Configuration.Provider 
+			(provider pattern base and helper classes, where possible we follow whidbey conventions)
+	   Appleseed.Provider
+			(contains base provider definitions)
+	   Appleseed.Provider.Implementation
+			(contains actual provider implementation)

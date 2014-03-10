@@ -1,0 +1,49 @@
+﻿body {
+  font: 13px Arial, Helvetica, sans-serif;
+	color: #1e1e1e;
+}
+#container {
+	width: 600px;
+	margin: 20px auto;
+}
+#accordion {
+	margin-top: 20px;
+}
+#accordion .item {
+	width: 400px;
+	height: 30px; /* height = total height of A child element */
+	overflow: hidden;
+	
+	transition: height ease-in-out 500ms; /* css3 transition */
+	-o-transition: height ease-in-out 500ms;
+	-moz-transition: height ease-in-out 500ms;
+	-webkit-transition: height ease-in-out 500ms;
+	
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	margin-bottom: 2px;
+}
+#accordion a {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	
+	background: #e6e6e6;
+	padding: 5px;
+	color: #1e1e1e;
+	text-decoration: none;
+}
+#accordion p {
+	height: 150px;
+	padding: 5px;
+}
+#accordion div:hover {
+	height: 180px; /* height = total height of A and P elements */
+}
+#accordion div:hover a {
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+}

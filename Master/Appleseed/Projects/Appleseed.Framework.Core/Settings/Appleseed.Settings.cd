@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Appleseed.Framework.Settings.Cache.CurrentCache" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Cache\CurrentCache.cs</FileName>
+      <HashCode>AAAAAEAAAAAIAQBAAAAABAAAAAAAAAgAIAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Framework.Settings.Cache.Key" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Cache\Key.cs</FileName>
+      <HashCode>AAQEECAAAAACAAAAAAAAIAAAAAAAAAgFAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Framework.Settings.Config" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Config.cs</FileName>
+      <HashCode>EXQCABAKGKAWEIySCBAEJEAIgSaTDgAAI30ChsY7FEQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Framework.Settings.ConfigReader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Isolators\ConfigReader.cs</FileName>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.Framework.Settings.Reader" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Isolators\ConfigReader.cs</FileName>
+      <HashCode>EIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Framework.Settings.Path" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Path.cs</FileName>
+      <HashCode>AAQAAAAEAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAQAAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Framework.Settings.Portal" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Portal.cs</FileName>
+      <HashCode>AABCAQAAACAIAAAAAAQAAAAAAACBAAAAACAIAAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Framework.Configuration.GlobalInternalStrings" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GlobalInternalStrings.cs</FileName>
+      <HashCode>AAQQAAAAAQAKAAEAAgEAEwAAAAAAAABDIAAAABAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.History" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>History.cs</FileName>
+      <HashCode>IAQAACAEACAAAAAgAAAAAAQAAAAEAAABAAAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.Context.WebContextReader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Isolators\ContextReader.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.Context.Reader" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Isolators\ContextReader.cs</FileName>
+      <HashCode>EAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Appleseed.Framework.Settings.Strategy" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Isolators\ConfigReader.cs</FileName>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Appleseed.Context.Strategy" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Isolators\ContextReader.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

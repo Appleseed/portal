@@ -1,0 +1,155 @@
+Appleseed installer
+This guide show you how to create an installable module for Appleseed.
+
+You can override 4 methods.
+Install, Commit, Rollback and Uninstall.
+Install will be called by module installer (DesktopModules/ModuleDefinitions/ModuleDefinitions.aspx) at install time.
+If an error occurs Rollback is called. Otherwise Commit will be called.
+Uninstall will be called by module installer (DesktopModules/ModuleDefinitions/ModuleDefinitions.aspx) when a module is deleted.
+
+ 
+
+For our example we will use Install and Uninstall procedures only.
+
+SQL scripts
+First we save 2 scripts.
+One will contain all SQL to generate tables, indices and so on in database.
+We will call it: MyModule_Install.sql
+The other will contain all SQL to remove tables, indices and so on from database.
+We will call it: MyModule_Uninstall.sql
+
+ 
+Method override
+Then we will override two methods.
+
+ 
+public override void Install(System.Collections.IDictionary stateSaver)
+{
+        string currentScriptName = Server.MapPath(TemplateSourceDirectory + "/MyModule_Install.sql");
+        ArrayList errors = Appleseed.Framework.Helpers.DBHelper.ExecuteScript(currentScriptName, true);
+        if (errors.Count > 0)
+        {
+                // Call rollback
+                throw new Exception("Error occurred:" + errors[0].ToString());
+        }
+}
+ 
+
+public override void Uninstall(System.Collections.IDictionary stateSaver)
+{
+        string currentScriptName = Server.MapPath(TemplateSourceDirectory + "/ MyModule_Uninstall.sql");
+        ArrayList errors = Appleseed.Framework.Helpers.DBHelper.ExecuteScript(currentScriptName, true);
+        if (errors.Count > 0)
+        {
+                // Call rollback
+                throw new Exception("Error occurred:" + errors[0].ToString());
+        }
+}
+ 
+
+For executing script we will call execute script helper that will spear all script on GO command and execute it.
+
+ 
+Appleseed.Framework.Helpers.DBHelper.ExecuteScript(currentScriptName, true);
+
+ 
+The "true" value means we want to wrap it on a transaction so we are sure that we do not leave db on an unknown state.
+
+currentScriptName = Server.MapPath(TemplateSourceDirectory + "/ MyModule_Uninstall.sql");
+ 
+Current script name string variable is initialized to a script name. TemplateSourceDirectory is a property that returns the Path of the control. The above sample will search for  MyModule_Uninstall.asq on the same directory of the module.
+
+Installer and module grouping
+Sometimes we need to install a bunch of related modules all at once.
+
+We can do it defining a simple xml.
+
+This simple XML will be called installer on install page.
+
+ 
+
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+       <Module>
+             <FriendlyName>My first module</FriendlyName>
+             <DesktopSource>DesktopModules/MyModule/Myfirstmodule.ascx</DesktopSource>
+             <MobileSource></MobileSource>
+       </Module>
+       <Module>
+             <FriendlyName>My second module</FriendlyName>
+             <DesktopSource>DesktopModules/MyModule/Mysecondmodule.ascx</DesktopSource>
+             <MobileSource></MobileSource>
+       </Module>
+</Modules>
+
+ 
+We have two advantage on doing this:
+
+The installer do for us all module installation 
+We have not to worry about modules friendly name
+ 
+This can be so useful that we can decide to do xml even if module is only one.
+
+ 
+
+External module tutorial
+Following this tutorial you can release you installable module in binary only format (and share you code as separate download if you like)
+
+ 
+
+Before start I suggest to move the default solution away from Appleseed folder: move it up one folder. 
+Make a new folder on Appleseed level, call it: AppleseedModules 
+ Open Appleseed solution in visual studio and add a new project. 
+Choose your preferred language C# or Vb and select class Library 
+Save in AppleseedModules 
+Add to current solution 
+On Reference add reference to Appleseed Project 
+Make a subfolder on project like: MyModule, you can make a project with many modules toghther. 
+Create your module (start copying an old one, remember to change guid) 
+Create your install script 
+Create your uninstall script 
+
+Override the Install procedure, change you script name on this sample. The TemplateSourceDirectory points to the folder where you control is.
+public override void Install(System.Collections.IDictionary stateSaver)
+
+{
+        string currentScriptName = Server.MapPath(TemplateSourceDirectory + "/MyModule_Install.sql");
+        ArrayList errors = Appleseed.Framework.Helpers.DBHelper.ExecuteScript(currentScriptName, true);
+        if (errors.Count > 0)
+        {
+                // Call rollback
+                throw new Exception("Error occurred:" + errors[0].ToString());
+        }
+}
+ 
+
+Override the Install procedure, change you script name on this sample.
+public override void Uninstall(System.Collections.IDictionary stateSaver)
+
+{
+        string currentScriptName = Server.MapPath(TemplateSourceDirectory + "/ MyModule_Uninstall.sql");
+        ArrayList errors = Appleseed.Framework.Helpers.DBHelper.ExecuteScript(currentScriptName, true);
+        if (errors.Count > 0)
+        {
+                // Call rollback
+                throw new Exception("Error occurred:" + errors[0].ToString());
+        }
+
+Create an XML describing your module, call it Mymodule.xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+       <Module>
+             <FriendlyName>My module</FriendlyName>
+             <DesktopSource>DesktopModules/MyModule/Mymodule.ascx</DesktopSource>
+             <MobileSource></MobileSource>
+       </Module>
+</Modules>
+
+ 
+
+Compile 
+Copy the binary to Appleseed bin 
+Copy the modules to Appleseed Desktopmodules/Mymodules folder (only *sql, *ascx, *.XML) 
+Go to admin all and to add module definition 
+Point to your Mymodule.xml install file 
+If all go fine you have installed your module.

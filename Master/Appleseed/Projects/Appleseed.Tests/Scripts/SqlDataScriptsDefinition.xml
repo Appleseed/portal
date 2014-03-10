@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SqlDataScripts>
+	<SqlDataScript runAfterVersion="1111" fileName="SetUp.sql" />
+	<SqlDataScript runAfterVersion="1881" fileName="MembershipRoleProvidersData.sql" />
+</SqlDataScripts>

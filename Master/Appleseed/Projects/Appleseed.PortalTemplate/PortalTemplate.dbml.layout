@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19.5, 8.5" name="PortalTemplate">
+  <DataContextMoniker Name="/PortalTemplateDataContext" />
+  <nestedChildShapes>
+    <classShape Id="87aa24ac-53f0-473e-a338-d0061608bbb1" absoluteBounds="9.625, 4.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_Portals" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efa531d3-b4a2-4ae2-b974-da29a1956ee2" absoluteBounds="9.64, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34cb427e-3be4-4e02-9d5a-a17aa97f043e" absoluteBounds="14.5, 0.5, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_Modules" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a59a83ed-01fb-40c8-8503-ba2ccc1eeb27" absoluteBounds="14.515, 0.96, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a227238-420f-4718-87da-5204a834f043" absoluteBounds="11.875, 2.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_Pages" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef534546-d9e0-48d4-883e-bd46001d851c" absoluteBounds="11.89, 3.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b554d996-7a3a-43de-8d16-7ebcace0eaa9" absoluteBounds="12.125, 5.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_ModuleSettings" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c19ee80-719e-4399-a44e-00465334572e" absoluteBounds="12.14, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37a55a9e-9465-4f08-a898-aecebd044452" absoluteBounds="7.25, 3.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_PortalSettings" />
+      <nestedChildShapes>
+        <elementListCompartment Id="110eb487-f532-45b7-a688-56fbb43da72b" absoluteBounds="7.2650000000000006, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.875 : 3.99120198567708); (14.5 : 3.99120198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_Pages/rb_Pages_rb_Modules" />
+      <nodes>
+        <classShapeMoniker Id="9a227238-420f-4718-87da-5204a834f043" />
+        <classShapeMoniker Id="34cb427e-3be4-4e02-9d5a-a17aa97f043e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.5842307692308 : 5.35740397135417); (12.5842307692308 : 5.60740397135417); (13.1796153846154 : 5.60740397135417); (13.1796153846154 : 5.35740397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_Pages/rb_Pages_rb_Pages" />
+      <nodes>
+        <classShapeMoniker Id="9a227238-420f-4718-87da-5204a834f043" />
+        <classShapeMoniker Id="9a227238-420f-4718-87da-5204a834f043" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.625 : 4.86620198567708); (11.875 : 4.86620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_Portals/rb_Portals_rb_Pages" />
+      <nodes>
+        <classShapeMoniker Id="87aa24ac-53f0-473e-a338-d0061608bbb1" />
+        <classShapeMoniker Id="9a227238-420f-4718-87da-5204a834f043" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 6.02961344401042); (14.125 : 6.02961344401042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_Modules/rb_Modules_rb_ModuleSettings" />
+      <nodes>
+        <classShapeMoniker Id="34cb427e-3be4-4e02-9d5a-a17aa97f043e" />
+        <classShapeMoniker Id="b554d996-7a3a-43de-8d16-7ebcace0eaa9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 4.56814697265625); (9.25 : 4.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_Portals/rb_Portals_rb_PortalSettings" />
+      <nodes>
+        <classShapeMoniker Id="87aa24ac-53f0-473e-a338-d0061608bbb1" />
+        <classShapeMoniker Id="37a55a9e-9465-4f08-a898-aecebd044452" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="40219599-c196-4eb4-b34c-6cfdf9b252b6" absoluteBounds="9.375, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_TabSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c7e84a2-a2ca-4114-8597-0135330d3f56" absoluteBounds="9.39, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.875 : 3.99120198567708); (10.7812495 : 3.99120198567708); (10.7812495 : 2.6362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_Pages/rb_Pages_rb_TabSetting" />
+      <nodes>
+        <classShapeMoniker Id="9a227238-420f-4718-87da-5204a834f043" />
+        <classShapeMoniker Id="40219599-c196-4eb4-b34c-6cfdf9b252b6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d6b1fa19-fb75-470c-8884-fe1a0a7d3df4" absoluteBounds="17.25, 1.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_HtmlText" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6272427e-bf65-4d48-9a44-8f5287df1843" absoluteBounds="17.265, 1.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22ba5f9f-e1cb-4c76-8a55-bf664f5d0db2" absoluteBounds="11.375, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_ModuleDefinition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="515c15fa-7d8f-4b38-9e7b-d79237b2ac9c" absoluteBounds="11.39, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.375 : 1.19314697265625); (14.5 : 1.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PortalTemplateDataContext/rb_ModuleDefinition/rb_ModuleDefinition_rb_Modules" />
+      <nodes>
+        <classShapeMoniker Id="22ba5f9f-e1cb-4c76-8a55-bf664f5d0db2" />
+        <classShapeMoniker Id="34cb427e-3be4-4e02-9d5a-a17aa97f043e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6c1ca079-de7a-4b38-9274-98fa1849438d" absoluteBounds="6, 0.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_GeneralModuleDefinition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="32dd74df-b9c4-4735-8f9e-9d7fd9ded494" absoluteBounds="6.0150000000000006, 1.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6f763018-1f15-401e-8ab8-b0f3e5557ecc" absoluteBounds="17.25, 3.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PortalTemplateDataContext/rb_HtmlText_st" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9bd68d3e-74aa-4b1c-ad60-673bcc75a257" absoluteBounds="17.265, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

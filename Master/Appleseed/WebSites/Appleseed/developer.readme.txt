@@ -1,0 +1,35 @@
+Before compiling, please copy and rename the web.config.standard file to web.config. This allows you to have a personal copy of web.config without uploading it to the server.
+
+VS 2010 is required to develop Appleseed Portal
+
+
+Simply open Appleseed.sln for our project.
+
+Make sure you have a SQL Database configured
+
+Control f5 
+
+The software will take you to /Installer and walk you through install
+
+
+
+
+--------------------------
+
+If you wish to contribute 
+
+Contact the admins at @appleseedapp or via the email list : http://groups.google.com/group/appleseedportal
+
+Visual HG is a good tool to use Mercurial with VS 2010 : http://visualhg.codeplex.com/
+
+The below instructions are borrowed from the Visual HG site and apply to Appleseed : 
+
+To get started working with VisualHG is very simple.
+
+(Deinstall prev Version of VisualHG).
+Download and install TortoiseHg and VisualHG.
+Open Visual Studio and go to Tools -> Options.
+In the options tree view, select Source Control. (You may need to click the Show all Settings checkbox)
+Select VisualHG from the drop down list, and click OK.
+Open your Mercurial based solution to see the plugin installed and determining your files' statuses.
+

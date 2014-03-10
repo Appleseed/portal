@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Appleseed.PortalTemplate.DTOs.HtmlTextDTO" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAgACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\HtmlTextDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.ModuleDefinitionsDTO" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\ModuleDefinitionsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.ModulesDTO" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKGAQAkBAhAIAAAACAQAAAACAAAAK5AEAAEAABAQgAA=</HashCode>
+      <FileName>DTOs\ModulesDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.ModuleSettingsDTO" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAABAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\ModuleSettingsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.PagesDTO" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAABAACAIAAAAAACAAEQAAAAICABAAAAABAAAAA=</HashCode>
+      <FileName>DTOs\PagesDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.PortalsDTO" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAIAAwAAAAAAAAAggAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\PortalsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.PortalSettingsDTO" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\PortalSettingsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.DTOs.TabSettingsDTO" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\TabSettingsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.PortalTemplateDataContext" Collapsed="true">
+    <Position X="4" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CgAQgAACDASBSACACARACAAEAiWhIGAoAAgAiQAICQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_Portals" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgxgAAJJCAAAIAEQYgEQIAABiigAYjABAAAEAAEICAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_Modules" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GLHtTAGJBJEKCAClSl18BAZ7myDXK/goAyuBQDHTgQ0=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_Pages" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AE0jhACBAQGCIEEAaBcagAMDiCQBMDAhAIQgTAADCQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_ModuleSettings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIgQAABBAEAAAAIQEEAAAABiCACAAIAEgAABAAAA0A=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_PortalSettings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYgAAABBAAAIAEIQAEQAAABiCACAAIAEAAABAAACEA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_TabSetting" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAABBAAAAAAIQAkAAAABiCCCATIAEAAABAAAAUA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_HtmlText" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgQAFBgAGAAQAIQEEIACABiCABAAAAAwAAAAAACAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_ModuleDefinition" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACUgAAAJASAAIQEAQAEQAAABiCAAAAAoACAAiAAAAQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_GeneralModuleDefinition" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CDVgEBAZICCAAQIAQAECAQIDiCAAABEEAiEQgCgAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.rb_HtmlText_st" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgQAFBgAGAAQAIQEEIACABiCABAAAAAwAAAAAACAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.PortalTemplateFactory" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>PortalTemplateFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.PortalTemplateRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQABAAEAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PortalTemplateRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.PortalTemplateServices" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAAAAAAAAAAAAIAAgAAAAAgAgIBAgAAAAAAAA=</HashCode>
+      <FileName>PortalTemplateServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.Translate" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAEAAAAAAgDJAAIAgAAEAgAQAEBABAIAIAACA=</HashCode>
+      <FileName>Translate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Appleseed.PortalTemplate.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAIAAAAAABAAAAAAAAAAAIAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Appleseed.PortalTemplate.IModuleExportable" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IModuleExportable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Appleseed.PortalTemplate.IPortalTemplateRepository" Collapsed="true">
+    <Position X="2.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAEAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPortalTemplateRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Appleseed.PortalTemplate.IPortalTemplateServices" Collapsed="true">
+    <Position X="5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAIAAAAAAAAgAAIAAAAAAAAAAA=</HashCode>
+      <FileName>IPortalTemplateServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

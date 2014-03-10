@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appleseed.Modules.XmlFeed</name>
+    </assembly>
+    <members>
+        <member name="T:Appleseed.Content.Web.ModulesXmlFeed">
+            <summary>
+            XmlFeed Module
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesXmlFeed.xml1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesXmlFeed.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The Page_Load event handler on this User Control obtains
+            an xml document and xsl/t transform file location.
+            It then sets these properties on an &lt;asp:Xml&gt; server control.
+            
+            Patch 11/11/2003 by Manu: Errors are logged.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesXmlFeed.#ctor">
+            <summary>
+            Contsructor
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesXmlFeed.GetXSLListForFeedTransformations">
+            <summary>
+            Author:		Joe Audette
+            Added:		7/31/2003
+            Allows you to add stylesheets for new feed formats without recompiling.
+            Any xslt stylesheets placed in the folder specified in the web.config willshow up
+            in the dropdown list
+            
+            Patch 11/11/2003 by Manu: Errors are logged.
+            </summary>
+            <returns>FileInfo[]</returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesXmlFeed.OnInit(System.EventArgs)">
+            <summary>
+            On init
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesXmlFeed.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesXmlFeed.GuidID">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

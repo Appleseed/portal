@@ -1,0 +1,2 @@
+<%@ Control Language="c#" AutoEventWireup="True"  CodeBehind="DesktopFooter.ascx.cs" Inherits="Appleseed.Content.Web.Modules.DesktopFooter" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<asp:PlaceHolder id="LayoutPlaceHolder" runat="server"></asp:PlaceHolder>

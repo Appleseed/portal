@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>Admin - Module Definitions - OneFileModules</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/ModuleDefinitions_OFM/ModuleDefsAll.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>

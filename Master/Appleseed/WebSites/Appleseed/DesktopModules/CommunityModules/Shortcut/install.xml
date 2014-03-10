@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>Shortcut</FriendlyName>
+		<DesktopSource>DesktopModules/CommunityModules/Shortcut/Shortcut.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+	<Module>
+		<FriendlyName>ShortcutAll</FriendlyName>
+		<DesktopSource>DesktopModules/CommunityModules/Shortcut/ShortcutAll.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>	
+</Modules>

@@ -1,0 +1,2 @@
+<%@ Control Language="c#" Inherits="Appleseed.Content.Web.Modules.DesktopPortalBanner" CodeBehind="DesktopPortalBanner.ascx.cs" AutoEventWireup="True" %>
+<asp:PlaceHolder id="LayoutPlaceHolder" runat="server"></asp:PlaceHolder>

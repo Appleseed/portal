@@ -1,0 +1,5 @@
+﻿
+UPDATE [dbo].[rb_ModuleDefinitions]
+   SET [GeneralModDefID] = '539A6578-408C-4852-AB4F-911987D347A4'
+ WHERE GeneralModDefID = 'DE97F04D-FB0A-445D-829A-61E4FA69ADB2'
+GO

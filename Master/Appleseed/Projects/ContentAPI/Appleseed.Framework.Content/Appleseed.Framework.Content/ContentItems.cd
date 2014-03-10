@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.4" />
+  <Class Name="Content.API.Item">
+    <Position X="7" Y="1" Width="2" />
+    <TypeIdentifier>
+      <FileName>Items\Item.cs</FileName>
+      <HashCode>IgAhwgAgtqQiZEAPwIxAEDPZAQDTEYBGAMkFYAQgoig=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Content.API.Item.HandlerItemStatePersisted" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Items\Item.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Content.API.Item.HandlerItemChildAdded" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Items\Item.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Content.API.Item.HandlerItemParentChanged" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Items\Item.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Content.API.ItemHelper">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\Item.cs</FileName>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAiAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ItemCollection">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ItemCollection.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

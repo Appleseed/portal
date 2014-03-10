@@ -1,0 +1,393 @@
+
+
+
+
+#FileManagerContainter {
+    border: 1px solid #9CA597;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px;
+    width: 900px;
+	height:500px;
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjZmNmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkNmQ2ZDYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #fcfcfc 0%, #d6d6d6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#d6d6d6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fcfcfc 0%,#d6d6d6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fcfcfc 0%,#d6d6d6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fcfcfc 0%,#d6d6d6 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fcfcfc 0%,#d6d6d6 100%); /* W3C */
+	box-shadow: 4px 4px 5px rgba(0,0,0,0.5);
+		-moz-box-shadow: 4px 4px 5px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 4px 4px 5px rgba(0,0,0,0.5);
+		-ms-box-shadow: 4px 4px 5px rgba(0,0,0,0.5);
+		-o-box-shadow: 4px 4px 5px rgba(0,0,0,0.5);
+
+
+}
+
+#FileManagerContainter, #FileManagerContainter > div {
+
+	border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+
+}
+
+#DirectoryTree, #FileManagerbuttons, #FilesTreeFiles, #FileManagerButtonsR { 
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxNyUiIHN0b3AtY29sb3I9IiNkNmQ2ZDYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmNmY2ZjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top,  #d6d6d6 17%, #fcfcfc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(17%,#d6d6d6), color-stop(100%,#fcfcfc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #d6d6d6 17%,#fcfcfc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #d6d6d6 17%,#fcfcfc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #d6d6d6 17%,#fcfcfc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #d6d6d6 17%,#fcfcfc 100%); /* W3C */
+	border: 1px solid #9CA597 !important;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+		-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+		-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+		-ms-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+		-ms-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+		-o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+
+
+}
+
+#FileManagerbuttons input[type="button"]{
+
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2UxZTFlMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNmY2ZjYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C */
+
+
+
+
+    border-color: #a09c9c !important;
+    border-radius: 10px 10px 10px 10px;
+    color: #404040;
+    font-family: verdana;
+    margin: 0 2px;
+    padding: 4px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    text-transform: uppercase;
+	box-shadow: 1px 1px 0 #404040;
+		-moz-box-shadow: 1px 1px 0 #404040;
+		-webkit-box-shadow: 1px 1px 0 #404040;
+		-ms-box-shadow: 1px 1px 0 #404040;
+		-o-box-shadow: 1px 1px 0 #404040;
+
+}
+#FileManagerButtonsR input[type="button"]{ /**/
+
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2UxZTFlMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNmY2ZjYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C */
+
+    border-color: #a09c9c !important;
+    border-radius: 10px 10px 10px 10px;
+    color: #404040;
+    font-family: verdana;
+    text-align: center;
+    text-shadow: 1px 1px 1px #FFFFFF;
+	box-shadow: 1px 1px 0 #404040;
+		-moz-box-shadow: 1px 1px 0 #404040;
+		-webkit-box-shadow: 1px 1px 0 #404040;
+		-ms-box-shadow: 1px 1px 0 #404040;
+		-o-box-shadow: 1px 1px 0 #404040;
+    width: 175px;
+    margin: -6px 0px;
+    text-transform: uppercase;
+
+}
+
+
+#FileManagerbuttons input[type="button"]:active, #FileManagerbuttons input[type="button"]:focus { 
+
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iI2UxZTFlMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(246,246,246,1) 0%, rgba(225,225,225,1) 49%, rgba(241,241,241,1) 50%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,246,246,1)), color-stop(49%,rgba(225,225,225,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 49%,rgba(241,241,241,1) 50%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 49%,rgba(241,241,241,1) 50%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 49%,rgba(241,241,241,1) 50%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 49%,rgba(241,241,241,1) 50%,rgba(255,255,255,1) 100%); /* W3C */
+
+
+
+	text-shadow: -1px -1px 1px #fff;
+
+		box-shadow: 2px 2px 3px #626262 inset;
+		-moz-box-shadow: 2px 2px 3px #626262 inset;
+		-webkit-box-shadow: 2px 2px 3px #626262 inset;
+		-ms-box-shadow: 2px 2px 3px #626262 inset;
+		-o-box-shadow: 2px 2px 3px #626262 inset;
+	transition:all 0.5s ease;
+		-webkit-transition:all 0.5s ease;
+		-moz-transition:all 0.5s ease;
+        -ms-transition:all 0.5s ease;
+        -o-transition:all 0.5s ease;
+
+
+}
+
+.FileManagerDirectoryTree {
+
+    border: 1px solid;
+    display: inline-block;
+    float: left;
+    height: 455px; /*500px;*/
+    overflow: auto;
+    width: 200px;
+    margin-top: 10px; /*add*/
+    }
+
+    .FolderView {
+        
+    border: 1px solid;
+    float: left;
+    height: 415px;
+    margin-left: 15px;
+    overflow: auto;
+    padding: 10px;
+    width: 660px;
+
+    }
+
+    .FoldersIcons {
+        
+        width: 100px;
+        float: left;
+		margin-bottom: 5px;
+		margin-left: 6px;
+		height: 114px;
+
+    }
+
+    .FolderIcon, .FileIcon, .ImageIcon, .TextIcon
+    {
+        font-size: small;
+        text-align: center;		
+		background-repeat: no-repeat;
+		background-position: 18px 0;
+		margin: 4px;
+		box-shadow: 1px 1px 0px rgba(255,255,255,0) inset;
+    }
+	
+	.FolderIcon{
+		background-image: url('FolderImage.png');
+	}
+	
+	.FileIcon{
+		background-image: url('blankFile.png');
+	}
+	
+	.TextIcon{
+		background-image: url('txt.png');
+	}
+	
+	.ImageIcon{
+		background-image: url('png.png');
+	}
+	
+	
+.FolderIcon:hover, .FileIcon:hover, .ImageIcon:hover, .TextIcon:hover {
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 1px 1px 3px #626262 inset;
+    cursor: pointer;
+
+}
+	
+	.FolderIcon img, .FileIcon img,.ImageIcon img, .TextIcon img {
+    visibility: hidden !important;
+}
+
+    .FileIcon
+    {
+        font-size: small;
+        text-align: center;
+    }
+
+    .jstree-default.jstree-focused {
+        background: #FFFFFF !important; 
+    }
+
+    #MainTree {
+
+        height: 100px;
+		background:none repeat scroll 0 0 transparent !important;
+
+    }
+	
+	#MainTree ul li a {
+	
+	color: #404040;
+	font-family: verdana;
+	font-size: 13px;
+	text-shadow: 1px 1px 1px #fff;
+	padding: 4px;
+	transition:all 0.5s ease;
+		-webkit-transition:all 0.5s ease;
+		-moz-transition:all 0.5s ease;
+        -ms-transition:all 0.5s ease;
+        -o-transition:all 0.5s ease;
+
+	
+	
+	}
+	
+	#MainTree ul li a:hover {
+    background-color: transparent !important;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+	    -moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-ms-border-radius: 10px 10px 10px 10px;
+		-o-border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 5px #9D9D9D inset;
+		-moz-box-shadow: 0 0 5px #9D9D9D inset;
+		-webkit-box-shadow: 0 0 5px #9D9D9D inset;
+		-ms-box-shadow: 0 0 5px #9D9D9D inset;
+		-o-box-shadow: 0 0 5px #9D9D9D inset;
+    padding: 4px;
+transition:all 0.5s ease;
+		-webkit-transition:all 0.5s ease;
+		-moz-transition:all 0.5s ease;
+        -ms-transition:all 0.5s ease;
+        -o-transition:all 0.5s ease;
+		
+	
+	}
+
+    #dirName {
+    background-color: transparent;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-ms-border-radius: 10px 10px 10px 10px;
+		-o-border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px #CCCCCC inset;
+		-moz-box-shadow: 0 0 10px #CCCCCC inset;
+		-webkit-box-shadow: 0 0 10px #CCCCCC inset;
+		-ms-box-shadow: 0 0 10px #CCCCCC inset;
+		-o-box-shadow: 0 0 10px #CCCCCC inset;
+    color: #404040;
+    font-family: verdana;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 3px;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    width: 460px;   
+
+    }
+
+    #FileUpload {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .ArrowButtons {
+        display: inline-block;
+        float: left;
+
+    }
+
+    #FileManagerbuttons {
+
+    border: 1px solid;
+    display: inline-block;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    padding: 10px;
+    width: 660px;  
+    margin-top: -33px; /*add*/   
+    float: left;  
+
+    }
+
+    #FileManagerButtonsR {
+
+    border: 1px solid;
+    /*display: inline-block;*/
+    height: 12px;
+    /*margin-bottom: 10px;
+    margin-left: 15px;*/
+    padding: 10px;
+    width: 180px;/*660px;*/     
+
+    }
+    
+    .data-title:before {
+        content: attr(data-menutitle);
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: #DDD;
+        padding: 2px;
+
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .data-title :first-child {
+        margin-top: 20px;
+    }
+    
+    .swfupload {
+        z-index: 100000 !important;
+    }
+
+    .selectedFile {
+        background-color: lightblue;
+    }
+	
+	
+.name {
+    color: #404040;
+    overflow: hidden;
+    padding: 8px;
+    text-shadow: 1px 1px 1px #FFFFFF;
+	word-wrap: break-word;
+}
+	
+	
+/************************************************************/
+/************************************************************/
+
+.jstree-default .jstree-clicked {
+
+    background-color: transparent !important;
+    border: medium none !important;
+    border-radius: 10px 10px 10px 10px;
+	    -moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-ms-border-radius: 10px 10px 10px 10px;
+		-o-border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 5px #9D9D9D inset;
+		-moz-box-shadow: 0 0 5px #9D9D9D inset;
+		-webkit-box-shadow: 0 0 5px #9D9D9D inset;
+		-ms-box-shadow: 0 0 5px #9D9D9D inset;
+		-o-box-shadow: 0 0 5px #9D9D9D inset;
+    padding: 4px;
+
+}
+
+/************************************************************/	
+	

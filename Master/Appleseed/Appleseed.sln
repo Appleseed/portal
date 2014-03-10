@@ -1,0 +1,178 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{B5258F28-F3D0-4E44-85DA-FB9545800BAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{190E2A8B-228B-46C3-8F84-D532013C5E0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PortableAreas", "PortableAreas", "{E7F52803-87CE-4F80-8507-CF1C6EA1A46F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{36955345-FB7B-414A-8878-2B76DCF982D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Web.UI.WebControls", "Projects\Appleseed.Framework.Web.UI.WebControls\Appleseed.Framework.Web.UI.WebControls.csproj", "{38DA41AC-51C1-4E4D-9610-5370309C2C1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DUEMETRI.UI.WebControls.HWMenu", "Projects\DUEMETRI.UI.WebControls.HWMenu\HWMenu\DUEMETRI.UI.WebControls.HWMenu.csproj", "{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Web", "Projects\Appleseed.Framework\Appleseed.Framework.Web.csproj", "{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Core", "Projects\Appleseed.Framework.Core\Appleseed.Framework.Core.csproj", "{552CCD6F-0A37-4366-9E3E-22B2A0221584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedMembershipProvider", "Projects\Appleseed.Framework.Providers.AppleseedMembershipProvider\Appleseed.Framework.Providers.AppleseedMembershipProvider.csproj", "{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedSqlMembershipProvider", "Projects\Appleseed.Framework.Providers.AppleseedSqlMembershipProvider\Appleseed.Framework.Providers.AppleseedSqlMembershipProvider.csproj", "{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedRoleProvider", "Projects\Appleseed.Framework.Providers.AppleseedRoleProvider\Appleseed.Framework.Providers.AppleseedRoleProvider.csproj", "{599A82DE-6BBE-47D2-BB28-190ABD3CD702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedSqlRoleProvider", "Projects\Appleseed.Framework.Providers.AppleseedSqlRoleProvider\Appleseed.Framework.Providers.AppleseedSqlRoleProvider.csproj", "{2C0213D4-00E2-4AD6-B82A-0D42ADAB3FAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Tests", "Projects\Appleseed.Tests\Appleseed.Tests.csproj", "{B1021322-5BD0-454F-9C38-F9565C71C2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedSiteMapProvider", "Projects\Appleseed.Framework.Providers.AppleseedSiteMapProvider\Appleseed.Framework.Providers.AppleseedSiteMapProvider.csproj", "{C667C927-2E8B-44C6-BAC8-85EC9447C2C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedSqlSiteMapProvider", "Projects\Appleseed.Framework.Providers.AppleseedSqlSiteMapProvider\Appleseed.Framework.Providers.AppleseedSqlSiteMapProvider.csproj", "{82DF20C4-7B3D-476F-8AC5-4ADEE73FCCFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.UrlRewriting", "Projects\Appleseed.Framework.UrlRewriting\Appleseed.Framework.UrlRewriting.csproj", "{10F33732-1ACA-492A-A737-DF8314CE7499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Core", "Projects\PortableAreas\Appleseed.Core\Appleseed.Core.csproj", "{22C4BA46-65C9-49E2-8A23-86DD2F44B744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.PortalTemplate", "Projects\Appleseed.PortalTemplate\Appleseed.PortalTemplate.csproj", "{2A0BD0AC-3734-476A-B039-E7C2215E9487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed", "WebSites\Appleseed\Appleseed.csproj", "{95864C37-9A89-481A-B1AD-662CC7E3C3F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider", "Projects\Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider\Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider.csproj", "{12AC9486-86E4-4436-80DB-24F696D407DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfUpdater", "Projects\PortableAreas\SelfUpdater\SelfUpdater.csproj", "{DBAED848-FEE6-45D4-9086-E519E0A077A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageManagerTree", "Projects\PortableAreas\PageManagerTree\PageManagerTree.csproj", "{36310014-77B3-4DB6-B391-B4036D1BDDD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Password", "Projects\PortableAreas\Password\Password.csproj", "{188D29A3-C2A9-4214-8C0C-8201529E1568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "Projects\PortableAreas\FileManager\FileManager.csproj", "{8D606CC2-CA1B-4320-B4A1-811430123396}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager.Test", "Projects\PortableAreas\FileManager.Test\FileManager.Test.csproj", "{B1E9FED0-6134-44B0-9380-512FD9EE39ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManager", "Projects\PortableAreas\UserManager\UserManager.csproj", "{D6E88AA9-5288-4BAB-8186-1F958EF316EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{552CCD6F-0A37-4366-9E3E-22B2A0221584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552CCD6F-0A37-4366-9E3E-22B2A0221584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552CCD6F-0A37-4366-9E3E-22B2A0221584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552CCD6F-0A37-4366-9E3E-22B2A0221584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{599A82DE-6BBE-47D2-BB28-190ABD3CD702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599A82DE-6BBE-47D2-BB28-190ABD3CD702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599A82DE-6BBE-47D2-BB28-190ABD3CD702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599A82DE-6BBE-47D2-BB28-190ABD3CD702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0213D4-00E2-4AD6-B82A-0D42ADAB3FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0213D4-00E2-4AD6-B82A-0D42ADAB3FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0213D4-00E2-4AD6-B82A-0D42ADAB3FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0213D4-00E2-4AD6-B82A-0D42ADAB3FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1021322-5BD0-454F-9C38-F9565C71C2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1021322-5BD0-454F-9C38-F9565C71C2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1021322-5BD0-454F-9C38-F9565C71C2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1021322-5BD0-454F-9C38-F9565C71C2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C667C927-2E8B-44C6-BAC8-85EC9447C2C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C667C927-2E8B-44C6-BAC8-85EC9447C2C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C667C927-2E8B-44C6-BAC8-85EC9447C2C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C667C927-2E8B-44C6-BAC8-85EC9447C2C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DF20C4-7B3D-476F-8AC5-4ADEE73FCCFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DF20C4-7B3D-476F-8AC5-4ADEE73FCCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DF20C4-7B3D-476F-8AC5-4ADEE73FCCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DF20C4-7B3D-476F-8AC5-4ADEE73FCCFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F33732-1ACA-492A-A737-DF8314CE7499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F33732-1ACA-492A-A737-DF8314CE7499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F33732-1ACA-492A-A737-DF8314CE7499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F33732-1ACA-492A-A737-DF8314CE7499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C4BA46-65C9-49E2-8A23-86DD2F44B744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C4BA46-65C9-49E2-8A23-86DD2F44B744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C4BA46-65C9-49E2-8A23-86DD2F44B744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C4BA46-65C9-49E2-8A23-86DD2F44B744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A0BD0AC-3734-476A-B039-E7C2215E9487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0BD0AC-3734-476A-B039-E7C2215E9487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0BD0AC-3734-476A-B039-E7C2215E9487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0BD0AC-3734-476A-B039-E7C2215E9487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95864C37-9A89-481A-B1AD-662CC7E3C3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95864C37-9A89-481A-B1AD-662CC7E3C3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95864C37-9A89-481A-B1AD-662CC7E3C3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95864C37-9A89-481A-B1AD-662CC7E3C3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12AC9486-86E4-4436-80DB-24F696D407DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12AC9486-86E4-4436-80DB-24F696D407DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12AC9486-86E4-4436-80DB-24F696D407DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12AC9486-86E4-4436-80DB-24F696D407DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBAED848-FEE6-45D4-9086-E519E0A077A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBAED848-FEE6-45D4-9086-E519E0A077A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBAED848-FEE6-45D4-9086-E519E0A077A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBAED848-FEE6-45D4-9086-E519E0A077A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36310014-77B3-4DB6-B391-B4036D1BDDD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36310014-77B3-4DB6-B391-B4036D1BDDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36310014-77B3-4DB6-B391-B4036D1BDDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36310014-77B3-4DB6-B391-B4036D1BDDD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D606CC2-CA1B-4320-B4A1-811430123396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D606CC2-CA1B-4320-B4A1-811430123396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D606CC2-CA1B-4320-B4A1-811430123396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D606CC2-CA1B-4320-B4A1-811430123396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{599A82DE-6BBE-47D2-BB28-190ABD3CD702} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{2C0213D4-00E2-4AD6-B82A-0D42ADAB3FAA} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{C667C927-2E8B-44C6-BAC8-85EC9447C2C4} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{82DF20C4-7B3D-476F-8AC5-4ADEE73FCCFF} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{12AC9486-86E4-4436-80DB-24F696D407DC} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
+		{552CCD6F-0A37-4366-9E3E-22B2A0221584} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
+		{10F33732-1ACA-492A-A737-DF8314CE7499} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
+		{22C4BA46-65C9-49E2-8A23-86DD2F44B744} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
+		{2A0BD0AC-3734-476A-B039-E7C2215E9487} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
+		{DBAED848-FEE6-45D4-9086-E519E0A077A2} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{36310014-77B3-4DB6-B391-B4036D1BDDD3} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{188D29A3-C2A9-4214-8C0C-8201529E1568} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{8D606CC2-CA1B-4320-B4A1-811430123396} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{B1E9FED0-6134-44B0-9380-512FD9EE39ED} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{D6E88AA9-5288-4BAB-8186-1F958EF316EE} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{B1021322-5BD0-454F-9C38-F9565C71C2CF} = {36955345-FB7B-414A-8878-2B76DCF982D8}
+	EndGlobalSection
+	GlobalSection(NDepend) = preSolution
+		Project = ".\Appleseed.ndproj"
+	EndGlobalSection
+EndGlobal

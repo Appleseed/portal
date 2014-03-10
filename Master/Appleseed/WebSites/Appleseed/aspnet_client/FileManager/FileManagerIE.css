@@ -1,0 +1,76 @@
+/************************************/
+/******* Estilos para IE 7-8 ********/
+/***********************************/
+
+*:first-child+html #FileManagerbuttons {
+
+	position: relative;
+	left: 14px;
+
+}
+
+#FileManagerbuttons input[type="button"]:active, #FileManagerbuttons input[type="button"]:focus {
+
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+
+}
+
+/*#FileManagerbuttons input[type="button"] {
+
+		/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); 
+		background-image: url('/Portals/_atshsteel/images/default/spry_FileManager.png');
+		background-repeat: no-repeat;
+		background-position: -7px -39px;
+		border: none !important;
+		padding-left: 0px !important;
+
+}*/
+
+
+#DirectoryTree, #FileManagerbuttons, #FilesTreeFiles {
+
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-8 */
+
+}
+
+#FileManagerContainter  {
+
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-8 */
+
+}
+
+#dirName {
+	
+	background-image: url('spry_FileManager.png');
+	background-repeat:no-repeat;
+	background-position: -10px 0px;
+	
+	
+	}
+	
+	
+
+.FoldersIcons:hover {
+	background-image: url('spry_FileManager.png');
+	background-repeat:no-repeat;
+	background-position:-135px -37px;
+	/*border: 1px solid #666;*/
+}
+
+	
+#MainTree ul li a:hover {
+
+text-decoration: underline;
+
+}
+
+
+*:first-child+html #FileManagerbuttons input[type="button"] {
+	
+	width: 55px !important;
+	padding:7px;
+	display:inline-block;
+	text-align:center;
+	font-size:11px !important;
+	
+	}	

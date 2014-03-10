@@ -1,0 +1,796 @@
+﻿@using Appleseed.Framework
+@using MvcContrib
+@model FileManager.Models.FileManagerModel
+
+<link type="text/css" rel="stylesheet" href="@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/FileManager/FileManager.css")" /> 
+<!--[if lt IE 9]>
+<link href="/aspnet_client/FileManager/FileManagerIE.css" rel="stylesheet" />
+<![endif]-->
+
+<div id="FileManagerErrors"></div>
+
+<div id="FileManagerContainter">
+<div id="FileManagerButtonsR" > 
+<input class="ArrowButtons" type="button" onclick="$('#MainTree').jstree('refresh', -1);" value="Refresh"> 
+</div>
+    <div id="DirectoryTree" class="FileManagerDirectoryTree">
+        @Html.Partial("TreeModule")
+    </div>
+    <div id="FileManagerbuttons">
+    
+        <input type="button" onclick="goBack()" value="back" class="ArrowButtons"/>
+        <input type="button" onclick="goNext()" value="next" class="ArrowButtons" />
+        <input type="button" onclick="OpenUploadifyDialog()" value="Upload" class="ArrowButtons" />
+        <input type="text" readonly="readonly" id="dirName"/>
+        <input type="hidden" id="dirNameHidden" />
+
+    </div>
+    <div id="FilesTreeFiles" class="FolderView">
+    
+
+    </div>
+</div>
+
+<div id="uploadifyDialog" title="Upload Files">
+    <input type="file" value="Upload file" id="FileUpload" />
+</div>
+
+<div id="NewFolderDialog">
+    <span>Folder Name: </span>   
+    <input type="text" id="NewFolderInputId"/>
+    <input type="button" value="create" onclick="CreateNewFolder()"/>    
+
+</div>
+
+<div id="RenameFileDialog">
+    <span>File Name: </span>
+    <input type="text" id="RenameFileInputId"/>
+    <input type="button" value="Rename" onclick="RenameFile()"/>    
+
+</div>
+
+<div id="RenameFolderDialog">
+     <span>Folder Name: </span> 
+    <input type="text" id="RenameFolderInputId"/>
+    <input type="button" value="Rename" onclick="RenameFolder()"/>    
+
+</div>
+
+<div id="FileEditor"></div>
+
+<script>
+
+    $(function () {
+        $("#NewFolderDialog").dialog({
+            autoOpen: false,
+            title: 'Create Folder',
+            modal: true
+        });
+
+        $("#RenameFileDialog").dialog({
+            autoOpen: false,
+            title: 'Rename File',
+            modal: true
+        });
+
+        $("#uploadifyDialog").dialog({
+            autoOpen: false,
+            modal: true
+        });
+
+        $("#RenameFolderDialog").dialog({
+            autoOpen: false,
+            title: 'Rename Directory',
+            modal: true
+        });
+
+        $("#FileEditor").dialog({
+            autoOpen: false,
+            title: 'Edit File',
+            modal: true
+        });
+    });
+
+
+    function NoPermission() {
+        alert("You don't have permissions to perform this action");
+    
+    }
+
+    function OpenNewFolderDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+           $("#NewFolderDialog").dialog("open");
+            $("#NewFolderInputId").val('');
+            </text>
+        }
+        else
+        {
+        <text>
+            NoPermission();
+            </text>
+        }
+    }
+
+    function CloseNewFolderDialog() {
+        $("#NewFolderDialog").dialog("close");
+    }
+
+    function OpenRenameFileDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+                $("#RenameFileDialog").dialog("open");
+                $("#RenameFileInputId").val('');
+            </text>
+        }
+        else
+        {
+            <text>
+                NoPermission();
+            </text>
+        }
+        
+    }
+
+    function CloseRenameFileDialog() {
+        $("#RenameFileDialog").dialog("close");
+    }
+
+    function OpenRenameFolderDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+                $("#RenameFolderDialog").dialog("open");
+                $("#RenameFolderInputId").val('');
+            </text>
+        }
+        else
+        {
+            <text>
+                NoPermission();
+            </text>
+        }
+        
+    }
+
+    function CloseRenameFolderDialog() {
+        $("#RenameFolderDialog").dialog("close");
+    }
+
+    function OpenUploadifyDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+                 $("#uploadifyDialog").dialog("open");
+            </text>
+        }
+        else
+        {
+            <text>
+                NoPermission();
+            </text>
+        }
+       
+    }
+
+    //function OpenFile(folder, file) {
+
+    //    console.log(file);
+    //    console.log(folder);
+
+    //    $("#FileEditor").dialog("open");
+
+    //}
+
+
+    function CreateNewFolder() {
+        @if(Model.EditPermission)
+        {
+            <text>
+                var name = $('#NewFolderInputId').val();
+                if (name != '') {
+                    CreateFolder(name);
+                }
+                else {
+
+                }
+            </text>
+        }
+        else
+        {
+            <text>
+                NoPermission();
+            </text>
+        }
+        
+    }
+
+</script>
+
+<script type= "text/javascript">
+
+    function refresh(){
+        $('#MainTree').jstree('refresh', -1);
+    }
+
+    $(function () {
+
+        $("#MainTree")
+            .jstree({
+                "json_data": {
+                    "ajax": {
+                        "type": "POST",
+                        "url":
+                            function(node) {
+                                var url = '';
+                                if (node == -1) {
+                                    url = '@Url.Action("GetTreeData",new {mID = Model.ModuleId})';
+                                } else {
+                                    var nodeId = node.attr('id');
+                                    url = '@Url.Action("GetChildreenTree")?dir=' + nodeId + '&mID=' + @Model.ModuleId;
+                                }
+
+                                return url;
+                            },
+                        "data": function(n) {
+                            return { ID: n.Attr ? n.Attr("ID") : 0 };
+                        }
+                    }
+                },
+                "dnd": {
+                    "drop_target": false,
+                    "drag_target": false
+                },
+
+                "core": { "initially_open": ["/Portals"] },
+
+                "plugins": ["themes", "contextmenu", "json_data", "ui", "crrm", "dnd", "core"]
+            }).bind("select_node.jstree", function(event, data) {
+
+                var folder = data.rslt.obj.attr("id");
+                OpenFolder(folder);
+
+            }).bind("move_node.jstree", function(e, data) {
+                var bool_copy = (data.rslt.cy != undefined) ? true : false ; 
+                var selected = data.rslt.o.text().replace(/\s{2}/,""); 
+                var children = data.rslt.o.children().children().text().replace(/\s/,"");
+                var folder = selected.replace(children, "");
+                data.rslt.o.each(function() {
+                    $.ajax({
+                        async: false,
+                        type: 'POST',
+                        url: '@Url.Action("MoveData")',
+                        data: {
+                            "path": $(this).attr("id"),
+                            "destination": data.rslt.np.attr("id"),
+                            "mID": @Model.ModuleId, 
+                            "isCopy": bool_copy,
+                            "folder": folder,
+                        },
+                        success: function(r) {
+                            //Refresh();
+                            refresh();
+                        },
+                        error: function(r) {
+                            $.jstree.rollback(data.rlbk);
+                        }
+                    });
+                });
+            }).bind("rename.jstree", function(e, data) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("RenameFolderTree")',
+                    data: {
+                        "name": data.rslt.obj.attr("id"),
+                        "newName": data.rslt.new_name,
+                        "mID": @Model.ModuleId
+                    },
+                    success: function(r) {
+                        //Refresh();
+                        refresh();
+                    },
+                    error: function(r) {
+                        $.jstree.rollback(data.rlbk);
+                    }
+                });
+            }).bind("remove.jstree", function(e, data) {
+                var selected = data.rslt.obj.text().replace(/\s{2}/,""); 
+                var children = data.rslt.obj.children().children().text().replace(/\s/,"");
+                var folder = selected.replace(children, "");
+                var parentfolder = data.rslt.parent.attr("id");
+                if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' +'"' + folder + '"?')) {
+                    $.ajax({
+                        async : false,
+                        type: 'POST',
+                        url: '@Url.Action("DeleteFolder")',
+                        data: {
+                            "folder": folder,
+                            "parentfolder": parentfolder,
+                            "mID": @Model.ModuleId
+                        },
+                        success: function (folderView) {
+                            LoadFoldersContent(parentfolder);
+                            //Refresh();
+                            refresh();
+                        },
+                        error: function (result) {
+                            AppendError(result.responseText);
+                            $.jstree.rollback();
+                        }
+                    });
+                }else{
+                    $.jstree.rollback(data.rlbk);
+                    $('#MainTree').jstree("deselect_all");
+                }
+
+            }).bind("create.jstree", function (e, data) {
+                var lastNode = data.rslt.parent.attr("id");
+                var name = data.rslt.name;
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("CreateNewFolder")',
+                    data: {
+                        folder: lastNode,
+                        name: name,
+                        "mID": @Model.ModuleId
+                    },
+                    success: function (folderView) {
+                        LoadFoldersContent(lastNode);
+                        //Refresh();
+                        refresh();
+                    },
+                    error: function (result) {
+                        AppendError(result.responseText);
+                    }
+                });
+            });
+    });
+
+    function LoadFoldersContent(dir, addToPush) {
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("ViewFilesFromFolder")',
+            data: {
+                "folder": dir,
+                "mID": @Model.ModuleId
+            },
+            success: function (folderView) {
+                $('#FilesTreeFiles').html(folderView);
+                if (addToPush) {
+                    BackNode++;
+                    Backstack[BackNode] = dir;
+
+                    //Backstack.splice(BackNode, Backstack.length - BackNode);
+
+                }
+                LastNode = dir;
+                $('#dirNameHidden').val(dir);
+            }
+        });
+
+        $('#dirName').val(dir);
+
+    }
+
+
+    function OpenFolder(folder) {
+
+        //var folderReplace = folder.replace(/\//g, "\\/");
+        $("#MainTree").jstree("open_node", document.getElementById(folder));
+        LoadFoldersContent(folder, true);
+
+    }
+
+
+    var Backstack = new Array();
+    //var AheadStack = new Array();
+    var LastNode = "@Model.PortalName";
+    var BackNode = -1;
+    var CopiedFile = '';
+    var CopiedFileFolder = '';
+    var isCopy = true;
+    var isFolder = false;
+
+    function goBack() {
+
+        if (Backstack.length > 0 && BackNode > 0) {
+
+            // Backnode apunta a la posicion acutal
+            BackNode--;
+            var dir = Backstack[BackNode];
+            LoadFoldersContent(dir, false);
+        }
+
+    }
+
+    function goNext() {
+
+        if (Backstack.length > 0 && BackNode > -1 && BackNode < Backstack.length - 1) {
+
+            // Backnode apunta a la posicion acutal
+            BackNode++;
+            var dir = Backstack[BackNode];
+            LoadFoldersContent(dir, false);
+        }
+
+    }
+
+    function CreateFolder(Name) {
+        //var folderReplace = LastNode.replace(/\//g, "\\/");
+
+                       
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CreateNewFolder")',
+            data: {
+                folder: LastNode,
+                name: Name,
+                "mID": @Model.ModuleId
+            },
+            success: function (folderView) {
+                LoadFoldersContent(LastNode);
+                CloseNewFolderDialog();
+                $('#NewFolderInputId').val('');
+                //Refresh();
+                refresh();
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+
+
+    }
+    
+    @if(Model.EditPermission)
+    {
+        <text>
+            $(function () {
+
+                $('#FileUpload').uploadify({
+                    'swf': '@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/Uploadify/uploadify.swf")',
+                    'buttonImage': '@Url.Resource("Content.UploadFile.png")',
+                    //'buttonText': 'Buscar...',
+                    'uploader': '@Url.Action("UploadFile")',
+                    'width': 40,
+                    //'folder': '/uploads',
+                    'formData': { 'folderName': '' },
+                    //'auto': true,
+                    //'multi': false,
+                    'onUploadStart': function () {
+                        $("#FileUpload").uploadify("settings", "formData", { 'folderName': LastNode });
+                    },
+                    'onUploadComplete': function () {
+                        LoadFoldersContent(LastNode);
+                    }
+                });
+
+                OpenFolder(LastNode);
+
+
+            });
+        </text>
+    }
+
+    
+
+
+    $(function () {
+
+
+
+        $.contextMenu({
+            selector: '#FilesTreeFiles',
+            callback: function (key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m);
+            },
+            items: {
+                "createFolder": {
+                    name: "Create Folder",
+                    callback: function (key, options) {
+                        OpenNewFolderDialog();
+                        //$("#uploadifyDialog").dialog("open");
+                    }
+                },
+                "upload": {
+                    name: "Upload File", icon: "add",
+                    callback: function (key, options) {
+                        //var m = "upload was clicked";
+                        //window.console && console.log(m) || alert(m);
+                        $("#uploadifyDialog").dialog("open");
+                    }
+                },
+
+                "paste": {
+                    name: "Paste",
+                    icon: "paste",
+                    disabled: function (key, opt) {
+                        // this references the trigger element
+                        return CopiedFile == '';
+                    },
+                    callback: function (key, options) {
+                        PasteFile();
+                    }
+                }
+
+            }
+        });
+
+
+
+    });
+
+
+
+    var SelectedFile = '';
+    var SelectedFileParentFolder = '';
+    var SelectedFolder = '';
+    var SelectedFolderParentFolder = '';
+    $(function () {
+
+
+        $.contextMenu({
+            selector: '.FileMenuContext',
+            callback: function (key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m);
+            },
+            items: {
+                "cut": {
+                    name: "Cut",
+                    icon: "cut",
+                    callback: function (key, options) {
+                        CopiedFile = SelectedFile;
+                        CopiedFileFolder = SelectedFileParentFolder;
+                        isCopy = false;
+                        isFolder = false;
+                    }
+                },
+                "copy": {
+                    name: "Copy",
+                    icon: "copy",
+                    callback: function (key, options) {
+                        CopiedFile = SelectedFile;
+                        CopiedFileFolder = SelectedFileParentFolder;
+                        isCopy = true;
+                        isFolder = false;
+                    }
+                },
+                "Rename": {
+                    name: "Rename",
+                    callback: function (key, options) {
+                        OpenRenameFileDialog();
+                    }
+                },
+                "sep1": "---------",
+                "delete": {
+                    name: "Delete",
+                    icon: "delete",
+                    // superseeds "global" callback
+                    callback: function (key, options) {
+                        DeleteFile();
+                    }
+                }
+
+
+            },
+            events: {
+                show: function (opt) {
+                    opt.$trigger.addClass("selectedFile");
+                    SelectedFile = opt.$trigger.find(".name").html();
+                    SelectedFileParentFolder = opt.$trigger.find("#ParentFolder").val();
+
+                },
+                hide: function (opt) {
+                    opt.$trigger.removeClass("selectedFile");
+                }
+            }
+        });
+
+        $.contextMenu({
+            selector: '.FolderIcon',
+            callback: function (key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m);
+            },
+            items: {
+                "cut": {
+                    name: "Cut",
+                    icon: "cut",
+                    callback: function (key, options) {
+                        CopiedFile = SelectedFolder;
+                        CopiedFileFolder = SelectedFolderParentFolder;
+                        isCopy = false;
+                        isFolder = true;
+                    }
+                },
+                "copy": {
+                    name: "Copy",
+                    icon: "copy",
+                    callback: function (key, options) {
+                        CopiedFile = SelectedFolder;
+                        CopiedFileFolder = SelectedFolderParentFolder;
+                        isCopy = true;
+                        isFolder = true;
+                    }
+                },
+                "Rename": {
+                    name: "Rename",
+                    callback: function (key, options) {
+                        OpenRenameFolderDialog();
+                    }
+                },
+                "sep1": "---------",
+                "delete": {
+                    name: "Delete",
+                    icon: "delete",
+                    // superseeds "global" callback
+                    callback: function (key, options) {
+                        DeleteFolder();
+                    }
+                }
+
+
+            },
+            events: {
+                show: function (opt) {
+                    opt.$trigger.addClass("selectedFile");
+                    SelectedFolder = opt.$trigger.find(".name").html();
+                    SelectedFolderParentFolder = opt.$trigger.find("#ParentFolder").val();
+
+                },
+                hide: function (opt) {
+                    opt.$trigger.removeClass("selectedFile");
+                }
+            }
+        });
+
+        //$('.data-title').attr('data-menutitle', 'Peñarol');
+    });
+
+    function DeleteFolder() {
+
+        if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' +'"'+ SelectedFolder + '"?')) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("DeleteFolder")',
+                data: {
+                    "folder": SelectedFolder,
+                    "parentfolder": SelectedFolderParentFolder,
+                    "mID": @Model.ModuleId
+                },
+                success: function (folderView) {
+                    LoadFoldersContent(LastNode);
+                    //Refresh();
+                    refresh();
+                },
+                error: function (result) {
+                    AppendError(result.responseText);
+                }
+            });
+        }
+
+    }
+
+    function AppendError(msg) {
+
+        var errorDiv = '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">' +
+            '<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>' +
+            '<strong>Alert:</strong>' + msg + '</p><span onclick="$(this).parent().remove()">cerrar</span></div>';
+        $('#FileManagerErrors').append(errorDiv);
+    }
+
+    function RenameFolder() {
+
+        var newFolderName = $('#RenameFolderInputId').val();
+        if (newFolderName != '') {
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RenameFolder")',
+                data: {
+                    "folder": SelectedFolder,
+                    "parentFolder": SelectedFolderParentFolder,
+                    "newName": newFolderName,
+                    "mID": @Model.ModuleId
+                },
+                success: function (folderView) {
+                    LoadFoldersContent(LastNode);
+                    CloseRenameFolderDialog();
+                    //Refresh();
+                    refresh();
+
+                }
+            });
+        } else {
+            alert('The name can not be empty.');
+        }
+
+    }
+
+
+    function DeleteFile() {
+        if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' +'"'+ SelectedFile + '"?')) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("DeleteFile")',
+                data: {
+                    "file": SelectedFile,
+                    "folder": SelectedFileParentFolder,
+                    "mID": @Model.ModuleId
+                },
+                success: function (folderView) {
+                    LoadFoldersContent(LastNode);
+                },
+                error: function (result) {
+                    AppendError(result.responseText);
+                }
+            });
+        }
+
+    }
+
+    function RenameFile() {
+
+        var newFileName = $('#RenameFileInputId').val();
+        if (newFileName != '') {
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RenameFile")',
+                data: {
+                    "file": SelectedFile,
+                    "folder": SelectedFileParentFolder,
+                    "name": newFileName,
+                    "mID": @Model.ModuleId
+                },
+                success: function (folderView) {
+                    LoadFoldersContent(LastNode);
+                    CloseRenameFileDialog();
+                    $('#RenameFileInputId').val('');
+                },
+                error: function (result) {
+                    AppendError(result.responseText);
+                }
+            });
+        } else {
+
+        }
+
+    }
+
+    function PasteFile() {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("PasteFile")',
+            data: {
+                "file": CopiedFile,
+                "folder": CopiedFileFolder,
+                "newFolder": LastNode,
+                "isCopy": isCopy,
+                "isFolder": isFolder, 
+                "mID": @Model.ModuleId
+            },
+            success: function (folderView) {
+                LoadFoldersContent(LastNode);
+                CopiedFile = '';
+                if(isFolder) {
+                    //Refresh();
+                    refresh();
+                }
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+    }
+
+
+</script>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Content.API.CategoryCache" Collapsed="true">
+    <Position X="20.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Categories\Catagories.cs</FileName>
+      <HashCode>AAAAAAAAAASIAAAAAAAAAAAAAAAAAAAAAAAEAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Catagories" Collapsed="true">
+    <Position X="16.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Categories\Catagories.cs</FileName>
+      <HashCode>AAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Category" Collapsed="true">
+    <Position X="18.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Categories\Category.cs</FileName>
+      <HashCode>AAAAIICAAAAggAAEAAAAAAQAAAAAAAQAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Culture" Collapsed="true">
+    <Position X="16.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Globalization\Culture.cs</FileName>
+      <HashCode>ACAAAAAgAAAgIAAAICAAAAQAAAAEAABIAAAASAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Cultures" Collapsed="true">
+    <Position X="18.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Globalization\Cultures.cs</FileName>
+      <HashCode>AAAIAAAACAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Item" Collapsed="true">
+    <Position X="12.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\Item.cs</FileName>
+      <HashCode>AgAhwgAgpCQARAAOQIAAAAAAAQDQEYBEAIkAYAQgggA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ItemHelper" Collapsed="true">
+    <Position X="18.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\Item.cs</FileName>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAiAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ItemBase" Collapsed="true">
+    <Position X="12.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ItemBase.cs</FileName>
+      <HashCode>IAAAwAAAEoAgIEBFgABAEBMQAwACAIQGAAAFAAQgAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Content.API.ItemCollection" Collapsed="true">
+    <Position X="16.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ItemCollection.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Status" Collapsed="true">
+    <Position X="18.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Status\Status.cs</FileName>
+      <HashCode>AAAAIIACEAAghACEAAAAAAQAAAAAAAAAAAABAAAACAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Statuses" Collapsed="true">
+    <Position X="20.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Status\Statuses.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ItemType" Collapsed="true">
+    <Position X="20.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Types\ItemType.cs</FileName>
+      <HashCode>AAAAAAAAAIAgAEAEIAAABAAAAAAAAAAsAEAAAAAgAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ItemTypes" Collapsed="true">
+    <Position X="15" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Types\ItemTypes.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ApplicationTypes" Collapsed="true">
+    <Position X="15" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Types\ItemTypes.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Exceptions" Collapsed="true">
+    <Position X="15" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Utilities\ErrorHandler.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.ErrorHandler" Collapsed="true">
+    <Position X="20.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Utilities\ErrorHandler.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Settings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Utilities\Settings.cs</FileName>
+      <HashCode>iCIAAIAAAAAEBBAQCAAABAQAAAQEAAAAAAAhBABQIAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Content.API.RainbowItem" Collapsed="true">
+    <Position X="12.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>RainbowItem.cs</FileName>
+      <HashCode>AgEBQAADAAAAJCAAAAAAIABgAAAQCAAMAIAUAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Content.API.Search.ContentSearch" Collapsed="true">
+    <Position X="15" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Search\ContentSearch.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Content.API.WorkFlowVersions" Collapsed="true">
+    <Position X="16.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Content\WorkFlowVersions.cs</FileName>
+      <HashCode>AAAAAAACAAAAAEAAAAAAAAAACAAAAAAACEAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Content.API.ItemBaseType" Collapsed="true">
+    <Position X="15" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Types\ItemTypes.cs</FileName>
+      <HashCode>AAABAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

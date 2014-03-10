@@ -1,0 +1,29 @@
+﻿@using FileManager.Models;
+@model FolderContent
+
+<div>
+   
+        @foreach (var folder in Model.Folders)
+        {
+            <div class="FoldersIcons" ondblclick="OpenFolder('@folder.fullName')">@Html.Partial("FolderIcon",folder)</div>
+            
+
+        }
+
+        @foreach (var file in Model.Files)
+        {
+            @*if(file.name.EndsWith(".txt"))
+             {
+                 <div class="FoldersIcons" ondblclick="OpenFile('@file.name', '@file.folder')">@Html.Partial("FileIcon", file)</div>
+             }
+             else
+             {*@
+                <div class="FoldersIcons">@Html.Partial("FileIcon", file)</div>
+             @*}*@
+
+
+        }
+
+    
+    
+</div>

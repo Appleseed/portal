@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appleseed.Modules.ModuleDefinitionsAll</name>
+    </assembly>
+    <members>
+        <member name="T:Appleseed.Content.Web.ModulesModuleDefsAll">
+            <summary>
+            Control to show/edit portals modules (AdminAll)
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesModuleDefsAll.defsList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesModuleDefsAll.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The Page_Load server event handler on this user control is used
+            to populate the current defs settings from the configuration system
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesModuleDefsAll.BindData">
+            <summary>
+            The BindData helper method is used to bind the list of 
+            module definitions for this portal to an asp:datalist server control
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesModuleDefsAll.OnInit(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesModuleDefsAll.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesModuleDefsAll.defsList_ItemCommand(System.Object,System.Web.UI.WebControls.DataListCommandEventArgs)">
+            <summary>
+            The DefsList_ItemCommand server event handler on this page 
+            is used to handle the user editing module definitions
+            from the DefsList &lt;asp:datalist&gt; control
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesModuleDefsAll.AdminModule">
+            <summary>
+            Admin Module
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesModuleDefsAll.GuidID">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

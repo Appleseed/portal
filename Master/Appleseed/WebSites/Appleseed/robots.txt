@@ -1,0 +1,21 @@
+# robots.txt
+User-agent: *
+Disallow: /app_Browsers/
+Disallow: /app_code/
+Disallow: /app_Data/
+Disallow: /app_support/
+Disallow: /app_Themes/
+Disallow: /app_GlobalReferences/
+Disallow: /app_WebReferences/
+Disallow: /aspnet_client/
+Disallow: /bin/
+Disallow: /Design/
+Disallow: /DesktopModules/
+Disallow: /Images/
+Disallow: /rb_documentation/
+Disallow: /rb_logs/
+Disallow: /rb_tools/
+Disallow: /Resources/
+Disallow: /Setup/
+Sitemap: /sitemap.axd
+

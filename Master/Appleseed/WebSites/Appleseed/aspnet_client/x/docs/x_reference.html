@@ -1,0 +1,932 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>X Library Function Reference : Cross-Browser.com</title>
+<meta name='author' content='Mike Foster (Cross-Browser.com)'>
+<meta name='description' content='Cross-Browser DHTML Libraries and Applications'>
+<meta name='keywords' content='dhtml,crossbrowser,tooltips,menu,collapsible,dhtml drag drop,downgradeable layout,dynamic select,image rollover,dhtml layout,css,dom,api,library,demo,javascript,code,unobtrusive dhtml,dom2 events,dynamic forms,animation,ellipse,parametric equation,object-oriented javascript'>
+<link rel='stylesheet' type='text/css' href='../../css/v3.css'>
+
+</head>
+<body><div id='topLinkCon'><a name='topofpg'>&nbsp;</a></div>
+
+<div id='leftColumn' class='column'> <!-- Begin left column -->
+
+<div class='leftContent'> <!-- Begin left content -->
+
+<div id='header'>
+<div id='menubar1'>
+<a href='../../index.html' title='Cross-Browser.com/Offline'>Home</a></div>
+<h1>Cross-Browser.com</h1>
+</div> <!-- end header -->
+
+<style type='text/css'>
+.topLnk {
+  font-size:smaller;
+  text-align:right;
+  margin:0 0 3em 0; padding:0;
+}
+.desc {
+  font-weight:normal;
+  color:#330; background:transparent;
+  margin:.5em 0 .5em 1em;
+}
+.para {
+  font-weight:normal;
+  color:#000; background:transparent;
+  margin:.5em 0 .5em 2em;
+}
+.misc {
+  font-weight:normal;
+  color:#000; background:transparent;
+  margin:.5em 0 .5em 1em;
+}
+</style>
+
+<h2>X Library Function Reference</h2>
+
+<h3>Notes</h3>
+<div class='collapsible'>
+<p>The reference is currently being updated for X version 3.15.4 (30Dec04)</p>
+<p>Beginning with v3.15, the main library files do not provide support for NN4. If you need NN4 support, use 'x_core_nn4.js' and 'x_event_nn4.js' instead of 'x_core.js' and 'x_event.js'.</p>
+</div> <!-- end collapsible -->
+
+<h3>Parameter Syntax</h3>
+<div class='collapsible'>
+<p>Parameters in square brackets are optional. Parameter names use the following data type prefixes.</p>
+<div class="misc">
+<b>b</b> - boolean<br>
+<b>i</b> - signed integer<br>
+<b>u</b> - unsigned integer<br>
+<b>f</b> - floating point (real)<br>
+<b>s</b> - string<br>
+<b>fn</b> - function reference<br>
+<b>o</b> - object reference
+</div>
+<p>The first parameter to most functions is an exception to the above. The <b>ele</b> argument can be an id string or an object reference (window, document, or Element).</p>
+</div> <!-- end collapsible -->
+
+<h3>Global Variables</h3>
+<div class='collapsible'>
+<div class="misc">
+<b>xVersion</b> - X version string<br>
+</div>
+<p>As much as possible, object-detection is used instead of browser-detection. The following variables are used. They are created when you include 'x_core.js'.</p>
+<div class="misc">
+<b>xUA</b> - lowercase user-agent string<br>
+<b>xIE4Up</b> - true if browser is IE 4 or greater<br>
+<b>xIE4</b> - true if browser is IE 4.x<br>
+<b>xIE5</b> - true if browser is IE 5.x<br>
+<b>xNN4</b> - true if browser is Netscape Navigator 4.x<br>
+<b>xOp5or6</b> - true if browser is Opera 5.x or 6.x<br>
+<b>xOp7</b> - true if browser is Opera 7.x<br>
+<b>xMoz</b> - true if browser is Mozilla, etc.<br>
+<b>xMac</b> - true if OS is Mac
+</div>
+<p>For some browsers, the window resize and scroll events are simulated. Some of the following variables may be used.</p>
+<div class="misc">
+<b>xPCW</b> - previous clientWidth<br>
+<b>xPCH</b> - previous clientHeight<br>
+<b>xREL</b> - resize event listener<br>
+<b>xPSL</b> - previous scrollLeft<br>
+<b>xPST</b> - previous scrollTop<br>
+<b>xSEL</b> - scroll event listener
+</div>
+</div> <!-- end collapsible -->
+
+<div class='topLnk'><a name="lnkShow" href="#topofpg" title="Top of page">Top</a></div>
+
+<h2>FUNCTIONS</h2>
+
+<h4>xShow(ele)</h4>
+<div class="desc">Set the element's visibility to 'visible' ('show' for NN4). Calls xVisibility().</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: xVisibility</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkHide" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xHide(ele)</h4>
+<div class="desc">Set the element's visibility to 'hidden' ('hide' for NN4). Calls xVisibility().</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: xVisibility</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkVisibility" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xVisibility(ele, bShow)</h4>
+<div class="desc">Return and optionally set the element's visibility.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>bShow</b> - true = show, false = hide</div>
+<div class="misc">Uses: xGetElementById(), xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkDisplay" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xDisplay(ele, sProp)</h4>
+<div class="desc">Return and optionally set the element's display property.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>sProp</b> - 'none', 'inline', 'block', etc.</div>
+<div class="misc">Uses: xGetElementById(), xStr()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkZIndex" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xZIndex(ele[,uZ])</h4>
+<div class="desc">Return and optionally set the element's z-index.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>uZ</b> - unsigned integer z-index</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xNum()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkColor" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xColor(ele[,sColor])</h4>
+<div class="desc">Return and optionally set the element's text color.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>sColor</b> - color string</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xStr()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkBackground" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xBackground(ele[,sBgColor[,sBgImage]])</h4>
+<div class="desc">Return and optionally set the element's background color and image.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>sBgColor</b> - background color string</div>
+<div class="para"><b>sBgImage</b> - background image URL string</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xStr(), xOp5or6</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkMoveTo" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xMoveTo(ele,iX,iY)</h4>
+<div class="desc">Set the element's x and y coordinates.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>iX</b> - integer x coordinate</div>
+<div class="para"><b>iY</b> - integer y coordinate</div>
+<div class="misc">Uses: xLeft(), xTop()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkLeft" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xLeft(ele[,iX])</h4>
+<div class="desc">Return and optionally set the element's x coordinate.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>iX</b> - integer x coordinate</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xStr(), xNum()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkTop" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTop(ele[,iY])</h4>
+<div class="desc">Return and optionally set the element's y coordinate.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>iY</b> - integer y coordinate</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xStr(), xNum()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkPageX" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xPageX(ele)</h4>
+<div class="desc">Return the element's absolute x coordinate.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: xGetElementById(), xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkPageY" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xPageY(ele)</h4>
+<div class="desc">Return the element's absolute y coordinate.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: xGetElementById(), xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkOffsetLeft" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xOffsetLeft(ele)</h4>
+<div class="desc">Return the element's X offset within its parent element.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: xGetElementById(), xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkOffsetTop" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xOffsetTop(ele)</h4>
+<div class="desc">Return the element's Y offset within its parent element.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: xGetElementById(), xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkScrollLeft" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xScrollLeft(ele)</h4>
+<div class="desc">Return the number of pixels the element (or window) has scrolled horizontally.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference. If undefined return document scrollLeft.</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xNum()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkScrollTop" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xScrollTop(ele)</h4>
+<div class="desc">Return the number of pixels the element (or window) has scrolled vertically.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference. If undefined return document scrollTop.</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xNum()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkSlideTo" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xSlideTo(ele,iX,iY,iTime)</h4>
+<div class="desc">Animated, linear motion with sinusoidal rate. Slide the element to the target position in the given time.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>iX</b> - integer x target</div>
+<div class="para"><b>iY</b> - integer y target</div>
+<div class="para"><b>iTime</b> - total time of slide in ms</div>
+<div class="misc">Uses: xGetElementById(), xMoveTo()</div>
+<div class="misc">File: x_slide.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkResizeTo" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xResizeTo(ele,uW,uH)</h4>
+<div class="desc">Set the element's width and height.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>uW</b> - unsigned integer width</div>
+<div class="para"><b>uH</b> - unsigned integer height</div>
+<div class="misc">Uses: xWidth(), xHeight()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkWidth" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xWidth(ele[,uW])</h4>
+<div class="desc">Return and optionally set the element's width.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>uW</b> - unsigned integer width; it is rounded to an integer</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xNum(), xStr()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkHeight" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xHeight(ele[,uH])</h4>
+<div class="desc">Return and optionally set the element's height.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>uH</b> - unsigned integer height; it is rounded to an integer</div>
+<div class="misc">Uses: xGetElementById(), xDef(), xNum(), xStr()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkClip" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xClip(ele[,iTop,iRight,iBottom,iLeft])</h4>
+<div class="desc">Set the element's clipping rectangle. If ele is the only argument then set clip to existing width and height. Return void.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>iTop</b> - integer y coordinate of top-left corner</div>
+<div class="para"><b>iRight</b> - integer x coordinate of right-bottom corner</div>
+<div class="para"><b>iBottom</b> - integer y coordinate of right-bottom corner</div>
+<div class="para"><b>iLeft</b> - integer x coordinate of top-left corner</div>
+<div class="misc">Uses: xGetElementById(), xNum(), nn4:xWidth(), nn4:xHeight()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkAddEventListener" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xAddEventListener(ele,sEventType,fnEventListener,bCapture)</h4>
+<div class="desc">Register an event listener on the element. For some browsers the window.onscroll and window.onresize events are simulated.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>sEventType</b> - string event type ('mousemove', 'click', 'resize', etc.)</div>
+<div class="para"><b>fnEventListener</b> - reference to the listener function</div>
+<div class="para"><b>bCapture</b> - boolean capture event flag</div>
+<div class="misc">Uses: xGetElementById()</div>
+<div class="misc">File: x_event.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkRemoveEventListener" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xRemoveEventListener(ele,sEventType,fnEventListener,bCapture)</h4>
+<div class="desc">Unregister an event listener on the element.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>sEventType</b> - string event type ('mousemove', 'click', 'resize', etc.)</div>
+<div class="para"><b>fnEventListener</b> - reference to the listener function</div>
+<div class="para"><b>bCapture</b> - boolean capture event flag</div>
+<div class="misc">Uses: xGetElementById()</div>
+<div class="misc">File: x_event.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkEvent" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xEvent(oEvent)</h4>
+<div class="desc">Resolve browser differences for selected event properties and return an object with those properties. This is an object prototype. Create an instance with the <b>new</b> operator.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>oEvent</b> - native event object (null for IE)</div>
+<div class="misc">The following are the current xEvent properties.</div>
+<div class="para"><b>type</b> - string, event type</div>
+<div class="para"><b>target</b> - element object, target of event</div>
+<div class="para"><b>pageX</b> - absolute X coordinate of mouse</div>
+<div class="para"><b>pageY</b> - absolute Y coordinate of mouse</div>
+<div class="para"><b>offsetX</b> - target-relative X coordinate of mouse</div>
+<div class="para"><b>offsetY</b> - target-relative Y coordinate of mouse</div>
+<div class="para"><b>keyCode</b> - unsigned integer</div>
+<div class="misc">Uses: xDef(), xPageX(), xPageY(), nn4:xLayerFromPoint()</div>
+<div class="misc">File: x_event.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkStopPropagation" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xStopPropagation(evt)</h4>
+<div class="desc">...</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>evt</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_event.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkPreventDefault" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xPreventDefault(evt)</h4>
+<div class="desc">...</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>evt</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_event.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkClientWidth" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xClientWidth()</h4>
+<div class="desc">Return the inner width of the window.</div>
+<div class="misc">Uses: xOp5or6, xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkClientHeight" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xClientHeight()</h4>
+<div class="desc">Return the inner height of the window.</div>
+<div class="misc">Uses: xOp5or6, xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkGetElementsByAttribute" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xGetElementsByAttribute(sTag, sAtt, sRE, fn)</h4>
+<div class="desc">Return an array of all sTag elements whose sAtt attribute matches sRE. sAtt can also be a property name but the property must be of type string.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sTag</b> - </div>
+<div class="para"><b>sAtt</b> - </div>
+<div class="para"><b>sRE</b> - </div>
+<div class="para"><b>fn</b> - callback function, iterates thru the returned list</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_dom.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkGetElementsByClassName" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xGetElementsByClassName(sClsName, oParentEle, sTagName, fn)</h4>
+<div class="desc">Returns an array of elements which are descendants of parentEle and have tagName and clsName. If parentEle is null or not present, document will be used. If tagName is null or not present, "*" will be used.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sClsName</b> - </div>
+<div class="para"><b>oParentEle</b> - </div>
+<div class="para"><b>sTagName</b> - </div>
+<div class="para"><b>fn</b> - callback function, iterates thru the returned list</div>
+<div class="misc">Uses: xGetElementsByTagName</div>
+<div class="misc">File: x_dom.js</div>
+<div class="misc">Demo: <a href='../examples/tooltips3.html'>xTooltip</a>, <a href='../examples/popup.html'>xPopup</a></div>
+
+<div class='topLnk'><a name="lnkGetElementsByTagName" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xGetElementsByTagName(sTagName, oParentEle)</h4>
+<div class="desc">Returns an array of elements which are descendants of parentEle and have tagName. If parentEle is null or not present, document will be used. If tagName is null or not present, "*" will be used. This even works with IE4.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sTagName</b> - </div>
+<div class="para"><b>oParentEle</b> - </div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_dom.js</div>
+<div class="misc">Demo: <a href='../examples/tooltips3.html'>xTooltip</a>, <a href='../examples/popup.html'>xPopup</a></div>
+
+<div class='topLnk'><a name="lnkGetComputedStyle" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xGetComputedStyle(oEle, sProp, bInt)</h4>
+<div class="desc">For sProp use the css property name, not the object property name. For finding width this works in Moz and Op, but in IE this only works if padding and border use pixel units in the CSS.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>oEle</b> - element object</div>
+<div class="para"><b>sProp</b> - css property name</div>
+<div class="para"><b>bInt</b> - if true, return value is an integer</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_dom.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkWalkTree" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xWalkTree(oNode, fnVisit)</h4>
+<div class="desc">Perform a preorder traversal on the subtree starting at oNode and pass each Element node to fnVisit.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>oNode</b> - element object at which to begin traversal</div>
+<div class="para"><b>fnVisit</b> - this function will be called for each node and will be passed a reference to that node.</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_dom.js</div>
+<div class="misc">Demo: <a href='../examples/walktree.html'>xWalkTree</a></div>
+
+<div class='topLnk'><a name="lnkGetElementById" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xGetElementById(ele)</h4>
+<div class="desc">Return a reference to an Element object or null if <b>ele</b> is invalid.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="misc">Uses: nn4:xLayer()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkLayer" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xLayer(sId)</h4>
+<div class="desc">Return a reference to a Layer object or null if <b>sId</b> is invalid. This is only for NN4 and is called by xGetElementById().</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sId</b> - id string</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_core_nn4.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkLayerFromPoint" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xLayerFromPoint(iX,iY)</h4>
+<div class="desc">Return a reference to the topmost Layer object containing the point or null if no layer contains the point. This is only for NN4 and is called by xEvent().</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>iX</b> - integer absolute x coordinate</div>
+<div class="para"><b>iY</b> - integer absolute y coordinate</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_event_nn4.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkParent" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xParent(ele,bNode)</h4>
+<div class="desc">Return a reference to the element's parent element, or null if not found.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>bNode</b> - pass true if you want parentNode, else you get offsetParent</div>
+<div class="misc">Uses: xGetElementById(), xDef()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkDef" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xDef(ref[,...])</h4>
+<div class="desc">Return true if all arguments are defined.</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkNum" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xNum(ref)</h4>
+<div class="desc">Return true if typeof(ref) == 'number'.</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkStr" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xStr(ref)</h4>
+<div class="desc">Return true if typeof(ref) == 'string'.</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkEnableDrag" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xEnableDrag(ele,fnDragStart,fnDrag,fnDragEnd)</h4>
+<div class="desc">Enable dragging for ele.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>fnDragStart</b> - this function will be called on mousedown on ele</div>
+<div class="para"><b>fnDrag</b> - this function will be called on each mousemove during dragging</div>
+<div class="para"><b>fnDragEnd</b> - this function will be called on mouseup on ele</div>
+<div class="misc">Uses: xGetElementById(), xAddEventListener(), xRemoveEventListener(), xEvent(), xParent(), xMoveTo()</div>
+<div class="misc">File: x_drag.js</div>
+<div class="misc">Demo: <a href='../examples/drag1.html'>Drag1</a></div>
+
+<div class='topLnk'><a name="lnkImgRollSetup" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xImgRollSetup(sPath,sOvrSuffix,sFileExt,sImgEleId[,...])</h4>
+<div class="desc">Image rollover setup. Can not be called before the window onload event. Pass image IDs starting with 4th argument. The only html requirement is for each IMG tag to have an ID. Assumes this image file naming convention:<br>out img = path + imgEleId + fileExt<br>over img = path + imgEleId + ovrSuffix + fileExt</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sPath</b> - path to image files (requires trailing slash)</div>
+<div class="para"><b>sOvrSuffix</b> - see above file name convention</div>
+<div class="para"><b>sFileExt</b> - see above file name convention (requires dot)</div>
+<div class="para"><b>sImgEleId</b> - pass all img ele IDs starting with the 4th argument</div>
+<div class="misc">Uses: xGetElementById()</div>
+<div class="misc">File: x_img.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkName" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xName(ref)</h4>
+<div class="desc">Returns a string for displaying. It first tries id, then nodeName, then tagName, else returns ele.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ref</b> - object reference</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_debug.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkLoadScript" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xLoadScript(sUrl)</h4>
+<div class="desc">Load a .js file after the window.onload event.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sUrl</b> - URL to the .js file</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_debug.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkParentChain" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xParentChain(ele,sDelim,bNode)</h4>
+<div class="desc">Returns a string for displaying. Iterates up the parent chain of ele.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>sDelim</b> - for example: '\n' or '&lt;br&gt;'</div>
+<div class="para"><b>bNode</b> - pass true if you want parentNode, else you get offsetParent</div>
+<div class="misc">Uses: xGetElementById(), xName(), xParent()</div>
+<div class="misc">File: x_debug.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkHasPoint" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xHasPoint(ele,iLeft,iTop,iClpT,iClpR,iClpB,iClpL)</h4>
+<div class="desc">Returns true if iLeft,iTop is contained within the clipped area of ele.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - id string or object reference</div>
+<div class="para"><b>iLeft</b> - </div>
+<div class="para"><b>iTop</b> - </div>
+<div class="para"><b>iClpT</b> - </div>
+<div class="para"><b>iClpR</b> - </div>
+<div class="para"><b>iClpB</b> - </div>
+<div class="para"><b>iClpL</b> - </div>
+<div class="misc">Uses: xNum(), xPageX(), xPageY(), xWidth(), xHeight()</div>
+<div class="misc">File: x_core.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkWindow" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xWindow(sName, uW, uH, iX, iY, loc, men, res, scr, sta, too)</h4>
+<div class="desc">Create an xWindow object for each child window the page will need. Pass a zero for width, height, left, and top and the window will have default size and position. Pass a zero or one for the boolean parameters (location field, menubar, etc.). For a simpler alternative see xWinOpen() in 'x_alt.js'.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sName</b> - the same name as the 'target' attribute of the A elements</div>
+<div class="para"><b>uW</b> - </div>
+<div class="para"><b>uH</b> - </div>
+<div class="para"><b>iX</b> - </div>
+<div class="para"><b>iY</b> - </div>
+<div class="para"><b>loc</b> - </div>
+<div class="para"><b>men</b> - </div>
+<div class="para"><b>res</b> - </div>
+<div class="para"><b>scr</b> - </div>
+<div class="para"><b>sta</b> - </div>
+<div class="para"><b>too</b> - </div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_win.js</div>
+<div class="misc">Demo: <a href='../examples/xwindow.html'>xWindow</a></div>
+
+<div class='topLnk'><a name="lnkBar" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xBar(sDir, sConStyle, sBarStyle)</h4>
+<div class="desc"></div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sDir</b> - direction string, one of: 'ltr', 'rtl', 'ttb', or 'btt'</div>
+<div class="para"><b>sConStyle</b> - classname for the bar container</div>
+<div class="para"><b>sBarStyle</b> - classname for the bar</div>
+<div class="misc">Uses: xLeft(), xTop(), xNum(), xResizeTo(), xMoveTo(), xLinearScale()</div>
+<div class="misc">File: x_bar.js</div>
+<div class="misc">Demo: <a href='../examples/bargraph.html'>xBar</a></div>
+
+<div class='topLnk'><a name="lnkPopup" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xPopup(sTmrType, uTimeout, sPosition, sStyle, sId, sUrl)</h4>
+<div class="desc">An alternative to popup windows.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sTmrType</b> - 'timeout' or 'interval'</div>
+<div class="para"><b>uTimeout</b> - time in ms</div>
+<div class="para"><b>sPosition</b> - 'cen', 'e', 'se', etc.</div>
+<div class="para"><b>sStyle</b> - classname</div>
+<div class="para"><b>sId</b> - id</div>
+<div class="para"><b>sUrl</b> - popup URL</div>
+<div class="misc">Uses: xTimer,xSlideTo,xWidth,xHeight,xClientWidth,xClientHeight</div>
+<div class="misc">File: x_popup.js</div>
+<div class="misc">Demo: <a href='../examples/popup.html'>xPopup</a></div>
+
+<div class='topLnk'><a name="lnkTimer" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTimer.set(sTmrType, obj, sMethod, uTime, data)</h4>
+<div class="desc">Register an object method to receive a timeout or interval event. On timeout the event listener will receive a reference to it's xTimerObj which has methods: start, stop, and reset; and properties: elapsed and data. xTimer is a global object created when x_timer.js is included. Multiple timers can be set.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sTmrType</b> - 'timeout' or 'interval'</div>
+<div class="para"><b>obj</b> - object to receive event</div>
+<div class="para"><b>sMethod</b> - string: name of one of obj's methods</div>
+<div class="para"><b>uTime</b> - time in ms</div>
+<div class="para"><b>data</b> - passed to listener at event</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_timer.js</div>
+<div class="misc">Demo: <a href='../examples/popup.html'>xPopup</a></div>
+
+<div class='topLnk'><a name="lnkEvalTextarea" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xEvalTextarea()</h4>
+<div class="desc">Append a textarea and button to the current document. Click the button to evaluate the javascript in the textarea.</div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_debug.js</div>
+<div class="misc">Demo: <a href=''></a></div>
+
+<div class='topLnk'><a name="lnkTooltipGroup" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTooltipGroup(grpClassOrIdList, tipClass, origin, xOffset, yOffset, textList)</h4>
+<div class="desc"></div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>grpClassOrIdList</b> - The css class name which you add to any element you want to trigger a tooltip - Or - an array of id strings.</div>
+<div class="para"><b>tipClass</b> - The css class name applied to the tooltip triggered by elements with the grpClass class name (or elements whose id is in the IdList).</div>
+<div class="para"><b>origin</b> - One of 'right', 'top', or 'mouse'. For 'right' or 'top', the tooltip is positioned to the right (or top) of the trigger element. For 'mouse' the tooltip will follow the mouse. In all three cases the following offsets are applied.</div>
+<div class="para"><b>xOffset/yOffset</b> - The tooltip is positioned relative to the above origin, offset by these amounts.</div>
+<div class="para"><b>textList</b> - If grpClassOrIdList is an array of IDs, then textList provides the tooltip text for the corresponding array index. If grpClassOrIdList is a class name then textList is not needed (tooltip text is taken from the element's TITLE attribute).</div>
+<div class="misc">Uses: xGetElementById, xGetElementsByClassName, xAddEventListener, xPageX, xPageY, xWidth, xHeight, xMoveTo, xShow, xEvent</div>
+<div class="misc">File: x_tip.js</div>
+<div class="misc">Demo: <a href='../examples/tooltips3.html'>xTooltipGroup</a></div>
+
+<div class='topLnk'><a name="lnkIntersection" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xIntersection(ele1, ele2, obj)</h4>
+<div class="desc">Returns true if the two elements intersect and assigns properties to obj which describe the intersected rectangle: x, y, w, and h.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele1</b> - </div>
+<div class="para"><b>ele2</b> - </div>
+<div class="para"><b>obj</b> - </div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_misc.js</div>
+<div class="misc">Demo: <a href='../../examples/drag4.html'>CBE Drag Demo</a></div>
+
+<div class='topLnk'><a name="lnkLinearScale" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xLinearScale(value, inMin, inMax, outMin, outMax)</h4>
+<div class="desc">...</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>value</b> - </div>
+<div class="para"><b>inMin</b> - </div>
+<div class="para"><b>inMax</b> - </div>
+<div class="para"><b>outMin</b> - </div>
+<div class="para"><b>outMax</b> - </div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_misc.js</div>
+<div class="misc">Demo: <a href='../examples/bargraph.html'>xBar</a></div>
+
+<div class='topLnk'><a name="lnkEllipse" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xEllipse(ele, xRadius, yRadius, radiusInc, totalTime, startAngle, stopAngle)</h4>
+<div class="desc">Elliptical animation.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - </div>
+<div class="para"><b>xRadius</b> - </div>
+<div class="para"><b>yRadius</b> - </div>
+<div class="para"><b>radiusInc</b> - </div>
+<div class="para"><b>totalTime</b> - </div>
+<div class="para"><b>startAngle</b> - </div>
+<div class="para"><b>stopAngle</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_anim.js</div>
+<div class="misc">Demo: </div>
+
+<div class='topLnk'><a name="lnkParaEq" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xParaEq(ele, xExpr, yExpr, totalTime)</h4>
+<div class="desc">Parametric equation animation.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>ele</b> - </div>
+<div class="para"><b>xExpr</b> - </div>
+<div class="para"><b>yExpr</b> - </div>
+<div class="para"><b>totalTime</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_anim.js</div>
+<div class="misc">Demo: </div>
+
+<div class='topLnk'><a name="lnkTableRowDisplay" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTableRowDisplay(bShow, sec, nRow)</h4>
+<div class="desc">Set row display.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>bShow</b> - </div>
+<div class="para"><b>sec</b> - </div>
+<div class="para"><b>nRow</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_table.js</div>
+<div class="misc">Demo: <a href='../examples/table_toys.php'>Table Toys</a></div>
+
+<div class='topLnk'><a name="lnkTableCellVisibility" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTableCellVisibility(bShow, sec, nRow, nCol)</h4>
+<div class="desc">Set cell visibility.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>bShow</b> - </div>
+<div class="para"><b>sec</b> - </div>
+<div class="para"><b>nRow</b> - </div>
+<div class="para"><b>nCol</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_table.js</div>
+<div class="misc">Demo: <a href='../examples/table_toys.php'>Table Toys</a></div>
+
+<div class='topLnk'><a name="lnkTableColDisplay" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTableColDisplay(bShow, sec, nCol)</h4>
+<div class="desc">Set column display.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>bShow</b> - </div>
+<div class="para"><b>sec</b> - </div>
+<div class="para"><b>nCol</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_table.js</div>
+<div class="misc">Demo: <a href='../examples/table_toys.php'>Table Toys</a></div>
+
+<div class='topLnk'><a name="lnkTableIterate" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTableIterate(sec, fnCallback)</h4>
+<div class="desc">Iterate through all rows and cells in the section.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>sec</b> - ID or element reference of table, tHead, tBody, or tFoot.</div>
+<div class="para"><b>fnCallback</b> - function reference which will be called for each row and cell in section. If fnCallback returns false then iterations will stop. It will be passed the following arguments:<div>obj - reference to the current cell or row.<br>isRow - true if obj is a ref to a TR, false if obj is a ref to a TD.<br>row - 0-based row number relative to section.<br>col - 0-based column number relative to section.</div></div>
+<div class="para"><b>data</b> - passed to fnCallback at each call.</div>
+<div class="misc">Uses: xGetElementById</div>
+<div class="misc">File: x_table.js</div>
+<div class="misc">Demo: <a href='../examples/table_cursor.html'>Table Cursor</a></div>
+
+<div class='topLnk'><a name="lnkTableCursor" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTableCursor(id, inh, def, hov, sel)</h4>
+<div class="desc">Mouseover highlight on rows and cells.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>id</b> - table id</div>
+<div class="para"><b>inh</b> - inherit style</div>
+<div class="para"><b>def</b> - default style</div>
+<div class="para"><b>hov</b> - row hover style</div>
+<div class="para"><b>sel</b> - cell selected style</div>
+<div class="misc">Uses: xGetElementById, xTableIterate</div>
+<div class="misc">File: x_table.js</div>
+<div class="misc">Demo: <a href='../examples/table_cursor.html'>Table Cursor</a></div>
+
+<div class='topLnk'><a name="lnkImgAsyncWait" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xImgAsyncWait(fnStatus, fnInit, fnError, sErrorImg, sAbortImg, imgArray)</h4>
+<div class="desc">Asynchronously waits (and monitors the status) of newly created or static images.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>fnStatus</b> - </div>
+<div class="para"><b>fnInit</b> - </div>
+<div class="para"><b>fnError</b> - </div>
+<div class="para"><b>sErrorImg</b> - </div>
+<div class="para"><b>sAbortImg</b> - </div>
+<div class="para"><b>imgArray</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_img.js</div>
+<div class="misc">Demo: <a href='http://cross-browser.com/x/examples/ximgasyncwait.php'>xImgAsyncWait</a></div>
+
+<div class='topLnk'><a name="lnkTriStateImage" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xTriStateImage(idOut, urlOver, urlDown, fnUp)</h4>
+<div class="desc">Image rollover with a third state - mousedown.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>idOut</b> - </div>
+<div class="para"><b>urlOver</b> - </div>
+<div class="para"><b>urlDown</b> - </div>
+<div class="para"><b>fnUp</b> - </div>
+<div class="misc">Uses: ...</div>
+<div class="misc">File: x_img.js</div>
+<div class="misc">Demo: <a href="http://cross-browser.com/toys/tristateimage.html">TriStateImage</a></div>
+
+<div class='topLnk'><a name="lnkCapitalize" href="#topofpg" title="Top of page">Top</a></div>
+<h4>xCapitalize(str)</h4>
+<div class="desc">Capitalize the first letter of every word in str.</div>
+<div class="misc">Parameters:</div>
+<div class="para"><b>str</b> - </div>
+<div class="misc">Uses: none</div>
+<div class="misc">File: x_misc.js</div>
+<div class="misc">Demo: </div>
+
+
+</div> <!-- end leftContent -->
+
+<div id='footer' class='leftContent'>
+All content Copyright (c) 2001-2004 Michael Foster<br>
+All Javascript distributed under the terms of the <a href='../../license.html'>LGPL</a><br>
+<a href='../../talk/' title='News, Articles and Documentation'>Talk</a> &nbsp;|&nbsp;
+<a href='../../toys/' title='Libraries, Demos and Applications'>Toys</a> &nbsp;|&nbsp;
+<a href='../../' title='Cross-Browser.com'>Home</a> &nbsp;|&nbsp;
+<a href='../../contact.php' title='eMail Mike'>Contact</a> &nbsp;|&nbsp;
+<a href='#topofpg' title='Top of Page'>Top</a>
+</div> <!-- end leftContent -->
+
+</div> <!-- end leftColumn -->
+
+<div id='rightColumn' class='column'>
+<div class='rightContent'>
+
+<!-- Menu -->
+
+<div class='noDisp'>
+  <hr>
+  <h4>Menu</h4>
+</div>
+
+<h3>Appearance</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkBackground">xBackground</a></p>
+  <p><a href="#lnkColor">xColor</a></p>
+  <p><a href="#lnkHide">xHide</a></p>
+  <p><a href="#lnkShow">xShow</a></p>
+  <p><a href="#lnkVisibility">xVisibility</a></p>
+  <p><a href="#lnkDisplay">xDisplay</a></p>
+  <p><a href="#lnkZIndex">xZIndex</a></p>
+</div>
+<h3>Position</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkHasPoint">xHasPoint</a></p>
+  <p><a href="#lnkLeft">xLeft</a></p>
+  <p><a href="#lnkMoveTo">xMoveTo</a></p>
+  <p><a href="#lnkOffsetLeft">xOffsetLeft</a></p>
+  <p><a href="#lnkOffsetTop">xOffsetTop</a></p>
+  <p><a href="#lnkPageX">xPageX</a></p>
+  <p><a href="#lnkPageY">xPageY</a></p>
+  <p><a href="#lnkScrollLeft">xScrollLeft</a></p>
+  <p><a href="#lnkScrollTop">xScrollTop</a></p>
+  <p><a href="#lnkTop">xTop</a></p>
+</div>
+<h3>Size</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkClip">xClip</a></p>
+  <p><a href="#lnkHeight">xHeight</a></p>
+  <p><a href="#lnkResizeTo">xResizeTo</a></p>
+  <p><a href="#lnkWidth">xWidth</a></p>
+</div>
+<h3>Event</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkEvent">xEvent</a></p>
+  <p><a href="#lnkAddEventListener">xAddEventListener</a></p>
+  <p><a href="#lnkRemoveEventListener">xRemoveEventListener</a></p>
+  <p><a href="#lnkStopPropagation">xStopPropagation</a></p>
+  <p><a href="#lnkPreventDefault">xPreventDefault</a></p>
+</div>
+<h3>DOM</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkGetComputedStyle">xGetComputedStyle</a></p>
+  <p><a href="#lnkGetElementById">xGetElementById</a></p>
+  <p><a href="#lnkGetElementsByAttribute">xGetElementsByAttribute</a></p>
+  <p><a href="#lnkGetElementsByClassName">xGetElementsByClassName</a></p>
+  <p><a href="#lnkGetElementsByTagName">xGetElementsByTagName</a></p>
+  <p><a href="#lnkParent">xParent</a></p>
+  <p><a href="#lnkWalkTree">xWalkTree</a></p>
+</div>
+<h3>Animation</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkBar">xBar</a></p>
+  <p><a href="#lnkSlideTo">xSlideTo</a></p>
+  <p><a href="#lnkEllipse">xEllipse</a></p>
+  <p><a href="#lnkParaEq">xParaEq</a></p>
+</div>
+<h3>Table</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkTableRowDisplay">xTableRowDisplay</a></p>
+  <p><a href="#lnkTableCellVisibility">xTableCellVisibility</a></p>
+  <p><a href="#lnkTableColDisplay">xTableColDisplay</a></p>
+  <p><a href="#lnkTableIterate">xTableIterate</a></p>
+  <p><a href="#lnkTableCursor">xTableCursor</a></p>
+</div>
+<h3>Image</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkImgRollSetup">xImgRollSetup</a></p>
+  <p><a href="#lnkImgAsyncWait">xImgAsyncWait</a></p>
+  <p><a href="#lnkTriStateImage">xTriStateImage</a></p>
+</div>
+<h3>Misc</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkPopup">xPopup</a></p>
+  <p><a href="#lnkTimer">xTimer</a></p>
+  <p><a href="#lnkTooltipGroup">xTooltipGroup</a></p>
+  <p><a href="#lnkEnableDrag">xEnableDrag</a></p>
+  <p><a href="#lnkIntersection">xIntersection</a></p>
+  <p><a href="#lnkLinearScale">xLinearScale</a></p>
+  <p><a href="#lnkGetURLArguments">xGetURLArguments</a></p>
+  <p><a href="#lnkCardinalPosition">xCardinalPosition</a></p>
+  <p><a href="#lnkCapitalize">xCapitalize</a></p>
+  <p><a href="#lnkPad">xPad</a></p>
+  <p><a href="#lnkHex">xHex</a></p>
+  <p><a href="#lnkRad">xRad</a></p>
+  <p><a href="#lnkDeg">xDeg</a></p>
+</div>
+<h3>Window</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkClientHeight">xClientHeight</a></p>
+  <p><a href="#lnkClientWidth">xClientWidth</a></p>
+  <p><a href="#WinScrollTo">xWinScrollTo</a></p>
+  <p><a href="#lnkWindow">xWindow</a></p>
+  <p><a href="#lnkWinClass">xWinClass</a></p>
+  <p><a href="#lnkWinOpen">xWinOpen</a></p>
+</div>
+<h3>Type</h3>
+<div class='mnuBox collapsible'>
+  <p><a href="#lnkDef">xDef</a></p>
+  <p><a href="#lnkNum">xNum</a></p>
+  <p><a href="#lnkStr">xStr</a></p>
+</div>
+<h3>Debug</h3>
+<div class='collapsible mnuBox'>
+  <p><a href="#lnkName">xName</a></p>
+  <p><a href="#lnkEvalTextarea">xEvalTextarea</a></p>
+  <p><a href="#lnkLoadScript">xLoadScript</a></p>
+  <p><a href="#lnkParentChain">xParentChain</a></p>
+  <p><a href="#lnkGetElePropsString">xGetElePropsArray</a></p>
+  <p><a href="#lnkGetElePropsString">xGetElePropsString</a></p>
+</div>
+<h3>NN4</h3>
+<div class='collapsible mnuBox'>
+  <p><a href="#lnkLayer">xLayer</a></p>
+  <p><a href="#lnkLayerFromPoint">xLayerFromPoint</a></p>
+</div>
+
+</div> <!-- end rightContent -->
+</div> <!-- end rightColumn -->
+
+</body>
+</html>

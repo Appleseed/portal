@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>Appleseed Version</FriendlyName>
+		<DesktopSource>DesktopModules/CommunityModules/Version/AppleseedVersion.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>

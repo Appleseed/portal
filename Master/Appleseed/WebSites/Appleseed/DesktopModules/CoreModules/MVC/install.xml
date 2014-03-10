@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>MVC - Generic Action</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/MVC/MVCModule.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>	
+</Modules>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<typesettings>
+	<itemtype id="5">
+		<!-- HTML Text-->
+		<setting name="AllowChildren" rkey="ITEMSETTING_ALLOWCHILDREN"  type="bool">true</setting>
+		<setting name="ViewCount" rkey="ITEMSETTING_VIEWCOUNT" type="int">0</setting>
+		<setting name="EmailedCount" rkey="ITEMSETTING_EMAILEDCOUNT" type="int">0</setting>
+		<setting name="PrintedCount" rkey="ITEMSETTING_PRINTEDCOUNT" type="int">0</setting>
+		<setting name="AllowUpdates" rkey="ITEMSETTING_ALLOWUPDATES" type="bool">0</setting>
+		<setting name="EnableComments" rkey="ITEMSETTING_ENABLECOMMENTS" type="bool">0</setting>
+		<setting name="EnableRatings" rkey="ITEMSETTING_ENABLERATING" type="bool">0</setting>
+	</itemtype>
+</typesettings>

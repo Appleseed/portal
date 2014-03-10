@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appleseed.Modules.Version</name>
+    </assembly>
+    <members>
+        <member name="T:Appleseed.Content.Web.ModulesAppleseedVersion">
+            <summary>
+            Appleseed Version
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesAppleseedVersion.currentLanguage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesAppleseedVersion.currentUILanguage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesAppleseedVersion.VersionLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesAppleseedVersion.OnInit(System.EventArgs)">
+            <summary>
+            Raises Init event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesAppleseedVersion.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesAppleseedVersion.GuidID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Appleseed.Content.Web.ModulesVersion.RbVersion">
+            <summary>
+            Summary description for RbVersion.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesVersion.RbVersion.OnInit(System.EventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesVersion.RbVersion.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

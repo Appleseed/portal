@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <version>3.0.0</version>
+  <title>Appleseed Portal Feed</title>
+  <link rel="self" href="http://updates.agileworks.com.uy:81/Appleseed" />
+  <updated>2010-11-18T16:30:00Z</updated>
+  <author>
+    <name>Appleseed Portal</name>
+    <uri>http://appleseedapp.com/</uri>
+  </author>
+  <id>http://updates.agileworks.com.uy:81/Appleseed</id>
+
+  <entry>
+    <productId>Appleseed</productId>
+    <title>Appleseed</title>
+
+    <summary>We're creating open software that will connect all of your SaaS software in the cloud, and allow you to control the flow of information on your terms. </summary>
+    <longSummary>Appleseed is an attempt to make life easier for the small business persons, the back bone of the economy, by reducing the time it takes to get into business, getting work, getting work done, and finally getting paid.
+
+Our hope is to produce software which uses existing technologies in open source, existing companies that provide software as a service in the cloud, and connect companies together in a peer-to-peer social business network. By doing so, we wish to enable the microenterprise to do business locally, regionally, and globally.</longSummary>
+    <productFamily>Appleseed Releases (Beta)</productFamily>
+
+    <version>1.0.0</version>
+    <images>
+      <icon>http://www.anant.us/Portals/_Appleseed/images/default/appleseed_logo.png</icon>
+    </images>
+    <author>
+      <name>Appleseed Portal</name>
+      <uri>http://appleseedapp.com/</uri>
+    </author>
+    <published>2010-11-18T16:30:00Z</published>
+
+   
+    <!-- 
+        <discoveryHint>
+          <registry>
+            <keyPath>HKEY_LOCAL_MACHINE\SOFTWARE\Appleseed\Appleseed Version 3.0.0</keyPath>
+            <valueName>Version</valueName>
+            <valueValue>3.0.0</valueValue>
+          </registry>
+        </discoveryHint>
+    -->
+   
+
+    <!-- 
+         What products need to be installed first? 
+         Define dependencies through ProductId property of products
+         declared in the main WebProductList file or other previously 
+         added feeds 
+    -->
+	<dependency>
+      <and>
+        <dependency idref="IISForASPNET" />
+        <dependency>
+			<productId>IISManagementConsole</productId>
+        </dependency>
+        <dependency>
+			<productId>NETFramework4</productId>
+        </dependency>
+        <dependency>
+			<productId>SQLExpress</productId>	  
+        </dependency>
+<!--
+        <dependency>
+          <productId>MVC2</productId>
+        </dependency>
+-->
+      </and>
+    </dependency>
+
+
+	
+    <!-- Appleseed cannot be installed if product IncompatibleAppleseed is already installed -->
+    <incompatibilities />
+
+    <!-- 
+         installers and installer commands. Here you can define separate installers for
+         different architectures, OSes, SKUs and languages
+    -->
+    <installers>
+      <!-- x86 architecture installer -->
+      <installer>
+        <!-- installer Id should be unique for every Appleseed installer -->
+        <id>1</id>
+
+        <!-- language of installer is English -->
+        <languageId>en</languageId>
+
+        <architectures>
+          <x86 />
+          <x64 />
+        </architectures>
+
+        <!-- 
+             list of OSes and SKUs this product can be installed on. On every OS/SKU that is not 
+             supported, the product will not display 
+        -->
+        <osList idref="SupportedAppPlatforms" />
+
+
+        <!-- before the user will install the product, the link to the following EULA will be presented -->
+        <eulaURL>http://appleseedapp.com/eula.html</eulaURL>
+
+        <!-- this info is important for WebPI to verify that the downloaded file was not tampered -->
+        <installerFile>
+          <!-- size in KBs -->
+          <fileSize>15354</fileSize>
+          <installerURL>http://updates.agileworks.com.uy:81/Appleseed/AppleseedWebApplication.zip</installerURL>
+          <sha1>1C05958A8E5770C67BFD58F3A2DB47D65D6CA8BE</sha1>
+        </installerFile>
+
+        <msDeploy>
+            <!-- start with a setup page rather than a default one -->
+            <startPage>Default.aspx</startPage>
+        </msDeploy>
+		
+		<helpLink>http://appleseedapp.com/</helpLink>
+
+      </installer>
+
+     
+    </installers>
+  </entry>
+
+  <!-- define a tab that contains Appleseed -->
+  <tabs>
+    <tab>
+      <groupTab>
+        <id>Appleseed</id>
+        <name>Appleseed</name>
+        <description>Appleseed Portal</description>
+
+        <groupingId>AppleseedFamilyGrouping</groupingId>
+      </groupTab>
+    </tab>
+  </tabs>
+
+  <keywords>
+    <keyword id="Appleseed">Appleseed Applications</keyword>
+  </keywords>
+
+  <groupings>
+    <grouping>
+      <id>AppleseedFamilyGrouping</id>
+      <!-- combine products based on their productFamily attributes -->
+      <attribute>productFamily</attribute>
+      <include>
+        <item>Appleseed Releases (Beta)</item>
+      </include>
+    </grouping>
+  </groupings>
+
+ <oses>
+    <os id="PreVistaNoHomeBasic">
+      <maximumVersion>
+        <osMajorVersion>5</osMajorVersion>
+
+      </maximumVersion>
+      <osTypes>
+        <Server />
+        <HomePremium />
+        <Ultimate />
+        <Enterprise />
+        <Business />
+      </osTypes>
+    </os>
+
+    <os id="VistaSP1PlusNoHomeBasic">
+      <minimumVersion>
+        <osMajorVersion>6</osMajorVersion>
+        <osMinorVersion>0</osMinorVersion>
+        <spMajorVersion>1</spMajorVersion>
+      </minimumVersion>
+      <osTypes>
+
+        <Server />
+        <HomePremium />
+        <Ultimate />
+        <Enterprise />
+        <Business />
+      </osTypes>
+    </os>
+  </oses>
+
+  <osLists>
+    <!-- support xp sp2+ (no server core) -->
+    <osList id="SupportedAppPlatforms">
+      <os>
+        <minimumVersion>
+          <osMajorVersion>5</osMajorVersion>
+          <osMinorVersion>1</osMinorVersion>
+          <spMajorVersion>2</spMajorVersion>
+
+        </minimumVersion>
+        <osTypes>
+          <Server />
+          <Client />
+        </osTypes>
+      </os>
+      <os idref="PreVistaNoHomeBasic" />
+      <os idref="VistaSP1PlusNoHomeBasic" />
+    </osList>
+
+  </osLists>
+
+
+    <dependencies>
+    <dependency id="IISForASPNET">
+      <or>
+        <!--IIS 5.1-->
+        <dependency>
+          <productId>IIS51</productId>
+        </dependency>
+
+        <!--IIS 6.0-->
+        <dependency>
+          <productId>IIS60</productId>
+        </dependency>
+        <!--IIS 7.0-->
+        <dependency>
+          <and>
+            <dependency>
+
+              <productId>StaticContent</productId>
+            </dependency>
+            <dependency>
+              <productId>DefaultDocument</productId>
+            </dependency>
+            <dependency>
+              <productId>DirectoryBrowse</productId>
+
+            </dependency>
+            <dependency>
+              <productId>HTTPErrors</productId>
+            </dependency>
+            <dependency>
+              <productId>HTTPLogging</productId>
+            </dependency>
+            <dependency>
+
+              <productId>LoggingTools</productId>
+            </dependency>
+            <dependency>
+              <productId>RequestMonitor</productId>
+            </dependency>
+            <dependency>
+              <productId>RequestFiltering</productId>
+
+            </dependency>
+            <dependency>
+              <productId>StaticContentCompression</productId>
+            </dependency>
+            <dependency>
+              <productId>IISManagementConsole</productId>
+            </dependency>
+            <dependency>
+
+              <productId>ASPNET</productId>
+            </dependency>
+            <dependency>
+              <productId>NETExtensibility</productId>
+            </dependency>
+            <dependency>
+              <productId>ISAPIFilters</productId>
+
+            </dependency>
+            <dependency>
+              <productId>ISAPIExtensions</productId>
+            </dependency>
+          </and>
+        </dependency>
+        <!-- For Web PI v3: Copy IIS Express dependency info here -->
+        <!-- IIS Express -->
+
+        <dependency>
+          <productId>WebMatrix</productId>
+        </dependency>        
+      </or>
+    </dependency>
+  </dependencies>
+
+  
+  </feed>

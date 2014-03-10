@@ -1,0 +1,103 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0840C972-DB89-47DD-A721-34522506DF62}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Content.API</RootNamespace>
+    <AssemblyName>Content.API</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categories\Catagories.cs" />
+    <Compile Include="Categories\Category.cs" />
+    <Compile Include="Comments\ItemComments.cs" />
+    <Compile Include="Exceptions\ContentException.cs" />
+    <Compile Include="Exceptions\ContentItemException.cs" />
+    <Compile Include="Feeds\RSS.cs" />
+    <Compile Include="ItemEvents\ItemHandlerEventArgs.cs" />
+    <Compile Include="ItemEvents\ItemSubscriptionEvent.cs" />
+    <Compile Include="Items\ItemHelper.cs" />
+    <Compile Include="Items\ItemHelperMethods.cs" />
+    <Compile Include="Ratings\ItemRatings.cs" />
+    <Compile Include="Types\TypeCollection.cs" />
+    <Compile Include="Types\TypeDefinitions.cs" />
+    <Compile Include="Utilities\ErrorHandler.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\ItemBase.cs" />
+    <Compile Include="Types\ItemType.cs" />
+    <Compile Include="Types\ItemTypes.cs" />
+    <Compile Include="Search\ContentSearch.cs" />
+    <Compile Include="Utilities\Settings.cs" />
+    <Compile Include="Status\Status.cs" />
+    <Compile Include="Status\Statuses.cs" />
+    <Compile Include="Content\WorkFlowVersions.cs" />
+    <Compile Include="Globalization\Culture.cs" />
+    <Compile Include="Globalization\Cultures.cs" />
+    <Compile Include="Items\ItemCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Content.cd" />
+    <None Include="ContentItems.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Types\ContentTypeDefinitions.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Content.Data\Content.API.Data.csproj">
+      <Project>{91B2DD40-F262-49E8-A6BA-5D47197219E1}</Project>
+      <Name>Content.API.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Types\BasicTypeSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Types\API\" />
+    <Folder Include="XSD\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

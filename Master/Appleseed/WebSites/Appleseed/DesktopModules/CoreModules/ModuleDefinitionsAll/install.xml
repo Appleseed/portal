@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>Admin - Module Types (AdminAll)</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/ModuleDefinitionsAll/ModuleDefsAll.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>

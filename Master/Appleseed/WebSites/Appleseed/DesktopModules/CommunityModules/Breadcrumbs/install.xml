@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>BreadCrumbs</FriendlyName>
+		<DesktopSource>DesktopModules/CommunityModules/BreadCrumbs/BreadCrumbs.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>

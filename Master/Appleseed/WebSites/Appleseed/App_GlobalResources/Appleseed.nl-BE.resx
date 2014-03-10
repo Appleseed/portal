@@ -1,0 +1,3576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABI" xml:space="preserve">
+    <value>ABI</value>
+  </data>
+  <data name="ABSTRACT" xml:space="preserve">
+    <value>Korte inhoud</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>Ik accepteer de voorwaarden</value>
+  </data>
+  <data name="ACCEPT_TERMS" xml:space="preserve">
+    <value>I aanvaard de Algemene Voorwaarden</value>
+  </data>
+  <data name="ACCESS_DENIED" xml:space="preserve">
+    <value>Toegang geweigerd</value>
+  </data>
+  <data name="ACCESS_DENIED_MESSAGE" xml:space="preserve">
+    <value>Ofwel ben je momenteel niet ingelogd, of heb je geen toegang tot deze pagina. Gelieve contact op te nemen met de webmaster</value>
+  </data>
+  <data name="ACCESSDENIED" xml:space="preserve">
+    <value>Toegang geweigerd</value>
+  </data>
+  <data name="ACCOUNT_INFO" xml:space="preserve">
+    <value>Lidmaatschap info</value>
+  </data>
+  <data name="ACCOUNT_LOGIN" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="ADD" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="ADD_ARTICLE" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="ADD_DOCUMENT" xml:space="preserve">
+    <value>Nieuw document toevoegen</value>
+  </data>
+  <data name="ADD_NEW" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="ADD_NEW_USER" xml:space="preserve">
+    <value>Nieuwe gebruiker toevoegen</value>
+  </data>
+  <data name="ADD_PORTAL" xml:space="preserve">
+    <value>Portaal toevoegen</value>
+  </data>
+  <data name="ADD_VEHICLE" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ADDRESS" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="ADDTAB" xml:space="preserve">
+    <value>Nieuwe pagina toevoegen</value>
+  </data>
+  <data name="ADDUSER" xml:space="preserve">
+    <value>Gebruiker toevoegen aan deze rol</value>
+  </data>
+  <data name="ADMIN_MODULE" xml:space="preserve">
+    <value>Administratie module?</value>
+  </data>
+  <data name="ADVPAYM" xml:space="preserve">
+    <value>Vooruitbetaling</value>
+  </data>
+  <data name="ALBUMPATH" xml:space="preserve">
+    <value>De Weg van het album</value>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value>Allen</value>
+  </data>
+  <data name="ALLOWBULKLOAD" xml:space="preserve">
+    <value>ALLOWBULKLOAD</value>
+  </data>
+  <data name="ALLOWNEWREGISTRATIONS" xml:space="preserve">
+    <value>Nieuwe registraties toestaan?</value>
+  </data>
+  <data name="ALLOWNEWREGISTRATIONS_DESCRIPTION" xml:space="preserve">
+    <value>Controleer dit om gebruikersregister zelf toe te staan. Verlaat spatie voor register door slechts de Manager van de Gebruiker.</value>
+  </data>
+  <data name="ALPHA_LIST_DESCRIPTION" xml:space="preserve">
+    <value>Omschrijving</value>
+  </data>
+  <data name="ALPHA_LIST_ITEM_DETAILS" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ALPHA_LIST_LABEL1" xml:space="preserve">
+    <value>Label 1</value>
+  </data>
+  <data name="ALPHA_LIST_LABEL2" xml:space="preserve">
+    <value>Label 2</value>
+  </data>
+  <data name="ALPHA_LIST_READMORELINK" xml:space="preserve">
+    <value>Lees meer ...</value>
+  </data>
+  <data name="ALPHA_LIST_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="ALREADY_REGISTERED" xml:space="preserve">
+    <value>is reeds geregistreerd</value>
+  </data>
+  <data name="ALREADY_REGISTERED1" xml:space="preserve">
+    <value>Als je al lid bent</value>
+  </data>
+  <data name="AM_ADDMODULE" xml:space="preserve">
+    <value>Module toevoegen</value>
+  </data>
+  <data name="AM_ADDMODULEBELOW" xml:space="preserve">
+    <value>Toevoegen aan ’Modules Organiseren’ hieronder</value>
+  </data>
+  <data name="AM_ADDMODULETOTAB" xml:space="preserve">
+    <value>Voeg deze Module toe aan de pagina</value>
+  </data>
+  <data name="AM_ADDROLE" xml:space="preserve">
+    <value>Nieuwe rol toevoegen</value>
+  </data>
+  <data name="AM_BASESOLUTION" xml:space="preserve">
+    <value>Basis oplossing</value>
+  </data>
+  <data name="AM_CENTERPANEL" xml:space="preserve">
+    <value>Midden Kolom</value>
+  </data>
+  <data name="AM_LEFTPANEL" xml:space="preserve">
+    <value>Linker Kolom</value>
+  </data>
+  <data name="AM_MOBILETAB" xml:space="preserve">
+    <value>Paginanaam Mobiel</value>
+  </data>
+  <data name="AM_MODULELOCATION" xml:space="preserve">
+    <value>Module locatie:</value>
+  </data>
+  <data name="AM_MODULENAME" xml:space="preserve">
+    <value>Modulenaam</value>
+  </data>
+  <data name="AM_MODULETYPE" xml:space="preserve">
+    <value>Moduletype</value>
+  </data>
+  <data name="AM_MODULEVISIBLETO" xml:space="preserve">
+    <value>Module zichtbaar voor:</value>
+  </data>
+  <data name="AM_ORGANIZEMODULE" xml:space="preserve">
+    <value>Modules Organiseren </value>
+  </data>
+  <data name="AM_PAGEVISIBLETO" xml:space="preserve">
+    <value>Page Visible To:</value>
+  </data>
+  <data name="AM_PORTALALIAS" xml:space="preserve">
+    <value>Portaal Alias</value>
+  </data>
+  <data name="AM_PORTALID" xml:space="preserve">
+    <value>Portaal ID</value>
+  </data>
+  <data name="AM_RIGHTPANEL" xml:space="preserve">
+    <value>Rechter Kolom</value>
+  </data>
+  <data name="AM_ROLESAUTH" xml:space="preserve">
+    <value>Toegelaten rollen</value>
+  </data>
+  <data name="AM_SHOWEDIT" xml:space="preserve">
+    <value>Bewerken knop altijd laten zien</value>
+  </data>
+  <data name="AM_SHOWMOBILE" xml:space="preserve">
+    <value>Tonen aan mobiele gebruikers</value>
+  </data>
+  <data name="AM_SITEPATH" xml:space="preserve">
+    <value>Site pad</value>
+  </data>
+  <data name="AM_SITETITLE" xml:space="preserve">
+    <value>Site titel</value>
+  </data>
+  <data name="AM_TABNAME" xml:space="preserve">
+    <value>Paginanaam en lay-out</value>
+  </data>
+  <data name="AM_TABNAME1" xml:space="preserve">
+    <value>Paginanaam</value>
+  </data>
+  <data name="AM_TABS" xml:space="preserve">
+    <value>Pagina’s</value>
+  </data>
+  <data name="AM_THEME" xml:space="preserve">
+    <value>Opmaak</value>
+  </data>
+  <data name="ANNOUNCES_ADD" xml:space="preserve">
+    <value>Nieuwe mededeling toevoegen</value>
+  </data>
+  <data name="ANNOUNCES_DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="ANNOUNCES_DETAILS" xml:space="preserve">
+    <value>Mededeling details</value>
+  </data>
+  <data name="ANNOUNCES_EXPIRES" xml:space="preserve">
+    <value>Verloopt</value>
+  </data>
+  <data name="ANNOUNCES_READ_MORE_LINK" xml:space="preserve">
+    <value>Lees meer link</value>
+  </data>
+  <data name="ANNOUNCES_READ_MORE_MOBILE" xml:space="preserve">
+    <value>Lees meer (mobiel)</value>
+  </data>
+  <data name="ANNOUNCES_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="ANNOUNCES_VALID_DESCRIPTION" xml:space="preserve">
+    <value>Je moet een correcte beschrijving invullen</value>
+  </data>
+  <data name="ANNOUNCES_VALID_EXPIRE" xml:space="preserve">
+    <value>Je moet een correcte verloopdatum invullen</value>
+  </data>
+  <data name="ANNOUNCES_VALID_TITLE" xml:space="preserve">
+    <value>Je moet een correcte titel invullen</value>
+  </data>
+  <data name="APOLOGISE" xml:space="preserve">
+    <value>APOLOGISE</value>
+  </data>
+  <data name="APPLY" xml:space="preserve">
+    <value>Wijzigingen opslaan</value>
+  </data>
+  <data name="APPLY_CHANGES" xml:space="preserve">
+    <value>Wijzigingen opslaan</value>
+  </data>
+  <data name="APPLY_MODULE_CHANGES" xml:space="preserve">
+    <value>Wijzigingen opslaan</value>
+  </data>
+  <data name="APPLYBUTTON" xml:space="preserve">
+    <value>Apply changes</value>
+  </data>
+  <data name="APPLYMODULECHANGES" xml:space="preserve">
+    <value>Apply module changes</value>
+  </data>
+  <data name="APPLYNAME" xml:space="preserve">
+    <value>Naam en wachtwoord wijzigingen opslaan</value>
+  </data>
+  <data name="APPLYTHEME" xml:space="preserve">
+    <value>Nieuw opmaak opslaan</value>
+  </data>
+  <data name="APPLYTHEME_DESCRIPTION" xml:space="preserve">
+    <value>Vink aan voor toepassen opmaak voor deze module</value>
+  </data>
+  <data name="APPROVE_MODULE_CONTENT" xml:space="preserve">
+    <value>APPROVE_MODULE_CONTENT</value>
+  </data>
+  <data name="AREA" xml:space="preserve">
+    <value>Omgeving</value>
+  </data>
+  <data name="ARTICLE_DETAIL" xml:space="preserve">
+    <value>Artikel detail</value>
+  </data>
+  <data name="ASSIGN_AS_PARENT" xml:space="preserve">
+    <value>Assign as parent to selected</value>
+  </data>
+  <data name="ASSIGN_NEW_PARENT_PAGE" xml:space="preserve">
+    <value>Assign parent to selected page:</value>
+  </data>
+  <data name="AT_ADDPAGE" xml:space="preserve">
+    <value>Add this Page</value>
+  </data>
+  <data name="AT_ADDTAB" xml:space="preserve">
+    <value>Add Page</value>
+  </data>
+  <data name="AT_JUMPTOPAGE" xml:space="preserve">
+    <value>Would you like to jump to the new Page?</value>
+  </data>
+  <data name="AT_JUMPTOTAB" xml:space="preserve">
+    <value>Jump to page</value>
+  </data>
+  <data name="AT_MOBILETABNAME" xml:space="preserve">
+    <value>Mobile Page Name</value>
+  </data>
+  <data name="AT_PAGEPARENT" xml:space="preserve">
+    <value>Page parent:</value>
+  </data>
+  <data name="AT_PAGETITLE" xml:space="preserve">
+    <value>Page Title:</value>
+  </data>
+  <data name="AT_SHOWMOBILE" xml:space="preserve">
+    <value>Show Mobile</value>
+  </data>
+  <data name="AT_TABPARENT" xml:space="preserve">
+    <value>Page Parent</value>
+  </data>
+  <data name="AT_TABTITLE" xml:space="preserve">
+    <value>Page Title</value>
+  </data>
+  <data name="AUTHOR" xml:space="preserve">
+    <value>Auteur</value>
+  </data>
+  <data name="BACK" xml:space="preserve">
+    <value>Terug</value>
+  </data>
+  <data name="BANK" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="BG_BG" xml:space="preserve">
+    <value>BG_BG</value>
+  </data>
+  <data name="BG_BG_DESCRIPTION" xml:space="preserve">
+    <value>BG_BG_DESCRIPTION</value>
+  </data>
+  <data name="BIND_OPTION_CHILDREN" xml:space="preserve">
+    <value>BindOptionChildren</value>
+  </data>
+  <data name="BIND_OPTION_CURRENT_CHILDS" xml:space="preserve">
+    <value>BindOptionCurrentChilds</value>
+  </data>
+  <data name="BIND_OPTION_DEFINED_PARENT" xml:space="preserve">
+    <value>BindOptionDefinedParent</value>
+  </data>
+  <data name="BIND_OPTION_NONE" xml:space="preserve">
+    <value>BindOptionNone</value>
+  </data>
+  <data name="BIND_OPTION_PAGESIBLING" xml:space="preserve">
+    <value>BindOptionPageSibling</value>
+  </data>
+  <data name="BIND_OPTION_SIBLINGS" xml:space="preserve">
+    <value>BindOptionSiblings</value>
+  </data>
+  <data name="BIND_OPTION_SUBPAGE_SIBLING" xml:space="preserve">
+    <value>BindOptionSubPageSibling</value>
+  </data>
+  <data name="BIND_OPTION_SUBTAB_SIBLING" xml:space="preserve">
+    <value>BindOptionSubtabSibling</value>
+  </data>
+  <data name="BIND_OPTION_TABSIBLING" xml:space="preserve">
+    <value>BindOptionTabSibling</value>
+  </data>
+  <data name="BIND_OPTION_TOP" xml:space="preserve">
+    <value>BindOptionTop</value>
+  </data>
+  <data name="BINDTOTAB" xml:space="preserve">
+    <value>Bind to tab</value>
+  </data>
+  <data name="BLACKLIST" xml:space="preserve">
+    <value>Blacklist</value>
+  </data>
+  <data name="BLACKLIST_ADD" xml:space="preserve">
+    <value>Add to Blacklist</value>
+  </data>
+  <data name="BLACKLIST_ALL" xml:space="preserve">
+    <value> Allen </value>
+  </data>
+  <data name="BLACKLIST_DATE" xml:space="preserve">
+    <value>Blacklist Date</value>
+  </data>
+  <data name="BLACKLIST_EMAIL" xml:space="preserve">
+    <value>Blacklist Email</value>
+  </data>
+  <data name="BLACKLIST_LASTSEND" xml:space="preserve">
+    <value>Blacklist Last Send</value>
+  </data>
+  <data name="BLACKLIST_NAME" xml:space="preserve">
+    <value>Blacklist Name</value>
+  </data>
+  <data name="BLACKLIST_NONE" xml:space="preserve">
+    <value>Blacklist None</value>
+  </data>
+  <data name="BLACKLIST_REASON" xml:space="preserve">
+    <value>Blacklist Reason</value>
+  </data>
+  <data name="BLACKLIST_SENDNEWSLETTER" xml:space="preserve">
+    <value>Blacklist Send News Letter</value>
+  </data>
+  <data name="BLACKLIST_SHOWALLUSERS" xml:space="preserve">
+    <value>Blacklist Show All Users</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNDATE" xml:space="preserve">
+    <value>Blacklist Show Column Date</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNEMAIL" xml:space="preserve">
+    <value>Blacklist Show Column EMail</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNLASTSEND" xml:space="preserve">
+    <value>Blacklist Show Column Last Send</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNREASON" xml:space="preserve">
+    <value>Blacklist Show Column Reason</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNSENDNEWSLETTER" xml:space="preserve">
+    <value>Blacklist Show Column Send News Letter</value>
+  </data>
+  <data name="BLACKLIST_SHOWSUBSCRIBERSONLY" xml:space="preserve">
+    <value>Blacklist Show Subscribers Only</value>
+  </data>
+  <data name="BLACKLIST_SORTFIELD" xml:space="preserve">
+    <value>Blacklist Sort Field</value>
+  </data>
+  <data name="BLACKLISTED" xml:space="preserve">
+    <value>Blacklisted</value>
+  </data>
+  <data name="BLOG_ARCHIVES" xml:space="preserve">
+    <value>Archives</value>
+  </data>
+  <data name="BLOG_COMMENTS" xml:space="preserve">
+    <value>Commentaar</value>
+  </data>
+  <data name="BLOG_ENTRIES" xml:space="preserve">
+    <value>Ingangen</value>
+  </data>
+  <data name="BLOG_ENTRY" xml:space="preserve">
+    <value>Blog Entry</value>
+  </data>
+  <data name="BLOG_FEEDBACK" xml:space="preserve">
+    <value>Terugkoppeling (</value>
+  </data>
+  <data name="BLOG_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="BLOG_POSTED" xml:space="preserve">
+    <value>Posted</value>
+  </data>
+  <data name="BLOG_POSTSFROM" xml:space="preserve">
+    <value>Posten van</value>
+  </data>
+  <data name="BLOG_REMEMBER_ME" xml:space="preserve">
+    <value>Remember Me?</value>
+  </data>
+  <data name="BLOG_STATISTICS" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="BLOG_SYNDICATION" xml:space="preserve">
+    <value>Syndication</value>
+  </data>
+  <data name="BLOG_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="BLOG_TITLE_FEEDBACK" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="BLOG_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="BOTTOM" xml:space="preserve">
+    <value>Onderaan</value>
+  </data>
+  <data name="BTN_HELP" xml:space="preserve">
+    <value>Show help about this module</value>
+  </data>
+  <data name="BTN_PRINT" xml:space="preserve">
+    <value>Afdrukken</value>
+  </data>
+  <data name="BUTTON_DISPLAY_SETTINGS" xml:space="preserve">
+    <value>Knoppen en Display instellingen</value>
+  </data>
+  <data name="BUYNOW" xml:space="preserve">
+    <value>Koop Nu</value>
+  </data>
+  <data name="CA" xml:space="preserve">
+    <value>CA</value>
+  </data>
+  <data name="CA_DESCRIPTION" xml:space="preserve">
+    <value>CA_DESCRIPTION</value>
+  </data>
+  <data name="CAB" xml:space="preserve">
+    <value>Ondernemingsnummer</value>
+  </data>
+  <data name="CACHETIMEOUT" xml:space="preserve">
+    <value>Cache Timeout (in seconden)</value>
+  </data>
+  <data name="CACHETIMEOUT_DESCRIPTION" xml:space="preserve">
+    <value>Cache Timeout (in seconden)</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="CAPTION" xml:space="preserve">
+    <value>Hoofding</value>
+  </data>
+  <data name="CAT" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="CATEGORY" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="CATS" xml:space="preserve">
+    <value>cat’en</value>
+  </data>
+  <data name="CENTER" xml:space="preserve">
+    <value>Midden</value>
+  </data>
+  <data name="CFISCALE" xml:space="preserve">
+    <value>BTW nr</value>
+  </data>
+  <data name="CHANGE_DATE" xml:space="preserve">
+    <value>Wijzig datum</value>
+  </data>
+  <data name="CHANGE_LANGUAGE" xml:space="preserve">
+    <value>Wijzig</value>
+  </data>
+  <data name="CHANGE_PASSWORD" xml:space="preserve">
+    <value>Vul alleen een wachtwoord in als je het wilt wijzigen</value>
+  </data>
+  <data name="CHECKOUT" xml:space="preserve">
+    <value>Uitchecken</value>
+  </data>
+  <data name="CHECKOUT_AUTHORIZE" xml:space="preserve">
+    <value>U moet uw order bevestigen</value>
+  </data>
+  <data name="CHECKOUT_CART_IS_EMPTY" xml:space="preserve">
+    <value>Er zij geen items in uw winkelmand</value>
+  </data>
+  <data name="CHECKOUT_CC_EXPIRY" xml:space="preserve">
+    <value>Vervaldatum:</value>
+  </data>
+  <data name="CHECKOUT_CC_NAME" xml:space="preserve">
+    <value>Naam op de kaart:</value>
+  </data>
+  <data name="CHECKOUT_CC_NUMBER" xml:space="preserve">
+    <value>Kredietkaartnummer:</value>
+  </data>
+  <data name="CHECKOUT_CC_TYPE" xml:space="preserve">
+    <value>Kaarttype:</value>
+  </data>
+  <data name="CHECKOUT_COPY_TO_SHIPPING_INFO" xml:space="preserve">
+    <value>Reset my shipping information with my account information</value>
+  </data>
+  <data name="CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT" xml:space="preserve">
+    <value>Please make sure that the above email address is correct as it will be used to send a copy of your order.</value>
+  </data>
+  <data name="CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT_2" xml:space="preserve">
+    <value>If it is not the case, please.</value>
+  </data>
+  <data name="CHECKOUT_SELECT_PAYMENT" xml:space="preserve">
+    <value>Kies betalingsmethode</value>
+  </data>
+  <data name="CHECKOUT_STEP1" xml:space="preserve">
+    <value>STEP 1/4: Profiel Information</value>
+  </data>
+  <data name="CHECKOUT_STEP2" xml:space="preserve">
+    <value>STEP 2/4: Verzending Information</value>
+  </data>
+  <data name="CHECKOUT_STEP3" xml:space="preserve">
+    <value>STEP 3/4: Bereken totaal prijs</value>
+  </data>
+  <data name="CHECKOUT_STEP4" xml:space="preserve">
+    <value>STEP 4/4: Betaling verwerken</value>
+  </data>
+  <data name="CHECKOUT_TOTAL_PRODUCT" xml:space="preserve">
+    <value>Totaal producten:</value>
+  </data>
+  <data name="CHECKOUT_TOTAL_SHIPPING" xml:space="preserve">
+    <value>Totaal verzending:</value>
+  </data>
+  <data name="CHECKOUT_VERIFY_INFORMATION" xml:space="preserve">
+    <value>Please verify the information below to make sure it is correct.</value>
+  </data>
+  <data name="CHECKOUT_VERIFY_INFORMATION_CLICK_BACK" xml:space="preserve">
+    <value>Click on the back button to go to the previous step, click on the continue button to proceed to the next step.</value>
+  </data>
+  <data name="CITY" xml:space="preserve">
+    <value>Plaats</value>
+  </data>
+  <data name="COLLECTION_PROPERTIES" xml:space="preserve">
+    <value>Collectie eigenschappen</value>
+  </data>
+  <data name="COMPANY" xml:space="preserve">
+    <value>Bedrijf</value>
+  </data>
+  <data name="CONDITIONS" xml:space="preserve">
+    <value>Voorwaarden</value>
+  </data>
+  <data name="CONFIRM" xml:space="preserve">
+    <value>Wachtwoord bevestigen</value>
+  </data>
+  <data name="CONFIRM_DELETE" xml:space="preserve">
+    <value>Dit item verwijderen?</value>
+  </data>
+  <data name="CONTACT" xml:space="preserve">
+    <value>Contactpersoon</value>
+  </data>
+  <data name="CONTACTS_ADD" xml:space="preserve">
+    <value>Nieuwe contactpersoon toevoegen</value>
+  </data>
+  <data name="CONTACTS_ADDRESS" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="CONTACTS_CONTACT1" xml:space="preserve">
+    <value>Kantoor</value>
+  </data>
+  <data name="CONTACTS_CONTACT2" xml:space="preserve">
+    <value>GSM</value>
+  </data>
+  <data name="CONTACTS_DETAILS" xml:space="preserve">
+    <value>Contact details</value>
+  </data>
+  <data name="CONTACTS_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="CONTACTS_FAX" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="CONTACTS_NAME" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="CONTACTS_ROLE" xml:space="preserve">
+    <value>Functie</value>
+  </data>
+  <data name="CONTACTS_VALID_NAME" xml:space="preserve">
+    <value>Gelieve een correcte naam in te vullen.</value>
+  </data>
+  <data name="CONTINUE" xml:space="preserve">
+    <value>Verder</value>
+  </data>
+  <data name="CONTROL_PANEL" xml:space="preserve">
+    <value>Sorteer Acties:</value>
+  </data>
+  <data name="COPYALL" xml:space="preserve">
+    <value> Copy All -&gt;</value>
+  </data>
+  <data name="COPYITEM" xml:space="preserve">
+    <value>Copy -&gt;</value>
+  </data>
+  <data name="COUNTRIESFILTER" xml:space="preserve">
+    <value>Toegelaten landen</value>
+  </data>
+  <data name="COUNTRIESFILTER_DESCRIPTION" xml:space="preserve">
+    <value>Allowed countries limits country list in RegisterFull page, leave blank for all.</value>
+  </data>
+  <data name="COUNTRY" xml:space="preserve">
+    <value>Land/Regio</value>
+  </data>
+  <data name="COUNTRY_AD" xml:space="preserve">
+    <value>Andorra</value>
+  </data>
+  <data name="COUNTRY_AF" xml:space="preserve">
+    <value>Afghanistan</value>
+  </data>
+  <data name="COUNTRY_AG" xml:space="preserve">
+    <value>Antigua And Barbuda</value>
+  </data>
+  <data name="COUNTRY_AI" xml:space="preserve">
+    <value>Anguilla</value>
+  </data>
+  <data name="COUNTRY_AL" xml:space="preserve">
+    <value>Albania</value>
+  </data>
+  <data name="COUNTRY_AN" xml:space="preserve">
+    <value>Netherlands Antilles</value>
+  </data>
+  <data name="COUNTRY_AO" xml:space="preserve">
+    <value>Angola</value>
+  </data>
+  <data name="CREATED_BY" xml:space="preserve">
+    <value>Gemaakt door</value>
+  </data>
+  <data name="CREATEDBY" xml:space="preserve">
+    <value>Gemaakt door</value>
+  </data>
+  <data name="CULTURE" xml:space="preserve">
+    <value>Cultuur</value>
+  </data>
+  <data name="CULTURE_DESCRIPTION" xml:space="preserve">
+    <value>Kies cultuur.</value>
+  </data>
+  <data name="CULTURE_SETTINGS" xml:space="preserve">
+    <value>Taal instellingen</value>
+  </data>
+  <data name="CULTUREIMGPORTAL" xml:space="preserve">
+    <value>Gebruik vlaggen?</value>
+  </data>
+  <data name="CULTUREIMGPORTAL_DESCRIPTION" xml:space="preserve">
+    <value>Vink aan voor gebruik vlaggen</value>
+  </data>
+  <data name="CULTURELIST" xml:space="preserve">
+    <value>Culture List</value>
+  </data>
+  <data name="CUSTOMLAYOUT" xml:space="preserve">
+    <value>Specifieke Layout</value>
+  </data>
+  <data name="CUSTOMLAYOUT_DESCRIPTION" xml:space="preserve">
+    <value>Selecteer een layout specifiek voor deze pagina</value>
+  </data>
+  <data name="CUSTOMMENUIMAGE" xml:space="preserve">
+    <value>Aangepast Image Menu</value>
+  </data>
+  <data name="CUSTOMMENUIMAGE_DESCRIPTION" xml:space="preserve">
+    <value>Set a custom menu image for this Pagina</value>
+  </data>
+  <data name="CUSTOMTHEME" xml:space="preserve">
+    <value>Specifieke Thema</value>
+  </data>
+  <data name="CUSTOMTHEME_DESCRIPTION" xml:space="preserve">
+    <value>Selecteer een thema specifiek voor de modules van deze pagina</value>
+  </data>
+  <data name="CUSTOMTHEMEALT" xml:space="preserve">
+    <value>Specifieke Alt Thema</value>
+  </data>
+  <data name="CUSTOMTHEMEALT_DESCRIPTION" xml:space="preserve">
+    <value>Selecteer een alternatief thema specifiek voor de modules van deze pagina</value>
+  </data>
+  <data name="DA_DK" xml:space="preserve">
+    <value>Title (DA_DK)</value>
+  </data>
+  <data name="DA_DK_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Danish (Denmark) culture.</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="DBTOOL_GETDATA" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DBTOOL_GETINFO" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="DBTOOL_GETINFOEXTENDED" xml:space="preserve">
+    <value>Info Extended</value>
+  </data>
+  <data name="DBTOOL_GETPROPERTIES" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="DBTOOL_OWNER" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="DBTOOL_QUERYEXECUTE" xml:space="preserve">
+    <value>Execute Query</value>
+  </data>
+  <data name="DE_CH" xml:space="preserve">
+    <value>Titel [DE_CH]</value>
+  </data>
+  <data name="DE_CH_DESCRIPTION" xml:space="preserve">
+    <value>Titel voor Duits (Zwitserland) cultuur</value>
+  </data>
+  <data name="DE_DE" xml:space="preserve">
+    <value>Titel [DE_DE]</value>
+  </data>
+  <data name="DE_DE_DESCRIPTION" xml:space="preserve">
+    <value>Titel voor Duits (Duitsland) cultuur</value>
+  </data>
+  <data name="DECLINE" xml:space="preserve">
+    <value>Nee, dank u!</value>
+  </data>
+  <data name="DEFAULTEMAIL" xml:space="preserve">
+    <value>E-mail verzender</value>
+  </data>
+  <data name="DEFAULTNAME" xml:space="preserve">
+    <value>Naam verzender</value>
+  </data>
+  <data name="DEFAULTVISIBLEDAYS" xml:space="preserve">
+    <value>Standaard Zichtbare Dagen</value>
+  </data>
+  <data name="DELAYEXPIRE" xml:space="preserve">
+    <value>Aantal dagen standaard wachten</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="DELETE_PORTAL" xml:space="preserve">
+    <value>Portaal verwijderen</value>
+  </data>
+  <data name="DELETE_THIS_ITEM" xml:space="preserve">
+    <value>Verwijder dit item</value>
+  </data>
+  <data name="DELETE_THIS_MODULE_TYPE" xml:space="preserve">
+    <value>Delete this module type</value>
+  </data>
+  <data name="DELETE_USER" xml:space="preserve">
+    <value>Gebruiker verwijderen</value>
+  </data>
+  <data name="DELETEBTN" xml:space="preserve">
+    <value>Verwijder geselecteerde item</value>
+  </data>
+  <data name="DELETEITEM" xml:space="preserve">
+    <value>Verwijder geselecteerd item</value>
+  </data>
+  <data name="DELETELEFT" xml:space="preserve">
+    <value>&lt;- Delete</value>
+  </data>
+  <data name="DELETEMODULE" xml:space="preserve">
+    <value>Verwijder deze module</value>
+  </data>
+  <data name="DELETERIGHT" xml:space="preserve">
+    <value>Delete-&gt;</value>
+  </data>
+  <data name="DELUSER" xml:space="preserve">
+    <value>Verwijder gebruiker van rol</value>
+  </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="DESKTOP_SOURCE" xml:space="preserve">
+    <value>Desktop bron</value>
+  </data>
+  <data name="DIRECTURL" xml:space="preserve">
+    <value>Een directe url die gebruikt kan worden voor automatisch in te loggen</value>
+  </data>
+  <data name="DISCUSION_AUTHOR" xml:space="preserve">
+    <value>Auteur</value>
+  </data>
+  <data name="DISCUSION_TITLE" xml:space="preserve">
+    <value>Onderwerp</value>
+  </data>
+  <data name="DISCUSSION_LAST_UPDATE" xml:space="preserve">
+    <value>Aangepast op</value>
+  </data>
+  <data name="DISCUSSION_MSGEXPAND" xml:space="preserve">
+    <value>Expand the thread of this topic inside this browser page</value>
+  </data>
+  <data name="DISCUSSION_MSGSELECT" xml:space="preserve">
+    <value>Open the thread of this topic in a new browser page</value>
+  </data>
+  <data name="DISCUSSION_REPLYS" xml:space="preserve">
+    <value>Number of replys to this topic</value>
+  </data>
+  <data name="DISCUSSION_VIEWED" xml:space="preserve">
+    <value>Aantal maal dat dit onderwerp werd bekeken</value>
+  </data>
+  <data name="DOCUMENT_AREA" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="DOCUMENT_DETAILS" xml:space="preserve">
+    <value>Documentgegevens</value>
+  </data>
+  <data name="DOCUMENT_LAST_UPDATED" xml:space="preserve">
+    <value>Laatst geactualiseerd</value>
+  </data>
+  <data name="DOCUMENT_OWNER" xml:space="preserve">
+    <value>Eigenaar</value>
+  </data>
+  <data name="DOCUMENTPATH" xml:space="preserve">
+    <value>Document path</value>
+  </data>
+  <data name="DOCUMENTPATH_DESCRIPTION" xml:space="preserve">
+    <value>Folder for store the documents</value>
+  </data>
+  <data name="DOCUMENTS_DBSAVE" xml:space="preserve">
+    <value>Save files in DataBase?</value>
+  </data>
+  <data name="DOCUMENTS_DBSAVE_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like save files in DataBase</value>
+  </data>
+  <data name="DOCUMENTS_FOLDER" xml:space="preserve">
+    <value>Documentmap</value>
+  </data>
+  <data name="DOCUMENTS_SHOWAREA" xml:space="preserve">
+    <value>Show Area column</value>
+  </data>
+  <data name="DOCUMENTS_SHOWAREA_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if the area column should be displayed</value>
+  </data>
+  <data name="DOCUMENTS_SHOWIMAGES" xml:space="preserve">
+    <value>Show Image Icons?</value>
+  </data>
+  <data name="DOCUMENTS_SHOWIMAGES_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like see Image Icons</value>
+  </data>
+  <data name="DOCUMENTS_SHOWLASTUPDATED" xml:space="preserve">
+    <value>Show Last Updated column</value>
+  </data>
+  <data name="DOCUMENTS_SHOWLASTUPDATED_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if the Last Updated column should be displayed</value>
+  </data>
+  <data name="DOCUMENTS_SHOWOWNER" xml:space="preserve">
+    <value>Show Owner column?</value>
+  </data>
+  <data name="DOCUMENTS_SHOWOWNER_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if the owner column should be displayed</value>
+  </data>
+  <data name="DOCUMENTS_SHOWTITLE" xml:space="preserve">
+    <value>Show Title column?</value>
+  </data>
+  <data name="DOCUMENTS_SHOWTITLE_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if the title column should be displayed</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_DIRECTION" xml:space="preserve">
+    <value>Sort ascending or descending?</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_DIRECTION_DESCRIPTION" xml:space="preserve">
+    <value>Ascending: A to Z or 0 - 9. Descending: Z - A or 9 - 0.</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_DIRECTION_LIST" xml:space="preserve">
+    <value>Ascending;Descending</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_FIELD" xml:space="preserve">
+    <value>Sort Field?</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_FIELD_DESCRIPTION" xml:space="preserve">
+    <value>Sort by File Name or by Created Date?</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_FIELD_LIST" xml:space="preserve">
+    <value>File Name;Created Date</value>
+  </data>
+  <data name="DOCUMENTS_SOURCE" xml:space="preserve">
+    <value>Documentbron</value>
+  </data>
+  <data name="DONOTRESENDWITHIN" xml:space="preserve">
+    <value>Do not resend within (days)</value>
+  </data>
+  <data name="DONOTRESENDWITHIN_DESCRIPTION" xml:space="preserve">
+    <value>To avoid spam and duplicate sent you cannot email an user more than one time in specifed number of days.</value>
+  </data>
+  <data name="DONT_RESIZE" xml:space="preserve">
+    <value>Don’t Resize</value>
+  </data>
+  <data name="DS_BODY" xml:space="preserve">
+    <value>Corpus</value>
+  </data>
+  <data name="DS_LASTREPLYDATE" xml:space="preserve">
+    <value>Datum van laatste antwoord</value>
+  </data>
+  <data name="DS_MSGDETAILS" xml:space="preserve">
+    <value>Berichtgegegevens</value>
+  </data>
+  <data name="DS_NEWTHREAD" xml:space="preserve">
+    <value>Nieuwe thread toevoegen</value>
+  </data>
+  <data name="DS_ORIGINALMSG" xml:space="preserve">
+    <value>Origineel bericht</value>
+  </data>
+  <data name="DS_REPLYTHISMSG" xml:space="preserve">
+    <value>Reply to this Message</value>
+  </data>
+  <data name="EDIT" xml:space="preserve">
+    <value>Wijzigen</value>
+  </data>
+  <data name="EDIT_ACCESS_DENIED" xml:space="preserve">
+    <value>Bewerken niet toegestaan</value>
+  </data>
+  <data name="EDIT_ACCESS_DENIED_MESSAGE" xml:space="preserve">
+    <value>Ofwel ben je momenteel niet ingelogd,of heb je geen toegang om deze pagina te bewerken.</value>
+  </data>
+  <data name="EDIT_PORTAL" xml:space="preserve">
+    <value>Portaal bewerken</value>
+  </data>
+  <data name="EDIT_PROFILE" xml:space="preserve">
+    <value>Mijn gegevens</value>
+  </data>
+  <data name="EDIT_THIS_ITEM" xml:space="preserve">
+    <value>Bewerk dit item</value>
+  </data>
+  <data name="EDIT_USER" xml:space="preserve">
+    <value>Gebruiker bewerken</value>
+  </data>
+  <data name="EDITBTN" xml:space="preserve">
+    <value>Eigenschappen geselecteerde items bewerken</value>
+  </data>
+  <data name="EDITOR" xml:space="preserve">
+    <value>Redacteur</value>
+  </data>
+  <data name="EDITOR_DESCRIPTION" xml:space="preserve">
+    <value>Selecteer de Html Editor voor de Module</value>
+  </data>
+  <data name="ELECTRONICDELIVERY" xml:space="preserve">
+    <value>Electronische levering</value>
+  </data>
+  <data name="ELECTRONICDELIVERY_DESCRIPTION" xml:space="preserve">
+    <value>Electronische levering omschrijving</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EMAILORWINDOW" xml:space="preserve">
+    <value>E-mail (of Windows Domeinnaam)</value>
+  </data>
+  <data name="EN" xml:space="preserve">
+    <value>Titel (en)</value>
+  </data>
+  <data name="EN_US" xml:space="preserve">
+    <value>Title (EN_US)</value>
+  </data>
+  <data name="EN_US_DESCRIPTION" xml:space="preserve">
+    <value>Set title for English (United States) culture.</value>
+  </data>
+  <data name="EN_DESCRIPTION" xml:space="preserve">
+    <value>Titel voor Engelse cultuur.</value>
+  </data>
+  <data name="END_DATE" xml:space="preserve">
+    <value>Einddatum</value>
+  </data>
+  <data name="ENHANCEDHTML_ADDINVARIANTCULTURE" xml:space="preserve">
+    <value>Voeg Onveranderlijke Cultuur toe?</value>
+  </data>
+  <data name="ENHANCEDHTML_ADDINVARIANTCULTURE_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like see pages with invariant culture after pages with actual culture code</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNDOWNMENU" xml:space="preserve">
+    <value>Align Navigation Menu</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNDOWNMENU_DESCRIPTION" xml:space="preserve">
+    <value>Select here the align for index menu</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNUPMENU" xml:space="preserve">
+    <value>Align Index Menu</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNUPMENU_DESCRIPTION" xml:space="preserve">
+    <value>Select here the align for index menu</value>
+  </data>
+  <data name="ENHANCEDHTML_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ENHANCEDHTML_CONFIRMDELETEMESSAGE" xml:space="preserve">
+    <value>Are You Sure You Wish To Delete This Item ?</value>
+  </data>
+  <data name="ENHANCEDHTML_CONTENT_FROM" xml:space="preserve">
+    <value>Content from</value>
+  </data>
+  <data name="ENHANCEDHTML_DELETEPAGE" xml:space="preserve">
+    <value>Delete Page</value>
+  </data>
+  <data name="ENHANCEDHTML_EDITPAGE" xml:space="preserve">
+    <value>Edit Page</value>
+  </data>
+  <data name="ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS" xml:space="preserve">
+    <value>Get contents from others Portals?</value>
+  </data>
+  <data name="ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like get contents from modules in others portals in the same database</value>
+  </data>
+  <data name="ENHANCEDHTML_LANGUAGE" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ENHANCEDHTML_NEWPAGE" xml:space="preserve">
+    <value>New Page</value>
+  </data>
+  <data name="ENHANCEDHTML_OF" xml:space="preserve">
+    <value>van</value>
+  </data>
+  <data name="ENHANCEDHTML_PAGE" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="ENHANCEDHTML_PAGENAME" xml:space="preserve">
+    <value>Page Name</value>
+  </data>
+  <data name="ENHANCEDHTML_RETURN" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="ENHANCEDHTML_SELECT_MODULE" xml:space="preserve">
+    <value>Select a module from this portal for show the contents in this page</value>
+  </data>
+  <data name="ENHANCEDHTML_SELECT_MODULE_PORTAL" xml:space="preserve">
+    <value>Select a module in database portals for show the contents in this page</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWALLPAGES" xml:space="preserve">
+    <value>All Pages</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWDOWNMENU" xml:space="preserve">
+    <value>Show Navigation Menu?</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWDOWNMENU_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like see a navigation menu with previous and next page</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWMULTIMODE" xml:space="preserve">
+    <value>Show Multi-Mode icon?</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWMULTIMODE_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like see icon multimode page</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWTITLEPAGE" xml:space="preserve">
+    <value>Show Title Page?</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWTITLEPAGE_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like see the Title Page</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWUPMENU" xml:space="preserve">
+    <value>Show Index Menu?</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWUPMENU_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like see a index menu whith the titles of all pages</value>
+  </data>
+  <data name="ENHANCEDHTML_SINGLEPAGEMODE" xml:space="preserve">
+    <value>Single Page Mode</value>
+  </data>
+  <data name="ENHANCEDHTML_UPDATE" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="ENHANCEDHTML_VIEWORDER" xml:space="preserve">
+    <value>View Order</value>
+  </data>
+  <data name="ENHANCEDLINKS_DEFAULTIMAGE" xml:space="preserve">
+    <value>Default Image for link</value>
+  </data>
+  <data name="ENHANCEDLINKS_DEFAULTIMAGE_DESCRIPTION" xml:space="preserve">
+    <value>Select here a image for links with no special setting image</value>
+  </data>
+  <data name="ENHANCEDLINKS_DROPDOWNLIST" xml:space="preserve">
+    <value>DropDownList</value>
+  </data>
+  <data name="ENHANCEDLINKS_EXPANDALL" xml:space="preserve">
+    <value>Show Description</value>
+  </data>
+  <data name="ENHANCEDLINKS_EXPANDALL_DESCRIPTION" xml:space="preserve">
+    <value>Mark this if you like to see the description down the link</value>
+  </data>
+  <data name="ENHANCEDLINKS_ICONPATH" xml:space="preserve">
+    <value>Container for Icons</value>
+  </data>
+  <data name="ENHANCEDLINKS_ICONPATH_DESCRIPTION" xml:space="preserve">
+    <value>Portal directory for upload used icons</value>
+  </data>
+  <data name="ENHANCEDLINKS_LINKS" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="ENHANCEDLINKS_MAXCOLUMS" xml:space="preserve">
+    <value>Max Colums</value>
+  </data>
+  <data name="ENHANCEDLINKS_MAXCOLUMS_DESCRIPTION" xml:space="preserve">
+    <value>Maximun number of colums</value>
+  </data>
+  <data name="ENHANCEDLINKS_SWITCHERTYPES" xml:space="preserve">
+    <value>Style Links</value>
+  </data>
+  <data name="ENHANCEDLINKS_SWITCHERTYPES_DESCRIPTION" xml:space="preserve">
+    <value>Select here how your module should look like</value>
+  </data>
+  <data name="ERROR_COMPLETION_DATE" xml:space="preserve">
+    <value>Enter The Estimated Completion Date</value>
+  </data>
+  <data name="ERROR_ENTER_A_FILE_NAME" xml:space="preserve">
+    <value>Enter a File Name</value>
+  </data>
+  <data name="ERROR_ENTER_A_MODULE_NAME" xml:space="preserve">
+    <value>Geef Modulenaam op</value>
+  </data>
+  <data name="ERROR_ENTER_A_SOURCE_PATH" xml:space="preserve">
+    <value>Enter a Source Path</value>
+  </data>
+  <data name="ERROR_INVALID_MODULE" xml:space="preserve">
+    <value>Invalid Module</value>
+  </data>
+  <data name="ERROR_QUIZ_ANSWER" xml:space="preserve">
+    <value>Selecteer een antwoord aub!</value>
+  </data>
+  <data name="ERROR_SUBJECT" xml:space="preserve">
+    <value>Je moet een Onderwerp opgeven.</value>
+  </data>
+  <data name="ERROR_VALID_COMPLETION_DATE" xml:space="preserve">
+    <value>Geef verwachtte datum van voltooiing</value>
+  </data>
+  <data name="ERROR_VALID_DATE" xml:space="preserve">
+    <value>Correcte datum invullen aub.</value>
+  </data>
+  <data name="ERROR_VALID_DESCRIPTION" xml:space="preserve">
+    <value>Correcte beschrijving invullen aub.</value>
+  </data>
+  <data name="ERROR_VALID_EMAIL" xml:space="preserve">
+    <value>Correcte e-mailadres invullen aub.</value>
+  </data>
+  <data name="ERROR_VALID_ENDDATE" xml:space="preserve">
+    <value>Geldige Einddatum opgeven aub.</value>
+  </data>
+  <data name="ERROR_VALID_ID" xml:space="preserve">
+    <value>ID must be an integer</value>
+  </data>
+  <data name="ERROR_VALID_MESSAGE_TEXT" xml:space="preserve">
+    <value>Bericht invullen aub.</value>
+  </data>
+  <data name="ERROR_VALID_MILESTONE_STATUS" xml:space="preserve">
+    <value>Enter The Status of this Milestone</value>
+  </data>
+  <data name="ERROR_VALID_MILESTONE_TITLE" xml:space="preserve">
+    <value>Geldige Titel opgeven aub</value>
+  </data>
+  <data name="ERROR_VALID_NAME" xml:space="preserve">
+    <value>Please insert a valid name</value>
+  </data>
+  <data name="ERROR_VALID_STARTDATE" xml:space="preserve">
+    <value>Geldige Startdatum opgeven aub</value>
+  </data>
+  <data name="ERROR_VALID_TITLE" xml:space="preserve">
+    <value>Correcte titel invullen aub.</value>
+  </data>
+  <data name="ERROR_VALID_URL" xml:space="preserve">
+    <value>You Must Enter a Valid URL</value>
+  </data>
+  <data name="ERROR_VALID_VIEWORDER" xml:space="preserve">
+    <value>You Must Enter a Valid View Order</value>
+  </data>
+  <data name="ERROR_VALID_WHERE_WHEN" xml:space="preserve">
+    <value>Correcte waar/wanneer invullen aub.</value>
+  </data>
+  <data name="ERROR_VALID_WHEREWHEN" xml:space="preserve">
+    <value>Please insert a valid Where When field</value>
+  </data>
+  <data name="ES" xml:space="preserve">
+    <value>Title (es)</value>
+  </data>
+  <data name="ES_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Spanish culture.</value>
+  </data>
+  <data name="EVENTS_ADD" xml:space="preserve">
+    <value>Nieuw evenement toevoegen</value>
+  </data>
+  <data name="EVENTS_ALLDAY" xml:space="preserve">
+    <value>All Day Event</value>
+  </data>
+  <data name="EVENTS_BOOKING_REQUIRED" xml:space="preserve">
+    <value>Booking required</value>
+  </data>
+  <data name="EVENTS_CATEGORY" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="EVENTS_DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="EVENTS_DETAILS" xml:space="preserve">
+    <value>Evenement gegevens</value>
+  </data>
+  <data name="EVENTS_EMAIL" xml:space="preserve">
+    <value>E-mail voor informatie</value>
+  </data>
+  <data name="EVENTS_ENABLED" xml:space="preserve">
+    <value>Activeer</value>
+  </data>
+  <data name="EVENTS_END_DATE" xml:space="preserve">
+    <value>Einddatum</value>
+  </data>
+  <data name="EVENTS_EXPIRES" xml:space="preserve">
+    <value>Vervalt</value>
+  </data>
+  <data name="EVENTS_GROUP" xml:space="preserve">
+    <value>Groep</value>
+  </data>
+  <data name="EVENTS_PAYMENT" xml:space="preserve">
+    <value>Betaling</value>
+  </data>
+  <data name="EVENTS_PLACE" xml:space="preserve">
+    <value>Locatie</value>
+  </data>
+  <data name="EVENTS_PRICES" xml:space="preserve">
+    <value>Prijs</value>
+  </data>
+  <data name="EVENTS_SITEURL" xml:space="preserve">
+    <value>Site Url</value>
+  </data>
+  <data name="EVENTS_START_DATE" xml:space="preserve">
+    <value>Startdatum</value>
+  </data>
+  <data name="EVENTS_STARTAT" xml:space="preserve">
+    <value>Start op</value>
+  </data>
+  <data name="EVENTS_STARTDATE" xml:space="preserve">
+    <value>Start datum</value>
+  </data>
+  <data name="EVENTS_STARTTIME" xml:space="preserve">
+    <value>Start tijdstip</value>
+  </data>
+  <data name="EVENTS_TIMETABLE" xml:space="preserve">
+    <value>Tijdstip</value>
+  </data>
+  <data name="EVENTS_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="EVENTS_VALID_DESCRIPTION" xml:space="preserve">
+    <value>Je moet een correcte beschrijving invullen</value>
+  </data>
+  <data name="EVENTS_VALID_EXPIRE" xml:space="preserve">
+    <value>Je moet een correcte verloopdatum invullen</value>
+  </data>
+  <data name="EVENTS_VALID_TITLE" xml:space="preserve">
+    <value>Je moet een correcte titel  invullen</value>
+  </data>
+  <data name="EVENTS_VALID_WHEN-WHERE" xml:space="preserve">
+    <value>Je moet een correcte tijd/locatie invullen</value>
+  </data>
+  <data name="EVENTS_WHEN-WHERE" xml:space="preserve">
+    <value>Wanneer</value>
+  </data>
+  <data name="EVENTS_WHEREWHEN" xml:space="preserve">
+    <value>Waar</value>
+  </data>
+  <data name="EXCERPT" xml:space="preserve">
+    <value>Het uittreksel</value>
+  </data>
+  <data name="EXPIRE_DATE" xml:space="preserve">
+    <value>Vervaldatum</value>
+  </data>
+  <data name="F010" xml:space="preserve">
+    <value>F010</value>
+  </data>
+  <data name="FAQ_ANSWER" xml:space="preserve">
+    <value>Antwoord</value>
+  </data>
+  <data name="FAQ_Q" xml:space="preserve">
+    <value>Q</value>
+  </data>
+  <data name="FAQ_QUESTION" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FAX" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="FILE_NAME" xml:space="preserve">
+    <value>Bestandsnaam</value>
+  </data>
+  <data name="FILE_NOT_FOUND" xml:space="preserve">
+    <value>Bestand %1% niet gevonden</value>
+  </data>
+  <data name="FILE_UPLOAD" xml:space="preserve">
+    <value>File upload</value>
+  </data>
+  <data name="FILE_UPLOAD_ERROR" xml:space="preserve">
+    <value>Het opgeloade bestand is niet correct</value>
+  </data>
+  <data name="FILEMAN_FILENAME" xml:space="preserve">
+    <value>FileName</value>
+  </data>
+  <data name="FILEMAN_MODIFIED" xml:space="preserve">
+    <value>Modified</value>
+  </data>
+  <data name="FILEMAN_SIZE" xml:space="preserve">
+    <value>Size (KB)</value>
+  </data>
+  <data name="FIXED_WIDTH_AND_HEIGHT" xml:space="preserve">
+    <value>Fixed width and height</value>
+  </data>
+  <data name="FLASH_BACKGROUNDCOLOR" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="FLASH_GALLERY" xml:space="preserve">
+    <value>Flash Gallery</value>
+  </data>
+  <data name="FLASH_PATH" xml:space="preserve">
+    <value>Swf File Path</value>
+  </data>
+  <data name="FLASH_SELECT_FILE" xml:space="preserve">
+    <value>1.Select the file:</value>
+  </data>
+  <data name="FLASH_SETTINGS" xml:space="preserve">
+    <value>Flash Settings</value>
+  </data>
+  <data name="FLASH_UPLOAD_FILE" xml:space="preserve">
+    <value>2.Upload the file</value>
+  </data>
+  <data name="FLASH_UPLOAD_TITLE" xml:space="preserve">
+    <value>Upload Flash File</value>
+  </data>
+  <data name="FRIENDLY_NAME" xml:space="preserve">
+    <value>Weergave naam</value>
+  </data>
+  <data name="FROM" xml:space="preserve">
+    <value>Van</value>
+  </data>
+  <data name="FUEL" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="GATEWAY_WIRE_TRANSFER" xml:space="preserve">
+    <value>Wire Transfer</value>
+  </data>
+  <data name="GOOGLE_SEARCH" xml:space="preserve">
+    <value>Zoek</value>
+  </data>
+  <data name="GOOGLE_START" xml:space="preserve">
+    <value>De start</value>
+  </data>
+  <data name="GOTO_PAGE" xml:space="preserve">
+    <value>Ga naar pagina</value>
+  </data>
+  <data name="GUID" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="HEADER_EDIT_PROFILE" xml:space="preserve">
+    <value>Profiel bewerken</value>
+  </data>
+  <data name="HEADER_HELP" xml:space="preserve">
+    <value>Hulp</value>
+  </data>
+  <data name="HEADER_LOGOFF" xml:space="preserve">
+    <value>Uitloggen</value>
+  </data>
+  <data name="HEADER_MANAGE_TAB" xml:space="preserve">
+    <value>Bewerk pagina</value>
+  </data>
+  <data name="HEADER_SAVE_DESKTOP" xml:space="preserve">
+    <value>Bureaublad opslaan</value>
+  </data>
+  <data name="HEADER_WELCOME" xml:space="preserve">
+    <value>Welkom</value>
+  </data>
+  <data name="HEIGHT" xml:space="preserve">
+    <value>Hoogte</value>
+  </data>
+  <data name="HEIGHT_DESCRIPTION" xml:space="preserve">
+    <value>De hoogte van de editor</value>
+  </data>
+  <data name="HERE" xml:space="preserve">
+    <value>Hier</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HORIZONTAL" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="HTML_DESKTOP_CONTENT" xml:space="preserve">
+    <value>Desktop HTML inhoud</value>
+  </data>
+  <data name="HTML_EDITOR" xml:space="preserve">
+    <value>HTML Editor</value>
+  </data>
+  <data name="HTML_MOBILE_DETAILS" xml:space="preserve">
+    <value>Mobile Details</value>
+  </data>
+  <data name="HTML_MOBILE_SUMMARY" xml:space="preserve">
+    <value>Mobiele Samenvatting</value>
+  </data>
+  <data name="HTMLDOCUMENT_TODO_ADDCONTENT" xml:space="preserve">
+    <value>Te doen: Uw tekst toevoegen...</value>
+  </data>
+  <data name="HTMLTEMPLATE" xml:space="preserve">
+    <value>HTML Sjabloon</value>
+  </data>
+  <data name="HTMLTEMPLATE_DESCRIPTION" xml:space="preserve">
+    <value>Selecteer een HTML module die als basis dient voor de nieuwsbrief die met deze module wordt verzonden.</value>
+  </data>
+  <data name="HTMLTEMPLATEURL" xml:space="preserve">
+    <value>HTML Sjabloon URL</value>
+  </data>
+  <data name="ICONFILE" xml:space="preserve">
+    <value>icoonbestand</value>
+  </data>
+  <data name="IMAGE" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="IMAGE_DETAIL" xml:space="preserve">
+    <value>Afbeelding gegevens</value>
+  </data>
+  <data name="IMAGE_UPLOAD_ERROR" xml:space="preserve">
+    <value>De upgeloade afbeelding is niet correct.  Controleer het bestandstype en extensie  (vb: .gif/.jpg)</value>
+  </data>
+  <data name="IMAGELOGO" xml:space="preserve">
+    <value>Logo (afbeelding)</value>
+  </data>
+  <data name="IMAGELOGO_DESCRIPTION" xml:space="preserve">
+    <value>Logo (url afbeelding)</value>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="INSERT_CONFIRM" xml:space="preserve">
+    <value>’Bevestigen’ moet worden ingevuld</value>
+  </data>
+  <data name="INSERT_EMAIL" xml:space="preserve">
+    <value>’E-mail’ moet worden ingevuld</value>
+  </data>
+  <data name="INSERT_NAME" xml:space="preserve">
+    <value>’Naam’ moet worden ingevuld</value>
+  </data>
+  <data name="INSERT_PASSWORD" xml:space="preserve">
+    <value>’Wachtwoord’ moet worden ingevuld</value>
+  </data>
+  <data name="IT" xml:space="preserve">
+    <value>Title (it)</value>
+  </data>
+  <data name="IT_IT" xml:space="preserve">
+    <value>Title (IT_IT)</value>
+  </data>
+  <data name="IT_IT_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Italian (Italy) culture.</value>
+  </data>
+  <data name="IT_DESCRIPTION" xml:space="preserve">
+    <value>Titel voor Italiaanse cultuur.</value>
+  </data>
+  <data name="KEYWORD" xml:space="preserve">
+    <value>Trefwoord:</value>
+  </data>
+  <data name="LANGSWITCHTDISPLAY_CULTURELIST" xml:space="preserve">
+    <value>Using Culture Name</value>
+  </data>
+  <data name="LANGSWITCHTDISPLAY_NONE" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="LANGSWITCHTDISPLAY_UICULTURELIST" xml:space="preserve">
+    <value>Using UI Culture Name</value>
+  </data>
+  <data name="LANGSWITCHTNAMES_DISPLAYNAME" xml:space="preserve">
+    <value>Display Name</value>
+  </data>
+  <data name="LANGSWITCHTNAMES_ENGLISHNAME" xml:space="preserve">
+    <value>Engelse Naam</value>
+  </data>
+  <data name="LANGSWITCHTNAMES_NATIVENAME" xml:space="preserve">
+    <value>Native Name</value>
+  </data>
+  <data name="LANGSWITCHTYPE_DISABLED" xml:space="preserve">
+    <value>Inactief</value>
+  </data>
+  <data name="LANGSWITCHTYPE_DROPDOWNLIST" xml:space="preserve">
+    <value>DropDown Lijst</value>
+  </data>
+  <data name="LANGSWITCHTYPE_FLAGS" xml:space="preserve">
+    <value>Enkel vlaggen</value>
+  </data>
+  <data name="LANGSWITCHTYPE_FLAGSHORIZONTAL" xml:space="preserve">
+    <value>Enkel vlaggen horizontaal</value>
+  </data>
+  <data name="LANGSWITCHTYPE_FORM" xml:space="preserve">
+    <value>Formulier</value>
+  </data>
+  <data name="LANGSWITCHTYPE_LINKS" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LANGSWITCHTYPE_LINKSHORIZONTAL" xml:space="preserve">
+    <value>Plaats links horizontaal</value>
+  </data>
+  <data name="LANGUAGESWITCHER_CUSTOMFLAGS" xml:space="preserve">
+    <value>Use custom flags?</value>
+  </data>
+  <data name="LANGUAGESWITCHER_CUSTOMFLAGS_DESCRIPTION" xml:space="preserve">
+    <value>Check this if you want to use custom flags from portal’s images folder. Custom flags are located in portal folder. /images/flags/</value>
+  </data>
+  <data name="LANGUAGESWITCHER_FLAGS" xml:space="preserve">
+    <value>Show Flags as</value>
+  </data>
+  <data name="LANGUAGESWITCHER_FLAGS_DESCRIPTION" xml:space="preserve">
+    <value>Select here how flags should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHER_LABELS" xml:space="preserve">
+    <value>Show Labels as</value>
+  </data>
+  <data name="LANGUAGESWITCHER_LABELS_DESCRIPTION" xml:space="preserve">
+    <value>Select here how Labels should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHER_NAMES" xml:space="preserve">
+    <value>Show names as</value>
+  </data>
+  <data name="LANGUAGESWITCHER_NAMES_DESCRIPTION" xml:space="preserve">
+    <value>Select here how names should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHER_TYPES" xml:space="preserve">
+    <value>Language Switcher Type</value>
+  </data>
+  <data name="LANGUAGESWITCHER_TYPES_DESCRIPTION" xml:space="preserve">
+    <value>Select here how your language switcher should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHTYPE" xml:space="preserve">
+    <value>Links horizontaal</value>
+  </data>
+  <data name="LANGUAGESWITCHTYPE_DESCRIPTION" xml:space="preserve">
+    <value>Selecteer taal switcher</value>
+  </data>
+  <data name="LAST_UPDATED" xml:space="preserve">
+    <value>Laatst bijgewerkt</value>
+  </data>
+  <data name="LASTNAME" xml:space="preserve">
+    <value>Familienaam</value>
+  </data>
+  <data name="LAYOUT" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="LEFT" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LET_USER_CHOOSE" xml:space="preserve">
+    <value>Laat de gebruiker kiezen</value>
+  </data>
+  <data name="LINKDETAILS" xml:space="preserve">
+    <value>Link omschrijving</value>
+  </data>
+  <data name="LINKEDMODULE" xml:space="preserve">
+    <value>Gelinkte module</value>
+  </data>
+  <data name="LINKGROUP" xml:space="preserve">
+    <value>Link Group?</value>
+  </data>
+  <data name="LOAD_THEME_ERROR" xml:space="preserve">
+    <value>Opmaak model %1% kan niet geladen worden. Standaard thema niet beschikbaar.</value>
+  </data>
+  <data name="LOGIN_FAILED" xml:space="preserve">
+    <value>Inloggen mislukt!</value>
+  </data>
+  <data name="LOGINHOMEPAGE" xml:space="preserve">
+    <value>Site URL</value>
+  </data>
+  <data name="LOGINHOMEPAGE_DESCRIPTION" xml:space="preserve">
+    <value>The Url or the Home page of the site used for build the instant login url. Leave blank if using the current site.</value>
+  </data>
+  <data name="LOGOFF" xml:space="preserve">
+    <value>Uitloggen</value>
+  </data>
+  <data name="LOGON" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="MAINTAIN_ASPECT_FIXED_HEIGHT" xml:space="preserve">
+    <value>Maintain aspect fixed height</value>
+  </data>
+  <data name="MAINTAIN_ASPECT_FIXED_WIDTH" xml:space="preserve">
+    <value>Maintain aspect fixed width</value>
+  </data>
+  <data name="MARK" xml:space="preserve">
+    <value>Markeer:</value>
+  </data>
+  <data name="MAXHITS" xml:space="preserve">
+    <value>Max. aantal gevonden items</value>
+  </data>
+  <data name="MDF_SETTINGS" xml:space="preserve">
+    <value>Module Data Filter settings</value>
+  </data>
+  <data name="MERCHANT" xml:space="preserve">
+    <value>Verkopers ID</value>
+  </data>
+  <data name="META_SETTINGS" xml:space="preserve">
+    <value>Meta instellingen</value>
+  </data>
+  <data name="MIDDLE" xml:space="preserve">
+    <value>Midden</value>
+  </data>
+  <data name="MILESTONE_COMPL_DATE" xml:space="preserve">
+    <value>Compl.Date</value>
+  </data>
+  <data name="MILESTONE_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MILESTONE_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="MILESTONES_COMPLETION_DATE" xml:space="preserve">
+    <value>Compl.Date</value>
+  </data>
+  <data name="MILESTONES_DETAIL" xml:space="preserve">
+    <value>Milestones Details</value>
+  </data>
+  <data name="MILESTONES_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MILESTONES_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="MISC_SETTINGS" xml:space="preserve">
+    <value>Allerlei</value>
+  </data>
+  <data name="MOBILE_SOURCE" xml:space="preserve">
+    <value>Mobiele bron</value>
+  </data>
+  <data name="MOBILEURL" xml:space="preserve">
+    <value>Mobiele URL</value>
+  </data>
+  <data name="MODEL" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="MODIFIED_BY" xml:space="preserve">
+    <value>Gewijzigd door</value>
+  </data>
+  <data name="MODULE_DEFS_ADMIN" xml:space="preserve">
+    <value>Admin Modules</value>
+  </data>
+  <data name="MODULE_DEFS_USER" xml:space="preserve">
+    <value>User Modules</value>
+  </data>
+  <data name="MODULE_IMAGE_FOLDER" xml:space="preserve">
+    <value>Standaard Image map</value>
+  </data>
+  <data name="MODULE_IMAGE_FOLDER_DESCRIPTION" xml:space="preserve">
+    <value>This folder is used for editor in this module to take and upload images</value>
+  </data>
+  <data name="MODULE_SPECIAL_SETTINGS" xml:space="preserve">
+    <value>Module specifieke instellingen</value>
+  </data>
+  <data name="MODULE_TITLE" xml:space="preserve">
+    <value>Nieuwe module naam</value>
+  </data>
+  <data name="MODULE_TYPE_DEFINITION" xml:space="preserve">
+    <value>Module type definitie</value>
+  </data>
+  <data name="MODULENAME" xml:space="preserve">
+    <value>Module naam</value>
+  </data>
+  <data name="MODULESETTINGS" xml:space="preserve">
+    <value>Module instellingen</value>
+  </data>
+  <data name="MODULESETTINGS__SUPPORT_WORKFLOW" xml:space="preserve">
+    <value>Enable workflow</value>
+  </data>
+  <data name="MODULESETTINGS_APPLY_THEME" xml:space="preserve">
+    <value>Thema toepassen</value>
+  </data>
+  <data name="MODULESETTINGS_APPLY_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Check this box to apply theme to this module</value>
+  </data>
+  <data name="MODULESETTINGS_BASE_SETTINGS" xml:space="preserve">
+    <value>Wijzig basisinstellingen</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY" xml:space="preserve">
+    <value>Display Buttons as:</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_BOTH" xml:space="preserve">
+    <value>Image and Text (CSS)</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_DESCRIPTION" xml:space="preserve">
+    <value>Choose how you want module buttons to be displayed. Note that settings other than ’Image only’ may require Zen or special treatment in the Theme.</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_IMAGE" xml:space="preserve">
+    <value>Image only</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_IMAGECSS" xml:space="preserve">
+    <value>Image only (CSS)</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_TEXT" xml:space="preserve">
+    <value>Text only</value>
+  </data>
+  <data name="MODULESETTINGS_CACHE_TIMEOUT" xml:space="preserve">
+    <value>Cache Timeout</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_HEIGHT" xml:space="preserve">
+    <value>Content Height</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_HEIGHT_DESCRIPTION" xml:space="preserve">
+    <value>Minimum height(in pixels) of the content area of this module. (0 for none)</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_SCROLLING" xml:space="preserve">
+    <value>Content Scrolling</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_SCROLLING_DESCRIPTION" xml:space="preserve">
+    <value>Set to enable/disable scrolling of Content based on height and width settings.</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_WIDTH" xml:space="preserve">
+    <value>Content Width</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_WIDTH_DESCRIPTION" xml:space="preserve">
+    <value>Minimum width(in pixels) of the content area of this module. (0 for none)</value>
+  </data>
+  <data name="MODULESETTINGS_CULTURE" xml:space="preserve">
+    <value>Culture</value>
+  </data>
+  <data name="MODULESETTINGS_CULTURE_DESCRIPTION" xml:space="preserve">
+    <value>Choose culture. Invariant cultures shows the module always.</value>
+  </data>
+  <data name="MODULESETTINGS_MODULE_NAME" xml:space="preserve">
+    <value>Module naam</value>
+  </data>
+  <data name="MODULESETTINGS_MOVE_TO_TAB" xml:space="preserve">
+    <value>Verplaats naar pagina</value>
+  </data>
+  <data name="MODULESETTINGS_ROLE_VIEW" xml:space="preserve">
+    <value>Wie mag bekijken?</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_ADD" xml:space="preserve">
+    <value>Wie mag toevoegen?</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_APPROVING" xml:space="preserve">
+    <value>Wie keurt goed?</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_DELETE" xml:space="preserve">
+    <value>Wie mag verwijderen?</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_DELETE_MODULES" xml:space="preserve">
+    <value>Roles that can delete modules</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_EDIT" xml:space="preserve">
+    <value>Wie mag wijzigen?</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_EDIT_COLLECTION" xml:space="preserve">
+    <value>Wie mag eigenschappen wijzigen?</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_MOVE_MODULES" xml:space="preserve">
+    <value>Roles that can move modules</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_PUBLISHING" xml:space="preserve">
+    <value>Wie mag publiceren?</value>
+  </data>
+  <data name="MODULESETTINGS_SETTINGS" xml:space="preserve">
+    <value>Module instellingen</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_ARROW_BUTTONS" xml:space="preserve">
+    <value>Show Arrow Admin Buttons</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_ARROW_BUTTONS_DESCRIPTION" xml:space="preserve">
+    <value>Show Arrow Admin buttons?</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_COLLAPSABLE" xml:space="preserve">
+    <value>Can collapse window?</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_EVERYWHERE" xml:space="preserve">
+    <value>Tonen op elke pagina?</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_HELP_BUTTON" xml:space="preserve">
+    <value>Show Help Button</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_HELP_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>Show help button in title if exists documentation for this module</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_MODIFIED_BY" xml:space="preserve">
+    <value>Toon Gewijzigd door</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION" xml:space="preserve">
+    <value>Switches ’Show Modified by’ display on/off</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_PRINT_BUTTION" xml:space="preserve">
+    <value>Toon Print knop</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_PRINT_BUTTION_DESCRIPTION" xml:space="preserve">
+    <value>Toon print knop in view modus?</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE" xml:space="preserve">
+    <value>Toon Titel</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE_DESCRIPTION" xml:space="preserve">
+    <value>Switches title display on/off</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE_PRINT" xml:space="preserve">
+    <value>Show Title for Print</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE_PRINT_DESCRIPTION" xml:space="preserve">
+    <value>Show Title for this module in print popup?</value>
+  </data>
+  <data name="MODULESETTINGS_SUPPORT_WORKFLOW" xml:space="preserve">
+    <value>Activeer workflow</value>
+  </data>
+  <data name="MODULESETTINGS_THEME" xml:space="preserve">
+    <value>Thema</value>
+  </data>
+  <data name="MODULESETTINGS_THEME_ALT" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="MODULESETTINGS_THEME_DEFAULT" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="MODULESETTINGS_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Kies thema voor deze module</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN" xml:space="preserve">
+    <value>Title (en)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_GB" xml:space="preserve">
+    <value>Title (EN_GB)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_GB_DESCRIPTION" xml:space="preserve">
+    <value>Set title for English (United Kingdom) culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_US" xml:space="preserve">
+    <value>Title (EN_US)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_US_DESCRIPTION" xml:space="preserve">
+    <value>Set title for English (United States) culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_DESCRIPTION" xml:space="preserve">
+    <value>Set title for English culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ES" xml:space="preserve">
+    <value>Title (es)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ES_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Spanish culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_FR" xml:space="preserve">
+    <value>Title (fr)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_FR_DESCRIPTION" xml:space="preserve">
+    <value>Set title for French culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_NL_BE" xml:space="preserve">
+    <value>Title (NL_BE)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_NL_BE_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Dutch (Belgium) culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ZH_CN" xml:space="preserve">
+    <value>Title (ZH_CN)</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ZH_CN_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Chinese (People’s Republic of China) culture.</value>
+  </data>
+  <data name="MODULESETTINGS_WIDTH_STRETCHING" xml:space="preserve">
+    <value>Module Auto Stretch</value>
+  </data>
+  <data name="MODULESETTINGS_WIDTH_STRETCHING_DESCRIPTION" xml:space="preserve">
+    <value>Set to enable/disable automatic stretching of the module’s width to fill the empty area to the right of the module.</value>
+  </data>
+  <data name="MOVE_DOWN" xml:space="preserve">
+    <value>Move down</value>
+  </data>
+  <data name="MOVE_LEFT" xml:space="preserve">
+    <value>Move left</value>
+  </data>
+  <data name="MOVE_RIGHT" xml:space="preserve">
+    <value>Move right</value>
+  </data>
+  <data name="MOVE_TO" xml:space="preserve">
+    <value>Move to </value>
+  </data>
+  <data name="MOVE_TO_TAB" xml:space="preserve">
+    <value>Verplaats naar pagina</value>
+  </data>
+  <data name="MOVE_UP" xml:space="preserve">
+    <value>Move up</value>
+  </data>
+  <data name="MOVEDOWN" xml:space="preserve">
+    <value>Geselecteeerde item naar beneden in de lijst verplaatsen</value>
+  </data>
+  <data name="MOVEITEM" xml:space="preserve">
+    <value>&lt;- Move</value>
+  </data>
+  <data name="MOVEITEMLEFT" xml:space="preserve">
+    <value>&lt;- Move</value>
+  </data>
+  <data name="MOVEITEMRIGHT" xml:space="preserve">
+    <value>Move -&gt;</value>
+  </data>
+  <data name="MOVELEFT" xml:space="preserve">
+    <value>Geselecteeerde item naar links verplaatsen</value>
+  </data>
+  <data name="MOVERIGHT" xml:space="preserve">
+    <value>Geselecteeerde item naar rechts verplaatsen</value>
+  </data>
+  <data name="MOVEUP" xml:space="preserve">
+    <value>Geselecteeerde item naar boven in de lijst verplaatsen</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="NAVIGATION_SETTINGS" xml:space="preserve">
+    <value>Navigation settings</value>
+  </data>
+  <data name="NEW_FOLDER" xml:space="preserve">
+    <value>New Folder ?</value>
+  </data>
+  <data name="NEW_PORTAL_ERROR" xml:space="preserve">
+    <value>Er was een fout bij het creëren van de nieuwe portaal. Misschien bestaat het portaal reeds. Probeer een andere Portaal alias.</value>
+  </data>
+  <data name="NEWSLETTER_BLACKLISTED" xml:space="preserve">
+    <value>Blacklisted by </value>
+  </data>
+  <data name="NEWSLETTER_DIRECTURL" xml:space="preserve">
+    <value>A direct url that can be used to logon automatically</value>
+  </data>
+  <data name="NEWSLETTER_HTML_MODE" xml:space="preserve">
+    <value>Html Mode</value>
+  </data>
+  <data name="NEWSLETTER_INSERT_BREAK_LINES" xml:space="preserve">
+    <value>Insert Break Lines</value>
+  </data>
+  <data name="NEWSLETTER_MESSAGE_BODY" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="NEWSLETTER_MSG" xml:space="preserve">
+    <value>This message will be sent to {1} registered users that subscribed to the Newsletter:</value>
+  </data>
+  <data name="NEWSLETTER_MSG_TEST" xml:space="preserve">
+    <value>Test message will be sent to: {1} [{2}] - TEST MODE</value>
+  </data>
+  <data name="NEWSLETTER_PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="NEWSLETTER_SENDER_EMAIL_ADDRESS" xml:space="preserve">
+    <value>E-mail verzender</value>
+  </data>
+  <data name="NEWSLETTER_SENDER_OPTIONAL_NAME" xml:space="preserve">
+    <value>Uw naam (optioneel)</value>
+  </data>
+  <data name="NEWSLETTER_SUBJECT" xml:space="preserve">
+    <value>Onderwerp</value>
+  </data>
+  <data name="NEWSLETTER_TITLE" xml:space="preserve">
+    <value>Newsletter Subscribers</value>
+  </data>
+  <data name="NEWSLETTER_USEREMAIL" xml:space="preserve">
+    <value>UserEmail</value>
+  </data>
+  <data name="NEWSLETTER_USERNAME" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="NEXT" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="NO_ACCOUNT" xml:space="preserve">
+    <value>Als je nog geen lid bent</value>
+  </data>
+  <data name="NO_FILE_MESSAGE" xml:space="preserve">
+    <value>You must Enter a Valid File Name.</value>
+  </data>
+  <data name="NO_FOLDER_SPECIFIED_MESSAGE" xml:space="preserve">
+    <value>Unable to create directory specified in FlashPath</value>
+  </data>
+  <data name="NO_IMAGE_MESSAGE" xml:space="preserve">
+    <value>No Files to show.</value>
+  </data>
+  <data name="NO_MODULE" xml:space="preserve">
+    <value>Geen module</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>geen</value>
+  </data>
+  <data name="NOTE" xml:space="preserve">
+    <value>Notities</value>
+  </data>
+  <data name="OF" xml:space="preserve">
+    <value>van</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ON" xml:space="preserve">
+    <value>OP</value>
+  </data>
+  <data name="ONLY_FEATURED" xml:space="preserve">
+    <value>Show Only Featured</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="ORDER_OK" xml:space="preserve">
+    <value>Uw bestelling is verzonden</value>
+  </data>
+  <data name="ORDER_PAGES" xml:space="preserve">
+    <value>Order Pages</value>
+  </data>
+  <data name="ORDER_RECEIPT_NUMBER" xml:space="preserve">
+    <value>Ontvangstnummer</value>
+  </data>
+  <data name="ORDER_WAIT_CONFIRM" xml:space="preserve">
+    <value>Please wait for our Confirm by email.</value>
+  </data>
+  <data name="OWNER" xml:space="preserve">
+    <value>Gemaakt door</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>Pagina</value>
+  </data>
+  <data name="PAGE_ACTIONS" xml:space="preserve">
+    <value>Page Actions</value>
+  </data>
+  <data name="PAGE_VISIBLE_TO" xml:space="preserve">
+    <value>Page Visible To:</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Wachtwoord</value>
+  </data>
+  <data name="PASSWORD_DO_NOT_MATCH" xml:space="preserve">
+    <value>Wachtwoord velden komen niet overeen</value>
+  </data>
+  <data name="PASSWORD_NOT_MATCH" xml:space="preserve">
+    <value>Wachtwoord velden komen niet overeen</value>
+  </data>
+  <data name="PHONE" xml:space="preserve">
+    <value>Telefoon</value>
+  </data>
+  <data name="PICTURES_CAPTION" xml:space="preserve">
+    <value>Bijschrift</value>
+  </data>
+  <data name="PICTURES_DISPLAY_ORDER" xml:space="preserve">
+    <value>Volgorde</value>
+  </data>
+  <data name="PICTURES_DONT_RESIZE" xml:space="preserve">
+    <value>Niet van verkleinen/vergroten</value>
+  </data>
+  <data name="PICTURES_FILE" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="PICTURES_FIXED_WIDTH_AND_HEIGHT" xml:space="preserve">
+    <value>Hoogte en breedte verhouding vergrendellen</value>
+  </data>
+  <data name="PICTURES_FLIP" xml:space="preserve">
+    <value>Omdraaien</value>
+  </data>
+  <data name="PICTURES_HORIZONTAL" xml:space="preserve">
+    <value>Horizontaal</value>
+  </data>
+  <data name="PICTURES_INCLUDE_EXIF" xml:space="preserve">
+    <value>Inclusief extra foto info (EXIF)</value>
+  </data>
+  <data name="PICTURES_KEYWORDS" xml:space="preserve">
+    <value>Trefwoorden</value>
+  </data>
+  <data name="PICTURES_LONG_DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="PICTURES_MAINTAIN_ASPECT_FIXED_HEIGHT" xml:space="preserve">
+    <value>Verhouding vergrendellen op hoogte</value>
+  </data>
+  <data name="PICTURES_MAINTAIN_ASPECT_FIXED_WIDTH" xml:space="preserve">
+    <value>Verhouding vergrendellen op breedte</value>
+  </data>
+  <data name="PICTURES_ROTATE" xml:space="preserve">
+    <value>Roteren</value>
+  </data>
+  <data name="PICTURES_SHORT_DESCRIPTION" xml:space="preserve">
+    <value>Korte beschrijving</value>
+  </data>
+  <data name="PICTURES_VERTICAL" xml:space="preserve">
+    <value>Verticaal</value>
+  </data>
+  <data name="PIVA" xml:space="preserve">
+    <value>Tel bedrijf</value>
+  </data>
+  <data name="PM_ABOVE_SELECTED" xml:space="preserve">
+    <value>Above Selected</value>
+  </data>
+  <data name="PM_ADD_PAGE" xml:space="preserve">
+    <value>Add page</value>
+  </data>
+  <data name="PM_ADD_PAGE_AS" xml:space="preserve">
+    <value>Add Page as:</value>
+  </data>
+  <data name="PM_ADD_PAGE_FULL_DETAILED" xml:space="preserve">
+    <value>Add Page with full details</value>
+  </data>
+  <data name="PM_ADD_PAGES" xml:space="preserve">
+    <value>Add Pages</value>
+  </data>
+  <data name="PM_ASSIGN_AS_PARENT_PAGE" xml:space="preserve">
+    <value>Assign this page as parent to selected pages.</value>
+  </data>
+  <data name="PM_BELOW_SELECTED" xml:space="preserve">
+    <value>Below Selected</value>
+  </data>
+  <data name="PM_CHILD_TO_SELECTED" xml:space="preserve">
+    <value>Child to Selected</value>
+  </data>
+  <data name="PM_DELETE_PAGE" xml:space="preserve">
+    <value>Delete selected page</value>
+  </data>
+  <data name="PM_EDIT_PAGE" xml:space="preserve">
+    <value>Edit page</value>
+  </data>
+  <data name="PM_ORDER_PAGES" xml:space="preserve">
+    <value>Order Pages</value>
+  </data>
+  <data name="PM_PAGE_ACTIONS" xml:space="preserve">
+    <value>Page Actions</value>
+  </data>
+  <data name="PM_SAVE_PAGE_ORDER" xml:space="preserve">
+    <value>Save site page order</value>
+  </data>
+  <data name="PM_SELECTED_PAGE" xml:space="preserve">
+    <value>Selected Page:</value>
+  </data>
+  <data name="PM_SHOW_PAGE_ACTIONS" xml:space="preserve">
+    <value>Show page actions panel</value>
+  </data>
+  <data name="PM_SHOW_SORT_TREE_ACTIONS" xml:space="preserve">
+    <value>Show sort panel</value>
+  </data>
+  <data name="PORTAL_HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PORTALS" xml:space="preserve">
+    <value>Portaal</value>
+  </data>
+  <data name="PORTALSEARCH_ALL" xml:space="preserve">
+    <value>Alles</value>
+  </data>
+  <data name="PORTALSEARCH_FIELD" xml:space="preserve">
+    <value>Veld</value>
+  </data>
+  <data name="PORTALSEARCH_HIT" xml:space="preserve">
+    <value>gevonden</value>
+  </data>
+  <data name="PORTALSEARCH_HITS" xml:space="preserve">
+    <value>gevonden</value>
+  </data>
+  <data name="PORTALSEARCH_LINK" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="PORTALSEARCH_MISSING" xml:space="preserve">
+    <value>ontbreekt</value>
+  </data>
+  <data name="PORTALSEARCH_MODULE" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="PORTALSEARCH_MODULETITLE" xml:space="preserve">
+    <value>Module naam</value>
+  </data>
+  <data name="PORTALSEARCH_SEARCH" xml:space="preserve">
+    <value>Zoek</value>
+  </data>
+  <data name="PORTALSEARCH_TAB" xml:space="preserve">
+    <value>Onderdeel</value>
+  </data>
+  <data name="PORTALSEARCH_TESTINFO" xml:space="preserve">
+    <value>TestInfo</value>
+  </data>
+  <data name="PORTALSEARCH_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="PORTALSEARCH_TOPIC" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="PORTALSEARCH_USER" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="POSTED_BY" xml:space="preserve">
+    <value>van</value>
+  </data>
+  <data name="POSTED_DATE" xml:space="preserve">
+    <value>Gepost</value>
+  </data>
+  <data name="PREVIEW" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="PREVIOUS" xml:space="preserve">
+    <value>Vorige</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>Price:</value>
+  </data>
+  <data name="PRICE_FROM" xml:space="preserve">
+    <value>Price From:</value>
+  </data>
+  <data name="PRODUCT_ADD_TO_CART" xml:space="preserve">
+    <value>Toevoegen aan winkelmand</value>
+  </data>
+  <data name="PRODUCT_CATEGORY_NOT_FOUND" xml:space="preserve">
+    <value>Categorie niet gevonden</value>
+  </data>
+  <data name="PRODUCT_CHECKOUT" xml:space="preserve">
+    <value>Uitchecken</value>
+  </data>
+  <data name="PRODUCT_CONTINUE_SHOPPING" xml:space="preserve">
+    <value>Verdergaan met winkelen</value>
+  </data>
+  <data name="PRODUCT_DISPLAY_FEATURED_ITEMS" xml:space="preserve">
+    <value>Toon featured items</value>
+  </data>
+  <data name="PRODUCT_EMPTY_CART" xml:space="preserve">
+    <value>Er zijn momenteel geen artikelen in je winkelkarretje.</value>
+  </data>
+  <data name="PRODUCT_ID" xml:space="preserve">
+    <value>Product Ref</value>
+  </data>
+  <data name="PRODUCT_INCLUDING_TAXES" xml:space="preserve">
+    <value>(incl. BTW)</value>
+  </data>
+  <data name="PRODUCT_INPUT_PROBLEM" xml:space="preserve">
+    <value>Er deed zich een probleem voor met één van je ingaven.</value>
+  </data>
+  <data name="PRODUCT_MUST_LOG_IN_FOR_CHECKOUT" xml:space="preserve">
+    <value>Je moet eerst inloggen of registreren om te kunnen afrekenen!</value>
+  </data>
+  <data name="PRODUCT_NAME" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="PRODUCT_ORDER_DATE_CREATED" xml:space="preserve">
+    <value>Datum van creatie</value>
+  </data>
+  <data name="PRODUCT_ORDER_DATE_MODIFIED" xml:space="preserve">
+    <value>Laatst aangepast</value>
+  </data>
+  <data name="PRODUCT_ORDER_REFERENCE" xml:space="preserve">
+    <value>Referentie bestelling</value>
+  </data>
+  <data name="PRODUCT_ORDER_TOTAL" xml:space="preserve">
+    <value>Totaal</value>
+  </data>
+  <data name="PRODUCT_PAYMENT_METHOD" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="PRODUCT_PRICE" xml:space="preserve">
+    <value>Prijs</value>
+  </data>
+  <data name="PRODUCT_PRICE_NOT_AVAILABLE" xml:space="preserve">
+    <value>Neem contact met ons op om dit product aan te kopen.</value>
+  </data>
+  <data name="PRODUCT_PRICE_WITH_TAX" xml:space="preserve">
+    <value>Price With Tax</value>
+  </data>
+  <data name="PRODUCT_QUANTITY" xml:space="preserve">
+    <value>Hoeveelheid</value>
+  </data>
+  <data name="PRODUCT_REFERENCE" xml:space="preserve">
+    <value>Referentie</value>
+  </data>
+  <data name="PRODUCT_REMOVE" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="PRODUCT_SHIPPING" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
+  <data name="PRODUCT_SHIPPING_INFORMATION" xml:space="preserve">
+    <value>Shipping Information</value>
+  </data>
+  <data name="PRODUCT_SHIPPING_METHOD" xml:space="preserve">
+    <value>Shipping Method</value>
+  </data>
+  <data name="PRODUCT_SHOP_HOME" xml:space="preserve">
+    <value>Winkel startpagina</value>
+  </data>
+  <data name="PRODUCT_SUBTOTAL" xml:space="preserve">
+    <value>Subtotaal</value>
+  </data>
+  <data name="PRODUCT_TOTAL" xml:space="preserve">
+    <value>Totaal</value>
+  </data>
+  <data name="PRODUCT_TOTAL_EXPENSES" xml:space="preserve">
+    <value>Total Expenses</value>
+  </data>
+  <data name="PRODUCT_TOTAL_PRICE_(INC_TAXES)" xml:space="preserve">
+    <value>Total Price (inc Taxes)</value>
+  </data>
+  <data name="PRODUCT_TOTAL_TAXES" xml:space="preserve">
+    <value>Totaal Taxen</value>
+  </data>
+  <data name="PRODUCT_TOTAL_WEIGHT" xml:space="preserve">
+    <value>Total Weight</value>
+  </data>
+  <data name="PRODUCT_TOTAL_WITH_TAXES" xml:space="preserve">
+    <value>Totaal met Taxen</value>
+  </data>
+  <data name="PRODUCT_UNIT" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="PRODUCT_UPDATE" xml:space="preserve">
+    <value>Aanpassen</value>
+  </data>
+  <data name="PRODUCT_VIEW_ACCOUNT" xml:space="preserve">
+    <value>Rekening bekijken</value>
+  </data>
+  <data name="PRODUCT_VIEW_CART" xml:space="preserve">
+    <value>Winkelkarretje bekijken</value>
+  </data>
+  <data name="PRODUCTS_DISPLAYING_ORDER" xml:space="preserve">
+    <value>Rangschikking: </value>
+  </data>
+  <data name="PRODUCTS_INSTRUCTIONS" xml:space="preserve">
+    <value>You can select categories of products on the menu below.</value>
+  </data>
+  <data name="PRODUCTS_NO_ORDERS_TO_DISPLAY" xml:space="preserve">
+    <value>Je hebt geen bestellingen.</value>
+  </data>
+  <data name="PRODUCTS_ORDER_HISTORY_DISPLAY" xml:space="preserve">
+    <value>Historiek bestellingen wordt getoond. Klik op ID-Bestelling om details te tonen.</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Mijn gegevens</value>
+  </data>
+  <data name="PROPERTIES" xml:space="preserve">
+    <value>Eigenschappen</value>
+  </data>
+  <data name="PROV_STATE" xml:space="preserve">
+    <value>Provincie</value>
+  </data>
+  <data name="Appleseed_RUNNING_VERSION" xml:space="preserve">
+    <value>De huidige Appleseed versie is</value>
+  </data>
+  <data name="READ_FULL_ANNOUNCE" xml:space="preserve">
+    <value>Lees verder ...</value>
+  </data>
+  <data name="REASON" xml:space="preserve">
+    <value>Reden</value>
+  </data>
+  <data name="REGISTER" xml:space="preserve">
+    <value>Registreren</value>
+  </data>
+  <data name="REGISTER_DESCRIPTION" xml:space="preserve">
+    <value>Kies hier een Registratie-pagina.</value>
+  </data>
+  <data name="REGISTER_DIFFERENT" xml:space="preserve">
+    <value>Gelieve te registreren met een ander e-mailadres.</value>
+  </data>
+  <data name="REGISTER_NOW" xml:space="preserve">
+    <value>Registreer je NU</value>
+  </data>
+  <data name="REGISTER_REQUIRED" xml:space="preserve">
+    <value>Om deze pagina te kunnen bekijken moet je geregistreerd zijn</value>
+  </data>
+  <data name="REGISTERED_USERS" xml:space="preserve">
+    <value>Geregistreerde gebruikers</value>
+  </data>
+  <data name="REGISTRATION_FAILED" xml:space="preserve">
+    <value>Registratie mislukt!</value>
+  </data>
+  <data name="REMEMBER_LOGIN" xml:space="preserve">
+    <value>Automatisch inloggen</value>
+  </data>
+  <data name="RETURN" xml:space="preserve">
+    <value>Terug</value>
+  </data>
+  <data name="RETURN_HOME" xml:space="preserve">
+    <value>Terug naar Homepage</value>
+  </data>
+  <data name="RETURNHOME" xml:space="preserve">
+    <value>Terug naar Homepage</value>
+  </data>
+  <data name="RIGHT" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="ROLE_ADD_NEW_USER" xml:space="preserve">
+    <value>Maak nieuwe gebruiker aan en geef hem deze Rol</value>
+  </data>
+  <data name="ROLE_ADD_USER" xml:space="preserve">
+    <value>Add existing user to role</value>
+  </data>
+  <data name="ROLE_CHANGE_MEMBERS" xml:space="preserve">
+    <value>Wijzig Rollen lidmaatschap</value>
+  </data>
+  <data name="ROLE_ERROR_ADD" xml:space="preserve">
+    <value>Add New Failed!  There is already an entry for &lt;u&gt;%1%&lt;/u&gt; in the Users database.&lt;br&gt;Please use Add Existing for this user.</value>
+  </data>
+  <data name="ROLE_MEMBERSHIP" xml:space="preserve">
+    <value>Rol Lidmaatschap: </value>
+  </data>
+  <data name="ROLE_NEW_ROLE" xml:space="preserve">
+    <value>Nieuwe Rol</value>
+  </data>
+  <data name="ROLE_SAVE_CHANGES" xml:space="preserve">
+    <value>Rol aanpassingen opslaan</value>
+  </data>
+  <data name="ROLES_DESCRIPTION" xml:space="preserve">
+    <value>Om de toegang tot pagina’s en/of modules te beperken maakt u rollen aan. Een gebruiker kan tot een of meerdere rollen toegekend worden. Voor iedere pagina of module kunt u bepalen welke rechten iedere rol heeft (bekijken/wijzigen/verwijderen/toevoegen/etc).</value>
+  </data>
+  <data name="ROLESADD" xml:space="preserve">
+    <value>Rollen die kunnen content toevoegen</value>
+  </data>
+  <data name="ROLESCOLLECTION" xml:space="preserve">
+    <value>Rollen die kunnen content collectie wijzigen</value>
+  </data>
+  <data name="ROLESDELETE" xml:space="preserve">
+    <value>Rollen die kunnen content verwijderen</value>
+  </data>
+  <data name="ROLESEDIT" xml:space="preserve">
+    <value>Rollen die kunnen content wijzigen</value>
+  </data>
+  <data name="ROLESVIEW" xml:space="preserve">
+    <value>Rollen die kunnen content bekijken</value>
+  </data>
+  <data name="ROOM_NUMBER" xml:space="preserve">
+    <value>Aantal kamers</value>
+  </data>
+  <data name="ROOT_LEVEL" xml:space="preserve">
+    <value>Root Level</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Opslaan en afsluiten</value>
+  </data>
+  <data name="SAVE_AND_CLOSE" xml:space="preserve">
+    <value>Opslaan en afsluiten</value>
+  </data>
+  <data name="SAVE_CHANGES" xml:space="preserve">
+    <value>Wijzigingen opslaan</value>
+  </data>
+  <data name="SAVE_PAGE_ORDER" xml:space="preserve">
+    <value>Save Order</value>
+  </data>
+  <data name="SAVEUSER" xml:space="preserve">
+    <value>Opslaan en afsluiten</value>
+  </data>
+  <data name="SEARCH" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SECURITY" xml:space="preserve">
+    <value>Beveiliging</value>
+  </data>
+  <data name="SECURITY_USER_SETTINGS" xml:space="preserve">
+    <value>Gebruikers en veiligheid instellingen</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERADD" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERADMIN" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERDELETE" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERDELMOD" xml:space="preserve">
+    <value>Delete Mod.</value>
+  </data>
+  <data name="SECURITYCHECK_HEADEREDIT" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERMOVE" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERNAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERPROPERTIES" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERTAB" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERTYPE" xml:space="preserve">
+    <value>Module Type</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERVIEW" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="SECURITYCHECK_ONLYADMIN" xml:space="preserve">
+    <value>Only Admin Modules</value>
+  </data>
+  <data name="SECURITYCHECK_SEARCH" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SELECT" xml:space="preserve">
+    <value>Selecteer</value>
+  </data>
+  <data name="SELECT_ALL" xml:space="preserve">
+    <value>Selecteer alles</value>
+  </data>
+  <data name="SELECT_NONE" xml:space="preserve">
+    <value>Selecteer niets</value>
+  </data>
+  <data name="SELECTED_PAGE" xml:space="preserve">
+    <value>Selected Page:</value>
+  </data>
+  <data name="SEND_NEWSLETTER" xml:space="preserve">
+    <value>Verstuur nieuwsbrief</value>
+  </data>
+  <data name="SENDNEWSLETTER" xml:space="preserve">
+    <value>Verstuur nieuwsbrief</value>
+  </data>
+  <data name="SENDTHTS_BODY" xml:space="preserve">
+    <value>Tekst van bericht:</value>
+  </data>
+  <data name="SENDTHTS_BODY_ERR" xml:space="preserve">
+    <value>Geef uw berichtentekst op aub.</value>
+  </data>
+  <data name="SENDTHTS_CLEAR" xml:space="preserve">
+    <value>Wissen</value>
+  </data>
+  <data name="SENDTHTS_DES_TXT" xml:space="preserve">
+    <value>Geef hier een omschrijving...</value>
+  </data>
+  <data name="SENDTHTS_EMAILBLANK" xml:space="preserve">
+    <value>’EMail’ mag niet leeg zijn.</value>
+  </data>
+  <data name="SENDTHTS_EMAILVALID" xml:space="preserve">
+    <value>Geef een geldig e-mailadres op aub.</value>
+  </data>
+  <data name="SENDTHTS_NAME" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="SENDTHTS_RECIPIENT" xml:space="preserve">
+    <value>E-mailadres geadresseerde werd niet gespecifieerd.</value>
+  </data>
+  <data name="SENDTHTS_REMAIL" xml:space="preserve">
+    <value>Werkelijk e-mailadres</value>
+  </data>
+  <data name="SENDTHTS_SEND" xml:space="preserve">
+    <value>Verzenden</value>
+  </data>
+  <data name="SENDTHTS_SENT" xml:space="preserve">
+    <value>Je bericht werd succesvol verzonden - hartelijk dank!</value>
+  </data>
+  <data name="SENDTHTS_SUBJECT" xml:space="preserve">
+    <value>Onderwerp: (optioneel)</value>
+  </data>
+  <data name="SENDTHTS_YREMAIL" xml:space="preserve">
+    <value>Jouw e-mailadres:</value>
+  </data>
+  <data name="SENDTHTS_YRNAME" xml:space="preserve">
+    <value>Jouw naam: (optioneel)</value>
+  </data>
+  <data name="SETTING_BETWEEN" xml:space="preserve">
+    <value>%1% must be between %2% and %3%!</value>
+  </data>
+  <data name="SETTING_REQUIRED" xml:space="preserve">
+    <value>%1% is vereist!</value>
+  </data>
+  <data name="SETTINGS" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="SHOW_COLUMN_ADDRESS_DESCRIPTION" xml:space="preserve">
+    <value>Switch for displaying the Address column or not.</value>
+  </data>
+  <data name="SHOW_COLUMN_CONTACT1_DESCRIPTION" xml:space="preserve">
+    <value>Switch for displaying the contact1 column or not.</value>
+  </data>
+  <data name="SHOW_COLUMN_CONTACT2_DESCRIPTION" xml:space="preserve">
+    <value>Switch for displaying the contact2 column or not.</value>
+  </data>
+  <data name="SHOW_COLUMN_EMAIL_DESCRIPTION" xml:space="preserve">
+    <value>Switch for displaying the email column or not.</value>
+  </data>
+  <data name="SHOW_COLUMN_FAX_DESCRIPTION" xml:space="preserve">
+    <value>Switch for displaying the Fax column or not.</value>
+  </data>
+  <data name="SHOW_FLASH_GALLERY" xml:space="preserve">
+    <value>Show Flash Gallery</value>
+  </data>
+  <data name="SHOWABSTRACT" xml:space="preserve">
+    <value>Toon korte inhoud</value>
+  </data>
+  <data name="SHOWCOLLAPSABLE" xml:space="preserve">
+    <value>Vensters?</value>
+  </data>
+  <data name="SHOWCREATEDBYUSER" xml:space="preserve">
+    <value>Toon ’gemaakt door gebruiker’ </value>
+  </data>
+  <data name="SHOWCREATEDDATE" xml:space="preserve">
+    <value>Toon creatie datum</value>
+  </data>
+  <data name="SHOWDATE" xml:space="preserve">
+    <value>Show Date</value>
+  </data>
+  <data name="SHOWEVERYWHERE" xml:space="preserve">
+    <value>Toon op iedere pagina?</value>
+  </data>
+  <data name="SHOWLINK" xml:space="preserve">
+    <value>Toon link</value>
+  </data>
+  <data name="SHOWMOBILE" xml:space="preserve">
+    <value>Toon aan mobiele gebruikers?</value>
+  </data>
+  <data name="SHOWMODIFIEDBY" xml:space="preserve">
+    <value>Toon Gewijzigd door</value>
+  </data>
+  <data name="SHOWMODIFIEDBY_DESCRIPTION" xml:space="preserve">
+    <value>Zet ’Gewijzigd door’ display aan/af</value>
+  </data>
+  <data name="SHOWMODULENAME" xml:space="preserve">
+    <value>Toon Module naam</value>
+  </data>
+  <data name="SHOWMODULETITLE" xml:space="preserve">
+    <value>Toon module titel</value>
+  </data>
+  <data name="SHOWPRINTBUTTON" xml:space="preserve">
+    <value>Toon printknop?</value>
+  </data>
+  <data name="SHOWPRINTBUTTON_DESCRIPTION" xml:space="preserve">
+    <value>Toon printknop aan de bezoekers?</value>
+  </data>
+  <data name="SHOWSEARCHTITLE" xml:space="preserve">
+    <value>Toon titel</value>
+  </data>
+  <data name="SHOWTABNAME" xml:space="preserve">
+    <value>Toon pagina naam</value>
+  </data>
+  <data name="SHOWTESTINFO" xml:space="preserve">
+    <value>Toon test info</value>
+  </data>
+  <data name="SHOWTITLE" xml:space="preserve">
+    <value>Toon Titel</value>
+  </data>
+  <data name="SHOWTITLE_DESCRIPTION" xml:space="preserve">
+    <value>Zet ’Titel’ display aan/af</value>
+  </data>
+  <data name="SHOWUPLOAD" xml:space="preserve">
+    <value>Upload?</value>
+  </data>
+  <data name="SHOWUPLOAD_DESCRIPTION" xml:space="preserve">
+    <value>Only used if Editor is ActiveUp HtmlTextBox</value>
+  </data>
+  <data name="SIGNIN" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="SIGNIN_ALLOW_REMEMBER_LOGIN" xml:space="preserve">
+    <value>Allow Remember Login</value>
+  </data>
+  <data name="SIGNIN_ALLOW_REMEMBER_LOGIN_DESCRIPTION" xml:space="preserve">
+    <value>If Checked allows to remember logins</value>
+  </data>
+  <data name="SIGNIN_ALLOW_SEND_PASSWORD" xml:space="preserve">
+    <value>Allow Send Password</value>
+  </data>
+  <data name="SIGNIN_ALLOW_SEND_PASSWORD_DESCRIPTION" xml:space="preserve">
+    <value>If Checked allows user to ask to get password by email if he forgotten</value>
+  </data>
+  <data name="SIGNIN_ENTER_EMAIL_ADDR" xml:space="preserve">
+    <value>Gelieve een e-mailadres in te vullen.</value>
+  </data>
+  <data name="SIGNIN_PWD_MISSING_IN_DB" xml:space="preserve">
+    <value>Uw wachtwoord is niet gevonden.</value>
+  </data>
+  <data name="SIGNIN_PWD_REQUESTED" xml:space="preserve">
+    <value>Uw aangevraagde wachtwoord is:</value>
+  </data>
+  <data name="SIGNIN_PWD_TO" xml:space="preserve">
+    <value>Wachtwoord voor:</value>
+  </data>
+  <data name="SIGNIN_PWD_WAS_SENT" xml:space="preserve">
+    <value>Uw wachtwoord is verstuurd naar het e-mailadres</value>
+  </data>
+  <data name="SIGNIN_SEND_PWD" xml:space="preserve">
+    <value>Wachtwoord versturen</value>
+  </data>
+  <data name="SIGNIN_THANK_YOU" xml:space="preserve">
+    <value>Dank u voor uw bezoek</value>
+  </data>
+  <data name="SIGNIN_YOU_CAN_LOGIN_FROM" xml:space="preserve">
+    <value>U kan inloggen van</value>
+  </data>
+  <data name="SITE_PATH" xml:space="preserve">
+    <value>Site pad</value>
+  </data>
+  <data name="SITE_TITLE" xml:space="preserve">
+    <value>Site titel</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES" xml:space="preserve">
+    <value>Allow Module Custom Themes?</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES_DESCRIPTION" xml:space="preserve">
+    <value>Select to allow Custom Theme to be set on Modules.</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_NEW_REGISTRATION" xml:space="preserve">
+    <value>Nieuwe registraties mogelijk?</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_NEW_REGISTRATION_DESCRIPTION" xml:space="preserve">
+    <value>Activeer dit om bezoeker toe te laten zichzelf te registreren of laat inactief om enkel via Gebruikersbeheer te registreren.</value>
+  </data>
+  <data name="SITESETTINGS_ALT_THEME" xml:space="preserve">
+    <value>Alternatief thema</value>
+  </data>
+  <data name="SITESETTINGS_ALT_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Specifieer Alternatief thema op site niveau.</value>
+  </data>
+  <data name="SITESETTINGS_BODYATTS" xml:space="preserve">
+    <value>&amp;lt;body&amp;gt; attributes</value>
+  </data>
+  <data name="SITESETTINGS_BODYATTS_DESCRIPTION" xml:space="preserve">
+    <value>Allows you to enter a string which will be inserted within the &lt;body&gt; element, e.g. leftmargin="0" bottommargin="0", etc. NOTE: not advisable to use this to inject onload() function calls as there is a programmatic function for that. NOTE also that is your CSS is well sorted you should not need anything here.</value>
+  </data>
+  <data name="SITESETTINGS_COUNTRY_FILTER" xml:space="preserve">
+    <value>Toegelaten landen</value>
+  </data>
+  <data name="SITESETTINGS_COUNTRY_FILTER_DESCRIPTION" xml:space="preserve">
+    <value>Enkel de geselecteerde landen kunnen gekozen worden in het registratiescherm. Selecteer ’World’ om alle landen toe te laten.</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_EDITOR" xml:space="preserve">
+    <value>Default Editor</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_EDITOR_DESCRIPTION" xml:space="preserve">
+    <value>This Editor is used by workflow and is the default for new modules.</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_IMAGE_FOLDER" xml:space="preserve">
+    <value>Default Image Folder</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_IMAGE_FOLDER_DESCRIPTION" xml:space="preserve">
+    <value>Set the default image folder used by Current Editor</value>
+  </data>
+  <data name="SITESETTINGS_DOCTYPE" xml:space="preserve">
+    <value>DOCTYPE string</value>
+  </data>
+  <data name="SITESETTINGS_DOCTYPE_DESCRIPTION" xml:space="preserve">
+    <value>Allows you to enter a DOCTYPE string which will be inserted as the first line of the HTML output page (i.e. above the &lt;html&gt; element). Use this to force Quirks or Standards mode, particularly in IE. See &lt;a href="http://gutfeldt.ch/matthias/articles/doctypeswitch/table.html" target="_blank"&gt;here&lt;/a&gt; for details. NOTE: Appleseed.Zen requires a setting that guarantees Standards mode on all browsers.</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_HEIGHT" xml:space="preserve">
+    <value>Editor hoogte</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_HEIGHT_DESCRIPTION" xml:space="preserve">
+    <value>Default Editor Height</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_WIDTH" xml:space="preserve">
+    <value>Editor Width</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_WIDTH_DESCRIPTION" xml:space="preserve">
+    <value>Default Editor Width</value>
+  </data>
+  <data name="SITESETTINGS_LANGLIST" xml:space="preserve">
+    <value>Talenlijst</value>
+  </data>
+  <data name="SITESETTINGS_LANGLIST_DESCRIPTION" xml:space="preserve">
+    <value>Dit is de lijst van talen dat deze site ondersteunt (it’s in format &lt;UI-Culture&gt;=&lt;Formatting-Culture&gt; delimit with semi-colon).</value>
+  </data>
+  <data name="SITESETTINGS_LOGO" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="SITESETTINGS_LOGO_DESCRIPTION" xml:space="preserve">
+    <value>Geef de naam van het logobestand hier op.</value>
+  </data>
+  <data name="SITESETTINGS_ON_REGISTER_SEND_FROM" xml:space="preserve">
+    <value>Send Mail From</value>
+  </data>
+  <data name="SITESETTINGS_ON_REGISTER_SEND_FROM_DESCRIPTION" xml:space="preserve">
+    <value>On new registration a mail will be send to the new user from the email address you provide here.</value>
+  </data>
+  <data name="SITESETTINGS_ON_REGISTER_SEND_TO" xml:space="preserve">
+    <value>Send Mail To</value>
+  </data>
+  <data name="SITESETTINGS_ON_REGISTER_SEND_TO_DESCRIPTION" xml:space="preserve">
+    <value>On new registration a mail will be send to the email address you provide here.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_KEY_PHRASE" xml:space="preserve">
+    <value>Standaard pagina kernzin</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_KEY_PHRASE_DESCRIPTION" xml:space="preserve">
+    <value>This setting can be used by a module or by a control. It allows you to define a common message for the entire portal e.g. Welcome to x portal! This can be used for search engine optimisation. It allows you to define a keyword rich phrase to be used throughout your portal.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_LAYOUT" xml:space="preserve">
+    <value>Pagina layout</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_LAYOUT_DESCRIPTION" xml:space="preserve">
+    <value>Specify the site level page layout here.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_DESCRIPTION" xml:space="preserve">
+    <value>Standaard pagina omschrijving</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_DESCRIPTION_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter a default description (Not too long though. 1 paragraph is enough) that describes your portal.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_ENCODING" xml:space="preserve">
+    <value>Standaard pagina Encoding</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_ENCODING_DESCRIPTION" xml:space="preserve">
+    <value>Every time your browser returns a page it looks to see what format it is retrieving. This allows you to specify the default content type.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_KEYWORDS" xml:space="preserve">
+    <value>Standaard pagina Keywords</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_KEYWORDS_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter 1-15 Default Keywords that represent what your site is about.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_OTHERS" xml:space="preserve">
+    <value>Standaard additionele Meta Tags</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_OTHERS_DESCRIPTION" xml:space="preserve">
+    <value>This setting allows you to enter new tags into the Page’s HEAD Tag. As an example we have added a portal tag to identify the version, but you could have a meta refresh tag or something else like a css reference instead.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_TITLE" xml:space="preserve">
+    <value>Standaard pagina Titel</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_TITLE_DESCRIPTION" xml:space="preserve">
+    <value>Allows you to enter a default page title (Shows at the top of your browser).</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_URL_KEYWORD" xml:space="preserve">
+    <value>A Default Keyword To Identify all Pages</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_URL_KEYWORD_DESCRIPTION" xml:space="preserve">
+    <value>This setting is not fully implemented yet. It was to help with search engine optimisation by allowing you to specify a default keyword that would appear in your url.</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_FULL" xml:space="preserve">
+    <value>Uitgebreide registratie</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_MODULEID" xml:space="preserve">
+    <value>Register Module ID</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_MODULEID_DESCRIPTION" xml:space="preserve">
+    <value>Some custom registration may require additional settings, type here the ID of the module from where we should load settings (0= not used). Usually this module is added in an hidden area.</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_SIMPLE" xml:space="preserve">
+    <value>Beperkte registratie</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_TYPE" xml:space="preserve">
+    <value>Registratie Type</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_TYPE_DESCRIPTION" xml:space="preserve">
+    <value>Choose here how Register Page should look like.</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODIFIED_BY" xml:space="preserve">
+    <value>Toon ’aangepast door...’</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION" xml:space="preserve">
+    <value>Check to show by whom the module is last modified.</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODULE_ARROWS" xml:space="preserve">
+    <value>Show module arrows</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODULE_ARROWS_DESCRIPTION" xml:space="preserve">
+    <value>Check to show the arrows in the module title to move modules.</value>
+  </data>
+  <data name="SITESETTINGS_SHOWUPLOAD" xml:space="preserve">
+    <value>Upload?</value>
+  </data>
+  <data name="SITESETTINGS_SHOWUPLOAD_DESCRIPTION" xml:space="preserve">
+    <value>Only used if Editor is ActiveUp HtmlTextBox</value>
+  </data>
+  <data name="SITESETTINGS_SITE_PATH" xml:space="preserve">
+    <value>Site Path</value>
+  </data>
+  <data name="SITESETTINGS_SITE_TITLE" xml:space="preserve">
+    <value>Site Titel</value>
+  </data>
+  <data name="SITESETTINGS_TERMS_OF_SERVICE" xml:space="preserve">
+    <value>Bestandsnaam Algemene Voorwaarden</value>
+  </data>
+  <data name="SITESETTINGS_TERMS_OF_SERVICE_DESCRIPTION" xml:space="preserve">
+    <value>Type here a file name used for showing terms and condition in each register page. Provide localized version adding _&lt;culturename&gt;. E.g. Terms.txt, will search for Terms.txt and for Terms_EN_US.txt</value>
+  </data>
+  <data name="SITESETTINGS_THEME" xml:space="preserve">
+    <value>Thema</value>
+  </data>
+  <data name="SITESETTINGS_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Specify the site level theme here.</value>
+  </data>
+  <data name="SITESETTINGS_USE_RECYCLER" xml:space="preserve">
+    <value>Use Recycle Bin for Deleted Modules</value>
+  </data>
+  <data name="SITESETTINGS_USE_RECYCLER_DESCRIPTION" xml:space="preserve">
+    <value>Check to make deleted modules go to the recycler instead of permanently deleting them.</value>
+  </data>
+  <data name="SM_MENU_REPEATDIRECTION" xml:space="preserve">
+    <value>Menu RepeatDirection</value>
+  </data>
+  <data name="SM_MENU_REPEATDIRECTION_DESCRIPTION" xml:space="preserve">
+    <value>Sets the repeat direction for menu rendering.</value>
+  </data>
+  <data name="SM_MENUBINDINGTYPE" xml:space="preserve">
+    <value>MenuBindingType</value>
+  </data>
+  <data name="SM_MENUTYPE" xml:space="preserve">
+    <value>MenuType</value>
+  </data>
+  <data name="SM_MENUTYPE_DESCRIPTION" xml:space="preserve">
+    <value>Sets the type of menu this module use.</value>
+  </data>
+  <data name="SM_PARENTTABID" xml:space="preserve">
+    <value>ParentTabId</value>
+  </data>
+  <data name="SM_PARENTTABID_DESCRIPTION" xml:space="preserve">
+    <value>Sets the Id of then Parent tab for the menu (this tab may be hidden or inaccessible for the logged on user.)</value>
+  </data>
+  <data name="SMARTERROR_500HEADING" xml:space="preserve">
+    <value>Our Apologies</value>
+  </data>
+  <data name="SMARTERROR_500TEXT" xml:space="preserve">
+    <value>We're sorry, but we were unable to service your request. It's possible that the problem is a temporary condition.</value>
+  </data>
+  <data name="SMARTERROR_SUPPORTDETAILS_HEADING" xml:space="preserve">
+    <value>Support Details</value>
+  </data>
+  <data name="SORTFIELD" xml:space="preserve">
+    <value>Sorteerveld</value>
+  </data>
+  <data name="SORTORDER" xml:space="preserve">
+    <value>Sorteer volgorde</value>
+  </data>
+  <data name="START_DATE" xml:space="preserve">
+    <value>Startdatum</value>
+  </data>
+  <data name="SUBJECT" xml:space="preserve">
+    <value>Onderwerp</value>
+  </data>
+  <data name="SUBMIT" xml:space="preserve">
+    <value>Versturen</value>
+  </data>
+  <data name="SUBTITLE" xml:space="preserve">
+    <value>Subtitel</value>
+  </data>
+  <data name="SURVEY_ADDNEWOPTION" xml:space="preserve">
+    <value>Add New Option</value>
+  </data>
+  <data name="SURVEY_ADDOPTBELOW" xml:space="preserve">
+    <value>Add to ’Options’ Below</value>
+  </data>
+  <data name="SURVEY_DETAILSOPTIONS" xml:space="preserve">
+    <value>Survey Details Options</value>
+  </data>
+  <data name="SURVEY_NEWOPTION" xml:space="preserve">
+    <value>New Option</value>
+  </data>
+  <data name="SURVEY_OPTION_ERR" xml:space="preserve">
+    <value>Please, insert the option.</value>
+  </data>
+  <data name="SURVEY_OPTIONS" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="SURVEY_QUESTION" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="SURVEY_SUBMIT" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="SWI_BUTTON_MIN" xml:space="preserve">
+    <value>SWI_BUTTON_MIN</value>
+  </data>
+  <data name="SWI_PUBLISH" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="SWI_READYTOAPPROVE" xml:space="preserve">
+    <value>Request approval</value>
+  </data>
+  <data name="SWI_REVERT" xml:space="preserve">
+    <value>Revert</value>
+  </data>
+  <data name="SWI_ROLESAPPROVING" xml:space="preserve">
+    <value>Toegelaten rollen</value>
+  </data>
+  <data name="SWI_ROLESPUBLISHING" xml:space="preserve">
+    <value>Toegelaten publiceer rollen</value>
+  </data>
+  <data name="SWI_SUPPORTWORKFLOW" xml:space="preserve">
+    <value>Activeer workflow ondersteuning</value>
+  </data>
+  <data name="SWI_SWAPTOPRODUCTION" xml:space="preserve">
+    <value>Ga naar productie versie</value>
+  </data>
+  <data name="SWI_SWAPTOSTAGING" xml:space="preserve">
+    <value>Ga naar staging versie</value>
+  </data>
+  <data name="TAB_DELETE_FAILED" xml:space="preserve">
+    <value>Verwijderen is niet gelukt. Verwijder eerst alle modules in een pagina en alle gelinkte pagina voor het verwijderen van een pagina.</value>
+  </data>
+  <data name="TAB_NAME" xml:space="preserve">
+    <value>Nieuwe pagina (naam opgeven)</value>
+  </data>
+  <data name="TAB_PARENT" xml:space="preserve">
+    <value>Ouder pagina (Parent)</value>
+  </data>
+  <data name="TAB_TITLE_Appleseed_HELP" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="TABKEYPHRASE" xml:space="preserve">
+    <value>Standaard pagina Keyphrase</value>
+  </data>
+  <data name="TABKEYPHRASE_DESCRIPTION" xml:space="preserve">
+    <value>This setting can be used by a module or by a control. It allows you to define a common message for the entire portal e.g. Welcome to x portal! This can be used for search engine optimisation. It allows you to define a keyword rich phrase to be used throug</value>
+  </data>
+  <data name="TABKEYPHRASE_EN" xml:space="preserve">
+    <value>Page Key Phrase (en)</value>
+  </data>
+  <data name="TABKEYPHRASE_EN_DESCRIPTION" xml:space="preserve">
+    <value>Key Phrase this Page for English culture.</value>
+  </data>
+  <data name="TABKEYPHRASE_ES" xml:space="preserve">
+    <value>Pagina Key Phrase (es)</value>
+  </data>
+  <data name="TABKEYPHRASE_ES_DESCRIPTION" xml:space="preserve">
+    <value>Key Phrase this Page for Spanish culture.</value>
+  </data>
+  <data name="TABLAYOUT" xml:space="preserve">
+    <value>Standaard lay-out</value>
+  </data>
+  <data name="TABLEEDIT_MSG_CONNECT" xml:space="preserve">
+    <value>Please connect to a database... (check settings)</value>
+  </data>
+  <data name="TABLEEDIT_SELECT_TABLE" xml:space="preserve">
+    <value>--Selecteer een tabel--</value>
+  </data>
+  <data name="TABLINK" xml:space="preserve">
+    <value>URL van statische link</value>
+  </data>
+  <data name="TABLINK_DESCRIPTION" xml:space="preserve">
+    <value>Allows this Page to act as a navigation link to any URL.</value>
+  </data>
+  <data name="TABMETADESCRIPTION" xml:space="preserve">
+    <value>Standaard pagina Description</value>
+  </data>
+  <data name="TABMETADESCRIPTION_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter a default description (Not too long though. 1 paragraph is enough) that describes your portal.</value>
+  </data>
+  <data name="TABMETAENCODING" xml:space="preserve">
+    <value>Standaard pagina Encoding</value>
+  </data>
+  <data name="TABMETAENCODING_DESCRIPTION" xml:space="preserve">
+    <value>Every time your browser returns a page it looks to see what format it is retrieving. This allows you to specify the default content type.</value>
+  </data>
+  <data name="TABMETAKEYWORDS" xml:space="preserve">
+    <value>Standaard pagina Keywords</value>
+  </data>
+  <data name="TABMETAKEYWORDS_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter 1-15 Default Keywords that represent what your site is about.</value>
+  </data>
+  <data name="TABMETAOTHER" xml:space="preserve">
+    <value>Default Additional Meta Tag Entries</value>
+  </data>
+  <data name="TABMETAOTHER_DESCRIPTION" xml:space="preserve">
+    <value>This setting allows you to enter new tags into the Page’s HEAD Tag. As an example we have added a portal tag to identify the version, but you could have a meta refresh tag or something else like a css reference instead.</value>
+  </data>
+  <data name="TABPLACEHOLDER" xml:space="preserve">
+    <value>Act as a Placeholder?</value>
+  </data>
+  <data name="TABPLACEHOLDER_DESCRIPTION" xml:space="preserve">
+    <value>Allows this page to act as a navigation placeholder only.</value>
+  </data>
+  <data name="TABTITLE" xml:space="preserve">
+    <value>Paginatitel</value>
+  </data>
+  <data name="TABTITLE_DESCRIPTION" xml:space="preserve">
+    <value>Allows you to enter a default page title (Shows at the top of your browser).</value>
+  </data>
+  <data name="TABURLKEYWORD" xml:space="preserve">
+    <value>A Default Keyword To Identify all Pages</value>
+  </data>
+  <data name="TABURLKEYWORD_DESCRIPTION" xml:space="preserve">
+    <value>This setting is not fully implemented yet. It was to help with search engine optimisation by allowing you to specify a default keyword that would appear in your url.</value>
+  </data>
+  <data name="TARGET" xml:space="preserve">
+    <value>Doel</value>
+  </data>
+  <data name="TASK_ASSIGNEDTO" xml:space="preserve">
+    <value>Toegewezen aan</value>
+  </data>
+  <data name="TASK_COMPLETION" xml:space="preserve">
+    <value>% voltooid</value>
+  </data>
+  <data name="TASK_COMPLETION_ERROR" xml:space="preserve">
+    <value>Moet een geheel getal zijn tussen 0 en 100</value>
+  </data>
+  <data name="TASK_DESCRIPTION" xml:space="preserve">
+    <value>Omschrijving</value>
+  </data>
+  <data name="TASK_DETAIL" xml:space="preserve">
+    <value>Taak Detail</value>
+  </data>
+  <data name="TASK_DUEDATE" xml:space="preserve">
+    <value>Vervaldag</value>
+  </data>
+  <data name="TASK_DUEDATE_ERROR" xml:space="preserve">
+    <value>Je dient een geldige vervaldag op te geven</value>
+  </data>
+  <data name="TASK_PRIORITY" xml:space="preserve">
+    <value>Prioriteit</value>
+  </data>
+  <data name="TASK_PRIORITY_0" xml:space="preserve">
+    <value>Hoog</value>
+  </data>
+  <data name="TASK_PRIORITY_1" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TASK_PRIORITY_2" xml:space="preserve">
+    <value>Laag</value>
+  </data>
+  <data name="TASK_STARTDATE" xml:space="preserve">
+    <value>Startdatum</value>
+  </data>
+  <data name="TASK_STARTDATE_ERROR" xml:space="preserve">
+    <value>Je dient een geldige startdatum op te geven</value>
+  </data>
+  <data name="TASK_STATE_0" xml:space="preserve">
+    <value>Niet gestart</value>
+  </data>
+  <data name="TASK_STATE_1" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="TASK_STATE_2" xml:space="preserve">
+    <value>Voltooid</value>
+  </data>
+  <data name="TASK_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TASK_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="TASK_TITLE_ERROR" xml:space="preserve">
+    <value>Je dient een geldige titel op te geven</value>
+  </data>
+  <data name="TERMSOFSERVICE" xml:space="preserve">
+    <value>Algemene Voorwaarden</value>
+  </data>
+  <data name="TERMSOFSERVICE_DESCRIPTION" xml:space="preserve">
+    <value>Geef hier bestandsnaam op met Algemene voorwaarden. Deze zal in registratiepagina getoond worden. Provide localized version adding _&lt;culturename&gt;. E.g. Terms.txt, will search for Terms.txt and for Terms_EN_US.txt</value>
+  </data>
+  <data name="TESTMODE" xml:space="preserve">
+    <value>Testmodus</value>
+  </data>
+  <data name="TESTMODE_DESCRIPTION" xml:space="preserve">
+    <value>Use Test Mode for testing your settings. It will send only one email to the address specified as sender. Useful for testing</value>
+  </data>
+  <data name="TESTUSERID" xml:space="preserve">
+    <value>Test user ID</value>
+  </data>
+  <data name="THEME" xml:space="preserve">
+    <value>Opmaakthema</value>
+  </data>
+  <data name="THEME_DESCRIPTION" xml:space="preserve">
+    <value>Kies opmaakthema voor deze module</value>
+  </data>
+  <data name="THEME_LAYOUT_SETTINGS" xml:space="preserve">
+    <value>Thema and layout instellingen</value>
+  </data>
+  <data name="THEMEALT" xml:space="preserve">
+    <value>Alterantief opmaakthema</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONADDTOROLE" xml:space="preserve">
+    <value>Select Sorting Criteria</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONTITLE" xml:space="preserve">
+    <value>Welcome to role administration. Please use this tool to select a single user or multiple users and either add them to a role or remove them.</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="TO" xml:space="preserve">
+    <value>naar </value>
+  </data>
+  <data name="TOP" xml:space="preserve">
+    <value>Boven</value>
+  </data>
+  <data name="TOPICNAME" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="TOPICNAME_DESCRIPTION" xml:space="preserve">
+    <value>Select a topic for this module. You may filter itmes by topic in Portal Search.</value>
+  </data>
+  <data name="TOTAL" xml:space="preserve">
+    <value>Totaal</value>
+  </data>
+  <data name="TOURISTIC_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="TOURISTIC_NOFILTER" xml:space="preserve">
+    <value>Geen filter</value>
+  </data>
+  <data name="TOURISTIC_THISMONTH" xml:space="preserve">
+    <value>Enkel deze maand</value>
+  </data>
+  <data name="TOURISTIC_THISYEAR" xml:space="preserve">
+    <value>Enkel dit jaar</value>
+  </data>
+  <data name="TRANSLATOR" xml:space="preserve">
+    <value>Rob Siera / Xtrasite</value>
+  </data>
+  <data name="TRANSLATOR_EMAIL" xml:space="preserve">
+    <value>rsiera at gmail dot com</value>
+  </data>
+  <data name="TYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="UM_ASSIGNUSER" xml:space="preserve">
+    <value>Assign selected users to role</value>
+  </data>
+  <data name="UM_CONFIRMDELETEMESSAGE" xml:space="preserve">
+    <value>Are You Sure You Wish To Delete This User?</value>
+  </data>
+  <data name="UM_COUNTRIES" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="UM_EMAILORNAME" xml:space="preserve">
+    <value>Email or name must include:</value>
+  </data>
+  <data name="UM_FILTERBYCOUNTRY" xml:space="preserve">
+    <value>Filter by Country</value>
+  </data>
+  <data name="UM_FILTERBYROLE" xml:space="preserve">
+    <value>Filter by Role</value>
+  </data>
+  <data name="UM_NOFILTER" xml:space="preserve">
+    <value>No Filter</value>
+  </data>
+  <data name="UM_ORDERBY" xml:space="preserve">
+    <value>Order by</value>
+  </data>
+  <data name="UM_ORDERSELECT" xml:space="preserve">
+    <value>Order by</value>
+  </data>
+  <data name="UM_ORDERSELECT_DESCRIPTION" xml:space="preserve">
+    <value>Select here the criteria for order users</value>
+  </data>
+  <data name="UM_ROLES" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="UM_ROWS" xml:space="preserve">
+    <value>Rows Showed</value>
+  </data>
+  <data name="UM_ROWS_DESCRIPTION" xml:space="preserve">
+    <value>Number of rows showed in each page. Select 0 for all</value>
+  </data>
+  <data name="UM_SHOWCOUNTRY" xml:space="preserve">
+    <value>Show Country Column?</value>
+  </data>
+  <data name="UM_SHOWCOUNTRY_DESCRIPTION" xml:space="preserve">
+    <value>Mark this to see the country of each user</value>
+  </data>
+  <data name="UM_UNASSIGNUSER" xml:space="preserve">
+    <value>Unassign this user from current role</value>
+  </data>
+  <data name="UM_USERS" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UNCHECKED_USERS" xml:space="preserve">
+    <value>Unchecked users</value>
+  </data>
+  <data name="UP_TO" xml:space="preserve">
+    <value>op naar</value>
+  </data>
+  <data name="UPDATE" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="UPDATE_YOUR_PROFILE" xml:space="preserve">
+    <value>Actualiseer uw profiel</value>
+  </data>
+  <data name="UPLOAD_FILE" xml:space="preserve">
+    <value>Oploaden bestand</value>
+  </data>
+  <data name="UPLOAD_IMAGE" xml:space="preserve">
+    <value>Afbeelding bijwerken</value>
+  </data>
+  <data name="UPLOAD_SUCCESS_MESSAGE" xml:space="preserve">
+    <value>Met succes geupload dossier!</value>
+  </data>
+  <data name="UPLOAD_TO_WEB" xml:space="preserve">
+    <value>Uploaden naar Webserver</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URL_TO_BROWSE" xml:space="preserve">
+    <value>URL om te zoeken</value>
+  </data>
+  <data name="USE_INSTALLER" xml:space="preserve">
+    <value>Use Installer</value>
+  </data>
+  <data name="USER_MANAGE" xml:space="preserve">
+    <value>Gebruikersbeheer</value>
+  </data>
+  <data name="USER_MESSAGE1" xml:space="preserve">
+    <value>Gebruikers moeten geregistreerd zijn om toegang te krijgen tot beveiligde pagina’s en modules.</value>
+  </data>
+  <data name="USER_MESSAGE2" xml:space="preserve">
+    <value>Gebruikers kunnen zichzelf registreren waarna Administrators de geregistreerde gebruikers specifieke rollen kan toekennen.</value>
+  </data>
+  <data name="USER_MESSAGE3" xml:space="preserve">
+    <value>Dit onderdeel laat Administrators toe om gebruikers en hun rollen te beheren.</value>
+  </data>
+  <data name="USER_MESSAGE_DOMAIN1" xml:space="preserve">
+    <value>Domein gebruiker moeten niet geregistreerd zijn voor toegang tot portaal content dat beschikbaar is voor ’Alle Gebruikers’</value>
+  </data>
+  <data name="USER_MESSAGE_DOMAIN2" xml:space="preserve">
+    <value>Beheerders kunnen domeingebruikers toevoegen aan specifieke rollen.</value>
+  </data>
+  <data name="USER_MESSAGE_DOMAIN3" xml:space="preserve">
+    <value>Dit onderdeel laat Administrators toe om gebruikers en hun rollen te beheren.</value>
+  </data>
+  <data name="USER_NEW_USER" xml:space="preserve">
+    <value>New User created </value>
+  </data>
+  <data name="USERBLOCK" xml:space="preserve">
+    <value>Group users</value>
+  </data>
+  <data name="USERBLOCK_DESCRIPTION" xml:space="preserve">
+    <value>Select the maximum number of users. For sending emails to all you have to repeat the process. Use small values to avoid server timeouts.</value>
+  </data>
+  <data name="USEREMAIL" xml:space="preserve">
+    <value>E-mail gebruiker</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Naam gebruiker</value>
+  </data>
+  <data name="USERTABLE_BACK" xml:space="preserve">
+    <value>Terug</value>
+  </data>
+  <data name="USERTABLE_EDITROW" xml:space="preserve">
+    <value>Wijzig tabelrij</value>
+  </data>
+  <data name="USERTABLE_INASCORDER" xml:space="preserve">
+    <value>(Ascending)</value>
+  </data>
+  <data name="USERTABLE_INDSCORDER" xml:space="preserve">
+    <value>(Descending)</value>
+  </data>
+  <data name="USERTABLE_MANAGETABLE" xml:space="preserve">
+    <value>Beheer tabel</value>
+  </data>
+  <data name="USERTABLE_MOVEFIELDDOWN" xml:space="preserve">
+    <value>Verplaats naar beneden</value>
+  </data>
+  <data name="USERTABLE_MOVEFIELDUP" xml:space="preserve">
+    <value>Verplaats naar boven</value>
+  </data>
+  <data name="USERTABLE_NEWFIELD" xml:space="preserve">
+    <value>Nieuw veld toevoegen</value>
+  </data>
+  <data name="USERTABLE_SORTEDBY" xml:space="preserve">
+    <value>Gesorteerd volgens</value>
+  </data>
+  <data name="USERTABLE_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="USERTABLE_TYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="USERTABLE_TYPE_BOOLEAN" xml:space="preserve">
+    <value>Ja/Nee</value>
+  </data>
+  <data name="USERTABLE_TYPE_DATETIME" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="USERTABLE_TYPE_DECIMAL" xml:space="preserve">
+    <value>Decimaal</value>
+  </data>
+  <data name="USERTABLE_TYPE_FILE" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="USERTABLE_TYPE_INT32" xml:space="preserve">
+    <value>Integer</value>
+  </data>
+  <data name="USERTABLE_TYPE_STRING" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="USERTABLE_VISIBLE" xml:space="preserve">
+    <value>Zichtbaar</value>
+  </data>
+  <data name="VALID_ADDRESS" xml:space="preserve">
+    <value>Je moet een correcte adres invullen.</value>
+  </data>
+  <data name="VALID_CITY" xml:space="preserve">
+    <value>Je moet een correcte stad invullen.</value>
+  </data>
+  <data name="VALID_CODE" xml:space="preserve">
+    <value>Je moet een correcte code invullen.</value>
+  </data>
+  <data name="VALID_DATE" xml:space="preserve">
+    <value>Je moet een correcte datum invullen.</value>
+  </data>
+  <data name="VALID_EMAIL" xml:space="preserve">
+    <value>Je moet een correcte e-postadres invullen.</value>
+  </data>
+  <data name="VALID_FIELD" xml:space="preserve">
+    <value>Gelieve een correcte waarde op te geven.</value>
+  </data>
+  <data name="VALID_FILE_NAME" xml:space="preserve">
+    <value>Je moet een correcte bestandsnaam invullen.</value>
+  </data>
+  <data name="VALID_NAME" xml:space="preserve">
+    <value>Je moet een correcte naam invullen.</value>
+  </data>
+  <data name="VALID_NUMBER" xml:space="preserve">
+    <value>Je moet een correcte getal invullen.</value>
+  </data>
+  <data name="VALID_PHONE" xml:space="preserve">
+    <value>Je moet een correcte telefoonnummer invullen.</value>
+  </data>
+  <data name="VALID_TITLE" xml:space="preserve">
+    <value>Je moet een correcte titel invullen.</value>
+  </data>
+  <data name="VALID_VIEWORDER" xml:space="preserve">
+    <value>Je moet een correcte toon volgorde invullen.</value>
+  </data>
+  <data name="VALID_ZIP" xml:space="preserve">
+    <value>Je moet een correcte postcode invullen.</value>
+  </data>
+  <data name="VALIDORDER" xml:space="preserve">
+    <value>Je moet een correcte toon volgorde invullen.</value>
+  </data>
+  <data name="VALIDTITLE" xml:space="preserve">
+    <value>Je moet een correcte toon titel invullen.</value>
+  </data>
+  <data name="VALIDURL" xml:space="preserve">
+    <value>Je moet een correcte toon URL invullen.</value>
+  </data>
+  <data name="VERTICAL" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="VIEW_ORDER" xml:space="preserve">
+    <value>Volgorde</value>
+  </data>
+  <data name="VIEWORDER" xml:space="preserve">
+    <value>Volgorde</value>
+  </data>
+  <data name="WEB_FARM_SUPPORT" xml:space="preserve">
+    <value>Opslaan in database (Ondersteuning voor webserverclusters)</value>
+  </data>
+  <data name="WEBSITE" xml:space="preserve">
+    <value>website</value>
+  </data>
+  <data name="WELCOME" xml:space="preserve">
+    <value>Welkom</value>
+  </data>
+  <data name="WHOS_LOGGED_ON_1" xml:space="preserve">
+    <value>Momenteel zijn er </value>
+  </data>
+  <data name="WHOS_LOGGED_ON_2" xml:space="preserve">
+    <value> gastgebruikers online: </value>
+  </data>
+  <data name="WHOS_LOGGED_ON_3" xml:space="preserve">
+    <value> geregistreerde gebruikers online: </value>
+  </data>
+  <data name="WHOSLOGGEDONCACHETIMEOUT" xml:space="preserve">
+    <value>Specifieer hoelang de ’Who’s online module’ wacht vooralleer opnieuw te proberen (0 - 60000)</value>
+  </data>
+  <data name="WIDTH" xml:space="preserve">
+    <value>Breedte</value>
+  </data>
+  <data name="WIDTH_DESCRIPTION" xml:space="preserve">
+    <value>De breedte van de editor</value>
+  </data>
+  <data name="XMLSRC" xml:space="preserve">
+    <value>XML bronbestand</value>
+  </data>
+  <data name="XSLSRC" xml:space="preserve">
+    <value>XSL bronbestand</value>
+  </data>
+  <data name="YEAR" xml:space="preserve">
+    <value>Jaar:</value>
+  </data>
+  <data name="YEARS" xml:space="preserve">
+    <value>Jaren (Max)</value>
+  </data>
+  <data name="ZH_CN" xml:space="preserve">
+    <value>Titel (ZH_CN)</value>
+  </data>
+  <data name="ZH_CN_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Chinese (People’s Republic of China) culture.</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Postcode</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Taal</value>
+  </data>
+</root>

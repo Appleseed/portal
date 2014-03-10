@@ -1,0 +1,32 @@
+﻿
+#installed_packages, #available_packages
+{
+    width:100%;
+}
+
+#installed_packages td, #available_packages td
+{
+    padding: 2px 5px !important;
+    border: 1px solid gray;
+}
+
+.installed_packages_action
+{
+    margin-top:10px;
+}
+
+.UpdateTitle {
+    font-size: 15px;
+}
+
+.buttonAppliedChanges {
+    float: right;
+}
+
+ .progress-label {
+float: left;
+margin-left: 50%;
+margin-top: 5px;
+font-weight: bold;
+text-shadow: 1px 1px 0 #fff;
+}

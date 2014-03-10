@@ -1,0 +1,32 @@
+.Html_Edit, 
+.Html_Edit:hover{
+	background:#fff;
+	border:2px dashed #000;
+	height:100%;
+	left:0;
+	position:absolute;
+	opacity:0; 
+    filter:alpha(opacity=0);
+    top:0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: 	all 0.3s ease-in-out;
+    -o-transition: 		all 0.3s ease-in-out;
+    transition: 		all 0.3s ease-in-out;
+    width:100%;
+	z-index: 100;
+	}    
+	
+.Html_Edit:hover{
+	opacity:0.5; 
+    filter:alpha(opacity=50);}
+
+.editTitle{
+	border-style:solid;
+	border-width:2px;
+	border-color: transparent;
+}    
+.editTitle:hover{
+	border-style:dashed;
+	border-width:2px;
+	border-color: #000;
+}

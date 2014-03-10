@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWMenu", "HWMenu.csproj", "{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuTest", "http://localhost/MenuTest/MenuTest.csproj", "{60E242A8-108D-4AA3-99F2-16C9E0DF2A1E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Debug.ActiveCfg = Debug|.NET
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Debug.Build.0 = Debug|.NET
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Release.ActiveCfg = Release|.NET
+		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Release.Build.0 = Release|.NET
+		{60E242A8-108D-4AA3-99F2-16C9E0DF2A1E}.Debug.ActiveCfg = Debug|.NET
+		{60E242A8-108D-4AA3-99F2-16C9E0DF2A1E}.Debug.Build.0 = Debug|.NET
+		{60E242A8-108D-4AA3-99F2-16C9E0DF2A1E}.Release.ActiveCfg = Release|.NET
+		{60E242A8-108D-4AA3-99F2-16C9E0DF2A1E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

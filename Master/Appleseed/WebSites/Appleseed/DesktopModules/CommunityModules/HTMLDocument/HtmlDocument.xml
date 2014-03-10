@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appleseed.Modules.HtmlDocument</name>
+    </assembly>
+    <members>
+        <member name="T:Appleseed.Content.Web.ModulesHtmlEdit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.MobileSummary">
+            <summary>
+            Mobile Summary Textbox
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.MobileDetails">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.MobileRow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.PlaceHolderHTMLEditor">
+            <summary>
+            HtmlEditor placeholder
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.PlaceHolderButtons">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.Literal1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.Literal2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.Literal3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.Literal4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlEdit.DesktopText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlEdit.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The Page_Load event on this Page is used to obtain the ModuleID
+            of the xml module to edit.
+            It then uses the Appleseed.HtmlTextDB() data component
+            to populate the page's edit controls with the text details.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlEdit.OnUpdate(System.EventArgs)">
+            <summary>
+            The UpdateBtn_Click event handler on this Page is used to save
+            the text changes to the database.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlEdit.OnInit(System.EventArgs)">
+            <summary>
+            Raises OnInitEvent
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlEdit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlEdit.AllowedModules">
+            <summary>
+            Set the module guids with free access to this page
+            </summary>
+        </member>
+        <member name="T:Appleseed.Content.Web.ModulesHtmlModule">
+            <summary>
+            HTML Document Module
+            Represents any text that can contain HTML
+            Edited with HTMLeditors
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlModule.HtmlHolder">
+            <summary>
+            PlaceHolder for the HTML
+            </summary>
+        </member>
+        <member name="F:Appleseed.Content.Web.ModulesHtmlModule.HtmlLiteral">
+            <summary>
+            Takes the html text and does a path correction before loading 
+            to the HTML document placeholder
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.#ctor">
+            <summary>
+            HtmlModule Constructor
+            Set the Module Settings
+            <list type="">
+            <item>ShowMobile</item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The Page_Load event handler on this User Control is
+            used to render a block of HTML or text to the page.  
+            The text/HTML to render is stored in the HtmlText 
+            database table.  This method uses the Appleseed.HtmlTextDB()
+            data component to encapsulate all data functionality.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.CompareButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handle the request for comparison 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.BuildButtonLists">
+            <summary>
+            Override to add the Compare button to the button list
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.SearchSqlSelect(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Searchable module implementation
+            </summary>
+            <param name="portalID">The portal ID</param>
+            <param name="userID">ID of the user is searching</param>
+            <param name="searchString">The text to search</param>
+            <param name="searchField">The fields where perfoming the search</param>
+            <returns>The SELECT sql to perform a search on the current module</returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.OnInit(System.EventArgs)">
+            <summary>
+            OnInit
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.Install(System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="stateSaver"></param>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlModule.Uninstall(System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="stateSaver"></param>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlModule.SupportCompare">
+            <summary>
+            Check if setting allows version Compare button
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlModule.CanCompare">
+            <summary>
+            Permission for Compare and BackToStage buttons 
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlModule.CompareButton">
+            <summary>
+            The button toggles between displaying the staging content
+            and displaying the comparison of the staging with the 
+            production version with the differences hightlighted.
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlModule.IsComparing">
+            <summary>
+            Remember the status of the Compare Button to allow 
+            toggling between displaying comparison and staging 
+            content. 
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlModule.Searchable">
+            <summary>
+            Searchable module
+            </summary>
+        </member>
+        <member name="P:Appleseed.Content.Web.ModulesHtmlModule.GuidID">
+            <summary>
+            General Module Def GUID
+            </summary>
+        </member>
+        <member name="T:Appleseed.Content.Web.ModulesHtmlTextDB">
+            <summary>
+            Class that encapsulates all data logic necessary to add/query/delete
+            HTML/text within the Portal database.
+            </summary>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlTextDB.GetHtmlTextString(System.Int32,Appleseed.Framework.Site.Configuration.Appleseed.Framework.WorkFlowVersion)">
+            <summary>
+            GetHtmlTextString
+            </summary>
+            <param name="moduleID"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlTextDB.GetHtmlText(System.Int32)">
+            <summary>
+            The GetHtmlText method returns a SqlDataReader containing details
+            about a specific item from the HtmlText database table.
+            </summary>
+            <param name="moduleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlTextDB.GetHtmlText(System.Int32,Appleseed.Framework.Site.Configuration.Appleseed.Framework.WorkFlowVersion)">
+            <summary>
+            The GetHtmlText method returns a SqlDataReader containing details
+            about a specific item from the HtmlText database table.
+            </summary>
+            <param name="moduleID"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Appleseed.Content.Web.ModulesHtmlTextDB.UpdateHtmlText(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            The UpdateHtmlText method updates a specified item within
+            the HtmlText database table.
+            </summary>
+            <param name="moduleID"></param>
+            <param name="desktopHtml"></param>
+            <param name="mobileSummary"></param>
+            <param name="mobileDetails"></param>
+        </member>
+    </members>
+</doc>

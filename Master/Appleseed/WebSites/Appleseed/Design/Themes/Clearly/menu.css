@@ -1,0 +1,330 @@
+﻿	/*********************************************************/
+	/**************			place			******************/
+	/*********************************************************/
+.contenedor_menu{
+    position: relative;
+    width: 940px;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    z-index: 500;
+	top:10px;
+}    
+    
+.AspNet-Menu-Horizontal								/*		div contiene menu		*/
+{
+    z-index: 300;
+    padding: 0px 0px 0px 0px; 
+	height: 0px;
+	width:	940px;
+	margin:	0 ;
+    float: left;
+}
+
+.AspNet-Menu-Horizontal ul.AspNet-Menu  				/*		ul contiene al menu		*/
+{
+    width: auto;
+	height:28px;
+	padding-left:0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	margin:0px;
+	position: relative;
+	list-style: none;
+	z-index:150;
+	position:relative;
+    float: left;
+}
+ul.AspNet-Menu li.AspNet-Menu-WithChildren,
+ul.AspNet-Menu li.AspNet-Menu-Leaf{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:  0px 0px 0px 0px;
+	position:relative;
+	float:left;
+}
+
+
+	/*********************************************************/
+	/**************	       1st menu level		**************/
+	/*********************************************************/
+
+ul.AspNet-Menu li.AspNet-Menu-Leaf a.AspNet-Menu-Link:link, 
+ul.AspNet-Menu li.AspNet-Menu-Leaf a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:link, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren span.AspNet-Menu-NonLink
+{
+    background-color:none;
+    display: block;
+	font-family: 'QuicksandLight', serif;
+    font-size: 14px;
+    font-weight: normal;
+    height: 18px;
+	color:#000;
+    line-height: 1.2em;
+    margin-left: 12px;
+    margin-right: 0;
+    padding: 5px 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+}
+
+ul.AspNet-Menu li.AspNet-Menu-Leaf a.AspNet-Menu-Link:hover,
+ul.AspNet-Menu li.AspNet-Menu-Leaf a.AspNet-Menu-Link:focus, 
+
+ul.AspNet-Menu li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:focus, 
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren span.AspNet-Menu-NonLink:hover,
+        /*** Menu Hover Events  ***/
+ul.AspNet-Menu li.AspNet-Menu-WithChildren:hover a.AspNet-Menu-Link:link,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren:hover a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren:hover span.AspNet-Menu-NonLink
+{
+    background-color:#424242;
+    color: #fdfdfd;
+    display: block;
+	font-family: 'QuicksandLight', serif;
+    font-size: 14px;
+	font-weight: normal;
+    height: 18px;
+    line-height: 1.2em;
+    margin-left: 12px;
+    margin-right: 0;
+    padding: 5px 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:active,
+ul.AspNet-Menu li.AspNet-Menu-Leaf a.AspNet-Menu-Link:active{
+color:#666;
+margin-left:12px;
+margin-right:0px;
+}
+
+
+
+ul.AspNet-Menu li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren span.AspNet-Menu-NonLink:hover
+{
+	cursor:default;
+    outline: none;
+}	
+/*********************************************************/
+/*********************************************************/
+	
+	
+	/*********************************************************/
+	/**************		  2nd menu level		**************/
+	/*********************************************************/
+	
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul{
+	display: block;
+    float: left;
+    left: 10px;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    top: 28px;
+    visibility: hidden;
+    width: 150px;
+
+}
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	margin-left:0px;
+}
+
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:link, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:link, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren span.AspNet-Menu-NonLink
+{	background: url("../../DesktopLayouts/Clearly/images/bg_menu_2_nivel.png") repeat scroll 0 0 transparent;
+	width:	135px;
+	height:	30px;
+	display:	block;
+	font-size:12px;
+	font-family:Arial;
+	color:	#fff;
+	line-height:30px;
+	text-decoration: none;
+	font-weight:	normal;
+	text-align:	left;
+	padding: 0px 0px 0px 15px;
+    outline: none;
+    border: none;
+    text-transform: none;
+	margin-left:0px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+}
+
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:focus, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:active,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:focus, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren a.AspNet-Menu-Link:active,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren span.AspNet-Menu-NonLink:hover,
+        /*** Menu Hover Events  ***/
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren:hover a.AspNet-Menu-Link:link,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren:hover a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren:hover span.AspNet-Menu-NonLink
+{
+	width:	135px;
+	height:	30px;
+	display:	block;
+	font-size:	12px;
+	color:	#fff;
+	line-height:30px;
+	text-decoration: none;
+	font-weight:	normal;
+	font-family:Arial;
+	text-align:	left;
+	padding: 0px 0px 0px 15px;
+    outline: none;
+    border: none;
+    text-transform: none;
+    background-color: #2b2b2b;
+    background-image:none;
+	margin-left:0px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+	/*********************************************************/
+	/**************		  3rd menu level		**************/
+	/*********************************************************/
+
+	
+ ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul{
+	position:absolute;
+	left:150px;
+	top:0px;
+	display:block;
+	overflow:visible;
+	margin:0px 0px 0px 0px;
+	padding:0px;
+	float:left;
+	width:150px;
+    background:transparent;
+}
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:link, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:visited,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink
+{
+	width:	135px;
+	height:	30px;
+	display:	block;
+	font-size:	12px;
+	color:	#fff;
+	line-height:30px;
+	text-decoration: none;
+	font-weight:	normal;
+	text-align:	left;
+	padding: 0px 0px 0px 15px;
+    outline: none;
+    border: none;
+    text-transform: none;
+    background-image: none;
+    background: transparent;
+}
+
+
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:hover,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:focus, 
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf a.AspNet-Menu-Link:active,
+ul.AspNet-Menu li.AspNet-Menu-WithChildren ul li.AspNet-Menu-WithChildren ul li.AspNet-Menu-Leaf span.AspNet-Menu-NonLink:hover
+
+{
+	width:	135px;
+	height:	30px;
+	display:	block;
+	font-size:	12px;
+	color:	#0190ce;
+	line-height:30px;
+	text-decoration: none;
+	font-weight:	normal;
+	text-align:	left;
+	padding: 0px 0px 0px 15px;
+    outline: none;
+    border: none;
+    text-transform: none;
+    background-image: none;
+    background-color: #ffffff;
+}
+
+
+
+
+	/*************************************************************/
+	/**************		Menu Behavior DO NOT EDIT	**************/
+	/*************************************************************/
+    
+ul.AspNet-Menu li:hover ul ul,
+ul.AspNet-Menu li.AspNet-Menu-Hover ul ul
+{
+    visibility: hidden;}
+    
+ul.AspNet-Menu li:hover ul,
+ul.AspNet-Menu li li:hover ul,
+ul.AspNet-Menu li li li:hover ul,
+ul.AspNet-Menu li.AspNet-Menu-Hover ul,
+ul.AspNet-Menu li li.AspNet-Menu-Hover ul,
+ul.AspNet-Menu li li li.AspNet-Menu-Hover ul
+{
+    visibility: visible;    
+    display:block;
+}
+
+
+/* 
+
+Estructura
+
+<div class="AspNet-Menu-Horizontal">
+		<ul class="AspNet-Menu">						
+			<li class="AspNet-Menu-WithChildren">
+				<a class="AspNet-Menu-Link">Paquetes</a>
+				<ul>
+					<li class="AspNet-Menu-Leaf">
+						<a class="AspNet-Menu-Link">Caribe</a>
+					</li>
+*/
+
+.pwdClass {
+	width: 200px;
+	margin-left: 12px; 
+	margin-bottom: 9px;
+
+}

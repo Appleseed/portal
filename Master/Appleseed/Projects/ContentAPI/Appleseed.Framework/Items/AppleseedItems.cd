@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.4" />
+  <Class Name="Rainbow.Framework.Content.Items.ContentItem">
+    <Position X="17" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ContentItem.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAACAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.ContentItemCollection" Collapsed="true">
+    <Position X="16.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ContentItemCollection.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.PageCollection" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ContentItemCollection.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.PortalCollection" Collapsed="true">
+    <Position X="18.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ContentItemCollection.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.ModuleCollection" Collapsed="true">
+    <Position X="18.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ContentItemCollection.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.HtmlText">
+    <Position X="17" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\HtmlText.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.ModuleItem">
+    <Position X="20.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\ModuleItem.cs</FileName>
+      <HashCode>AAAAQAAAAAAAEACAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.PageItem">
+    <Position X="22.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\PageItem.cs</FileName>
+      <HashCode>AAIAAACAAAAAIAAAAACAAAAQAAAAAAAAAAAQAAgBAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.Items.PortalItem">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\PortalItem.cs</FileName>
+      <HashCode>AAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.RainbowItemEventArgs" Collapsed="true">
+    <Position X="20.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\RainbowItemEventArgs.cs</FileName>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rainbow.Framework.Content.RainbowItem">
+    <Position X="18.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Items\RainbowItem.cs</FileName>
+      <HashCode>AgEBQAADAAAAJCAAgAAAIABgAAAQCAAMAIAUAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

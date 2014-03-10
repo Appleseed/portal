@@ -1,0 +1,36 @@
+
+
+Add below to configSections :
+
+
+<sectionGroup name="blowery.web">
+			<section name="httpCompress" type="blowery.Web.HttpCompress.SectionHandler, blowery.Web.HttpCompress"/>
+		</sectionGroup>
+
+
+
+
+
+Add below as a section :		
+
+<blowery.web>
+		<!--
+			Here's an example on how to change the algorithm or compression level
+      <compressionModule preferredAlgorithm="deflate|gzip" compressionLevel="high|normal|low"/>
+			so, to use deflate by default, and high compression, you would use the following line -->
+			
+		<httpCompress preferredAlgorithm="deflate" compressionLevel="normal">
+			<excludedMimeTypes>
+				<add type="image/jpeg"/>
+				<add type="image/gif"/>
+			</excludedMimeTypes>
+			<excludedPaths>
+				<add path="WebResource.axd" />
+				<add path="FtbWebResource.axd" />
+				<!-- 
+				<add path="NoCompress.aspx"/>
+				-->
+			 </excludedPaths>
+		</httpCompress> 
+	</blowery.web>
+

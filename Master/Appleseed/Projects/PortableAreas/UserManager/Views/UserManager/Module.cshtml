@@ -1,0 +1,142 @@
+﻿@using Appleseed.Framework
+@model UserManager.Models.UserManagerModel
+
+  
+@*<script type= "text/javascript" src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/js/jquery-ui-1.7.custom.min.js")" ></script>
+<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/js/jquery.jqGrid.js")"></script>
+<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/UserManager/jquery-ui.min.js")"></script>*@
+
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <title>User Manager</title>    
+<link href="@HttpUrlBuilder.BuildUrl("~/aspnet_client/UserManager/jquery-ui.css")" rel="stylesheet" />
+<link href="@HttpUrlBuilder.BuildUrl("~/aspnet_client/js/ui.jqgrid.css")" rel="stylesheet" />
+<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/jquery-ui-1.9.2.min.js")"></script>
+<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/grid.locale-en.js")"></script>
+<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/UserManager/jquery.jqGrid.min.js")"></script>
+</head>  
+
+<table id="list5">
+</table> 
+<div id="pager5"></div> 
+
+<script type= "text/javascript">
+    
+    function Edit(url) {
+        openInModal(url.toString(), '@General.GetString("EDIT_USER")');
+        return false;
+    }
+    function Delete(id, userName) {
+        if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' + userName+ '?')) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Delete")',
+                data: {
+                    "userID": id,
+                },
+                success: function (data) {
+                    $('#list5').trigger('reloadGrid');
+                },
+            });
+        }
+        
+        return true;
+
+    }
+
+    function search() {
+        var textVal = jQuery("#textSearch").val();
+        jQuery("#list5").jqGrid('setGridParam', { url: '@Url.Action("GridUser")?search=' + textVal, page: 1 });
+        $("#list5").trigger("reloadGrid");
+        
+    }
+
+    function searchBotton() {
+        if ((13 == event.keyCode) || (13 == event.which)) { event.preventDefault(); search(); }
+    }
+    
+    $(document).ready(function () {
+    $("#list5").jqGrid({
+        scroll: 1,
+            colNames: ["UserName", "Email", "Rol", "", ""],
+            colModel: [
+                { name: 'UserName', index: 'UserName', sortable: false },
+                { name: 'Email',    index: 'Email',    width: 300, sortable: false },
+                { name: 'Rol',      index: 'Rol',      sortable: false },
+                { name: 'Edit',     index: 'Edit',     width: 50, align: "center", formatter: formatterLink },
+                { name: 'Delete',   index: 'Delete',   width: 50, align: "center", formatter: formatterDeleteLink },
+            ],
+            pager: "#pager5",
+            sortname: 'UserName',
+            rowNum: 15,
+            rowList: [15, 30, 45],
+            sortorder: "",
+            url: '@Url.Action("GridUser")',
+            datatype: "json",
+            mtype: "POST",
+            hiddengrid: true,
+            width: '100%',
+            height: "350",
+            toolbar: [true, "top"],
+      viewrecords: true,
+    }).navGrid("#pager5", { edit: false, add: false, del: false, search: false, refresh: false,  })
+        .navButtonAdd("#pager5",
+            {
+                caption: '',
+                buttonicon: "ui-icon ui-icon-refresh",
+                onClickButton: function () {
+                    jQuery("#list5").jqGrid('setGridParam', { url: '@Url.Action("GridUser")', page: 1 });
+                    $("#list5").trigger("reloadGrid");
+                },
+            }
+        )
+        .navButtonAdd("#pager5",
+            {
+                caption: '@General.GetString("ADD_NEW_USER")',
+                buttonicon: "ui-icon ui-icon-plus",
+                onClickButton: function () {
+                    openInModal("@Model.UserEmail", '@General.GetString("USER_REGISTRY")');
+                    return false;
+                },
+                position: "first"
+            }
+        ).jqGrid('setLabel', 'Email', '', { width: 300 }
+        ).jqGrid('setLabel', 'Edit', '', { width: 45 }
+        ).jqGrid('setLabel', 'Delete', '', { width: 45 });
+
+    //$(".ui-icon-circle-triangle-n").hide();
+        
+    $(".ui-jqgrid-titlebar-close").click(function () {
+        if (document.getElementsByClassName("ui-icon-circle-triangle-s").length == 0) {
+            $(".ui-state-default").hide();
+            $(".ui-jqgrid-bdiv").hide();
+            $(".ui-icon-circle-triangle-n").removeClass("ui-icon-circle-triangle-n").addClass("ui-icon-circle-triangle-s");
+        } else {
+            $(".ui-state-default").show();
+            $(".ui-jqgrid-bdiv").show();
+            $(".ui-icon-circle-triangle-s").removeClass("ui-icon-circle-triangle-s").addClass("ui-icon-circle-triangle-n");
+        }
+    });
+        
+    var toolbarClone = $('#pager5_left').clone(true);
+    $('#t_list5').prepend(toolbarClone);
+
+    function formatterLink(cellValue, options, rowObject) { 
+        var result = "<a class='ui-icon ui-icon-pencil' href='#' onclick=\"Edit('" + rowObject.EditId + "');return false;\" style= \"color: blue; text-decoration: none;margin-left: 15px; \">" + cellValue + "</a>";
+        return result;
+    }
+    function formatterDeleteLink(cellValue, options, rowObject) {
+        var result = "<a class='ui-icon ui-icon-trash' onclick=\"Delete('" + rowObject.UserId + "', '" + rowObject.UserName + "')\" href=\"#\" style= \"color: blue; text-decoration: none; margin-left: 15px; \">" + cellValue + "</a>";
+        return result;
+    }
+
+    $("#list5").setCaption(
+        '<input type="search" onkeydown="searchBotton()" name="item_code" id="textSearch" placeholder=\'@General.GetString("search")\' />' +
+        '<span style="vertical-align:middle; display:inline-block;" class="ui-icon ui-icon-search" onclick="search();return false;"></span>');
+    });
+    
+   
+    
+
+
+</script>

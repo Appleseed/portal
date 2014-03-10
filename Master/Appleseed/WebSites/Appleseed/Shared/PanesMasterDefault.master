@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="Shared_PanesMasterDefault" Codebehind="PanesMasterDefault.master.cs" %>
+<% if (Request.Browser.Browser.StartsWith("IE")) { %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<% } %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <script type="text/javascript" src="/aspnet_client/js/browser_upgrade_notification.js"></script>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <asp:ContentPlaceHolder ID="ContentPane" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

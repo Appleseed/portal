@@ -1,0 +1,108 @@
+﻿
+        body
+        {
+            background-color: #606060;
+            color: #000000;
+            font-family: Tahoma, Arial, Helvetica;
+        }
+        
+        div, td, a, a:visited
+        {
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 11px;
+            color: #000000;
+        }
+        h2
+        {
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 20px;
+        }
+        .buttons
+        {
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 11px;
+            width: 90px;
+        }
+        .mainTitle
+        {
+            display: block;
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 14px;
+            font-weight: 900;
+            color: #369;
+            background-color: #cecece;
+            padding: 10px;
+        }
+        .thisframe
+        {
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 11px;
+        }
+        .bold
+        {
+            font-weight: 900;
+        }
+        .dataentry
+        {
+            width: 150px;
+        }
+        TABLE.err
+        {
+            border: 1px solid #999999;
+            margin-top: 8px;
+        }
+        TH.err
+        {
+            background-color: #999999;
+            color: #000000;
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px;
+        }
+        TD.err
+        {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Tahoma, Arial, Helvetica;
+            font-size: 10px;
+            padding: 2px;
+        }
+        
+        
+        .stepselected
+        {
+            display: block;
+            color: #FFF;
+            background-color: #036;
+            width: 175px;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+        
+        .stepnotselected
+        {
+            display: block;
+            color: #FFF;
+            background-color: #369;
+            width: 175px;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+        
+        .wizardsection
+        {
+            padding: 10px;
+            border: 2px solid #cecece;
+            background-color: #fff;
+        }
+        
+        .wizardsectionheader
+        {
+            padding: 5px;
+            border: 2px solid #cecece;
+            background-color: #369;
+            color: #fff;
+            font-size: 12px;
+        }
+    

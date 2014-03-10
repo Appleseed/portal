@@ -1,0 +1,9 @@
+4/10/2004
+First relese by José Viladiu
+Some tweak by Manu an John
+Move here WebPathCombine by Manu
+Improved performance with single db by Manu
+
+
+Manu: Fixed wrong assumptions on key present in web.config
+

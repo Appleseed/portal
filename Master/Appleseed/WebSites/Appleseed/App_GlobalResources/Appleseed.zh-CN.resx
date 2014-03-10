@@ -1,0 +1,5460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABI" xml:space="preserve">
+    <value>ABI</value>
+  </data>
+  <data name="ABSTRACT" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>我接受期限和條件</value>
+  </data>
+  <data name="ACCEPT_TERMS" xml:space="preserve">
+    <value>我接受期限和條件</value>
+  </data>
+  <data name="ACCESS_DENIED" xml:space="preserve">
+    <value>通入否认了</value>
+  </data>
+  <data name="ACCESS_DENIED_MESSAGE" xml:space="preserve">
+    <value>Either you are not currently logged in, or you do not have access to this tab page within the portal. Please contact the portal administrator to obtain access.</value>
+  </data>
+  <data name="ACCESSDENIED" xml:space="preserve">
+    <value>存取拒絕</value>
+  </data>
+  <data name="ACCOUNT_INFO" xml:space="preserve">
+    <value>帳號資訊</value>
+  </data>
+  <data name="ACCOUNT_LOGIN" xml:space="preserve">
+    <value>帳號登入</value>
+  </data>
+  <data name="ADD" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ADD_ARTICLE" xml:space="preserve">
+    <value>简单现在时</value>
+  </data>
+  <data name="ADD_DOCUMENT" xml:space="preserve">
+    <value>新增文件</value>
+  </data>
+  <data name="ADD_NEW" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="ADD_NEW_USER" xml:space="preserve">
+    <value>新增使用者</value>
+  </data>
+  <data name="ADD_PORTAL" xml:space="preserve">
+    <value>加入口</value>
+  </data>
+  <data name="ADD_VEHICLE" xml:space="preserve">
+    <value>增加车</value>
+  </data>
+  <data name="ADDRESS" xml:space="preserve">
+    <value>单数</value>
+  </data>
+  <data name="ADDTAB" xml:space="preserve">
+    <value>新增頁面</value>
+  </data>
+  <data name="ADDUSER" xml:space="preserve">
+    <value>將此使用者加入此群組</value>
+  </data>
+  <data name="ADMIN_MODULE" xml:space="preserve">
+    <value>是/否 管理者?</value>
+  </data>
+  <data name="ADVPAYM" xml:space="preserve">
+    <value>預先付款</value>
+  </data>
+  <data name="ALBUMPATH" xml:space="preserve">
+    <value>册页道路</value>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="ALLOWBULKLOAD" xml:space="preserve">
+    <value>ALLOWBULKLOAD</value>
+  </data>
+  <data name="ALLOWNEWREGISTRATIONS" xml:space="preserve">
+    <value>允许新记录?</value>
+  </data>
+  <data name="ALLOWNEWREGISTRATIONS_DESCRIPTION" xml:space="preserve">
+    <value>检查这给用户记数器。留下空白为记数器通过用户经理唯一。</value>
+  </data>
+  <data name="ALPHA_LIST_DESCRIPTION" xml:space="preserve">
+    <value>ALPHA_LIST_DESCRIPTION</value>
+  </data>
+  <data name="ALPHA_LIST_ITEM_DETAILS" xml:space="preserve">
+    <value>ALPHA_LIST_ITEM_DETAILS</value>
+  </data>
+  <data name="ALPHA_LIST_LABEL1" xml:space="preserve">
+    <value>ALPHA_LIST_LABEL1</value>
+  </data>
+  <data name="ALPHA_LIST_LABEL2" xml:space="preserve">
+    <value>ALPHA_LIST_LABEL2</value>
+  </data>
+  <data name="ALPHA_LIST_READMORELINK" xml:space="preserve">
+    <value>ALPHA_LIST_READMORELINK</value>
+  </data>
+  <data name="ALPHA_LIST_TITLE" xml:space="preserve">
+    <value>ALPHA_LIST_TITLE</value>
+  </data>
+  <data name="ALREADY_REGISTERED" xml:space="preserve">
+    <value>is already registered.</value>
+  </data>
+  <data name="ALREADY_REGISTERED1" xml:space="preserve">
+    <value>If you already have an account</value>
+  </data>
+  <data name="AM_ADDMODULE" xml:space="preserve">
+    <value>Add Module</value>
+  </data>
+  <data name="AM_ADDMODULEBELOW" xml:space="preserve">
+    <value>Add to "Organize Modules" Below</value>
+  </data>
+  <data name="AM_ADDMODULETOTAB" xml:space="preserve">
+    <value>AM_ADDMODULETOTAB</value>
+  </data>
+  <data name="AM_ADDROLE" xml:space="preserve">
+    <value>Add New Role</value>
+  </data>
+  <data name="AM_BASESOLUTION" xml:space="preserve">
+    <value>Base solution</value>
+  </data>
+  <data name="AM_CENTERPANEL" xml:space="preserve">
+    <value>Center Pane</value>
+  </data>
+  <data name="AM_LEFTPANEL" xml:space="preserve">
+    <value>Left Mini Pane</value>
+  </data>
+  <data name="AM_MOBILETAB" xml:space="preserve">
+    <value>Mobile Tab Name:</value>
+  </data>
+  <data name="AM_MODULELOCATION" xml:space="preserve">
+    <value>AM_MODULELOCATION</value>
+  </data>
+  <data name="AM_MODULENAME" xml:space="preserve">
+    <value>Module Name:</value>
+  </data>
+  <data name="AM_MODULETYPE" xml:space="preserve">
+    <value>Module Type</value>
+  </data>
+  <data name="AM_MODULEVISIBLETO" xml:space="preserve">
+    <value>AM_MODULEVISIBLETO</value>
+  </data>
+  <data name="AM_ORGANIZEMODULE" xml:space="preserve">
+    <value>Organize Modules</value>
+  </data>
+  <data name="AM_PORTALALIAS" xml:space="preserve">
+    <value>Portal Alias</value>
+  </data>
+  <data name="AM_PORTALID" xml:space="preserve">
+    <value>Portal ID</value>
+  </data>
+  <data name="AM_RIGHTPANEL" xml:space="preserve">
+    <value>Right Mini Pane</value>
+  </data>
+  <data name="AM_ROLESAUTH" xml:space="preserve">
+    <value>Authorized Roles</value>
+  </data>
+  <data name="AM_SHOWEDIT" xml:space="preserve">
+    <value>Always show edit button?</value>
+  </data>
+  <data name="AM_SHOWMOBILE" xml:space="preserve">
+    <value>Show to mobile users</value>
+  </data>
+  <data name="AM_SITEPATH" xml:space="preserve">
+    <value>Site Path</value>
+  </data>
+  <data name="AM_SITETITLE" xml:space="preserve">
+    <value>Site Title</value>
+  </data>
+  <data name="AM_TABNAME" xml:space="preserve">
+    <value>Tab Name and Layout</value>
+  </data>
+  <data name="AM_TABNAME1" xml:space="preserve">
+    <value>Tab Name</value>
+  </data>
+  <data name="AM_TABS" xml:space="preserve">
+    <value>Tabs</value>
+  </data>
+  <data name="AM_THEME" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="ANNOUNCES_ADD" xml:space="preserve">
+    <value>Add new Announce</value>
+  </data>
+  <data name="ANNOUNCES_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ANNOUNCES_DETAILS" xml:space="preserve">
+    <value>Announcement Details</value>
+  </data>
+  <data name="ANNOUNCES_EXPIRES" xml:space="preserve">
+    <value>Expires</value>
+  </data>
+  <data name="ANNOUNCES_READ_MORE_LINK" xml:space="preserve">
+    <value>Read More Link</value>
+  </data>
+  <data name="ANNOUNCES_READ_MORE_MOBILE" xml:space="preserve">
+    <value>Read More (Mobile)</value>
+  </data>
+  <data name="ANNOUNCES_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="ANNOUNCES_VALID_DESCRIPTION" xml:space="preserve">
+    <value>You Must Enter a Valid Description</value>
+  </data>
+  <data name="ANNOUNCES_VALID_EXPIRE" xml:space="preserve">
+    <value>You Must Enter a Valid Expiration Date</value>
+  </data>
+  <data name="ANNOUNCES_VALID_TITLE" xml:space="preserve">
+    <value>You Must Enter a Valid Title</value>
+  </data>
+  <data name="APOLOGISE" xml:space="preserve">
+    <value>APOLOGISE</value>
+  </data>
+  <data name="APPLY" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="APPLY_CHANGES" xml:space="preserve">
+    <value>Apply changes</value>
+  </data>
+  <data name="APPLY_MODULE_CHANGES" xml:space="preserve">
+    <value>Apply module changes</value>
+  </data>
+  <data name="APPLYBUTTON" xml:space="preserve">
+    <value>Apply Changes</value>
+  </data>
+  <data name="APPLYMODULECHANGES" xml:space="preserve">
+    <value>APPLYMODULECHANGES</value>
+  </data>
+  <data name="APPLYNAME" xml:space="preserve">
+    <value>Apply Name and Password Changes</value>
+  </data>
+  <data name="APPLYTHEME" xml:space="preserve">
+    <value>Apply Theme</value>
+  </data>
+  <data name="APPLYTHEME_DESCRIPTION" xml:space="preserve">
+    <value>Check this box to apply theme to this module</value>
+  </data>
+  <data name="APPROVE_MODULE_CONTENT" xml:space="preserve">
+    <value>APPROVE_MODULE_CONTENT</value>
+  </data>
+  <data name="AREA" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="ARTICLE_DETAIL" xml:space="preserve">
+    <value>Article Detail</value>
+  </data>
+  <data name="AT_ADDTAB" xml:space="preserve">
+    <value>AT_ADDTAB</value>
+  </data>
+  <data name="AT_JUMPTOTAB" xml:space="preserve">
+    <value>AT_JUMPTOTAB</value>
+  </data>
+  <data name="AT_MOBILETABNAME" xml:space="preserve">
+    <value>AT_MOBILETABNAME</value>
+  </data>
+  <data name="AT_SHOWMOBILE" xml:space="preserve">
+    <value>AT_SHOWMOBILE</value>
+  </data>
+  <data name="AT_TABPARENT" xml:space="preserve">
+    <value>AT_TABPARENT</value>
+  </data>
+  <data name="AT_TABTITLE" xml:space="preserve">
+    <value>AT_TABTITLE</value>
+  </data>
+  <data name="AUTHOR" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="BACK" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BANK" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="BG_BG" xml:space="preserve">
+    <value>BG_BG</value>
+  </data>
+  <data name="BG_BG_DESCRIPTION" xml:space="preserve">
+    <value>BG_BG_DESCRIPTION</value>
+  </data>
+  <data name="BIND_OPTION_CHILDREN" xml:space="preserve">
+    <value>BIND_OPTION_CHILDREN</value>
+  </data>
+  <data name="BIND_OPTION_CURRENT_CHILDS" xml:space="preserve">
+    <value>BIND_OPTION_CURRENT_CHILDS</value>
+  </data>
+  <data name="BIND_OPTION_DEFINED_PARENT" xml:space="preserve">
+    <value>BIND_OPTION_DEFINED_PARENT</value>
+  </data>
+  <data name="BIND_OPTION_NONE" xml:space="preserve">
+    <value>BIND_OPTION_NONE</value>
+  </data>
+  <data name="BIND_OPTION_SIBLINGS" xml:space="preserve">
+    <value>BIND_OPTION_SIBLINGS</value>
+  </data>
+  <data name="BIND_OPTION_SUBTAB_SIBLING" xml:space="preserve">
+    <value>BIND_OPTION_SUBTAB_SIBLING</value>
+  </data>
+  <data name="BIND_OPTION_TABSIBLING" xml:space="preserve">
+    <value>BIND_OPTION_TABSIBLING</value>
+  </data>
+  <data name="BIND_OPTION_TOP" xml:space="preserve">
+    <value>BIND_OPTION_TOP</value>
+  </data>
+  <data name="BINDTOTAB" xml:space="preserve">
+    <value>BINDTOTAB</value>
+  </data>
+  <data name="BLACKLIST" xml:space="preserve">
+    <value>BLACKLIST</value>
+  </data>
+  <data name="BLACKLIST_ADD" xml:space="preserve">
+    <value>BLACKLIST_ADD</value>
+  </data>
+  <data name="BLACKLIST_ALL" xml:space="preserve">
+    <value>BLACKLIST_ALL</value>
+  </data>
+  <data name="BLACKLIST_DATE" xml:space="preserve">
+    <value>BLACKLIST_DATE</value>
+  </data>
+  <data name="BLACKLIST_EMAIL" xml:space="preserve">
+    <value>BLACKLIST_EMAIL</value>
+  </data>
+  <data name="BLACKLIST_LASTSEND" xml:space="preserve">
+    <value>BLACKLIST_LASTSEND</value>
+  </data>
+  <data name="BLACKLIST_NAME" xml:space="preserve">
+    <value>BLACKLIST_NAME</value>
+  </data>
+  <data name="BLACKLIST_NONE" xml:space="preserve">
+    <value>BLACKLIST_NONE</value>
+  </data>
+  <data name="BLACKLIST_REASON" xml:space="preserve">
+    <value>BLACKLIST_REASON</value>
+  </data>
+  <data name="BLACKLIST_SENDNEWSLETTER" xml:space="preserve">
+    <value>BLACKLIST_SENDNEWSLETTER</value>
+  </data>
+  <data name="BLACKLIST_SHOWALLUSERS" xml:space="preserve">
+    <value>BLACKLIST_SHOWALLUSERS</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNDATE" xml:space="preserve">
+    <value>BLACKLIST_SHOWCOLUMNDATE</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNEMAIL" xml:space="preserve">
+    <value>BLACKLIST_SHOWCOLUMNEMAIL</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNLASTSEND" xml:space="preserve">
+    <value>BLACKLIST_SHOWCOLUMNLASTSEND</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNNAME" xml:space="preserve">
+    <value>BLACKLIST_SHOWCOLUMNNAME</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNREASON" xml:space="preserve">
+    <value>BLACKLIST_SHOWCOLUMNREASON</value>
+  </data>
+  <data name="BLACKLIST_SHOWCOLUMNSENDNEWSLETTER" xml:space="preserve">
+    <value>BLACKLIST_SHOWCOLUMNSENDNEWSLETTER</value>
+  </data>
+  <data name="BLACKLIST_SHOWSUBSCRIBERSONLY" xml:space="preserve">
+    <value>BLACKLIST_SHOWSUBSCRIBERSONLY</value>
+  </data>
+  <data name="BLACKLIST_SORTFIELD" xml:space="preserve">
+    <value>BLACKLIST_SORTFIELD</value>
+  </data>
+  <data name="BLACKLISTED" xml:space="preserve">
+    <value>BLACKLISTED</value>
+  </data>
+  <data name="BLOG_ARCHIVES" xml:space="preserve">
+    <value>BLOG_ARCHIVES</value>
+  </data>
+  <data name="BLOG_COMMENTS" xml:space="preserve">
+    <value>评论</value>
+  </data>
+  <data name="BLOG_ENTRIES" xml:space="preserve">
+    <value>词条</value>
+  </data>
+  <data name="BLOG_ENTRY" xml:space="preserve">
+    <value>BLOG_ENTRY</value>
+  </data>
+  <data name="BLOG_FEEDBACK" xml:space="preserve">
+    <value>反馈 (</value>
+  </data>
+  <data name="BLOG_NAME" xml:space="preserve">
+    <value>BLOG_NAME</value>
+  </data>
+  <data name="BLOG_POSTED" xml:space="preserve">
+    <value>BLOG_POSTED</value>
+  </data>
+  <data name="BLOG_POSTSFROM" xml:space="preserve">
+    <value>岗位从</value>
+  </data>
+  <data name="BLOG_REMEMBER_ME" xml:space="preserve">
+    <value>BLOG_REMEMBER_ME</value>
+  </data>
+  <data name="BLOG_STATISTICS" xml:space="preserve">
+    <value>BLOG_STATISTICS</value>
+  </data>
+  <data name="BLOG_SYNDICATION" xml:space="preserve">
+    <value>BLOG_SYNDICATION</value>
+  </data>
+  <data name="BLOG_TITLE" xml:space="preserve">
+    <value>BLOG_TITLE</value>
+  </data>
+  <data name="BLOG_TITLE_FEEDBACK" xml:space="preserve">
+    <value>BLOG_TITLE_FEEDBACK</value>
+  </data>
+  <data name="BLOG_URL" xml:space="preserve">
+    <value>BLOG_URL</value>
+  </data>
+  <data name="BOTTOM" xml:space="preserve">
+    <value>按鈕</value>
+  </data>
+  <data name="BTN_HELP" xml:space="preserve">
+    <value>显示帮助关于这个模块</value>
+  </data>
+  <data name="BTN_PRINT" xml:space="preserve">
+    <value>打印这</value>
+  </data>
+  <data name="BUTTON_DISPLAY_SETTINGS" xml:space="preserve">
+    <value>按钮和显示选项</value>
+  </data>
+  <data name="BUYNOW" xml:space="preserve">
+    <value>現在購買</value>
+  </data>
+  <data name="CA" xml:space="preserve">
+    <value>CA</value>
+  </data>
+  <data name="CA_DESCRIPTION" xml:space="preserve">
+    <value>CA_DESCRIPTION</value>
+  </data>
+  <data name="CAB" xml:space="preserve">
+    <value>CAB</value>
+  </data>
+  <data name="CACHETIMEOUT" xml:space="preserve">
+    <value>快取時間限制</value>
+  </data>
+  <data name="CACHETIMEOUT_DESCRIPTION" xml:space="preserve">
+    <value>贮藏所暂停(在几秒钟内)</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CAPTION" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="CAT" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="CATEGORY" xml:space="preserve">
+    <value>種類</value>
+  </data>
+  <data name="CATS" xml:space="preserve">
+    <value>cats</value>
+  </data>
+  <data name="CENTER" xml:space="preserve">
+    <value>中心</value>
+  </data>
+  <data name="CFISCALE" xml:space="preserve">
+    <value>身分證字號</value>
+  </data>
+  <data name="CHANGE_DATE" xml:space="preserve">
+    <value>Change date</value>
+  </data>
+  <data name="CHANGE_LANGUAGE" xml:space="preserve">
+    <value>变化语言</value>
+  </data>
+  <data name="CHANGE_PASSWORD" xml:space="preserve">
+    <value>改变密码只如果您要修改它:</value>
+  </data>
+  <data name="CHECKOUT" xml:space="preserve">
+    <value>Check out</value>
+  </data>
+  <data name="CHECKOUT_ADDRESS" xml:space="preserve">
+    <value>CHECKOUT_ADDRESS</value>
+  </data>
+  <data name="CHECKOUT_AUTHORIZE" xml:space="preserve">
+    <value>You need to confirm your order</value>
+  </data>
+  <data name="CHECKOUT_CART_IS_EMPTY" xml:space="preserve">
+    <value>There are currently no items in your shopping cart!</value>
+  </data>
+  <data name="CHECKOUT_CC_EXPIRY" xml:space="preserve">
+    <value>Expiration date:</value>
+  </data>
+  <data name="CHECKOUT_CC_NAME" xml:space="preserve">
+    <value>Name on the card:</value>
+  </data>
+  <data name="CHECKOUT_CC_NUMBER" xml:space="preserve">
+    <value>Card number:</value>
+  </data>
+  <data name="CHECKOUT_CC_TYPE" xml:space="preserve">
+    <value>Card type:</value>
+  </data>
+  <data name="CHECKOUT_CFISCALE" xml:space="preserve">
+    <value>CHECKOUT_CFISCALE</value>
+  </data>
+  <data name="CHECKOUT_CITY" xml:space="preserve">
+    <value>CHECKOUT_CITY</value>
+  </data>
+  <data name="CHECKOUT_COMPANY" xml:space="preserve">
+    <value>CHECKOUT_COMPANY</value>
+  </data>
+  <data name="CHECKOUT_COPY_TO_SHIPPING_INFO" xml:space="preserve">
+    <value>Reset my shipping information with my account information</value>
+  </data>
+  <data name="CHECKOUT_COUNTRY" xml:space="preserve">
+    <value>CHECKOUT_COUNTRY</value>
+  </data>
+  <data name="CHECKOUT_EMAIL" xml:space="preserve">
+    <value>CHECKOUT_EMAIL</value>
+  </data>
+  <data name="CHECKOUT_ERROR_PROCESSING_CART" xml:space="preserve">
+    <value>CHECKOUT_ERROR_PROCESSING_CART</value>
+  </data>
+  <data name="CHECKOUT_ERROR_PROCESSING_SHIPPING" xml:space="preserve">
+    <value>CHECKOUT_ERROR_PROCESSING_SHIPPING</value>
+  </data>
+  <data name="CHECKOUT_FAX" xml:space="preserve">
+    <value>CHECKOUT_FAX</value>
+  </data>
+  <data name="CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT" xml:space="preserve">
+    <value>Please make sure that the above email address is correct as it will be used to send a copy of your order.</value>
+  </data>
+  <data name="CHECKOUT_MAKE_SURE_ADDRESS_IS_CORRECT_2" xml:space="preserve">
+    <value>If it is not the case, please.</value>
+  </data>
+  <data name="CHECKOUT_NAME" xml:space="preserve">
+    <value>CHECKOUT_NAME</value>
+  </data>
+  <data name="CHECKOUT_PHONE" xml:space="preserve">
+    <value>CHECKOUT_PHONE</value>
+  </data>
+  <data name="CHECKOUT_PIVA" xml:space="preserve">
+    <value>CHECKOUT_PIVA</value>
+  </data>
+  <data name="CHECKOUT_PROV_STATE" xml:space="preserve">
+    <value>CHECKOUT_PROV_STATE</value>
+  </data>
+  <data name="CHECKOUT_SELECT_PAYMENT" xml:space="preserve">
+    <value>Select payment method</value>
+  </data>
+  <data name="CHECKOUT_SEND_NEWSLETTER" xml:space="preserve">
+    <value>CHECKOUT_SEND_NEWSLETTER</value>
+  </data>
+  <data name="CHECKOUT_STEP1" xml:space="preserve">
+    <value>STEP 1/4: Profile Information</value>
+  </data>
+  <data name="CHECKOUT_STEP2" xml:space="preserve">
+    <value>STEP 2/4: Shipping Information</value>
+  </data>
+  <data name="CHECKOUT_STEP3" xml:space="preserve">
+    <value>STEP 3/4: Calculate Final Price</value>
+  </data>
+  <data name="CHECKOUT_STEP4" xml:space="preserve">
+    <value>STEP 4/4: Process Payment</value>
+  </data>
+  <data name="CHECKOUT_TOTAL_PRODUCT" xml:space="preserve">
+    <value>Total Products:</value>
+  </data>
+  <data name="CHECKOUT_TOTAL_SHIPPING" xml:space="preserve">
+    <value>Total Shipping:</value>
+  </data>
+  <data name="CHECKOUT_VERIFY_INFORMATION" xml:space="preserve">
+    <value>Please verify the information below to make sure it is correct.</value>
+  </data>
+  <data name="CHECKOUT_VERIFY_INFORMATION_CLICK_BACK" xml:space="preserve">
+    <value>Click on the back button to go to the previous step, click on the continue button to proceed to the next step.</value>
+  </data>
+  <data name="CHECKOUT_ZIP" xml:space="preserve">
+    <value>CHECKOUT_ZIP</value>
+  </data>
+  <data name="CITY" xml:space="preserve">
+    <value>城市</value>
+  </data>
+  <data name="CL_ABOS" xml:space="preserve">
+    <value>CL_ABOS</value>
+  </data>
+  <data name="CL_ABS" xml:space="preserve">
+    <value>CL_ABS</value>
+  </data>
+  <data name="CL_ACTP" xml:space="preserve">
+    <value>CL_ACTP</value>
+  </data>
+  <data name="CL_ACTPROJ" xml:space="preserve">
+    <value>CL_ACTPROJ</value>
+  </data>
+  <data name="CL_ADDAUT" xml:space="preserve">
+    <value>CL_ADDAUT</value>
+  </data>
+  <data name="CL_ADDINFO" xml:space="preserve">
+    <value>CL_ADDINFO</value>
+  </data>
+  <data name="CL_ADDTIT" xml:space="preserve">
+    <value>CL_ADDTIT</value>
+  </data>
+  <data name="CL_AENDERUNG" xml:space="preserve">
+    <value>CL_AENDERUNG</value>
+  </data>
+  <data name="CL_AKADEG" xml:space="preserve">
+    <value>CL_AKADEG</value>
+  </data>
+  <data name="CL_ALLCAT" xml:space="preserve">
+    <value>CL_ALLCAT</value>
+  </data>
+  <data name="CL_ANREDE" xml:space="preserve">
+    <value>CL_ANREDE</value>
+  </data>
+  <data name="CL_ARBEITSBEREICH" xml:space="preserve">
+    <value>CL_ARBEITSBEREICH</value>
+  </data>
+  <data name="CL_ARBEITSFELDER" xml:space="preserve">
+    <value>CL_ARBEITSFELDER</value>
+  </data>
+  <data name="CL_ARCB" xml:space="preserve">
+    <value>CL_ARCB</value>
+  </data>
+  <data name="CL_AUT" xml:space="preserve">
+    <value>CL_AUT</value>
+  </data>
+  <data name="CL_AXS" xml:space="preserve">
+    <value>CL_AXS</value>
+  </data>
+  <data name="CL_BACKL" xml:space="preserve">
+    <value>CL_BACKL</value>
+  </data>
+  <data name="CL_beitraeger_id" xml:space="preserve">
+    <value>CL_beitraeger_id</value>
+  </data>
+  <data name="CL_Beitraeger_Titel" xml:space="preserve">
+    <value>CL_Beitraeger_Titel</value>
+  </data>
+  <data name="CL_BIB" xml:space="preserve">
+    <value>CL_BIB</value>
+  </data>
+  <data name="CL_BIBDATA" xml:space="preserve">
+    <value>CL_BIBDATA</value>
+  </data>
+  <data name="CL_BIBDESC" xml:space="preserve">
+    <value>CL_BIBDESC</value>
+  </data>
+  <data name="CL_BLANKF" xml:space="preserve">
+    <value>CL_BLANKF</value>
+  </data>
+  <data name="CL_BREZAUSSTELLUNG" xml:space="preserve">
+    <value>CL_BREZAUSSTELLUNG</value>
+  </data>
+  <data name="CL_BREZBUCH" xml:space="preserve">
+    <value>CL_BREZBUCH</value>
+  </data>
+  <data name="CL_BREZCD" xml:space="preserve">
+    <value>CL_BREZCD</value>
+  </data>
+  <data name="CL_BREZWEB" xml:space="preserve">
+    <value>CL_BREZWEB</value>
+  </data>
+  <data name="CL_CHANGEPW" xml:space="preserve">
+    <value>CL_CHANGEPW</value>
+  </data>
+  <data name="CL_CITAT" xml:space="preserve">
+    <value>CL_CITAT</value>
+  </data>
+  <data name="CL_CITY" xml:space="preserve">
+    <value>CL_CITY</value>
+  </data>
+  <data name="CL_CITYOVR" xml:space="preserve">
+    <value>CL_CITYOVR</value>
+  </data>
+  <data name="CL_CLASSIF" xml:space="preserve">
+    <value>CL_CLASSIF</value>
+  </data>
+  <data name="CL_CNT" xml:space="preserve">
+    <value>CL_CNT</value>
+  </data>
+  <data name="CL_COA" xml:space="preserve">
+    <value>CL_COA</value>
+  </data>
+  <data name="CL_COL" xml:space="preserve">
+    <value>CL_COL</value>
+  </data>
+  <data name="CL_COM" xml:space="preserve">
+    <value>CL_COM</value>
+  </data>
+  <data name="CL_CONI" xml:space="preserve">
+    <value>CL_CONI</value>
+  </data>
+  <data name="CL_CONT" xml:space="preserve">
+    <value>CL_CONT</value>
+  </data>
+  <data name="CL_CORPAUT" xml:space="preserve">
+    <value>CL_CORPAUT</value>
+  </data>
+  <data name="CL_COU" xml:space="preserve">
+    <value>CL_COU</value>
+  </data>
+  <data name="CL_COV" xml:space="preserve">
+    <value>CL_COV</value>
+  </data>
+  <data name="CL_CTC" xml:space="preserve">
+    <value>CL_CTC</value>
+  </data>
+  <data name="CL_CUR" xml:space="preserve">
+    <value>CL_CUR</value>
+  </data>
+  <data name="CL_CURINST" xml:space="preserve">
+    <value>CL_CURINST</value>
+  </data>
+  <data name="CL_DATE" xml:space="preserve">
+    <value>CL_DATE</value>
+  </data>
+  <data name="CL_DATSRC" xml:space="preserve">
+    <value>CL_DATSRC</value>
+  </data>
+  <data name="CL_DDCD" xml:space="preserve">
+    <value>CL_DDCD</value>
+  </data>
+  <data name="CL_DDCE" xml:space="preserve">
+    <value>CL_DDCE</value>
+  </data>
+  <data name="CL_DDCR" xml:space="preserve">
+    <value>CL_DDCR</value>
+  </data>
+  <data name="CL_DEP" xml:space="preserve">
+    <value>CL_DEP</value>
+  </data>
+  <data name="CL_DERF" xml:space="preserve">
+    <value>CL_DERF</value>
+  </data>
+  <data name="CL_DESC" xml:space="preserve">
+    <value>CL_DESC</value>
+  </data>
+  <data name="CL_DFG" xml:space="preserve">
+    <value>CL_DFG</value>
+  </data>
+  <data name="CL_DISCIP" xml:space="preserve">
+    <value>CL_DISCIP</value>
+  </data>
+  <data name="CL_DIST" xml:space="preserve">
+    <value>CL_DIST</value>
+  </data>
+  <data name="CL_EDIT" xml:space="preserve">
+    <value>CL_EDIT</value>
+  </data>
+  <data name="CL_EMAIL" xml:space="preserve">
+    <value>CL_EMAIL</value>
+  </data>
+  <data name="CL_EMP" xml:space="preserve">
+    <value>CL_EMP</value>
+  </data>
+  <data name="CL_EMPLOY" xml:space="preserve">
+    <value>CL_EMPLOY</value>
+  </data>
+  <data name="CL_EPOCH" xml:space="preserve">
+    <value>CL_EPOCH</value>
+  </data>
+  <data name="CL_EVAL" xml:space="preserve">
+    <value>CL_EVAL</value>
+  </data>
+  <data name="CL_EXT" xml:space="preserve">
+    <value>CL_EXT</value>
+  </data>
+  <data name="CL_EXTRAS" xml:space="preserve">
+    <value>CL_EXTRAS</value>
+  </data>
+  <data name="CL_FAX" xml:space="preserve">
+    <value>CL_FAX</value>
+  </data>
+  <data name="CL_FMK" xml:space="preserve">
+    <value>CL_FMK</value>
+  </data>
+  <data name="CL_FON" xml:space="preserve">
+    <value>CL_FON</value>
+  </data>
+  <data name="CL_FORM" xml:space="preserve">
+    <value>CL_FORM</value>
+  </data>
+  <data name="CL_FORMAT" xml:space="preserve">
+    <value>CL_FORMAT</value>
+  </data>
+  <data name="CL_FORMP" xml:space="preserve">
+    <value>CL_FORMP</value>
+  </data>
+  <data name="CL_FULLTEXT_SHORTTEXTERROR" xml:space="preserve">
+    <value>CL_FULLTEXT_SHORTTEXTERROR</value>
+  </data>
+  <data name="CL_GOTO" xml:space="preserve">
+    <value>CL_GOTO</value>
+  </data>
+  <data name="CL_HELP" xml:space="preserve">
+    <value>CL_HELP</value>
+  </data>
+  <data name="CL_HIST" xml:space="preserve">
+    <value>CL_HIST</value>
+  </data>
+  <data name="CL_HOLD" xml:space="preserve">
+    <value>CL_HOLD</value>
+  </data>
+  <data name="CL_HSKCONTACTDATA" xml:space="preserve">
+    <value>CL_HSKCONTACTDATA</value>
+  </data>
+  <data name="CL_HSKREVIEWER" xml:space="preserve">
+    <value>CL_HSKREVIEWER</value>
+  </data>
+  <data name="CL_IMPART" xml:space="preserve">
+    <value>CL_IMPART</value>
+  </data>
+  <data name="CL_IMPC" xml:space="preserve">
+    <value>CL_IMPC</value>
+  </data>
+  <data name="CL_IMPP" xml:space="preserve">
+    <value>CL_IMPP</value>
+  </data>
+  <data name="CL_IMPY" xml:space="preserve">
+    <value>CL_IMPY</value>
+  </data>
+  <data name="CL_INDEX" xml:space="preserve">
+    <value>CL_INDEX</value>
+  </data>
+  <data name="CL_INST" xml:space="preserve">
+    <value>CL_INST</value>
+  </data>
+  <data name="CL_INSTDATA" xml:space="preserve">
+    <value>CL_INSTDATA</value>
+  </data>
+  <data name="CL_InstID" xml:space="preserve">
+    <value>CL_InstID</value>
+  </data>
+  <data name="CL_INSTITUT" xml:space="preserve">
+    <value>CL_INSTITUT</value>
+  </data>
+  <data name="CL_INSTITUTIONDETAILS" xml:space="preserve">
+    <value>CL_INSTITUTIONDETAILS</value>
+  </data>
+  <data name="CL_INSTSELECT" xml:space="preserve">
+    <value>CL_INSTSELECT</value>
+  </data>
+  <data name="CL_INSTTIT" xml:space="preserve">
+    <value>CL_INSTTIT</value>
+  </data>
+  <data name="CL_INV" xml:space="preserve">
+    <value>CL_INV</value>
+  </data>
+  <data name="CL_IP_NUMMER" xml:space="preserve">
+    <value>CL_IP_NUMMER</value>
+  </data>
+  <data name="CL_ISBN" xml:space="preserve">
+    <value>CL_ISBN</value>
+  </data>
+  <data name="CL_ISSN" xml:space="preserve">
+    <value>CL_ISSN</value>
+  </data>
+  <data name="CL_JDG" xml:space="preserve">
+    <value>CL_JDG</value>
+  </data>
+  <data name="CL_JDGT" xml:space="preserve">
+    <value>CL_JDGT</value>
+  </data>
+  <data name="CL_JOBCONTACT" xml:space="preserve">
+    <value>CL_JOBCONTACT</value>
+  </data>
+  <data name="CL_JOBPOSITION" xml:space="preserve">
+    <value>CL_JOBPOSITION</value>
+  </data>
+  <data name="CL_KEYE" xml:space="preserve">
+    <value>CL_KEYE</value>
+  </data>
+  <data name="CL_KEYG" xml:space="preserve">
+    <value>CL_KEYG</value>
+  </data>
+  <data name="CL_KWRD" xml:space="preserve">
+    <value>CL_KWRD</value>
+  </data>
+  <data name="CL_LANG" xml:space="preserve">
+    <value>CL_LANG</value>
+  </data>
+  <data name="CL_LANGO" xml:space="preserve">
+    <value>CL_LANGO</value>
+  </data>
+  <data name="CL_LANGP" xml:space="preserve">
+    <value>CL_LANGP</value>
+  </data>
+  <data name="CL_MAINWORK" xml:space="preserve">
+    <value>CL_MAINWORK</value>
+  </data>
+  <data name="CL_METASEARCH" xml:space="preserve">
+    <value>CL_METASEARCH</value>
+  </data>
+  <data name="CL_MGM" xml:space="preserve">
+    <value>CL_MGM</value>
+  </data>
+  <data name="CL_MIR" xml:space="preserve">
+    <value>CL_MIR</value>
+  </data>
+  <data name="CL_MONDIS" xml:space="preserve">
+    <value>CL_MONDIS</value>
+  </data>
+  <data name="CL_NEWPASSWORD" xml:space="preserve">
+    <value>CL_NEWPASSWORD</value>
+  </data>
+  <data name="CL_NEWS" xml:space="preserve">
+    <value>CL_NEWS</value>
+  </data>
+  <data name="CL_NFH" xml:space="preserve">
+    <value>CL_NFH</value>
+  </data>
+  <data name="CL_NNAME" xml:space="preserve">
+    <value>CL_NNAME</value>
+  </data>
+  <data name="CL_NOTE" xml:space="preserve">
+    <value>CL_NOTE</value>
+  </data>
+  <data name="CL_ORG" xml:space="preserve">
+    <value>CL_ORG</value>
+  </data>
+  <data name="CL_OTHWORK" xml:space="preserve">
+    <value>CL_OTHWORK</value>
+  </data>
+  <data name="CL_PARTNERS" xml:space="preserve">
+    <value>CL_PARTNERS</value>
+  </data>
+  <data name="CL_PERSCONTACT" xml:space="preserve">
+    <value>CL_PERSCONTACT</value>
+  </data>
+  <data name="CL_PERSDATA" xml:space="preserve">
+    <value>CL_PERSDATA</value>
+  </data>
+  <data name="CL_PERSONEPOCHE" xml:space="preserve">
+    <value>CL_PERSONEPOCHE</value>
+  </data>
+  <data name="CL_PERSONGESCHICHTE" xml:space="preserve">
+    <value>CL_PERSONGESCHICHTE</value>
+  </data>
+  <data name="CL_PERSONREGION" xml:space="preserve">
+    <value>CL_PERSONREGION</value>
+  </data>
+  <data name="CL_POX" xml:space="preserve">
+    <value>CL_POX</value>
+  </data>
+  <data name="CL_PUB" xml:space="preserve">
+    <value>CL_PUB</value>
+  </data>
+  <data name="CL_PUBL" xml:space="preserve">
+    <value>CL_PUBL</value>
+  </data>
+  <data name="CL_PUBLCA" xml:space="preserve">
+    <value>CL_PUBLCA</value>
+  </data>
+  <data name="CL_Appleseed" xml:space="preserve">
+    <value>CL_Appleseed</value>
+  </data>
+  <data name="CL_REGION" xml:space="preserve">
+    <value>CL_REGION</value>
+  </data>
+  <data name="CL_REM" xml:space="preserve">
+    <value>CL_REM</value>
+  </data>
+  <data name="CL_RESDIR" xml:space="preserve">
+    <value>CL_RESDIR</value>
+  </data>
+  <data name="CL_REST" xml:space="preserve">
+    <value>CL_REST</value>
+  </data>
+  <data name="CL_REV" xml:space="preserve">
+    <value>CL_REV</value>
+  </data>
+  <data name="CL_REZ" xml:space="preserve">
+    <value>CL_REZ</value>
+  </data>
+  <data name="CL_REZFELDER" xml:space="preserve">
+    <value>CL_REZFELDER</value>
+  </data>
+  <data name="CL_REZVORSCHLAG" xml:space="preserve">
+    <value>CL_REZVORSCHLAG</value>
+  </data>
+  <data name="CL_REZWUNSCH" xml:space="preserve">
+    <value>CL_REZWUNSCH</value>
+  </data>
+  <data name="CL_RSR" xml:space="preserve">
+    <value>CL_RSR</value>
+  </data>
+  <data name="CL_SCHORES" xml:space="preserve">
+    <value>CL_SCHORES</value>
+  </data>
+  <data name="CL_SERIES" xml:space="preserve">
+    <value>CL_SERIES</value>
+  </data>
+  <data name="CL_SERVICES" xml:space="preserve">
+    <value>CL_SERVICES</value>
+  </data>
+  <data name="CL_SIZE" xml:space="preserve">
+    <value>CL_SIZE</value>
+  </data>
+  <data name="CL_SPECINT" xml:space="preserve">
+    <value>CL_SPECINT</value>
+  </data>
+  <data name="CL_STAT" xml:space="preserve">
+    <value>CL_STAT</value>
+  </data>
+  <data name="CL_STR" xml:space="preserve">
+    <value>CL_STR</value>
+  </data>
+  <data name="CL_SUBURL" xml:space="preserve">
+    <value>CL_SUBURL</value>
+  </data>
+  <data name="CL_SUGURL" xml:space="preserve">
+    <value>CL_SUGURL</value>
+  </data>
+  <data name="CL_THISCAT" xml:space="preserve">
+    <value>CL_THISCAT</value>
+  </data>
+  <data name="CL_TIT" xml:space="preserve">
+    <value>CL_TIT</value>
+  </data>
+  <data name="CL_UNITIT" xml:space="preserve">
+    <value>CL_UNITIT</value>
+  </data>
+  <data name="CL_UPDATESAVE" xml:space="preserve">
+    <value>CL_UPDATESAVE</value>
+  </data>
+  <data name="CL_VNAME" xml:space="preserve">
+    <value>CL_VNAME</value>
+  </data>
+  <data name="CL_W" xml:space="preserve">
+    <value>CL_W</value>
+  </data>
+  <data name="CL_WEBDIR" xml:space="preserve">
+    <value>CL_WEBDIR</value>
+  </data>
+  <data name="CL_ZIP" xml:space="preserve">
+    <value>CL_ZIP</value>
+  </data>
+  <data name="COLLECTION_PROPERTIES" xml:space="preserve">
+    <value>種類</value>
+  </data>
+  <data name="COMPANY" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CONDITIONS" xml:space="preserve">
+    <value>工作內容</value>
+  </data>
+  <data name="CONFIRM" xml:space="preserve">
+    <value>確認密碼</value>
+  </data>
+  <data name="CONFIRM_DELETE" xml:space="preserve">
+    <value>刪除此項目?</value>
+  </data>
+  <data name="CONTACT" xml:space="preserve">
+    <value>联络</value>
+  </data>
+  <data name="CONTACT_ADDRESS" xml:space="preserve">
+    <value>CONTACT_ADDRESS</value>
+  </data>
+  <data name="CONTACT_CONTACT1" xml:space="preserve">
+    <value>CONTACT_CONTACT1</value>
+  </data>
+  <data name="CONTACT_CONTACT2" xml:space="preserve">
+    <value>CONTACT_CONTACT2</value>
+  </data>
+  <data name="CONTACT_EMAIL" xml:space="preserve">
+    <value>CONTACT_EMAIL</value>
+  </data>
+  <data name="CONTACT_FAX" xml:space="preserve">
+    <value>CONTACT_FAX</value>
+  </data>
+  <data name="CONTACT_NAME" xml:space="preserve">
+    <value>CONTACT_NAME</value>
+  </data>
+  <data name="CONTACT_ROLE" xml:space="preserve">
+    <value>CONTACT_ROLE</value>
+  </data>
+  <data name="CONTACTS_ADD" xml:space="preserve">
+    <value>Add new contact</value>
+  </data>
+  <data name="CONTACTS_ADDRESS" xml:space="preserve">
+    <value>CONTACTS_ADDRESS</value>
+  </data>
+  <data name="CONTACTS_CONTACT1" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="CONTACTS_CONTACT2" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="CONTACTS_DETAILS" xml:space="preserve">
+    <value>Contact Details</value>
+  </data>
+  <data name="CONTACTS_EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="CONTACTS_FAX" xml:space="preserve">
+    <value>CONTACTS_FAX</value>
+  </data>
+  <data name="CONTACTS_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CONTACTS_ROLE" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="CONTACTS_VALID_NAME" xml:space="preserve">
+    <value>您必須輸入一個合法的名字</value>
+  </data>
+  <data name="CONTENTTYPE" xml:space="preserve">
+    <value>CONTENTTYPE</value>
+  </data>
+  <data name="CONTINUE" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="COPYALL" xml:space="preserve">
+    <value>COPYALL</value>
+  </data>
+  <data name="COPYITEM" xml:space="preserve">
+    <value>COPYITEM</value>
+  </data>
+  <data name="COUNTRIESFILTER" xml:space="preserve">
+    <value>Allowed countries</value>
+  </data>
+  <data name="COUNTRIESFILTER_DESCRIPTION" xml:space="preserve">
+    <value>Allowed countries limits country list in RegisterFull page, leave blank for all.</value>
+  </data>
+  <data name="COUNTRY" xml:space="preserve">
+    <value>Country/Region</value>
+  </data>
+  <data name="COUNTRY_AD" xml:space="preserve">
+    <value>COUNTRY_AD</value>
+  </data>
+  <data name="COUNTRY_AE" xml:space="preserve">
+    <value>COUNTRY_AE</value>
+  </data>
+  <data name="COUNTRY_AF" xml:space="preserve">
+    <value>COUNTRY_AF</value>
+  </data>
+  <data name="COUNTRY_AG" xml:space="preserve">
+    <value>COUNTRY_AG</value>
+  </data>
+  <data name="COUNTRY_AI" xml:space="preserve">
+    <value>COUNTRY_AI</value>
+  </data>
+  <data name="COUNTRY_AL" xml:space="preserve">
+    <value>COUNTRY_AL</value>
+  </data>
+  <data name="COUNTRY_AM" xml:space="preserve">
+    <value>COUNTRY_AM</value>
+  </data>
+  <data name="COUNTRY_AN" xml:space="preserve">
+    <value>COUNTRY_AN</value>
+  </data>
+  <data name="COUNTRY_AO" xml:space="preserve">
+    <value>COUNTRY_AO</value>
+  </data>
+  <data name="COUNTRY_AQ" xml:space="preserve">
+    <value>COUNTRY_AQ</value>
+  </data>
+  <data name="COUNTRY_AR" xml:space="preserve">
+    <value>COUNTRY_AR</value>
+  </data>
+  <data name="COUNTRY_AS" xml:space="preserve">
+    <value>COUNTRY_AS</value>
+  </data>
+  <data name="COUNTRY_AT" xml:space="preserve">
+    <value>COUNTRY_AT</value>
+  </data>
+  <data name="COUNTRY_AU" xml:space="preserve">
+    <value>COUNTRY_AU</value>
+  </data>
+  <data name="COUNTRY_AW" xml:space="preserve">
+    <value>COUNTRY_AW</value>
+  </data>
+  <data name="COUNTRY_AZ" xml:space="preserve">
+    <value>COUNTRY_AZ</value>
+  </data>
+  <data name="COUNTRY_BA" xml:space="preserve">
+    <value>COUNTRY_BA</value>
+  </data>
+  <data name="COUNTRY_BB" xml:space="preserve">
+    <value>COUNTRY_BB</value>
+  </data>
+  <data name="COUNTRY_BD" xml:space="preserve">
+    <value>COUNTRY_BD</value>
+  </data>
+  <data name="COUNTRY_BE" xml:space="preserve">
+    <value>COUNTRY_BE</value>
+  </data>
+  <data name="COUNTRY_BF" xml:space="preserve">
+    <value>COUNTRY_BF</value>
+  </data>
+  <data name="COUNTRY_BG" xml:space="preserve">
+    <value>COUNTRY_BG</value>
+  </data>
+  <data name="COUNTRY_BH" xml:space="preserve">
+    <value>COUNTRY_BH</value>
+  </data>
+  <data name="COUNTRY_BI" xml:space="preserve">
+    <value>COUNTRY_BI</value>
+  </data>
+  <data name="COUNTRY_BJ" xml:space="preserve">
+    <value>COUNTRY_BJ</value>
+  </data>
+  <data name="COUNTRY_BM" xml:space="preserve">
+    <value>COUNTRY_BM</value>
+  </data>
+  <data name="COUNTRY_BN" xml:space="preserve">
+    <value>COUNTRY_BN</value>
+  </data>
+  <data name="COUNTRY_BO" xml:space="preserve">
+    <value>COUNTRY_BO</value>
+  </data>
+  <data name="COUNTRY_BR" xml:space="preserve">
+    <value>COUNTRY_BR</value>
+  </data>
+  <data name="COUNTRY_BS" xml:space="preserve">
+    <value>COUNTRY_BS</value>
+  </data>
+  <data name="COUNTRY_BT" xml:space="preserve">
+    <value>COUNTRY_BT</value>
+  </data>
+  <data name="COUNTRY_BV" xml:space="preserve">
+    <value>COUNTRY_BV</value>
+  </data>
+  <data name="COUNTRY_BW" xml:space="preserve">
+    <value>COUNTRY_BW</value>
+  </data>
+  <data name="COUNTRY_BY" xml:space="preserve">
+    <value>COUNTRY_BY</value>
+  </data>
+  <data name="COUNTRY_BZ" xml:space="preserve">
+    <value>COUNTRY_BZ</value>
+  </data>
+  <data name="COUNTRY_CA" xml:space="preserve">
+    <value>COUNTRY_CA</value>
+  </data>
+  <data name="COUNTRY_CC" xml:space="preserve">
+    <value>COUNTRY_CC</value>
+  </data>
+  <data name="COUNTRY_CD" xml:space="preserve">
+    <value>COUNTRY_CD</value>
+  </data>
+  <data name="COUNTRY_CF" xml:space="preserve">
+    <value>COUNTRY_CF</value>
+  </data>
+  <data name="COUNTRY_CG" xml:space="preserve">
+    <value>COUNTRY_CG</value>
+  </data>
+  <data name="COUNTRY_CH" xml:space="preserve">
+    <value>COUNTRY_CH</value>
+  </data>
+  <data name="COUNTRY_CI" xml:space="preserve">
+    <value>COUNTRY_CI</value>
+  </data>
+  <data name="COUNTRY_CK" xml:space="preserve">
+    <value>COUNTRY_CK</value>
+  </data>
+  <data name="COUNTRY_CL" xml:space="preserve">
+    <value>COUNTRY_CL</value>
+  </data>
+  <data name="COUNTRY_CM" xml:space="preserve">
+    <value>COUNTRY_CM</value>
+  </data>
+  <data name="COUNTRY_CN" xml:space="preserve">
+    <value>COUNTRY_CN</value>
+  </data>
+  <data name="COUNTRY_CO" xml:space="preserve">
+    <value>COUNTRY_CO</value>
+  </data>
+  <data name="COUNTRY_CR" xml:space="preserve">
+    <value>COUNTRY_CR</value>
+  </data>
+  <data name="COUNTRY_CU" xml:space="preserve">
+    <value>COUNTRY_CU</value>
+  </data>
+  <data name="COUNTRY_CV" xml:space="preserve">
+    <value>COUNTRY_CV</value>
+  </data>
+  <data name="COUNTRY_CX" xml:space="preserve">
+    <value>COUNTRY_CX</value>
+  </data>
+  <data name="COUNTRY_CY" xml:space="preserve">
+    <value>COUNTRY_CY</value>
+  </data>
+  <data name="COUNTRY_CZ" xml:space="preserve">
+    <value>COUNTRY_CZ</value>
+  </data>
+  <data name="COUNTRY_DE" xml:space="preserve">
+    <value>COUNTRY_DE</value>
+  </data>
+  <data name="COUNTRY_DJ" xml:space="preserve">
+    <value>COUNTRY_DJ</value>
+  </data>
+  <data name="COUNTRY_DK" xml:space="preserve">
+    <value>COUNTRY_DK</value>
+  </data>
+  <data name="COUNTRY_DM" xml:space="preserve">
+    <value>COUNTRY_DM</value>
+  </data>
+  <data name="COUNTRY_DO" xml:space="preserve">
+    <value>COUNTRY_DO</value>
+  </data>
+  <data name="COUNTRY_DZ" xml:space="preserve">
+    <value>COUNTRY_DZ</value>
+  </data>
+  <data name="COUNTRY_EC" xml:space="preserve">
+    <value>COUNTRY_EC</value>
+  </data>
+  <data name="COUNTRY_EE" xml:space="preserve">
+    <value>COUNTRY_EE</value>
+  </data>
+  <data name="COUNTRY_EG" xml:space="preserve">
+    <value>COUNTRY_EG</value>
+  </data>
+  <data name="COUNTRY_ER" xml:space="preserve">
+    <value>COUNTRY_ER</value>
+  </data>
+  <data name="COUNTRY_ES" xml:space="preserve">
+    <value>COUNTRY_ES</value>
+  </data>
+  <data name="COUNTRY_ET" xml:space="preserve">
+    <value>COUNTRY_ET</value>
+  </data>
+  <data name="COUNTRY_FI" xml:space="preserve">
+    <value>COUNTRY_FI</value>
+  </data>
+  <data name="COUNTRY_FJ" xml:space="preserve">
+    <value>COUNTRY_FJ</value>
+  </data>
+  <data name="COUNTRY_FK" xml:space="preserve">
+    <value>COUNTRY_FK</value>
+  </data>
+  <data name="COUNTRY_FM" xml:space="preserve">
+    <value>COUNTRY_FM</value>
+  </data>
+  <data name="COUNTRY_FO" xml:space="preserve">
+    <value>COUNTRY_FO</value>
+  </data>
+  <data name="COUNTRY_FR" xml:space="preserve">
+    <value>COUNTRY_FR</value>
+  </data>
+  <data name="COUNTRY_GA" xml:space="preserve">
+    <value>COUNTRY_GA</value>
+  </data>
+  <data name="COUNTRY_GB" xml:space="preserve">
+    <value>COUNTRY_GB</value>
+  </data>
+  <data name="COUNTRY_GD" xml:space="preserve">
+    <value>COUNTRY_GD</value>
+  </data>
+  <data name="COUNTRY_GE" xml:space="preserve">
+    <value>COUNTRY_GE</value>
+  </data>
+  <data name="COUNTRY_GF" xml:space="preserve">
+    <value>COUNTRY_GF</value>
+  </data>
+  <data name="COUNTRY_GH" xml:space="preserve">
+    <value>COUNTRY_GH</value>
+  </data>
+  <data name="COUNTRY_GI" xml:space="preserve">
+    <value>COUNTRY_GI</value>
+  </data>
+  <data name="COUNTRY_GL" xml:space="preserve">
+    <value>COUNTRY_GL</value>
+  </data>
+  <data name="COUNTRY_GM" xml:space="preserve">
+    <value>COUNTRY_GM</value>
+  </data>
+  <data name="COUNTRY_GN" xml:space="preserve">
+    <value>COUNTRY_GN</value>
+  </data>
+  <data name="COUNTRY_GP" xml:space="preserve">
+    <value>COUNTRY_GP</value>
+  </data>
+  <data name="COUNTRY_GQ" xml:space="preserve">
+    <value>COUNTRY_GQ</value>
+  </data>
+  <data name="COUNTRY_GR" xml:space="preserve">
+    <value>COUNTRY_GR</value>
+  </data>
+  <data name="COUNTRY_GS" xml:space="preserve">
+    <value>COUNTRY_GS</value>
+  </data>
+  <data name="COUNTRY_GT" xml:space="preserve">
+    <value>COUNTRY_GT</value>
+  </data>
+  <data name="COUNTRY_GU" xml:space="preserve">
+    <value>COUNTRY_GU</value>
+  </data>
+  <data name="COUNTRY_GW" xml:space="preserve">
+    <value>COUNTRY_GW</value>
+  </data>
+  <data name="COUNTRY_GY" xml:space="preserve">
+    <value>COUNTRY_GY</value>
+  </data>
+  <data name="COUNTRY_HK" xml:space="preserve">
+    <value>COUNTRY_HK</value>
+  </data>
+  <data name="COUNTRY_HM" xml:space="preserve">
+    <value>COUNTRY_HM</value>
+  </data>
+  <data name="COUNTRY_HN" xml:space="preserve">
+    <value>COUNTRY_HN</value>
+  </data>
+  <data name="COUNTRY_HR" xml:space="preserve">
+    <value>COUNTRY_HR</value>
+  </data>
+  <data name="COUNTRY_HT" xml:space="preserve">
+    <value>COUNTRY_HT</value>
+  </data>
+  <data name="COUNTRY_HU" xml:space="preserve">
+    <value>COUNTRY_HU</value>
+  </data>
+  <data name="COUNTRY_ID" xml:space="preserve">
+    <value>COUNTRY_ID</value>
+  </data>
+  <data name="COUNTRY_IE" xml:space="preserve">
+    <value>COUNTRY_IE</value>
+  </data>
+  <data name="COUNTRY_IL" xml:space="preserve">
+    <value>COUNTRY_IL</value>
+  </data>
+  <data name="COUNTRY_IN" xml:space="preserve">
+    <value>COUNTRY_IN</value>
+  </data>
+  <data name="COUNTRY_IO" xml:space="preserve">
+    <value>COUNTRY_IO</value>
+  </data>
+  <data name="COUNTRY_IQ" xml:space="preserve">
+    <value>COUNTRY_IQ</value>
+  </data>
+  <data name="COUNTRY_IR" xml:space="preserve">
+    <value>COUNTRY_IR</value>
+  </data>
+  <data name="COUNTRY_IS" xml:space="preserve">
+    <value>COUNTRY_IS</value>
+  </data>
+  <data name="COUNTRY_IT" xml:space="preserve">
+    <value>COUNTRY_IT</value>
+  </data>
+  <data name="COUNTRY_JM" xml:space="preserve">
+    <value>COUNTRY_JM</value>
+  </data>
+  <data name="COUNTRY_JO" xml:space="preserve">
+    <value>COUNTRY_JO</value>
+  </data>
+  <data name="COUNTRY_JP" xml:space="preserve">
+    <value>COUNTRY_JP</value>
+  </data>
+  <data name="COUNTRY_KE" xml:space="preserve">
+    <value>COUNTRY_KE</value>
+  </data>
+  <data name="COUNTRY_KG" xml:space="preserve">
+    <value>COUNTRY_KG</value>
+  </data>
+  <data name="COUNTRY_KH" xml:space="preserve">
+    <value>COUNTRY_KH</value>
+  </data>
+  <data name="COUNTRY_KI" xml:space="preserve">
+    <value>COUNTRY_KI</value>
+  </data>
+  <data name="COUNTRY_KM" xml:space="preserve">
+    <value>COUNTRY_KM</value>
+  </data>
+  <data name="COUNTRY_KN" xml:space="preserve">
+    <value>COUNTRY_KN</value>
+  </data>
+  <data name="COUNTRY_KP" xml:space="preserve">
+    <value>COUNTRY_KP</value>
+  </data>
+  <data name="COUNTRY_KR" xml:space="preserve">
+    <value>COUNTRY_KR</value>
+  </data>
+  <data name="COUNTRY_KW" xml:space="preserve">
+    <value>COUNTRY_KW</value>
+  </data>
+  <data name="COUNTRY_KY" xml:space="preserve">
+    <value>COUNTRY_KY</value>
+  </data>
+  <data name="COUNTRY_KZ" xml:space="preserve">
+    <value>COUNTRY_KZ</value>
+  </data>
+  <data name="COUNTRY_LA" xml:space="preserve">
+    <value>COUNTRY_LA</value>
+  </data>
+  <data name="COUNTRY_LB" xml:space="preserve">
+    <value>COUNTRY_LB</value>
+  </data>
+  <data name="COUNTRY_LC" xml:space="preserve">
+    <value>COUNTRY_LC</value>
+  </data>
+  <data name="COUNTRY_LI" xml:space="preserve">
+    <value>COUNTRY_LI</value>
+  </data>
+  <data name="COUNTRY_LK" xml:space="preserve">
+    <value>COUNTRY_LK</value>
+  </data>
+  <data name="COUNTRY_LR" xml:space="preserve">
+    <value>COUNTRY_LR</value>
+  </data>
+  <data name="COUNTRY_LS" xml:space="preserve">
+    <value>COUNTRY_LS</value>
+  </data>
+  <data name="COUNTRY_LT" xml:space="preserve">
+    <value>COUNTRY_LT</value>
+  </data>
+  <data name="COUNTRY_LU" xml:space="preserve">
+    <value>COUNTRY_LU</value>
+  </data>
+  <data name="COUNTRY_LV" xml:space="preserve">
+    <value>COUNTRY_LV</value>
+  </data>
+  <data name="COUNTRY_LY" xml:space="preserve">
+    <value>COUNTRY_LY</value>
+  </data>
+  <data name="COUNTRY_MA" xml:space="preserve">
+    <value>COUNTRY_MA</value>
+  </data>
+  <data name="COUNTRY_MC" xml:space="preserve">
+    <value>COUNTRY_MC</value>
+  </data>
+  <data name="COUNTRY_MD" xml:space="preserve">
+    <value>COUNTRY_MD</value>
+  </data>
+  <data name="COUNTRY_MG" xml:space="preserve">
+    <value>COUNTRY_MG</value>
+  </data>
+  <data name="COUNTRY_MH" xml:space="preserve">
+    <value>COUNTRY_MH</value>
+  </data>
+  <data name="COUNTRY_MK" xml:space="preserve">
+    <value>COUNTRY_MK</value>
+  </data>
+  <data name="COUNTRY_ML" xml:space="preserve">
+    <value>COUNTRY_ML</value>
+  </data>
+  <data name="COUNTRY_MM" xml:space="preserve">
+    <value>COUNTRY_MM</value>
+  </data>
+  <data name="COUNTRY_MN" xml:space="preserve">
+    <value>COUNTRY_MN</value>
+  </data>
+  <data name="COUNTRY_MO" xml:space="preserve">
+    <value>COUNTRY_MO</value>
+  </data>
+  <data name="COUNTRY_MP" xml:space="preserve">
+    <value>COUNTRY_MP</value>
+  </data>
+  <data name="COUNTRY_MQ" xml:space="preserve">
+    <value>COUNTRY_MQ</value>
+  </data>
+  <data name="COUNTRY_MR" xml:space="preserve">
+    <value>COUNTRY_MR</value>
+  </data>
+  <data name="COUNTRY_MS" xml:space="preserve">
+    <value>COUNTRY_MS</value>
+  </data>
+  <data name="COUNTRY_MT" xml:space="preserve">
+    <value>COUNTRY_MT</value>
+  </data>
+  <data name="COUNTRY_MU" xml:space="preserve">
+    <value>COUNTRY_MU</value>
+  </data>
+  <data name="COUNTRY_MV" xml:space="preserve">
+    <value>COUNTRY_MV</value>
+  </data>
+  <data name="COUNTRY_MW" xml:space="preserve">
+    <value>COUNTRY_MW</value>
+  </data>
+  <data name="COUNTRY_MX" xml:space="preserve">
+    <value>COUNTRY_MX</value>
+  </data>
+  <data name="COUNTRY_MY" xml:space="preserve">
+    <value>COUNTRY_MY</value>
+  </data>
+  <data name="COUNTRY_MZ" xml:space="preserve">
+    <value>COUNTRY_MZ</value>
+  </data>
+  <data name="COUNTRY_NA" xml:space="preserve">
+    <value>COUNTRY_NA</value>
+  </data>
+  <data name="COUNTRY_NC" xml:space="preserve">
+    <value>COUNTRY_NC</value>
+  </data>
+  <data name="COUNTRY_NE" xml:space="preserve">
+    <value>COUNTRY_NE</value>
+  </data>
+  <data name="COUNTRY_NF" xml:space="preserve">
+    <value>COUNTRY_NF</value>
+  </data>
+  <data name="COUNTRY_NG" xml:space="preserve">
+    <value>COUNTRY_NG</value>
+  </data>
+  <data name="COUNTRY_NI" xml:space="preserve">
+    <value>COUNTRY_NI</value>
+  </data>
+  <data name="COUNTRY_NL" xml:space="preserve">
+    <value>COUNTRY_NL</value>
+  </data>
+  <data name="COUNTRY_NN" xml:space="preserve">
+    <value>COUNTRY_NN</value>
+  </data>
+  <data name="COUNTRY_NO" xml:space="preserve">
+    <value>COUNTRY_NO</value>
+  </data>
+  <data name="COUNTRY_NP" xml:space="preserve">
+    <value>COUNTRY_NP</value>
+  </data>
+  <data name="COUNTRY_NR" xml:space="preserve">
+    <value>COUNTRY_NR</value>
+  </data>
+  <data name="COUNTRY_NU" xml:space="preserve">
+    <value>COUNTRY_NU</value>
+  </data>
+  <data name="COUNTRY_NZ" xml:space="preserve">
+    <value>COUNTRY_NZ</value>
+  </data>
+  <data name="COUNTRY_OM" xml:space="preserve">
+    <value>COUNTRY_OM</value>
+  </data>
+  <data name="COUNTRY_PA" xml:space="preserve">
+    <value>COUNTRY_PA</value>
+  </data>
+  <data name="COUNTRY_PE" xml:space="preserve">
+    <value>COUNTRY_PE</value>
+  </data>
+  <data name="COUNTRY_PF" xml:space="preserve">
+    <value>COUNTRY_PF</value>
+  </data>
+  <data name="COUNTRY_PG" xml:space="preserve">
+    <value>COUNTRY_PG</value>
+  </data>
+  <data name="COUNTRY_PH" xml:space="preserve">
+    <value>COUNTRY_PH</value>
+  </data>
+  <data name="COUNTRY_PK" xml:space="preserve">
+    <value>COUNTRY_PK</value>
+  </data>
+  <data name="COUNTRY_PL" xml:space="preserve">
+    <value>COUNTRY_PL</value>
+  </data>
+  <data name="COUNTRY_PM" xml:space="preserve">
+    <value>COUNTRY_PM</value>
+  </data>
+  <data name="COUNTRY_PN" xml:space="preserve">
+    <value>COUNTRY_PN</value>
+  </data>
+  <data name="COUNTRY_PR" xml:space="preserve">
+    <value>COUNTRY_PR</value>
+  </data>
+  <data name="COUNTRY_PT" xml:space="preserve">
+    <value>COUNTRY_PT</value>
+  </data>
+  <data name="COUNTRY_PW" xml:space="preserve">
+    <value>COUNTRY_PW</value>
+  </data>
+  <data name="COUNTRY_PY" xml:space="preserve">
+    <value>COUNTRY_PY</value>
+  </data>
+  <data name="COUNTRY_QA" xml:space="preserve">
+    <value>COUNTRY_QA</value>
+  </data>
+  <data name="COUNTRY_RE" xml:space="preserve">
+    <value>COUNTRY_RE</value>
+  </data>
+  <data name="COUNTRY_RO" xml:space="preserve">
+    <value>COUNTRY_RO</value>
+  </data>
+  <data name="COUNTRY_RU" xml:space="preserve">
+    <value>COUNTRY_RU</value>
+  </data>
+  <data name="COUNTRY_RW" xml:space="preserve">
+    <value>COUNTRY_RW</value>
+  </data>
+  <data name="COUNTRY_SA" xml:space="preserve">
+    <value>COUNTRY_SA</value>
+  </data>
+  <data name="COUNTRY_SB" xml:space="preserve">
+    <value>COUNTRY_SB</value>
+  </data>
+  <data name="COUNTRY_SC" xml:space="preserve">
+    <value>COUNTRY_SC</value>
+  </data>
+  <data name="COUNTRY_SD" xml:space="preserve">
+    <value>COUNTRY_SD</value>
+  </data>
+  <data name="COUNTRY_SE" xml:space="preserve">
+    <value>COUNTRY_SE</value>
+  </data>
+  <data name="COUNTRY_SG" xml:space="preserve">
+    <value>COUNTRY_SG</value>
+  </data>
+  <data name="COUNTRY_SH" xml:space="preserve">
+    <value>COUNTRY_SH</value>
+  </data>
+  <data name="COUNTRY_SI" xml:space="preserve">
+    <value>COUNTRY_SI</value>
+  </data>
+  <data name="COUNTRY_SJ" xml:space="preserve">
+    <value>COUNTRY_SJ</value>
+  </data>
+  <data name="COUNTRY_SK" xml:space="preserve">
+    <value>COUNTRY_SK</value>
+  </data>
+  <data name="COUNTRY_SL" xml:space="preserve">
+    <value>COUNTRY_SL</value>
+  </data>
+  <data name="COUNTRY_SM" xml:space="preserve">
+    <value>COUNTRY_SM</value>
+  </data>
+  <data name="COUNTRY_SN" xml:space="preserve">
+    <value>COUNTRY_SN</value>
+  </data>
+  <data name="COUNTRY_SO" xml:space="preserve">
+    <value>COUNTRY_SO</value>
+  </data>
+  <data name="COUNTRY_SR" xml:space="preserve">
+    <value>COUNTRY_SR</value>
+  </data>
+  <data name="COUNTRY_ST" xml:space="preserve">
+    <value>COUNTRY_ST</value>
+  </data>
+  <data name="COUNTRY_SV" xml:space="preserve">
+    <value>COUNTRY_SV</value>
+  </data>
+  <data name="COUNTRY_SY" xml:space="preserve">
+    <value>COUNTRY_SY</value>
+  </data>
+  <data name="COUNTRY_SZ" xml:space="preserve">
+    <value>COUNTRY_SZ</value>
+  </data>
+  <data name="COUNTRY_TC" xml:space="preserve">
+    <value>COUNTRY_TC</value>
+  </data>
+  <data name="COUNTRY_TD" xml:space="preserve">
+    <value>COUNTRY_TD</value>
+  </data>
+  <data name="COUNTRY_TF" xml:space="preserve">
+    <value>COUNTRY_TF</value>
+  </data>
+  <data name="COUNTRY_TG" xml:space="preserve">
+    <value>COUNTRY_TG</value>
+  </data>
+  <data name="COUNTRY_TH" xml:space="preserve">
+    <value>COUNTRY_TH</value>
+  </data>
+  <data name="COUNTRY_TJ" xml:space="preserve">
+    <value>COUNTRY_TJ</value>
+  </data>
+  <data name="COUNTRY_TK" xml:space="preserve">
+    <value>COUNTRY_TK</value>
+  </data>
+  <data name="COUNTRY_TL" xml:space="preserve">
+    <value>COUNTRY_TL</value>
+  </data>
+  <data name="COUNTRY_TM" xml:space="preserve">
+    <value>COUNTRY_TM</value>
+  </data>
+  <data name="COUNTRY_TN" xml:space="preserve">
+    <value>COUNTRY_TN</value>
+  </data>
+  <data name="COUNTRY_TO" xml:space="preserve">
+    <value>COUNTRY_TO</value>
+  </data>
+  <data name="COUNTRY_TR" xml:space="preserve">
+    <value>COUNTRY_TR</value>
+  </data>
+  <data name="COUNTRY_TT" xml:space="preserve">
+    <value>COUNTRY_TT</value>
+  </data>
+  <data name="COUNTRY_TV" xml:space="preserve">
+    <value>COUNTRY_TV</value>
+  </data>
+  <data name="COUNTRY_TW" xml:space="preserve">
+    <value>COUNTRY_TW</value>
+  </data>
+  <data name="COUNTRY_TZ" xml:space="preserve">
+    <value>COUNTRY_TZ</value>
+  </data>
+  <data name="COUNTRY_UA" xml:space="preserve">
+    <value>COUNTRY_UA</value>
+  </data>
+  <data name="COUNTRY_UG" xml:space="preserve">
+    <value>COUNTRY_UG</value>
+  </data>
+  <data name="COUNTRY_UM" xml:space="preserve">
+    <value>COUNTRY_UM</value>
+  </data>
+  <data name="COUNTRY_US" xml:space="preserve">
+    <value>COUNTRY_US</value>
+  </data>
+  <data name="COUNTRY_UY" xml:space="preserve">
+    <value>COUNTRY_UY</value>
+  </data>
+  <data name="COUNTRY_UZ" xml:space="preserve">
+    <value>COUNTRY_UZ</value>
+  </data>
+  <data name="COUNTRY_VA" xml:space="preserve">
+    <value>COUNTRY_VA</value>
+  </data>
+  <data name="COUNTRY_VC" xml:space="preserve">
+    <value>COUNTRY_VC</value>
+  </data>
+  <data name="COUNTRY_VE" xml:space="preserve">
+    <value>COUNTRY_VE</value>
+  </data>
+  <data name="COUNTRY_VG" xml:space="preserve">
+    <value>COUNTRY_VG</value>
+  </data>
+  <data name="COUNTRY_VI" xml:space="preserve">
+    <value>COUNTRY_VI</value>
+  </data>
+  <data name="COUNTRY_VN" xml:space="preserve">
+    <value>COUNTRY_VN</value>
+  </data>
+  <data name="COUNTRY_VU" xml:space="preserve">
+    <value>COUNTRY_VU</value>
+  </data>
+  <data name="COUNTRY_WF" xml:space="preserve">
+    <value>COUNTRY_WF</value>
+  </data>
+  <data name="COUNTRY_WS" xml:space="preserve">
+    <value>COUNTRY_WS</value>
+  </data>
+  <data name="COUNTRY_YE" xml:space="preserve">
+    <value>COUNTRY_YE</value>
+  </data>
+  <data name="COUNTRY_YT" xml:space="preserve">
+    <value>COUNTRY_YT</value>
+  </data>
+  <data name="COUNTRY_YU" xml:space="preserve">
+    <value>COUNTRY_YU</value>
+  </data>
+  <data name="COUNTRY_ZA" xml:space="preserve">
+    <value>COUNTRY_ZA</value>
+  </data>
+  <data name="COUNTRY_ZM" xml:space="preserve">
+    <value>COUNTRY_ZM</value>
+  </data>
+  <data name="COUNTRY_ZW" xml:space="preserve">
+    <value>COUNTRY_ZW</value>
+  </data>
+  <data name="CREATED_BY" xml:space="preserve">
+    <value>作者</value>
+  </data>
+  <data name="CREATED_ON" xml:space="preserve">
+    <value>CREATED_ON</value>
+  </data>
+  <data name="CREATEDBY" xml:space="preserve">
+    <value>Created by</value>
+  </data>
+  <data name="CREDITTRANSFER" xml:space="preserve">
+    <value>CreditTransfer</value>
+  </data>
+  <data name="CREDITTRANSFER_DESCRIPTION" xml:space="preserve">
+    <value>Insert a reference to MerchantID</value>
+  </data>
+  <data name="CULTURE" xml:space="preserve">
+    <value>Culture</value>
+  </data>
+  <data name="CULTURE_DESCRIPTION" xml:space="preserve">
+    <value>Choose culture. Invariant cultures shows the module always.</value>
+  </data>
+  <data name="CULTURE_SETTINGS" xml:space="preserve">
+    <value>语言选项</value>
+  </data>
+  <data name="CULTUREIMGPORTAL" xml:space="preserve">
+    <value>Use custom flags?</value>
+  </data>
+  <data name="CULTUREIMGPORTAL_DESCRIPTION" xml:space="preserve">
+    <value>Check this if you want to use custom flags</value>
+  </data>
+  <data name="CULTURELIST" xml:space="preserve">
+    <value>CULTURELIST</value>
+  </data>
+  <data name="CUSTOMLAYOUT" xml:space="preserve">
+    <value>Custom Layout</value>
+  </data>
+  <data name="CUSTOMLAYOUT_DESCRIPTION" xml:space="preserve">
+    <value>Set a custom layout for this tab only</value>
+  </data>
+  <data name="CUSTOMMENUIMAGE" xml:space="preserve">
+    <value>CUSTOMMENUIMAGE</value>
+  </data>
+  <data name="CUSTOMMENUIMAGE_DESCRIPTION" xml:space="preserve">
+    <value>CUSTOMMENUIMAGE_DESCRIPTION</value>
+  </data>
+  <data name="CUSTOMTHEME" xml:space="preserve">
+    <value>Custom Theme</value>
+  </data>
+  <data name="CUSTOMTHEME_DESCRIPTION" xml:space="preserve">
+    <value>Set a custom theme for the modules in this tab only</value>
+  </data>
+  <data name="CUSTOMTHEMEALT" xml:space="preserve">
+    <value>Custom Alt Theme</value>
+  </data>
+  <data name="CUSTOMTHEMEALT_DESCRIPTION" xml:space="preserve">
+    <value>Set a custom alternate theme for the modules in this tab only</value>
+  </data>
+  <data name="DA_DK" xml:space="preserve">
+    <value>DA_DK</value>
+  </data>
+  <data name="DA_DK_DESCRIPTION" xml:space="preserve">
+    <value>DA_DK_DESCRIPTION</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="DBTOOL_GETDATA" xml:space="preserve">
+    <value>DBTOOL_GETDATA</value>
+  </data>
+  <data name="DBTOOL_GETINFO" xml:space="preserve">
+    <value>DBTOOL_GETINFO</value>
+  </data>
+  <data name="DBTOOL_GETINFOEXTENDED" xml:space="preserve">
+    <value>DBTOOL_GETINFOEXTENDED</value>
+  </data>
+  <data name="DBTOOL_GETPROPERTIES" xml:space="preserve">
+    <value>DBTOOL_GETPROPERTIES</value>
+  </data>
+  <data name="DBTOOL_OWNER" xml:space="preserve">
+    <value>DBTOOL_OWNER</value>
+  </data>
+  <data name="DBTOOL_QUERYEXECUTE" xml:space="preserve">
+    <value>DBTOOL_QUERYEXECUTE</value>
+  </data>
+  <data name="DE_CH" xml:space="preserve">
+    <value>Title (DE_CH)</value>
+  </data>
+  <data name="DE_CH_DESCRIPTION" xml:space="preserve">
+    <value>Set title for German (Switzerland) culture.</value>
+  </data>
+  <data name="DE_DE" xml:space="preserve">
+    <value>Title (DE_DE)</value>
+  </data>
+  <data name="DE_DE_DESCRIPTION" xml:space="preserve">
+    <value>Set title for German (Germany) culture.</value>
+  </data>
+  <data name="DECLINE" xml:space="preserve">
+    <value>不需要,謝謝!</value>
+  </data>
+  <data name="DEFAULT_IMAGE_EDITOR" xml:space="preserve">
+    <value>DEFAULT_IMAGE_EDITOR</value>
+  </data>
+  <data name="DEFAULTEMAIL" xml:space="preserve">
+    <value>发令者电子邮件</value>
+  </data>
+  <data name="DEFAULTNAME" xml:space="preserve">
+    <value>Sender Name</value>
+  </data>
+  <data name="DEFAULTVISIBLEDAYS" xml:space="preserve">
+    <value>缺省天可看见</value>
+  </data>
+  <data name="DELAYEXPIRE" xml:space="preserve">
+    <value>預設的到期日期</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="DELETE_PORTAL" xml:space="preserve">
+    <value>删除门户</value>
+  </data>
+  <data name="DELETE_THIS_ITEM" xml:space="preserve">
+    <value>刪除此項目</value>
+  </data>
+  <data name="DELETE_THIS_MODULE_TYPE" xml:space="preserve">
+    <value>DELETE_THIS_MODULE_TYPE</value>
+  </data>
+  <data name="DELETE_USER" xml:space="preserve">
+    <value>刪除使用者</value>
+  </data>
+  <data name="DELETEBTN" xml:space="preserve">
+    <value>刪除選取的項目</value>
+  </data>
+  <data name="DELETEITEM" xml:space="preserve">
+    <value>DELETEITEM</value>
+  </data>
+  <data name="DELETEMODULE" xml:space="preserve">
+    <value>DELETEMODULE</value>
+  </data>
+  <data name="DELUSER" xml:space="preserve">
+    <value>將此使用者從此群組中移除</value>
+  </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="DESKTOP_SOURCE" xml:space="preserve">
+    <value>檔案路徑</value>
+  </data>
+  <data name="DIRECTURL" xml:space="preserve">
+    <value>可能被使用自动地登录的直接url</value>
+  </data>
+  <data name="DISCUSION_AUTHOR" xml:space="preserve">
+    <value>DISCUSION_AUTHOR</value>
+  </data>
+  <data name="DISCUSION_LAST_UPDATE" xml:space="preserve">
+    <value>DISCUSION_LAST_UPDATE</value>
+  </data>
+  <data name="DISCUSION_TITLE" xml:space="preserve">
+    <value>DISCUSION_TITLE</value>
+  </data>
+  <data name="DISCUSSION_DELETE_RESPONSE" xml:space="preserve">
+    <value>DISCUSSION_DELETE_RESPONSE</value>
+  </data>
+  <data name="DISCUSSION_LAST_UPDATE" xml:space="preserve">
+    <value>DISCUSSION_LAST_UPDATE</value>
+  </data>
+  <data name="DISCUSSION_MSGCOLLAPSE" xml:space="preserve">
+    <value>DISCUSSION_MSGCOLLAPSE</value>
+  </data>
+  <data name="DISCUSSION_MSGEXPAND" xml:space="preserve">
+    <value>DISCUSSION_MSGEXPAND</value>
+  </data>
+  <data name="DISCUSSION_MSGSELECT" xml:space="preserve">
+    <value>DISCUSSION_MSGSELECT</value>
+  </data>
+  <data name="DISCUSSION_REPLYS" xml:space="preserve">
+    <value>DISCUSSION_REPLYS</value>
+  </data>
+  <data name="DISCUSSION_VIEWED" xml:space="preserve">
+    <value>这个题目被观看了的次数</value>
+  </data>
+  <data name="DOCUMENT_AREA" xml:space="preserve">
+    <value>区域</value>
+  </data>
+  <data name="DOCUMENT_DETAILS" xml:space="preserve">
+    <value>文件細節</value>
+  </data>
+  <data name="DOCUMENT_LAST_UPDATED" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="DOCUMENT_OWNER" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="DOCUMENTPATH" xml:space="preserve">
+    <value>DOCUMENTPATH</value>
+  </data>
+  <data name="DOCUMENTPATH_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTPATH_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_DBSAVE" xml:space="preserve">
+    <value>DOCUMENTS_DBSAVE</value>
+  </data>
+  <data name="DOCUMENTS_DBSAVE_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_DBSAVE_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_FOLDER" xml:space="preserve">
+    <value>Documents folder</value>
+  </data>
+  <data name="DOCUMENTS_SHOWAREA" xml:space="preserve">
+    <value>DOCUMENTS_SHOWAREA</value>
+  </data>
+  <data name="DOCUMENTS_SHOWAREA_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SHOWAREA_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SHOWIMAGES" xml:space="preserve">
+    <value>DOCUMENTS_SHOWIMAGES</value>
+  </data>
+  <data name="DOCUMENTS_SHOWIMAGES_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SHOWIMAGES_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SHOWLASTUPDATED" xml:space="preserve">
+    <value>DOCUMENTS_SHOWLASTUPDATED</value>
+  </data>
+  <data name="DOCUMENTS_SHOWLASTUPDATED_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SHOWLASTUPDATED_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SHOWOWNER" xml:space="preserve">
+    <value>DOCUMENTS_SHOWOWNER</value>
+  </data>
+  <data name="DOCUMENTS_SHOWOWNER_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SHOWOWNER_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SHOWTITLE" xml:space="preserve">
+    <value>DOCUMENTS_SHOWTITLE</value>
+  </data>
+  <data name="DOCUMENTS_SHOWTITLE_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SHOWTITLE_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_DIRECTION" xml:space="preserve">
+    <value>DOCUMENTS_SORTBY_DIRECTION</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_DIRECTION_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SORTBY_DIRECTION_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_DIRECTION_LIST" xml:space="preserve">
+    <value>DOCUMENTS_SORTBY_DIRECTION_LIST</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_FIELD" xml:space="preserve">
+    <value>DOCUMENTS_SORTBY_FIELD</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_FIELD_DESCRIPTION" xml:space="preserve">
+    <value>DOCUMENTS_SORTBY_FIELD_DESCRIPTION</value>
+  </data>
+  <data name="DOCUMENTS_SORTBY_FIELD_LIST" xml:space="preserve">
+    <value>DOCUMENTS_SORTBY_FIELD_LIST</value>
+  </data>
+  <data name="DOCUMENTS_SOURCE" xml:space="preserve">
+    <value>Document source</value>
+  </data>
+  <data name="DONOTRESENDWITHIN" xml:space="preserve">
+    <value>Do not resend within (days)</value>
+  </data>
+  <data name="DONOTRESENDWITHIN_DESCRIPTION" xml:space="preserve">
+    <value>To avoid spam and duplicate sent you cannot email an user more than one time in specifed number of days.</value>
+  </data>
+  <data name="DONT_RESIZE" xml:space="preserve">
+    <value>DONT_RESIZE</value>
+  </data>
+  <data name="DS_AUTHOR" xml:space="preserve">
+    <value>DS_AUTHOR</value>
+  </data>
+  <data name="DS_BODY" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="DS_DATE" xml:space="preserve">
+    <value>DS_DATE</value>
+  </data>
+  <data name="DS_DISPLAY_THREADS" xml:space="preserve">
+    <value>DS_DISPLAY_THREADS</value>
+  </data>
+  <data name="DS_LASTREPLYDATE" xml:space="preserve">
+    <value>DS_LASTREPLYDATE</value>
+  </data>
+  <data name="DS_MSGDETAILS" xml:space="preserve">
+    <value>Message Detail</value>
+  </data>
+  <data name="DS_NEWTHREAD" xml:space="preserve">
+    <value>Add New Thread</value>
+  </data>
+  <data name="DS_ORIGINALMSG" xml:space="preserve">
+    <value>Original Message</value>
+  </data>
+  <data name="DS_REPLYTHISMSG" xml:space="preserve">
+    <value>Reply to this Message</value>
+  </data>
+  <data name="DS_RETURN_LIST" xml:space="preserve">
+    <value>DS_RETURN_LIST</value>
+  </data>
+  <data name="ECOMMERCE_ACCOUNT_LOGIN" xml:space="preserve">
+    <value>ECOMMERCE_ACCOUNT_LOGIN</value>
+  </data>
+  <data name="ECOMMERCE_GATEWAY_CARIGE_TITLE" xml:space="preserve">
+    <value>ECOMMERCE_GATEWAY_CARIGE_TITLE</value>
+  </data>
+  <data name="ECOMMERCE_GATEWAY_TITLE" xml:space="preserve">
+    <value>ECOMMERCE_GATEWAY_TITLE</value>
+  </data>
+  <data name="ECOMMERCE_KO_MSG1" xml:space="preserve">
+    <value>ECOMMERCE_KO_MSG1</value>
+  </data>
+  <data name="ECOMMERCE_KO_MSG2" xml:space="preserve">
+    <value>ECOMMERCE_KO_MSG2</value>
+  </data>
+  <data name="ECOMMERCE_KO_MSG3" xml:space="preserve">
+    <value>ECOMMERCE_KO_MSG3</value>
+  </data>
+  <data name="ECOMMERCE_LOGIN_EMAILSUBJECTOK" xml:space="preserve">
+    <value>ECOMMERCE_LOGIN_EMAILSUBJECTOK</value>
+  </data>
+  <data name="ECOMMERCE_LOGIN_ENTEREMAIL" xml:space="preserve">
+    <value>ECOMMERCE_LOGIN_ENTEREMAIL</value>
+  </data>
+  <data name="ECOMMERCE_LOGIN_FAILED" xml:space="preserve">
+    <value>ECOMMERCE_LOGIN_FAILED</value>
+  </data>
+  <data name="ECOMMERCE_LOGON_MSGCANCEL" xml:space="preserve">
+    <value>ECOMMERCE_LOGON_MSGCANCEL</value>
+  </data>
+  <data name="ECOMMERCE_LOGON_MSGREGISTER" xml:space="preserve">
+    <value>ECOMMERCE_LOGON_MSGREGISTER</value>
+  </data>
+  <data name="ECOMMERCE_OK_MSG1" xml:space="preserve">
+    <value>ECOMMERCE_OK_MSG1</value>
+  </data>
+  <data name="ECOMMERCE_OK_MSG2" xml:space="preserve">
+    <value>ECOMMERCE_OK_MSG2</value>
+  </data>
+  <data name="ECOMMERCE_OK_MSG3" xml:space="preserve">
+    <value>ECOMMERCE_OK_MSG3</value>
+  </data>
+  <data name="ECOMMERCE_SECURE_TITLE" xml:space="preserve">
+    <value>ECOMMERCE_SECURE_TITLE</value>
+  </data>
+  <data name="EDIT" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EDIT_ACCESS_DENIED" xml:space="preserve">
+    <value>拒絕編輯</value>
+  </data>
+  <data name="EDIT_ACCESS_DENIED_MESSAGE" xml:space="preserve">
+    <value>你沒有存取此頁面的權利或者是你尚未登入.如果有疑問請向管理者連絡</value>
+  </data>
+  <data name="EDIT_PORTAL" xml:space="preserve">
+    <value>编辑门户</value>
+  </data>
+  <data name="EDIT_PROFILE" xml:space="preserve">
+    <value>编辑外形</value>
+  </data>
+  <data name="EDIT_THIS_ITEM" xml:space="preserve">
+    <value>编辑这个项目</value>
+  </data>
+  <data name="EDIT_USER" xml:space="preserve">
+    <value>編輯使用者</value>
+  </data>
+  <data name="EDITBTN" xml:space="preserve">
+    <value>編輯所選取項目的屬性</value>
+  </data>
+  <data name="EDITOR" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EDITOR_DESCRIPTION" xml:space="preserve">
+    <value>选择HTML 编辑为模块</value>
+  </data>
+  <data name="ELECTRONICDELIVERY" xml:space="preserve">
+    <value>ElectronicDelivery</value>
+  </data>
+  <data name="ELECTRONICDELIVERY_DESCRIPTION" xml:space="preserve">
+    <value>Insert a reference to MerchantID</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>帳號</value>
+  </data>
+  <data name="EMAILORWINDOW" xml:space="preserve">
+    <value>Email (or Windows domain name)</value>
+  </data>
+  <data name="EMF_ADDRESSES_NOT_OK" xml:space="preserve">
+    <value>The emailaddresses are not ok.</value>
+  </data>
+  <data name="EMF_BCC" xml:space="preserve">
+    <value>Bcc</value>
+  </data>
+  <data name="EMF_CC" xml:space="preserve">
+    <value>Cc</value>
+  </data>
+  <data name="EMF_HTMLBODY_ERROR" xml:space="preserve">
+    <value>EMF_HTMLBODY_ERROR</value>
+  </data>
+  <data name="EMF_SUBJECT" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="EMF_SUBJECT_ERROR" xml:space="preserve">
+    <value>EMF_SUBJECT_ERROR</value>
+  </data>
+  <data name="EMF_TEXTBODY_ERROR" xml:space="preserve">
+    <value>EMF_TEXTBODY_ERROR</value>
+  </data>
+  <data name="EMF_TO" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="EN" xml:space="preserve">
+    <value>Title (en)</value>
+  </data>
+  <data name="EN_US" xml:space="preserve">
+    <value>Title (EN_US)</value>
+  </data>
+  <data name="EN_US_DESCRIPTION" xml:space="preserve">
+    <value>Set title for English (United States) culture.</value>
+  </data>
+  <data name="EN_DESCRIPTION" xml:space="preserve">
+    <value>设置标题为英国文化。</value>
+  </data>
+  <data name="END_DATE" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="ENHANCEDHTML_ADDINVARIANTCULTURE" xml:space="preserve">
+    <value>增加不变式的文化?</value>
+  </data>
+  <data name="ENHANCEDHTML_ADDINVARIANTCULTURE_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_ADDINVARIANTCULTURE_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNDOWNMENU" xml:space="preserve">
+    <value>ENHANCEDHTML_ALIGNDOWNMENU</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNDOWNMENU_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_ALIGNDOWNMENU_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNUPMENU" xml:space="preserve">
+    <value>ENHANCEDHTML_ALIGNUPMENU</value>
+  </data>
+  <data name="ENHANCEDHTML_ALIGNUPMENU_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_ALIGNUPMENU_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_CANCEL" xml:space="preserve">
+    <value>ENHANCEDHTML_CANCEL</value>
+  </data>
+  <data name="ENHANCEDHTML_CONFIRMDELETEMESSAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_CONFIRMDELETEMESSAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_CONTENT_FROM" xml:space="preserve">
+    <value>ENHANCEDHTML_CONTENT_FROM</value>
+  </data>
+  <data name="ENHANCEDHTML_DELETEPAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_DELETEPAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_EDITOR" xml:space="preserve">
+    <value>ENHANCEDHTML_EDITOR</value>
+  </data>
+  <data name="ENHANCEDHTML_EDITOR_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_EDITOR_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_EDITPAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_EDITPAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS" xml:space="preserve">
+    <value>ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS</value>
+  </data>
+  <data name="ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_GET_CONTENTS_FROM_PORTALS_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_LANGUAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_LANGUAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_MULTIPAGEMODE" xml:space="preserve">
+    <value>ENHANCEDHTML_MULTIPAGEMODE</value>
+  </data>
+  <data name="ENHANCEDHTML_NEWPAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_NEWPAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_OF" xml:space="preserve">
+    <value>的</value>
+  </data>
+  <data name="ENHANCEDHTML_PAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_PAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_PAGENAME" xml:space="preserve">
+    <value>ENHANCEDHTML_PAGENAME</value>
+  </data>
+  <data name="ENHANCEDHTML_RETURN" xml:space="preserve">
+    <value>ENHANCEDHTML_RETURN</value>
+  </data>
+  <data name="ENHANCEDHTML_SELECT_MODULE" xml:space="preserve">
+    <value>ENHANCEDHTML_SELECT_MODULE</value>
+  </data>
+  <data name="ENHANCEDHTML_SELECT_MODULE_PORTAL" xml:space="preserve">
+    <value>ENHANCEDHTML_SELECT_MODULE_PORTAL</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWALLPAGES" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWALLPAGES</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWDOWNMENU" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWDOWNMENU</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWDOWNMENU_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWDOWNMENU_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWMULTIMODE" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWMULTIMODE</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWMULTIMODE_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWMULTIMODE_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWTITLEPAGE" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWTITLEPAGE</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWTITLEPAGE_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWTITLEPAGE_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWUPLOAD" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWUPLOAD</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWUPLOAD_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWUPLOAD_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWUPMENU" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWUPMENU</value>
+  </data>
+  <data name="ENHANCEDHTML_SHOWUPMENU_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDHTML_SHOWUPMENU_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDHTML_SINGLEPAGEMODE" xml:space="preserve">
+    <value>ENHANCEDHTML_SINGLEPAGEMODE</value>
+  </data>
+  <data name="ENHANCEDHTML_UPDATE" xml:space="preserve">
+    <value>ENHANCEDHTML_UPDATE</value>
+  </data>
+  <data name="ENHANCEDHTML_VIEWORDER" xml:space="preserve">
+    <value>ENHANCEDHTML_VIEWORDER</value>
+  </data>
+  <data name="ENHANCEDLINK_GALLERYTITLE" xml:space="preserve">
+    <value>ENHANCEDLINK_GALLERYTITLE</value>
+  </data>
+  <data name="ENHANCEDLINK_ICON" xml:space="preserve">
+    <value>ENHANCEDLINK_ICON</value>
+  </data>
+  <data name="ENHANCEDLINK_SELECT" xml:space="preserve">
+    <value>ENHANCEDLINK_SELECT</value>
+  </data>
+  <data name="ENHANCEDLINK_UPLOAD" xml:space="preserve">
+    <value>ENHANCEDLINK_UPLOAD</value>
+  </data>
+  <data name="ENHANCEDLINKS_DEFAULTIMAGE" xml:space="preserve">
+    <value>ENHANCEDLINKS_DEFAULTIMAGE</value>
+  </data>
+  <data name="ENHANCEDLINKS_DEFAULTIMAGE_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDLINKS_DEFAULTIMAGE_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDLINKS_DROPDOWNLIST" xml:space="preserve">
+    <value>ENHANCEDLINKS_DROPDOWNLIST</value>
+  </data>
+  <data name="ENHANCEDLINKS_EDITLINK" xml:space="preserve">
+    <value>ENHANCEDLINKS_EDITLINK</value>
+  </data>
+  <data name="ENHANCEDLINKS_EXPANDALL" xml:space="preserve">
+    <value>ENHANCEDLINKS_EXPANDALL</value>
+  </data>
+  <data name="ENHANCEDLINKS_EXPANDALL_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDLINKS_EXPANDALL_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDLINKS_GENERALIMAGE" xml:space="preserve">
+    <value>ENHANCEDLINKS_GENERALIMAGE</value>
+  </data>
+  <data name="ENHANCEDLINKS_GENERALIMAGE_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDLINKS_GENERALIMAGE_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDLINKS_ICONPATH" xml:space="preserve">
+    <value>ENHANCEDLINKS_ICONPATH</value>
+  </data>
+  <data name="ENHANCEDLINKS_ICONPATH_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDLINKS_ICONPATH_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDLINKS_LINKS" xml:space="preserve">
+    <value>ENHANCEDLINKS_LINKS</value>
+  </data>
+  <data name="ENHANCEDLINKS_LINKSHORIZONTAL" xml:space="preserve">
+    <value>ENHANCEDLINKS_LINKSHORIZONTAL</value>
+  </data>
+  <data name="ENHANCEDLINKS_MAXCOLUMS" xml:space="preserve">
+    <value>ENHANCEDLINKS_MAXCOLUMS</value>
+  </data>
+  <data name="ENHANCEDLINKS_MAXCOLUMS_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDLINKS_MAXCOLUMS_DESCRIPTION</value>
+  </data>
+  <data name="ENHANCEDLINKS_SWITCHERTYPES" xml:space="preserve">
+    <value>ENHANCEDLINKS_SWITCHERTYPES</value>
+  </data>
+  <data name="ENHANCEDLINKS_SWITCHERTYPES_DESCRIPTION" xml:space="preserve">
+    <value>ENHANCEDLINKS_SWITCHERTYPES_DESCRIPTION</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="ERROR_403" xml:space="preserve">
+    <value>ERROR_403</value>
+  </data>
+  <data name="ERROR_403_MESSAGE" xml:space="preserve">
+    <value>ERROR_403_MESSAGE</value>
+  </data>
+  <data name="ERROR_404" xml:space="preserve">
+    <value>ERROR_404</value>
+  </data>
+  <data name="ERROR_404_MESSAGE" xml:space="preserve">
+    <value>ERROR_404_MESSAGE</value>
+  </data>
+  <data name="ERROR_COMPLETION_DATE" xml:space="preserve">
+    <value>ERROR_COMPLETION_DATE</value>
+  </data>
+  <data name="ERROR_ENTER_A_FILE_NAME" xml:space="preserve">
+    <value>ERROR_ENTER_A_FILE_NAME</value>
+  </data>
+  <data name="ERROR_ENTER_A_MODULE_NAME" xml:space="preserve">
+    <value>Enter a Module Name</value>
+  </data>
+  <data name="ERROR_ENTER_A_SOURCE_PATH" xml:space="preserve">
+    <value>You Must Enter Source Path for the Desktop Module</value>
+  </data>
+  <data name="ERROR_FILE_NAME" xml:space="preserve">
+    <value>ERROR_FILE_NAME</value>
+  </data>
+  <data name="ERROR_INVALID_MODULE" xml:space="preserve">
+    <value>ERROR_INVALID_MODULE</value>
+  </data>
+  <data name="ERROR_NOT_ALLOWED_PARENT" xml:space="preserve">
+    <value>ERROR_NOT_ALLOWED_PARENT</value>
+  </data>
+  <data name="ERROR_QUIZ_ANSWER" xml:space="preserve">
+    <value>ERROR_QUIZ_ANSWER</value>
+  </data>
+  <data name="ERROR_SUBJECT" xml:space="preserve">
+    <value>ERROR_SUBJECT</value>
+  </data>
+  <data name="ERROR_VALID_COMPLETION_DATE" xml:space="preserve">
+    <value>ERROR_VALID_COMPLETION_DATE</value>
+  </data>
+  <data name="ERROR_VALID_DATE" xml:space="preserve">
+    <value>Please insert a valid date</value>
+  </data>
+  <data name="ERROR_VALID_DESCRIPTION" xml:space="preserve">
+    <value>Please insert a valid Description</value>
+  </data>
+  <data name="ERROR_VALID_EMAIL" xml:space="preserve">
+    <value>You must use a valid email address</value>
+  </data>
+  <data name="ERROR_VALID_ENDDATE" xml:space="preserve">
+    <value>ERROR_VALID_ENDDATE</value>
+  </data>
+  <data name="ERROR_VALID_EXPIRE_DATE" xml:space="preserve">
+    <value>ERROR_VALID_EXPIRE_DATE</value>
+  </data>
+  <data name="ERROR_VALID_ID" xml:space="preserve">
+    <value>ERROR_VALID_ID</value>
+  </data>
+  <data name="ERROR_VALID_MESSAGE_TEXT" xml:space="preserve">
+    <value>Please enter message text.</value>
+  </data>
+  <data name="ERROR_VALID_MILESTONE_STATUS" xml:space="preserve">
+    <value>ERROR_VALID_MILESTONE_STATUS</value>
+  </data>
+  <data name="ERROR_VALID_MILESTONE_TITLE" xml:space="preserve">
+    <value>ERROR_VALID_MILESTONE_TITLE</value>
+  </data>
+  <data name="ERROR_VALID_NAME" xml:space="preserve">
+    <value>ERROR_VALID_NAME</value>
+  </data>
+  <data name="ERROR_VALID_STARTDATE" xml:space="preserve">
+    <value>ERROR_VALID_STARTDATE</value>
+  </data>
+  <data name="ERROR_VALID_TITLE" xml:space="preserve">
+    <value>Please insert a valid title</value>
+  </data>
+  <data name="ERROR_VALID_URL" xml:space="preserve">
+    <value>ERROR_VALID_URL</value>
+  </data>
+  <data name="ERROR_VALID_VIEWORDER" xml:space="preserve">
+    <value>ERROR_VALID_VIEWORDER</value>
+  </data>
+  <data name="ERROR_VALID_WHERE_WHEN" xml:space="preserve">
+    <value>Please insert a valid Where When field</value>
+  </data>
+  <data name="ERROR_VALID_WHEREWHEN" xml:space="preserve">
+    <value>ERROR_VALID_WHEREWHEN</value>
+  </data>
+  <data name="ES" xml:space="preserve">
+    <value>ES</value>
+  </data>
+  <data name="ES_ES" xml:space="preserve">
+    <value>ES_ES</value>
+  </data>
+  <data name="ES_ES_DESCRIPTION" xml:space="preserve">
+    <value>ES_ES_DESCRIPTION</value>
+  </data>
+  <data name="ES_DESCRIPTION" xml:space="preserve">
+    <value>ES_DESCRIPTION</value>
+  </data>
+  <data name="EVENTS_ADD" xml:space="preserve">
+    <value>Add new event</value>
+  </data>
+  <data name="EVENTS_ALLDAY" xml:space="preserve">
+    <value>EVENTS_ALLDAY</value>
+  </data>
+  <data name="EVENTS_BOOKING_REQUIRED" xml:space="preserve">
+    <value>Booking required</value>
+  </data>
+  <data name="EVENTS_CATEGORY" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="EVENTS_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EVENTS_DETAILS" xml:space="preserve">
+    <value>Event detail</value>
+  </data>
+  <data name="EVENTS_EMAIL" xml:space="preserve">
+    <value>EMail for infos</value>
+  </data>
+  <data name="EVENTS_ENABLED" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="EVENTS_END_DATE" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="EVENTS_EXPIRES" xml:space="preserve">
+    <value>Expires</value>
+  </data>
+  <data name="EVENTS_GROUP" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="EVENTS_PAYMENT" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="EVENTS_PLACE" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="EVENTS_PRICES" xml:space="preserve">
+    <value>Prices</value>
+  </data>
+  <data name="EVENTS_SITEURL" xml:space="preserve">
+    <value>Site Url</value>
+  </data>
+  <data name="EVENTS_START_DATE" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="EVENTS_STARTAT" xml:space="preserve">
+    <value>EVENTS_STARTAT</value>
+  </data>
+  <data name="EVENTS_STARTDATE" xml:space="preserve">
+    <value>EVENTS_STARTDATE</value>
+  </data>
+  <data name="EVENTS_STARTTIME" xml:space="preserve">
+    <value>EVENTS_STARTTIME</value>
+  </data>
+  <data name="EVENTS_TIMETABLE" xml:space="preserve">
+    <value>Time details</value>
+  </data>
+  <data name="EVENTS_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="EVENTS_VALID_DESCRIPTION" xml:space="preserve">
+    <value>You Must Enter a Valid Description</value>
+  </data>
+  <data name="EVENTS_VALID_EXPIRE" xml:space="preserve">
+    <value>You Must Enter a Valid Expiration Date</value>
+  </data>
+  <data name="EVENTS_VALID_TITLE" xml:space="preserve">
+    <value>You Must Enter a Valid Title</value>
+  </data>
+  <data name="EVENTS_VALID_WHEN-WHERE" xml:space="preserve">
+    <value>You Must Enter a Valid Time/Location</value>
+  </data>
+  <data name="EVENTS_WHEN-WHERE" xml:space="preserve">
+    <value>Where/When</value>
+  </data>
+  <data name="EVENTS_WHEREWHEN" xml:space="preserve">
+    <value>Where When</value>
+  </data>
+  <data name="EXCERPT" xml:space="preserve">
+    <value>节录</value>
+  </data>
+  <data name="EXPIRE_DATE" xml:space="preserve">
+    <value>到期日期</value>
+  </data>
+  <data name="F010" xml:space="preserve">
+    <value>F010</value>
+  </data>
+  <data name="F100" xml:space="preserve">
+    <value>F100</value>
+  </data>
+  <data name="F200" xml:space="preserve">
+    <value>F200</value>
+  </data>
+  <data name="F331" xml:space="preserve">
+    <value>F331</value>
+  </data>
+  <data name="F335" xml:space="preserve">
+    <value>F335</value>
+  </data>
+  <data name="F410" xml:space="preserve">
+    <value>F410</value>
+  </data>
+  <data name="F412" xml:space="preserve">
+    <value>F412</value>
+  </data>
+  <data name="F415" xml:space="preserve">
+    <value>F415</value>
+  </data>
+  <data name="F425" xml:space="preserve">
+    <value>F425</value>
+  </data>
+  <data name="F433" xml:space="preserve">
+    <value>F433</value>
+  </data>
+  <data name="F435" xml:space="preserve">
+    <value>F435</value>
+  </data>
+  <data name="F750" xml:space="preserve">
+    <value>F750</value>
+  </data>
+  <data name="FAQ_A" xml:space="preserve">
+    <value>FAQ_A</value>
+  </data>
+  <data name="FAQ_ANSWER" xml:space="preserve">
+    <value>答复</value>
+  </data>
+  <data name="FAQ_ANSWER_ERR" xml:space="preserve">
+    <value>FAQ_ANSWER_ERR</value>
+  </data>
+  <data name="FAQ_DETAILS" xml:space="preserve">
+    <value>FAQ_DETAILS</value>
+  </data>
+  <data name="FAQ_Q" xml:space="preserve">
+    <value>FAQ_Q</value>
+  </data>
+  <data name="FAQ_QUESTION" xml:space="preserve">
+    <value>问题</value>
+  </data>
+  <data name="FAQ_QUESTION_ERR" xml:space="preserve">
+    <value>FAQ_QUESTION_ERR</value>
+  </data>
+  <data name="FAX" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="FILE_CATEGORY" xml:space="preserve">
+    <value>FILE_CATEGORY</value>
+  </data>
+  <data name="FILE_NAME" xml:space="preserve">
+    <value>檔案名稱</value>
+  </data>
+  <data name="FILE_NOT_FOUND" xml:space="preserve">
+    <value>檔案 %1% 不存在</value>
+  </data>
+  <data name="FILE_UPLOAD" xml:space="preserve">
+    <value>FILE_UPLOAD</value>
+  </data>
+  <data name="FILE_UPLOAD_ERROR" xml:space="preserve">
+    <value>The file you uploaded is not valid.</value>
+  </data>
+  <data name="FILEMAN_FILENAME" xml:space="preserve">
+    <value>FILEMAN_FILENAME</value>
+  </data>
+  <data name="FILEMAN_MODIFIED" xml:space="preserve">
+    <value>FILEMAN_MODIFIED</value>
+  </data>
+  <data name="FILEMAN_SIZE" xml:space="preserve">
+    <value>FILEMAN_SIZE</value>
+  </data>
+  <data name="FIXED_WIDTH_AND_HEIGHT" xml:space="preserve">
+    <value>FIXED_WIDTH_AND_HEIGHT</value>
+  </data>
+  <data name="FIXEDSHIPPING" xml:space="preserve">
+    <value>FixedShipping</value>
+  </data>
+  <data name="FIXEDSHIPPING_DESCRIPTION" xml:space="preserve">
+    <value>Insert a reference to MerchantID</value>
+  </data>
+  <data name="FLASH_BACKGROUNDCOLOR" xml:space="preserve">
+    <value>FLASH_BACKGROUNDCOLOR</value>
+  </data>
+  <data name="FLASH_GALLERY" xml:space="preserve">
+    <value>FLASH_GALLERY</value>
+  </data>
+  <data name="FLASH_PATH" xml:space="preserve">
+    <value>FLASH_PATH</value>
+  </data>
+  <data name="FLASH_SELECT_FILE" xml:space="preserve">
+    <value>FLASH_SELECT_FILE</value>
+  </data>
+  <data name="FLASH_SETTINGS" xml:space="preserve">
+    <value>FLASH_SETTINGS</value>
+  </data>
+  <data name="FLASH_UPLOAD_FILE" xml:space="preserve">
+    <value>FLASH_UPLOAD_FILE</value>
+  </data>
+  <data name="FLASH_UPLOAD_TITLE" xml:space="preserve">
+    <value>FLASH_UPLOAD_TITLE</value>
+  </data>
+  <data name="FRIENDLY_NAME" xml:space="preserve">
+    <value>模組名稱</value>
+  </data>
+  <data name="FROM" xml:space="preserve">
+    <value>从</value>
+  </data>
+  <data name="FUEL" xml:space="preserve">
+    <value>FUEL</value>
+  </data>
+  <data name="GATEWAY_CREDIT_TRANSFER_MESSAGE" xml:space="preserve">
+    <value>GATEWAY_CREDIT_TRANSFER_MESSAGE</value>
+  </data>
+  <data name="GATEWAY_WIRE_TRANSFER" xml:space="preserve">
+    <value>Wire Transfer</value>
+  </data>
+  <data name="GENERAL_ERROR_MESSAGE" xml:space="preserve">
+    <value>GENERAL_ERROR_MESSAGE</value>
+  </data>
+  <data name="GOOGLE_SEARCH" xml:space="preserve">
+    <value>查寻</value>
+  </data>
+  <data name="GOOGLE_START" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="GOTO_PAGE" xml:space="preserve">
+    <value>去对呼叫:</value>
+  </data>
+  <data name="GUID" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="HEADER_EDIT_PROFILE" xml:space="preserve">
+    <value>用户信息</value>
+  </data>
+  <data name="HEADER_HELP" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="HEADER_LOGOFF" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="HEADER_MANAGE_TAB" xml:space="preserve">
+    <value>编辑这页</value>
+  </data>
+  <data name="HEADER_SAVE_DESKTOP" xml:space="preserve">
+    <value>之外桌面</value>
+  </data>
+  <data name="HEADER_WELCOME" xml:space="preserve">
+    <value>欢迎</value>
+  </data>
+  <data name="HEIGHT" xml:space="preserve">
+    <value>高度</value>
+  </data>
+  <data name="HEIGHT_DESCRIPTION" xml:space="preserve">
+    <value>高度编辑控制</value>
+  </data>
+  <data name="HERE" xml:space="preserve">
+    <value>这里</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="HORIZONTAL" xml:space="preserve">
+    <value>水平线</value>
+  </data>
+  <data name="HTML_DESKTOP_CONTENT" xml:space="preserve">
+    <value>桌面HTML 内容</value>
+  </data>
+  <data name="HTML_EDITOR" xml:space="preserve">
+    <value>HTML 编辑</value>
+  </data>
+  <data name="HTML_MOBILE_DETAILS" xml:space="preserve">
+    <value>流动细节</value>
+  </data>
+  <data name="HTML_MOBILE_SUMMARY" xml:space="preserve">
+    <value>流动细节</value>
+  </data>
+  <data name="HTMLDOCUMENT_TODO_ADDCONTENT" xml:space="preserve">
+    <value>做: 增加内容...</value>
+  </data>
+  <data name="HTMLTEMPLATE" xml:space="preserve">
+    <value>HTML 模板</value>
+  </data>
+  <data name="HTMLTEMPLATE_DESCRIPTION" xml:space="preserve">
+    <value>选择意愿被使用作为基地为这时事通讯被送与这个模块的一个HTML 模块。</value>
+  </data>
+  <data name="HTMLTEMPLATEURL" xml:space="preserve">
+    <value>HTML 模板</value>
+  </data>
+  <data name="ICONFILE" xml:space="preserve">
+    <value>像文件</value>
+  </data>
+  <data name="IDLISTTYPE" xml:space="preserve">
+    <value>IDLISTTYPE</value>
+  </data>
+  <data name="IMAGE" xml:space="preserve">
+    <value>像</value>
+  </data>
+  <data name="IMAGE_DETAIL" xml:space="preserve">
+    <value>图象细节</value>
+  </data>
+  <data name="IMAGE_UPLOAD_ERROR" xml:space="preserve">
+    <value>您上装的图象无效。请核实文件类型和引伸(即: jpg)</value>
+  </data>
+  <data name="IMAGELAYOUT" xml:space="preserve">
+    <value>IMAGELAYOUT</value>
+  </data>
+  <data name="IMAGELOGO" xml:space="preserve">
+    <value>图象商标</value>
+  </data>
+  <data name="IMAGELOGO_DESCRIPTION" xml:space="preserve">
+    <value>图象商标URL</value>
+  </data>
+  <data name="IMPRESSUM" xml:space="preserve">
+    <value>IMPRESSUM</value>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>在</value>
+  </data>
+  <data name="INSERT_CONFIRM" xml:space="preserve">
+    <value>驗證密碼不能留下空白字串</value>
+  </data>
+  <data name="INSERT_EMAIL" xml:space="preserve">
+    <value>` 电子邮件` 不能任空白。</value>
+  </data>
+  <data name="INSERT_IMAGE_FROM_GALLERY" xml:space="preserve">
+    <value>INSERT_IMAGE_FROM_GALLERY</value>
+  </data>
+  <data name="INSERT_NAME" xml:space="preserve">
+    <value>` 名字` 不能任空白</value>
+  </data>
+  <data name="INSERT_PASSWORD" xml:space="preserve">
+    <value>` 密码` 不能任空白。</value>
+  </data>
+  <data name="INSTALL_MANUALLY" xml:space="preserve">
+    <value>INSTALL_MANUALLY</value>
+  </data>
+  <data name="INSTALLER_FILE" xml:space="preserve">
+    <value>INSTALLER_FILE</value>
+  </data>
+  <data name="IT" xml:space="preserve">
+    <value>标题(it)</value>
+  </data>
+  <data name="IT_IT" xml:space="preserve">
+    <value>Title (IT_IT)</value>
+  </data>
+  <data name="IT_IT_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Italian (Italy) culture.</value>
+  </data>
+  <data name="IT_DESCRIPTION" xml:space="preserve">
+    <value>设置标题为意大利文化。</value>
+  </data>
+  <data name="ITEM_FOUND" xml:space="preserve">
+    <value>ITEM_FOUND</value>
+  </data>
+  <data name="ITEM_ORDER" xml:space="preserve">
+    <value>ITEM_ORDER</value>
+  </data>
+  <data name="ITEMS_FOUND" xml:space="preserve">
+    <value>ITEMS_FOUND</value>
+  </data>
+  <data name="KEYWORD" xml:space="preserve">
+    <value>主题词:</value>
+  </data>
+  <data name="LABEL_NO_DATA" xml:space="preserve">
+    <value>LABEL_NO_DATA</value>
+  </data>
+  <data name="LANGLIST" xml:space="preserve">
+    <value>Language list</value>
+  </data>
+  <data name="LANGLOCK" xml:space="preserve">
+    <value>LANGLOCK</value>
+  </data>
+  <data name="LANGSWITCH_TITLE" xml:space="preserve">
+    <value>LANGSWITCH_TITLE</value>
+  </data>
+  <data name="LANGSWITCHAPPLYTHEME" xml:space="preserve">
+    <value>LANGSWITCHAPPLYTHEME</value>
+  </data>
+  <data name="LANGSWITCHER_FLAGS" xml:space="preserve">
+    <value>Only Flags</value>
+  </data>
+  <data name="LANGSWITCHER_FLAGSHORIZONTAL" xml:space="preserve">
+    <value>水平国旗</value>
+  </data>
+  <data name="LANGSWITCHER_FORM" xml:space="preserve">
+    <value>下拉菜单</value>
+  </data>
+  <data name="LANGSWITCHER_LINKS" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LANGSWITCHER_LINKSHORIZONTAL" xml:space="preserve">
+    <value>水平链接</value>
+  </data>
+  <data name="LANGSWITCHLOCATION" xml:space="preserve">
+    <value>LANGSWITCHLOCATION</value>
+  </data>
+  <data name="LANGSWITCHLOCATION_EVERYPAGE" xml:space="preserve">
+    <value>LANGSWITCHLOCATION_EVERYPAGE</value>
+  </data>
+  <data name="LANGSWITCHLOCATION_HOMEONLY" xml:space="preserve">
+    <value>LANGSWITCHLOCATION_HOMEONLY</value>
+  </data>
+  <data name="LANGSWITCHPOSITION" xml:space="preserve">
+    <value>LANGSWITCHPOSITION</value>
+  </data>
+  <data name="LANGSWITCHPOSITION_CONTENT" xml:space="preserve">
+    <value>LANGSWITCHPOSITION_CONTENT</value>
+  </data>
+  <data name="LANGSWITCHPOSITION_LEFT" xml:space="preserve">
+    <value>LANGSWITCHPOSITION_LEFT</value>
+  </data>
+  <data name="LANGSWITCHPOSITION_RIGHT" xml:space="preserve">
+    <value>LANGSWITCHPOSITION_RIGHT</value>
+  </data>
+  <data name="LANGSWITCHSHOWTITLE" xml:space="preserve">
+    <value>LANGSWITCHSHOWTITLE</value>
+  </data>
+  <data name="LANGSWITCHTDISPLAY_CULTURELIST" xml:space="preserve">
+    <value>使用文化名字</value>
+  </data>
+  <data name="LANGSWITCHTDISPLAY_NONE" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="LANGSWITCHTDISPLAY_UICULTURELIST" xml:space="preserve">
+    <value>使用UI 文化名字</value>
+  </data>
+  <data name="LANGSWITCHTHEME" xml:space="preserve">
+    <value>LANGSWITCHTHEME</value>
+  </data>
+  <data name="LANGSWITCHTNAMES_DISPLAYNAME" xml:space="preserve">
+    <value>显示名字</value>
+  </data>
+  <data name="LANGSWITCHTNAMES_ENGLISHNAME" xml:space="preserve">
+    <value>英国名字</value>
+  </data>
+  <data name="LANGSWITCHTNAMES_NATIVENAME" xml:space="preserve">
+    <value>当地名字</value>
+  </data>
+  <data name="LANGSWITCHTYPE" xml:space="preserve">
+    <value>LANGSWITCHTYPE</value>
+  </data>
+  <data name="LANGSWITCHTYPE_DISABLED" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="LANGSWITCHTYPE_DROPDOWNLIST" xml:space="preserve">
+    <value>DropDownList</value>
+  </data>
+  <data name="LANGSWITCHTYPE_FLAGS" xml:space="preserve">
+    <value>Only Flags</value>
+  </data>
+  <data name="LANGSWITCHTYPE_FLAGSHORIZONTAL" xml:space="preserve">
+    <value>Only Flags Horizontal</value>
+  </data>
+  <data name="LANGSWITCHTYPE_FORM" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="LANGSWITCHTYPE_LINKS" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LANGSWITCHTYPE_LINKSHORIZONTAL" xml:space="preserve">
+    <value>链接水平</value>
+  </data>
+  <data name="LANGUAGESWITCHER_CUSTOMFLAGS" xml:space="preserve">
+    <value>Use custom flags?</value>
+  </data>
+  <data name="LANGUAGESWITCHER_CUSTOMFLAGS_DESCRIPTION" xml:space="preserve">
+    <value>Check this if you want to use custom flags from portal’s images folder. Custom flags are located in portal folder. /images/flags/</value>
+  </data>
+  <data name="LANGUAGESWITCHER_FLAGS" xml:space="preserve">
+    <value>Show Flags as</value>
+  </data>
+  <data name="LANGUAGESWITCHER_FLAGS_DESCRIPTION" xml:space="preserve">
+    <value>Select here how flags should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHER_LABELS" xml:space="preserve">
+    <value>Show Labels as</value>
+  </data>
+  <data name="LANGUAGESWITCHER_LABELS_DESCRIPTION" xml:space="preserve">
+    <value>Select here how Labels should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHER_NAMES" xml:space="preserve">
+    <value>Show names as</value>
+  </data>
+  <data name="LANGUAGESWITCHER_NAMES_DESCRIPTION" xml:space="preserve">
+    <value>Select here how names should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHER_TYPES" xml:space="preserve">
+    <value>Language Switcher Type</value>
+  </data>
+  <data name="LANGUAGESWITCHER_TYPES_DESCRIPTION" xml:space="preserve">
+    <value>Select here how your language switcher should look like.</value>
+  </data>
+  <data name="LANGUAGESWITCHTYPE" xml:space="preserve">
+    <value>Language Switcher Type</value>
+  </data>
+  <data name="LANGUAGESWITCHTYPE_DESCRIPTION" xml:space="preserve">
+    <value>Select here how your language switcher should look like.</value>
+  </data>
+  <data name="LANGUSER" xml:space="preserve">
+    <value>LANGUSER</value>
+  </data>
+  <data name="LAST_UPDATED" xml:space="preserve">
+    <value>前更新</value>
+  </data>
+  <data name="LASTNAME" xml:space="preserve">
+    <value>姓</value>
+  </data>
+  <data name="LASTSEND" xml:space="preserve">
+    <value>LASTSEND</value>
+  </data>
+  <data name="LAYOUT" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="LEFT" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="LET_USER_CHOOSE" xml:space="preserve">
+    <value>Let the user choose</value>
+  </data>
+  <data name="LINKDETAILS" xml:space="preserve">
+    <value>Link Details</value>
+  </data>
+  <data name="LINKEDMODULE" xml:space="preserve">
+    <value>Linked Module</value>
+  </data>
+  <data name="LINKGROUP" xml:space="preserve">
+    <value>LINKGROUP</value>
+  </data>
+  <data name="LOAD_THEME_ERROR" xml:space="preserve">
+    <value>無法載入外觀 %1% .預設外觀無法存取</value>
+  </data>
+  <data name="LOCALMODE" xml:space="preserve">
+    <value>LOCALMODE</value>
+  </data>
+  <data name="LOCATION" xml:space="preserve">
+    <value>LOCATION</value>
+  </data>
+  <data name="LOGIN_FAILED" xml:space="preserve">
+    <value>注册失败!</value>
+  </data>
+  <data name="LOGINHOMEPAGE" xml:space="preserve">
+    <value>Site URL</value>
+  </data>
+  <data name="LOGINHOMEPAGE_DESCRIPTION" xml:space="preserve">
+    <value>The Url or the Home page of the site used for build the instant login url. Leave blank if using the current site.</value>
+  </data>
+  <data name="LOGOFF" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="LOGON" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="MACHINENAME" xml:space="preserve">
+    <value>MACHINENAME</value>
+  </data>
+  <data name="MAINTAIN_ASPECT_FIXED_HEIGHT" xml:space="preserve">
+    <value>MAINTAIN_ASPECT_FIXED_HEIGHT</value>
+  </data>
+  <data name="MAINTAIN_ASPECT_FIXED_WIDTH" xml:space="preserve">
+    <value>MAINTAIN_ASPECT_FIXED_WIDTH</value>
+  </data>
+  <data name="MARK" xml:space="preserve">
+    <value>MARK</value>
+  </data>
+  <data name="MAXHITS" xml:space="preserve">
+    <value>MAXHITS</value>
+  </data>
+  <data name="MERCHANT" xml:space="preserve">
+    <value>Merchant ID</value>
+  </data>
+  <data name="META_SETTINGS" xml:space="preserve">
+    <value>搜索引擎选项</value>
+  </data>
+  <data name="MIDDLE" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="MILESTONE_COMPL_DATE" xml:space="preserve">
+    <value>MILESTONE_COMPL_DATE</value>
+  </data>
+  <data name="MILESTONE_STATUS" xml:space="preserve">
+    <value>MILESTONE_STATUS</value>
+  </data>
+  <data name="MILESTONE_TITLE" xml:space="preserve">
+    <value>MILESTONE_TITLE</value>
+  </data>
+  <data name="MILESTONES_COMPLETION_DATE" xml:space="preserve">
+    <value>MILESTONES_COMPLETION_DATE</value>
+  </data>
+  <data name="MILESTONES_DETAIL" xml:space="preserve">
+    <value>MILESTONES_DETAIL</value>
+  </data>
+  <data name="MILESTONES_STATUS" xml:space="preserve">
+    <value>MILESTONES_STATUS</value>
+  </data>
+  <data name="MILESTONES_TITLE" xml:space="preserve">
+    <value>MILESTONES_TITLE</value>
+  </data>
+  <data name="MISC_SETTINGS" xml:space="preserve">
+    <value>其它选项</value>
+  </data>
+  <data name="MOBILE_SOURCE" xml:space="preserve">
+    <value>Mobile Source</value>
+  </data>
+  <data name="MOBILEONLY" xml:space="preserve">
+    <value>MOBILEONLY</value>
+  </data>
+  <data name="MOBILEURL" xml:space="preserve">
+    <value>Mobile Url</value>
+  </data>
+  <data name="MODEL" xml:space="preserve">
+    <value>MODEL</value>
+  </data>
+  <data name="MODIFIED_BY" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="MODULE_DEFINITIONS_DELETE_ERROR" xml:space="preserve">
+    <value>MODULE_DEFINITIONS_DELETE_ERROR</value>
+  </data>
+  <data name="MODULE_DEFINITIONS_INSTALLING" xml:space="preserve">
+    <value>MODULE_DEFINITIONS_INSTALLING</value>
+  </data>
+  <data name="MODULE_DEFS_ADMIN" xml:space="preserve">
+    <value>MODULE_DEFS_ADMIN</value>
+  </data>
+  <data name="MODULE_DEFS_USER" xml:space="preserve">
+    <value>MODULE_DEFS_USER</value>
+  </data>
+  <data name="MODULE_IMAGE_FOLDER" xml:space="preserve">
+    <value>MODULE_IMAGE_FOLDER</value>
+  </data>
+  <data name="MODULE_IMAGE_FOLDER_DESCRIPTION" xml:space="preserve">
+    <value>MODULE_IMAGE_FOLDER_DESCRIPTION</value>
+  </data>
+  <data name="MODULE_SPECIAL_SETTINGS" xml:space="preserve">
+    <value>模块特定选项</value>
+  </data>
+  <data name="MODULE_TITLE" xml:space="preserve">
+    <value>New Module Name</value>
+  </data>
+  <data name="MODULE_TYPE_DEFINITION" xml:space="preserve">
+    <value>Module Type Definition</value>
+  </data>
+  <data name="MODULENAME" xml:space="preserve">
+    <value>Module Name</value>
+  </data>
+  <data name="MODULESETTINGS" xml:space="preserve">
+    <value>MODULESETTINGS</value>
+  </data>
+  <data name="MODULESETTINGS__SUPPORT_WORKFLOW" xml:space="preserve">
+    <value>MODULESETTINGS__SUPPORT_WORKFLOW</value>
+  </data>
+  <data name="MODULESETTINGS_APPLY_THEME" xml:space="preserve">
+    <value>应用配色方案</value>
+  </data>
+  <data name="MODULESETTINGS_APPLY_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Check this box to apply theme to this module</value>
+  </data>
+  <data name="MODULESETTINGS_BASE_SETTINGS" xml:space="preserve">
+    <value>模块基本设置</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY" xml:space="preserve">
+    <value>MODULESETTINGS_BUTTON_DISPLAY</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_BOTH" xml:space="preserve">
+    <value>MODULESETTINGS_BUTTON_DISPLAY_BOTH</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_BUTTON_DISPLAY_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_IMAGE" xml:space="preserve">
+    <value>MODULESETTINGS_BUTTON_DISPLAY_IMAGE</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_IMAGECSS" xml:space="preserve">
+    <value>MODULESETTINGS_BUTTON_DISPLAY_IMAGECSS</value>
+  </data>
+  <data name="MODULESETTINGS_BUTTON_DISPLAY_TEXT" xml:space="preserve">
+    <value>MODULESETTINGS_BUTTON_DISPLAY_TEXT</value>
+  </data>
+  <data name="MODULESETTINGS_CACHE_TIMEOUT" xml:space="preserve">
+    <value>缓存超时</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_HEIGHT" xml:space="preserve">
+    <value>MODULESETTINGS_CONTENT_HEIGHT</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_HEIGHT_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_CONTENT_HEIGHT_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_SCROLLING" xml:space="preserve">
+    <value>MODULESETTINGS_CONTENT_SCROLLING</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_SCROLLING_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_CONTENT_SCROLLING_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_WIDTH" xml:space="preserve">
+    <value>MODULESETTINGS_CONTENT_WIDTH</value>
+  </data>
+  <data name="MODULESETTINGS_CONTENT_WIDTH_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_CONTENT_WIDTH_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_CULTURE" xml:space="preserve">
+    <value>语言区域</value>
+  </data>
+  <data name="MODULESETTINGS_CULTURE_DESCRIPTION" xml:space="preserve">
+    <value>Choose culture. Invariant cultures shows the module always.</value>
+  </data>
+  <data name="MODULESETTINGS_MODULE_NAME" xml:space="preserve">
+    <value>模块名</value>
+  </data>
+  <data name="MODULESETTINGS_MODULE_THEME" xml:space="preserve">
+    <value>MODULESETTINGS_MODULE_THEME</value>
+  </data>
+  <data name="MODULESETTINGS_MODULE_THEME_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_MODULE_THEME_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_MOVE_TO_TAB" xml:space="preserve">
+    <value>转移到栏目</value>
+  </data>
+  <data name="MODULESETTINGS_ROLE_VIEW" xml:space="preserve">
+    <value>访问角色</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_ADD" xml:space="preserve">
+    <value>添加角色</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_APPROVING" xml:space="preserve">
+    <value>批准角色</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_DELETE" xml:space="preserve">
+    <value>删除角色</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_DELETE_MODULES" xml:space="preserve">
+    <value>MODULESETTINGS_ROLES_DELETE_MODULES</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_EDIT" xml:space="preserve">
+    <value>编辑角色</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_EDIT_COLLECTION" xml:space="preserve">
+    <value>管理员角色</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_MOVE_MODULES" xml:space="preserve">
+    <value>MODULESETTINGS_ROLES_MOVE_MODULES</value>
+  </data>
+  <data name="MODULESETTINGS_ROLES_PUBLISHING" xml:space="preserve">
+    <value>发布角色</value>
+  </data>
+  <data name="MODULESETTINGS_SETTINGS" xml:space="preserve">
+    <value>模块设置</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_ARROW_BUTTONS" xml:space="preserve">
+    <value>MODULESETTINGS_SHOW_ARROW_BUTTONS</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_ARROW_BUTTONS_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_SHOW_ARROW_BUTTONS_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_COLLAPSABLE" xml:space="preserve">
+    <value>允许最小化</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_EVERYWHERE" xml:space="preserve">
+    <value>每页显示</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_HELP_BUTTON" xml:space="preserve">
+    <value>MODULESETTINGS_SHOW_HELP_BUTTON</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_HELP_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_SHOW_HELP_BUTTON_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_MODIFIED_BY" xml:space="preserve">
+    <value>显示修改人</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION" xml:space="preserve">
+    <value>Switches ’Show Modified by’ display on/off</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_PRINT_BUTTION" xml:space="preserve">
+    <value>显示打印按钮</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_PRINT_BUTTION_DESCRIPTION" xml:space="preserve">
+    <value>Show print button in view mode?</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE" xml:space="preserve">
+    <value>显示标题</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE_DESCRIPTION" xml:space="preserve">
+    <value>选中以显示标题</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE_PRINT" xml:space="preserve">
+    <value>MODULESETTINGS_SHOW_TITLE_PRINT</value>
+  </data>
+  <data name="MODULESETTINGS_SHOW_TITLE_PRINT_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_SHOW_TITLE_PRINT_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_SUPPORT_WORKFLOW" xml:space="preserve">
+    <value>Enable workflow</value>
+  </data>
+  <data name="MODULESETTINGS_THEME" xml:space="preserve">
+    <value>配色方案</value>
+  </data>
+  <data name="MODULESETTINGS_THEME_ALT" xml:space="preserve">
+    <value>替换配色方案</value>
+  </data>
+  <data name="MODULESETTINGS_THEME_DEFAULT" xml:space="preserve">
+    <value>当前配色方案</value>
+  </data>
+  <data name="MODULESETTINGS_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Choose theme for this module</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_BG_BG" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_BG_BG</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_BG_BG_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_BG_BG_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_CA" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_CA</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_CA_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_CA_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_EN</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_GB" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_EN_GB</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_GB_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_EN_GB_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_US" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_EN_US</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_US_DESCRIPTION" xml:space="preserve">
+    <value>Set title for English (United States) culture.</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_EN_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_EN_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ES" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_ES</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ES_ES" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_ES_ES</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ES_ES_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_ES_ES_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ES_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_ES_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_FR" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_FR</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_FR_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_FR_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_IT" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_IT</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_IT_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_IT_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_NL_BE" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_NL_BE</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_NL_BE_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_NL_BE_DESCRIPTION</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ZH_CN" xml:space="preserve">
+    <value>MODULESETTINGS_TITLE_ZH_CN</value>
+  </data>
+  <data name="MODULESETTINGS_TITLE_ZH_CN_DESCRIPTION" xml:space="preserve">
+    <value>Set title for Chinese (People’s Republic of China) culture.</value>
+  </data>
+  <data name="MODULESETTINGS_WIDTH_STRETCHING" xml:space="preserve">
+    <value>MODULESETTINGS_WIDTH_STRETCHING</value>
+  </data>
+  <data name="MODULESETTINGS_WIDTH_STRETCHING_DESCRIPTION" xml:space="preserve">
+    <value>MODULESETTINGS_WIDTH_STRETCHING_DESCRIPTION</value>
+  </data>
+  <data name="MOVE_DOWN" xml:space="preserve">
+    <value>MOVE_DOWN</value>
+  </data>
+  <data name="MOVE_LEFT" xml:space="preserve">
+    <value>MOVE_LEFT</value>
+  </data>
+  <data name="MOVE_RIGHT" xml:space="preserve">
+    <value>MOVE_RIGHT</value>
+  </data>
+  <data name="MOVE_TO" xml:space="preserve">
+    <value>MOVE_TO</value>
+  </data>
+  <data name="MOVE_TO_TAB" xml:space="preserve">
+    <value>Move to tab</value>
+  </data>
+  <data name="MOVE_UP" xml:space="preserve">
+    <value>MOVE_UP</value>
+  </data>
+  <data name="MOVEDOWN" xml:space="preserve">
+    <value>Move selected item up in list</value>
+  </data>
+  <data name="MOVEITEM" xml:space="preserve">
+    <value>MOVEITEM</value>
+  </data>
+  <data name="MOVELEFT" xml:space="preserve">
+    <value>Move selected item on left</value>
+  </data>
+  <data name="MOVERIGHT" xml:space="preserve">
+    <value>Move selected item on right</value>
+  </data>
+  <data name="MOVEUP" xml:space="preserve">
+    <value>Move selected item up in list</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NAVIGATION_SETTINGS" xml:space="preserve">
+    <value>NAVIGATION_SETTINGS</value>
+  </data>
+  <data name="NEW_FOLDER" xml:space="preserve">
+    <value>NEW_FOLDER</value>
+  </data>
+  <data name="NEW_PORTAL_ERROR" xml:space="preserve">
+    <value>There was an error creating the new portal. May be the portal exists. Try change portal alias.</value>
+  </data>
+  <data name="NEWSLETTER_BLACKLISTED" xml:space="preserve">
+    <value>NEWSLETTER_BLACKLISTED</value>
+  </data>
+  <data name="NEWSLETTER_DEFAULTEMAIL" xml:space="preserve">
+    <value>NEWSLETTER_DEFAULTEMAIL</value>
+  </data>
+  <data name="NEWSLETTER_DEFAULTNAME" xml:space="preserve">
+    <value>NEWSLETTER_DEFAULTNAME</value>
+  </data>
+  <data name="NEWSLETTER_DIRECTURL" xml:space="preserve">
+    <value>NEWSLETTER_DIRECTURL</value>
+  </data>
+  <data name="NEWSLETTER_DONOTRESENDWITHIN" xml:space="preserve">
+    <value>NEWSLETTER_DONOTRESENDWITHIN</value>
+  </data>
+  <data name="NEWSLETTER_DONOTRESENDWITHIN_DESCRIPTION" xml:space="preserve">
+    <value>NEWSLETTER_DONOTRESENDWITHIN_DESCRIPTION</value>
+  </data>
+  <data name="NEWSLETTER_ERROR" xml:space="preserve">
+    <value>NEWSLETTER_ERROR</value>
+  </data>
+  <data name="NEWSLETTER_HTML_MODE" xml:space="preserve">
+    <value>NEWSLETTER_HTML_MODE</value>
+  </data>
+  <data name="NEWSLETTER_HTMLTEMPLATE" xml:space="preserve">
+    <value>NEWSLETTER_HTMLTEMPLATE</value>
+  </data>
+  <data name="NEWSLETTER_HTMLTEMPLATE_DESCRIPTION" xml:space="preserve">
+    <value>NEWSLETTER_HTMLTEMPLATE_DESCRIPTION</value>
+  </data>
+  <data name="NEWSLETTER_INSERT_BREAK_LINES" xml:space="preserve">
+    <value>NEWSLETTER_INSERT_BREAK_LINES</value>
+  </data>
+  <data name="NEWSLETTER_INVALID_RECIPIENTS" xml:space="preserve">
+    <value>NEWSLETTER_INVALID_RECIPIENTS</value>
+  </data>
+  <data name="NEWSLETTER_LOCALTIME" xml:space="preserve">
+    <value>NEWSLETTER_LOCALTIME</value>
+  </data>
+  <data name="NEWSLETTER_LOGINHOMEPAGE" xml:space="preserve">
+    <value>NEWSLETTER_LOGINHOMEPAGE</value>
+  </data>
+  <data name="NEWSLETTER_LOGINHOMEPAGE_DESCRIPTION" xml:space="preserve">
+    <value>NEWSLETTER_LOGINHOMEPAGE_DESCRIPTION</value>
+  </data>
+  <data name="NEWSLETTER_MESSAGE_BODY" xml:space="preserve">
+    <value>Message Body</value>
+  </data>
+  <data name="NEWSLETTER_MSG" xml:space="preserve">
+    <value>NEWSLETTER_MSG</value>
+  </data>
+  <data name="NEWSLETTER_MSG_TEST" xml:space="preserve">
+    <value>NEWSLETTER_MSG_TEST</value>
+  </data>
+  <data name="NEWSLETTER_NORECIPIENTS" xml:space="preserve">
+    <value>NEWSLETTER_NORECIPIENTS</value>
+  </data>
+  <data name="NEWSLETTER_PASSWORD" xml:space="preserve">
+    <value>NEWSLETTER_PASSWORD</value>
+  </data>
+  <data name="NEWSLETTER_SENDDATE" xml:space="preserve">
+    <value>NEWSLETTER_SENDDATE</value>
+  </data>
+  <data name="NEWSLETTER_SENDER_EMAIL_ADDRESS" xml:space="preserve">
+    <value>Sender email address</value>
+  </data>
+  <data name="NEWSLETTER_SENDER_OPTIONAL_NAME" xml:space="preserve">
+    <value>Your Name (optional)</value>
+  </data>
+  <data name="NEWSLETTER_SENDINGTO" xml:space="preserve">
+    <value>NEWSLETTER_SENDINGTO</value>
+  </data>
+  <data name="NEWSLETTER_SENDTO" xml:space="preserve">
+    <value>NEWSLETTER_SENDTO</value>
+  </data>
+  <data name="NEWSLETTER_SUBJECT" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="NEWSLETTER_TESTSENDTO" xml:space="preserve">
+    <value>NEWSLETTER_TESTSENDTO</value>
+  </data>
+  <data name="NEWSLETTER_TITLE" xml:space="preserve">
+    <value>NEWSLETTER_TITLE</value>
+  </data>
+  <data name="NEWSLETTER_USERBLOCK" xml:space="preserve">
+    <value>NEWSLETTER_USERBLOCK</value>
+  </data>
+  <data name="NEWSLETTER_USERBLOCK_DESCRIPTION" xml:space="preserve">
+    <value>NEWSLETTER_USERBLOCK_DESCRIPTION</value>
+  </data>
+  <data name="NEWSLETTER_USEREMAIL" xml:space="preserve">
+    <value>NEWSLETTER_USEREMAIL</value>
+  </data>
+  <data name="NEWSLETTER_USERNAME" xml:space="preserve">
+    <value>NEWSLETTER_USERNAME</value>
+  </data>
+  <data name="NEXT" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NO_ACCOUNT" xml:space="preserve">
+    <value>If you have not an account</value>
+  </data>
+  <data name="NO_FILE_MESSAGE" xml:space="preserve">
+    <value>NO_FILE_MESSAGE</value>
+  </data>
+  <data name="NO_FOLDER_SPECIFIED_MESSAGE" xml:space="preserve">
+    <value>NO_FOLDER_SPECIFIED_MESSAGE</value>
+  </data>
+  <data name="NO_IMAGE_MESSAGE" xml:space="preserve">
+    <value>NO_IMAGE_MESSAGE</value>
+  </data>
+  <data name="NO_MODULE" xml:space="preserve">
+    <value>No module</value>
+  </data>
+  <data name="NOITEMS" xml:space="preserve">
+    <value>NOITEMS</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NOTE" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="OF" xml:space="preserve">
+    <value>的</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="ON" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="ONLY_FEATURED" xml:space="preserve">
+    <value>ONLY_FEATURED</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>或</value>
+  </data>
+  <data name="ORDER_OK" xml:space="preserve">
+    <value>Your order was succesfully sent</value>
+  </data>
+  <data name="ORDER_RECEIPT_NUMBER" xml:space="preserve">
+    <value>Receipt number</value>
+  </data>
+  <data name="ORDER_WAIT_CONFIRM" xml:space="preserve">
+    <value>Please wait for our Confirm by email.</value>
+  </data>
+  <data name="ORIGINALHEIGHT" xml:space="preserve">
+    <value>ORIGINALHEIGHT</value>
+  </data>
+  <data name="ORIGINALRESIZE" xml:space="preserve">
+    <value>ORIGINALRESIZE</value>
+  </data>
+  <data name="ORIGINALWIDTH" xml:space="preserve">
+    <value>ORIGINALWIDTH</value>
+  </data>
+  <data name="OWNER" xml:space="preserve">
+    <value>Created by</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>页</value>
+  </data>
+  <data name="PAGELAYOUTENABLE" xml:space="preserve">
+    <value>PAGELAYOUTENABLE</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PASSWORD_DO_NOT_MATCH" xml:space="preserve">
+    <value>Password fields do not match.</value>
+  </data>
+  <data name="PASSWORD_NOT_MATCH" xml:space="preserve">
+    <value>Password fields do not match.</value>
+  </data>
+  <data name="PHONE" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PICTURES_CAPTION" xml:space="preserve">
+    <value>Caption</value>
+  </data>
+  <data name="PICTURES_DISPLAY_ORDER" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="PICTURES_DONT_RESIZE" xml:space="preserve">
+    <value>Don’t Resize</value>
+  </data>
+  <data name="PICTURES_FAILED_TO_LOAD" xml:space="preserve">
+    <value>PICTURES_FAILED_TO_LOAD</value>
+  </data>
+  <data name="PICTURES_FILE" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="PICTURES_FIXED_WIDTH_AND_HEIGHT" xml:space="preserve">
+    <value>Fixed width and height</value>
+  </data>
+  <data name="PICTURES_FLIP" xml:space="preserve">
+    <value>Flip</value>
+  </data>
+  <data name="PICTURES_HORIZONTAL" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="PICTURES_INCLUDE_EXIF" xml:space="preserve">
+    <value>Include EXIF</value>
+  </data>
+  <data name="PICTURES_KEYWORDS" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="PICTURES_LONG_DESCRIPTION" xml:space="preserve">
+    <value>Long Description</value>
+  </data>
+  <data name="PICTURES_MAINTAIN_ASPECT_FIXED_HEIGHT" xml:space="preserve">
+    <value>Maintain aspect fixed height</value>
+  </data>
+  <data name="PICTURES_MAINTAIN_ASPECT_FIXED_WIDTH" xml:space="preserve">
+    <value>Maintain aspect fixed width</value>
+  </data>
+  <data name="PICTURES_ROTATE" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="PICTURES_SHORT_DESCRIPTION" xml:space="preserve">
+    <value>Short Description</value>
+  </data>
+  <data name="PICTURES_VERTICAL" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="PICTURESPERPAGE" xml:space="preserve">
+    <value>PICTURESPERPAGE</value>
+  </data>
+  <data name="PIVA" xml:space="preserve">
+    <value>Company number</value>
+  </data>
+  <data name="PORTAL_HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PORTALS" xml:space="preserve">
+    <value>Portals</value>
+  </data>
+  <data name="PORTALSEARCH_ALL" xml:space="preserve">
+    <value>PORTALSEARCH_ALL</value>
+  </data>
+  <data name="PORTALSEARCH_FIELD" xml:space="preserve">
+    <value>PORTALSEARCH_FIELD</value>
+  </data>
+  <data name="PORTALSEARCH_HIT" xml:space="preserve">
+    <value>PORTALSEARCH_HIT</value>
+  </data>
+  <data name="PORTALSEARCH_HITS" xml:space="preserve">
+    <value>PORTALSEARCH_HITS</value>
+  </data>
+  <data name="PORTALSEARCH_LINK" xml:space="preserve">
+    <value>PORTALSEARCH_LINK</value>
+  </data>
+  <data name="PORTALSEARCH_MISSING" xml:space="preserve">
+    <value>PORTALSEARCH_MISSING</value>
+  </data>
+  <data name="PORTALSEARCH_MODULE" xml:space="preserve">
+    <value>PORTALSEARCH_MODULE</value>
+  </data>
+  <data name="PORTALSEARCH_MODULETITLE" xml:space="preserve">
+    <value>PORTALSEARCH_MODULETITLE</value>
+  </data>
+  <data name="PORTALSEARCH_SEARCH" xml:space="preserve">
+    <value>PORTALSEARCH_SEARCH</value>
+  </data>
+  <data name="PORTALSEARCH_TAB" xml:space="preserve">
+    <value>PORTALSEARCH_TAB</value>
+  </data>
+  <data name="PORTALSEARCH_TESTINFO" xml:space="preserve">
+    <value>PORTALSEARCH_TESTINFO</value>
+  </data>
+  <data name="PORTALSEARCH_TITLE" xml:space="preserve">
+    <value>PORTALSEARCH_TITLE</value>
+  </data>
+  <data name="PORTALSEARCH_TOPIC" xml:space="preserve">
+    <value>PORTALSEARCH_TOPIC</value>
+  </data>
+  <data name="PORTALSEARCH_USER" xml:space="preserve">
+    <value>PORTALSEARCH_USER</value>
+  </data>
+  <data name="POSTALCODE" xml:space="preserve">
+    <value>POSTALCODE</value>
+  </data>
+  <data name="POSTED_BY" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="POSTED_DATE" xml:space="preserve">
+    <value>Posted</value>
+  </data>
+  <data name="PREVIEW" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="PREVIOUS" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>PRICE</value>
+  </data>
+  <data name="PRICE_FROM" xml:space="preserve">
+    <value>PRICE_FROM</value>
+  </data>
+  <data name="PRODUCT_ACCOUNT_INFORMATION" xml:space="preserve">
+    <value>PRODUCT_ACCOUNT_INFORMATION</value>
+  </data>
+  <data name="PRODUCT_ADD_OPTION" xml:space="preserve">
+    <value>PRODUCT_ADD_OPTION</value>
+  </data>
+  <data name="PRODUCT_ADD_TO_CART" xml:space="preserve">
+    <value>Add to Cart</value>
+  </data>
+  <data name="PRODUCT_CANNOT_UPDATE" xml:space="preserve">
+    <value>PRODUCT_CANNOT_UPDATE</value>
+  </data>
+  <data name="PRODUCT_CATEGORY" xml:space="preserve">
+    <value>PRODUCT_CATEGORY</value>
+  </data>
+  <data name="PRODUCT_CATEGORY_DESCRIPTION" xml:space="preserve">
+    <value>PRODUCT_CATEGORY_DESCRIPTION</value>
+  </data>
+  <data name="PRODUCT_CATEGORY_NOT_FOUND" xml:space="preserve">
+    <value>Category not found</value>
+  </data>
+  <data name="PRODUCT_CHECKOUT" xml:space="preserve">
+    <value>Check out</value>
+  </data>
+  <data name="PRODUCT_CONTINUE_SHOPPING" xml:space="preserve">
+    <value>Continue shopping</value>
+  </data>
+  <data name="PRODUCT_DELETE_OPTION" xml:space="preserve">
+    <value>PRODUCT_DELETE_OPTION</value>
+  </data>
+  <data name="PRODUCT_DISPLAY_FEATURED_ITEMS" xml:space="preserve">
+    <value>Displaying featured items</value>
+  </data>
+  <data name="PRODUCT_EMPTY_CART" xml:space="preserve">
+    <value>There are currently no items in your shopping cart.</value>
+  </data>
+  <data name="PRODUCT_FEATURED_ITEM" xml:space="preserve">
+    <value>PRODUCT_FEATURED_ITEM</value>
+  </data>
+  <data name="PRODUCT_FEATURED_ITEM_DESCRIPTION" xml:space="preserve">
+    <value>PRODUCT_FEATURED_ITEM_DESCRIPTION</value>
+  </data>
+  <data name="PRODUCT_HOME" xml:space="preserve">
+    <value>PRODUCT_HOME</value>
+  </data>
+  <data name="PRODUCT_ID" xml:space="preserve">
+    <value>ProductID</value>
+  </data>
+  <data name="PRODUCT_INCLUDING_TAXES" xml:space="preserve">
+    <value>(inc. tax)</value>
+  </data>
+  <data name="PRODUCT_INPUT_PROBLEM" xml:space="preserve">
+    <value>There has been a problem with one or more of your inputs.</value>
+  </data>
+  <data name="PRODUCT_MODELNAME" xml:space="preserve">
+    <value>PRODUCT_MODELNAME</value>
+  </data>
+  <data name="PRODUCT_MODELNUMBER" xml:space="preserve">
+    <value>PRODUCT_MODELNUMBER</value>
+  </data>
+  <data name="PRODUCT_MUST_LOG_IN_FOR_CHECKOUT" xml:space="preserve">
+    <value>You must first login or register to check out!</value>
+  </data>
+  <data name="PRODUCT_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PRODUCT_OPTIONS" xml:space="preserve">
+    <value>PRODUCT_OPTIONS</value>
+  </data>
+  <data name="PRODUCT_ORDER_DATE_CREATED" xml:space="preserve">
+    <value>Date Created</value>
+  </data>
+  <data name="PRODUCT_ORDER_DATE_MODIFIED" xml:space="preserve">
+    <value>Last Modified</value>
+  </data>
+  <data name="PRODUCT_ORDER_REFERENCE" xml:space="preserve">
+    <value>Order Reference</value>
+  </data>
+  <data name="PRODUCT_ORDER_TOTAL" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="PRODUCT_PAYMENT_METHOD" xml:space="preserve">
+    <value>PRODUCT_PAYMENT_METHOD</value>
+  </data>
+  <data name="PRODUCT_PRICE" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PRODUCT_PRICE_NOT_AVAILABLE" xml:space="preserve">
+    <value>Please contact us to purchase this item.</value>
+  </data>
+  <data name="PRODUCT_PRICE_WITH_TAX" xml:space="preserve">
+    <value>PRODUCT_PRICE_WITH_TAX</value>
+  </data>
+  <data name="PRODUCT_QUANTITY" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="PRODUCT_REFERENCE" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="PRODUCT_REMOVE" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="PRODUCT_SELECT_CATEGORY" xml:space="preserve">
+    <value>PRODUCT_SELECT_CATEGORY</value>
+  </data>
+  <data name="PRODUCT_SHIPPING" xml:space="preserve">
+    <value>PRODUCT_SHIPPING</value>
+  </data>
+  <data name="PRODUCT_SHIPPING_INFORMATION" xml:space="preserve">
+    <value>PRODUCT_SHIPPING_INFORMATION</value>
+  </data>
+  <data name="PRODUCT_SHIPPING_METHOD" xml:space="preserve">
+    <value>PRODUCT_SHIPPING_METHOD</value>
+  </data>
+  <data name="PRODUCT_SHOP_HOME" xml:space="preserve">
+    <value>Shop home</value>
+  </data>
+  <data name="PRODUCT_SUBTOTAL" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="PRODUCT_TAXRATE" xml:space="preserve">
+    <value>PRODUCT_TAXRATE</value>
+  </data>
+  <data name="PRODUCT_TOTAL" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="PRODUCT_TOTAL_EXPENSES" xml:space="preserve">
+    <value>PRODUCT_TOTAL_EXPENSES</value>
+  </data>
+  <data name="PRODUCT_TOTAL_PRICE_(INC_TAXES)" xml:space="preserve">
+    <value>PRODUCT_TOTAL_PRICE_(INC_TAXES)</value>
+  </data>
+  <data name="PRODUCT_TOTAL_TAXES" xml:space="preserve">
+    <value>Total Taxes</value>
+  </data>
+  <data name="PRODUCT_TOTAL_WEIGHT" xml:space="preserve">
+    <value>PRODUCT_TOTAL_WEIGHT</value>
+  </data>
+  <data name="PRODUCT_TOTAL_WITH_TAXES" xml:space="preserve">
+    <value>Total with Taxes</value>
+  </data>
+  <data name="PRODUCT_UNIT" xml:space="preserve">
+    <value>PRODUCT_UNIT</value>
+  </data>
+  <data name="PRODUCT_UNITPRICE" xml:space="preserve">
+    <value>PRODUCT_UNITPRICE</value>
+  </data>
+  <data name="PRODUCT_UPDATE" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="PRODUCT_VIEW_ACCOUNT" xml:space="preserve">
+    <value>View account</value>
+  </data>
+  <data name="PRODUCT_VIEW_CART" xml:space="preserve">
+    <value>View cart</value>
+  </data>
+  <data name="PRODUCT_WEIGHT" xml:space="preserve">
+    <value>PRODUCT_WEIGHT</value>
+  </data>
+  <data name="PRODUCTS_DISPLAYING_ORDER" xml:space="preserve">
+    <value>Displaying order: </value>
+  </data>
+  <data name="PRODUCTS_INSTRUCTIONS" xml:space="preserve">
+    <value>PRODUCTS_INSTRUCTIONS</value>
+  </data>
+  <data name="PRODUCTS_NO_ORDERS_TO_DISPLAY" xml:space="preserve">
+    <value>You have no orders to display.</value>
+  </data>
+  <data name="PRODUCTS_ORDER_HISTORY_DISPLAY" xml:space="preserve">
+    <value>Displaying your orders history. Click on the order ID to display the details of the corresponding order</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Profile informations</value>
+  </data>
+  <data name="PROFILE_INFO_ERROR" xml:space="preserve">
+    <value>PROFILE_INFO_ERROR</value>
+  </data>
+  <data name="PROPERTIES" xml:space="preserve">
+    <value>Edit collection properties</value>
+  </data>
+  <data name="PROV_STATE" xml:space="preserve">
+    <value>State/Province</value>
+  </data>
+  <data name="QUICKSEARCH" xml:space="preserve">
+    <value>QUICKSEARCH</value>
+  </data>
+  <data name="Appleseed_RUNNING_VERSION" xml:space="preserve">
+    <value>The running Appleseed version is</value>
+  </data>
+  <data name="READ_FULL_ANNOUNCE" xml:space="preserve">
+    <value>Read full story</value>
+  </data>
+  <data name="REASON" xml:space="preserve">
+    <value>REASON</value>
+  </data>
+  <data name="REGION" xml:space="preserve">
+    <value>REGION</value>
+  </data>
+  <data name="REGISTER" xml:space="preserve">
+    <value>註冊</value>
+  </data>
+  <data name="REGISTER_DESCRIPTION" xml:space="preserve">
+    <value>Choose here how Register Page should look like.</value>
+  </data>
+  <data name="REGISTER_DIFFERENT" xml:space="preserve">
+    <value>Please register using a different email address.</value>
+  </data>
+  <data name="REGISTER_NOW" xml:space="preserve">
+    <value>Register and Sign In Now</value>
+  </data>
+  <data name="REGISTER_REQUIRED" xml:space="preserve">
+    <value>To use this module you have to register.</value>
+  </data>
+  <data name="RegisterApplyTheme" xml:space="preserve">
+    <value>RegisterApplyTheme</value>
+  </data>
+  <data name="REGISTERED_USERS" xml:space="preserve">
+    <value>Registered users</value>
+  </data>
+  <data name="RegisterShowTitle" xml:space="preserve">
+    <value>RegisterShowTitle</value>
+  </data>
+  <data name="RegisterTheme" xml:space="preserve">
+    <value>RegisterTheme</value>
+  </data>
+  <data name="REGISTRATION_FAILED" xml:space="preserve">
+    <value>Registration Failed!</value>
+  </data>
+  <data name="REGISTRATION_FAILED_EXISTING_EMAIL_ADDRESS" xml:space="preserve">
+    <value>REGISTRATION_FAILED_EXISTING_EMAIL_ADDRESS</value>
+  </data>
+  <data name="REJECT_MODULE_CONTENT" xml:space="preserve">
+    <value>REJECT_MODULE_CONTENT</value>
+  </data>
+  <data name="REMEMBER_LOGIN" xml:space="preserve">
+    <value>Remember Login</value>
+  </data>
+  <data name="REPEATCOLUMNS" xml:space="preserve">
+    <value>REPEATCOLUMNS</value>
+  </data>
+  <data name="REPEATDIRECTION" xml:space="preserve">
+    <value>REPEATDIRECTION</value>
+  </data>
+  <data name="REPEATDIRECTIONSETTING" xml:space="preserve">
+    <value>REPEATDIRECTIONSETTING</value>
+  </data>
+  <data name="REPORT_TYPE" xml:space="preserve">
+    <value>REPORT_TYPE</value>
+  </data>
+  <data name="REQUEST_MODULE_CONTENTAPPROVAL" xml:space="preserve">
+    <value>REQUEST_MODULE_CONTENTAPPROVAL</value>
+  </data>
+  <data name="RETURN" xml:space="preserve">
+    <value>RETURN</value>
+  </data>
+  <data name="RETURN_HOME" xml:space="preserve">
+    <value>Return to Portal Home</value>
+  </data>
+  <data name="RETURNHOME" xml:space="preserve">
+    <value>Return to Portal Home</value>
+  </data>
+  <data name="RIGHT" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="ROLE_ADD_NEW_USER" xml:space="preserve">
+    <value>ROLE_ADD_NEW_USER</value>
+  </data>
+  <data name="ROLE_ADD_USER" xml:space="preserve">
+    <value>ROLE_ADD_USER</value>
+  </data>
+  <data name="ROLE_CHANGE_MEMBERS" xml:space="preserve">
+    <value>ROLE_CHANGE_MEMBERS</value>
+  </data>
+  <data name="ROLE_DELETE_FAILED" xml:space="preserve">
+    <value>ROLE_DELETE_FAILED</value>
+  </data>
+  <data name="ROLE_ERROR_ADD" xml:space="preserve">
+    <value>ROLE_ERROR_ADD</value>
+  </data>
+  <data name="ROLE_MEMBERSHIP" xml:space="preserve">
+    <value>ROLE_MEMBERSHIP</value>
+  </data>
+  <data name="ROLE_NEW_ROLE" xml:space="preserve">
+    <value>ROLE_NEW_ROLE</value>
+  </data>
+  <data name="ROLE_SAVE_CHANGES" xml:space="preserve">
+    <value>ROLE_SAVE_CHANGES</value>
+  </data>
+  <data name="ROLES_DESCRIPTION" xml:space="preserve">
+    <value>ROLES_DESCRIPTION</value>
+  </data>
+  <data name="ROLESADD" xml:space="preserve">
+    <value>Roles that can add content</value>
+  </data>
+  <data name="ROLESCOLLECTION" xml:space="preserve">
+    <value>Roles that can edit collection content</value>
+  </data>
+  <data name="ROLESDELETE" xml:space="preserve">
+    <value>Roles that can delete content</value>
+  </data>
+  <data name="ROLESEDIT" xml:space="preserve">
+    <value>Roles that can edit content</value>
+  </data>
+  <data name="ROLESVIEW" xml:space="preserve">
+    <value>Roles that can view content</value>
+  </data>
+  <data name="ROOM_NUMBER" xml:space="preserve">
+    <value>Number of rooms</value>
+  </data>
+  <data name="ROOT_LEVEL" xml:space="preserve">
+    <value>Root Level</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="SAVE_AND_CLOSE" xml:space="preserve">
+    <value>Save and close</value>
+  </data>
+  <data name="SAVE_CHANGES" xml:space="preserve">
+    <value>Save Changes</value>
+  </data>
+  <data name="SAVE_DESKTOP" xml:space="preserve">
+    <value>Save Desktop</value>
+  </data>
+  <data name="SAVEUSER" xml:space="preserve">
+    <value>Save User Changes</value>
+  </data>
+  <data name="SEARCH" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SEARCH_BTN" xml:space="preserve">
+    <value>SEARCH_BTN</value>
+  </data>
+  <data name="SEARCH_STRING" xml:space="preserve">
+    <value>SEARCH_STRING</value>
+  </data>
+  <data name="SEARCHFIELD" xml:space="preserve">
+    <value>SEARCHFIELD</value>
+  </data>
+  <data name="SECURITY" xml:space="preserve">
+    <value>SECURITY</value>
+  </data>
+  <data name="SECURITY_USER_SETTINGS" xml:space="preserve">
+    <value>安全选项</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERADD" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERADD</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERADMIN" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERADMIN</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERDELETE" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERDELETE</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERDELMOD" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERDELMOD</value>
+  </data>
+  <data name="SECURITYCHECK_HEADEREDIT" xml:space="preserve">
+    <value>SECURITYCHECK_HEADEREDIT</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERMOVE" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERMOVE</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERNAME" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERNAME</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERPROPERTIES" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERPROPERTIES</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERTAB" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERTAB</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERTYPE" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERTYPE</value>
+  </data>
+  <data name="SECURITYCHECK_HEADERVIEW" xml:space="preserve">
+    <value>SECURITYCHECK_HEADERVIEW</value>
+  </data>
+  <data name="SECURITYCHECK_ONLYADMIN" xml:space="preserve">
+    <value>SECURITYCHECK_ONLYADMIN</value>
+  </data>
+  <data name="SECURITYCHECK_SEARCH" xml:space="preserve">
+    <value>SECURITYCHECK_SEARCH</value>
+  </data>
+  <data name="SELECT" xml:space="preserve">
+    <value>SELECT</value>
+  </data>
+  <data name="SELECT_ALL" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="SELECT_NONE" xml:space="preserve">
+    <value>Select none</value>
+  </data>
+  <data name="SEND_NEWSLETTER" xml:space="preserve">
+    <value>Send Newsletter</value>
+  </data>
+  <data name="SENDNEWSLETTER" xml:space="preserve">
+    <value>Send Newsletter</value>
+  </data>
+  <data name="SENDTHTS_BODY" xml:space="preserve">
+    <value>Message Body:</value>
+  </data>
+  <data name="SENDTHTS_BODY_ERR" xml:space="preserve">
+    <value>Please enter message text.</value>
+  </data>
+  <data name="SENDTHTS_CLEAR" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="SENDTHTS_DES_TXT" xml:space="preserve">
+    <value>Write a description here...</value>
+  </data>
+  <data name="SENDTHTS_EMAILBLANK" xml:space="preserve">
+    <value>’EMail’ must not be left blank.</value>
+  </data>
+  <data name="SENDTHTS_EMAILVALID" xml:space="preserve">
+    <value>Please enter a valid email address.</value>
+  </data>
+  <data name="SENDTHTS_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SENDTHTS_RECIPIENT" xml:space="preserve">
+    <value>Recipient’s EMail address not set.</value>
+  </data>
+  <data name="SENDTHTS_REMAIL" xml:space="preserve">
+    <value>Real EMail Address</value>
+  </data>
+  <data name="SENDTHTS_SEND" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SENDTHTS_SENT" xml:space="preserve">
+    <value>The message was sent - thank you for your message!</value>
+  </data>
+  <data name="SENDTHTS_SUBJECT" xml:space="preserve">
+    <value>Subject: (optional)</value>
+  </data>
+  <data name="SENDTHTS_YREMAIL" xml:space="preserve">
+    <value>Your EMail Address:</value>
+  </data>
+  <data name="SENDTHTS_YRNAME" xml:space="preserve">
+    <value>Your Name: (optional)</value>
+  </data>
+  <data name="SETTING_BETWEEN" xml:space="preserve">
+    <value>%1% must be between %2% and %3%!</value>
+  </data>
+  <data name="SETTING_REQUIRED" xml:space="preserve">
+    <value>%1% is required!</value>
+  </data>
+  <data name="SETTINGS" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SHOW_COLUMN_ADDRESS" xml:space="preserve">
+    <value>SHOW_COLUMN_ADDRESS</value>
+  </data>
+  <data name="SHOW_COLUMN_ADDRESS_DESCRIPTION" xml:space="preserve">
+    <value>SHOW_COLUMN_ADDRESS_DESCRIPTION</value>
+  </data>
+  <data name="SHOW_COLUMN_CONTACT1" xml:space="preserve">
+    <value>SHOW_COLUMN_CONTACT1</value>
+  </data>
+  <data name="SHOW_COLUMN_CONTACT1_DESCRIPTION" xml:space="preserve">
+    <value>SHOW_COLUMN_CONTACT1_DESCRIPTION</value>
+  </data>
+  <data name="SHOW_COLUMN_CONTACT2" xml:space="preserve">
+    <value>SHOW_COLUMN_CONTACT2</value>
+  </data>
+  <data name="SHOW_COLUMN_CONTACT2_DESCRIPTION" xml:space="preserve">
+    <value>SHOW_COLUMN_CONTACT2_DESCRIPTION</value>
+  </data>
+  <data name="SHOW_COLUMN_EMAIL" xml:space="preserve">
+    <value>SHOW_COLUMN_EMAIL</value>
+  </data>
+  <data name="SHOW_COLUMN_EMAIL_DESCRIPTION" xml:space="preserve">
+    <value>SHOW_COLUMN_EMAIL_DESCRIPTION</value>
+  </data>
+  <data name="SHOW_COLUMN_FAX" xml:space="preserve">
+    <value>SHOW_COLUMN_FAX</value>
+  </data>
+  <data name="SHOW_COLUMN_FAX_DESCRIPTION" xml:space="preserve">
+    <value>SHOW_COLUMN_FAX_DESCRIPTION</value>
+  </data>
+  <data name="SHOW_FLASH_GALLERY" xml:space="preserve">
+    <value>SHOW_FLASH_GALLERY</value>
+  </data>
+  <data name="SHOWABSTRACT" xml:space="preserve">
+    <value>SHOWABSTRACT</value>
+  </data>
+  <data name="SHOWADDRESS" xml:space="preserve">
+    <value>SHOWADDRESS</value>
+  </data>
+  <data name="SHOWBORDER" xml:space="preserve">
+    <value>SHOWBORDER</value>
+  </data>
+  <data name="SHOWCALENDAR" xml:space="preserve">
+    <value>SHOWCALENDAR</value>
+  </data>
+  <data name="SHOWCOLLAPSABLE" xml:space="preserve">
+    <value>Can collapse window?</value>
+  </data>
+  <data name="SHOWCREATEDBYUSER" xml:space="preserve">
+    <value>SHOWCREATEDBYUSER</value>
+  </data>
+  <data name="SHOWCREATEDDATE" xml:space="preserve">
+    <value>SHOWCREATEDDATE</value>
+  </data>
+  <data name="SHOWDATE" xml:space="preserve">
+    <value>Show Date</value>
+  </data>
+  <data name="SHOWDDFIELD" xml:space="preserve">
+    <value>SHOWDDFIELD</value>
+  </data>
+  <data name="SHOWDDFIELD_DESCRIPTION" xml:space="preserve">
+    <value>SHOWDDFIELD_DESCRIPTION</value>
+  </data>
+  <data name="SHOWDDMODULE" xml:space="preserve">
+    <value>SHOWDDMODULE</value>
+  </data>
+  <data name="SHOWDDMODULE_DESCRIPTION" xml:space="preserve">
+    <value>SHOWDDMODULE_DESCRIPTION</value>
+  </data>
+  <data name="SHOWDDTOPIC" xml:space="preserve">
+    <value>SHOWDDTOPIC</value>
+  </data>
+  <data name="SHOWDDTOPIC_DESCRIPTION" xml:space="preserve">
+    <value>SHOWDDTOPIC_DESCRIPTION</value>
+  </data>
+  <data name="SHOWEVERYWHERE" xml:space="preserve">
+    <value>Show on every page?</value>
+  </data>
+  <data name="SHOWID" xml:space="preserve">
+    <value>SHOWID</value>
+  </data>
+  <data name="SHOWLINK" xml:space="preserve">
+    <value>SHOWLINK</value>
+  </data>
+  <data name="SHOWMAP" xml:space="preserve">
+    <value>SHOWMAP</value>
+  </data>
+  <data name="SHOWMOBILE" xml:space="preserve">
+    <value>支持移动用户</value>
+  </data>
+  <data name="SHOWMODIFIEDBY" xml:space="preserve">
+    <value>Show Modified by</value>
+  </data>
+  <data name="SHOWMODIFIEDBY_DESCRIPTION" xml:space="preserve">
+    <value>Switches ’Show Modified by’ display on/off</value>
+  </data>
+  <data name="SHOWMODULEFRIENDLYNAME" xml:space="preserve">
+    <value>SHOWMODULEFRIENDLYNAME</value>
+  </data>
+  <data name="SHOWMODULENAME" xml:space="preserve">
+    <value>SHOWMODULENAME</value>
+  </data>
+  <data name="SHOWMODULETITLE" xml:space="preserve">
+    <value>SHOWMODULETITLE</value>
+  </data>
+  <data name="SHOWPRINTBUTTON" xml:space="preserve">
+    <value>Show Print Button</value>
+  </data>
+  <data name="SHOWPRINTBUTTON_DESCRIPTION" xml:space="preserve">
+    <value>Show print button in view mode?</value>
+  </data>
+  <data name="SHOWSEARCHTITLE" xml:space="preserve">
+    <value>SHOWSEARCHTITLE</value>
+  </data>
+  <data name="SHOWTABID" xml:space="preserve">
+    <value>SHOWTABID</value>
+  </data>
+  <data name="SHOWTABNAME" xml:space="preserve">
+    <value>SHOWTABNAME</value>
+  </data>
+  <data name="SHOWTESTINFO" xml:space="preserve">
+    <value>SHOWTESTINFO</value>
+  </data>
+  <data name="SHOWTHUMBNAILSPANEL" xml:space="preserve">
+    <value>SHOWTHUMBNAILSPANEL</value>
+  </data>
+  <data name="SHOWTITLE" xml:space="preserve">
+    <value>Show Title</value>
+  </data>
+  <data name="SHOWTITLE_DESCRIPTION" xml:space="preserve">
+    <value>Switches title display on/off</value>
+  </data>
+  <data name="SHOWUPLOAD" xml:space="preserve">
+    <value>SHOWUPLOAD</value>
+  </data>
+  <data name="SHOWUPLOAD_DESCRIPTION" xml:space="preserve">
+    <value>SHOWUPLOAD_DESCRIPTION</value>
+  </data>
+  <data name="SHOWZOOM" xml:space="preserve">
+    <value>SHOWZOOM</value>
+  </data>
+  <data name="SIGNIN" xml:space="preserve">
+    <value>Sign-in</value>
+  </data>
+  <data name="SIGNIN_ALLOW_AUTOCOMPLETE" xml:space="preserve">
+    <value>SIGNIN_ALLOW_AUTOCOMPLETE</value>
+  </data>
+  <data name="SIGNIN_ALLOW_AUTOCOMPLETE_DESCRIPTION" xml:space="preserve">
+    <value>SIGNIN_ALLOW_AUTOCOMPLETE_DESCRIPTION</value>
+  </data>
+  <data name="SIGNIN_ALLOW_REMEMBER_LOGIN" xml:space="preserve">
+    <value>SIGNIN_ALLOW_REMEMBER_LOGIN</value>
+  </data>
+  <data name="SIGNIN_ALLOW_REMEMBER_LOGIN_DESCRIPTION" xml:space="preserve">
+    <value>SIGNIN_ALLOW_REMEMBER_LOGIN_DESCRIPTION</value>
+  </data>
+  <data name="SIGNIN_ALLOW_SEND_PASSWORD" xml:space="preserve">
+    <value>SIGNIN_ALLOW_SEND_PASSWORD</value>
+  </data>
+  <data name="SIGNIN_ALLOW_SEND_PASSWORD_DESCRIPTION" xml:space="preserve">
+    <value>SIGNIN_ALLOW_SEND_PASSWORD_DESCRIPTION</value>
+  </data>
+  <data name="SIGNIN_AUTOMATICALLYHIDE" xml:space="preserve">
+    <value>SIGNIN_AUTOMATICALLYHIDE</value>
+  </data>
+  <data name="SIGNIN_ENTER_EMAIL_ADDR" xml:space="preserve">
+    <value>Please enter an E-Mail address</value>
+  </data>
+  <data name="SIGNIN_PWD_MISSING_IN_DB" xml:space="preserve">
+    <value>Your password was not found in the database.</value>
+  </data>
+  <data name="SIGNIN_PWD_REQUESTED" xml:space="preserve">
+    <value>The password you have requested is:</value>
+  </data>
+  <data name="SIGNIN_PWD_TO" xml:space="preserve">
+    <value>Password to:</value>
+  </data>
+  <data name="SIGNIN_PWD_WAS_SEND" xml:space="preserve">
+    <value>SIGNIN_PWD_WAS_SEND</value>
+  </data>
+  <data name="SIGNIN_PWD_WAS_SENT" xml:space="preserve">
+    <value>Your password has been sent to the email address you provided.</value>
+  </data>
+  <data name="SIGNIN_SEND_PWD" xml:space="preserve">
+    <value>Send Password</value>
+  </data>
+  <data name="SIGNIN_THANK_YOU" xml:space="preserve">
+    <value>谢谢并且我们希望您享受您的参观</value>
+  </data>
+  <data name="SIGNIN_URL_WARNING" xml:space="preserve">
+    <value>SIGNIN_URL_WARNING</value>
+  </data>
+  <data name="SIGNIN_USE_DIRECT_URL" xml:space="preserve">
+    <value>SIGNIN_USE_DIRECT_URL</value>
+  </data>
+  <data name="SIGNIN_YOU_CAN_LOGIN_FROM" xml:space="preserve">
+    <value>You can login from</value>
+  </data>
+  <data name="SignInApplyTheme" xml:space="preserve">
+    <value>SignInApplyTheme</value>
+  </data>
+  <data name="SignInLocation" xml:space="preserve">
+    <value>SignInLocation</value>
+  </data>
+  <data name="SIGNINLOCATION_EVERYPAGE" xml:space="preserve">
+    <value>SIGNINLOCATION_EVERYPAGE</value>
+  </data>
+  <data name="SIGNINLOCATION_HOMEONLY" xml:space="preserve">
+    <value>SIGNINLOCATION_HOMEONLY</value>
+  </data>
+  <data name="SignInPosition" xml:space="preserve">
+    <value>SignInPosition</value>
+  </data>
+  <data name="SIGNINPOSITION_CONTENT" xml:space="preserve">
+    <value>SIGNINPOSITION_CONTENT</value>
+  </data>
+  <data name="SIGNINPOSITION_LEFT" xml:space="preserve">
+    <value>SIGNINPOSITION_LEFT</value>
+  </data>
+  <data name="SIGNINPOSITION_RIGHT" xml:space="preserve">
+    <value>SIGNINPOSITION_RIGHT</value>
+  </data>
+  <data name="SignInShowTitle" xml:space="preserve">
+    <value>SignInShowTitle</value>
+  </data>
+  <data name="SignInTheme" xml:space="preserve">
+    <value>SignInTheme</value>
+  </data>
+  <data name="SignInType" xml:space="preserve">
+    <value>SignInType</value>
+  </data>
+  <data name="SIGNINTYPE_COOLFORM" xml:space="preserve">
+    <value>SIGNINTYPE_COOLFORM</value>
+  </data>
+  <data name="SIGNINTYPE_DISABLED" xml:space="preserve">
+    <value>SIGNINTYPE_DISABLED</value>
+  </data>
+  <data name="SIGNINTYPE_FORM" xml:space="preserve">
+    <value>SIGNINTYPE_FORM</value>
+  </data>
+  <data name="SIGNINTYPE_LINK" xml:space="preserve">
+    <value>SIGNINTYPE_LINK</value>
+  </data>
+  <data name="SINGNINLOCATION" xml:space="preserve">
+    <value>SINGNINLOCATION</value>
+  </data>
+  <data name="SITE_PATH" xml:space="preserve">
+    <value>Site Path</value>
+  </data>
+  <data name="SITE_TITLE" xml:space="preserve">
+    <value>Site Title</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES" xml:space="preserve">
+    <value>SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_NEW_REGISTRATION" xml:space="preserve">
+    <value>允许新注册</value>
+  </data>
+  <data name="SITESETTINGS_ALLOW_NEW_REGISTRATION_DESCRIPTION" xml:space="preserve">
+    <value>Check this to allow users register themselves. Leave blank for register through User Manager only.</value>
+  </data>
+  <data name="SITESETTINGS_ALT_THEME" xml:space="preserve">
+    <value>替换配色方案</value>
+  </data>
+  <data name="SITESETTINGS_ALT_THEME_DESCRIPTION" xml:space="preserve">
+    <value>替换配色方案可用应用于模块。</value>
+  </data>
+  <data name="SITESETTINGS_BODYATTS" xml:space="preserve">
+    <value>SITESETTINGS_BODYATTS</value>
+  </data>
+  <data name="SITESETTINGS_BODYATTS_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_BODYATTS_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_COUNTRY_FILTER" xml:space="preserve">
+    <value>允许访问的国家</value>
+  </data>
+  <data name="SITESETTINGS_COUNTRY_FILTER_DESCRIPTION" xml:space="preserve">
+    <value>Allowed countries limits country list in RegisterFull page, select ’World’ for no filter.</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_EDITOR" xml:space="preserve">
+    <value>SITESETTINGS_DEFAULT_EDITOR</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_EDITOR_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_DEFAULT_EDITOR_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_IMAGE_FOLDER" xml:space="preserve">
+    <value>SITESETTINGS_DEFAULT_IMAGE_FOLDER</value>
+  </data>
+  <data name="SITESETTINGS_DEFAULT_IMAGE_FOLDER_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_DEFAULT_IMAGE_FOLDER_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_DOCTYPE" xml:space="preserve">
+    <value>SITESETTINGS_DOCTYPE</value>
+  </data>
+  <data name="SITESETTINGS_DOCTYPE_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_DOCTYPE_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_HEIGHT" xml:space="preserve">
+    <value>SITESETTINGS_EDITOR_HEIGHT</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_HEIGHT_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_EDITOR_HEIGHT_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_WIDTH" xml:space="preserve">
+    <value>SITESETTINGS_EDITOR_WIDTH</value>
+  </data>
+  <data name="SITESETTINGS_EDITOR_WIDTH_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_EDITOR_WIDTH_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_LANGLIST" xml:space="preserve">
+    <value>语言列表</value>
+  </data>
+  <data name="SITESETTINGS_LANGLIST_DESCRIPTION" xml:space="preserve">
+    <value>This is a list of the languages that the site will support,it’s in format &lt;UI-Culture&gt;=&lt;Formatting-Culture&gt;.</value>
+  </data>
+  <data name="SITESETTINGS_LOGO" xml:space="preserve">
+    <value>网站标志</value>
+  </data>
+  <data name="SITESETTINGS_LOGO_DESCRIPTION" xml:space="preserve">
+    <value>Enter the name of logo file here.</value>
+  </data>
+  <data name="SITESETTINGS_ON_REGISTER_SEND_TO" xml:space="preserve">
+    <value>SITESETTINGS_ON_REGISTER_SEND_TO</value>
+  </data>
+  <data name="SITESETTINGS_ON_REGISTER_SEND_TO_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_ON_REGISTER_SEND_TO_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_KEY_PHRASE" xml:space="preserve">
+    <value>关键语句</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_KEY_PHRASE_DESCRIPTION" xml:space="preserve">
+    <value>This setting can be used by a module or by a control. It allows you to define a common message for the entire portal e.g. Welcome to x portal! This can be used for search engine optimisation. It allows you to define a keyword rich phrase to be used throughout your portal.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_LAYOUT" xml:space="preserve">
+    <value>网页布局</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_LAYOUT_DESCRIPTION" xml:space="preserve">
+    <value>Specify the site level page layout here.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_DESCRIPTION" xml:space="preserve">
+    <value>网页描述</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_DESCRIPTION_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter a default description (Not too long though. 1 paragraph is enough) that describes your portal.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_ENCODING" xml:space="preserve">
+    <value>网页编码</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_ENCODING_DESCRIPTION" xml:space="preserve">
+    <value>Every time your browser returns a page it looks to see what format it is retrieving. This allows you to specify the default content type.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_KEYWORDS" xml:space="preserve">
+    <value>关键字组</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_KEYWORDS_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter 1-15 Default Keywords that represent what your site is about.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_OTHERS" xml:space="preserve">
+    <value>其它元数据</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_META_OTHERS_DESCRIPTION" xml:space="preserve">
+    <value>This setting allows you to enter new tags into the Tab / Page’s HEAD Tag. As an example we have added a portal tag to identify the version, but you could have a meta refresh tag or something else like a css reference instead.</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_TITLE" xml:space="preserve">
+    <value>网页标题</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_TITLE_DESCRIPTION" xml:space="preserve">
+    <value>Allows you to enter a default tab / page title (Shows at the top of your browser).</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_URL_KEYWORD" xml:space="preserve">
+    <value>关键字</value>
+  </data>
+  <data name="SITESETTINGS_PAGE_URL_KEYWORD_DESCRIPTION" xml:space="preserve">
+    <value>This setting is not fully implemented yet. It was to help with search engine optimisation by allowing you to specify a default keyword that would appear in your url.</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_FULL" xml:space="preserve">
+    <value>一般注册</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_MODULEID" xml:space="preserve">
+    <value>SITESETTINGS_REGISTER_MODULEID</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_MODULEID_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_REGISTER_MODULEID_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_SIMPLE" xml:space="preserve">
+    <value>快速注册</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_TYPE" xml:space="preserve">
+    <value>注册模式</value>
+  </data>
+  <data name="SITESETTINGS_REGISTER_TYPE_DESCRIPTION" xml:space="preserve">
+    <value>Choose here how Register Page should look like.</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODIFIED_BY" xml:space="preserve">
+    <value>显示修改人</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODIFIED_BY_DESCRIPTION" xml:space="preserve">
+    <value>Check to show by whom the module is last modified.</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODULE_ARROWS" xml:space="preserve">
+    <value>SITESETTINGS_SHOW_MODULE_ARROWS</value>
+  </data>
+  <data name="SITESETTINGS_SHOW_MODULE_ARROWS_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_SHOW_MODULE_ARROWS_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_SHOWUPLOAD" xml:space="preserve">
+    <value>SITESETTINGS_SHOWUPLOAD</value>
+  </data>
+  <data name="SITESETTINGS_SHOWUPLOAD_DESCRIPTION" xml:space="preserve">
+    <value>SITESETTINGS_SHOWUPLOAD_DESCRIPTION</value>
+  </data>
+  <data name="SITESETTINGS_SITE_PATH" xml:space="preserve">
+    <value>网站路径</value>
+  </data>
+  <data name="SITESETTINGS_SITE_TITLE" xml:space="preserve">
+    <value>网站标题</value>
+  </data>
+  <data name="SITESETTINGS_TERMS_OF_SERVICE" xml:space="preserve">
+    <value>服务条款</value>
+  </data>
+  <data name="SITESETTINGS_TERMS_OF_SERVICE_DESCRIPTION" xml:space="preserve">
+    <value>Type here a file name used for showing terms and condition in each register page. Provide localized version adding _&lt;culturename&gt;. E.g. Terms.txt, will search for Terms.txt and for Terms_EN_US.txt</value>
+  </data>
+  <data name="SITESETTINGS_THEME" xml:space="preserve">
+    <value>配色方案</value>
+  </data>
+  <data name="SITESETTINGS_THEME_DESCRIPTION" xml:space="preserve">
+    <value>Specify the site level theme here.</value>
+  </data>
+  <data name="SM_MENU_REPEATDIRECTION" xml:space="preserve">
+    <value>SM_MENU_REPEATDIRECTION</value>
+  </data>
+  <data name="SM_MENU_REPEATDIRECTION_DESCRIPTION" xml:space="preserve">
+    <value>SM_MENU_REPEATDIRECTION_DESCRIPTION</value>
+  </data>
+  <data name="SM_MENUBINDINGTYPE" xml:space="preserve">
+    <value>SM_MENUBINDINGTYPE</value>
+  </data>
+  <data name="SM_MENUTYPE" xml:space="preserve">
+    <value>SM_MENUTYPE</value>
+  </data>
+  <data name="SM_MENUTYPE_DESCRIPTION" xml:space="preserve">
+    <value>SM_MENUTYPE_DESCRIPTION</value>
+  </data>
+  <data name="SM_PARENTTABID" xml:space="preserve">
+    <value>SM_PARENTTABID</value>
+  </data>
+  <data name="SM_PARENTTABID_DESCRIPTION" xml:space="preserve">
+    <value>SM_PARENTTABID_DESCRIPTION</value>
+  </data>
+  <data name="SORTDIRECTION" xml:space="preserve">
+    <value>SORTDIRECTION</value>
+  </data>
+  <data name="SORTFIELD" xml:space="preserve">
+    <value>SORTFIELD</value>
+  </data>
+  <data name="SORTORDER" xml:space="preserve">
+    <value>SORTORDER</value>
+  </data>
+  <data name="START_DATE" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="STREET" xml:space="preserve">
+    <value>STREET</value>
+  </data>
+  <data name="SUBJECT" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SUBMIT" xml:space="preserve">
+    <value>傳送</value>
+  </data>
+  <data name="SUBTITLE" xml:space="preserve">
+    <value>Subtitle</value>
+  </data>
+  <data name="SURVEY_ADDBELOW" xml:space="preserve">
+    <value>SURVEY_ADDBELOW</value>
+  </data>
+  <data name="SURVEY_ADDNEWOPTION" xml:space="preserve">
+    <value>SURVEY_ADDNEWOPTION</value>
+  </data>
+  <data name="SURVEY_ADDNEWQUESTION" xml:space="preserve">
+    <value>SURVEY_ADDNEWQUESTION</value>
+  </data>
+  <data name="SURVEY_ADDOPTBELOW" xml:space="preserve">
+    <value>SURVEY_ADDOPTBELOW</value>
+  </data>
+  <data name="SURVEY_CHECKBOXES" xml:space="preserve">
+    <value>SURVEY_CHECKBOXES</value>
+  </data>
+  <data name="SURVEY_DETAILS" xml:space="preserve">
+    <value>SURVEY_DETAILS</value>
+  </data>
+  <data name="SURVEY_DETAILSOPTIONS" xml:space="preserve">
+    <value>SURVEY_DETAILSOPTIONS</value>
+  </data>
+  <data name="SURVEY_NEWOPTION" xml:space="preserve">
+    <value>SURVEY_NEWOPTION</value>
+  </data>
+  <data name="SURVEY_NEWQUESTION" xml:space="preserve">
+    <value>SURVEY_NEWQUESTION</value>
+  </data>
+  <data name="SURVEY_OPTION_ERR" xml:space="preserve">
+    <value>SURVEY_OPTION_ERR</value>
+  </data>
+  <data name="SURVEY_OPTIONS" xml:space="preserve">
+    <value>SURVEY_OPTIONS</value>
+  </data>
+  <data name="SURVEY_OPTIONTYPE" xml:space="preserve">
+    <value>SURVEY_OPTIONTYPE</value>
+  </data>
+  <data name="SURVEY_QUESTION" xml:space="preserve">
+    <value>SURVEY_QUESTION</value>
+  </data>
+  <data name="SURVEY_QUESTION_ERR" xml:space="preserve">
+    <value>SURVEY_QUESTION_ERR</value>
+  </data>
+  <data name="SURVEY_QUESTIONS" xml:space="preserve">
+    <value>SURVEY_QUESTIONS</value>
+  </data>
+  <data name="SURVEY_RADIOBUTTONS" xml:space="preserve">
+    <value>SURVEY_RADIOBUTTONS</value>
+  </data>
+  <data name="SURVEY_SUBMIT" xml:space="preserve">
+    <value>SURVEY_SUBMIT</value>
+  </data>
+  <data name="SURVEY_TITLE" xml:space="preserve">
+    <value>SURVEY_TITLE</value>
+  </data>
+  <data name="SURVEY_VOTES" xml:space="preserve">
+    <value>SURVEY_VOTES</value>
+  </data>
+  <data name="SWI_APPROVE" xml:space="preserve">
+    <value>SWI_APPROVE</value>
+  </data>
+  <data name="SWI_APPROVESENDMAIL" xml:space="preserve">
+    <value>SWI_APPROVESENDMAIL</value>
+  </data>
+  <data name="SWI_BUTTON_MAX" xml:space="preserve">
+    <value>SWI_BUTTON_MAX</value>
+  </data>
+  <data name="SWI_BUTTON_MIN" xml:space="preserve">
+    <value>SWI_BUTTON_MIN</value>
+  </data>
+  <data name="SWI_PUBLISH" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="SWI_READYTOAPPROVE" xml:space="preserve">
+    <value>Request approval</value>
+  </data>
+  <data name="SWI_READYTOAPPROVESENDMAIL" xml:space="preserve">
+    <value>Request approvel &amp; send mail</value>
+  </data>
+  <data name="SWI_REJECT" xml:space="preserve">
+    <value>SWI_REJECT</value>
+  </data>
+  <data name="SWI_REJECT_BODY" xml:space="preserve">
+    <value>SWI_REJECT_BODY</value>
+  </data>
+  <data name="SWI_REJECT_SUBJECT1" xml:space="preserve">
+    <value>SWI_REJECT_SUBJECT1</value>
+  </data>
+  <data name="SWI_REJECT_SUBJECT2" xml:space="preserve">
+    <value>SWI_REJECT_SUBJECT2</value>
+  </data>
+  <data name="SWI_REJECTSENDMAIL" xml:space="preserve">
+    <value>SWI_REJECTSENDMAIL</value>
+  </data>
+  <data name="SWI_REQUEST_APPROVAL_SUBJECT" xml:space="preserve">
+    <value>SWI_REQUEST_APPROVAL_SUBJECT</value>
+  </data>
+  <data name="SWI_REQUEST_BODY" xml:space="preserve">
+    <value>SWI_REQUEST_BODY</value>
+  </data>
+  <data name="SWI_REQUEST_PUBLISH_SUBJECT" xml:space="preserve">
+    <value>SWI_REQUEST_PUBLISH_SUBJECT</value>
+  </data>
+  <data name="SWI_REVERT" xml:space="preserve">
+    <value>Revert</value>
+  </data>
+  <data name="SWI_ROLESAPPROVING" xml:space="preserve">
+    <value>Approve roles</value>
+  </data>
+  <data name="SWI_ROLESPUBLISHING" xml:space="preserve">
+    <value>Authorized publishing roles</value>
+  </data>
+  <data name="SWI_SUPPORTWORKFLOW" xml:space="preserve">
+    <value>Enable workflow support</value>
+  </data>
+  <data name="SWI_SWAPTOPRODUCTION" xml:space="preserve">
+    <value>Switch to production version</value>
+  </data>
+  <data name="SWI_SWAPTOSTAGING" xml:space="preserve">
+    <value>Switch to staging version</value>
+  </data>
+  <data name="TAB_DELETE_FAILED" xml:space="preserve">
+    <value>Delete failed. Please delete all modules in a page and all linkded tab before delete a tab.</value>
+  </data>
+  <data name="TAB_NAME" xml:space="preserve">
+    <value>新制表符(插入物名字)</value>
+  </data>
+  <data name="TAB_PARENT" xml:space="preserve">
+    <value>Parent tab</value>
+  </data>
+  <data name="TAB_TITLE_Appleseed_HELP" xml:space="preserve">
+    <value>TAB_TITLE_Appleseed_HELP</value>
+  </data>
+  <data name="TABKEYPHRASE" xml:space="preserve">
+    <value>Default Tab / Page Keyphrase</value>
+  </data>
+  <data name="TABKEYPHRASE_BG_BG" xml:space="preserve">
+    <value>TABKEYPHRASE_BG_BG</value>
+  </data>
+  <data name="TABKEYPHRASE_BG_BG_DESCRIPTION" xml:space="preserve">
+    <value>TABKEYPHRASE_BG_BG_DESCRIPTION</value>
+  </data>
+  <data name="TABKEYPHRASE_DESCRIPTION" xml:space="preserve">
+    <value>This setting can be used by a module or by a control. It allows you to define a common message for the entire portal e.g. Welcome to x portal! This can be used for search engine optimisation. It allows you to define a keyword rich phrase to be used throughout your portal.</value>
+  </data>
+  <data name="TABKEYPHRASE_EN" xml:space="preserve">
+    <value>TABKEYPHRASE_EN</value>
+  </data>
+  <data name="TABKEYPHRASE_EN_DESCRIPTION" xml:space="preserve">
+    <value>TABKEYPHRASE_EN_DESCRIPTION</value>
+  </data>
+  <data name="TABKEYPHRASE_ES" xml:space="preserve">
+    <value>TABKEYPHRASE_ES</value>
+  </data>
+  <data name="TABKEYPHRASE_ES_ES" xml:space="preserve">
+    <value>TABKEYPHRASE_ES_ES</value>
+  </data>
+  <data name="TABKEYPHRASE_ES_ES_DESCRIPTION" xml:space="preserve">
+    <value>TABKEYPHRASE_ES_ES_DESCRIPTION</value>
+  </data>
+  <data name="TABKEYPHRASE_ES_DESCRIPTION" xml:space="preserve">
+    <value>TABKEYPHRASE_ES_DESCRIPTION</value>
+  </data>
+  <data name="TABLAYOUT" xml:space="preserve">
+    <value>Default Layout</value>
+  </data>
+  <data name="TABLEEDIT_MSG_CONNECT" xml:space="preserve">
+    <value>TABLEEDIT_MSG_CONNECT</value>
+  </data>
+  <data name="TABLEEDIT_SELECT_TABLE" xml:space="preserve">
+    <value>TABLEEDIT_SELECT_TABLE</value>
+  </data>
+  <data name="TABLINK" xml:space="preserve">
+    <value>TABLINK</value>
+  </data>
+  <data name="TABLINK_DESCRIPTION" xml:space="preserve">
+    <value>TABLINK_DESCRIPTION</value>
+  </data>
+  <data name="TABMETADESCRIPTION" xml:space="preserve">
+    <value>Default Tab / Page Description</value>
+  </data>
+  <data name="TABMETADESCRIPTION_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter a default description (Not too long though. 1 paragraph is enough) that describes your portal.</value>
+  </data>
+  <data name="TABMETAENCODING" xml:space="preserve">
+    <value>Default Tab / Page Encoding</value>
+  </data>
+  <data name="TABMETAENCODING_DESCRIPTION" xml:space="preserve">
+    <value>Every time your browser returns a page it looks to see what format it is retrieving. This allows you to specify the default content type.</value>
+  </data>
+  <data name="TABMETAKEYWORDS" xml:space="preserve">
+    <value>Default Tab / Page Keywords</value>
+  </data>
+  <data name="TABMETAKEYWORDS_DESCRIPTION" xml:space="preserve">
+    <value>This setting is to help with search engine optimisation. Enter 1-15 Default Keywords that represent what your site is about.</value>
+  </data>
+  <data name="TABMETAOTHER" xml:space="preserve">
+    <value>Default Additional Meta Tag Entries</value>
+  </data>
+  <data name="TABMETAOTHER_DESCRIPTION" xml:space="preserve">
+    <value>This setting allows you to enter new tags into the Tab / Page’s HEAD Tag. As an example we have added a portal tag to identify the version, but you could have a meta refresh tag or something else like a css reference instead.</value>
+  </data>
+  <data name="TABPLACEHOLDER" xml:space="preserve">
+    <value>TABPLACEHOLDER</value>
+  </data>
+  <data name="TABPLACEHOLDER_DESCRIPTION" xml:space="preserve">
+    <value>TABPLACEHOLDER_DESCRIPTION</value>
+  </data>
+  <data name="TABTITLE" xml:space="preserve">
+    <value>Title of the tab</value>
+  </data>
+  <data name="TABTITLE_DESCRIPTION" xml:space="preserve">
+    <value>Allows you to enter a default tab / page title (Shows at the top of your browser).</value>
+  </data>
+  <data name="TABURLKEYWORD" xml:space="preserve">
+    <value>A Default Keyword To Identify all Tabs / Pages</value>
+  </data>
+  <data name="TABURLKEYWORD_DESCRIPTION" xml:space="preserve">
+    <value>This setting is not fully implemented yet. It was to help with search engine optimisation by allowing you to specify a default keyword that would appear in your url.</value>
+  </data>
+  <data name="TARGET" xml:space="preserve">
+    <value>TARGET</value>
+  </data>
+  <data name="TASK_ASSIGNEDTO" xml:space="preserve">
+    <value>Assigned To</value>
+  </data>
+  <data name="TASK_COMPLETION" xml:space="preserve">
+    <value>% Complete</value>
+  </data>
+  <data name="TASK_COMPLETION_ERROR" xml:space="preserve">
+    <value>Must be an integer from 0 to 100</value>
+  </data>
+  <data name="TASK_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TASK_DETAIL" xml:space="preserve">
+    <value>Task Detail</value>
+  </data>
+  <data name="TASK_DUEDATE" xml:space="preserve">
+    <value>Due Date</value>
+  </data>
+  <data name="TASK_DUEDATE_ERROR" xml:space="preserve">
+    <value>You Must Enter a Valid Due Date</value>
+  </data>
+  <data name="TASK_PRIORITY" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="TASK_PRIORITY_0" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="TASK_PRIORITY_1" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TASK_PRIORITY_2" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="TASK_STARTDATE" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="TASK_STARTDATE_ERROR" xml:space="preserve">
+    <value>You Must Enter a Valid Start Date</value>
+  </data>
+  <data name="TASK_STATE_0" xml:space="preserve">
+    <value>Not started</value>
+  </data>
+  <data name="TASK_STATE_1" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="TASK_STATE_2" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="TASK_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TASK_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TASK_TITLE_ERROR" xml:space="preserve">
+    <value>You must enter a valid title</value>
+  </data>
+  <data name="TERMSOFSERVICE" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="TERMSOFSERVICE_DESCRIPTION" xml:space="preserve">
+    <value>Type here a file name used for showing terms and condition in each register page. Provide localized version adding _&lt;culturename&gt;. E.g. Terms.txt, will search for Terms.txt and for Terms_EN_US.txt</value>
+  </data>
+  <data name="TESTMODE" xml:space="preserve">
+    <value>Test Mode</value>
+  </data>
+  <data name="TESTMODE_DESCRIPTION" xml:space="preserve">
+    <value>Use Test Mode for testing your settings. It will send only one email to the address specified as sender. Useful for testing</value>
+  </data>
+  <data name="TESTUSERID" xml:space="preserve">
+    <value>TESTUSERID</value>
+  </data>
+  <data name="THEME" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="THEME_DESCRIPTION" xml:space="preserve">
+    <value>Choose theme for this module</value>
+  </data>
+  <data name="THEME_LAYOUT_SETTINGS" xml:space="preserve">
+    <value>界面选项</value>
+  </data>
+  <data name="THEMEALT" xml:space="preserve">
+    <value>Alternate Theme</value>
+  </data>
+  <data name="THUMBNAILHEIGHT" xml:space="preserve">
+    <value>THUMBNAILHEIGHT</value>
+  </data>
+  <data name="THUMBNAILLAYOUT" xml:space="preserve">
+    <value>THUMBNAILLAYOUT</value>
+  </data>
+  <data name="THUMBNAILRESIZE" xml:space="preserve">
+    <value>THUMBNAILRESIZE</value>
+  </data>
+  <data name="THUMBNAILWIDTH" xml:space="preserve">
+    <value>THUMBNAILWIDTH</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONADDTOROLE" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONADDTOROLE</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONREMOVEFROMROLE" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONREMOVEFROMROLE</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONSELECTIONADDLABEL" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONSELECTIONADDLABEL</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONSELECTIONREMOVELABEL" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONSELECTIONREMOVELABEL</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONSELECTIONROLENAME" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONSELECTIONROLENAME</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONSELECTIONWARNING" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONSELECTIONWARNING</value>
+  </data>
+  <data name="TI_ROLEADMINISTRATIONTITLE" xml:space="preserve">
+    <value>TI_ROLEADMINISTRATIONTITLE</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TITLE_FOR_CULTURE" xml:space="preserve">
+    <value>TITLE_FOR_CULTURE</value>
+  </data>
+  <data name="TITLE_FOR_CULTURE_DESCRIPTION" xml:space="preserve">
+    <value>TITLE_FOR_CULTURE_DESCRIPTION</value>
+  </data>
+  <data name="TO" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="TOP" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="TOPIC_LOC" xml:space="preserve">
+    <value>TOPIC_LOC</value>
+  </data>
+  <data name="TOPICNAME" xml:space="preserve">
+    <value>TOPICNAME</value>
+  </data>
+  <data name="TOPICNAME_DESCRIPTION" xml:space="preserve">
+    <value>TOPICNAME_DESCRIPTION</value>
+  </data>
+  <data name="TOTAL" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TOURISTIC_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="TOURISTIC_NOFILTER" xml:space="preserve">
+    <value>No filter</value>
+  </data>
+  <data name="TOURISTIC_THISMONTH" xml:space="preserve">
+    <value>This month only</value>
+  </data>
+  <data name="TOURISTIC_THISYEAR" xml:space="preserve">
+    <value>This year only</value>
+  </data>
+  <data name="TR" xml:space="preserve">
+    <value>TR</value>
+  </data>
+  <data name="TR_TR" xml:space="preserve">
+    <value>TR_TR</value>
+  </data>
+  <data name="TR_TR_DESCRIPTION" xml:space="preserve">
+    <value>TR_TR_DESCRIPTION</value>
+  </data>
+  <data name="TR_DESCRIPTION" xml:space="preserve">
+    <value>TR_DESCRIPTION</value>
+  </data>
+  <data name="TRANSLATOR" xml:space="preserve">
+    <value>Manu / IBS</value>
+  </data>
+  <data name="TRANSLATOR_EMAIL" xml:space="preserve">
+    <value>manu-dea@hotmail dot it</value>
+  </data>
+  <data name="TYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="UNCHECKED_USERS" xml:space="preserve">
+    <value>Unchecked users</value>
+  </data>
+  <data name="UNKNOWN" xml:space="preserve">
+    <value>UNKNOWN</value>
+  </data>
+  <data name="UP_TO" xml:space="preserve">
+    <value>up to</value>
+  </data>
+  <data name="UPDATE" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="UPDATE_YOUR_PROFILE" xml:space="preserve">
+    <value>Update your profile</value>
+  </data>
+  <data name="UPLOAD_FILE" xml:space="preserve">
+    <value>上傳檔案</value>
+  </data>
+  <data name="UPLOAD_IMAGE" xml:space="preserve">
+    <value>Upload Image</value>
+  </data>
+  <data name="UPLOAD_SUCCESS_MESSAGE" xml:space="preserve">
+    <value>文件成功地被上装!</value>
+  </data>
+  <data name="UPLOAD_TO_WEB" xml:space="preserve">
+    <value>Upload to Web Server</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URL_TO_BROWSE" xml:space="preserve">
+    <value>URL to browse</value>
+  </data>
+  <data name="URLPAGENAME" xml:space="preserve">
+    <value>URLPAGENAME</value>
+  </data>
+  <data name="URLPAGENAME_DESCRIPTION" xml:space="preserve">
+    <value>URLPAGENAME_DESCRIPTION</value>
+  </data>
+  <data name="USE_INSTALLER" xml:space="preserve">
+    <value>Use installer</value>
+  </data>
+  <data name="USER_MANAGE" xml:space="preserve">
+    <value>USER_MANAGE</value>
+  </data>
+  <data name="USER_MESSAGE1" xml:space="preserve">
+    <value>Users must be registered to view secure content.</value>
+  </data>
+  <data name="USER_MESSAGE2" xml:space="preserve">
+    <value>Users may add themselves using the Register form, and Administrators may add users to specific roles using the Security Roles function above.</value>
+  </data>
+  <data name="USER_MESSAGE3" xml:space="preserve">
+    <value>This section permits Administrators to manage users and their security roles directly.</value>
+  </data>
+  <data name="USER_MESSAGE_DOMAIN1" xml:space="preserve">
+    <value>Domain users do not need to be registered to access portal content that is available to ’All Users’</value>
+  </data>
+  <data name="USER_MESSAGE_DOMAIN2" xml:space="preserve">
+    <value>Administrators may add domain users to specific roles using the Security Roles function above.</value>
+  </data>
+  <data name="USER_MESSAGE_DOMAIN3" xml:space="preserve">
+    <value>This section permits Administrators to manage users and their security roles directly.</value>
+  </data>
+  <data name="USER_NEW_USER" xml:space="preserve">
+    <value>USER_NEW_USER</value>
+  </data>
+  <data name="USERBLOCK" xml:space="preserve">
+    <value>Group users</value>
+  </data>
+  <data name="USERBLOCK_DESCRIPTION" xml:space="preserve">
+    <value>Select the maximum number of users. For sending emails to all you have to repeat the process. Use small values to avoid server timeouts.</value>
+  </data>
+  <data name="USEREMAIL" xml:space="preserve">
+    <value>UserEmail</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="USERTABLE_BACK" xml:space="preserve">
+    <value>USERTABLE_BACK</value>
+  </data>
+  <data name="USERTABLE_EDITROW" xml:space="preserve">
+    <value>USERTABLE_EDITROW</value>
+  </data>
+  <data name="USERTABLE_INASCORDER" xml:space="preserve">
+    <value>USERTABLE_INASCORDER</value>
+  </data>
+  <data name="USERTABLE_INDSCORDER" xml:space="preserve">
+    <value>USERTABLE_INDSCORDER</value>
+  </data>
+  <data name="USERTABLE_MANAGETABLE" xml:space="preserve">
+    <value>USERTABLE_MANAGETABLE</value>
+  </data>
+  <data name="USERTABLE_MOVEFIELDDOWN" xml:space="preserve">
+    <value>USERTABLE_MOVEFIELDDOWN</value>
+  </data>
+  <data name="USERTABLE_MOVEFIELDUP" xml:space="preserve">
+    <value>USERTABLE_MOVEFIELDUP</value>
+  </data>
+  <data name="USERTABLE_NEWFIELD" xml:space="preserve">
+    <value>USERTABLE_NEWFIELD</value>
+  </data>
+  <data name="USERTABLE_SORTEDBY" xml:space="preserve">
+    <value>USERTABLE_SORTEDBY</value>
+  </data>
+  <data name="USERTABLE_TITLE" xml:space="preserve">
+    <value>USERTABLE_TITLE</value>
+  </data>
+  <data name="USERTABLE_TYPE" xml:space="preserve">
+    <value>USERTABLE_TYPE</value>
+  </data>
+  <data name="USERTABLE_TYPE_BOOLEAN" xml:space="preserve">
+    <value>USERTABLE_TYPE_BOOLEAN</value>
+  </data>
+  <data name="USERTABLE_TYPE_DATETIME" xml:space="preserve">
+    <value>USERTABLE_TYPE_DATETIME</value>
+  </data>
+  <data name="USERTABLE_TYPE_DECIMAL" xml:space="preserve">
+    <value>USERTABLE_TYPE_DECIMAL</value>
+  </data>
+  <data name="USERTABLE_TYPE_FILE" xml:space="preserve">
+    <value>USERTABLE_TYPE_FILE</value>
+  </data>
+  <data name="USERTABLE_TYPE_INT32" xml:space="preserve">
+    <value>USERTABLE_TYPE_INT32</value>
+  </data>
+  <data name="USERTABLE_TYPE_STRING" xml:space="preserve">
+    <value>USERTABLE_TYPE_STRING</value>
+  </data>
+  <data name="USERTABLE_VISIBLE" xml:space="preserve">
+    <value>USERTABLE_VISIBLE</value>
+  </data>
+  <data name="VALID_ADDRESS" xml:space="preserve">
+    <value>You must enter a valid address</value>
+  </data>
+  <data name="VALID_CITY" xml:space="preserve">
+    <value>You must enter a valid city</value>
+  </data>
+  <data name="VALID_CODE" xml:space="preserve">
+    <value>You must enter a valid Code</value>
+  </data>
+  <data name="VALID_DATE" xml:space="preserve">
+    <value>You Must Enter a valid Date</value>
+  </data>
+  <data name="VALID_EMAIL" xml:space="preserve">
+    <value>Must use a valid email address.</value>
+  </data>
+  <data name="VALID_FIELD" xml:space="preserve">
+    <value>Please insert a valid value</value>
+  </data>
+  <data name="VALID_FILE_NAME" xml:space="preserve">
+    <value>You must enter a valid File Name</value>
+  </data>
+  <data name="VALID_NAME" xml:space="preserve">
+    <value>You must enter a valid Name</value>
+  </data>
+  <data name="VALID_NUMBER" xml:space="preserve">
+    <value>You must enter a valid Number</value>
+  </data>
+  <data name="VALID_PHONE" xml:space="preserve">
+    <value>You must enter a valid phone #</value>
+  </data>
+  <data name="VALID_TITLE" xml:space="preserve">
+    <value>You must enter a valid Title</value>
+  </data>
+  <data name="VALID_VIEWORDER" xml:space="preserve">
+    <value>You must enter a valid View Order</value>
+  </data>
+  <data name="VALID_ZIP" xml:space="preserve">
+    <value>You must enter a valid zip code</value>
+  </data>
+  <data name="VALIDORDER" xml:space="preserve">
+    <value>You Must Enter a Valid View Order</value>
+  </data>
+  <data name="VALIDTITLE" xml:space="preserve">
+    <value>You Must Enter a Valid Title</value>
+  </data>
+  <data name="VALIDURL" xml:space="preserve">
+    <value>You Must Enter a Valid Title</value>
+  </data>
+  <data name="VERTICAL" xml:space="preserve">
+    <value>VERTICAL</value>
+  </data>
+  <data name="VIEW_ORDER" xml:space="preserve">
+    <value>View Order</value>
+  </data>
+  <data name="VIEWORDER" xml:space="preserve">
+    <value>View order</value>
+  </data>
+  <data name="WEB_FARM_SUPPORT" xml:space="preserve">
+    <value>Store in database (web farm support)</value>
+  </data>
+  <data name="WEBSITE" xml:space="preserve">
+    <value>Web Site</value>
+  </data>
+  <data name="WELCOME" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WHOS_LOGGED_ON_1" xml:space="preserve">
+    <value>There are currently:</value>
+  </data>
+  <data name="WHOS_LOGGED_ON_2" xml:space="preserve">
+    <value>anonymous users online</value>
+  </data>
+  <data name="WHOS_LOGGED_ON_3" xml:space="preserve">
+    <value> registered users online: </value>
+  </data>
+  <data name="WHOSLOGGEDONCACHETIMEOUT" xml:space="preserve">
+    <value>Specify an amount of time the who’s logged on module will wait before checking again (0 - 60000)</value>
+  </data>
+  <data name="WIDTH" xml:space="preserve">
+    <value>宽度</value>
+  </data>
+  <data name="WIDTH_DESCRIPTION" xml:space="preserve">
+    <value>宽度编辑控制</value>
+  </data>
+  <data name="WINDOWSADMINS" xml:space="preserve">
+    <value>WINDOWSADMINS</value>
+  </data>
+  <data name="WINDOWSADMINS_DESCRIPTION" xml:space="preserve">
+    <value>WINDOWSADMINS_DESCRIPTION</value>
+  </data>
+  <data name="XMLFORM_CLEAR" xml:space="preserve">
+    <value>XMLFORM_CLEAR</value>
+  </data>
+  <data name="XMLFORM_NEW" xml:space="preserve">
+    <value>XMLFORM_NEW</value>
+  </data>
+  <data name="XMLFORM_NO_EMAIL" xml:space="preserve">
+    <value>XMLFORM_NO_EMAIL</value>
+  </data>
+  <data name="XMLFORM_SEND" xml:space="preserve">
+    <value>XMLFORM_SEND</value>
+  </data>
+  <data name="XMLFORM_SUBMITTED" xml:space="preserve">
+    <value>XMLFORM_SUBMITTED</value>
+  </data>
+  <data name="XMLSRC" xml:space="preserve">
+    <value>XML Source file</value>
+  </data>
+  <data name="XSLSRC" xml:space="preserve">
+    <value>XSL Transform</value>
+  </data>
+  <data name="YEAR" xml:space="preserve">
+    <value>YEAR</value>
+  </data>
+  <data name="YEARS" xml:space="preserve">
+    <value>YEARS</value>
+  </data>
+  <data name="ZH_CN" xml:space="preserve">
+    <value>标题(ZH_CN)</value>
+  </data>
+  <data name="ZH_CN_DESCRIPTION" xml:space="preserve">
+    <value>设置标题为中国(中华人民共和国) 文化。</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>郵遞區號</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>語言</value>
+  </data>
+</root>
