@@ -6,7 +6,7 @@
         PortalHeaderMenu.DataBind();
 		PortalTitle.DataBind();
         PortalImage.DataBind();
-		/ If the user is logged in 
+		// If the user is logged in 
 		// admins are shown admin menu
 		// other users are shown normal user menu
 		if (HttpContext.Current.User.Identity.IsAuthenticated){
