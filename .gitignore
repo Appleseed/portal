@@ -1,1 +1,13 @@
 /.project
+[Bb]in
+[Oo]bj
+[Tt]humbs.db
+*.bak
+*.[Cc]ache
+*.metaproj
+*.metaproj.*
+*.user
+*.log
+*.dat
+*.DotSettings
+*.tmp
