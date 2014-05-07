@@ -7,13 +7,12 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle( "Appleseed" )]
-[assembly: AssemblyDescription( "Appleseed portal content management solution" )]
-[assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "" )]
-[assembly: AssemblyProduct( "" )]
-[assembly: AssemblyCopyright( "(C) 2006 AppleseedPortal" )]
-[assembly: AssemblyTrademark( "Appleseed Portal" )]
+[assembly: AssemblyTitle("Appleseed.Framework.Core")]
+[assembly: AssemblyDescription("Appleseed Portal and Content Management System")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("ANANT Corporation")]
+[assembly: AssemblyProduct("Appleseed Portal")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2014")]
 [assembly: AssemblyCulture( "" )]
 
 
@@ -34,8 +33,8 @@ using System.Resources;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]
 
 // In order to sign your assembly you must specify a key to use. Refer to the 
 // Microsoft .NET Framework documentation for more information on assembly signing.

@@ -15,7 +15,7 @@
     <AssemblyName>Appleseed</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -4605,6 +4605,7 @@
     <Content Include="Design\DesktopLayouts\Clearly\images\splash.png" />
     <Content Include="Design\DesktopLayouts\Clearly\images\tail-header.gif" />
     <Content Include="Design\DesktopLayouts\Clearly\images\tail-top.gif" />
+    <Content Include="Design\DesktopLayouts\Corporate-Black\DesktopAdmin.ascx" />
     <Content Include="Design\DesktopLayouts\Corporate-Black\DesktopFooter.ascx" />
     <Content Include="Design\DesktopLayouts\Corporate-Black\DesktopPortalBanner.ascx" />
     <Content Include="Design\DesktopLayouts\Corporate-Black\images\banner_bg.jpg" />
@@ -5189,6 +5190,7 @@
     <Content Include="Design\Themes\Corporate-Black-Alt\icon\VersionToStaging.gif" />
     <Content Include="Design\Themes\Corporate-Black-Alt\icon\view.gif" />
     <Content Include="Design\Themes\Corporate-Black-Alt\Theme.xml" />
+    <Content Include="Design\Themes\Corporate-Black\as-admin-bar.css" />
     <Content Include="Design\Themes\Corporate-Black\default.css" />
     <Content Include="Design\Themes\Corporate-Black\icon\add.gif" />
     <Content Include="Design\Themes\Corporate-Black\icon\add.png" />
@@ -5844,6 +5846,7 @@
     <Content Include="get_aspx_ver.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\1x1black.gif" />
+    <Content Include="images\brick.png" />
     <Content Include="images\file.png" />
     <Content Include="images\folder.png" />
     <Content Include="images\folder2.png" />
@@ -5938,6 +5941,7 @@
     <Content Include="DesktopModules\CoreModules\DatabaseTableEdit\TableEditor.zip" />
     <Content Include="Appleseed.config" />
     <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
+    <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Setup\History.xsc">
       <DependentUpon>History.xsd</DependentUpon>
     </None>
@@ -6158,14 +6162,14 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>6440</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://appleseed.local/</IISUrl>
+          <IISUrl>http://localhost:6440/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>True</UseCustomServer>
-          <CustomServerUrl>http://appleseed.local/</CustomServerUrl>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:800</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

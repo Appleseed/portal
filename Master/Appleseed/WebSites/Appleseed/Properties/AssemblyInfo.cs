@@ -5,12 +5,12 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Appleseed")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Appleseed Portal")]
+[assembly: AssemblyDescription("Appleseed Portal and Content Management System")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Appleseed")]
-[assembly: AssemblyProduct("Appleseed")]
-[assembly: AssemblyCopyright("Copyright © Appleseed 2011")]
+[assembly: AssemblyCompany("ANANT Corporation")]
+[assembly: AssemblyProduct("Appleseed Portal")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,6 +31,6 @@ using System.Resources;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

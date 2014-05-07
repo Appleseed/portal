@@ -6,12 +6,13 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Appleseed.AppCode")]
-[assembly: AssemblyDescription("This is the core framework dll for the Appleseed portal project")]
+
+[assembly: AssemblyTitle("Appleseed.Framework.Web")]
+[assembly: AssemblyDescription("Core Framework DLL for the Appleseed portal project")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Appleseed Portal Core Framework")]
-[assembly: AssemblyCopyright("Copyright © improv 2005")]
+[assembly: AssemblyCompany("ANANT Corporation")]
+[assembly: AssemblyProduct("Appleseed Portal")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

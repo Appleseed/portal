@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle( "Appleseed.Framework.Providers.AppleseedMembershipProvider" )]
-[assembly: AssemblyDescription( "" )]
-[assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "--" )]
-[assembly: AssemblyProduct( "Appleseed.Framework.Providers.AppleseedMembershipProvider" )]
-[assembly: AssemblyCopyright( "Copyright © -- 2006" )]
+[assembly: AssemblyDescription("Appleseed Portal and Content Management System")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("ANANT Corporation")]
+[assembly: AssemblyProduct("Appleseed Portal")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2014")]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 

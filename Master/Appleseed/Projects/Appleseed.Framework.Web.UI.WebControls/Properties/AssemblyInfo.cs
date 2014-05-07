@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Appleseed.Framework.Web.UI.WebControls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jonavi")]
+[assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed.Framework.Web.UI.WebControls")]
-[assembly: AssemblyCopyright("Copyright © Jonavi 2006")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
