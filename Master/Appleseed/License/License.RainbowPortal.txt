@@ -1,7 +1,7 @@
 
 Portions of this software are based on Rainbow Portal Framework and Code
 (c) 2003-2006 by DUEMETRI sas http://www.duemetri.net
-and are used according the enclosed DPL licence
+and are used according to the enclosed DPL licence
 
 
 Duemetri Public License (DPL) Version 1.0 
@@ -20,7 +20,7 @@ If any files are modified, you must cause the modified files to carry prominent 
 
 The official version of the product will be released by Duemetri sas. The distribution of the modified product in source or binary form is allowed as official version and "patch files".
  
-The distribution of modified versions of the software without using "patch files" is allowed. In this case is fobidden to use the term "Appleseed" as the name (or part of it) of the product 
+The distribution of modified versions of the software without using "patch files" is allowed. In this case is fobidden to use the term "Rainbow" as the name (or part of it) of the product 
 
  
 Disclaimer 
