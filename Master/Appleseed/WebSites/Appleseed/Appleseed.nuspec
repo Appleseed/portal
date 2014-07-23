@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>Appleseed</id>
-    <version>1.0.0</version>
-    <authors>Agileworks</authors>
-    <description>Appleseed CMS distribution</description>
+    <id>Appleseed Portal</id>
+    <version>1.0.2.0</version>
+    <authors>ANANT Corporation</authors>
+    <description>Appleseed Portal and CMS distribution</description>
     <summary></summary>
     <language>en-US</language>    
     <projectUrl>http://appleseedapp.com/</projectUrl>
