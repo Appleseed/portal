@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>Appleseed Portal</id>
+    <id>Appleseed.Portal</id>
     <version>1.0.2.0</version>
     <authors>ANANT Corporation</authors>
     <description>Appleseed Portal and CMS distribution</description>
