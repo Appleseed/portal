@@ -12,6 +12,7 @@
 	<tags>Appleseed</tags>
   </metadata>
   <files>
+    <file src="Web.config" target="Content" />
     <file src="**\*.aspx" target="Content" />
     <file src="**\*.ascx" target="Content" />
     <file src="**\*.master" target="Content" />
