@@ -1,7 +1,9 @@
 @import url(Slyder_Styles.css);
-@import url(as-admin-bar.css);
 @import url(Menu.css);
 @import url(jquery-ui-1.9.2.custom.css);
+@import url(bootstrap.css);
+@import url(as-admin-bar.css);
+
         
         /*******************************************************/
         /************* Reset styles DO NOT REMOVE **************/
@@ -38,7 +40,7 @@ body {
 	background-color: #fff;
 	background-image:url("../../DesktopLayouts/Corporate-black/images/body_bg.jpg");
 	background-repeat:repeat-x;
-	background-position:top left;
+	background-position:0 50px;
    
 }
 
@@ -308,15 +310,13 @@ td.LeftTD{
         /**********  Header Classes   ************/
         /*****************************************/	
 
-
-.userMenu{
-	position:relative;
-	width: 680px;
-	height:68px;
-	z-index:400;
-	float:right;
-    vertical-align: top;
-    overflow: hidden;}
+.header-container 
+{
+    width:100%;
+    height:auto;
+    position:relative;
+    z-index:1;
+}
     
 .logo_div{
 	position: relative; 
@@ -931,4 +931,126 @@ td.SubHead span
 
 .appleseedlangclass{
 	height:350px;
+}
+
+
+/* Bootstrap overrides */
+.navbar-default {
+    min-height: 85px !important;
+}
+
+.navbar-collapse {
+    clear: left;
+}
+
+.nav.navbar-nav {
+    margin-top: 0;
+}
+
+.navbar-header {
+    float: none;
+}
+
+.navbar-default {
+    background-image: -webkit-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+    background-image: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    margin-bottom:0;
+}
+
+.navbar-default .navbar-nav > li:hover > a {
+    background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
+    background-image: linear-gradient(to bottom, #ebebeb 0%, #f3f3f3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff3f3f3', GradientType=0);
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-size:14px;
+}
+
+
+/* Bootstrap Menu Fix */
+
+.navbar-nav .dropdown:hover > .dropdown-menu { 
+  display: block; 
+}
+.navbar-nav .dropdown:hover > a[data-toggle=dropdown] + .dropdown-menu { 
+  display: none;
+}
+.navbar-nav .dropdown.open > a[data-toggle=dropdown] + .dropdown-menu { 
+  display: block; 
+}
+
+
+/* Search Results */
+
+.results {
+    font-size:21px;
+}
+
+.search-result-number, 
+.search-result-term {
+    font-weight:bold;
+}
+
+.displaying-results {
+    font-size:16px;
+    margin-top:10px;
+}
+
+/* Search Container */
+
+.search-container {
+    background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
+    background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #b2dba1;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    color:#3c763d;
+    padding:10px; 
+    margin:0 0 20px 0;
+    position:relative;
+}
+
+.search-right {
+    text-align:right;
+}
+
+/* Button */
+
+.btn-default {
+    text-shadow: 0 1px 0 #fff;
+    background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+    background-image: linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+    border-color: #dbdbdb;
+    border-color: #ccc;
+}
+
+.btn-default:hover, .btn-default:focus {
+    background-color: #e0e0e0;
+    background-position: 0 -15px;
+}
+
+/* Overflow for accordian popup */
+.ui-accordion-content {
+    overflow: auto !important;
+}
+
+/* Z-index fix for ui-dialogs */
+
+.ui-dialog {
+    z-index:2000;
 }
