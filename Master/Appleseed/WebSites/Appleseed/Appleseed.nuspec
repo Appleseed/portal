@@ -8,7 +8,7 @@
     <summary></summary>
     <language>en-US</language>    
     <projectUrl>http://appleseedapp.com/</projectUrl>
-	<iconUrl>http://updates.agileworks.com.uy/Content/Appleseed.ico</iconUrl>
+	<iconUrl>http://anant.us/favicon.ico</iconUrl>
 	<tags>Appleseed</tags>
   </metadata>
   <files>
@@ -31,6 +31,6 @@
     <file src="**\*.xslt" target="Content" />
     <file src="**\*.asax" target="Content" />   
 	<file src="**\*.resx" target="Content" />  	
-    <file src="bin\*.dll" target="Lib" />
+    
   </files>
 </package>
