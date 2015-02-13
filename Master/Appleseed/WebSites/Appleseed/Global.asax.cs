@@ -74,15 +74,18 @@ namespace Appleseed
             routes.IgnoreRoute("Content/{*path}");
             routes.IgnoreRoute("aspnet_client/{*path}");
 
+            //Set the page extenstion from Web.Config
             routes.IgnoreRoute("UploadDialog.aspx");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}" + ConfigurationManager.AppSettings["FriendlyUrlExtension"].ToString() + "/{*pathInfo}");
 
             routes.IgnoreRoute(string.Empty);
 
             routes.MapRoute(
                  "Default",                                              // Route name
                  "{controller}/{action}/{id}",                           // URL with parameters
-                 new { controller = "Home", action = "Index", id = "1" } // Parameter defaults
+                 new { controller = "Home", action = "Index", id = "1" },  // Parameter defaults
+                 new string[] { "FileManager.Controllers" }
              );
         }
 
@@ -118,9 +121,12 @@ namespace Appleseed
         protected void AppleseedApplication_BeginRequest(object sender, EventArgs e)
         {
             string Addwww = System.Configuration.ConfigurationManager.AppSettings.Get("AddWwwToRequest");
-            if (Addwww != null && Addwww.Equals("true")) {
-                if (!Request.IsSecureConnection) {
-                    if (!Request.Url.AbsoluteUri.ToLower().Contains("www")) {
+            if (Addwww != null && Addwww.Equals("true"))
+            {
+                if (!Request.IsSecureConnection)
+                {
+                    if (!Request.Url.AbsoluteUri.ToLower().Contains("www"))
+                    {
                         var newUrl = Request.Url.AbsoluteUri.Replace("http://", "http://www.");
                         Response.Redirect(newUrl, true);
                     }
@@ -135,28 +141,36 @@ namespace Appleseed
 
             var currentUrl = context.Request.Path.ToLower();
 
-            if (Debugger.IsAttached && currentUrl.Contains("trace.axd")) {
+            if (Debugger.IsAttached && currentUrl.Contains("trace.axd"))
+            {
                 return;
             }
 
             context.Trace.Warn("Application_BeginRequest :: " + currentUrl);
-            if (Portal.PageID > 0) {
+            if (Portal.PageID > 0)
+            {
                 var physicalPath = context.Server.MapPath(currentUrl.Substring(currentUrl.LastIndexOf("/") + 1));
 
-                if (!File.Exists(physicalPath)) {
+                if (!File.Exists(physicalPath))
+                {
                     // Rewrites the path
                     context.RewritePath("~/default.aspx?" + context.Request.ServerVariables["QUERY_STRING"]);
                 }
-            } else {
+            }
+            else
+            {
                 var pname = currentUrl.Substring(currentUrl.LastIndexOf("/") + 1);
 
                 // if the request was not caused by an MS Ajax Client script invoking a WS.
-                if (!currentUrl.ToLower().EndsWith(".asmx/js")) {
-                    if (!String.IsNullOrEmpty(pname) && pname.Length > 5) {
+                if (!currentUrl.ToLower().EndsWith(".asmx/js"))
+                {
+                    if (!String.IsNullOrEmpty(pname) && pname.Length > 5)
+                    {
                         pname = pname.Substring(0, pname.Length - 5);
                     }
 
-                    if (Regex.IsMatch(pname, @"^\d+$")) {
+                    if (Regex.IsMatch(pname, @"^\d+$"))
+                    {
                         context.RewritePath(
                             string.Format(
                                 "~/default.aspx?pageid={0}{1}", pname, context.Request.ServerVariables["QUERY_STRING"]));
@@ -168,7 +182,8 @@ namespace Appleseed
             #region
             // Important patch http://support.microsoft.com/?kbid=887459
             if (context.Request.Path.IndexOf('\\') >= 0 ||
-                Path.GetFullPath(context.Request.PhysicalPath) != context.Request.PhysicalPath) {
+                Path.GetFullPath(context.Request.PhysicalPath) != context.Request.PhysicalPath)
+            {
                 throw new AppleseedRedirect(LogLevel.Warn, HttpStatusCode.NotFound, "Malformed request", null);
             }
 
@@ -177,25 +192,32 @@ namespace Appleseed
             // 2nd Check: is the AllPortals Lock switched on?
             // let the user through if client IP address is in LockExceptions list, otherwise throw...
             #region
-            if (Config.LockAllPortals) {
+            if (Config.LockAllPortals)
+            {
                 var rawUrl = context.Request.RawUrl.ToLower(CultureInfo.InvariantCulture);
                 var lockRedirect = Config.LockRedirect;
-                if (!rawUrl.EndsWith(lockRedirect)) {
+                if (!rawUrl.EndsWith(lockRedirect))
+                {
                     // construct IPList
                     var lockKeyHolders = Config.LockKeyHolders.Split(new[] { ';' });
                     var ipList = new IPList();
-                    foreach (var lockKeyHolder in lockKeyHolders) {
-                        if (lockKeyHolder.IndexOf("-") > -1) {
+                    foreach (var lockKeyHolder in lockKeyHolders)
+                    {
+                        if (lockKeyHolder.IndexOf("-") > -1)
+                        {
                             ipList.AddRange(
                                 lockKeyHolder.Substring(0, lockKeyHolder.IndexOf("-")),
                                 lockKeyHolder.Substring(lockKeyHolder.IndexOf("-") + 1));
-                        } else {
+                        }
+                        else
+                        {
                             ipList.Add(lockKeyHolder);
                         }
                     }
 
                     // check if requestor's IP address is in allowed list
-                    if (!ipList.CheckNumber(context.Request.UserHostAddress)) {
+                    if (!ipList.CheckNumber(context.Request.UserHostAddress))
+                    {
                         throw new PortalsLockedException();
                     }
                 }
@@ -208,57 +230,28 @@ namespace Appleseed
             var returnToRequest = CheckAndUpdateDB(context, requestPath);
 
 
-            if (returnToRequest) {
+            if (returnToRequest)
+            {
                 return;
             }
 
-            PortalSettings portalSettings = null;
-
-            var pageId = Portal.PageID; // Get PageID from QueryString
-            var portalAlias = Portal.UniqueID; // Get requested alias from querystring, cookies or hostname
-            var defaultAlias = Config.DefaultPortal; // get default portal from config
-
-            try {
-                portalSettings = PortalSettings.GetPortalSettings(pageId, portalAlias);
-            } catch (DatabaseUnreachableException dexc) {
-                // If no database, must update
-                ErrorHandler.Publish(LogLevel.Error, dexc);
-                using (var s = new Services()) {
-                    s.RunDBUpdate(Config.ConnectionString);
-                }
-
-                portalSettings = PortalSettings.GetPortalSettings(pageId, portalAlias);
-            }
-
-            if (portalSettings == null || (portalSettings != null && portalSettings.PortalAlias == null)) {
-                portalSettings = PortalSettings.GetPortalSettings(pageId, defaultAlias);
-            }
-            //if (portalSettings.PortalAlias == null) {
-            //    // critical error - neither requested alias nor default alias could be found in DB
-            //    throw new AppleseedRedirect(
-            //        Config.NoPortalErrorRedirect,
-            //        LogLevel.Fatal,
-            //        Config.NoPortalErrorResponse,
-            //        "Unable to load any portal - redirecting request to ErrorNoPortal page.",
-            //        null);
-            //}
-
+            // Get portalsettings and add both key "PortalSettings","PortalID" into the Context.Item if not exisit 
+            // All neccessory checks and oprations are managed by this method
+            //Ashish.patel@haptix.biz - 2014/12/16 - Get portalsettings by pageid and portal id
+            PortalSettings portalSettings = PortalSettings.GetPortalSettingsbyPageID(Portal.PageID, Portal.UniqueID);
 
             Membership.Provider.ApplicationName = portalSettings.PortalAlias;
             ProfileManager.Provider.ApplicationName = portalSettings.PortalAlias;
             Roles.ApplicationName = portalSettings.PortalAlias;
 
-            // Portal Settings has passed the test so add it to Context
-            context.Items.Add("PortalSettings", portalSettings);
-            context.Items.Add("PortalID", portalSettings.PortalID); // jes1111
-
-
             var smartErrorRedirect = Config.SmartErrorRedirect;
-            if (smartErrorRedirect.StartsWith("~/")) {
+            if (smartErrorRedirect.StartsWith("~/"))
+            {
                 smartErrorRedirect = smartErrorRedirect.TrimStart(new[] { '~' });
             }
 
-            if (requestPath.EndsWith(smartErrorRedirect.ToLower(CultureInfo.InvariantCulture))) {
+            if (requestPath.EndsWith(smartErrorRedirect.ToLower(CultureInfo.InvariantCulture)))
+            {
                 return; // this is SmartError page... so continue             
             }
 
@@ -267,15 +260,20 @@ namespace Appleseed
             // Try to get alias from cookie to determine if alias has been changed
             var refreshSite = false;
             var portalAliasCookie = context.Request.Cookies["PortalAlias"];
-            if (portalAliasCookie != null && portalAliasCookie.Value.ToLower() != Portal.UniqueID) {
+            if (portalAliasCookie != null && portalAliasCookie.Value.ToLower() != Portal.UniqueID)
+            {
                 refreshSite = true; // Portal has changed since last page request
             }
 
-            if (portalSettings != null) {
+            if (portalSettings != null)
+            {
                 portalAliasCookie = new HttpCookie("PortalAlias") { Path = "/", Value = portalSettings.PortalAlias };
-                if (context.Response.Cookies["PortalAlias"] == null) {
+                if (context.Response.Cookies["PortalAlias"] == null)
+                {
                     context.Response.Cookies.Add(portalAliasCookie);
-                } else {
+                }
+                else
+                {
                     context.Response.Cookies.Set(portalAliasCookie);
                 }
             }
@@ -286,17 +284,23 @@ namespace Appleseed
 
             // 5/7/2006 Ed Daniel
             // Added hack for Http 302 by extending condition below to check for more than 3 cookies
-            if (refreshSite && context.Request.Cookies.Keys.Count > 3) {
+            if (refreshSite && context.Request.Cookies.Keys.Count > 3)
+            {
                 // Sign out and force the browser to refresh only once to avoid any dead-lock
-                if (refreshedCookie == null || refreshedCookie.Value == "false") {
+                if (refreshedCookie == null || refreshedCookie.Value == "false")
+                {
                     var rawUrl = context.Request.RawUrl;
-                    var newRefreshedCookie = new HttpCookie("refreshed", "true") {
+                    var newRefreshedCookie = new HttpCookie("refreshed", "true")
+                    {
                         Path = "/",
                         Expires = DateTime.Now.AddMinutes(1)
                     };
-                    if (refreshedCookie == null) {
+                    if (refreshedCookie == null)
+                    {
                         context.Response.Cookies.Add(newRefreshedCookie);
-                    } else {
+                    }
+                    else
+                    {
                         context.Response.Cookies.Set(newRefreshedCookie);
                     }
 
@@ -318,8 +322,10 @@ namespace Appleseed
 
             // invalidate cookie, so the page can be refreshed when needed
             refreshedCookie = context.Request.Cookies["refreshed"];
-            if (refreshedCookie != null && context.Request.Cookies.Keys.Count > 3) {
-                var newRefreshedCookie = new HttpCookie("refreshed", "false") {
+            if (refreshedCookie != null && context.Request.Cookies.Keys.Count > 3)
+            {
+                var newRefreshedCookie = new HttpCookie("refreshed", "false")
+                {
                     Path = "/",
                     Expires = DateTime.Now.AddMinutes(1)
                 };
@@ -328,9 +334,11 @@ namespace Appleseed
 
             // This is done in order to allow the sitemap to reference a page that is outside this website.
             var targetPage = this.Request.Params["sitemapTargetPage"];
-            if (!string.IsNullOrEmpty(targetPage)) {
+            if (!string.IsNullOrEmpty(targetPage))
+            {
                 int mvcPageId;
-                if (int.TryParse(targetPage, out mvcPageId)) {
+                if (int.TryParse(targetPage, out mvcPageId))
+                {
                     var url = HttpUrlBuilder.BuildUrl(mvcPageId);
                     this.Response.Redirect(url);
                 }
@@ -342,12 +350,14 @@ namespace Appleseed
             var requestUri = context.Request.Url;
 
             var installRedirect = Config.InstallerRedirect;
-            if (installRedirect.StartsWith("~/")) {
+            if (installRedirect.StartsWith("~/"))
+            {
                 installRedirect = installRedirect.TrimStart(new[] { '~', '/' });
             }
 
             installRedirect = installRedirect.ToLower(CultureInfo.InvariantCulture);
-            if (requestPath.EndsWith(installRedirect) || requestPath.Contains(installRedirect.Split(new[] { '/' })[0])) {
+            if (requestPath.EndsWith(installRedirect) || requestPath.Contains(installRedirect.Split(new[] { '/' })[0]))
+            {
                 return true; // this is Install page... so skip creation of PortalSettings
             }
 
@@ -362,18 +372,23 @@ namespace Appleseed
             var versionDelta = Database.DatabaseVersion.CompareTo(Portal.CodeVersion);
 
             // if DB and code versions do not match
-            if (versionDelta != 0) {
+            if (versionDelta != 0)
+            {
                 // ...and this is not DB Update page
                 var errorMessage = string.Format(
                     "Database version: {0} Code version: {1}", Database.DatabaseVersion, Portal.CodeVersion);
 
-                if (versionDelta < 0) {
+                if (versionDelta < 0)
+                {
                     // DB Version is behind Code Version
                     ErrorHandler.Publish(LogLevel.Warn, errorMessage);
-                    using (var s = new Services()) {
+                    using (var s = new Services())
+                    {
                         s.RunDBUpdate(Config.ConnectionString);
                     }
-                } else {
+                }
+                else
+                {
                     // DB version is ahead of Code Version
                     ErrorHandler.Publish(LogLevel.Warn, errorMessage);
                 }
@@ -391,9 +406,10 @@ namespace Appleseed
         /// </param>
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-		  if (!Request.Path.ToLower().Contains("images.ashx") &&
-                !Request.Url.AbsoluteUri.ToLower().Contains("/images/") &&
-                !Request.Url.AbsoluteUri.ToLower().Contains("/i/")) {            
+            if (!Request.Path.ToLower().Contains("images.ashx") &&
+                  !Request.Url.AbsoluteUri.ToLower().Contains("/images/") &&
+                  !Request.Url.AbsoluteUri.ToLower().Contains("/i/"))
+            {
                 this.AppleseedApplication_BeginRequest(sender, e);
             }
         }
@@ -431,25 +447,31 @@ namespace Appleseed
             // moved from PortalSettings
             var f = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(Portal)).Location);
             HttpContext.Current.Application.Lock();
-            HttpContext.Current.Application["CodeVersion"] = 1894; //f.FilePrivatePart;
+            HttpContext.Current.Application["CodeVersion"] = 1897; //f.FilePrivatePart;
             HttpContext.Current.Application["NugetSelfUpdatesToInstall"] = false;
             HttpContext.Current.Application.UnLock();
 
             ErrorHandler.Publish(
                 LogLevel.Info, string.Format("Application Started: code version {0}", Portal.CodeVersion));
 
-            if (Config.CheckForFilePermission) {
-                try {
+            if (Config.CheckForFilePermission)
+            {
+                try
+                {
                     var newDir = Path.Combine(Framework.Settings.Path.ApplicationPhysicalPath, "_createnewdir");
 
-                    if (!Directory.Exists(newDir)) {
+                    if (!Directory.Exists(newDir))
+                    {
                         Directory.CreateDirectory(newDir);
                     }
 
-                    if (Directory.Exists(newDir)) {
+                    if (Directory.Exists(newDir))
+                    {
                         Directory.Delete(newDir);
                     }
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     throw new AppleseedException(
                         LogLevel.Fatal,
                         HttpStatusCode.ServiceUnavailable,
@@ -459,7 +481,8 @@ namespace Appleseed
             }
 
             // Start scheduler
-            if (Config.SchedulerEnable) {
+            if (Config.SchedulerEnable)
+            {
                 PortalSettings.Scheduler =
                     CachedScheduler.GetScheduler(
                         context.Server.MapPath(Framework.Settings.Path.ApplicationRoot),
@@ -470,11 +493,13 @@ namespace Appleseed
             }
 
             // Start proxy
-            if (Config.UseProxyServerForServerWebRequests) {
+            if (Config.UseProxyServerForServerWebRequests)
+            {
                 WebRequest.DefaultWebProxy = PortalSettings.GetProxy();
             }
 
-            try {
+            try
+            {
                 UpdateDB();
 
                 //while (CheckForSelfUpdates());
@@ -493,9 +518,10 @@ namespace Appleseed
                 RegisterRoutes(RouteTable.Routes);
 
                 if (ConfigurationManager.AppSettings["RouteTesting"] != null &&
-                    bool.Parse(ConfigurationManager.AppSettings["RouteTesting"]) ) {                    
+                    bool.Parse(ConfigurationManager.AppSettings["RouteTesting"]))
+                {
                     //RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
-                    
+
                 }
 
                 ErrorHandler.Publish(LogLevel.Info, "Registing Routes");
@@ -508,7 +534,9 @@ namespace Appleseed
                 ViewEngines.Engines.Add(new AppleseedWebFormViewEngine());
                 ViewEngines.Engines.Add(new AppleseedRazorViewEngine());
 
-            } catch (Exception exc) {
+            }
+            catch (Exception exc)
+            {
 
                 ErrorHandler.Publish(LogLevel.Error, exc);
             }

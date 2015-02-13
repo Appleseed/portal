@@ -52,8 +52,9 @@ namespace Appleseed.Framework.Site.Configuration
     /// </summary>
     /// <remarks>
     /// </remarks>
+    [History("Ashish.patel@haptix.biz", "2014/12/24", "Added Check/method for Enable Friendly url")]
     [History("jminond", "2005/03/10", "Tab to page conversion")]
-    [History("gman3001", "2004/09/29", 
+    [History("gman3001", "2004/09/29",
         "Added the GetCurrentUserProfile method to obtain a hashtable of the current user's profile details.")]
     [History("jviladiu@portalServices.net", "2004/08/19", "Add support for move & delete module roles")]
     [History("jviladiu@portalServices.net", "2004/07/30", "Added new ActiveModule property")]
@@ -130,9 +131,9 @@ namespace Appleseed.Framework.Site.Configuration
 
         #region Constructors and Destructors
 
-         private PortalSettings()
-         {
-         }
+        private PortalSettings()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalSettings"/> class.
@@ -176,61 +177,66 @@ namespace Appleseed.Framework.Site.Configuration
                 command.Parameters.Add(parameterPageId);
                 var parameterPortalLanguage = new SqlParameter("@PortalLanguage", SqlDbType.NVarChar, 12)
                     {
-                       Value = this.PortalContentLanguage.Name 
+                        Value = this.PortalContentLanguage.Name
                     };
                 command.Parameters.Add(parameterPortalLanguage);
 
                 // Add out parameters to Sproc
                 var parameterPortalId = new SqlParameter(StringsAtPortalId, SqlDbType.Int, 4)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterPortalId);
                 var parameterPortalName = new SqlParameter("@PortalName", SqlDbType.NVarChar, 128)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterPortalName);
                 var parameterPortalPath = new SqlParameter("@PortalPath", SqlDbType.NVarChar, 128)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterPortalPath);
                 var parameterEditButton = new SqlParameter("@AlwaysShowEditButton", SqlDbType.Bit, 1)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterEditButton);
                 var parameterPageName = new SqlParameter("@PageName", SqlDbType.NVarChar, 50)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterPageName);
                 var parameterPageOrder = new SqlParameter("@PageOrder", SqlDbType.Int, 4)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterPageOrder);
                 var parameterParentPageId = new SqlParameter("@ParentPageID", SqlDbType.Int, 4)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterParentPageId);
                 var parameterMobilePageName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 50)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterMobilePageName);
                 var parameterAuthRoles = new SqlParameter("@AuthRoles", SqlDbType.NVarChar, 512)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterAuthRoles);
                 var parameterShowMobile = new SqlParameter("@ShowMobile", SqlDbType.Bit, 1)
                     {
-                       Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterShowMobile);
+                var parameterFriendURL = new SqlParameter("@FriendURL", SqlDbType.NVarChar, 1024)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                command.Parameters.Add(parameterFriendURL);
                 SqlDataReader result;
 
                 try
@@ -247,11 +253,12 @@ namespace Appleseed.Framework.Site.Configuration
                     {
                         var tabDetails = new PageStripDetails
                             {
-                                PageID = (int)result["PageID"], 
-                                ParentPageID = Int32.Parse("0" + result["ParentPageID"]), 
-                                PageName = (string)result["PageName"], 
-                                PageOrder = (int)result["PageOrder"], 
-                                PageLayout = this.CurrentLayout, 
+                                PageID = (int)result["PageID"],
+                                ParentPageID = Int32.Parse("0" + result["ParentPageID"]),
+                                PageName = (string)result["PageName"],
+                                FriendlyURL = (string)result["FriendlyURL"],
+                                PageOrder = (int)result["PageOrder"],
+                                PageLayout = this.CurrentLayout,
                                 AuthorizedRoles = (string)result["AuthorizedRoles"]
                             };
                         this.PortalAlias = portalAlias;
@@ -274,9 +281,10 @@ namespace Appleseed.Framework.Site.Configuration
                     {
                         var tabDetails = new PageStripDetails
                             {
-                                PageID = (int)result["PageID"], 
-                                PageName = (string)result["MobilePageName"], 
-                                PageLayout = this.CurrentLayout, 
+                                PageID = (int)result["PageID"],
+                                PageName = (string)result["MobilePageName"],
+                                FriendlyURL = (string)result["FriendlyURL"],
+                                PageLayout = this.CurrentLayout,
                                 AuthorizedRoles = (string)result["AuthorizedRoles"]
                             };
                         this.MobilePages.Add(tabDetails);
@@ -289,11 +297,11 @@ namespace Appleseed.Framework.Site.Configuration
                     {
                         var m = new ModuleSettings
                             {
-                                ModuleID = (int)result["ModuleID"], 
-                                ModuleDefID = (int)result["ModuleDefID"], 
-                                GuidID = (Guid)result["GeneralModDefID"], 
-                                PageID = (int)result["TabID"], 
-                                PaneName = (string)result["PaneName"], 
+                                ModuleID = (int)result["ModuleID"],
+                                ModuleDefID = (int)result["ModuleDefID"],
+                                GuidID = (Guid)result["GeneralModDefID"],
+                                PageID = (int)result["TabID"],
+                                PaneName = (string)result["PaneName"],
                                 ModuleTitle = (string)result["ModuleTitle"]
                             };
                         var value = result["AuthorizedEditRoles"];
@@ -385,6 +393,7 @@ namespace Appleseed.Framework.Site.Configuration
                     this.ActivePage.MobilePageName = (string)parameterMobilePageName.Value;
                     this.ActivePage.AuthorizedRoles = (string)parameterAuthRoles.Value;
                     this.ActivePage.PageName = (string)parameterPageName.Value;
+                    this.ActivePage.FriendlyURL = (string)parameterFriendURL.Value;
                     this.ActivePage.ShowMobile = (bool)parameterShowMobile.Value;
                     this.ActivePage.PortalPath = this.PortalPath; // thierry@tiptopweb.com.au for page custom layout
                     result.Close(); // by Manu, fixed bug 807858
@@ -400,9 +409,9 @@ namespace Appleseed.Framework.Site.Configuration
                 catch (SqlException sqex)
                 {
                     var requestUri = HttpContext.Current.Request.Url;
-                    
-                        throw new DatabaseUnreachableException("This may be a new db", sqex);
-                    
+
+                    throw new DatabaseUnreachableException("This may be a new db", sqex);
+
                     return;
                 }
                 finally
@@ -416,10 +425,10 @@ namespace Appleseed.Framework.Site.Configuration
             }
 
             // Provide a valid tab id if it is missing
-            
+
             // 11-10-2011
             // Changed to go to the first page that the user logged has permission to see
-            
+
             //if (this.ActivePage.PageID == 0)
             //{
             //    this.ActivePage.PageID = ((PageStripDetails)this.DesktopPages[0]).PageID;
@@ -519,7 +528,7 @@ namespace Appleseed.Framework.Site.Configuration
                     else
                     {
                         throw new Exception(
-                            "The portal you requested cannot be found. PortalID: " + portalId, 
+                            "The portal you requested cannot be found. PortalID: " + portalId,
                             new HttpException(404, "Portal not found"));
                     }
                 }
@@ -590,9 +599,9 @@ namespace Appleseed.Framework.Site.Configuration
             ProcessCurrentLanguage(portalAlias);
             var key = GetPortalSettingsCacheKey(pageId, portalAlias, Thread.CurrentThread.CurrentUICulture.Name);
             var cache = HttpRuntime.Cache;
-            if(cache.Get(key) != null)
+            if (cache.Get(key) != null)
             {
-                return (PortalSettings) cache.Get(key);
+                return (PortalSettings)cache.Get(key);
             }
             var portalSettings = new PortalSettings(pageId, portalAlias);
             AddToCache(key, portalSettings);
@@ -1189,7 +1198,7 @@ namespace Appleseed.Framework.Site.Configuration
                         writer.WriteAttributeString("ParentPageId", page.ParentPageID.ToString());
 
                         writer.WriteAttributeString(
-                            "UrlPageName", 
+                            "UrlPageName",
                             HttpUrlBuilder.UrlPageName(page.PageID) == HttpUrlBuilder.DefaultPage
                                 ? page.PageName
                                 : HttpUrlBuilder.UrlPageName(page.PageID).Replace(".aspx", string.Empty));
@@ -1351,6 +1360,94 @@ namespace Appleseed.Framework.Site.Configuration
         #region Public Methods
 
         /// <summary>
+        /// Get portal settings by pageid and portal alias
+        /// </summary>
+        /// <param name="pageId">Page ID</param>
+        /// <param name="portalAlias">Portal Allias</param>
+        /// <returns></returns>
+        /// Ashish.patel@haptix.biz - 2014/12/16 - Get PORTAL SETTINGS
+        public static PortalSettings GetPortalSettingsbyPageID(int pageId, string portalAlias)
+        {
+            // Set portal settings
+            var portalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+
+            //If portal settings null then get it and fill here
+            if (portalSettings == null)
+            {
+                //Get portal settings from the method
+                portalSettings = GetPortalSettingFromDB(pageId, portalAlias, portalSettings);
+
+                // Add key as portalsettings into the dictionalry 
+                HttpContext.Current.Items.Add("PortalSettings", portalSettings);
+                HttpContext.Current.Items.Add("PortalID", portalSettings.PortalID);
+            }
+            else
+            {
+                // Check for portalsettings active page.
+                //IF null or not match the fill
+                if (portalSettings.ActivePage == null || portalSettings.ActivePage.PageID != pageId)
+                {
+                    // Get portal settings from the method
+                    portalSettings = GetPortalSettingFromDB(pageId, portalAlias, portalSettings);
+                    HttpContext.Current.Items["PortalSettings"] = portalSettings;
+                    HttpContext.Current.Items["PortalID"] = portalSettings.PortalID;
+                }
+            }
+
+            return portalSettings;
+        }
+
+        /// <summary>
+        /// Get page friendly url is enabled or not and also set the portal setting
+        /// </summary>
+        /// <param name="pageId"> Page id</param>
+        /// <param name="portalAlias"> Portal Alias</param>
+        /// <returns> return enablePageFriendlyurl bool</returns>
+        /// Ashish.patel@haptix.biz - 2014/12/24 - Check for Enable Friendly url 
+        public static bool HasEnablePageFriendlyUrl(int pageId, string portalAlias)
+        {
+            // Set portal settings
+            var portalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+            //If portal settings null then get it and fill here
+            if (portalSettings == null)
+            {
+                //Get portal settings from the method
+                portalSettings = GetPortalSettingFromDB(pageId, portalAlias, portalSettings);
+
+                // Add key as portalsettings into the dictionary 
+                HttpContext.Current.Items.Add("PortalSettings", portalSettings);
+                HttpContext.Current.Items.Add("PortalID", portalSettings.PortalID);
+            }
+            return portalSettings.EnablePageFriendlyUrl;
+        }
+
+        private static PortalSettings GetPortalSettingFromDB(int pageId, string portalAlias, PortalSettings portalSettings)
+        {
+            try
+            {
+                portalSettings = PortalSettings.GetPortalSettings(pageId, portalAlias);
+            }
+            catch (DatabaseUnreachableException dexc)
+            {
+                // If no database, must update
+                ErrorHandler.Publish(LogLevel.Error, dexc);
+                using (var s = new Appleseed.Framework.Update.Services())
+                {
+                    s.RunDBUpdate(Config.ConnectionString);
+                }
+
+                portalSettings = PortalSettings.GetPortalSettings(pageId, portalAlias);
+            }
+
+            if (portalSettings == null || (portalSettings != null && portalSettings.PortalAlias == null))
+            {
+                portalSettings = PortalSettings.GetPortalSettings(pageId, Config.DefaultPortal);
+            }
+
+            return portalSettings;
+        }
+
+        /// <summary>
         /// Flushes the base settings cache.
         /// </summary>
         /// <param name="portalPath">
@@ -1477,6 +1574,29 @@ namespace Appleseed.Framework.Site.Configuration
                         Description = "Select to allow Custom Theme to be set on Modules."
                     };
                 baseSettings.Add("SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES", allowModuleCustomThemes);
+
+                //Ashish.patel@haptix.biz - 2014/12/10 - Add Textbox for enter the path for user specific jQuery
+                var txtjQuery = new SettingItem<string, TextBox>()
+                {
+                    Order = groupOrderBase + 30,
+                    Group = group,
+                    EnglishName = "jQuery File Path",
+                    Description =
+                        "jQuery File Path"
+                };
+                baseSettings.Add("SITESETTINGS_JQUERY", txtjQuery);
+
+                //Ashish.patel@haptix.biz - 2014/12/10 - Add Textbox for enter the path for user specific jQuery
+                var txtjQueryUI =
+                 new SettingItem<string, TextBox>()
+                 {
+                     Order = groupOrderBase + 35,
+                     Group = group,
+                     EnglishName = "jQuery UI File Path",
+                     Description =
+                         "jQuery UI File Path"
+                 };
+                baseSettings.Add("SITESETTINGS_JQUERY_UI", txtjQueryUI);
 
                 groupOrderBase = (int)SettingItemGroup.SECURITY_USER_SETTINGS;
                 group = SettingItemGroup.SECURITY_USER_SETTINGS;
@@ -1661,7 +1781,8 @@ namespace Appleseed.Framework.Site.Configuration
                 baseSettings.Add("SITESETTINGS_FACEBOOK_APP_SECRET", facebookAppSecret);
 
                 // Twitter keys
-                var twitterAppId = new SettingItem<string, TextBox>() {
+                var twitterAppId = new SettingItem<string, TextBox>()
+                {
                     Required = false,
                     Value = "",
                     EnglishName = "Twitter Application ID",
@@ -1671,7 +1792,8 @@ namespace Appleseed.Framework.Site.Configuration
                 };
                 baseSettings.Add("SITESETTINGS_TWITTER_APP_ID", twitterAppId);
 
-                var twitterAppSecret = new SettingItem<string, TextBox>() {
+                var twitterAppSecret = new SettingItem<string, TextBox>()
+                {
                     Required = false,
                     Value = "",
                     EnglishName = "Twitter Application Secret",
@@ -1680,11 +1802,12 @@ namespace Appleseed.Framework.Site.Configuration
                     Group = group
                 };
                 baseSettings.Add("SITESETTINGS_TWITTER_APP_SECRET", twitterAppSecret);
-                
-                var googleLogin = new SettingItem<bool, CheckBox>() {
+
+                var googleLogin = new SettingItem<bool, CheckBox>()
+                {
                     Required = false,
                     Value = false,
-                   
+
                     EnglishName = "Google Login",
                     Description = "Check if you want to see the google login",
                     Order = groupOrderBase + 28,
@@ -1785,6 +1908,20 @@ namespace Appleseed.Framework.Site.Configuration
                         Value = "<META http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1252\" />"
                     };
                 baseSettings.Add("SITESETTINGS_PAGE_META_ENCODING", tabMetaEncoding);
+
+                // chckbox for enable friendly URL
+                //Ashish.patel@haptix.biz - 2014/12/11 - Allow user to access the frindly URL
+                var enableFriendlyURL = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 27,
+                    Group = group,
+                    EnglishName = "Enable Friendly URL?",
+                    Description =
+                        "Allow user to enable friendly URL functionality.",
+                    Value = false
+                };
+                baseSettings.Add("ENABLE_PAGE_FRIENDLY_URL", enableFriendlyURL);
+
                 var tabMetaOther = new SettingItem<string, TextBox>
                     {
                         Order = groupOrderBase + 30,
@@ -1850,7 +1987,8 @@ namespace Appleseed.Framework.Site.Configuration
                     };
                 baseSettings.Add("SITESETTINGS_ALTERNATIVE_URL", alternativeUrl);
 
-                var SnapEngage = new SettingItem<string, TextBox> {
+                var SnapEngage = new SettingItem<string, TextBox>
+                {
                     Order = groupOrderBase + 57,
                     Group = group,
                     EnglishName = "SnapEngage code",
@@ -2006,7 +2144,8 @@ namespace Appleseed.Framework.Site.Configuration
                     };
                 baseSettings.Add("SITESETTINGS_USE_RECYCLER", useRecycler);
 
-                var detailErrorMessage = new SettingItem<bool, CheckBox> {
+                var detailErrorMessage = new SettingItem<bool, CheckBox>
+                {
                     Order = groupOrderBase + 56,
                     Group = group,
                     Value = false,
@@ -2134,7 +2273,9 @@ namespace Appleseed.Framework.Site.Configuration
             var webProxy = new WebProxy { Address = new Uri(Config.ProxyServer) };
             var credentials = new NetworkCredential
                 {
-                   Domain = Config.ProxyDomain, UserName = Config.ProxyUserID, Password = Config.ProxyPassword 
+                    Domain = Config.ProxyDomain,
+                    UserName = Config.ProxyUserID,
+                    Password = Config.ProxyPassword
                 };
             webProxy.Credentials = credentials;
             return webProxy;
@@ -2402,6 +2543,23 @@ namespace Appleseed.Framework.Site.Configuration
             return GetLanguageList(this.PortalAlias);
         }
 
+        // Get the value of Enable portal friendly URL value 
+        //value if either true/false
+        public bool EnablePageFriendlyUrl
+        {
+            get
+            {
+                try
+                {
+                    // return the true / false value
+                    return Convert.ToBoolean(this.CustomSettings["ENABLE_PAGE_FRIENDLY_URL"].Value);
+                }
+                catch { }
+
+                // If nothing then it's return false
+                return false;
+            }
+        }
         #endregion
 
         #region Implemented Interfaces
@@ -2457,14 +2615,14 @@ namespace Appleseed.Framework.Site.Configuration
                         // Specify the Portal Alias Dynamically 
                         var parameterPortalAlias = new SqlParameter("@PortalAlias", SqlDbType.NVarChar, 50)
                             {
-                               Value = portalAlias 
+                                Value = portalAlias
                             };
                         command.Parameters.Add(parameterPortalAlias);
 
                         // Specify the SettingName 
                         var parameterSettingName = new SqlParameter("@SettingName", SqlDbType.NVarChar, 50)
                             {
-                               Value = "SITESETTINGS_LANGLIST" 
+                                Value = "SITESETTINGS_LANGLIST"
                             };
                         command.Parameters.Add(parameterSettingName);
 
@@ -2502,12 +2660,12 @@ namespace Appleseed.Framework.Site.Configuration
                         // Add Parameters to SPROC
                         var parameterPortalAlias = new SqlParameter("@PortalAlias", SqlDbType.NVarChar, 50)
                             {
-                               Value = portalAlias 
+                                Value = portalAlias
                             };
                         command.Parameters.Add(parameterPortalAlias);
                         var parameterSettingName = new SqlParameter("@SettingName", SqlDbType.NVarChar, 50)
                             {
-                               Value = "SITESETTINGS_DEFAULTLANG" 
+                                Value = "SITESETTINGS_DEFAULTLANG"
                             };
                         command.Parameters.Add(parameterSettingName);
 
@@ -2659,7 +2817,7 @@ namespace Appleseed.Framework.Site.Configuration
 
         private static void ProcessCurrentLanguage(string portalAlias)
         {
-// Changes culture/language according to settings
+            // Changes culture/language according to settings
             try
             {
                 // Moved here for support db call
@@ -2674,7 +2832,7 @@ namespace Appleseed.Framework.Site.Configuration
 
         private static string GetPortalSettingsCacheKey(int portalId)
         {
-            return String.Format("{0}PortalId_{1}", GetPortalSettingsCacheKeyPrefix(),portalId);
+            return String.Format("{0}PortalId_{1}", GetPortalSettingsCacheKeyPrefix(), portalId);
         }
 
         private static void AddToCache(string key, PortalSettings portalSettings)
@@ -2689,7 +2847,7 @@ namespace Appleseed.Framework.Site.Configuration
             {
                 time = 0;
             }
-            if (time > 0 && cache.Get(key) == null )
+            if (time > 0 && cache.Get(key) == null)
             {
                 cache.Add(key, portalSettings, null, DateTime.Now.AddMinutes(time), TimeSpan.Zero, CacheItemPriority.Normal, null);
             }

@@ -62,7 +62,7 @@ namespace Appleseed.Content.Web.Modules
                 EditTable.UpdateControls();
 
                 // Redirect to this site to refresh
-                Response.Redirect(Request.RawUrl);
+                Response.Redirect(HttpUrlBuilder.BuildUrl(this.PortalSettings.ActivePage.PageID));
             }
         }
 

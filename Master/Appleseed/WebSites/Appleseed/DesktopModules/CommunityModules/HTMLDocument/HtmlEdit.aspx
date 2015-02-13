@@ -55,6 +55,12 @@
         </table>
         <p>
             <asp:PlaceHolder ID="PlaceHolderButtons" runat="server"></asp:PlaceHolder>
+            
+            <asp:Button ID="btnCnVersion" Text="Create New Version" runat="server" OnClick="btnCreateNewVersion_Click" />
+            <asp:DropDownList ID="drpVirsionList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="drpVirsionList_SelectedIndexChanged" />
+            <asp:Button ID="btnPsVersion" Text="Publish this Version" runat="server" OnClick="btnPsVersion_Click"/>
+            <asp:Button ID="btnHsVersion" Text="Version History" runat="server" OnClick="btnHsVersion_Click"/>
         </p>
     </div>
 </asp:Content>
+

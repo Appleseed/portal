@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Appleseed.Framework.Web
 {
-    internal class UrlElements
+    [History("Ashish.patel@haptix.biz", "2014/12/24", "Changed Accessibility of GetUrlElements for caching")]
+    public class UrlElements
     {
         internal bool IsPlaceHolder { get; set; }
         internal string TabLink { get; set; }
@@ -13,6 +14,7 @@ namespace Appleseed.Framework.Web
         internal string PageName { get; set; }
         internal string PageTitle { get; set; }
 
+        //Ashish.patel@haptix.biz - 2014/12/24 - Changed Accessibility for caching
         public UrlElements()
         {
             IsPlaceHolder = false;

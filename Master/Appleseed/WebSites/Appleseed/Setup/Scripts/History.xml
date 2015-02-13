@@ -1201,6 +1201,34 @@
       <Script>2.0.0.1894.sql</Script>
     </Scripts>
   </Release>
+
+  <Release>
+    <ID>1895</ID>
+    <Version>2.0.0.1895</Version>
+    <Date>2014-12-23T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1895.sql</Script>
+    </Scripts>
+  </Release>
+
+  <Release>
+    <ID>1896</ID>
+    <Version>2.0.0.1896</Version>
+    <Date>2014-12-23T00:00:00.0000000-03:00</Date>
+    <Modules>
+      <Installer>DesktopModules/CoreModules/PageFriendlyURL/install.xml</Installer>
+    </Modules>
+  </Release>
+
+  <Release>
+    <ID>1897</ID>
+    <Version>2.0.0.1897</Version>
+    <Date>2015-02-03T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1897.sql</Script>
+    </Scripts>
+  </Release>
+  
 <!--  Run new Release Code
   <Release>
     <ID>1895</ID>

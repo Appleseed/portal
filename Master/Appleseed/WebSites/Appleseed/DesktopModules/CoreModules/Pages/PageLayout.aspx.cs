@@ -27,6 +27,7 @@ namespace Appleseed.Admin
     using Appleseed.Framework.Web.UI.WebControls;
 
     using ImageButton = System.Web.UI.WebControls.ImageButton;
+    using Appleseed.Framework.Web;
 
     /// <summary>
     /// Edit page for page layouts
@@ -101,23 +102,23 @@ namespace Appleseed.Admin
             // The new module inherits security from Pages module (current ModuleID) 
             // so who can edit the tab properties/content can edit the module properties/content (except view that remains =)
             m.ID = mod.AddModule(
-                this.PageID, 
-                m.Order, 
-                this.paneLocation.SelectedItem.Value, 
-                m.Title, 
-                m.ModuleDefID, 
-                0, 
-                PortalSecurity.GetEditPermissions(this.ModuleID), 
-                this.viewPermissions.SelectedItem.Value, 
-                PortalSecurity.GetAddPermissions(this.ModuleID), 
-                PortalSecurity.GetDeletePermissions(this.ModuleID), 
-                PortalSecurity.GetPropertiesPermissions(this.ModuleID), 
-                PortalSecurity.GetMoveModulePermissions(this.ModuleID), 
-                PortalSecurity.GetDeleteModulePermissions(this.ModuleID), 
-                false, 
-                PortalSecurity.GetPublishPermissions(this.ModuleID), 
-                false, 
-                false, 
+                this.PageID,
+                m.Order,
+                this.paneLocation.SelectedItem.Value,
+                m.Title,
+                m.ModuleDefID,
+                0,
+                PortalSecurity.GetEditPermissions(this.ModuleID),
+                this.viewPermissions.SelectedItem.Value,
+                PortalSecurity.GetAddPermissions(this.ModuleID),
+                PortalSecurity.GetDeletePermissions(this.ModuleID),
+                PortalSecurity.GetPropertiesPermissions(this.ModuleID),
+                PortalSecurity.GetMoveModulePermissions(this.ModuleID),
+                PortalSecurity.GetDeleteModulePermissions(this.ModuleID),
+                false,
+                PortalSecurity.GetPublishPermissions(this.ModuleID),
+                false,
+                false,
                 false);
 
             // End Change Geert.Audenaert@Syntegra.Com
@@ -219,7 +220,8 @@ namespace Appleseed.Admin
                 {
                     var url = HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/ModuleSettings.aspx", this.PageID, mid);
                     // Redirect to module settings page
-                    if (Request.QueryString.GetValues("ModalChangeMaster") != null) {
+                    if (Request.QueryString.GetValues("ModalChangeMaster") != null)
+                    {
                         url += "&ModalChangeMaster=true&camefromEditPage=true";
                     }
                     this.Response.Redirect(url);
@@ -246,8 +248,8 @@ namespace Appleseed.Admin
         protected void EditTable_UpdateControl(object sender, SettingsTableEventArgs e)
         {
             Framework.Site.Configuration.PageSettings.UpdatePageSettings(
-                this.PageID, 
-                ((ISettingItem)e.CurrentItem).EditControl.ID, 
+                this.PageID,
+                ((ISettingItem)e.CurrentItem).EditControl.ID,
                 ((ISettingItem)e.CurrentItem).Value.ToString());
         }
 
@@ -269,10 +271,10 @@ namespace Appleseed.Admin
                 {
                     CurrentCache.Remove(Key.TabSettings(this.PageID));
                 }
-                
 
+                lblFriendlyExtension.Text = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"].ToString();
             }
-            
+
             base.OnLoad(e);
 
             // Confirm delete
@@ -288,7 +290,7 @@ namespace Appleseed.Admin
             //this.RightDeleteBtn.Attributes.Add("OnClick", "return confirmDelete()");
             //this.ContentDeleteBtn.Attributes.Add("OnClick", "return confirmDelete()");
             //this.BottomDeleteBtn.Attributes.Add("OnClick", "return confirmDelete()");
-            urlToLoadModules = "'"+HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/LoadModule")+"'";
+            urlToLoadModules = "'" + HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/LoadModule") + "'";
             // If first visit to the page, update all entries
             if (!this.Page.IsPostBack)
             {
@@ -299,7 +301,7 @@ namespace Appleseed.Admin
 
                 this.SetSecurityAccess();
 
-               
+
                 // 2/27/2003 Start - Ender Malkoc
                 // After up or down button when the page is refreshed, select the previously selected
                 // tab from the list.
@@ -317,8 +319,8 @@ namespace Appleseed.Admin
                     catch (Exception ex)
                     {
                         ErrorHandler.Publish(
-                            LogLevel.Error, 
-                            "After up or down button when the page is refreshed, select the previously selected tab from the list.", 
+                            LogLevel.Error,
+                            "After up or down button when the page is refreshed, select the previously selected tab from the list.",
                             ex);
                     }
                 }
@@ -353,6 +355,9 @@ namespace Appleseed.Admin
                 try
                 {
                     this.SavePageData();
+                    //remove from cache
+                    SqlUrlBuilderProvider.ClearCachePageUrl(this.PageID);
+                    UrlBuilderHelper.ClearUrlElements(this.PageID);
 
                     // Flush all tab navigation cache keys. Very important for recovery the changes
                     // made in all languages and not get a error if user change the tab parent.
@@ -371,8 +376,23 @@ namespace Appleseed.Admin
                     string returnPage;
 
                     if (Request.QueryString.GetValues("ModalChangeMaster") != null)
-                        Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
-                    else{
+                    {
+                        if (retPage != null)
+                        {
+                            // user is returned to the calling tab.
+                            returnPage = HttpUrlBuilder.BuildUrl(int.Parse(retPage));
+                        }
+                        else
+                        {
+                            // user is returned to updated tab
+                            returnPage = HttpUrlBuilder.BuildUrl(this.PageID);
+                        }
+
+                        Response.Write("<script type=\"text/javascript\">window.parent.location = '" + returnPage + "';</script>");
+                    }
+                        
+                    else
+                    {
                         if (retPage != null)
                         {
                             // user is returned to the calling tab.
@@ -387,9 +407,17 @@ namespace Appleseed.Admin
                         this.Response.Redirect(returnPage);
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    this.lblErrorNotAllowed.Visible = true;
+                    if (ex.Message == "FriendlyUrlIsAlreadyExists")
+                    {
+                        this.lblUrlAlreadyExist.Visible = true;
+                    }
+                    else
+                    {
+                        this.lblErrorNotAllowed.Visible = true;
+                    }
+
                 }
             }
         }
@@ -412,7 +440,22 @@ namespace Appleseed.Admin
         protected void PageSettings_Change(object sender, EventArgs e)
         {
             // Ensure that settings are saved
-            this.SavePageData();
+            try
+            {
+                this.SavePageData();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "FriendlyUrlIsAlreadyExists")
+                {
+                    this.lblUrlAlreadyExist.Visible = true;
+                }
+                else
+                {
+                    this.lblErrorNotAllowed.Visible = true;
+                }
+
+            }
         }
 
         /// <summary>
@@ -621,6 +664,7 @@ namespace Appleseed.Admin
 
             // Populate Page Names, etc.
             this.tabName.Text = page.PageName;
+            this.friendlyUrl.Text = page.FriendlyURL;
             this.mobilePageName.Text = page.MobilePageName;
             this.showMobile.Checked = page.ShowMobile;
 
@@ -672,10 +716,13 @@ namespace Appleseed.Admin
             //if (PortalSecurity.IsInRoles("Admins") || !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString()))
             //{
             var htmlId = "0";
-            try {
-                while (drCurrentModuleDefinitions.Read()) {
+            try
+            {
+                while (drCurrentModuleDefinitions.Read())
+                {
                     if ((!modules.ContainsKey(drCurrentModuleDefinitions["FriendlyName"].ToString())) &&
-                        (PortalSecurity.IsInRoles("Admins") || !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString()))) {
+                        (PortalSecurity.IsInRoles("Admins") || !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString())))
+                    {
                         modules.Add(
                             // moduleType.Items.Add(
                             // new ListItem(drCurrentModuleDefinitions["FriendlyName"].ToString(),
@@ -687,7 +734,8 @@ namespace Appleseed.Admin
                     }
                 }
             }
-            finally {
+            finally
+            {
                 drCurrentModuleDefinitions.Close();
             }
             //}
@@ -699,7 +747,7 @@ namespace Appleseed.Admin
             this.moduleType.DataSource = modules;
             this.moduleType.DataBind();
             this.moduleType.SelectedValue = htmlId;
-            
+
 
             // Now it's the load is by ajax 1/september/2011
             // Populate Top Pane Module Data
@@ -800,19 +848,28 @@ namespace Appleseed.Admin
                 }
             }
 
-            // update Page info in the database
-            new PagesDB().UpdatePage(
-                this.PortalSettings.PortalID, 
-                this.PageID, 
-                Int32.Parse(this.parentPage.SelectedItem.Value), 
-                this.tabName.Text, 
-                this.PortalSettings.ActivePage.PageOrder, 
-                authorizedRoles, 
-                this.mobilePageName.Text, 
-                this.showMobile.Checked);
+            var pageDB = new PagesDB();
+            if (!string.IsNullOrEmpty(this.friendlyUrl.Text) && pageDB.IsAlreadyExistsFriendlyUrl(this.friendlyUrl.Text, this.PageID))
+            {
+                throw new Exception("FriendlyUrlIsAlreadyExists");
+            }
+            else
+            {
+                // update Page info in the database
+                pageDB.UpdatePage(
+                    this.PortalSettings.PortalID,
+                    this.PageID,
+                    Int32.Parse(this.parentPage.SelectedItem.Value),
+                    this.tabName.Text,
+                    this.PortalSettings.ActivePage.PageOrder,
+                    authorizedRoles,
+                    this.mobilePageName.Text,
+                    this.showMobile.Checked,
+                    this.friendlyUrl.Text);
 
-            // Update custom settings in the database
-            this.EditTable.UpdateControls();
+                // Update custom settings in the database
+                this.EditTable.UpdateControls();
+            }
         }
 
         /// <summary>
@@ -917,12 +974,14 @@ namespace Appleseed.Admin
             base.Response.AppendCookie(cookie);
         }
 
-        protected string getUrlToEdit() {
+        protected string getUrlToEdit()
+        {
             var url = HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/ModuleSettings.aspx", this.PageID);
-            if(Request.QueryString.GetValues("ModalChangeMaster") != null){
+            if (Request.QueryString.GetValues("ModalChangeMaster") != null)
+            {
                 url += "&ModalChangeMaster=true&camefromEditPage=true";
             }
-            return "'"+url+"'";
+            return "'" + url + "'";
         }
         #endregion
     }

@@ -40,6 +40,42 @@ namespace Appleseed.Admin {
         protected global::System.Web.UI.WebControls.TextBox tabName;
         
         /// <summary>
+        /// Localize1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Appleseed.Framework.Web.UI.WebControls.Localize Localize1;
+        
+        /// <summary>
+        /// friendlyUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox friendlyUrl;
+        
+        /// <summary>
+        /// lblFriendlyExtension control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFriendlyExtension;
+        
+        /// <summary>
+        /// lblUrlAlreadyExist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Appleseed.Framework.Web.UI.WebControls.Label lblUrlAlreadyExist;
+        
+        /// <summary>
         /// roles_auth control.
         /// </summary>
         /// <remarks>

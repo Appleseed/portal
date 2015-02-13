@@ -273,6 +273,7 @@
     <Compile Include="Provider\Geographic\State.cs" />
     <Compile Include="Provider\Geographic\StateNotFoundException.cs" />
     <Compile Include="Provider\NotSupportedByProviderException.cs" />
+    <Compile Include="Provider\Web\PageUrl.cs" />
     <Compile Include="Provider\Web\SqlUrlBuilderProvider.cs" />
     <Compile Include="Provider\Web\UrlBuilderHelper.cs" />
     <Compile Include="Provider\Web\UrlElements.cs" />

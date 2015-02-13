@@ -30,6 +30,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
     using Appleseed.PortalTemplate;
     using Appleseed.PortalTemplate.DTOs;
     using System.Xml.Serialization;
+    using System.Web.UI.HtmlControls;
 
     /// <summary>
     /// HTML Document Module
@@ -89,7 +90,9 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             // If false the input box for mobile content will be hidden
             var showMobileText = new SettingItem<bool, CheckBox>
                 {
-                    Value = true, Order = groupOrderBase + 10, Group = group 
+                    Value = true,
+                    Order = groupOrderBase + 10,
+                    Group = group
                 };
             this.BaseSettings.Add("ShowMobile", showMobileText);
 
@@ -208,6 +211,20 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             {
                 object o = this.Settings[StringsCompareButton];
                 return o != null && bool.Parse(o.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether current editor is aloha 
+        /// </summary>
+        /// <remarks>
+        /// Added by Ashish.patel@haptix.biz - 2015/1/07
+        /// </remarks>
+        public bool IsAlohaCurrentEditor
+        {
+            get
+            {
+                return this.Settings["Editor"].Value.ToString().ToLower() == "aloha editor";
             }
         }
 
@@ -368,11 +385,11 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         ///   data component to encapsulate all data functionality.
         /// </remarks>
         [History("Mark Gregory", "mgregory@gt.com.au", "added use of HtmlLiteral_DataBinding")]
-        [History("William Forney", "bill@improvdesign.com", 
+        [History("William Forney", "bill@improvdesign.com",
             "Moved data reader code to the DB class where it belongs & commented it out.")]
         protected override void OnInit(EventArgs e)
         {
-            
+
             if (HasEditPermission())
                 this.HtmlHolder.EnableViewState = false;
             else
@@ -381,60 +398,71 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             // Add title
             // ModuleTitle = new DesktopModuleTitle();
-            this.EditUrl = "~/DesktopModules/CommunityModules/HTMLDocument/HtmlEdit.aspx";
-            
+            this.EditUrl = "~/DesktopModules/CoreModules/HTMLDocument/HtmlEdit.aspx";
+
             // Controls.AddAt(0, ModuleTitle);
             var text = new HtmlTextDB();
             this.Content = this.Server.HtmlDecode(text.GetHtmlTextString(this.ModuleID, this.Version));
-            if(PortalSecurity.HasEditPermissions(this.ModuleID) && string.IsNullOrEmpty(this.Content.ToString())){
+            if (PortalSecurity.HasEditPermissions(this.ModuleID) && string.IsNullOrEmpty(this.Content.ToString()))
+            {
                 this.Content = "Add content here ...<br/><br/><br/><br/>";
-            
+
             }
 
-
+            //this.Settings["Editor"].Value
 
             this.HtmlLiteral = new LiteralControl(this.Content.ToString());
             this.HtmlLiteral.DataBinding += HtmlLiteralDataBinding;
             this.HtmlLiteral.DataBind();
             if (HasEditPermission())
+            {
+                if (this.IsAlohaCurrentEditor)
+                {
+                    this.HtmlLiteral.Text = "<div id='aloha-editor-"+this.ModuleID+"' class='area-content' pageid='"+this.PageID+"' moduleid='" + this.ModuleID + "'>" + this.HtmlLiteral.Text + "</div>";
+                }
                 this.HtmlHolder.Controls.Add(this.HtmlLiteral);
+            }
             else
                 this.HtmlHolder2.Controls.Add(this.HtmlLiteral);
 
-            //if (PortalSecurity.HasEditPermissions(this.ModuleID)) {
-            //    var editor = Settings["Editor"].ToString();
-            //    var width = int.Parse(Settings["Width"].ToString()) + 100;
-            //    var height = int.Parse(Settings["Height"].ToString());
-            //    if (editor.Equals("FreeTextBox")) {
-            //        height += 220;
-            //    } else if (editor.Equals("FCKeditor")) {
-            //        height += 120;
-            //    } else if (editor.Equals("TinyMCE Editor")) {
-            //        height += 140;
-            //    } else if (editor.Equals("Code Mirror Plain Text")) {
-            //        height += 140;
-            //    } else if (editor.Equals("Syrinx CkEditor")) {
-            //        height += 300;
-            //    } else {
-            //        height += 140;
-            //    }
-            //    string title = Resources.Appleseed.HTML_TITLE;
-            //    var url = HttpUrlBuilder.BuildUrl("~/DesktopModules/CommunityModules/HTMLDocument/HtmlEditModal.aspx?mID="+this.ModuleID);
-            //    this.HtmlModuleText.Attributes.Add("OnDblClick", "setDialog(" + ModuleID.ToString() + "," + width.ToString() + "," + (height + 10).ToString() + ");editHtml(" + ModuleID.ToString() + "," + this.PageID + ",\"" + url + "\");");
-            //    this.HtmlModuleText.Attributes.Add("class", "Html_Edit");
-            //    this.HtmlModuleDialog.Attributes.Add("class", "HtmlModuleDialog" + ModuleID.ToString());
-            //    this.HtmlMoudleIframe.Attributes.Add("class", "HtmlMoudleIframe" + ModuleID.ToString());
-            //    this.HtmlMoudleIframe.Attributes.Add("width", "98%");
-            //    this.HtmlMoudleIframe.Attributes.Add("height", "99%");
-            //    this.HtmlModuleText.Attributes.Add("title", title);
-            //    this.HtmlModuleDialog.Attributes.Add("title", General.GetString("HTML_EDITOR", "Html Editor"));
-            //    if ((Request.Browser.Browser.Contains("IE") || Request.Browser.Browser.Contains("ie")) && Request.Browser.MajorVersion == 7) {
-
-            //        this.HTMLEditContainer.Attributes.Add("style", "position: relative;overflow: auto;");
-            //    }
-            //}
-            
             base.OnInit(e);
+        }
+
+        /// <summary>
+        /// On load event used to load aloha js and css
+        /// </summary>
+        /// <param name="e"> The <see cref="System.EventsArgs"/> instance containing event data.</param>
+        protected override void OnLoad(EventArgs e)
+        {
+            if (Appleseed.Framework.Security.PortalSecurity.HasEditPermissions(this.ModuleID) && this.IsAlohaCurrentEditor)
+            {
+                bool isAlohaloaded = false;
+                foreach (object itemobj in this.Page.Header.Controls)
+                {
+                    if (itemobj is HtmlGenericControl)
+                    {
+                        HtmlGenericControl item = (HtmlGenericControl)itemobj;
+                        if (item.Attributes["AlohaCss"] != null && item.Attributes["AlohaCss"].ToString() == "yes")
+                        {
+                            isAlohaloaded = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (!isAlohaloaded)
+                {
+                    var IncludeAlohaCSS = new HtmlGenericControl("link");
+                    IncludeAlohaCSS.Attributes.Add("type", "text/css");
+                    IncludeAlohaCSS.Attributes.Add("rel", "stylesheet");
+                    IncludeAlohaCSS.Attributes.Add("AlohaCss", "yes");
+                    IncludeAlohaCSS.Attributes.Add("href", "/aspnet_client/AlohaHtmlEditor/css/aloha-common-extra.css");
+                    this.Page.Header.Controls.Add(IncludeAlohaCSS);
+                    this.plcAloha.Visible = true;
+                }
+                this.plcAlohaStartupJs.Visible = true;
+            }
+            base.OnLoad(e);
         }
 
         /// <summary>
@@ -464,7 +492,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     this.HtmlHolder.Controls.Add(this.HtmlLiteral);
                 else
                     this.HtmlHolder2.Controls.Add(this.HtmlLiteral);
-                
+
                 this.IsComparing = 1;
             }
             else
@@ -480,7 +508,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     this.HtmlHolder.Controls.Add(this.HtmlLiteral);
                 else
                     this.HtmlHolder2.Controls.Add(this.HtmlLiteral);
-                
+
                 this.IsComparing = 0;
             }
         }
@@ -539,13 +567,14 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             }
         }
 
-        public bool HasEditPermission() {
+        public bool HasEditPermission()
+        {
             return Appleseed.Framework.Security.PortalSecurity.HasEditPermissions(this.ModuleID);
         }
 
         #endregion
 
-        
-        
+
+
     }
 }

@@ -118,6 +118,14 @@ namespace Appleseed.Framework.Site.Configuration
         [XmlAttribute("ParentPageID")]
         public int ParentPageID { get; set; }
 
+        /// <summary>
+        ///   The Friendly URL
+        /// </summary>
+        /// <remarks>
+        /// </remarks>
+        [XmlAttribute("Friendly URL")]
+        public string FriendlyURL { get; set; }
+
         #endregion
     }
 }

@@ -144,6 +144,14 @@ namespace Appleseed.Framework.Site.Configuration
         public string PageName { get; set; }
 
         /// <summary>
+        ///   Gets or sets the friendly URL of the page.
+        /// </summary>
+        /// <value>The friendly URL of the page.</value>
+        /// <remarks>
+        /// </remarks>
+        public string FriendlyURL { get; set; }
+
+        /// <summary>
         ///   Gets or sets the page order.
         /// </summary>
         /// <value>The page order.</value>
@@ -326,6 +334,7 @@ namespace Appleseed.Framework.Site.Configuration
                             tabDetails.PageName = (string)result["PageName"];
                             tabDetails.PageOrder = (int)result["PageOrder"];
                             tabDetails.AuthorizedRoles = (string)result["AuthorizedRoles"];
+                            tabDetails.FriendlyURL = (string)result["FriendlyURL"];
                             tabs.Add(tabDetails);
                         }
                     }

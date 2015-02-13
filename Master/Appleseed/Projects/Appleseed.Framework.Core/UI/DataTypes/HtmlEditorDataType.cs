@@ -27,6 +27,7 @@ namespace Appleseed.Framework.DataTypes
     using Syrinx.Gui.AspNet;
 
     using FreeTextBox = Appleseed.Framework.Web.UI.WebControls.FreeTextBox;
+    
 
     /// <summary>
     /// List of available HTML editors
@@ -59,7 +60,7 @@ namespace Appleseed.Framework.DataTypes
         {
             get
             {
-                return "Code Mirror Plain Text;TinyMCE Editor;FCKeditor;Syrinx CkEditor;FreeTextBox".Split(';');
+                return "Code Mirror Plain Text;TinyMCE Editor;FCKeditor;Syrinx CkEditor;FreeTextBox;Aloha Editor".Split(';');
             }
         }
 
@@ -236,6 +237,7 @@ namespace Appleseed.Framework.DataTypes
                     var tinyMce = new TinyMCETextBox { ImageFolder = moduleImageFolder };
                     desktopText = tinyMce;
                     break;
+
 
                 case "FCKeditor": // 9/8/2010
                     var conector = Path.ApplicationRootPath("/app_support/FCKconnectorV2.aspx");

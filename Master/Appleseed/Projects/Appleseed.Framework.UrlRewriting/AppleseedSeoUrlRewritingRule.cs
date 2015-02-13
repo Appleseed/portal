@@ -33,6 +33,11 @@ namespace Appleseed.Framework.UrlRewriting
         /// </summary>
         private string handlerFlag = "site";
 
+        /// <summary>
+        /// The friendly Url extension.
+        /// </summary>
+        private string friendlyUrlExtension = ".aspx";
+
         private Regex regex;
 
         #endregion
@@ -61,7 +66,11 @@ namespace Appleseed.Framework.UrlRewriting
                 this.friendlyPageName = rewriteSettings.Attributes["friendlyPageName"];
             }
 
-            
+            // Ashish.patel@haptix.biz - 2014/12/16 - Set friendlyURl from Web.config
+            if (!string.IsNullOrEmpty(rewriteSettings.Attributes["friendlyUrlExtension"]))
+            {
+                this.friendlyUrlExtension = rewriteSettings.Attributes["friendlyUrlExtension"];
+            }
 
         }
 
@@ -120,10 +129,15 @@ namespace Appleseed.Framework.UrlRewriting
                     return false;
            }
 
+            //Check the page extenstion 
+            if (requestUrl.Contains(this.friendlyUrlExtension))
+            {
+                return true;
+            }
+
             return false;
 
         }
-
 
         public override string RewriteUrl(string url)
         {
@@ -154,6 +168,11 @@ namespace Appleseed.Framework.UrlRewriting
             if (indexNumber != -1) {
                 pageId = parts[indexNumber];
             }
+
+            // Get PageID from the URL
+            pageId = UrlRewritingFriendlyUrl.GetPageIDFromPageName(url);
+
+            //pageId = 1.ToString();
             var queryString = string.Format("?pageId={0}", pageId);
 
             if (parts.Length > 2) {
@@ -197,8 +216,6 @@ namespace Appleseed.Framework.UrlRewriting
                     HttpContext.Current.Request.Params["signed_request"]);
             }
                      
-
-
             HttpContext.Current.RewritePath(rewrittenUrl, string.Empty, queryString);
 
             return rewrittenUrl + queryString;

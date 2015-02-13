@@ -1,14 +1,15 @@
-<%@ Page AutoEventWireup="false" Inherits="Appleseed.Admin.PageLayout" Language="c#" 
-MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.cs" %>
+<%@ Page AutoEventWireup="false" Inherits="Appleseed.Admin.PageLayout" Language="c#"
+    MasterPageFile="~/Shared/SiteMasterDefault.master" CodeBehind="PageLayout.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
-    <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap" style="height:100%">
+    <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap" style="height: 100%">
         <tr>
             <td>
-            <div id="accordion">
+                <div id="accordion">
                     <h3><a href="#">Page Information</a></h3>
                     <div id="Page_Information" style="height: 331px;">
-                        <% if (Request.QueryString.GetValues("ModalChangeMaster") == null) { %>
+                        <% if (Request.QueryString.GetValues("ModalChangeMaster") == null)
+                           { %>
                         <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">
                             <tr>
                                 <td colspan="4">
@@ -30,15 +31,31 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                         <% } %>
                         <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap" style="height: 100%">
                             <tr>
-                            <td class="Normal" width="100">
-                                <rbfwebui:Localize ID="tab_name1" runat="server" Text="Page Name" TextKey="AM_TABNAME1">
-                                </rbfwebui:Localize>
-                            </td>
-                            <td colspan="3">
-                                <asp:TextBox ID="tabName" runat="server" CssClass="NormalTextBox" MaxLength="200"
-                                    Width="300" OnTextChanged="PageSettings_Change" />
-                            </td>
+                                <td class="Normal" width="100">
+                                    <rbfwebui:Localize ID="tab_name1" runat="server" Text="Page Name" TextKey="AM_TABNAME1">
+                                    </rbfwebui:Localize>
+                                </td>
+                                <td colspan="3">
+                                    <asp:TextBox ID="tabName" runat="server" CssClass="NormalTextBox" MaxLength="50"
+                                        Width="300" OnTextChanged="PageSettings_Change" />
+                                </td>
                             </tr>
+
+                            <tr>
+                                <td class="Normal" width="100">
+                                    <rbfwebui:Localize ID="Localize1" runat="server" Text="Friendly URL" TextKey="AM_PAGE_FRIENDLY_URL">
+                                    </rbfwebui:Localize>
+                                </td>
+                                <td colspan="3">
+                                    <asp:TextBox ID="friendlyUrl" runat="server" CssClass="NormalTextBox" MaxLength="50"
+                                        Width="300" OnTextChanged="PageSettings_Change" /><asp:Label ID="lblFriendlyExtension" runat="server" />
+                                    <div>
+                                        <rbfwebui:Label ID="lblUrlAlreadyExist" runat="server" CssClass="Error" EnableViewState="False"
+                                            TextKey="ERROR_URL_ALREADY_EXIST" Visible="False"> Specified Friedly Url is already exists. Please specify another/different.</rbfwebui:Label>
+                                    </div>
+                                </td>
+                            </tr>
+
                             <tr>
                                 <td class="Normal" nowrap="nowrap">
                                     <rbfwebui:Localize ID="roles_auth" runat="server" Text="Authorized Roles" TextKey="AM_ROLESAUTH">
@@ -63,8 +80,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    &nbsp;
+                                <td>&nbsp;
                                 </td>
                                 <td colspan="3">
                                     <hr noshade="noshade" size="1" />
@@ -98,7 +114,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                     </div>
                     <h3><a href="#">Page Modules</a></h3>
                     <div id="Page_Modules">
-                        <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">  
+                        <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">
                             <tr>
                                 <td class="Normal">
                                     <rbfwebui:Localize ID="addmodule" runat="server" Text="Add module" TextKey="AM_ADDMODULE">
@@ -115,8 +131,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                </td>
+                                <td></td>
                                 <td class="Normal">
                                     <rbfwebui:Localize ID="moduleLocationLabel" runat="server" Text="Module Location:"
                                         TextKey="AM_MODULELOCATION">
@@ -124,17 +139,16 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 </td>
                                 <td colspan="2" valign="top">
                                     <asp:DropDownList ID="paneLocation" runat="server">
-                                        <asp:listitem value="TopPane">Header</asp:listitem>
-                                        <asp:listitem value="LeftPane">Left Column</asp:listitem>
-                                        <asp:listitem selected="True" value="ContentPane">Center Column</asp:listitem>
-                                        <asp:listitem value="RightPane">Right Column</asp:listitem>
-                                        <asp:listitem value="BottomPane">Footer</asp:listitem>
+                                        <asp:ListItem Value="TopPane">Header</asp:ListItem>
+                                        <asp:ListItem Value="LeftPane">Left Column</asp:ListItem>
+                                        <asp:ListItem Selected="True" Value="ContentPane">Center Column</asp:ListItem>
+                                        <asp:ListItem Value="RightPane">Right Column</asp:ListItem>
+                                        <asp:ListItem Value="BottomPane">Footer</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                </td>
+                                <td></td>
                                 <td class="Normal" valign="top">
                                     <rbfwebui:Localize ID="moduleVisibleLabel" runat="server" Text="Module Visible To:"
                                         TextKey="AM_MODULEVISIBLETO">
@@ -150,8 +164,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    &nbsp;
+                                <td>&nbsp;
                                 </td>
                                 <td class="Normal">
                                     <rbfwebui:Localize ID="module_name" runat="server" Text="Module Name" TextKey="AM_MODULENAME">
@@ -163,8 +176,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    &nbsp;
+                                <td>&nbsp;
                                 </td>
                                 <td colspan="3">
                                     <a id="Content_AddModuleBtn" class="CommandButton" href="#" onclick="addModule('<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/AddModule") %>');return false;">Add to "Organize Modules" Below</a>
@@ -173,8 +185,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    &nbsp;
+                                <td>&nbsp;
                                 </td>
                                 <td colspan="3">
                                     <hr noshade="noshade" size="1" />
@@ -188,8 +199,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                 <td width="*" colspan="3">
                                     <table border="0" cellpadding="2" cellspacing="0" width="100%">
                                         <tr>
-                                            <td class="NormalBold">
-                                                &nbsp;
+                                            <td class="NormalBold">&nbsp;
                                                 <rbfwebui:Localize ID="topPanel" runat="server" Text="Top Pane" TextKey="AM_TOPPANEL">
                                                 </rbfwebui:Localize>
                                             </td>
@@ -199,28 +209,28 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                 <table border="0" cellpadding="0" cellspacing="2">
                                                     <tr valign="top">
                                                         <td rowspan="2">
-                                                            <select id="Content_topPane" class="NormalTextBox" style="width: 690px" size="8"></select>                                                            
+                                                            <select id="Content_topPane" class="NormalTextBox" style="width: 690px" size="8"></select>
                                                         </td>
                                                         <td nowrap="nowrap" valign="top">
                                                             <input id="Content_TopUpBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Up", "Up.gif").ImageUrl %>"
-                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'TopPane','Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                                alt="Move selected item up in list" onclick="mvUpDown('up', 'TopPane','Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;" />
                                                             <br />
                                                             <input id="Content_TopDownBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Down", "Down.gif").ImageUrl %>"
-                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'TopPane','Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                                alt="Move selected item down in list" onclick="mvUpDown('down', 'TopPane','Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;" />
                                                             <br />
-                                                             <input id="Content_TopRightBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Bottom", "Right.gif").ImageUrl %>"
-                                                             alt="Move selected item to Content"  onclick="mvRigthLeft('TopPane', 'ContentPane', 'Content_topPane', '<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>&nbsp;&nbsp;
+                                                            <input id="Content_TopRightBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Bottom", "Right.gif").ImageUrl %>"
+                                                                alt="Move selected item to Content" onclick="mvRigthLeft('TopPane', 'ContentPane', 'Content_topPane', '<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;" />&nbsp;&nbsp;
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td nowrap="nowrap" valign="Top">
                                                             <input id="Content_TopEditBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Edit", "Edit.gif").ImageUrl %>"
-                                                             alt="Edit"  onclick="editModule('TopPane', 'Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>');return false;"/>
+                                                                alt="Edit" onclick="editModule('TopPane', 'Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>    ');return false;" />
                                                             <br />
                                                             <br />
                                                             <input id="Content_TopDeleteBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl %>"
-                                                             alt="Delete"  onclick="return deleteModule('TopPane', 'Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>');"/>
-                                                            
+                                                                alt="Delete" onclick="return deleteModule('TopPane', 'Content_topPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>    ');" />
+
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -229,8 +239,8 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                     </table>
                                 </td>
                             </tr>
-                           
-                            <ContentTemplate>
+
+                            <contenttemplate>
                                 <tr valign="top">
                                 <td width="120">
                                     <table border="0" cellpadding="2" cellspacing="0" width="100%">
@@ -252,13 +262,13 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                              alt="Move selected item to the header"  onclick="mvRigthLeft('LeftPane', 'TopPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br/>
                                                             <input id="Content_LeftUpBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Up", "Up.gif").ImageUrl %>"
-                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_LeftRightBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Right", "Right.gif").ImageUrl %>"
-                                                             alt="Move selected item To Content pane"  onclick="mvRigthLeft('LeftPane', 'ContentPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>
+                                                             alt="Move selected item To Content pane"  onclick="mvRigthLeft('LeftPane', 'ContentPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br />
                                                              <input id="Content_LeftDownBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Down", "Down.gif").ImageUrl %>"
-                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;"/>
                                                             <br/>
                                                             <input id="Content_LeftBottomBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Bottom", "Right.gif").ImageUrl %>"
                                                              alt="Move selected item to Bottom pane"  onclick="mvRigthLeft('LeftPane', 'BottomPane', 'Content_leftPane', '<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>&nbsp;&nbsp;
@@ -267,11 +277,11 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                     <tr>
                                                         <td nowrap="nowrap" valign="bottom">
                                                             <input id="Content_LeftEditBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Edit", "Edit.gif").ImageUrl %>"
-                                                             alt="Edit"  onclick="editModule('LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>');return false;" />
+                                                             alt="Edit"  onclick="editModule('LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>    ');return false;" />
                                                             <br />
                                                             <br />
                                                             <input id="Content_LeftDeleteBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl %>"
-                                                             alt="Delete"  onclick="return deleteModule('LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>');"/>
+                                                             alt="Delete"  onclick="return deleteModule('LeftPane', 'Content_leftPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>    ');"/>
                                                             
                                                         </td>
                                                     </tr>
@@ -298,33 +308,33 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                         </td>
                                                         <td nowrap="nowrap" valign="top">
                                                             <input id="Content_ContentTopBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Top", "Left.gif").ImageUrl %>"
-                                                             alt="Move selected item to the header"  onclick="mvRigthLeft('ContentPane', 'TopPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>
+                                                             alt="Move selected item to the header"  onclick="mvRigthLeft('ContentPane', 'TopPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_ContentUpBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Up", "Up.gif").ImageUrl %>"
-                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;"/>
                                                             <br />
                                                              <input id="Content_ContentLeftBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Left", "Left.gif").ImageUrl %>"
-                                                             alt="Move selected item to the left pane"  onclick="mvRigthLeft('ContentPane', 'LeftPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>
+                                                             alt="Move selected item to the left pane"  onclick="mvRigthLeft('ContentPane', 'LeftPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_ContentRightBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Right", "Right.gif").ImageUrl %>"
-                                                             alt="Move selected item To Right pane"  onclick="mvRigthLeft('ContentPane', 'RightPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>
+                                                             alt="Move selected item To Right pane"  onclick="mvRigthLeft('ContentPane', 'RightPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_ContentDownBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Down", "Down.gif").ImageUrl %>"
-                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;"/>
                                                              <br />
                                                             <input id="Content_ContentBottomBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Bottom", "Right.gif").ImageUrl %>"
-                                                             alt="Move selected item to Bottom pane"  onclick="mvRigthLeft('ContentPane', 'BottomPane', 'Content_contentPane', '<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>&nbsp;&nbsp;
+                                                             alt="Move selected item to Bottom pane"  onclick="mvRigthLeft('ContentPane', 'BottomPane', 'Content_contentPane', '<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>&nbsp;&nbsp;
                                                             <br />
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td nowrap="nowrap" valign="bottom">
                                                             <input id="Content_ContentEditBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Edit", "Edit.gif").ImageUrl %>"
-                                                             alt="Edit"  onclick="editModule('ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>');return false;" />
+                                                             alt="Edit"  onclick="editModule('ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>    ');return false;" />
                                                             <br />
                                                             <br />
                                                             <input id="Content_ContentDeleteBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl %>"
-                                                             alt="Delete"  onclick="return deleteModule('ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>');"/>
+                                                             alt="Delete"  onclick="return deleteModule('ContentPane', 'Content_contentPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>    ');"/>
                                                             
                                                         </td>
                                                     </tr>
@@ -354,13 +364,13 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                              alt="Move selected item to the header"  onclick="mvRigthLeft('RightPane', 'TopPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_RightUpBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Up", "Up.gif").ImageUrl %>"
-                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_RightLeftBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Left", "Left.gif").ImageUrl %>"
-                                                             alt="Move selected item to the content pane"  onclick="mvRigthLeft('RightPane', 'ContentPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>
+                                                             alt="Move selected item to the content pane"  onclick="mvRigthLeft('RightPane', 'ContentPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_RightDownBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Down", "Down.gif").ImageUrl %>"
-                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;"/>
                                                             <br />
                                                             <input id="Content_RightBottomBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Bottom", "Right.gif").ImageUrl %>"
                                                              alt="Move selected item to Bottom pane"  onclick="mvRigthLeft('RightPane', 'BottomPane', 'Content_rightPane', '<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;"/>&nbsp;&nbsp;
@@ -370,11 +380,11 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                     <tr>
                                                         <td nowrap="nowrap" valign="bottom">
                                                             <input id="Content_RightEditBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Edit", "Edit.gif").ImageUrl %>"
-                                                             alt="Edit"  onclick="editModule('RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>');return false;" />
+                                                             alt="Edit"  onclick="editModule('RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>    ');return false;" />
                                                             <br />
                                                             <br />
                                                             <input id="Content_RightDeleteBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl %>"
-                                                             alt="Delete"  onclick="return deleteModule('RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>');"/>
+                                                             alt="Delete"  onclick="return deleteModule('RightPane', 'Content_rightPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>    ');"/>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -383,14 +393,13 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                     </table>
                                 </td>
                             </tr>
-                            </ContentTemplate>
-                            
+                            </contenttemplate>
+
                             <tr valign="top">
                                 <td width="*" colspan="3">
                                     <table border="0" cellpadding="2" cellspacing="0" width="100%">
                                         <tr>
-                                            <td class="NormalBold">
-                                                &nbsp;
+                                            <td class="NormalBold">&nbsp;
                                                 <rbfwebui:Localize ID="bottomPanel" runat="server" Text="Bottom Pane" TextKey="AM_BOTOMPANEL">
                                                 </rbfwebui:Localize>
                                             </td>
@@ -404,23 +413,23 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                                         </td>
                                                         <td nowrap="nowrap" valign="top">
                                                             <input id="Content_BottomLeftBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Top", "Left.gif").ImageUrl %>"
-                                                             alt="Move selected item to the content pane"  onclick="mvRigthLeft('BottomPane', 'ContentPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>');return false;"/>
+                                                                alt="Move selected item to the content pane" onclick="mvRigthLeft('BottomPane', 'ContentPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/RightLeft_Click") %>    ');return false;" />
                                                             <br />
                                                             <input id="Content_BottomUpBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Up", "Up.gif").ImageUrl %>"
-                                                             alt="Move selected item up in list"  onclick="mvUpDown('up', 'BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>
+                                                                alt="Move selected item up in list" onclick="mvUpDown('up', 'BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;" />
                                                             <br />
                                                             <input id="Content_BottomDownBtn" type="image" src="<%= CurrentTheme.GetImage("Buttons_Down", "Down.gif").ImageUrl %>"
-                                                             alt="Move selected item down in list"  onclick="mvUpDown('down', 'BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>');return false;"/>&nbsp;&nbsp;
+                                                                alt="Move selected item down in list" onclick="mvUpDown('down', 'BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/UpDown_Click") %>    ');return false;" />&nbsp;&nbsp;
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td nowrap="nowrap" valign="bottom">
                                                             <input id="Image1" type="image" src="<%= CurrentTheme.GetImage("Buttons_Edit", "Edit.gif").ImageUrl %>"
-                                                             alt="Edit"  onclick="editModule('BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>');return false;" />
+                                                                alt="Edit" onclick="editModule('BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/EditBtn_Click") %>    ');return false;" />
                                                             <br />
                                                             <br />
                                                             <input id="Image2" type="image" src="<%= CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl %>"
-                                                             alt="Delete"  onclick="return deleteModule('BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>');"/>
+                                                                alt="Delete" onclick="return deleteModule('BottomPane', 'Content_bottomPane','<%= HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/DeleteBtn_Click") %>    ');" />
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -428,7 +437,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                         </tr>
                                     </table>
                                 </td>
-		                    </tr>
+                            </tr>
                             <tr>
                                 <td align="center" class="Error" colspan="4">
                                     <rbfwebui:Localize ID="msgError" runat="server" Text="You do not have the appropriate permissions to delete or move this module"
@@ -436,11 +445,11 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                                     </rbfwebui:Localize>
                                 </td>
                             </tr>
-                         </table>
+                        </table>
                     </div>
                     <h3><a href="#">Page Settings</a></h3>
                     <div id="Page Settings">
-                        <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">       
+                        <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">
                             <tr>
                                 <td colspan="4">
                                     <hr noshade="noshade" size="1" />
@@ -454,7 +463,7 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
         </tr>
         <tr>
             <td>
-                <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">    
+                <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">
                     <tr>
                         <td colspan="4">
                             <rbfwebui:LinkButton ID="UpdateButton" runat="server" class="CommandButton" Text="Apply Changes"
@@ -462,37 +471,37 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
                             <rbfwebui:LinkButton ID="CancelButton" runat="server" class="CommandButton" Text="Cancel"
                                 TextKey="CANCEL"></rbfwebui:LinkButton>
                         </td>
-                        </tr>
-                </table>               
-             </td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
-    
-     
-        <script type="text/javascript">
-            $(function () {
-                $("#accordion").accordion({
-                    autoHeight: false,
-                    navigation: true,
-                    collapsible: true,
-                    heightStyle: "fill"
-                });
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion").accordion({
+                autoHeight: false,
+                navigation: true,
+                collapsible: true,
+                heightStyle: "fill"
             });
+        });
 
-            $(document).ready(function () {
-                var page = $('#Content_PageIdField').val();
-                FillPane("TopPane", page);
-                FillPane("LeftPane", page);
-                FillPane("ContentPane", page);
-                FillPane("RightPane", page);
-                FillPane("BottomPane", page);
+        $(document).ready(function () {
+            var page = $('#Content_PageIdField').val();
+            FillPane("TopPane", page);
+            FillPane("LeftPane", page);
+            FillPane("ContentPane", page);
+            FillPane("RightPane", page);
+            FillPane("BottomPane", page);
 
-            });
+        });
 
-            function FillPane(panes, page) {
+        function FillPane(panes, page) {
                 
-                $.ajax({
-                    url: <%= urlToLoadModules %>,
+            $.ajax({
+                url: <%= urlToLoadModules %>,
                     type: "POST",
                     timeout: 180000,
                     data:{
@@ -676,6 +685,6 @@ MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="PageLayout.aspx.c
 
             
 
-	    </script>
-    
+    </script>
+
 </asp:Content>

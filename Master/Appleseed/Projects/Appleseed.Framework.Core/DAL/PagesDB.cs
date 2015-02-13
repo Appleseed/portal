@@ -60,6 +60,16 @@ namespace Appleseed.Framework.Site.Data
         /// </summary>
         private const string StrPortalId = "@PortalID";
 
+        /// <summary>
+        /// The str portal id.
+        /// </summary>
+        private const string StrFriendlyURL = "@friendlyURL";
+
+        /// <summary>
+        /// The get store precedure result as output
+        /// </summary>
+        private const string output = "@result";
+
         #endregion
 
         #region Public Methods
@@ -206,7 +216,7 @@ namespace Appleseed.Framework.Site.Data
 
                 var parameterAuthRoles = new SqlParameter("@AuthorizedRoles", SqlDbType.NVarChar, 256)
                     {
-                        Value = authorizedRoles 
+                        Value = authorizedRoles
                     };
                 command.Parameters.Add(parameterAuthRoles);
 
@@ -215,13 +225,13 @@ namespace Appleseed.Framework.Site.Data
 
                 var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 50)
                     {
-                        Value = mobilePageName 
+                        Value = mobilePageName
                     };
                 command.Parameters.Add(parameterMobileTabName);
 
                 var parameterPageId = new SqlParameter(StrPageId, SqlDbType.Int, 4)
                     {
-                        Direction = ParameterDirection.Output 
+                        Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterPageId);
 
@@ -439,6 +449,7 @@ namespace Appleseed.Framework.Site.Data
                 {
                     while (result.Read())
                     {
+
                         var tabItem = new PageItem
                             {
                                 ID = (int)result["PageID"],
@@ -446,6 +457,14 @@ namespace Appleseed.Framework.Site.Data
                                 Order = (int)result["PageOrder"],
                                 NestLevel = (int)result["NestLevel"]
                             };
+
+                        if (result["NestLevel"] != null)
+                        {
+                            int parentId = 0;
+                            int.TryParse(result["parentPageID"].ToString(), out parentId);
+                            tabItem.ParentPageId = parentId;
+                        }
+
                         desktopPages.Add(tabItem);
                     }
                 }
@@ -623,14 +642,15 @@ namespace Appleseed.Framework.Site.Data
         /// if set to <c>true</c> [show mobile].
         /// </param>
         public void UpdatePage(
-            int portalId,
-            int pageId,
-            int parentPageId,
-            string pageName,
-            int pageOrder,
-            string authorizedRoles,
-            string mobilePageName,
-            bool showMobile)
+          int portalId,
+          int pageId,
+          int parentPageId,
+          string pageName,
+          int pageOrder,
+          string authorizedRoles,
+          string mobilePageName,
+          bool showMobile,
+          string friendlyURL = "")
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
@@ -654,35 +674,35 @@ namespace Appleseed.Framework.Site.Data
                 }
 
                 var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 50)
-                    {
-                        Value = pageName.Length > 50 ? pageName.Substring(0, 49) : pageName 
-                    };
+                {
+                    Value = pageName.Length > 50 ? pageName.Substring(0, 49) : pageName
+                };
 
                 sqlCommand.Parameters.Add(parameterTabName);
                 var parameterTabOrder = new SqlParameter("@PageOrder", SqlDbType.Int, 4) { Value = pageOrder };
                 sqlCommand.Parameters.Add(parameterTabOrder);
                 var parameterAuthRoles = new SqlParameter("@AuthorizedRoles", SqlDbType.NVarChar, 256)
-                    {
-                        Value = authorizedRoles 
-                    };
+                {
+                    Value = authorizedRoles
+                };
                 sqlCommand.Parameters.Add(parameterAuthRoles);
                 var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 50)
-                    {
-                        Value = mobilePageName 
-                    };
+                {
+                    Value = mobilePageName
+                };
                 sqlCommand.Parameters.Add(parameterMobileTabName);
                 var parameterShowMobile = new SqlParameter("@ShowMobile", SqlDbType.Bit, 1) { Value = showMobile };
                 sqlCommand.Parameters.Add(parameterShowMobile);
-                connection.Open();
 
-                try
+                // HaptiX - Pass paramter for Friendly URL 
+                var parameterFriendlyURL = new SqlParameter("@FriendlyURL", SqlDbType.NVarChar, 1024)
                 {
-                    sqlCommand.ExecuteNonQuery();
-                }
-                finally
-                {
-                    connection.Close();
-                }
+                    Value = friendlyURL
+                };
+                sqlCommand.Parameters.Add(parameterFriendlyURL);
+
+                connection.Open();
+                sqlCommand.ExecuteNonQuery();
             }
         }
 
@@ -787,5 +807,153 @@ namespace Appleseed.Framework.Site.Data
         }
 
         #endregion
+
+        #region FRIENDLY URL
+        /// <summary>
+        /// Use to update the Friendly URL 
+        /// </summary>
+        /// <param name="pageId">pageID</param>
+        /// <param name="friendlyName">Friendly URL</param>
+        /// <returns>0 or 1</returns>
+        public string UpdateFriendlyURL(int pageId, string friendlyName)
+        {
+            using (var connection = Config.SqlConnectionString)
+            using (var sqlCommand = new SqlCommand("rb_UpdateFriendlyURL", connection))
+            {
+                // Mark the Command as a SPROC
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                // Add Parameters to SPROC
+                var parameterPageId = new SqlParameter(StrPageId, SqlDbType.Int, 4) { Value = pageId };
+                sqlCommand.Parameters.Add(parameterPageId);
+
+                var parametereFriendlyURL = new SqlParameter(StrFriendlyURL, SqlDbType.NVarChar, 512) { Value = friendlyName };
+                sqlCommand.Parameters.Add(parametereFriendlyURL);
+
+                var parameterOutput = new SqlParameter(output, SqlDbType.Int);
+                parameterOutput.Direction = ParameterDirection.Output;
+                sqlCommand.Parameters.Add(parameterOutput);
+                connection.Open();
+                try
+                {
+                    sqlCommand.ExecuteNonQuery();
+                    return sqlCommand.Parameters["@result"].Value.ToString();
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Get Frindly URL by page ID
+        /// it is also used for URL rewrite 
+        /// </summary>
+        /// <param name="pageId">Page id</param>
+        /// <returns>Friendly URL</returns>
+        //Ashish.patel@haptix.biz - 2014/12/16 - Get FriendlyURL by PageID
+        public string GetFriendlyURl(int pageId)
+        {
+
+            var connection = Config.SqlConnectionString;
+            var sqlCommand = new SqlCommand("rb_GetFriendlyURLbyPageID", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            // Add Parameters to SPROC
+            var parameterPageId = new SqlParameter(StrPageId, SqlDbType.Int, 4) { Value = pageId };
+            sqlCommand.Parameters.Add(parameterPageId);
+
+            // Execute the command
+            connection.Open();
+            var result = sqlCommand.ExecuteScalar().ToString();
+            connection.Close();
+
+            // Return the friendly url based on page id
+            return result;
+        }
+
+        /// <summary>
+        /// Get Friendly Url Pages
+        /// </summary>
+        /// <returns> returns data</returns>
+        public DataTable GetFriendlyURlPages()
+        {
+            // Create Instance of Connection and Command Object
+            using (var sqlConnection = Config.SqlConnectionString)
+            {
+                string commandText = "select * from rb_Pages where ISNULL(FriendlyURL, '') <> ''";
+                var da = new SqlDataAdapter(commandText, sqlConnection);
+
+                var dataTable = new DataTable("rb_Pages");
+
+                // Read the result set
+                try
+                {
+                    da.Fill(dataTable);
+                }
+                finally
+                {
+                    da.Dispose();
+                }
+
+                return dataTable;
+            }
+        }
+
+        /// <summary>
+        /// Delete friendly url
+        /// </summary>
+        /// <param name="pageId">page id</param>
+        public void DeleteFriendlyUrl(int pageId)
+        {
+            using (var sqlConnection = Config.SqlConnectionString)
+            {
+                string commandText = "update rb_Pages set FriendlyURL='' where pageID='" + pageId + "'";
+
+                SqlCommand sqlCommand = new SqlCommand(commandText, sqlConnection);
+                sqlConnection.Open();
+                try
+                {
+                    sqlCommand.ExecuteNonQuery();
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Check for duplicate Friendly Url 
+        /// </summary>
+        /// <param name="friendlyURL"> Page Friendly URL</param>
+        /// <param name="pageid">Page number</param>
+        /// <returns>0 / 1 </returns>
+        public bool IsAlreadyExistsFriendlyUrl(string friendlyURL, int pageid)
+        {
+            using (var connection = Config.SqlConnectionString)
+            using (var sqlCommand = new SqlCommand("select count(*) from rb_Pages where ISNULL(FriendlyURL, '') = '" + friendlyURL + "' and PageId <> " + pageid, connection))
+            {
+                // Mark the Command as a SPROC
+                sqlCommand.CommandType = CommandType.Text;
+                // Add Parameters to SPROC
+                connection.Open();
+                try
+                {
+                    return Convert.ToBoolean(sqlCommand.ExecuteScalar());
+                }
+
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+        #endregion
+
+ 
     }
 }

@@ -250,6 +250,12 @@
             <param name="desktopHtml"></param>
             <param name="mobileSummary"></param>
             <param name="mobileDetails"></param>
+            <param name="versionno"></param>
+            <param name="published"></param>
+            <param name="createddate"></param>
+            <param name="createdbyusername"></param>
+            <param name="modifieddate"></param>
+            <param name="modifiedbyusername"></param>
         </member>
     </members>
 </doc>

@@ -60,7 +60,15 @@ namespace Appleseed.Framework
         /// <value>The order.</value>
         /// <remarks>
         /// </remarks>
-        public int Order { get; set; }        
+        public int Order { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the parent page id.
+        /// </summary>
+        /// <value>The parent page id.</value>
+        /// <remarks>
+        /// </remarks>
+        public int ParentPageId { get; set; }
 
         #endregion
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HtmlEditModal.aspx.cs" Inherits="Appleseed.DesktopModules.CommunityModules.HTMLDocument.HtmlEditModal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HtmlEditModal.aspx.cs" Inherits="Appleseed.DesktopModules.CoreModules.HTMLDocument.HtmlEditModal" %>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">

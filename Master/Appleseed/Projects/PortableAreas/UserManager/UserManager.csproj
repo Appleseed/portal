@@ -158,6 +158,10 @@
       <Project>{552ccd6f-0a37-4366-9e3e-22b2a0221584}</Project>
       <Name>Appleseed.Framework.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Appleseed.Framework.UrlRewriting\Appleseed.Framework.UrlRewriting.csproj">
+      <Project>{10f33732-1aca-492a-a737-df8314ce7499}</Project>
+      <Name>Appleseed.Framework.UrlRewriting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Appleseed.Core\Appleseed.Core.csproj">
       <Project>{22c4ba46-65c9-49e2-8a23-86dd2f44b744}</Project>
       <Name>Appleseed.Core</Name>

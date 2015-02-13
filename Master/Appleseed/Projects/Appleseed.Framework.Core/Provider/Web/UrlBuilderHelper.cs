@@ -13,7 +13,8 @@ namespace Appleseed.Framework.Web
 	/// <summary>
 	/// Summary description for Helper.
 	/// </summary>
-	internal sealed class UrlBuilderHelper
+    [History("Ashish.patel@haptix.biz", "2014/12/24", "Changed Accessibility of GetUrlElements for caching")]
+	public sealed class UrlBuilderHelper
 	{
 		/// <summary>
 		///     ctor
@@ -193,6 +194,7 @@ namespace Appleseed.Framework.Web
 		/// <param name="_tabLink">Is this Url a link to an external site/resource</param>
 		/// <param name="_urlKeywords">Are there any keywords that should be added to this url</param>
 		/// <param name="_pageName">Does this url have a friendly page name other than the default</param>
+        /// Ashish.patel@haptix.biz - 2014/12/24 - Changed Accessibility for caching
 		public static UrlElements GetUrlElements(int pageID, double cacheDuration)
 		{
             UrlElements urlElements = new UrlElements();

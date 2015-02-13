@@ -27,26 +27,40 @@ namespace UserManager.Controllers
             var mid = (int)ControllerContext.RouteData.Values["moduleId"];
             var urlCreate = Path.ApplicationRoot + "/DesktopModules/CoreModules/Users/UsersManage.aspx?pageId=" + pagenumber +
                             "&mID=" + mid;
-            var model = new UserManagerModel {UserEmail = urlCreate};
-            
+            var model = new UserManagerModel { UserEmail = urlCreate };
+
             return View(model);
         }
 
         private string getPageId(string[] segment)
         {
             string pagenumber = 0.ToString();
-            foreach (var seg in segment)
-            {
-                int num;
-                bool isNum = int.TryParse(seg.Split('/').First(), out num);
-                if (isNum)
-                {
-                    pagenumber = seg.Split('/').First();
-                }
 
+            // if friendly url is enabled 
+            if (PortalSettings.HasEnablePageFriendlyUrl(Portal.PageID, Config.DefaultPortal))
+            {
+                string urlsegment = string.Empty;
+                foreach (string seg in segment)
+                {
+                    urlsegment = urlsegment + seg;
+                }
+                pagenumber = Appleseed.Framework.UrlRewriting.UrlRewritingFriendlyUrl.GetPageIDFromPageName(urlsegment);
+            }
+            else
+            {
+                // else get the pageid based on url
+                foreach (var seg in segment)
+                {
+                    int num;
+                    bool isNum = int.TryParse(seg.Split('/').First(), out num);
+                    if (isNum)
+                    {
+                        pagenumber = seg.Split('/').First();
+                    }
+                }
             }
             return pagenumber;
-        } 
+        }
         public string Builddir(string email)
         {
             string userName = Membership.GetUserNameByEmail(email);
@@ -86,7 +100,7 @@ namespace UserManager.Controllers
                         break;
                     }
                 }
-                
+
             }
             return GetRowsFromList(result.AsQueryable(), rows, page);
         }
@@ -106,17 +120,17 @@ namespace UserManager.Controllers
             dynamic roles = table.Query("SELECT r.RoleName, ur.UserId " +
                                         "FROM aspnet_Roles r, aspnet_UsersInRoles ur " +
                                         "WHERE r.RoleId = ur.RoleId");
-            var iRoles = (IEnumerable<dynamic>) roles;
+            var iRoles = (IEnumerable<dynamic>)roles;
             var i = 1;
             foreach (var user in iduser)
             {
                 var m = new UserManagerModel();
-                m.id = i; 
+                m.id = i;
                 m.UserId = user.UserId;
                 m.UserName = user.Name;
                 m.UserEmail = user.Email;
                 var userrolid = Guid.Parse(user.UserId.ToString());
-                
+
                 try
                 {
                     var roleName = iRoles.Where(r => r.UserId == userrolid);
