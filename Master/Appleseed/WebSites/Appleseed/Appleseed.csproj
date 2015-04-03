@@ -7790,7 +7790,7 @@
     <Content Include="DesktopModules\CommunityModules\FileDirectoryTree\FileDirectoryTree.xml" />
     <Content Include="DesktopModules\CommunityModules\FileDirectoryTree\install.xml" />
     <Content Include="DesktopModules\CommunityModules\FileDirectoryTree\readme.txt" />
-    <Content Include="DesktopModules\CommunityModules\HTMLDocument\ANANT.Appleseed.HtmlDoc.Versioning.DBChanges.SQLScript.sql" />
+    <Content Include="DesktopModules\CommunityModules\HTMLDocument\Appleseed.HtmlDoc.Versioning.DBChanges.SQLScript.sql" />
     <Content Include="DesktopModules\CommunityModules\HTMLDocument\HtmlDocument.xml">
       <SubType>Designer</SubType>
     </Content>
