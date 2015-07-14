@@ -2166,6 +2166,9 @@
   <data name="NAVIGATION_SETTINGS" xml:space="preserve">
     <value>Navigation settings</value>
   </data>
+  <data name="ADD_CSS_JAVASCRIPT" xml:space="preserve">
+    <value>Add CSS and Javascripts</value>
+  </data>
   <data name="NEWSLETTER_BLACKLISTED" xml:space="preserve">
     <value>Blacklisted by </value>
   </data>
@@ -3557,5 +3560,8 @@
   </data>
   <data name="CONFIRM_DELETE_MESSAGE" xml:space="preserve">
     <value>Are you sure you want to delete </value>
+  </data>
+  <data name="EVOL_ADVD_MODEL_SETTING_TITLE" xml:space="preserve">
+    <value>Model Settings</value>
   </data>
 </root>
