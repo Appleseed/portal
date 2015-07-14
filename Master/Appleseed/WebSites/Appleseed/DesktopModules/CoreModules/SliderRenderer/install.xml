@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>Slider Renderer</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/SliderRenderer/SliderModuleRenderer.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>
+

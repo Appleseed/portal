@@ -1221,6 +1221,20 @@
     <Compile Include="DesktopModules\CoreModules\SiteSettings\SiteSettings.ascx.designer.cs">
       <DependentUpon>SiteSettings.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx.cs">
+      <DependentUpon>SliderManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx.designer.cs">
+      <DependentUpon>SliderManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\SliderRenderer\SliderModuleRenderer.ascx.cs">
+      <DependentUpon>SliderModuleRenderer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\SliderRenderer\SliderModuleRenderer.ascx.designer.cs">
+      <DependentUpon>SliderModuleRenderer.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\SocialNetworksButtons\SocialNetworkButtons.ascx.cs">
       <DependentUpon>SocialNetworkButtons.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1241,6 +1255,20 @@
     </Compile>
     <Compile Include="DesktopModules\CoreModules\Users\UsersManage.aspx.designer.cs">
       <DependentUpon>UsersManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\XMLImportExport\ExportXml.aspx.cs">
+      <DependentUpon>ExportXml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\XMLImportExport\ExportXml.aspx.designer.cs">
+      <DependentUpon>ExportXml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\XMLImportExport\XmlImportExport.ascx.cs">
+      <DependentUpon>XmlImportExport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\XMLImportExport\XmlImportExport.ascx.designer.cs">
+      <DependentUpon>XmlImportExport.ascx</DependentUpon>
     </Compile>
     <Compile Include="Installer\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -8061,10 +8089,22 @@
     <Content Include="DesktopModules\CoreModules\SignIn\SignIn_readme.txt" />
     <Content Include="DesktopModules\CoreModules\SiteSettings\install.xml" />
     <Content Include="DesktopModules\CoreModules\SiteSettings\SiteSettings.ascx" />
+    <Content Include="DesktopModules\CoreModules\SliderManager\install.sql" />
+    <Content Include="DesktopModules\CoreModules\SliderManager\install.xml" />
+    <Content Include="DesktopModules\CoreModules\SliderManager\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx" />
+    <Content Include="DesktopModules\CoreModules\SliderRenderer\install.xml" />
+    <Content Include="DesktopModules\CoreModules\SliderRenderer\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\SliderRenderer\SliderModuleRenderer.ascx" />
     <Content Include="DesktopModules\CoreModules\SocialNetworksButtons\SocialNetworkButtons.ascx" />
     <Content Include="DesktopModules\CoreModules\Users\install.xml" />
     <Content Include="DesktopModules\CoreModules\Users\Users.ascx" />
     <Content Include="DesktopModules\CoreModules\Users\UsersManage.aspx" />
+    <Content Include="DesktopModules\CoreModules\XMLImportExport\ANANT.Appleseed.XMLImportExport_AddModule.sql" />
+    <Content Include="DesktopModules\CoreModules\XMLImportExport\ExportXml.aspx" />
+    <Content Include="DesktopModules\CoreModules\XMLImportExport\FINAL.ANANT.Appleseed.XMLImportExport_ExportXML.sql" />
+    <Content Include="DesktopModules\CoreModules\XMLImportExport\FINAL.ANANT.Appleseed.XMLImportExport_ImportXML.sql" />
+    <Content Include="DesktopModules\CoreModules\XMLImportExport\XmlImportExport.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="get_aspx_ver.aspx" />
     <Content Include="Global.asax" />
