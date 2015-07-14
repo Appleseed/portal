@@ -255,6 +255,11 @@ namespace Appleseed.Framework.Core.Model
             return ConvertModuleListToDictionary(modules);
         }
             
+        /// <summary>
+        /// Get Modules to page
+        /// </summary>
+        /// <param name="pageId">page id</param>
+        /// <returns>list of module settings</returns>
         public static List<IModuleSettings> GetModulesToPage(int pageId)
         {
             var result = new List<IModuleSettings>();
@@ -320,9 +325,7 @@ namespace Appleseed.Framework.Core.Model
         /// <param name="areaName">Name of the area.</param>
         /// <param name="controllerName">Name of the controller</param>
         /// <param name="assemblyFullName">Full name of the assembly.</param>
-        /// <param name="controllerName">The module.</param>
-        /// <param name="controllerName">The action name</param>
-        /// <returns></returns>
+        /// <returns>mid</returns>
         public static Guid RegisterPortableAreaModule(string areaName, string assemblyFullName, string controllerName) {
             Guid mId;
             var sdb = new ModulesDB();
@@ -345,8 +348,7 @@ namespace Appleseed.Framework.Core.Model
         /// <param name="areaName">Name of the area.</param>
         /// <param name="controllerName">Name of the controller</param>
         /// <param name="assemblyFullName">Full name of the assembly.</param>
-        /// <param name="controllerName">The module.</param>
-        /// <param name="controllerName">The action name</param>
+        /// <param name="actionName">The action name</param>
         /// <returns></returns>
         public static Guid RegisterPortableAreaModule(string areaName, string assemblyFullName, string controllerName, string actionName)
         {
@@ -448,7 +450,11 @@ namespace Appleseed.Framework.Core.Model
         }
 
 
-
+        /// <summary>
+        /// Get page by page id
+        /// </summary>
+        /// <param name="pageId">pageid</param>
+        /// <returns>object</returns>
         public static Object GetPage(int pageId)
         {
             var context = new AppleseedDBContext();

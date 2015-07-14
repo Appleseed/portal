@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Configuration;
-using System.Collections.Specialized;
-
-namespace Appleseed.Framework.Configuration.Provider
+﻿namespace Appleseed.Framework.Configuration.Provider
 {
+    using System.Configuration;
+    using System.Collections.Specialized;
+
+    /// <summary>
+    /// Appleseed provider settings
+    /// </summary>
     public class AppleseedProviderSettings : ConfigurationElement
     {
 
@@ -16,6 +15,9 @@ namespace Appleseed.Framework.Configuration.Provider
 
         // Summary:
         //     Initializes a new instance of the System.Configuration.ProviderSettings class.
+        /// <summary>
+        /// Appleseed privder settings
+        /// </summary>
         public AppleseedProviderSettings() {
             name = string.Empty;
             type = string.Empty;
@@ -32,6 +34,11 @@ namespace Appleseed.Framework.Configuration.Provider
         //
         //   type:
         //     The type of the provider to configure settings for.
+        /// <summary>
+        /// Appleseed provider settings
+        /// </summary>
+        /// <param name="Name">name</param>
+        /// <param name="Type">type</param>
         public AppleseedProviderSettings(string Name, string Type) {
             name = Name;
             type = Type;
@@ -51,6 +58,12 @@ namespace Appleseed.Framework.Configuration.Provider
         //
         //  Parameters:
         //      The colecction from web.Config
+        /// <summary>
+        /// Appleseed provder settings
+        /// </summary>
+        /// <param name="Name">Name</param>
+        /// <param name="Type">Type</param>
+        /// <param name="Parameters">Parameters</param>
         public AppleseedProviderSettings(string Name, string Type, NameValueCollection Parameters) {
             name = Name;
             type = Type;
@@ -63,6 +76,9 @@ namespace Appleseed.Framework.Configuration.Provider
         //
         // Returns:
         //     The name of the provider.
+        /// <summary>
+        /// Name
+        /// </summary>
         [ConfigurationProperty("Name", IsRequired = true, IsKey = true)]
         public string Name { 
             get {
@@ -78,6 +94,10 @@ namespace Appleseed.Framework.Configuration.Provider
         //
         // Returns:
         //     The type of the provider.
+
+        /// <summary>
+        /// Type
+        /// </summary>
         [ConfigurationProperty("Name", IsRequired = true, IsKey = true)]
         public string Type
         {
@@ -98,6 +118,9 @@ namespace Appleseed.Framework.Configuration.Provider
         // Returns:
         //     A System.Collections.Specialized.NameValueCollection of parameters for the
         //     provider.
+        /// <summary>
+        /// Parameters
+        /// </summary>
         public NameValueCollection Parameters
         {
             get

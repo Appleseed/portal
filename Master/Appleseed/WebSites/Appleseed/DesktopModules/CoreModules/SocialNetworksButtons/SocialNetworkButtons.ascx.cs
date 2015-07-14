@@ -26,7 +26,7 @@ namespace Appleseed.DesktopModules.CoreModules.SocialNetworksButtons {
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool hide = false;
+            //bool hide = false;
             
             
 
@@ -34,12 +34,12 @@ namespace Appleseed.DesktopModules.CoreModules.SocialNetworksButtons {
                 this.Visible = false;
             } else {
                 try {
-                    hide = true;
+                   // hide = true;
                     var facebookContext = GetFacebookWebContext();
                     if (facebookContext != null) {
                         appId.Value = PortalSettings.CustomSettings["SITESETTINGS_FACEBOOK_APP_ID"].ToString();
                         appidfacebook.Value = PortalSettings.CustomSettings["SITESETTINGS_FACEBOOK_APP_ID"].ToString();
-                        hide = false;
+                    //    hide = false;
                         if (facebookContext.IsAuthenticated()) {
                             //Here is were i check if the user login via facebook
                             FacebookSignInMethod();
@@ -59,7 +59,7 @@ namespace Appleseed.DesktopModules.CoreModules.SocialNetworksButtons {
                 try {
                     var TwitterRequestToken = GetTwitterRequestToken();
                     if (TwitterRequestToken != null) {
-                        hide = false;
+                       // hide = false;
                     } else {
                         //TODO: ocultar boton y mostrar warning
                         logintwit_div.Visible = false;
@@ -76,14 +76,14 @@ namespace Appleseed.DesktopModules.CoreModules.SocialNetworksButtons {
                     google_div.Visible = false;
                 }
                 else
-                    hide = false;
+                    //hide = false;
 
                 if ((this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_LINKEDIN_APP_ID") &&
                 this.PortalSettings.CustomSettings["SITESETTINGS_LINKEDIN_APP_ID"].ToString().Length != 0)&&
                     (this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_LINKEDIN_APP_SECRET") &&
                 this.PortalSettings.CustomSettings["SITESETTINGS_LINKEDIN_APP_SECRET"].ToString().Length != 0))
                 {
-                    hide = false;
+                   // hide = false;
                     Session["LinkedInAppId"] = PortalSettings.CustomSettings["SITESETTINGS_LINKEDIN_APP_ID"].ToString();
                     Session["LinkedInAppSecret"] = PortalSettings.CustomSettings["SITESETTINGS_LINKEDIN_APP_SECRET"].ToString();
                 }

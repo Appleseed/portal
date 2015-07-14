@@ -137,7 +137,7 @@ namespace UserManager.Controllers
                     m.UserRol = roleName.Single().RoleName;
 
                 }
-                catch (Exception e)
+                catch
                 {
                     m.UserRol = "";
                 }

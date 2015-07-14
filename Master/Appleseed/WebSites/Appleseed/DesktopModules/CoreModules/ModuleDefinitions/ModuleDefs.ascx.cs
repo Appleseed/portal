@@ -42,24 +42,50 @@ namespace Appleseed.Content.Web.Modules
         protected void BindData()
         {
             // Get the portal's defs from the database
-            SqlDataReader dr = new ModulesDB().GetCurrentModuleDefinitions(this.PortalSettings.PortalID);
+            var modulelist = new ModulesDB().GetCurrentModuleDefinitions(this.PortalSettings.PortalID);
 
             DataTable userTable = new DataTable();
-            userTable.Columns.Add(new DataColumn("FriendlyName", typeof (string)));
-            userTable.Columns.Add(new DataColumn("ModuleDefID", typeof (string)));
+            userTable.Columns.Add(new DataColumn("FriendlyName", typeof(string)));
+            userTable.Columns.Add(new DataColumn("ModuleDefID", typeof(string)));
 
             DataTable adminTable = new DataTable();
-            adminTable.Columns.Add(new DataColumn("FriendlyName", typeof (string)));
-            adminTable.Columns.Add(new DataColumn("ModuleDefID", typeof (string)));
+            adminTable.Columns.Add(new DataColumn("FriendlyName", typeof(string)));
+            adminTable.Columns.Add(new DataColumn("ModuleDefID", typeof(string)));
 
             DataRow drow;
-            while (dr.Read())
+            //while (dr.Read())
+            //{
+            //    if (bool.Parse(dr["Admin"].ToString()))
+            //    {
+            //        drow = adminTable.NewRow();
+            //        drow["ModuleDefID"] = dr["ModuleDefID"];
+            //        string aux = dr["FriendlyName"].ToString();
+            //        if (aux.StartsWith("Admin"))
+            //        {
+            //            aux = aux.Substring(5);
+            //            while (aux[0] == ' ' || aux[0] == '-') aux = aux.Substring(1);
+            //        }
+            //        drow["FriendlyName"] = aux;
+            //        adminTable.Rows.Add(drow);
+            //    }
+            //    else
+            //    {
+            //        drow = userTable.NewRow();
+            //        drow["ModuleDefID"] = dr["ModuleDefID"];
+            //        drow["FriendlyName"] = dr["FriendlyName"];
+            //        userTable.Rows.Add(drow);
+            //    }
+            //}
+
+
+            foreach (var item in modulelist)
             {
-                if (bool.Parse(dr["Admin"].ToString()))
+
+                if (item.Admin)
                 {
                     drow = adminTable.NewRow();
-                    drow["ModuleDefID"] = dr["ModuleDefID"];
-                    string aux = dr["FriendlyName"].ToString();
+                    drow["ModuleDefID"] = item.ModuleDefId;
+                    string aux = item.FriendlyName;
                     if (aux.StartsWith("Admin"))
                     {
                         aux = aux.Substring(5);
@@ -71,16 +97,17 @@ namespace Appleseed.Content.Web.Modules
                 else
                 {
                     drow = userTable.NewRow();
-                    drow["ModuleDefID"] = dr["ModuleDefID"];
-                    drow["FriendlyName"] = dr["FriendlyName"];
+                    drow["ModuleDefID"] = item.ModuleDefId;
+                    drow["FriendlyName"] =item.FriendlyName;
                     userTable.Rows.Add(drow);
                 }
             }
+
             userModules.DataSource = userTable;
             userModules.DataBind();
             adminModules.DataSource = adminTable;
             adminModules.DataBind();
-            dr.Close();
+           // dr.Close();
         }
 
         /// <summary>

@@ -119,8 +119,8 @@ namespace PageManagerTree.Massive {
             PrimaryKeyField = string.IsNullOrEmpty(primaryKeyField) ? "ID" : primaryKeyField;
             DescriptorField = descriptorField;
             var _providerName = "System.Data.SqlClient";
-            
-            if(ConfigurationManager.ConnectionStrings[connectionStringName].ProviderName != null)
+
+            if (ConfigurationManager.ConnectionStrings[connectionStringName].ProviderName != null)
                 _providerName = ConfigurationManager.ConnectionStrings[connectionStringName].ProviderName;
             
             _factory = DbProviderFactories.GetFactory(_providerName);

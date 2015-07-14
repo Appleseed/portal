@@ -54,6 +54,9 @@ namespace Appleseed.Framework.Content.Data
         /// <param name="version">
         /// The version.
         /// </param>
+        /// <param name="versionsModule">
+        /// The versionsModule.
+        /// </param>
         /// <returns>
         /// A sql data reader
         /// </returns>

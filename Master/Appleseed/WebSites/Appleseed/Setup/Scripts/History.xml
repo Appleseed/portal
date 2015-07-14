@@ -1226,24 +1226,53 @@
   <Release>
     <ID>1897</ID>
     <Version>2.0.0.1897</Version>
-    <Date>2014-12-23T00:00:00.0000000-03:00</Date>
+    <Date>2015-02-03T00:00:00.0000000-03:00</Date>
     <Scripts>
       <Script>2.0.0.1897.sql</Script>
     </Scripts>
   </Release>
-   
-  
-<!--  Run new Release Code
+
   <Release>
-    <ID>1895</ID>
-    <Version>2.0.0.1895</Version>
-    <Date>2014-05-27</Date>
+    <ID>1898</ID>
+    <Version>2.0.0.1898</Version>
+    <Date>2015-02-10T00:00:00.0000000-03:00</Date>
     <Scripts>
-      <Script>2.0.0.1895.sql</Script>
+      <Script>2.0.0.1898.sql</Script>
     </Scripts>
   </Release>
+  
+  <Release>
+    <ID>1899</ID>
+    <Version>2.0.0.1899</Version>
+    <Date>2015-02-10T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1899.sql</Script>
+    </Scripts>
+    <Modules>
+      <Installer>DesktopModules/CoreModules/SliderManager/install.xml</Installer>
+      <Installer>DesktopModules/CoreModules/SliderRenderer/install.xml</Installer>
+    </Modules>
+  </Release>
 
-  DEPRECATED: Used only for backward compatibility -->
-  <!-- FUTURE : Please use DBScripts folder in Appleseed.Core portable area  -->
+  <Release>
+    <ID>1900</ID>
+    <Version>2.0.0.1900</Version>
+    <Date>2015-04-28T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1900.sql</Script>
+    </Scripts>
+  </Release>
+  
+  <Release>
+    <ID>1900</ID>
+    <Version>2.0.0.1901</Version>
+    <Date>2015-05-01T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1901.sql</Script>
+    </Scripts>
+  </Release>
+ 
+  <!--DEPRECATED: Don´t add more scripts, this is only for backward compatibility -->
+  <!--Please use DBScripts folder in Appleseed.Core portable area -->
 
 </History>

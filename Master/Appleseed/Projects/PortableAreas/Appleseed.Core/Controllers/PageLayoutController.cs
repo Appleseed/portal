@@ -9,9 +9,11 @@ using Appleseed.Framework.Site.Data;
 using System.Text;
 using System.Collections;
 using Appleseed.Framework.Site.Configuration;
+using Appleseed.Framework.Configuration.Items;
 
 namespace Appleseed.Core.Controllers
 {
+
     public class PageLayoutController : Controller
     {
         //
@@ -346,12 +348,179 @@ namespace Appleseed.Core.Controllers
                 }
                 return Json(new { error = false, value = sb.ToString() });
             }
-            catch (Exception e)
+            catch 
             {
                 return Json(new { error = true });
             }
 
         }
 
+        # region jstreeFunctionality
+        /// <summary>
+        /// Get Root node
+        /// </summary>
+        /// <returns>Root node</returns>
+        public JsonResult GetRootNodes()
+        {
+            JsTreeItem rootNode = new JsTreeItem();
+            rootNode.text = "Page";
+            rootNode.id = "0";
+            return Json(rootNode, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Get Sub nodes 
+        /// </summary>
+        /// <param name="pane">pane id</param>
+        /// <param name="pageId">page id</param>
+        /// <returns>Current page modules</returns>
+        public JsonResult GetSubNodes(string pane, string pageId)
+        {
+            if (pane == "0")
+            {
+                List<JsTreeItem> rootnodelist = new List<JsTreeItem>();
+
+                JsTreeItem rootNode = new JsTreeItem();
+
+                rootNode.text = "Top Pane";
+                rootNode.id = "TopPane";
+                rootnodelist.Add(rootNode);
+
+                rootNode = new JsTreeItem();
+                rootNode.text = "Left Pane";
+                rootNode.id = "LeftPane";
+                rootnodelist.Add(rootNode);
+
+                rootNode = new JsTreeItem();
+                rootNode.text = "Center Pane";
+                rootNode.id = "ContentPane";
+                rootnodelist.Add(rootNode);
+
+                rootNode = new JsTreeItem();
+                rootNode.text = "Right Pane";
+                rootNode.id = "RightPane";
+                rootnodelist.Add(rootNode);
+
+                rootNode = new JsTreeItem();
+                rootNode.text = "Bottom Pane";
+                rootNode.id = "BottomPane";
+                rootnodelist.Add(rootNode);
+
+                return Json(rootnodelist, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                try
+                {
+                    var modules = this.GetModules(pane, Int32.Parse(pageId));
+                    List<JsTreeItem> listNode = new List<JsTreeItem>();
+                    foreach (ModuleItem md in modules)
+                    {
+                        JsTreeItem node = new JsTreeItem();
+                        node.id = md.ID.ToString();
+                        node.text = md.Title;
+                        listNode.Add(node);
+                    }
+                    return Json(listNode, JsonRequestBehavior.AllowGet);
+                }
+                catch
+                {
+                    return Json(new { error = true });
+                }
+            }
+        }
+
+
+        public JsonResult DeleteModuleFromTree(string pane, string pageId, string moduleid)
+        {
+            List<JsTreeItem> nodelist = new List<JsTreeItem>();
+
+            int mID = Convert.ToInt32(moduleid);
+            if (mID > -1)
+            {
+                if (PortalSecurity.IsInRoles(PortalSecurity.GetDeleteModulePermissions(mID)))
+                {
+                    var moddb = new ModulesDB();
+
+                    // Delete module
+                    moddb.DeleteModule(mID);
+
+                    // reorder the modules in the pane
+                  var  modules = this.GetModules(pane, Int32.Parse(pageId));
+                    var list = this.OrderModules(modules);
+
+                    foreach (ModuleItem item in modules)
+                    {
+                        moddb.UpdateModuleOrder(item.ID, item.Order, pane);
+                    }
+
+                    foreach (ModuleItem md in list)
+                    {
+                        JsTreeItem rootNode = new JsTreeItem();
+                        rootNode.id = md.ID.ToString();
+                        rootNode.text = md.Title;
+                        nodelist.Add(rootNode);
+                    }
+                    return Json(nodelist, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { error = true });
+                }
+            }
+            return Json(new { error = true });
+        }
+
+        /// <summary>
+        /// Drag and drop functionality 
+        /// </summary>
+        /// <param name="sourcePane">Source Pane</param>
+        /// <param name="targetPane">Target Pane</param>
+        /// <param name="pageId">Page id</param>
+        /// <param name="moduleid">Module id</param>
+        /// <returns>return </returns>
+        public JsonResult MoveModule(string sourcePane, string targetPane, string pageId, string moduleid)
+        {
+            // get source arraylist
+            var sourceList = this.GetModules(sourcePane, Int32.Parse(pageId));
+
+            var mID = Convert.ToInt32( moduleid); //(ModuleItem)sourceList[index];
+
+            if (PortalSecurity.IsInRoles(PortalSecurity.GetMoveModulePermissions(mID)))
+            {
+                // add it to the database
+                var admin = new ModulesDB();
+                admin.UpdateModuleOrder(mID, 99, targetPane);
+
+                // reorder the modules in the source pane
+                sourceList = this.GetModules(sourcePane, Int32.Parse(pageId));
+                var list = this.OrderModules(sourceList);
+
+                // resave the order
+                foreach (ModuleItem item in sourceList)
+                {
+                    admin.UpdateModuleOrder(item.ID, item.Order, sourcePane);
+                }
+
+                // reorder the modules in the target pane
+                var targetList = this.GetModules(targetPane, Int32.Parse(pageId));
+                var list2 = this.OrderModules(targetList);
+
+                // resave the order
+                foreach (ModuleItem item in targetList)
+                {
+                    admin.UpdateModuleOrder(item.ID, item.Order, targetPane);
+                }
+
+                return Json(new { error = false });
+            }
+            else
+            {
+                return Json(new { error = true });
+            }
+        }
+
+        # endregion
     }
 }
+

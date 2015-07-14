@@ -21,6 +21,7 @@ namespace Appleseed.Content.Web.Modules
     using Appleseed.Framework;
 
     using Path = Appleseed.Framework.Settings.Path;
+    using System.Xml.XPath;
 
     /// <summary>
     /// The user defined table xml.
@@ -102,8 +103,10 @@ namespace Appleseed.Content.Web.Modules
         {
             get
             {
-                this.Document = this.XmlData();
-                return this.Document.InnerXml;
+                //this.Document = this.XmlData();
+                //return this.Document.InnerXml;
+                this.DocumentContent = (new XPathDocument(new XmlNodeReader(this.XmlData()))).CreateNavigator().OuterXml;
+                return this.DocumentContent;
             }
         }
 
@@ -189,7 +192,7 @@ namespace Appleseed.Content.Web.Modules
         #region Methods
 
         /// <summary>
-        /// Raises the <see cref="Sort"/> event.
+        /// Raises the see - cref= Sort event.
         /// </summary>
         /// <param name="e">
         /// The <see cref="Appleseed.Content.Web.Modules.UDTXSLSortEventArgs"/> instance containing the event data.
@@ -274,8 +277,9 @@ namespace Appleseed.Content.Web.Modules
         /// </returns>
         private string RenderedXml()
         {
-            this.Document = this.XmlData();
-
+            //this.Document = this.XmlData();
+            this.DocumentContent = (new XPathDocument(new XmlNodeReader(this.XmlData()))).CreateNavigator().OuterXml;
+            
             // *** Write Esperantus.Esperantus.Localize. HTML into this string builder
             var sb = new StringBuilder();
             var sw = new StringWriter(sb);

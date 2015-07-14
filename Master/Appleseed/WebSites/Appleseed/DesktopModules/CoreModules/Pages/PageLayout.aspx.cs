@@ -65,6 +65,9 @@ namespace Appleseed.Admin
 
         protected String urlToLoadModules;
 
+        protected string urlToLoadRoots;
+
+        protected string urlToLoadSubNodes;
         #endregion
 
         #region Methods
@@ -291,6 +294,10 @@ namespace Appleseed.Admin
             //this.ContentDeleteBtn.Attributes.Add("OnClick", "return confirmDelete()");
             //this.BottomDeleteBtn.Attributes.Add("OnClick", "return confirmDelete()");
             urlToLoadModules = "'" + HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/LoadModule") + "'";
+
+            urlToLoadRoots = "'" + HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/GetRootNodes") + "'";
+
+            urlToLoadSubNodes = "'" + HttpUrlBuilder.BuildUrl("~/Appleseed.Core/PageLayout/GetSubNodes") + "'";
             // If first visit to the page, update all entries
             if (!this.Page.IsPostBack)
             {
@@ -713,62 +720,32 @@ namespace Appleseed.Admin
             var m = new ModulesDB();
             var modules = new SortedList<string, string>();
             var drCurrentModuleDefinitions = m.GetCurrentModuleDefinitions(this.PortalSettings.PortalID);
-            //if (PortalSecurity.IsInRoles("Admins") || !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString()))
-            //{
             var htmlId = "0";
             try
             {
-                while (drCurrentModuleDefinitions.Read())
+                foreach (var item in drCurrentModuleDefinitions)
                 {
-                    if ((!modules.ContainsKey(drCurrentModuleDefinitions["FriendlyName"].ToString())) &&
-                        (PortalSecurity.IsInRoles("Admins") || !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString())))
+                     if ((!modules.ContainsKey(item.FriendlyName)) &&
+                        (PortalSecurity.IsInRoles("Admins") || !item.Admin))
                     {
                         modules.Add(
-                            // moduleType.Items.Add(
-                            // new ListItem(drCurrentModuleDefinitions["FriendlyName"].ToString(),
-                            // drCurrentModuleDefinitions["ModuleDefID"].ToString()));
-                            drCurrentModuleDefinitions["FriendlyName"].ToString(),
-                            drCurrentModuleDefinitions["ModuleDefID"].ToString());
-                        if (drCurrentModuleDefinitions["FriendlyName"].ToString().Equals("HTML Content"))
-                            htmlId = drCurrentModuleDefinitions["ModuleDefID"].ToString();
+                           
+                           item.FriendlyName,
+                           item.ModuleDefId.ToString());
+                        if (item.FriendlyName.ToString().Equals("HTML Content"))
+                            htmlId = item.ModuleDefId.ToString();
                     }
                 }
             }
             finally
             {
-                drCurrentModuleDefinitions.Close();
+               
             }
-            //}
-
-            // Dictionary<string, string> actions = ModelServices.GetMVCActionModules();
-            // foreach (string key in actions.Keys) {
-            // modules.Add(key, actions[key]);
-            // }
+          
             this.moduleType.DataSource = modules;
             this.moduleType.DataBind();
             this.moduleType.SelectedValue = htmlId;
 
-
-            // Now it's the load is by ajax 1/september/2011
-            // Populate Top Pane Module Data
-            //this.topList = this.GetModules("TopPane");
-            //this.topPane.DataBind();
-
-            //// Populate Left Hand Pane Module Data
-            //this.leftList = this.GetModules("LeftPane");
-            //this.leftPane.DataBind();
-
-            //// Populate Content Pane Module Data
-            //this.contentList = this.GetModules("ContentPane");
-            //this.contentPane.DataBind();
-
-            //// Populate Right Hand Module Data
-            //this.rightList = this.GetModules("RightPane");
-            //this.rightPane.DataBind();
-
-            //// Populate Bottom Module Data
-            //this.bottomList = this.GetModules("BottomPane");
-            //this.bottomPane.DataBind();
         }
 
         /// <summary>
@@ -918,7 +895,7 @@ namespace Appleseed.Admin
             DateTime time;
             TimeSpan span;
             var guidsInUse = string.Empty;
-            Guid guid;
+           // Guid guid;
 
             var mdb = new ModulesDB();
 

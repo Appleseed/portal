@@ -4604,12 +4604,16 @@
     <Content Include="aspnet_client\FCKeditorV2.6.6\_whatsnew.html" />
     <Content Include="aspnet_client\FCKeditorV2.6.6\_whatsnew_history.html" />
     <Content Include="aspnet_client\FileManager\blankFile.png" />
+    <Content Include="aspnet_client\FileManager\BlankList.png" />
     <Content Include="aspnet_client\FileManager\FileManager.css" />
     <Content Include="aspnet_client\FileManager\FileManagerIE.css" />
     <Content Include="aspnet_client\FileManager\FolderImage.png" />
+    <Content Include="aspnet_client\FileManager\FolderList.png" />
     <Content Include="aspnet_client\FileManager\png.png" />
+    <Content Include="aspnet_client\FileManager\PngList.png" />
     <Content Include="aspnet_client\FileManager\spry_FileManager.png" />
     <Content Include="aspnet_client\FileManager\txt.png" />
+    <Content Include="aspnet_client\FileManager\TxtList.png" />
     <Content Include="aspnet_client\flags\flags_af-ZA.gif" />
     <Content Include="aspnet_client\flags\flags_ar-AE.gif" />
     <Content Include="aspnet_client\flags\flags_ar-BH.gif" />
@@ -5473,6 +5477,17 @@
     <Content Include="aspnet_client\jQuery\jquery.validate.unobtrusive.js" />
     <Content Include="aspnet_client\jQuery\jquery.validate.unobtrusive.min.js" />
     <Content Include="aspnet_client\jQuery\jQueryTabs.js" />
+    <Content Include="aspnet_client\jQuery\jsTree\add.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\copy.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\cut.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\delete.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\edit.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\navigate_down.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\navigate_down2.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\navigate_up.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\navigate_up2.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\paste.png" />
+    <Content Include="aspnet_client\jQuery\jsTree\refresh.png" />
     <Content Include="aspnet_client\jQuery\jsTree\themes\default\d.gif" />
     <Content Include="aspnet_client\jQuery\jsTree\themes\default\d.png" />
     <Content Include="aspnet_client\jQuery\jsTree\themes\default\style.css" />
@@ -8540,7 +8555,12 @@
     <Content Include="Setup\Scripts\2.0.0.1893.sql" />
     <Content Include="Setup\Scripts\2.0.0.1895.sql" />
     <Content Include="Setup\Scripts\2.0.0.1894.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1896.sql" />
     <Content Include="Setup\Scripts\2.0.0.1897.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1898.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1899.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1900.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1901.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>
     </Content>

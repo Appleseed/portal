@@ -27,12 +27,34 @@ namespace Appleseed.Framework.Web
 		{
 		}
 
+        /// <summary>
+        /// Placeholder id
+        /// </summary>
 		public const string IsPlaceHolderID = "TabPlaceholder";
+
+        /// <summary>
+        /// tab link
+        /// </summary>
 		public const string TabLinkID = "TabLink";
+
+        /// <summary>
+        /// Page name
+        /// </summary>
 		public const string PageNameID = "UrlPageName";
+
+        /// <summary>
+        /// Url keyword id
+        /// </summary>
 		public const string UrlKeywordsID = "TabUrlKeyword";
+
+        /// <summary>
+        /// Page title 
+        /// </summary>
         public const string PageTitleID = "UrlPageTitle";
 
+        /// <summary>
+        /// Get url elements query
+        /// </summary>
         private static string GetUrlElementsQuery = @"SELECT ISNULL((SELECT SettingValue FROM rb_TabSettings WHERE TabID=@PageID AND SettingName = 'UrlPageName'),'') as PageSEOName,
                                                             ISNULL((SELECT PageName FROM rb_Pages WHERE PageID=@PageID ),'') as PageTitle, 
                                                             ISNULL((SELECT SettingValue FROM rb_TabSettings WHERE TabID=@PageID AND SettingName = 'TabUrlKeyword'),'') as Keywords,
@@ -185,16 +207,12 @@ namespace Appleseed.Framework.Web
 				return applicationCache[uniquePropertyCacheKey].ToString();
 		}
 
-		/// <summary>
+        /// Ashish.patel@haptix.biz - 2014/12/24 - Changed Accessibility for caching
+        /// <summary>
 		/// This method is used to get all Url Elements in one go
 		/// </summary>
 		/// <param name="pageID">The ID of the page you are interested in</param>
 		/// <param name="cacheDuration">The length of time these values should be cached once retrieved</param>
-		/// <param name="_isPlaceHolder">Is this url a place holder (Not a real url)</param>
-		/// <param name="_tabLink">Is this Url a link to an external site/resource</param>
-		/// <param name="_urlKeywords">Are there any keywords that should be added to this url</param>
-		/// <param name="_pageName">Does this url have a friendly page name other than the default</param>
-        /// Ashish.patel@haptix.biz - 2014/12/24 - Changed Accessibility for caching
 		public static UrlElements GetUrlElements(int pageID, double cacheDuration)
 		{
             UrlElements urlElements = new UrlElements();
@@ -320,6 +338,11 @@ namespace Appleseed.Framework.Web
 			get { return Portal.UniqueID; }
 		}
 
+        /// <summary>
+        /// Clean alpha numerics
+        /// </summary>
+        /// <param name="StringToClean">string to clean</param>
+        /// <returns>result</returns>
         public static string CleanNoAlphanumerics(string StringToClean) {
 
             /*Regex r = new Regex("[A-Za-z0-9¡ƒ¿¬·‰‚‡…À» ÈÎÍËÕœŒÃÌÔÏÓ”÷“‘ÛˆÚÙ⁄‹€Ÿ˙¸˘˚«Á—Ò/\\s]");

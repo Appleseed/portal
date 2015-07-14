@@ -358,7 +358,7 @@ namespace Appleseed.Framework.Providers.AppleseedRoleProvider
             var returnCodeParam = cmd.Parameters.Add("@ReturnCode", SqlDbType.Int);
             returnCodeParam.Direction = ParameterDirection.ReturnValue;
 
-            SqlDataReader reader = null;
+           // SqlDataReader reader = null;
             try
             {
                 cmd.Connection.Open();
@@ -1206,7 +1206,7 @@ namespace Appleseed.Framework.Providers.AppleseedRoleProvider
             var returnCodeParam = cmd.Parameters.Add("@ReturnCode", SqlDbType.Int);
             returnCodeParam.Direction = ParameterDirection.ReturnValue;
 
-            SqlDataReader reader = null;
+          //  SqlDataReader reader = null;
             try
             {
                 cmd.Connection.Open();

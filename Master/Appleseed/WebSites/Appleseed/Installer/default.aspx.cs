@@ -449,9 +449,9 @@ using System.Configuration;
             else
             {
                 // TODO: make this error display on a nice panel
-                this.Response.Write("<h1>Appleseed Installation Wizard is disabled.</h1>");
-                this.Response.Flush();
-                this.Response.End();
+                //this.Response.Write("<h1>Appleseed Installation Wizard is disabled.</h1>");
+                //this.Response.Flush();
+                //this.Response.End();
             }
 
             Next.Attributes.Add("onclick", " this.disabled = true; " + ClientScript.GetPostBackEventReference(Next, null) + ";");

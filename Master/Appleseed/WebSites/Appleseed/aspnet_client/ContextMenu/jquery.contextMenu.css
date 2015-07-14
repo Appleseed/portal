@@ -96,6 +96,8 @@
 .context-menu-item.icon-delete { background-image: url(images/page_white_delete.png); }
 .context-menu-item.icon-add { background-image: url(images/page_white_add.png); }
 .context-menu-item.icon-quit { background-image: url(images/door.png); }
+.context-menu-item.icon-copy-Path { background-image: url(); }
+.context-menu-item.icon-copy-full-Path { background-image: url(); }
 
 /* vertically align inside labels */
 .context-menu-input > label > * { vertical-align: top; }
@@ -140,3 +142,4 @@
 .context-menu-accesskey {
     text-decoration: underline;
 }
+

@@ -288,7 +288,7 @@ namespace Appleseed.Content.Web.Modules.AddModule
             var m = new ModulesDB();
 
             var drCurrentModuleDefinitions = m.GetCurrentModuleDefinitions(this.PortalSettings.PortalID);
-
+         
             try
             {
                 // 				if(this.ArePropertiesEditable)
@@ -300,34 +300,57 @@ namespace Appleseed.Content.Web.Modules.AddModule
                 // 				}
                 // 				else
                 // 				{
-                while (drCurrentModuleDefinitions.Read())
-                {
-                    // Added by Mario Endara <mario@softworks.com.uy> 2004/11/04
-                    // only users members of the "Amins" role can add Admin modules to a Tab
-                    if (PortalSecurity.IsInRoles("Admins") ||
-                        !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString()))
-                    {
-                        this.moduleType.Items.Add(
-                            new ListItem(
-                                drCurrentModuleDefinitions["FriendlyName"].ToString(), 
-                                string.Format(
-                                    "{0}|{1}", 
-                                    drCurrentModuleDefinitions["ModuleDefID"], 
-                                    GetHelpPath(drCurrentModuleDefinitions["DesktopSrc"].ToString()))));
+                //while (drCurrentModuleDefinitions.Read())
+                //{
+                //    // Added by Mario Endara <mario@softworks.com.uy> 2004/11/04
+                //    // only users members of the "Amins" role can add Admin modules to a Tab
+                //    if (PortalSecurity.IsInRoles("Admins") ||
+                //        !bool.Parse(drCurrentModuleDefinitions["Admin"].ToString()))
+                //    {
+                //        this.moduleType.Items.Add(
+                //            new ListItem(
+                //                drCurrentModuleDefinitions["FriendlyName"].ToString(), 
+                //                string.Format(
+                //                    "{0}|{1}", 
+                //                    drCurrentModuleDefinitions["ModuleDefID"], 
+                //                    GetHelpPath(drCurrentModuleDefinitions["DesktopSrc"].ToString()))));
 
-                        var actions = ModelServices.GetMVCActionModules();
-                        foreach (var key in actions.Keys)
-                        {
-                            this.moduleType.Items.Add(new ListItem(key, actions[key]));
-                        }
-                    }
-                }
+                //        var actions = ModelServices.GetMVCActionModules();
+                //        foreach (var key in actions.Keys)
+                //        {
+                //            this.moduleType.Items.Add(new ListItem(key, actions[key]));
+                //        }
+                //    }
+                //}
 
                 // 				}
+
+
+                foreach (var item in drCurrentModuleDefinitions)
+                {
+                     if (PortalSecurity.IsInRoles("Admins") ||
+                        !bool.Parse(item.Admin.ToString()))
+                     {
+                         this.moduleType.Items.Add(
+                             new ListItem(
+                                 item.FriendlyName.ToString(),
+                                 string.Format(
+                                     "{0}|{1}",
+                                     item.ModuleDefId,
+                                     GetHelpPath(item.DesktopSrc.ToString()))));
+
+                         var actions = ModelServices.GetMVCActionModules();
+                         foreach (var key in actions.Keys)
+                         {
+                             this.moduleType.Items.Add(new ListItem(key, actions[key]));
+                         }
+                     }
+                }
+
             }
             finally
             {
-                drCurrentModuleDefinitions.Close();
+                //drCurrentModuleDefinitions.Close();
             }
         }
 

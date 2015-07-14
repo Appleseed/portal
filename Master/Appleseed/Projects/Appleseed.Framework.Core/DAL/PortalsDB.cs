@@ -280,7 +280,7 @@ namespace Appleseed.Framework.Site.Data
                 try {
                     profile.Save();
 
-                } catch (Exception exc) {
+                } catch  {
                     
                 }
 

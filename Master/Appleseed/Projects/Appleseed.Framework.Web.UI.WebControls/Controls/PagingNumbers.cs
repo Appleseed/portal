@@ -61,7 +61,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
         /// <summary>
         ///     The page number.
         /// </summary>
-        private int pageNumber;
+        private int pageNumber = 0;
 
         /// <summary>
         ///     The page size.

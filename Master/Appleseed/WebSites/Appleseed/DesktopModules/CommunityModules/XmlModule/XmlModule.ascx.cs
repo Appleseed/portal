@@ -20,6 +20,9 @@ namespace Appleseed.Content.Web.Modules
     using System.Net;
     using System.Xml;
     using System.Xml.Xsl;
+    using System.Xml.XPath;
+    using System.Xml.Linq;
+    using System.Text;
 
     /// <summary>
     /// Xml Module
@@ -75,8 +78,10 @@ namespace Appleseed.Content.Web.Modules
 
             var xmlSetting = this.Settings["XMLsrc"].ToString();
 
-            if (xmlSetting.StartsWith("http://") || xmlSetting.StartsWith("https://")) {
-                try {
+            if (xmlSetting.StartsWith("http://") || xmlSetting.StartsWith("https://"))
+            {
+                try
+                {
                     var wr = (HttpWebRequest)WebRequest.Create(xmlSetting);
 
                     // set the HTTP properties
@@ -87,22 +92,25 @@ namespace Appleseed.Content.Web.Modules
 
                     // Stream read the response
                     var stream = resp.GetResponseStream();
-                    if (stream != null) {
+                    if (stream != null)
+                    {
                         // Read XML data from the stream
                         // ignore the DTD (resolver null)
                         var reader = new XmlTextReader(stream) { XmlResolver = null };
 
                         // Create a new document object
-                        var doc = new XmlDocument();
+                        // var doc = new XmlDocument();
 
                         // Create the content of the XML Document from the XML data stream
-                        doc.Load(reader);
+                        //doc.Load(reader);
 
                         // the XML control to hold the generated XML document
-                        this.xml1.Document = doc; 
+                        //this.xml1.Document = doc;
+                        this.xml1.DocumentContent = (new XPathDocument(reader)).CreateNavigator().OuterXml;
                     }
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     this.Controls.Add(
                             new LiteralControl(
                                 string.Format(
@@ -111,19 +119,23 @@ namespace Appleseed.Content.Web.Modules
                     ErrorHandler.Publish(LogLevel.Error, ex);
                 }
             }
-            else {
+            else
+            {
                 var pt = new PortalUrlDataType { Value = this.Settings["XMLsrc"].ToString() };
                 var xmlsrc = pt.FullPath;
 
-                if (!string.IsNullOrEmpty(xmlsrc)) {
-                    if (File.Exists(this.Server.MapPath(xmlsrc))) {
+                if (!string.IsNullOrEmpty(xmlsrc))
+                {
+                    if (File.Exists(this.Server.MapPath(xmlsrc)))
+                    {
                         this.xml1.DocumentSource = xmlsrc;
 
                         // Change - 28/Feb/2003 - Jeremy Esland
                         // Builds cache dependency files list
                         this.ModuleConfiguration.CacheDependency.Add(this.Server.MapPath(xmlsrc));
                     }
-                    else {
+                    else
+                    {
                         this.Controls.Add(
                             new LiteralControl(
                                 string.Format(
@@ -133,16 +145,80 @@ namespace Appleseed.Content.Web.Modules
                 }
             }
 
+            //Xslt file
             var xslSetting = this.Settings["XSLsrc"].ToString();
-            if (xslSetting.StartsWith("http://") || xslSetting.StartsWith("https://")) {
-                try {                    
+            if (xslSetting.StartsWith("http://") || xslSetting.StartsWith("https://"))
+            {
+                try
+                {
+                    var wr = (HttpWebRequest)WebRequest.Create(xslSetting);
+                    wr.Timeout = 300 * 1000; // milliseconds to seconds
 
-                    var t = new XslTransform();
-                    t.Load(xslSetting);
-                    xml1.Transform = t;
+                    // Read the response
+                    var resp = wr.GetResponse();
 
+                    // Stream read the response
+                    var stream = resp.GetResponseStream();
+                    if (stream != null)
+                    {
+                        // Read XML data from the stream
+                        // ignore the DTD (resolver null)
+                        var reader = new XmlTextReader(stream) { XmlResolver = null };
+                        string filedata;
+                        using (WebClient client = new WebClient())
+                        {
+                            filedata = client.DownloadString(this.Settings["XSLsrc"].ToString());
+                        }
+
+                        //string fileName = Server.MapPath("/Portals/_Appleseed/XsltSource.Xslt"); 
+                        string filepath = System.Configuration.ConfigurationManager.AppSettings["XsltFilePath"];
+
+                        if (filepath != "" || !string.IsNullOrEmpty(filepath))
+                        {
+                            string serverpath = Server.MapPath(filepath);
+                            if (File.Exists(serverpath))
+                            {
+                                System.IO.File.SetAttributes(serverpath, FileAttributes.Normal);
+                                System.IO.File.Delete(serverpath);
+
+                                using (FileStream fs = File.Create(serverpath))
+                                {
+                                    // Add html to file 
+                                    Byte[] title = new UTF8Encoding(true).GetBytes(filedata);
+                                    fs.Write(title, 0, title.Length);
+                                }
+
+                                this.xml1.TransformSource = serverpath;
+                            }
+                        }
+                        else
+                        {
+                            string directory = Server.MapPath("/XsltFiles");
+                            string path = Server.MapPath("/XsltFiles/XslFiles.xslt");
+                            if (System.IO.Directory.Exists(directory))
+                            {
+                                if (File.Exists(path))
+                                {
+                                    System.IO.File.SetAttributes(path, FileAttributes.Normal);
+                                    System.IO.File.Delete(path);
+                                }
+                                System.IO.Directory.Delete(Server.MapPath("/XsltFiles"));
+                            }
+
+                            System.IO.Directory.CreateDirectory(directory);
+                            using (FileStream fs = File.Create(directory + "/" + "XslFiles.xslt"))
+                            {
+                                // Add html to file 
+                                Byte[] title = new UTF8Encoding(true).GetBytes(filedata);
+                                fs.Write(title, 0, title.Length);
+                            }
+
+                            this.xml1.TransformSource = path;
+                        }
+                    }
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
 
                     this.Controls.Add(
                         new LiteralControl(
@@ -151,26 +227,28 @@ namespace Appleseed.Content.Web.Modules
                                 General.GetString("FILE_NOT_FOUND").Replace("%1%", xslSetting))));
                     ErrorHandler.Publish(LogLevel.Error, ex);
                 }
-            
-            
-            
+
             }
-            else {
+            else
+            {
                 var pt = new PortalUrlDataType { Value = this.Settings["XSLsrc"].ToString() };
                 var xslsrc = pt.FullPath;
 
-                if (string.IsNullOrEmpty(xslsrc)) {
+                if (string.IsNullOrEmpty(xslsrc))
+                {
                     return;
                 }
 
-                if (File.Exists(this.Server.MapPath(xslsrc))) {
+                if (File.Exists(this.Server.MapPath(xslsrc)))
+                {
                     this.xml1.TransformSource = xslsrc;
 
                     // Change - 28/Feb/2003 - Jeremy Esland
                     // Builds cache dependency files list
                     this.ModuleConfiguration.CacheDependency.Add(this.Server.MapPath(xslsrc));
                 }
-                else {
+                else
+                {
                     this.Controls.Add(
                         new LiteralControl(
                             string.Format(

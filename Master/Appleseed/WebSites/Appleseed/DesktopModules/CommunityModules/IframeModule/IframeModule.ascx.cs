@@ -119,7 +119,7 @@ namespace Appleseed.Content.Web.Modules
                 return addToCacheAndReturnUrl(false);
             }
 
-            return Settings["URL"].ToString();
+           // return Settings["URL"].ToString();
 
 
 

@@ -87,7 +87,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
         protected void btnSave_Click(object sender, EventArgs e)
         {
             int pageId = Convert.ToInt32(drpPageList.SelectedValue);
-            this.AddUpdateFriendlyUrl(pageId, txtFriendlyURL.Text.ToLower());
+            this.AddUpdateFriendlyUrl(pageId, txtFriendlyURL.Text);
             LoadGrid();
         }
 
@@ -101,7 +101,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             PagesDB pages = new PagesDB();
 
             //when friendlyURL saved, Set result as (0/1) 
-            string result = pages.UpdateFriendlyURL(pageId, friendlyurl.ToLower());
+            string result = pages.UpdateFriendlyURL(pageId, friendlyurl);
 
             //If result get 0 then error message will display
             divErrorMessage.Visible = (result == "0");

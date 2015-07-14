@@ -6,4 +6,6 @@
     PropertiesUrl="~/DesktopModules/CoreModules/Admin/PropertyPage.aspx">
 </rbfwebui:DesktopModuleTitle>
 <span class="Normal">
-    <asp:Xml ID="xml1" runat="server"></asp:Xml></span>
+    <asp:Xml ID="xml1" runat="server"></asp:Xml>
+     <asp:Literal ID="ltRss" runat="server"></asp:Literal>
+</span>

@@ -349,9 +349,6 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         /// <summary>
         /// If its and admin, he can change the password of a user
         /// </summary>
-        /// <param name="portalAlias">
-        /// Appleseed's portal alias
-        /// </param>
         /// <param name="username">
         /// The user's name
         /// </param>       

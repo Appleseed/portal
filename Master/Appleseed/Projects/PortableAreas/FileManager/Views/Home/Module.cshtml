@@ -2,7 +2,10 @@
 @using MvcContrib
 @model FileManager.Models.FileManagerModel
 
-<link type="text/css" rel="stylesheet" href="@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/FileManager/FileManager.css")" /> 
+<link type="text/css" rel="stylesheet" href="@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/FileManager/FileManager.css")" />
+<link type="text/css" rel="stylesheet" href="@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/jsTree/themes/proton/style.css")" />
+
+@*<link type="text/css" rel="stylesheet" href="@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/jsTree/themes/proton/style.css")" />*@
 <!--[if lt IE 9]>
 <link href="/aspnet_client/FileManager/FileManagerIE.css" rel="stylesheet" />
 <![endif]-->
@@ -10,23 +13,29 @@
 <div id="FileManagerErrors"></div>
 
 <div id="FileManagerContainter">
-<div id="FileManagerButtonsR" > 
-<input class="ArrowButtons" type="button" onclick="$('#MainTree').jstree('refresh', -1);" value="Refresh"> 
-</div>
+    <div id="FileManagerButtons">
+        @*<input class="ArrowButtons" type="button" onclick="$('#newjsTree').jstree('refresh', -1);" value="Refresh">*@
+    </div>
     <div id="DirectoryTree" class="FileManagerDirectoryTree">
         @Html.Partial("TreeModule")
     </div>
     <div id="FileManagerbuttons">
-    
-        <input type="button" onclick="goBack()" value="back" class="ArrowButtons"/>
+
+        <input type="button" onclick="goBack()" value="back" class="ArrowButtons" />
         <input type="button" onclick="goNext()" value="next" class="ArrowButtons" />
         <input type="button" onclick="OpenUploadifyDialog()" value="Upload" class="ArrowButtons" />
-        <input type="text" readonly="readonly" id="dirName"/>
+        <input type="text" readonly="readonly" id="dirName" />
         <input type="hidden" id="dirNameHidden" />
 
     </div>
-    <div id="FilesTreeFiles" class="FolderView">
-    
+    @*<div id="FilesTreeFiles" class="FolderView">*@
+
+    <input type="hidden" id="configkey" class="configkey" name="configkey" value="@System.Configuration.ConfigurationManager.AppSettings["FileManager.DefaultView"]" />
+
+    @*Supported file extension for able to edit the file*@
+    <input type="hidden" id="SupportedExtenstionList" class="SupportedExtenstionList" name="SupportedExtenstionList" value="@System.Configuration.ConfigurationManager.AppSettings["FileManager.Edit.SupportExtenstion"]" />
+
+    <div id="FilesTreeFiles" class="Smallview">
 
     </div>
 </div>
@@ -36,29 +45,77 @@
 </div>
 
 <div id="NewFolderDialog">
-    <span>Folder Name: </span>   
-    <input type="text" id="NewFolderInputId"/>
-    <input type="button" value="create" onclick="CreateNewFolder()"/>    
+    <span>Folder Name: </span>
+    <input type="text" id="NewFolderInputId" />
+    <input type="button" value="create" onclick="CreateNewFolder()" />
 
 </div>
 
 <div id="RenameFileDialog">
     <span>File Name: </span>
-    <input type="text" id="RenameFileInputId"/>
-    <input type="button" value="Rename" onclick="RenameFile()"/>    
+    <input type="text" id="RenameFileInputId" />
+    <input type="button" value="Rename" onclick="RenameFile()" />
 
 </div>
 
 <div id="RenameFolderDialog">
-     <span>Folder Name: </span> 
-    <input type="text" id="RenameFolderInputId"/>
-    <input type="button" value="Rename" onclick="RenameFolder()"/>    
-
+    <span>Folder Name: </span>
+    <input type="text" id="RenameFolderInputId" />
+    <input type="button" value="Rename" onclick="RenameFolder()" />
 </div>
 
+<div id="RenameJsTreeFolderDialog">
+    <span>Folder Name: </span>
+    <input type="text" id="RenameJsTreeFolderInputId" />
+    <input type="button" value="Rename" onclick="RenameJsTreeFolder()" />
+</div>
+
+<div id="FilePathDialog" class="path-dialog">
+    <div class="relativepath">
+        <span><b>Relative Path: </b></span>
+        <label id="lblRelativeFilePathId" />
+    </div>
+    <div class="message-margin">
+        <span><b>Full Path: </b></span> <br />
+        <label id="lblFullFilePathId" />
+    </div>
+    <span><b>Select path and Copy it.</b></span>
+</div>
+
+<div id="FolderPathDialog" class="path-dialog">
+    <div class="relativepath1">
+        <span><b>Relative Path: </b></span>
+        <label id="lblRelativeFolderPathId" />
+    </div>
+    <div class="message-margin">
+        <span><b>Full Path: </b></span>
+        <label id="lblFullFolderPathId" />
+    </div>
+    <span><b>Select path and Copy it. </b></span>
+</div>
+
+<div id="EditPageContentDialog">
+    <div class="Content">
+        <textarea name="EditPageContent" id="EditPageContent" class="ui-edit-dialog"></textarea>
+    </div>
+    <div class="control">
+        <div class="edit-control">
+            <input type="button" id="SaveEditPage" class="btn btn-success SaveEditPage" value="Save" onclick="EditFileContent()" />
+            <input type="button" value="Close" class="btn btn-cancel" onclick="ClosePageContentDialog()" />
+        </div>
+        <div id="errorMessage" class="btn-danger err-message">A file you have selected cannot be edited.</div>
+    </div>
+</div>
 <div id="FileEditor"></div>
 
 <script>
+    function ClosePageContentDialog() {
+        // location.reload();
+        $("#EditPageContentDialog").dialog("close");
+        $("#EditPageContentDialog").parent().hide();
+        $('.SaveEditPage').removeAttr('disabled');
+        //$('#EditPageContent').val('');
+    }
 
     $(function () {
         $("#NewFolderDialog").dialog({
@@ -84,75 +141,146 @@
             modal: true
         });
 
+        $("#RenameJsTreeFolderDialog").dialog({
+            autoOpen: false,
+            title: 'Rename Directory',
+            modal: true
+        });
+
+
         $("#FileEditor").dialog({
             autoOpen: false,
             title: 'Edit File',
             modal: true
         });
-    });
 
+        $("#FilePathDialog").dialog({
+            autoOpen: false,
+            title: 'Copy File Path',
+            modal: true,
+        });
+
+        $("#FolderPathDialog").dialog({
+            autoOpen: false,
+            title: 'Copy Folder Path',
+            modal: true
+        });
+
+        $("#EditPageContentDialog").dialog({
+            autoOpen: false,
+            title: 'Edit File Content',
+            modal: true
+        });
+
+        $('.ui-dialog-titlebar-close').click(function(){
+            ClosePageContentDialog();
+        });
+
+    });
 
     function NoPermission() {
         alert("You don't have permissions to perform this action");
-    
+
     }
 
     function OpenNewFolderDialog() {
         @if(Model.EditPermission)
         {
             <text>
-           $("#NewFolderDialog").dialog("open");
-            $("#NewFolderInputId").val('');
-            </text>
+        $("#NewFolderDialog").dialog("open");
+        $("#NewFolderInputId").val('');
+        </text>
         }
         else
         {
         <text>
-            NoPermission();
-            </text>
+        NoPermission();
+        </text>
         }
     }
+
+    function SetListView(){
+        $('#FilesTreeFiles').removeClass('FolderView');
+        $('#FilesTreeFiles').removeClass('DetailView');
+        $('#FilesTreeFiles').addClass('SmallView');
+        //$('.SmallView img').remove();
+        $('.SmallView img').css('display','none');
+        setCookie("DefaultView", "SmallView", 30);
+    }
+
+    function SetDetailView(){
+        $('#FilesTreeFiles').removeClass('SmallView');
+        $('#FilesTreeFiles').addClass('FolderView');
+        //$('.FolderView .FoldersIcons .FolderIcon').prepend("<img src=\"/FileManager/resource/Content.Folder.jpg\" alt=\"\">");
+        $('.FolderView .FoldersIcons .FolderIcon img').css('display','block');
+        $('.FolderView .FoldersIcons .FileMenuContext img').css('display','block');
+        setCookie("DefaultView", "FolderView", 30);
+    }
+
 
     function CloseNewFolderDialog() {
         $("#NewFolderDialog").dialog("close");
     }
 
+
     function OpenRenameFileDialog() {
         @if(Model.EditPermission)
         {
             <text>
-                $("#RenameFileDialog").dialog("open");
-                $("#RenameFileInputId").val('');
-            </text>
+        $("#RenameFileDialog").dialog("open");
+        $("#RenameFileInputId").val('');
+        </text>
         }
         else
         {
             <text>
-                NoPermission();
-            </text>
+        NoPermission();
+        </text>
         }
-        
+
     }
 
     function CloseRenameFileDialog() {
         $("#RenameFileDialog").dialog("close");
     }
 
+   
     function OpenRenameFolderDialog() {
         @if(Model.EditPermission)
         {
             <text>
-                $("#RenameFolderDialog").dialog("open");
-                $("#RenameFolderInputId").val('');
-            </text>
+        $("#RenameFolderDialog").dialog("open");
+        $("#RenameFolderInputId").val('');
+        </text>
         }
         else
         {
             <text>
-                NoPermission();
-            </text>
+        NoPermission();
+        </text>
         }
-        
+
+    }
+
+    function OpenRenameJsTreeFolderDialog() {
+       @if(Model.EditPermission)
+       {
+           <text>
+        $("#RenameJsTreeFolderDialog").dialog("open");
+        $("#RenameJsTreeFolderInputId").val('');
+           </text>
+       }
+       else
+       {
+           <text>
+       NoPermission();
+           </text>
+       }
+
+    }
+
+    function CloseRenameJstreeFolderDialog() {
+        $("#RenameJsTreeFolderDialog").dialog("close");
     }
 
     function CloseRenameFolderDialog() {
@@ -163,17 +291,78 @@
         @if(Model.EditPermission)
         {
             <text>
-                 $("#uploadifyDialog").dialog("open");
-            </text>
+        $("#uploadifyDialog").dialog("open");
+        </text>
         }
         else
         {
             <text>
-                NoPermission();
-            </text>
+        NoPermission();
+        </text>
         }
-       
+
     }
+
+    function EditPageContentDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+
+        var webextension =  user = $('input:hidden[name=SupportedExtenstionList]').val();
+        var supportedExtenstion = webextension.split(",");
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GetPageText")',
+            data: {
+                "file": SelectedFile,
+                "folder": SelectedFileParentFolder,
+                "mID": '@Model.ModuleId'
+            },
+            success: function (folderView) {
+                $('#EditPageContentDialog').parent().addClass("ui-edit-parent-dialog");
+                $('.SaveEditPage').removeAttr('disabled');
+                $('#errorMessage').css('display','none');
+                $('.ui-edit-dialog').css('overflow','auto!important');
+                $("#EditPageContentDialog").dialog("open");
+                $("#EditPageContentDialog").css("ui-edit-dialog");
+                $("#EditPageContent").text(folderView);
+                var selectedFileExtension = SelectedFile.split(".") ;
+                var selectedFileExtension = selectedFileExtension[selectedFileExtension.length - 1];
+                var status ="UnMatched";
+                $.each(supportedExtenstion, function(i, value){
+                    if (value === selectedFileExtension) {
+                        status = "Matched";
+                        return;
+                    }
+                })
+                if (status === "UnMatched") {
+                    $('.SaveEditPage').attr('disabled','disabled');
+                    $('#errorMessage').css('display','block');
+                }
+                else {
+                    $('.SaveEditPage').removeAttr('disabled');
+                    $('#errorMessage').css('display','none');
+                }
+
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+
+        </text>
+        }
+        else
+        {
+            <text>
+        NoPermission();
+        </text>
+        }
+
+    }
+
+   
 
     //function OpenFile(folder, file) {
 
@@ -189,173 +378,219 @@
         @if(Model.EditPermission)
         {
             <text>
-                var name = $('#NewFolderInputId').val();
-                if (name != '') {
-                    CreateFolder(name);
-                }
-                else {
+        var name = $('#NewFolderInputId').val();
+        if (name != '') {
+            CreateFolder(name);
+        }
+        else {
 
-                }
-            </text>
+        }
+        </text>
         }
         else
         {
             <text>
-                NoPermission();
-            </text>
+        NoPermission();
+        </text>
         }
-        
+
     }
 
+    // Open File path
+    function OpenFilePathDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CopyFileFullPath")',
+            data: {
+                "file": SelectedFile,
+                "folder": SelectedFileParentFolder,
+                "mID": '@Model.ModuleId'
+            },
+            success: function (folderView) {
+                $('#FilePathDialog').parent().addClass("path-dialog");
+                $("#lblFullFilePathId").text(folderView);
+                var relativepath = SelectedFileParentFolder +"/"+SelectedFile;
+                $(".relativepath #lblRelativeFilePathId").text(relativepath);
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+        $("#FilePathDialog").dialog("open");
+        </text>
+        }
+        else
+        {
+            <text>
+        NoPermission();
+        </text>
+        }
+
+    }
+
+    //Open folder path
+    function OpenFolderPathDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CopyFolderFullPath")',
+            data: {
+                "file": SelectedFolder,
+                "folder": SelectedFileParentFolder,
+                "mID": '@Model.ModuleId'
+            },
+            success: function (folderView) {
+                $('#FolderPathDialog').parent().addClass("path-dialog");
+                var relativepath = SelectedFolderParentFolder + "/" + SelectedFolder ;
+                $("#lblFullFolderPathId").text(folderView  + relativepath);
+                $(".relativepath1 #lblRelativeFolderPathId").text(relativepath);
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+        $("#FolderPathDialog").dialog("open");
+        </text>
+        }
+        else
+        {
+            <text>
+        NoPermission();
+        </text>
+        }
+    }
+
+
+    //Open folder path
+    function OpenFileDialog() {
+        @if(Model.EditPermission)
+        {
+            <text>
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CopyFolderFullPath")',
+            data: {
+                "file": SelectedFolder,
+                "folder": SelectedFileParentFolder,
+                "mID": '@Model.ModuleId'
+            },
+            success: function (folderView) {
+                $('#FilePathDialog').parent().addClass("path-dialog");
+                var relativepath = SelectedFolderParentFolder + "/" + SelectedFolder ;
+                $("#lblFullFolderPathId").text(folderView  + relativepath);
+                $(".relativepath1 #lblRelativeFolderPathId").text(relativepath);
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+        $("#FolderPathDialog").dialog("open");
+        </text>
+        }
+        else
+        {
+            <text>
+        NoPermission();
+        </text>
+        }
+    }
+
+
 </script>
-
-<script type= "text/javascript">
-
+<script type="text/javascript" src="/PageManagerTree/Scripts/jquery.jstree.js"></script>
+<script type="text/javascript">
     function refresh(){
         $('#MainTree').jstree('refresh', -1);
     }
 
-    $(function () {
-
-        $("#MainTree")
-            .jstree({
-                "json_data": {
-                    "ajax": {
-                        "type": "POST",
-                        "url":
-                            function(node) {
-                                var url = '';
-                                if (node == -1) {
-                                    url = '@Url.Action("GetTreeData",new {mID = Model.ModuleId})';
-                                } else {
-                                    var nodeId = node.attr('id');
-                                    url = '@Url.Action("GetChildreenTree")?dir=' + nodeId + '&mID=' + @Model.ModuleId;
-                                }
-
-                                return url;
-                            },
-                        "data": function(n) {
-                            return { ID: n.Attr ? n.Attr("ID") : 0 };
-                        }
-                    }
+    $(document).ready(function(){
+        $("#newjsTree").jstree({
+            "core": {
+                "animation": 0,
+                "check_callback": true,
+                "themes": {
+                    'name': 'proton',
+                    'responsive': true
                 },
-                "dnd": {
-                    "drop_target": false,
-                    "drag_target": false
-                },
-
-                "core": { "initially_open": ["/Portals"] },
-
-                "plugins": ["themes", "contextmenu", "json_data", "ui", "crrm", "dnd", "core"]
-            }).bind("select_node.jstree", function(event, data) {
-
-                var folder = data.rslt.obj.attr("id");
-                OpenFolder(folder);
-
-            }).bind("move_node.jstree", function(e, data) {
-                var bool_copy = (data.rslt.cy != undefined) ? true : false ; 
-                var selected = data.rslt.o.text().replace(/\s{2}/,""); 
-                var children = data.rslt.o.children().children().text().replace(/\s/,"");
-                var folder = selected.replace(children, "");
-                data.rslt.o.each(function() {
-                    $.ajax({
-                        async: false,
-                        type: 'POST',
-                        url: '@Url.Action("MoveData")',
-                        data: {
-                            "path": $(this).attr("id"),
-                            "destination": data.rslt.np.attr("id"),
-                            "mID": @Model.ModuleId, 
-                            "isCopy": bool_copy,
-                            "folder": folder,
+                "data": {
+                    "url":
+                        function (node) {
+                            if (node.id === "#") {
+                                return '@Url.Action("GetRootNodes", "Home")';
+                            }
+                            else {
+                                return  '@Url.Action("GetChildrenNodes", "Home")' ;
+                            };
                         },
-                        success: function(r) {
-                            //Refresh();
-                            refresh();
-                        },
-                        error: function(r) {
-                            $.jstree.rollback(data.rlbk);
+                    'type': 'POST',
+                    'dataType': 'json',
+                    'contentType': 'application/json',
+                    'cache': false,
+                    'data':
+                        function (node) {
+                            if (node.id === "#") {
+                                return JSON.stringify({
+                                    mID: node.id === "#" || node.id === "0"? "@Model.ModuleId" : node.id
+                                });
+                            }
+                            else {
+                                return JSON.stringify({
+                                    dir:  node.id === "0" ? node.data : node.original.attr.id ,
+                                    mID: "@Model.ModuleId"
+                                });
+                            }
                         }
-                    });
-                });
-            }).bind("rename.jstree", function(e, data) {
-                $.ajax({
-                    type: 'POST',
-                    url: '@Url.Action("RenameFolderTree")',
-                    data: {
-                        "name": data.rslt.obj.attr("id"),
-                        "newName": data.rslt.new_name,
-                        "mID": @Model.ModuleId
-                    },
-                    success: function(r) {
-                        //Refresh();
-                        refresh();
-                    },
-                    error: function(r) {
-                        $.jstree.rollback(data.rlbk);
+                    ,
+                    'success': function (data) {
                     }
-                });
-            }).bind("remove.jstree", function(e, data) {
-                var selected = data.rslt.obj.text().replace(/\s{2}/,""); 
-                var children = data.rslt.obj.children().children().text().replace(/\s/,"");
-                var folder = selected.replace(children, "");
-                var parentfolder = data.rslt.parent.attr("id");
-                if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' +'"' + folder + '"?')) {
-                    $.ajax({
-                        async : false,
-                        type: 'POST',
-                        url: '@Url.Action("DeleteFolder")',
-                        data: {
-                            "folder": folder,
-                            "parentfolder": parentfolder,
-                            "mID": @Model.ModuleId
-                        },
-                        success: function (folderView) {
-                            LoadFoldersContent(parentfolder);
-                            //Refresh();
-                            refresh();
-                        },
-                        error: function (result) {
-                            AppendError(result.responseText);
-                            $.jstree.rollback();
-                        }
-                    });
-                }else{
-                    $.jstree.rollback(data.rlbk);
-                    $('#MainTree').jstree("deselect_all");
                 }
-
-            }).bind("create.jstree", function (e, data) {
-                var lastNode = data.rslt.parent.attr("id");
-                var name = data.rslt.name;
-                $.ajax({
-                    type: 'POST',
-                    url: '@Url.Action("CreateNewFolder")',
-                    data: {
-                        folder: lastNode,
-                        name: name,
-                        "mID": @Model.ModuleId
-                    },
-                    success: function (folderView) {
-                        LoadFoldersContent(lastNode);
-                        //Refresh();
-                        refresh();
-                    },
-                    error: function (result) {
-                        AppendError(result.responseText);
-                    }
-                });
+            }
+            //,
+            //"contextmenu": {
+            //    "items": contextMenu
+            //}
+            ,
+            "plugins": [ "dnd", "search", "state", "types", "unique", "crrm", "themes"]
+        }).on('move_node.jstree', function (event, data) {
+            //movenode(data.node.id, data.node.parent, data.old_parent, data.position);
+        }).on("select_node.jstree", function (e, data) {
+            OpenFolder(data,"Left");
+        }).bind("rename_node.jstree", function (event, data) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RenameFolderTree","Home")',
+                data: {
+                    "path" : data.node.original.attr.id,
+                    "name": data.old,
+                    "newName": data.text,
+                    "mID": "@Model.ModuleId"
+                },
+                success: function(r) {
+                    $('#newjsTree').jstree('refresh');
+                },
+                error: function(r) {
+                    $.jstree.rollback(data.rlbk);
+                }
             });
-    });
+        });
+
+    })
 
     function LoadFoldersContent(dir, addToPush) {
-
         $.ajax({
             type: 'POST',
-            url: '@Url.Action("ViewFilesFromFolder")',
+            url: '@Url.Action("ViewFilesFromFolder","Home")',
             data: {
                 "folder": dir,
-                "mID": @Model.ModuleId
+                "mID": 155
             },
             success: function (folderView) {
                 $('#FilesTreeFiles').html(folderView);
@@ -368,22 +603,69 @@
                 }
                 LastNode = dir;
                 $('#dirNameHidden').val(dir);
+              
+                var defaultConfigValue = checkCookie();
+
+                $("#FilesTreeFiles").attr('class', '');
+                $('#FilesTreeFiles').addClass(defaultConfigValue);
+                //if (defaultConfigValue == "DetailView") {
+                //    $('#FilesTreeFiles').addClass("FolderView");
+                //}
+                //if (defaultConfigValue == "SmallView") {
+                //    $('#FilesTreeFiles').addClass(defaultConfigValue);
+                //}
+
+                $('.SmallView img').css('display','none');
+                $('.FolderView .FoldersIcons .FolderIcon img').css('display','block');
+                $('.FolderView .FoldersIcons .FileMenuContext img').css('display','block');
+
+
+
+            }
+        });
+        $('#dirName').val(dir);
+    }
+
+    function CreateFolder(node)
+    {
+        var lastNode = data.node.original.attr.id;
+        var name = data.text;
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CreateNewFolder","Home")',
+            data: {
+                folder: lastNode,
+                name: name,
+                "mID": "@Model.ModuleId"
+            },
+            success: function (folderView) {
+              
+                refresh();
+            },
+            error: function (result) {
+                AppendError(result.responseText);
             }
         });
 
-        $('#dirName').val(dir);
-
     }
-
-
-    function OpenFolder(folder) {
-
-        //var folderReplace = folder.replace(/\//g, "\\/");
-        $("#MainTree").jstree("open_node", document.getElementById(folder));
-        LoadFoldersContent(folder, true);
-
+    function OpenFolder(folder, side) {
+        if (folder === "/Portals/_Appleseed") {
+            LoadFoldersContent(folder, true);
+            return;
+        }else {
+            
+            if (side === "Left") {
+                var childfolders = folder.node.data === "/" ? folder.node.data : folder.node.original.attr.id;
+                LoadFoldersContent(childfolders, true);
+                return;
+            }
+            else {
+                var childfolders = folder === "/" ? "/" : folder;
+                LoadFoldersContent(childfolders, true);
+                return;
+            }
+        }
     }
-
 
     var Backstack = new Array();
     //var AheadStack = new Array();
@@ -421,7 +703,7 @@
     function CreateFolder(Name) {
         //var folderReplace = LastNode.replace(/\//g, "\\/");
 
-                       
+
 
         $.ajax({
             type: 'POST',
@@ -429,14 +711,13 @@
             data: {
                 folder: LastNode,
                 name: Name,
-                "mID": @Model.ModuleId
+                "mID": "@Model.ModuleId"
             },
             success: function (folderView) {
                 LoadFoldersContent(LastNode);
                 CloseNewFolderDialog();
                 $('#NewFolderInputId').val('');
-                //Refresh();
-                refresh();
+                $('#newjsTree').jstree('refresh');
             },
             error: function (result) {
                 AppendError(result.responseText);
@@ -446,44 +727,103 @@
 
 
     }
-    
+
     @if(Model.EditPermission)
     {
         <text>
-            $(function () {
-
-                $('#FileUpload').uploadify({
-                    'swf': '@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/Uploadify/uploadify.swf")',
-                    'buttonImage': '@Url.Resource("Content.UploadFile.png")',
-                    //'buttonText': 'Buscar...',
-                    'uploader': '@Url.Action("UploadFile")',
-                    'width': 40,
-                    //'folder': '/uploads',
-                    'formData': { 'folderName': '' },
-                    //'auto': true,
-                    //'multi': false,
-                    'onUploadStart': function () {
-                        $("#FileUpload").uploadify("settings", "formData", { 'folderName': LastNode });
-                    },
-                    'onUploadComplete': function () {
-                        LoadFoldersContent(LastNode);
-                    }
-                });
-
-                OpenFolder(LastNode);
-
-
-            });
-        </text>
-    }
-
-    
-
-
     $(function () {
 
+        $('#FileUpload').uploadify({
+            'swf': '@Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/Uploadify/uploadify.swf")',
+            'buttonImage': '@Url.Resource("Content.UploadFile.png")',
+            //'buttonText': 'Buscar...',
+            'uploader': '@Url.Action("UploadFile")',
+            'width': 40,
+            //'folder': '/uploads',
+            'formData': { 'folderName': '' },
+            //'auto': true,
+            //'multi': false,
+            'onUploadStart': function () {
+                $("#FileUpload").uploadify("settings", "formData", { 'folderName': LastNode });
+            },
+            'onUploadComplete': function () {
+                LoadFoldersContent(LastNode);
+            }
+        });
+
+        OpenFolder(LastNode,"Right");
 
 
+    });
+    </text>
+    }
+
+    //Start left tree contextmenu
+
+    $(function () {
+        $.contextMenu({
+            selector: '#newjsTree',
+            callback: function (key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m);
+            },
+            items: {
+                "create": {
+                    name: "Create", icon: "add",
+                    callback: function (key, options) {
+                        OpenNewFolderDialog();
+                    }
+                },
+                "Rename": {
+                    name: "Rename",
+                    callback: function (key, options) {
+                        OpenRenameJsTreeFolderDialog();
+                    }
+                },
+                "Delete": {
+                    name: "Delete",
+                    callback: function (key, options) {
+                        DeleteJsTreeFolder();
+                    }
+                },
+                "Cut": {
+                    name: "Cut",
+                    callback: function (key, options) {
+                        CopiedFileFolder = LastNode;
+                        isCopy = false;
+                    }
+                },
+                "Copy": {
+                    name: "Copy",
+                    callback: function (key, options) {
+                        CopiedFileFolder = LastNode;
+                        isCopy = true;
+                    }
+                },
+                "Paste": {
+                    name: "Paste",
+                    callback: function (key, options) {
+                        PasteJsTreeFolder();
+                    }
+                }
+
+            },
+                //events: {
+                //    show: function (opt) {
+                //        opt.$trigger.addClass("selectedFile");
+                //        SelectedFolder = opt.$trigger.find(".name").html();
+                //        SelectedFolderParentFolder = opt.$trigger.find("#ParentFolder").val();
+                //    },
+                //    hide: function (opt) {
+                //        opt.$trigger.removeClass("selectedFile");
+                //    }
+                //}
+        });
+    });
+
+    //End left tree contextmenu
+
+    $(function () {
         $.contextMenu({
             selector: '#FilesTreeFiles',
             callback: function (key, options) {
@@ -517,23 +857,31 @@
                     callback: function (key, options) {
                         PasteFile();
                     }
+                },
+                "sep2": "---------",
+                "SmalllView": {
+                    name: "Small View",
+                    icon: "",
+                    callback: function (key, options) {
+                        SetListView();
+                    }
+                },
+                "DetailView": {
+                    name: "Detail View",
+                    icon: "",
+                    callback: function (key, options) {
+                        SetDetailView();
+                    }
                 }
-
             }
         });
-
-
-
     });
-
-
 
     var SelectedFile = '';
     var SelectedFileParentFolder = '';
     var SelectedFolder = '';
     var SelectedFolderParentFolder = '';
     $(function () {
-
 
         $.contextMenu({
             selector: '.FileMenuContext',
@@ -576,9 +924,23 @@
                     callback: function (key, options) {
                         DeleteFile();
                     }
+                },
+                "sep2": "---------",
+                "FilePath": {
+                    name: "File Path",
+                    icon: "copy",
+                    callback: function (key, options) {
+                        OpenFilePathDialog();
+                    }
+                },
+                "sep3": "---------",
+                "Edit": {
+                    name: "Edit File",
+                    icon: "Edit",
+                    callback: function (key, options) {
+                        EditPageContentDialog();
+                    }
                 }
-
-
             },
             events: {
                 show: function (opt) {
@@ -634,16 +996,21 @@
                     callback: function (key, options) {
                         DeleteFolder();
                     }
+                },
+                "sep2": "---------",
+                "FolderPath": {
+                    name: "Folder Path",
+                    icon: "copy",
+                    callback: function (key, options) {
+                        OpenFolderPathDialog();
+                    }
                 }
-
-
             },
             events: {
                 show: function (opt) {
                     opt.$trigger.addClass("selectedFile");
                     SelectedFolder = opt.$trigger.find(".name").html();
                     SelectedFolderParentFolder = opt.$trigger.find("#ParentFolder").val();
-
                 },
                 hide: function (opt) {
                     opt.$trigger.removeClass("selectedFile");
@@ -663,12 +1030,32 @@
                 data: {
                     "folder": SelectedFolder,
                     "parentfolder": SelectedFolderParentFolder,
-                    "mID": @Model.ModuleId
+                    "mID": "@Model.ModuleId"
                 },
                 success: function (folderView) {
                     LoadFoldersContent(LastNode);
                     //Refresh();
                     refresh();
+                },
+                error: function (result) {
+                    AppendError(result.responseText);
+                }
+            });
+        }
+    }
+
+    function DeleteJsTreeFolder() {
+        if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' +'"'+ LastNode + '"?')) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("DeleteJsTreeFolder", "Home")',
+                data: {
+                    "folderpath": LastNode,
+                    "mID": "@Model.ModuleId"
+                },
+                success: function (folderView) {
+                    LoadFoldersContent(LastNode);
+                    $('#newjsTree').jstree('refresh');
                 },
                 error: function (result) {
                     AppendError(result.responseText);
@@ -698,7 +1085,7 @@
                     "folder": SelectedFolder,
                     "parentFolder": SelectedFolderParentFolder,
                     "newName": newFolderName,
-                    "mID": @Model.ModuleId
+                    "mID": "@Model.ModuleId"
                 },
                 success: function (folderView) {
                     LoadFoldersContent(LastNode);
@@ -714,6 +1101,24 @@
 
     }
 
+    function RenameJsTreeFolder(){
+        var newFolderName = $('#RenameJsTreeFolderInputId').val();
+        if (newFolderName != '') {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RenameFolderTree","Home")',
+                data: {
+                    "path" : LastNode,
+                    "newName": newFolderName,
+                    "mID": "@Model.ModuleId"
+                },
+                success: function(r) {
+                    $('#newjsTree').jstree('refresh');
+                    CloseRenameJstreeFolderDialog();
+                }
+            });
+        }
+    }
 
     function DeleteFile() {
         if (confirm('@General.GetString("CONFIRM_DELETE_MESSAGE")' +'"'+ SelectedFile + '"?')) {
@@ -724,7 +1129,7 @@
                     "file": SelectedFile,
                     "folder": SelectedFileParentFolder,
                     "mID": @Model.ModuleId
-                },
+                    },
                 success: function (folderView) {
                     LoadFoldersContent(LastNode);
                 },
@@ -748,7 +1153,7 @@
                     "file": SelectedFile,
                     "folder": SelectedFileParentFolder,
                     "name": newFileName,
-                    "mID": @Model.ModuleId
+                    "mID": "@Model.ModuleId"
                 },
                 success: function (folderView) {
                     LoadFoldersContent(LastNode);
@@ -765,6 +1170,27 @@
 
     }
 
+    function EditFileContent() {
+
+        var filecontent = $('#EditPageContent').val();
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("EditPageText")',
+            data: {
+                "file": SelectedFile,
+                "folder": SelectedFileParentFolder,
+                "content": filecontent
+            },
+            success: function () {
+                ClosePageContentDialog();
+                location.reload();
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+    }
+
     function PasteFile() {
         $.ajax({
             type: 'POST',
@@ -774,8 +1200,8 @@
                 "folder": CopiedFileFolder,
                 "newFolder": LastNode,
                 "isCopy": isCopy,
-                "isFolder": isFolder, 
-                "mID": @Model.ModuleId
+                "isFolder": isFolder,
+                "mID": "@Model.ModuleId"
             },
             success: function (folderView) {
                 LoadFoldersContent(LastNode);
@@ -792,5 +1218,77 @@
 
     }
 
+    function PasteJsTreeFolder() {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("PasteJsTreeFolder","Home")',
+            data: {
+                "oldfolder": CopiedFileFolder,
+                "newFolder": LastNode,
+                "isCopy": isCopy,
+                "mID": "@Model.ModuleId"
+            },
+            success: function (folderView) {
+                LoadFoldersContent(LastNode);
+                CopiedFile = '';
+                $('#newjsTree').jstree('refresh');
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
 
+    }
+    //end function
+
+</script>
+
+<script type="text/javascript">
+    var defaultConfigValue;
+    $(document).ready(function(){
+        //If set key value for cookies
+        defaultConfigValue = checkCookie();
+        $("#FilesTreeFiles").attr('class', '');
+        $('#FilesTreeFiles').addClass(defaultConfigValue);
+        //if (defaultConfigValue == "DetailView") {
+        //    $('#FilesTreeFiles').addClass("FolderView");
+        //}
+        //if (defaultConfigValue == "SmallView") {
+        //    $('#FilesTreeFiles').addClass(defaultConfigValue);
+        //}
+
+    })
+
+    function setCookie(cname,cvalue,exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*48*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname+"="+cvalue+"; "+expires;
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        var user=getCookie("DefaultView");
+        if (user != "") {
+            return user;
+        } else {
+            //user = prompt("Please enter your name:","");
+            user = $('input:hidden[name=configkey]').val();
+            if (user != "" && user != null) {
+                setCookie("DefaultView", user, 30);
+            }
+        }
+    }
 </script>

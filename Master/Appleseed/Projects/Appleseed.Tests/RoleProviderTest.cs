@@ -113,7 +113,7 @@ namespace Appleseed.Tests
                 IList<AppleseedRole> roles = provider.GetRolesForUser(Roles.ApplicationName, new Guid());
                 Assert.Fail();
             }
-            catch (AppleseedRoleProviderException ex) { }
+            //catch (AppleseedRoleProviderException ex) { }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

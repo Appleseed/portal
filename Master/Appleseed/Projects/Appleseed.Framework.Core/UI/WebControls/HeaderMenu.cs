@@ -473,7 +473,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         if (ShowLogOff)
                         {
                             // Corrections when ShowSecureLogon is true. jviladiu@portalServices.net (05/07/2004)
-                            string href = HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/Logoff.aspx");
+                            string href = Context.Request.Url.AbsolutePath;
                             if (ShowSecureLogon && Context.Request.IsSecureConnection)
                             {
                                 string auxref = Context.Request.Url.AbsoluteUri;
@@ -486,8 +486,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
                             if (CssClass.Length != 0)
                                 menuLink = menuLink + " class=\"" + CssClass + "\"";
 
-                            menuLink = menuLink + " href='" + href + "'>" +
-                                       General.GetString("HEADER_LOGOFF", "Logoff", null) + "</a>";
+                            // added code for redirection on same page after logged out
+                            menuLink = menuLink + " href='javascript:void();' onclick=\"if(confirm('" + General.GetString("LOGOFF_CNF_MSG", "Log Off Confirmation: \\nAre you sure you want to log off?", null) + "')){window.location = '/DesktopModules/CoreModules/Admin/Logoff.aspx?redirecturl=" + href + "';  }else{return false;} \">" + General.GetString("HEADER_LOGOFF", "Logoff", null) + "</a>";
 
                             
 

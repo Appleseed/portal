@@ -412,7 +412,7 @@ namespace Appleseed.Framework.Site.Configuration
 
                     throw new DatabaseUnreachableException("This may be a new db", sqex);
 
-                    return;
+                   // return;
                 }
                 finally
                 {
@@ -848,6 +848,7 @@ namespace Appleseed.Framework.Site.Configuration
             get
             {
                 return Portal.SmtpServer;
+                //return Appleseed.Framework.Settings.Config.SmtpServer;
             }
         }
 
@@ -2545,6 +2546,9 @@ namespace Appleseed.Framework.Site.Configuration
 
         // Get the value of Enable portal friendly URL value 
         //value if either true/false
+        /// <summary>
+        /// Eanble page friendly URL
+        /// </summary>
         public bool EnablePageFriendlyUrl
         {
             get
@@ -2853,16 +2857,28 @@ namespace Appleseed.Framework.Site.Configuration
             }
         }
 
+        /// <summary>
+        /// Remove portal settings cache
+        /// </summary>
+        /// <param name="pageId">page id</param>
+        /// <param name="portalAlias">portal alias</param>
         public static void RemovePortalSettingsCache(int pageId, string portalAlias)
         {
             RemoveCahedItems(GetPortalSettingsCacheKey(pageId, portalAlias));
         }
 
+        /// <summary>
+        /// Remove portal settings cache
+        /// </summary>
         private static void RemovePortalSettingsCache()
         {
             RemoveCahedItems(GetPortalSettingsCacheKeyPrefix());
         }
 
+        /// <summary>
+        /// Remove cahedItems
+        /// </summary>
+        /// <param name="keyPart">keypart</param>
         private static void RemoveCahedItems(string keyPart)
         {
             int time;

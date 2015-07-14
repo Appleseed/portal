@@ -796,7 +796,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
             return tableCellFlag;
         }
 
-
+        /// <summary>
+        /// Get flage image of language culture item
+        /// </summary>
+        /// <param name="languageItem"></param>
+        /// <returns></returns>
         public string GetFlagImgLCI(LanguageCultureItem languageItem)
         {
 
@@ -891,7 +895,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                        : string.Format("javascript:{0}", this.Page.ClientScript.GetPostBackEventReference(this, language));
         }
 
-
+        /// <summary>
+        /// get language culture item's name
+        /// </summary>
+        /// <param name="languageItem"></param>
+        /// <returns></returns>
         public string getNameLCI(LanguageCultureItem languageItem)
         {
             return this.GetName(languageItem);

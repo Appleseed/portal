@@ -617,6 +617,45 @@ namespace Appleseed.Framework.Site.Configuration
             };
             baseSettings.Add("FB_LikeGate_Page", FB_LikeGate_Page);
 
+            #region
+            
+            //Adding the CSS and JavaScript Section
+            var groupOrderCSSJS = (int)SettingItemGroup.ADD_CSS_JAVASCRIPT;
+            var groupCSSJS = SettingItemGroup.ADD_CSS_JAVASCRIPT;
+
+            //var tabLinkCSS = new SettingItem<string, Appleseed.Framework.Web.UI.WebControls.TextEditor>(new BaseDataType<string, Appleseed.Framework.Web.UI.WebControls.TextEditor>())
+            var tabLinkCSS = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
+            {
+                Group = groupCSSJS,
+                Value = string.Empty,
+                Order = groupOrderCSSJS + 1,
+                EnglishName = "Enter CSS",
+                Description = "Allows this tab to add CS"
+                , 
+            };
+
+            ((TextBox)tabLinkCSS.EditControl).TextMode = TextBoxMode.MultiLine;
+            ((TextBox)tabLinkCSS.EditControl).Height = 400;
+            ((TextBox)tabLinkCSS.EditControl).Width = 400;
+            baseSettings.Add("TabLinkCSS", tabLinkCSS);
+
+
+            var tabLinkJS = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
+            {
+                Group = groupCSSJS,
+                Order = groupOrderCSSJS + 2,
+                Value=string.Empty,
+                EnglishName = "Enter JS",
+                Description = "Allow this tab to add JS"
+                
+            };
+            ((TextBox)tabLinkJS.EditControl).TextMode = TextBoxMode.MultiLine;
+            ((TextBox)tabLinkJS.EditControl).Height = 400;
+            ((TextBox)tabLinkJS.EditControl).Width = 400;
+            baseSettings.Add("TabLinkJS", tabLinkJS);
+
+            #endregion
+
             // groupOrderBase = (int)SettingItemGroup.META_SETTINGS;
             group = SettingItemGroup.META_SETTINGS;
             var tabTitle = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())

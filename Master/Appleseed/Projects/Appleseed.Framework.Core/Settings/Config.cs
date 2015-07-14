@@ -307,6 +307,61 @@ namespace Appleseed.Framework.Settings
             }
         }
 
+        #region Evolutility ConnectionString
+
+        /// <summary>
+        /// Evolutility Connection string
+        /// </summary>
+        public static string EvolutilityConnectionString
+        {
+            get
+            {
+                string keyConnection = String.Concat(Portal.UniqueID, "_EvolutilityConnectionString");
+                string siteConnectionString;
+
+                // check cache first
+                if (!CurrentCache.Exists(keyConnection)) // not in cache
+                {
+                    // look in web.config for key="ConnectionString"
+                    siteConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+                    // add to cache
+                    CurrentCache.Insert(keyConnection, siteConnectionString);
+                    // return the right connection string for this portal
+                    return siteConnectionString;
+                }
+                else // already cached
+                {
+                    // return cached value
+                    return (string)CurrentCache.Get(keyConnection);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns a new SqlConnection object using current ConnectionString
+        /// </summary>
+        public static SqlConnection EvolutilitySqlConnectionString
+        {
+            get
+            {
+                SqlConnection myConnection = new SqlConnection();
+
+
+                try
+                {
+                    myConnection.ConnectionString = EvolutilityConnectionString;
+                }
+                catch (System.ArgumentException ex) //connectionstring not well formed
+                {
+                    //redirect to installer
+                    ErrorHandler.Publish(LogLevel.Error, "Connection string not well formed. Redirecting to Install: " + ex.Message);
+                    HttpContext.Current.Response.Redirect(InstallerRedirect);
+                }
+                return myConnection;
+            }
+        }
+
+        #endregion
 
 		/// <summary>
 		/// Removes "www." when attempting to derive alias from hostname
@@ -511,19 +566,11 @@ namespace Appleseed.Framework.Settings
 			get { return GetHttpStatusCode("DatabaseUpdateResponse", HttpStatusCode.ServiceUnavailable); }
 		}
 
-		/// <summary>
-		/// URL for redirect to Database Update page
-		/// <br/>
-		/// Default value: "~/Setup/Update.aspx"</summary>
-        //public static string DatabaseUpdateRedirect
-        //{
-        //    get { return GetString("DatabaseUpdateRedirect", "~/Installer/Update.aspx", false); }
-        //}
 
         /// <summary>
         /// URL for redirect to Installer page
-        /// <br/>
-        /// Default value: "~/Installer/default.aspx"</summary>
+        /// Default value: "~/Installer/default.aspx"
+        /// </summary>
         public static string InstallerRedirect
         {
             get { return GetString("InstallerRedirect", "~/Installer/default.aspx", false); }

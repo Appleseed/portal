@@ -1,508 +1,561 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PageManagerTree.Models.Permissions>" %>
 <%@ Import Namespace="Appleseed.Framework" %>
 <%@ Import Namespace="PageManagerTree" %>
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+     {
+      
+     }
+</script>
 
 <div id="jqtreePageManagement">
-<script type="text/javascript" src="<%= Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/PageManagerTree/Scripts/jquery.jstree.js") %>"></script>
-<link type="text/css" rel="stylesheet" href="<%: Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/jsTree/themes/default/style.css") %>" /> 
+    <link type="text/css" rel="stylesheet" href="<%: Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/jsTree/themes/proton/style.css") %>" />
+    <form id="form1" runat="server">
+            <div class="toolbar">
+                <table>
+                    <tr>
+                        <td>
+                            <table class="innertable">
+                                <asp:PlaceHolder runat="server" ID="plcAdd">
+                                <tr>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/add.png" title="<%: Appleseed.Framework.General.GetString("ADDTAB") %>" /></td>
+                                    <td><a href="#" onclick="AddNewPage();">Add New </a></td>
+                                </tr>
+                                </asp:PlaceHolder>
+                                <tr>
+                                    <td>
+                                        <img class="editthispage" src="/aspnet_client/jQuery/jsTree/edit.png" title="Rename Page" onclick="openeditthispage();" /></td>
+                                    <td><a href="#" onclick="openeditthispage();">Edit This Page</a></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="innertable">
+                                <tr>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/copy.png" title="Copy Page" onclick="copy_page();" /></td>
+                                    <td><a href="#" onclick="copy_page();">Copy</a></td>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/cut.png" title="Cut Page" onclick="cut_page();" /></td>
+                                    <td><a href="#" onclick="cut_page();">Cut</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/paste.png" title="Paste" onclick="paste();" /></td>
+                                    <td><a href="#" onclick="paste();">Paste</a></td>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/delete.png" title="Delete" onclick="deletePage();" /></td>
+                                    <td><a href="#" onclick="deletePage();">Delete</a></td>
+                                      <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/delete.png" title="Delete" onclick="deletePage();" /></td>
+                                    <td><a href="#" onclick="deletePage();">Delete</a></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="innertable">
+                                <tr>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_up.png" title="Move Up" onclick="move_up()" /></td>
+                                    <td><a href="#" onclick="move_up();">Up</a></td>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_down.png" title="Move Down" onclick="move_down()" /></td>
+                                    <td><a href="#" onclick="move_down();">Down</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_up2.png" title="Move First" onclick="move_first()" /></td>
+                                    <td><a href="#" onclick="move_first()">First</a></td>
+                                    <td>
+                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_down2.png" title="Move Last" onclick="move_last()" /></td>
+                                    <td><a href="#" onclick="move_last()">Last</a></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <a href="#" onclick="seeChanges();">&nbsp;<img class="" src="/aspnet_client/jQuery/jsTree/refresh.png" title="Refresh" onclick="seeChanges();" /><br />
+                                <span>Refresh</span>
+                            </a>
+                        </td>
+                    </tr>
 
+                </table>
+                <%--
+            <div class="add-rename-delete">
+                <div class="add-rename">
+                    <a href="#" onclick="AddNewPage();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/add.png" title="<%: Appleseed.Framework.General.GetString("ADDTAB") %>" /><span>Add New</span> </a>
+                </div>
+                <div>
+                    <a href="#" onclick="openeditthispage();" >
+                        <img class="editthispage" src="/aspnet_client/jQuery/jsTree/edit.png" title="Rename Page" onclick="openeditthispage();"  />
+                        <span>Edit this Page</span>
+                    </a>
+                </div>
+            </div>
+            <div class="copy-cut-paste-delete">
+                <div>
+                    <a href="#" onclick="copy_page();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/copy.png" title="Copy Page" onclick="copy_page();" />
+                        <span>Copy</span>
+                    </a>
+                    <a href="#" onclick="cut_page();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/cut.png" title="Cut Page" onclick="cut_page();" />
+                        <span>Cut</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" onclick="paste();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/paste.png" title="Paste" onclick="paste();" />
+                        <span>Paste</span>
+                    </a>
+                    <a href="#" onclick="deletePage();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/delete.png" title="Delete" onclick="deletePage();" />
+                        <span>Delete</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sorting">
+                <div>
+                    <a href="#" onclick="move_up();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_up.png" title="Move Up" onclick="move_up()" />
+                        <span>Up</span> </a>
+                    <a href="#" onclick="move_down();">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_down.png" title="Move Down" onclick="move_down()" />
+                        <span>Down</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" onclick="move_first()">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_up2.png" title="Move First" onclick="move_first()" /><span>First</span></a>
+                    <a href="#" onclick="move_last()">
+                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/navigate_down2.png" title="Move Last" onclick="move_last()" />
+                        <span>Last</span></a>
+                </div>
+            </div>
+             <a href="#" onclick="seeChanges();">
+                        <img class="" src="/aspnet_client/jQuery/jsTree/refresh.png" title="Refresh" onclick="seeChanges();" /><br />
+                        <span>Refresh</span>
+                    </a> --%>
 
-<form id="form1" runat="server">
-    <div id="jsTree" class="demo">
-        
-
+                <%--<img class="actionicon" src="/aspnet_client/jQuery/jsTree/add_page.png" alt="<%: Appleseed.Framework.General.GetString("ADDTAB") %>" title="<%: Appleseed.Framework.General.GetString("ADDTAB") %>" onclick="AddNewPage();" />
+            <img class="actionicon" src="/aspnet_client/jQuery/jsTree/edit_page.png" alt="Edit this page" title="Edit this page" onclick="openeditthispage();" />
+            <img class="actionicon" src="/aspnet_client/jQuery/jsTree/refresh_page.png" alt="<%: Appleseed.Framework.General.GetString("RESET_SEE_CHANGES") %>" title="<%: Appleseed.Framework.General.GetString("RESET_SEE_CHANGES") %>" onclick="seeChanges();" />
+            <img class="actionicon" src="/aspnet_client/jQuery/jsTree/delete_page.png" alt="Delete this page" title="Delete this page" onclick="deletePage()" />--%>
+            </div>
+        <div class="clearfix"></div>
+        <div id="newjsTree"></div>
+    </form>
+    <div style="display: none">
+        <input type="button" value="<%: Appleseed.Framework.General.GetString("ADDTAB") %>" onclick="AddNewPage();" />
+        <input type="button" value="<%: Appleseed.Framework.General.GetString("RESET_SEE_CHANGES") %>" onclick="seeChanges();" />
+        <input type="button" value="Edit This Page" onclick="openeditthispage();" />
     </div>
-</form>
-<div>
-    <input type="button" value="<%: Appleseed.Framework.General.GetString("ADDTAB") %>" onclick="AddNewPage();"/>
-    <input type="button" value="<%: Appleseed.Framework.General.GetString("RESET_SEE_CHANGES") %>" onclick="seeChanges();"/>
-</div>
-
-
-<script type="text/javascript">
-    var nodeID;
-    $(function () {
-        $("#jsTree")
-//        .bind("loaded.jstree", function (e, data) {
-//            data.inst.open_all('#pjson_0'); // -1 opens all nodes in the container
-//        })
-        .jstree({
-            "json_data": {
-                "ajax": {
-                    "type": "POST",
+    <script type="text/javascript" src="<%= Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/PageManagerTree/Scripts/jquery.jstree.js") %>"></script>
+    <script type="text/javascript">
+        var selectedpageid = 0; var parentid = 0; var nodeposition = 0; var lastpos = 0;
+        var cutcpyid = -1;
+        var copiednodename = '';
+        var iscopy = false; var copyctclicked = false;
+        $("#newjsTree").jstree({
+            "core": {
+                "animation": 0,
+                "check_callback": true,
+                "themes": {
+                    'name': 'proton',
+                    'responsive': true
+                },
+                "sort": function (a, b) {
+                    return this.get_node(a).original.position > this.get_node(b).original.position ? 1 : -1;
+                },
+                "data": {
                     "url":
                         function (node) {
-                            //var nodeId = node.attr('id'); 
-                            if (node == -1) {
-                                return '<%= Url.Action("GetTreeData", "PageManagerTree") %>';
-                            }else
-                                return '<%= Url.Action("AddModule", "PageManagerTree") %>' + '?id=' + node.attr('id');
+                            if (node.id === "#") {
+                                return '<%= Url.Action("GetRootPage", "PageManagerTree") %>';
+                            }
+                            else {
+                                return '<%= Url.Action("GetSubPages", "PageManagerTree") %>';
+                            };
                         },
-                    
-                    "data": function (n) {
-                        return { ID: n.attr ? n.attr("ID") : 0 };
-                    },
-                    "success": function (new_data) {
-                        return new_data;
+                    'type': 'POST',
+                    'dataType': 'json',
+                    'contentType': 'application/json',
+                    'cache': false,
+                    'data':
+                        function (node) {
+                            if (node.id === "#") {
+                                return JSON.stringify({
+                                    pageid: node.id.toString(),
+                                    isPane: false,
+                                    parentid: node.parent
+                                });
+                            }
+                            else {
+                                return JSON.stringify({
+                                    pageid: node.id.toString(),
+                                    isPane: Boolean(node.original.isPane),
+                                    parentid: node.parent
+                                });
+                            }
+                        }
+                    ,
+                    'success': function (data) {
                     }
                 }
-            },
-            "types": {
-                "max_depth" : -2,
-                "max_children" : -2,
-                "valid_children": "none",
-                "types": {
-                    "default": {
-                        "valid_children": ["folder", "folder2", "default"],
-                    },
-                    "file": {
-                        "valid_children": "none",
-                        "icon": {
-                            "image": '<%= HttpUrlBuilder.BuildUrl("~/images/file.png") %>',
-                        }
-                    },
-                    "folder": {
-                        "valid_children": ["file"],
-                        "icon": {
-                            "image": '<%= HttpUrlBuilder.BuildUrl("~/images/folder.png") %>',
-                        },
-                        "start_drag" : false,
-					    "move_node" : false,
-                        "delete_node": false,
-					    "remove": false,
-                        "rename": false,
-                    },
-                    "folder2": {
-                        "valid_children": ["file"],
-                        "icon": {
-                            "image": '<%= HttpUrlBuilder.BuildUrl("~/images/folder2.png") %>',
-                        },
-                        "start_drag" : false,
-                        "move_node" : false,
-                        "delete_node": false,
-                        "remove": false,
-                        "rename": false,
-                    },
-                    "root": {
-                        "valid_children": ["default"],
-                        "icon": {
-                            "image": '<%= HttpUrlBuilder.BuildUrl("~/images/root.png") %>',
-                        },
-                        "start_drag" : false,
-                        "move_node" : false,
-                        "delete_node" : false,
-                        "remove" : false
-                    }
-                },
             },
             "contextmenu": {
                 "items": contextMenu
-            
             },
-            "crrm": {
-                "move": {
-                    "check_move": function (m) {
-                        if (m.np.attr("id") == "jsTree") return false;
-                        return true;
-                    }
-                }
-            },
-            "dnd": {
-                "drop_target": false,
-                "drag_target": false
-            },
-            "core": { "initially_open" : ["pjson_0"]} ,
-
-            "plugins": ["themes", "contextmenu", "json_data", "ui", "crrm", "dnd", "core", "types"]
-        })
-        .bind("move_node.jstree", function (e, data) {
-            var selectedId = data.rslt.o.attr("id");
-            
-            if (selectedId.indexOf("module") != -1) {
-                var selected = data.rslt.np.text().replace(/\s{2}/, "");
-                var children = data.rslt.np.children().children().text().replace(/\s/, "");
-                var folder = selected.replace(children, "");
-                $.ajax({
-                    url: '<%= Url.Action("MoveModuleNode","PageManagerTree")%>',
-                    type: 'POST',
-                    timeout: "100000",
-                    data: {
-                        "pageId": $.jstree._focused()._get_parent(data.rslt.np).attr("id").replace("pjson_", ""),
-                        "paneName": folder,
-                        "moduleId": data.rslt.o.attr("id").replace("pjson_module_", "")
-                    },
-                    success: function (data) {
-                    }
-                });
-            } else {
-                if ((typeof(data.rslt.or.attr("id"))) == 'undefined') {
-                    result = -1;
-                } else {
-                    result = data.rslt.or.attr("id").replace("pjson_", "");
-                }
-                $.ajax({
-                    url: '<%= Url.Action("moveNode","PageManagerTree")%>',
-                    type: 'POST',
-                    timeout: "100000",
-                    data: {
-                        "pageId": data.rslt.o.attr("id").replace("pjson_", ""),
-                        "newParent": data.rslt.np.attr("id").replace("pjson_", ""),
-                        "idOldNode": result
-                    },
-                    success: function(data) {
-                    }
-                });
+            "plugins": ["contextmenu", "dnd", "search", "state", "types", "unique", "crrm", "themes"]
+        }).on('move_node.jstree', function (event, data) {
+            movenode(data.node.id, data.node.parent, data.old_parent, data.position);
+        }).on("select_node.jstree", function (e, data) {
+            if (!copyctclicked) {
+                copiednodename = data.node.text;
             }
-        })
-        .bind("rename.jstree",function(event,data) {
-            var selectedId = data.rslt.obj.attr("id");
-            if (selectedId.indexOf("module") != -1) {
-                $('#jsTree').jstree("deselect_all");
-                $("#jsTree").jstree("select_node", data.rslt.obj.parents()[3]).trigger("select_node.jstree");
-                $.ajax({
-                    url: '<%= Url.Action("RenameModule","PageManagerTree")%>',
-                    type: 'POST',
-                    timeout: "100000",
-                    data: {
-                        "id": data.rslt.obj.attr("id").replace("pjson_module_", ""),
-                        "name": data.rslt.new_name
-                    },
-                    success: function (data) {
-                        if (data.error == true) {
-                        } else {
-                            //$("#jsTree").jstree("refresh", -1);
-                        }
-                    }
-                });
-            } else {
-
-                $.ajax({
-                    url: '<%= Url.Action("Rename","PageManagerTree")%>',
-                    type: 'POST',
-                    timeout: "100000",
-                    data: {
-                        "id": data.rslt.obj.attr("id").replace("pjson_", ""),
-                        "name": data.rslt.new_name
-                    },
-                    success: function(data) {
-                        if (data.error == true) {
-
-                        } else {
-                            $("#jsTree").jstree("refresh", -1);
-                        }
-                    }
-                });
+            selectedpageid = data.node.id; parentid = data.node.parent; nodeposition = data.node.original.position; lastpos = data.node.original.lastpos
+            $('#pagedetail').removeAttr("src");
+            $('#pagedetail').attr("src", "/DesktopModules/CoreModules/Pages/PageLayout.aspx?PageID=" + data.node.id + "&mID=110&ModalChangeMaster=true");
+        }).bind("rename_node.jstree", function (event, data) {
+            var urlctrl;
+            if (data.node.original.nodeType == "module") {
+                urlctrl = '<%= Url.Action("RenameModule","PageManagerTree")%>' + '?id=' + parseInt(data.node.id.toString()) + '&name=' + data.text;
             }
-        })
-        .bind("open_node.jstree", function (event, data) {
-            var pageid = data.rslt.obj.attr("id").replace("pjson_", "");
-            if ((pageid != 0) && (pageid.indexOf('_') == -1)) {
-                $.ajax({
-                    url: '<%= Url.Action("AddModule","PageManagerTree")%>',
-                    type: 'POST',
-                    data: {
-                        "id": pageid.replace("pjson_", ""),
-                    },
-                    success: function (data) {
-                        return data;
-                    }
-                });
+            else {
+                urlctrl = '<%= Url.Action("Rename","PageManagerTree")%>' + '?id=' + parseInt(data.node.id.toString()) + '&name=' + data.text;
             }
-
-        });
-
-    });
-
-    function contextMenu(node) {
-        var items = {
-            "create": {
-                "label": '<%: General.GetString("CREATE") %>',
-                            "action":
-                                function(obj) {
-                                    $.ajax({
-                                        url: '<%= Url.Action("create","PageManagerTree")%>',
-                            type: 'POST',
-                            timeout: "100000",
-                            data: {
-                                "id": obj.attr("id").replace("pjson_", "")
-                            },
-                            success: function(data) {
-                                $("#jsTree").jstree("refresh", -1);
-                            }
-                        });
-                    }
-            },
-            
-            ViewItem: {
-                label: '<%: General.GetString("View","View") %>',
-                action: function(obj) {
-                    var currentId = this._get_node(obj).attr("id");
-                    $.ajax({
-                        url: '<%= Url.Action("ViewPage")%>',
-                        type: 'POST',
-                        timeout: "100000",
-                        data: {
-                            "pageId": currentId.replace("pjson_", "")
-                        },
-                        success: function(data) {
-                            window.location.href = data;
-                        }
-                    });
-
-                },
-                "separator_before": true,
-            },
-            renameItem: {
-                "label": '<%: General.GetString("RENAME") %>',
-                "action": function(obj) {
-                    this.rename(obj);
-
-                },
-            },
-            "edit": {
-                "label": '<%: General.GetString("EDIT") %>',
-                "action":
-                    function(obj) {
-                        $.ajax({
-                            url: '<%= Url.Action("edit","PageManagerTree")%>',
-                            type: 'POST',
-                            timeout: "100000",
-                            data: {
-                                "id": obj.attr("id").replace("pjson_", ""),
-                            },
-                            success: function(data) {
-                                window.location.href = data.url;
-
-                            }
-                        });
-                    }
-            },
-            "editModule": {
-                "label": '<%: General.GetString("EDIT") %>',
-                "action":
-                    function (obj) {
-                        editModule(obj.parents()[3].id.replace("pjson_", ""), obj.attr("id").replace("pjson_module_", ""));
-                    },
-                },
-            "ccp": false,
-            "remove": false,
-            "rename": false,
-
-            cloneItem: {
-                label: '<%: General.GetString("Clone","Clone") %>',
-                action: function(obj) {
-                    var currentId = this._get_node(obj).attr("id");
-                    var parentId = this._get_node(obj)[0].firstChild.parentElement.parentNode.parentElement.id;
-                    $.ajax({
-                        url: '<%= Url.Action("Clone")%>',
-                        type: 'POST',
-                        timeout: "100000",
-                        data: {
-                            "id": currentId.replace("pjson_", ""),
-                            "parentId": parentId.replace("pjson_", "")
-                        },
-                        success: function(data) {
-                            var name = $("#jsTree").jstree("get_text", '#' + currentId) + ' - Clone';
-                            $("#jsTree").jstree("create", "#" + parentId, "last", { 'attr': { 'id': 'pjson_' + data.pageId }, 'title': name }, false, true);
-                            $("#jsTree").jstree("set_text", '#pjson_' + data.pageId, name);
-                            $("#jsTree").jstree("rename", "#pjson_" + data.pageId);
-                        },
-                        error: function(data) {
-                            $.jstree.rollback(obj.rlbk);
-                        }
-                    });
-
-                },
-            },
-            copyItem: {
-                label: '<%: General.GetString("COPY", "Copy") %>',
-                action: function(obj) {
-                    var currentId = this._get_node(obj).attr("id");
-                    var currentName = this._get_node(obj).text().replace(/\s{2}/, "");
-                    var children = this._get_node(obj).children().children().text().replace(/\s/, "");
-                    var folder = currentName.replace(children, "");
-                    var parentId = this._get_node(obj)[0].firstChild.parentElement.parentNode.parentElement.id;
-                    $.ajax({
-                        url: '<%= Url.Action("CopyPage")%>',
-                        type: 'POST',
-                        timeout: "100000",
-                        data: {
-                            "pageId": currentId.replace("pjson_", ""),
-                            "name": folder,
-                        },
-                        success: function(data) {
-                            var name = $("#jsTree").jstree("get_text", '#' + currentId) + ' - Copy';
-                            $("#jsTree").jstree("create", "#" + parentId, "last", { 'attr': { 'id': 'pjson_' + data.pageId }, 'title': name }, false, true);
-                            $("#jsTree").jstree("set_text", '#pjson_' + data.pageId, name);
-                            $("#jsTree").jstree("rename", "#pjson_" + data.pageId);
-                        },
-                        error: function(data) {
-                            $.jstree.rollback(obj.rlbk);
-                        }
-                    });
-
-                },
-            },
-            "delete": {
-                "label": '<%: General.GetString("DELETE") %>',
-                "action":
-                    function(obj) {
-
-                        var agree = confirm('<%: General.GetString("CONFIRM_DELETE") %>');
-                        if (agree)
-                            deletePage(obj.attr("id").replace("pjson_", ""));
-                        else
-                            return false;
-
-
-                    },
-                "separator_before": true
-            },
-            "deletemodule": {
-                "label": '<%: General.GetString("DELETE") %>',
-                "action":
-                    function (obj) {
-                        var agree = confirm('<%: General.GetString("CONFIRM_DELETE") %>');
-                        if (agree) {
-                            var object = obj;
-                            var pageId = obj.parents()[3].id.replace("pjson_", "");
-                            var moduleId = obj.attr("id").replace("pjson_module_", "");
-                            var parent = obj.parents()[3];
-                            deleteModule(pageId, moduleId, object, parent);
-                            
-                        } else
-                            return false;
-                    },
-                "separator_before": true
-            },
-        };
-        
-        if (($(node).attr("rel") == "folder") || ($(node).attr("rel") == "root") || ($(node).attr("rel") == "folder2")) {
-            delete items.delete;
-            delete items.create;
-            delete items.copyItem;
-            delete items.cloneItem;
-            delete items.renameItem;
-            delete items.ViewItem;
-            delete items.edit;
-            delete items.deletemodule;
-            delete items.editModule;
-        }
-        
-        if ($(node).attr("rel") == "file") {
-            delete items.create;
-            delete items.copyItem;
-            delete items.cloneItem;
-            delete items.ViewItem;
-            delete items.delete;
-            delete items.edit;
-        }
-        
-        if ($(node).attr("rel") == undefined) {
-            delete items.deletemodule;
-            delete items.editModule;
-        }
-
-        return items;
-    }
-    
-
-
-    function seeChanges(){
-        window.location.href = window.location.href;
-    }
-
-    function AddNewPage(){
-        $.ajax({
-                url: '<%= Url.Action("create","PageManagerTree")%>',
-                type: 'POST',
-                timeout: "100000",
-                data: {
-                    "id": 0
-                },
-                success: function (data) {
-                    $("#jsTree").jstree("refresh", -1);
-                }
-            });
-    }
-
-    function deletePage(id){
-        if(id != 0) {           
-           
             $.ajax({
-                url: '<%= Url.Action("remove","PageManagerTree")%>',
+                url: urlctrl,
                 type: 'POST',
                 timeout: "100000",
-                data: {
-                    "id": id
-                },
+                data: JSON.stringify(data.node),
                 success: function (data) {
                     if (data.error == true) {
                         alert(data.errorMess.toString());
+                        seeChanges();
                     } else {
-                        $("#jsTree").jstree("refresh", -1);
+                        $('#newjsTree').jstree('refresh');
                     }
                 }
             });
-                     
-       }
-    }
-    
-    function deleteModule(pageid, moduleId, obj, parent) {
-        $.ajax({
-            url: '<%= Url.Action("RemoveModule","PageManagerTree")%>',
-            type: "POST",
-            timeout: 180000,
-            data: {
-                id: moduleId,
-            },
-            success: function (data) {
-                if (data.error == true) {
-                    alert(data.errorMess);
-                } else {
-                    $("#jsTree").jstree("remove", obj);
-                }
-                $('#jsTree').jstree("deselect_all");
-                $("#jsTree").jstree("select_node", parent).trigger("select_node.jstree");
+        });
+        function contextMenu(node) {
+            if (node.original.nodeType == "pane") {
+                return;
             }
-        });
-    }
-    
-    function editModule(idPage, moduleId) {
-       
-         $.ajax({
-             url: '<%= Url.Action("GetUrlToEdit","PageManagerTree")%>',
-             type: "POST",
-             timeout: 180000,
-             data: {
-                 pageId: idPage, 
-                 moduleId: moduleId,
-             },
-             success: function (data) {
-                 window.location.href = data;
-             }
-         });
-    }
-
-    $(function() {
-         var c;
-        $('#jqtreePageManagement').children().each(function (i) {
-            var vs = this;
-            if($(vs).has('input').length > 0){
-                c = $(vs).children(0); 
-                if($(c).attr('id') == '__VIEWSTATE')  {        
-                    $(c).remove();
-                    $(vs).remove();
-                } 
-            }      
-        });
-    });
-
-    function logNop() {
-        console.log('');
-  
-    }
-
-</script>
-
+            var items = {
+                "create": {
+                    "label": '<%: General.GetString("CREATE") %>',
+                    "action":
+                        function (obj) {
+                            var pagenameval = prompt("Please enter page name", "New Page Name");
+                            if (pagenameval != null) {
+                                $.ajax({
+                                    url: '/PageManagerTree/PageManagerTree/Create',//?pageid="' + + '"',
+                                    type: 'POST',
+                                    timeout: "100000",
+                                    dataType: 'json',
+                                    contentType: "application/json; charset=utf-8",
+                                    data: JSON.stringify({
+                                        pageid: node.id.toString(),
+                                        pagename: pagenameval
+                                    }),
+                                    success: function (data) {
+                                        if (data.error == true) {
+                                            alert(data.errorMess.toString());
+                                        }
+                                        else {
+                                            $('#newjsTree').jstree('refresh');
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    },
+                "rename": {
+                    "label": '<%: General.GetString("RENAME") %>',
+                    "action": function (data) {
+                        var inst = $.jstree.reference(data.reference),
+                            obj = inst.get_node(data.reference);
+                        inst.edit(obj);
+                    }
+                },
+                "delete": {
+                    "label": '<%: General.GetString("DELETE") %>',
+                    "action":
+                        function (obj) {
+                            selectedpageid = node.id;
+                            deletePage();
+                        },
+                    "separator_before": true
+                },
+                "copy": {
+                    "label": '<%: General.GetString("COPY", "Copy") %>',
+                    "action": function (obj) {
+                        cutcpyid = parseInt(node.id);
+                        copiednodename = node.text;
+                        iscopy = true;
+                        copyctclicked = true;
+                    }
+                },
+                "cut": {
+                    "label": '<%: General.GetString("CUT", "Cut") %>',
+                    "action": function (obj) {
+                        cutcpyid = parseInt(node.id);
+                        iscopy = false;
+                        copyctclicked = true;
+                    }
+                },
+                "paste": {
+                    "label": 'Paste',
+                    "action": function (obj) {
+                        paste();
+                    }
+                },
+                "clone": {
+                    "label": '<%: General.GetString("Clone","Clone") %>',
+                    "action": function (obj) {
+                        $.ajax({
+                            url: '<%= Url.Action("Clone","PageManagerTree")%>' + '?id=' + parseInt(node.id) + '&parentId=' + parseInt(node.parent),
+                            type: 'POST',
+                            timeout: "100000",
+                            data: JSON.stringify(node),
+                            success: function (data) {
+                                if (data.error == true) {
+                                    alert(data.errorMess.toString());
+                                }
+                                else {
+                                    $('#newjsTree').jstree('refresh');
+                                }
+                            }
+                        });
+                    }
+                },
+                "sort": {
+                    "label": '<%: General.GetString("Sort","Sort") %>',
+                    "submenu": {
+                        "move_first": {
+                            "label": '<%: General.GetString("Move_First","Move First") %>',
+                            "action": function (obj) {
+                                movenode(node.id, node.parent, node.parent, 0);
+                            }
+                        },
+                        "move_up": {
+                            "label": '<%: General.GetString("Move_Up","Move up") %>',
+                            "action": function (obj) {
+                                movenode(node.id, node.parent, node.parent, (parseInt(node.original.position) - 1));
+                            }
+                        },
+                        "move_down": {
+                            "label": '<%: General.GetString("Move_Down","Move Down") %>',
+                            "action": function (obj) {
+                                movenode(node.id, node.parent, node.parent, (parseInt(node.original.position) + 1));
+                            }
+                        },
+                        "move_last": {
+                            "label": '<%: General.GetString("Move_Last","Move Last") %>',
+                            "action": function (obj) {
+                                movenode(node.id, node.parent, node.parent, parseInt(node.original.lastpos));
+                            }
+                        },
+                    }
+                },
+                "view": {
+                    "label": '<%: General.GetString("View","View") %>',
+                    "action": function (obj) {
+                        $.ajax({
+                            url: '<%= Url.Action("ViewPage","PageManagerTree")%>' + '?page_Id="' + node.id + '"',
+                            type: 'POST',
+                            timeout: "100000",
+                            data: JSON.stringify(node),
+                            success: function (data) {
+                                window.location.href = data;
+                                $('#newjsTree').jstree('refresh');
+                            }
+                        });
+                    }
+                }
+            }
+            // root node
+            if (node.id == 0) {
+                items.rename = items.delete = items.copy = items.cut = items.clone = items.view = items.sort = false;
+            }
+            if (cutcpyid == -1) {
+                items.paste = false;
+            }
+            return items;
+        }
+        function move_last() {
+            if (selectedpageid != 0)
+                movenode(selectedpageid, parentid, parentid, parseInt(lastpos));
+            else
+                alert('Please select node first');
+        }
+        function move_first() {
+            if (selectedpageid != 0)
+                movenode(selectedpageid, parentid, parentid, 0);
+            else
+                alert('Please select node first');
+        }
+        function move_up() {
+            if (selectedpageid != 0)
+                movenode(selectedpageid, parentid, parentid, (parseInt(nodeposition) - 1));
+            else
+                alert('Please select node first');
+        }
+        function move_down() {
+            if (selectedpageid != 0)
+                movenode(selectedpageid, parentid, parentid, (parseInt(nodeposition) + 1));
+            else
+                alert('Please select node first');
+        }
+        function copy_page() {
+            if (selectedpageid != '0') {
+                cutcpyid = selectedpageid;
+                iscopy = true;
+                copyctclicked = true;
+            }
+            else {
+                copyctclicked = false;
+                alert('Please select node first');
+            }
+        }
+        function cut_page() {
+            if (selectedpageid != '0') {
+                cutcpyid = parseInt(selectedpageid);
+                iscopy = false;
+                copyctclicked = true;
+            }
+            else {
+                copyctclicked = false;
+                alert('Please select node first');
+            }
+        }
+        function paste() {
+            if (cutcpyid != -1) {
+                if (selectedpageid != cutcpyid) {
+                    //paste code
+                    $.ajax({
+                        url: '<%= Url.Action("CutCopyPage","PageManagerTree")%>',
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        timeout: "100000",
+                        data: JSON.stringify({
+                            pageId: parseInt(cutcpyid),
+                            name: copiednodename,
+                            parentId: parseInt(selectedpageid),
+                            isCopy: Boolean(iscopy)
+                        }),
+                        success: function (data) {
+                            if (data.error == true) {
+                                alert(data.errorMess.toString());
+                            } else {
+                                $('#newjsTree').jstree('refresh');
+                                cutcpyid = -1;
+                                copyctclicked = false;
+                            }
+                        }
+                    });
+                }
+                else {
+                    alert('Please paste it into another node');
+                }
+            }
+            else {
+                copyctclicked = false;
+                alert('Please perform copy or cut operation before paste');
+            }
+        }
+        function deletePage() {
+            if (selectedpageid != 0) {
+                var agree = confirm('<%: General.GetString("CONFIRM_DELETE") %>');
+                    if (agree) {
+                        $.ajax({
+                            url: '<%= Url.Action("remove","PageManagerTree")%>',
+                        type: 'POST',
+                        timeout: "100000",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify({
+                            id: parseInt(selectedpageid),
+                        }),
+                        success: function (data) {
+                            if (data.error == true) {
+                                alert(data.errorMess.toString());
+                            } else {
+                                $('#newjsTree').jstree('refresh');
+                                selectedpageid = 0;
+                            }
+                        }
+                    });
+                }
+                else
+                    return false;
+            }
+            else {
+                alert('Please select page to delete');
+            }
+        }
+        function seeChanges() {
+            window.location.href = window.location.href;
+        }
+        function AddNewPage() {
+            var pageid = 0;
+            if (selectedpageid != undefined) {
+                pageid = selectedpageid;
+            }
+            var pagenameval = prompt("Please enter page name", "New Page Name");
+            if (pagenameval != null) {
+                $.ajax({
+                    url: '/PageManagerTree/PageManagerTree/Create',
+                    type: 'POST',
+                    timeout: "100000",
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({
+                        pageid: pageid,
+                        pagename: pagenameval
+                    }),
+                    success: function (data) {
+                        if (data.error == true) {
+                            alert(data.errorMess.toString());
+                        }
+                        else {
+                            $('#newjsTree').jstree('refresh');
+                        }
+                    }
+                });
+            }
+        }
+        function movenode(nodeid, parentid, oldparent, position) {
+            $.ajax({
+                url: '<%= Url.Action("moveNode","PageManagerTree")%>',
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                timeout: "100000",
+                data: JSON.stringify({
+                    pageID: parseInt(nodeid),
+                    newParent: parseInt(parentid),
+                    idOldNode: parseInt(oldparent),
+                    selectedposition: parseInt(position)
+                }),
+                success: function (data) {
+                    if (data.error == true) {
+                        seeChanges();
+                        alert(data.errorMess.toString());
+                    }
+                    else {
+                        $('#newjsTree').jstree('refresh');
+                    }
+                }
+            });
+        }
+        function openeditthispage() {
+            openInModal('/DesktopModules/CoreModules/Pages/PageLayout.aspx?PageID=' + selectedpageid + '&mID=110', 'Edit This Page');
+        }
+    </script>
 </div>

@@ -180,10 +180,15 @@
     <Compile Include="BLL\Utils\BagHolder.cs" />
     <Compile Include="BLL\Utils\CookieUtil.cs" />
     <Compile Include="BLL\Utils\GlobalResources.cs" />
+    <Compile Include="Configuration\Items\AssignedPermissionItem.cs" />
+    <Compile Include="Configuration\Items\CurrentModuleDefination.cs" />
     <Compile Include="Configuration\Items\ISettingItem.cs" />
+    <Compile Include="Configuration\Items\JsTreeItem.cs" />
     <Compile Include="Configuration\Items\PagesBox.cs" />
     <Compile Include="Configuration\Items\SettingItem.cs" />
     <Compile Include="Configuration\Items\SettingItemGroups.cs" />
+    <Compile Include="Configuration\Items\SliderImageItem.cs" />
+    <Compile Include="Configuration\Items\SliderItem.cs" />
     <Compile Include="Configuration\LogLevel.cs" />
     <Compile Include="Configuration\LogProperties.cs" />
     <Compile Include="Configuration\LogProvider.cs" />
@@ -203,14 +208,19 @@
     <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\DBHelper.cs" />
     <Compile Include="DAL\DynamicModel.cs" />
+    <Compile Include="DAL\EvolutilityModuleDB.cs" />
     <Compile Include="DAL\Massive.cs" />
     <Compile Include="DAL\ModulesDB.cs" />
     <Compile Include="DAL\PagesDB.cs" />
+    <Compile Include="DAL\PermissionsDB.cs" />
     <Compile Include="DAL\PortalsDB.cs" />
     <Compile Include="DAL\RecyclerDB.cs" />
+    <Compile Include="DAL\SliderDB.cs" />
     <Compile Include="DAL\SolutionModuleDefinition.cs" />
+    <Compile Include="DAL\TabSettings.cs" />
     <Compile Include="DAL\UsersDb.cs" />
     <Compile Include="DAL\WorkFlowDB.cs" />
+    <Compile Include="DAL\XMLImportExportDB.cs" />
     <Compile Include="Design\Layout.cs" />
     <Compile Include="Design\LayoutItem.cs" />
     <Compile Include="Design\LayoutManager.cs" />
@@ -284,11 +294,15 @@
     <Compile Include="Scheduler\SchedulerException.cs" />
     <Compile Include="Scheduler\SchedulerTask.cs" />
     <Compile Include="Scheduler\SimpleScheduler.cs" />
+    <Compile Include="Security\AccessPermissions.cs" />
     <Compile Include="Security\IEditUserProfile.cs" />
     <Compile Include="Security\Monitoring.cs" />
     <Compile Include="Security\AppleseedPrincipal.cs" />
+    <Compile Include="Security\PermissionInfo.cs" />
+    <Compile Include="Security\SecurePages.cs" />
     <Compile Include="Security\Security.cs" />
     <Compile Include="Security\SpecialRoles.cs" />
+    <Compile Include="Security\UserProfile.cs" />
     <Compile Include="Service\Client\communityService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -315,6 +329,7 @@
     <Compile Include="UI\DataTypes\CustomListDataType.cs" />
     <Compile Include="UI\DataTypes\CustomListDelegateDataType.cs" />
     <Compile Include="UI\DataTypes\EmailAddressList.cs" />
+    <Compile Include="UI\DataTypes\EvolutilityModuleRenderer.cs" />
     <Compile Include="UI\DataTypes\FolderDataType.cs" />
     <Compile Include="UI\DataTypes\HtmlEditorDataType.cs" />
     <Compile Include="UI\DataTypes\ImageDTO.cs" />
@@ -326,6 +341,7 @@
     <Compile Include="UI\DataTypes\Percentage.cs" />
     <Compile Include="UI\DataTypes\PortalUrlDataType.cs" />
     <Compile Include="UI\DataTypes\SettingOption.cs" />
+    <Compile Include="UI\DataTypes\SliderDataType.cs" />
     <Compile Include="UI\DataTypes\UploadedFileDataType.cs" />
     <Compile Include="UI\DataTypes\UrlDataType.cs" />
     <Compile Include="Localization\LanguageCultureCollection.cs" />
@@ -410,7 +426,6 @@
   <ItemGroup>
     <EntityDeploy Include="Models\AppleseedModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AppleseedModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
     <None Include="Settings\Appleseed.Settings.cd" />

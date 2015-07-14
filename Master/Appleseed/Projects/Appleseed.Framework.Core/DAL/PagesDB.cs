@@ -641,6 +641,9 @@ namespace Appleseed.Framework.Site.Data
         /// <param name="showMobile">
         /// if set to <c>true</c> [show mobile].
         /// </param>
+        /// <param name="friendlyURL">
+        /// friendly url
+        /// </param>
         public void UpdatePage(
           int portalId,
           int pageId,

@@ -460,9 +460,6 @@ namespace Appleseed.Framework
         /// <summary>
         /// Checks if the url is correctly written.
         /// </summary>
-        /// <param name="url">
-        ///  Is the url that needed to be chequed
-        /// </param>
         /// <param name="pageId">
         /// It's the pageId From that page
         /// </param>

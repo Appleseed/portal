@@ -31,7 +31,7 @@ namespace Appleseed.Content.Web.Modules
         public ComponentModule()
         {
             var group = SettingItemGroup.MODULE_SPECIAL_SETTINGS;
-            var groupOrderBase = (int)SettingItemGroup.MODULE_SPECIAL_SETTINGS;
+           // var groupOrderBase = (int)SettingItemGroup.MODULE_SPECIAL_SETTINGS;
 
             //HtmlEditorDataType.HtmlEditorSettings(this.BaseSettings, group);
 

@@ -71,6 +71,12 @@ namespace Appleseed.Framework
         /// <summary>
         ///   Module Data Filter (aka. MDF).
         /// </summary>
-        MDF_SETTINGS = 20000
+        MDF_SETTINGS = 20000,
+
+        /// <summary>
+        /// for user define css and js
+        /// </summary>
+        ADD_CSS_JAVASCRIPT = 25000
+
     }
 }

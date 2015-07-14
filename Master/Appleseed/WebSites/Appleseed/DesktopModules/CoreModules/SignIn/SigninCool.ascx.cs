@@ -1,7 +1,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Text;
-using System.Web.Mail;
+//using System.Web.Mail;
 using System.Web.UI;
 using Appleseed.Framework;
 using Appleseed.Framework.Content.Security;
@@ -18,6 +18,7 @@ namespace Appleseed.Content.Web.Modules
     using System.Web.UI.WebControls;
 
     using Localize = Appleseed.Framework.Web.UI.WebControls.Localize;
+    using System.Net.Mail;
 
     /// <summary>
     /// The SignIn User Control enables clients to authenticate themselves using 
@@ -117,16 +118,16 @@ namespace Appleseed.Content.Web.Modules
                 crypthelp.ResetPassword( Name, randomPassword );
                 string LoginUrl = Path.ApplicationFullPath + "DesktopModules/Admin/Logon.aspx?Usr=" + Name + "&Pwd=" +
                                   Pswrd + "&Alias=" + this.PortalSettings.PortalAlias;
-                MailMessage mail = new MailMessage();
+               // MailMessage mail = new MailMessage();
 
                 // Geert.Audenaert@Syntegra.Com
                 // Date 19 March 2003
                 // We have to use a correct sender address, 
                 // because most SMTP servers reject it otherwise
                 //jes1111 - mail.From = ConfigurationSettings.AppSettings["EmailFrom"].ToString();
-                mail.From = Config.EmailFrom;
-                mail.To = email.Text;
-                mail.Subject = AppName + " - " + General.GetString( "SIGNIN_SEND_PWD", "Send me password", this );
+                //mail.From = Config.EmailFrom;
+                //mail.To = email.Text;
+                //mail.Subject = AppName + " - " + General.GetString( "SIGNIN_SEND_PWD", "Send me password", this );
 
                 StringBuilder sb = new StringBuilder();
 
@@ -155,11 +156,17 @@ namespace Appleseed.Content.Web.Modules
                                       "NOTE: The address above may not show up on your screen as one line. This would prevent you from using the link to access the web page. If this happens, just use the 'cut' and 'paste' options to join the pieces of the URL.",
                                       this ) );
 
-                mail.Body = sb.ToString();
-                mail.BodyFormat = MailFormat.Text;
+                //mail.Body = sb.ToString();
+                //mail.BodyFormat = MailFormat.Text;
 
-                SmtpMail.SmtpServer = Config.SmtpServer;
-                SmtpMail.Send( mail );
+                //SmtpMail.SmtpServer = Config.SmtpServer;
+                //SmtpMail.Send( mail );
+
+
+                string subject = AppName + " - " + General.GetString("SIGNIN_SEND_PWD", "Send me password", this);
+                MailMessage newmail = new MailMessage(Config.EmailFrom.ToString(),email.Text,subject,sb.ToString());
+                SmtpClient client = new SmtpClient(Config.SmtpServer);
+                client.Send(newmail);
 
                 Message.Text =
                     General.GetString( "SIGNIN_PWD_WAS_SENT", "Your password was sent to the addess you provided",

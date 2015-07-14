@@ -463,8 +463,8 @@ namespace Appleseed.Framework.Users.Data
         ///     stored in the users database.  If the email/password hash pair is valid,
         ///     the method returns user's name.
         /// </summary>
-        /// <param name="email">
-        /// The email.
+        /// <param name="userName">
+        /// The userName.
         /// </param>
         /// <param name="password">
         /// The password.

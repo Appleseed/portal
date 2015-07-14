@@ -23,6 +23,7 @@ namespace Appleseed.Content.Web.Modules
     using Appleseed.Framework.Web.UI.WebControls;
 
     using Path = Appleseed.Framework.Settings.Path;
+    using System.Xml.XPath;
 
     /// <summary>
     /// XmlFeed Module
@@ -221,13 +222,14 @@ namespace Appleseed.Content.Web.Modules
                             var reader = new XmlTextReader(stream) { XmlResolver = null };
 
                             // Create a new document object
-                            var doc = new XmlDocument();
+                           // var doc = new XmlDocument();
 
                             // Create the content of the XML Document from the XML data stream
-                            doc.Load(reader);
+                           // doc.Load(reader);
 
                             // the XML control to hold the generated XML document
-                            this.xml1.Document = doc;
+                            //this.xml1.Document = doc;
+                            this.xml1.DocumentContent = (new XPathDocument(reader)).CreateNavigator().OuterXml;	
                         }
                     }
                     catch (Exception ex)

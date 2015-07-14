@@ -1,4 +1,4 @@
-﻿
+
 /* Add new column FriendlyName into the rb_GeneralModuleDefinitions table*/
 alter table dbo.rb_Pages add FriendlyURL[nvarchar](512) 
 GO

@@ -1063,6 +1063,12 @@ namespace Appleseed.Framework.Security
 
         #region MembershipExtension
 
+        /// <summary>
+        /// Admin chnage user password
+        /// </summary>
+        /// <param name="username">username</param>
+        /// <param name="Password">password</param>
+        /// <returns>true/false</returns>
         public static bool AdminChangeUsersPassword(string username, string Password) {
 
             var provider = (Appleseed.Framework.Providers.AppleseedMembershipProvider.AppleseedMembershipProvider)Membership.Provider;

@@ -41,6 +41,7 @@ namespace Appleseed.Framework.Web.UI
     using Path = Appleseed.Framework.Settings.Path;
 	using System.Web.Security;
     using Newtonsoft.Json.Linq;
+    using System.Data.SqlClient;
 
     /// <summary>
     /// TODO: this class needs a better write-up ;-)
@@ -205,7 +206,7 @@ namespace Appleseed.Framework.Web.UI
         /// <summary>
         ///   The user culture set.
         /// </summary>
-        private ResourceSet userCultureSet;
+        private ResourceSet userCultureSet = null;
 
         #endregion
 
@@ -1043,12 +1044,15 @@ namespace Appleseed.Framework.Web.UI
                 this.Header.Controls.Add(new LiteralControl(metaElement + "\n"));
             }
 
-            // ADD THE CSS <LINK> ELEMENT(S)
-            foreach (string cssFile in this.cssFileList.Values)
+             //ADD THE CSS <LINK> ELEMENT(S)
+            if (ConfigurationManager.AppSettings["CSSLoadTop"] == null || !bool.Parse(ConfigurationManager.AppSettings["CSSLoadTop"]))
             {
-                this.Header.Controls.Add(
-                    new LiteralControl(
-                        string.Format("<link rel=\"stylesheet\" href=\"{0}\" type=\"text/css\"/>\n", cssFile)));
+                foreach (string cssFile in this.cssFileList.Values)
+                {
+                    this.Header.Controls.Add(
+                        new LiteralControl(
+                            string.Format("<link rel=\"stylesheet\" href=\"{0}\" type=\"text/css\"/>\n", cssFile)));
+                }
             }
 
             if (this.PortalSettings != null)
@@ -1074,6 +1078,17 @@ namespace Appleseed.Framework.Web.UI
                 sb.AppendLine("-->");
                 sb.AppendLine("</style>");
 
+                //CSS - custom CSS loaded from the TabMenu - Done by Ashish Patel on 28/05/15
+                
+                SqlDataReader dr = Appleseed.Framework.Site.Data.TabSettings.CSSDataReader(PortalSettings.ActivePage.PageID, "TabLinkCSS");
+                
+                while (dr.Read())
+                {
+                    sb.AppendLine("<style type=\"text/css\">");
+                    sb.AppendLine (dr[0].ToString());
+                    sb.AppendLine("</style>");
+                }
+
                 this.Header.Controls.Add(new LiteralControl(sb + "\n"));
             }
 
@@ -1085,6 +1100,20 @@ namespace Appleseed.Framework.Web.UI
                         string.Format("<script type=\"text/javascript\" src=\"{0}\"></script>\n", script)));
             }
         }
+
+       /* protected virtual void BuildDefaultCss()
+        {
+            
+            // ADD THE CSS <LINK> ELEMENT(S)
+            foreach (string cssFile in this.cssFileList.Values)
+            {
+                this.Header.Controls.Add(
+                    new LiteralControl(
+                        string.Format("<link rel=\"stylesheet\" href=\"{0}\" type=\"text/css\"/>\n", cssFile)));
+            }
+
+            
+        }*/
 
         /// <summary>
         /// Loads the settings.
@@ -1284,6 +1313,10 @@ namespace Appleseed.Framework.Web.UI
             // any other code goes here
         }
 
+        /// <summary>
+        /// prerender event
+        /// </summary>
+        /// <param name="e">an instance of EventArgs</param>
         protected override void OnPreRender(EventArgs e) {
 
             if(Request.Browser.Browser.ToString().ToLower().Contains("ie"))
@@ -1549,6 +1582,7 @@ namespace Appleseed.Framework.Web.UI
         protected override void Render(HtmlTextWriter writer)
         {
             this.BuildDocType();
+            //this.BuildDefaultCss();
             this.BuildHead();
             this.BuildBody();
             base.Render(writer);
@@ -1766,6 +1800,12 @@ namespace Appleseed.Framework.Web.UI
             return c;
         }
 
+        /// <summary>
+        /// find controls 
+        /// </summary>
+        /// <typeparam name="T">control</typeparam>
+        /// <param name="parent">parent</param>
+        /// <returns>result</returns>
         public List<T> FindControls<T>(Control parent) where T : Control
         {
             List<T> foundControls = new List<T>();

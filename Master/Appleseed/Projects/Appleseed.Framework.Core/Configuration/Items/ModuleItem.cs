@@ -107,6 +107,12 @@ namespace Appleseed.Framework
             return 0;
         }
 
+        /// <summary>
+        /// Compare modules
+        /// </summary>
+        /// <param name="x">Module X</param>
+        /// <param name="y">Module Y</param>
+        /// <returns>no of items comapre</returns>
         static public int Compare(ModuleItem x, ModuleItem y)
         {
             int result = 1;

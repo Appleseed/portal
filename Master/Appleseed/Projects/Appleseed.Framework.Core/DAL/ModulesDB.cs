@@ -25,6 +25,8 @@ namespace Appleseed.Framework.Site.Data
     using Appleseed.Framework.Site.Configuration;
     using System.Web;
     using Appleseed.Framework.Models;
+    using Appleseed.Framework.DAL;
+    using Appleseed.Framework.Configuration.Items;
 
     /// <summary>
     /// Class that encapsulates all data logic necessary to add/query/delete
@@ -196,6 +198,11 @@ namespace Appleseed.Framework.Site.Data
         /// </summary>
         private const string StringsGetModulesInPage = "rb_GetModulesInTab";
 
+        /// <summary>
+        /// Portal ID
+        /// </summary>
+        public const string SelectedPortalID = "@PortalID";
+
         #endregion
 
         #region Public Methods
@@ -240,33 +247,41 @@ namespace Appleseed.Framework.Site.Data
             bool admin,
             bool searchable)
         {
-            using (var connection = Config.SqlConnectionString) {
-                using (var command = new SqlCommand("rb_AddGeneralModuleDefinitions", connection)) {
+            using (var connection = Config.SqlConnectionString)
+            {
+                using (var command = new SqlCommand("rb_AddGeneralModuleDefinitions", connection))
+                {
                     // Mark the Command as a SPROC
                     command.CommandType = CommandType.StoredProcedure;
 
                     // Add Parameters to SPROC
-                    var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier) {
+                    var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier)
+                    {
                         Value = generalModDefId
                     };
                     command.Parameters.Add(parameterGeneralModDefId);
-                    var parameterFriendlyName = new SqlParameter(StringsFriendlyName, SqlDbType.NVarChar, 128) {
+                    var parameterFriendlyName = new SqlParameter(StringsFriendlyName, SqlDbType.NVarChar, 128)
+                    {
                         Value = friendlyName
                     };
                     command.Parameters.Add(parameterFriendlyName);
-                    var parameterDesktopSrc = new SqlParameter(StringsDesktopSrc, SqlDbType.NVarChar, 256) {
+                    var parameterDesktopSrc = new SqlParameter(StringsDesktopSrc, SqlDbType.NVarChar, 256)
+                    {
                         Value = desktopSrc
                     };
                     command.Parameters.Add(parameterDesktopSrc);
-                    var parameterMobileSrc = new SqlParameter(StringsMobileSrc, SqlDbType.NVarChar, 256) {
+                    var parameterMobileSrc = new SqlParameter(StringsMobileSrc, SqlDbType.NVarChar, 256)
+                    {
                         Value = mobileSrc
                     };
                     command.Parameters.Add(parameterMobileSrc);
-                    var parameterAssemblyName = new SqlParameter(StringsAssemblyName, SqlDbType.VarChar, 50) {
+                    var parameterAssemblyName = new SqlParameter(StringsAssemblyName, SqlDbType.VarChar, 50)
+                    {
                         Value = assemblyName
                     };
                     command.Parameters.Add(parameterAssemblyName);
-                    var parameterClassName = new SqlParameter(StringsClassName, SqlDbType.NVarChar, 128) {
+                    var parameterClassName = new SqlParameter(StringsClassName, SqlDbType.NVarChar, 128)
+                    {
                         Value = className
                     };
                     command.Parameters.Add(parameterClassName);
@@ -278,9 +293,12 @@ namespace Appleseed.Framework.Site.Data
                     // Open the database connection and execute the command
                     connection.Open();
 
-                    try {
+                    try
+                    {
                         command.ExecuteNonQuery();
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex)
+                    {
                         ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in AddGeneralModuleDefinitions. ", ex);
                     }
 
@@ -378,16 +396,19 @@ namespace Appleseed.Framework.Site.Data
             // Changes by Geert.Audenaert@Syntegra.Com Date: 6/2/2003
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_AddModule", connection)) {
+            using (var command = new SqlCommand("rb_AddModule", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Add Parameters to SPROC
-                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4) {
+                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4)
+                {
                     Direction = ParameterDirection.Output
                 };
                 command.Parameters.Add(parameterModuleId);
-                var parameterModuleDefinitionId = new SqlParameter(StringsModuleDefId, SqlDbType.Int, 4) {
+                var parameterModuleDefinitionId = new SqlParameter(StringsModuleDefId, SqlDbType.Int, 4)
+                {
                     Value = moduleDefId
                 };
                 command.Parameters.Add(parameterModuleDefinitionId);
@@ -407,34 +428,40 @@ namespace Appleseed.Framework.Site.Data
                 command.Parameters.Add(parameterViewRoles);
                 var parameterAddRoles = new SqlParameter(StringsAddRoles, SqlDbType.NVarChar, 256) { Value = addRoles };
                 command.Parameters.Add(parameterAddRoles);
-                var parameterDeleteRoles = new SqlParameter(StringsDeleteRoles, SqlDbType.NVarChar, 256) {
+                var parameterDeleteRoles = new SqlParameter(StringsDeleteRoles, SqlDbType.NVarChar, 256)
+                {
                     Value = deleteRoles
                 };
                 command.Parameters.Add(parameterDeleteRoles);
-                var parameterPropertiesRoles = new SqlParameter(StringsPropertiesRoles, SqlDbType.NVarChar, 256) {
+                var parameterPropertiesRoles = new SqlParameter(StringsPropertiesRoles, SqlDbType.NVarChar, 256)
+                {
                     Value = propertiesRoles
                 };
                 command.Parameters.Add(parameterPropertiesRoles);
 
                 // Added by jviladiu@portalservices.net (19/08/2004)
-                var parameterMoveModuleRoles = new SqlParameter(StringsMoveModuleRoles, SqlDbType.NVarChar, 256) {
+                var parameterMoveModuleRoles = new SqlParameter(StringsMoveModuleRoles, SqlDbType.NVarChar, 256)
+                {
                     Value = moveModuleRoles
                 };
                 command.Parameters.Add(parameterMoveModuleRoles);
 
                 // Added by jviladiu@portalservices.net (19/08/2004)
-                var parameterDeleteModuleRoles = new SqlParameter(StringsDeleteModuleRoles, SqlDbType.NVarChar, 256) {
+                var parameterDeleteModuleRoles = new SqlParameter(StringsDeleteModuleRoles, SqlDbType.NVarChar, 256)
+                {
                     Value = deleteModuleRoles
                 };
                 command.Parameters.Add(parameterDeleteModuleRoles);
 
                 // Change by Geert.Audenaert@Syntegra.Com
                 // Date: 6/2/2003
-                var parameterPublishingRoles = new SqlParameter(StringsPublishingRoles, SqlDbType.NVarChar, 256) {
+                var parameterPublishingRoles = new SqlParameter(StringsPublishingRoles, SqlDbType.NVarChar, 256)
+                {
                     Value = publishingRoles
                 };
                 command.Parameters.Add(parameterPublishingRoles);
-                var parameterSupportWorkflow = new SqlParameter(StringsSupportWorkflow, SqlDbType.Bit, 1) {
+                var parameterSupportWorkflow = new SqlParameter(StringsSupportWorkflow, SqlDbType.Bit, 1)
+                {
                     Value = supportWorkflow
                 };
                 command.Parameters.Add(parameterSupportWorkflow);
@@ -444,14 +471,16 @@ namespace Appleseed.Framework.Site.Data
                 command.Parameters.Add(parameterShowMobile);
 
                 // Start Change john.mandia@whitelightsolutions.com
-                var parameterShowEveryWhere = new SqlParameter(StringsShowEveryWhere, SqlDbType.Bit, 1) {
+                var parameterShowEveryWhere = new SqlParameter(StringsShowEveryWhere, SqlDbType.Bit, 1)
+                {
                     Value = showEveryWhere
                 };
                 command.Parameters.Add(parameterShowEveryWhere);
 
                 // End Change  john.mandia@whitelightsolutions.com
                 // Start Change bja@reedtek.com
-                var parameterSupportCollapsable = new SqlParameter(StringsSupportCollapsible, SqlDbType.Bit, 1) {
+                var parameterSupportCollapsable = new SqlParameter(StringsSupportCollapsible, SqlDbType.Bit, 1)
+                {
                     Value = supportCollapsable
                 };
                 command.Parameters.Add(parameterSupportCollapsable);
@@ -459,9 +488,12 @@ namespace Appleseed.Framework.Site.Data
                 // End Change  bja@reedtek.com
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in AddModule. ", ex);
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in AddModule. ", ex);
                 }
@@ -493,7 +525,8 @@ namespace Appleseed.Framework.Site.Data
             // ReSharper disable HeuristicUnreachableCode
             using (var connection = Config.SqlConnectionString)
             using (
-                var command = new SqlCommand(useRecycler ? "rb_DeleteModuleToRecycler" : "rb_DeleteModule", connection)) {
+                var command = new SqlCommand(useRecycler ? "rb_DeleteModuleToRecycler" : "rb_DeleteModule", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -502,16 +535,19 @@ namespace Appleseed.Framework.Site.Data
                 command.Parameters.Add(parameterModuleId);
 
                 // ReSharper disable ConditionIsAlwaysTrueOrFalse
-                if (useRecycler) {
+                if (useRecycler)
+                {
                     // ReSharper restore ConditionIsAlwaysTrueOrFalse
                     // Recycler needs some extra params for entry
                     // Add Recycler-specific Parameters to SPROC
-                    var paramDeletedBy = new SqlParameter("@DeletedBy", SqlDbType.NVarChar, 250) {
+                    var paramDeletedBy = new SqlParameter("@DeletedBy", SqlDbType.NVarChar, 250)
+                    {
                         Value = MailHelper.GetCurrentUserEmailAddress()
                     };
                     command.Parameters.Add(paramDeletedBy);
 
-                    var paramDeletedDate = new SqlParameter("@DateDeleted", SqlDbType.DateTime, 8) {
+                    var paramDeletedDate = new SqlParameter("@DateDeleted", SqlDbType.DateTime, 8)
+                    {
                         Value = DateTime.Now
                     };
                     command.Parameters.Add(paramDeletedDate);
@@ -523,9 +559,12 @@ namespace Appleseed.Framework.Site.Data
                 // BOWEN 11 June 2005 - END
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in DeleteModule. Parameter : " + moduleId, ex);
                 }
@@ -545,13 +584,16 @@ namespace Appleseed.Framework.Site.Data
         public void DeleteModuleDefinition(Guid defId)
         {
             // Create Instance of Connection and Command Object
-            using (var connection = Config.SqlConnectionString) {
-                using (var command = new SqlCommand("rb_DeleteModuleDefinition", connection)) {
+            using (var connection = Config.SqlConnectionString)
+            {
+                using (var command = new SqlCommand("rb_DeleteModuleDefinition", connection))
+                {
                     // Mark the Command as a SPROC
                     command.CommandType = CommandType.StoredProcedure;
 
                     // Add Parameters to SPROC
-                    var parameterModuleDefId = new SqlParameter(StringsModuleDefId, SqlDbType.UniqueIdentifier) {
+                    var parameterModuleDefId = new SqlParameter(StringsModuleDefId, SqlDbType.UniqueIdentifier)
+                    {
                         Value = defId
                     };
                     command.Parameters.Add(parameterModuleDefId);
@@ -559,9 +601,12 @@ namespace Appleseed.Framework.Site.Data
                     // Open the database connection and execute the command
                     connection.Open();
 
-                    try {
+                    try
+                    {
                         command.ExecuteNonQuery();
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex)
+                    {
                         // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in DeleteModuleDefinition. Parameter : " + defID.ToString(), ex);
                         ErrorHandler.Publish(
                             LogLevel.Warn, "An Error Occurred in DeleteModuleDefinition. Parameter : " + defId, ex);
@@ -585,8 +630,10 @@ namespace Appleseed.Framework.Site.Data
         public bool ExistModuleProductsInPage(int pageId, int portalId)
         {
             // Create Instance of Connection and Command Object
-            using (var connection = Config.SqlConnectionString) {
-                using (var command = new SqlCommand(StringsGetModulesInPage, connection)) {
+            using (var connection = Config.SqlConnectionString)
+            {
+                using (var command = new SqlCommand(StringsGetModulesInPage, connection))
+                {
                     // Mark the Command as a SPROC
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -602,9 +649,12 @@ namespace Appleseed.Framework.Site.Data
                     var moduleGuid = new Guid("{EC24FABD-FB16-4978-8C81-1ADD39792377}");
                     var retorno = false;
 
-                    using (var result = command.ExecuteReader(CommandBehavior.CloseConnection)) {
-                        while (result.Read()) {
-                            if (moduleGuid.Equals(result.GetGuid(1))) {
+                    using (var result = command.ExecuteReader(CommandBehavior.CloseConnection))
+                    {
+                        while (result.Read())
+                        {
+                            if (moduleGuid.Equals(result.GetGuid(1)))
+                            {
                                 retorno = true;
                             }
                         }
@@ -631,7 +681,8 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_FindModulesByGuid", connection)) {
+            using (var command = new SqlCommand("rb_FindModulesByGuid", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -645,8 +696,10 @@ namespace Appleseed.Framework.Site.Data
                 connection.Open();
                 var modList = new List<ModuleItem>();
 
-                using (var result = command.ExecuteReader(CommandBehavior.CloseConnection)) {
-                    while (result.Read()) {
+                using (var result = command.ExecuteReader(CommandBehavior.CloseConnection))
+                {
+                    while (result.Read())
+                    {
                         var m = new ModuleItem { ID = (int)result["ModuleId"] };
                         modList.Add(m);
                     }
@@ -673,7 +726,8 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
-            var command = new SqlCommand("rb_FindModulesByGuid", connection) {
+            var command = new SqlCommand("rb_FindModulesByGuid", connection)
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
             };
@@ -693,23 +747,16 @@ namespace Appleseed.Framework.Site.Data
         }
 
         /// <summary>
-        /// The GetModuleDefinitions method returns a list of all module type definitions.
+        /// Get all portal modules 
         /// </summary>
-        /// <param name="portalId">
-        /// The portal ID.
-        /// </param>
-        /// <returns>
-        /// A SQL data reader.
-        /// </returns>
-        /// <remarks>
-        /// Other relevant sources: GetModuleDefinitions Stored Procedure
-        /// </remarks>
-        [Obsolete("Replace me, bad design practice to pass SqlDataReaders to the UI")]
-        public SqlDataReader GetCurrentModuleDefinitions(int portalId)
+        /// <param name="portalId">portal id</param>
+        /// <returns>module list</returns>
+        public List<CurrentModuleDefination> GetCurrentModuleDefinitions(int portalId)
         {
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
-            var command = new SqlCommand("rb_GetCurrentModuleDefinitions", connection) {
+            var command = new SqlCommand("rb_GetCurrentModuleDefinitions", connection)
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
             };
@@ -721,11 +768,22 @@ namespace Appleseed.Framework.Site.Data
             // Open the database connection and execute the command
             connection.Open();
             var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
+            List<CurrentModuleDefination> modulelist = new List<CurrentModuleDefination>();
 
+            while (dr.Read())
+            {
+                CurrentModuleDefination module = new CurrentModuleDefination();
+                module.FriendlyName = dr["FriendlyName"].ToString();
+                module.DesktopSrc = dr["DesktopSrc"].ToString();
+                module.MobileSrc = dr["MobileSrc"].ToString();
+                module.Admin = Convert.ToBoolean(dr["Admin"].ToString());
+                module.ModuleDefId = Convert.ToInt32(dr["ModuleDefId"].ToString());
+                modulelist.Add(module);
+            }
+            return modulelist;
             // Return the data reader
-            return dr;
+            // return dr;
         }
-
         /// <summary>
         /// The GetModuleDefinitions method returns a list of all module type definitions.
         /// </summary>
@@ -745,19 +803,24 @@ namespace Appleseed.Framework.Site.Data
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
             using (
-                var command = new SqlCommand("rb_GetCurrentModuleDefinitions", connection) {
+                var command = new SqlCommand("rb_GetCurrentModuleDefinitions", connection)
+                {
                     // Mark the Command as a SPROC
                     CommandType = CommandType.StoredProcedure
-                }) {
+                })
+            {
                 var parameterPortalId = new SqlParameter(StringsPortalId, SqlDbType.Int, 4) { Value = portalId };
                 command.Parameters.Add(parameterPortalId);
 
                 // Open the database connection and execute the command
                 connection.Open();
 
-                using (var dr = command.ExecuteReader(CommandBehavior.CloseConnection)) {
-                    while (dr.Read()) {
-                        var genModDef = new GeneralModuleDefinition {
+                using (var dr = command.ExecuteReader(CommandBehavior.CloseConnection))
+                {
+                    while (dr.Read())
+                    {
+                        var genModDef = new GeneralModuleDefinition
+                        {
                             FriendlyName = dr.GetString(0),
                             DesktopSource = dr.GetString(1),
                             MobileSource = dr.GetString(2),
@@ -787,16 +850,19 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_GetGeneralModuleDefinitionByName", connection)) {
+            using (var command = new SqlCommand("rb_GetGeneralModuleDefinitionByName", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Add Parameters to SPROC
-                var parameterFriendlyName = new SqlParameter("@FriendlyName", SqlDbType.NVarChar, 128) {
+                var parameterFriendlyName = new SqlParameter("@FriendlyName", SqlDbType.NVarChar, 128)
+                {
                     Value = moduleName
                 };
                 command.Parameters.Add(parameterFriendlyName);
-                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.UniqueIdentifier) {
+                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.UniqueIdentifier)
+                {
                     Direction = ParameterDirection.Output
                 };
                 command.Parameters.Add(parameterModuleId);
@@ -804,16 +870,23 @@ namespace Appleseed.Framework.Site.Data
                 // Execute the command
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } finally {
+                }
+                finally
+                {
                     connection.Close();
                 }
 
-                if (parameterModuleId.Value != null && parameterModuleId.Value.ToString().Length != 0) {
-                    try {
+                if (parameterModuleId.Value != null && parameterModuleId.Value.ToString().Length != 0)
+                {
+                    try
+                    {
                         return new Guid(parameterModuleId.Value.ToString());
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex)
+                    {
                         throw new Exception(string.Format("'{0}' seems not a valid Module GUID.", parameterModuleId.Value), ex);
 
                         // Jes1111
@@ -847,7 +920,8 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_GetModuleDefinitionByGuid", connection)) {
+            using (var command = new SqlCommand("rb_GetModuleDefinitionByGuid", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -856,16 +930,20 @@ namespace Appleseed.Framework.Site.Data
                 command.Parameters.Add(parameterFriendlyName);
                 var parameterPortalId = new SqlParameter(StringsPortalId, SqlDbType.Int, 4) { Value = portalId };
                 command.Parameters.Add(parameterPortalId);
-                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4) {
+                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4)
+                {
                     Direction = ParameterDirection.Output
                 };
                 command.Parameters.Add(parameterModuleId);
 
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in GetModuleDefinitionByGuid. Parameter : " + guid, ex);
                 }
@@ -891,26 +969,32 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_GetModuleDefinitionByName", connection)) {
+            using (var command = new SqlCommand("rb_GetModuleDefinitionByName", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Add Parameters to SPROC
-                var parameterFriendlyName = new SqlParameter(StringsFriendlyName, SqlDbType.NVarChar, 128) {
+                var parameterFriendlyName = new SqlParameter(StringsFriendlyName, SqlDbType.NVarChar, 128)
+                {
                     Value = moduleName
                 };
                 command.Parameters.Add(parameterFriendlyName);
                 var parameterPortalId = new SqlParameter(StringsPortalId, SqlDbType.Int, 4) { Value = portalId };
                 command.Parameters.Add(parameterPortalId);
-                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4) {
+                var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4)
+                {
                     Direction = ParameterDirection.Output
                 };
                 command.Parameters.Add(parameterModuleId);
 
                 connection.Open();
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in GetModuleDefinitionByName. Parameter : " + moduleName, ex);
                 }
@@ -920,19 +1004,15 @@ namespace Appleseed.Framework.Site.Data
         }
 
         /// <summary>
-        /// The GetModuleDefinitions method returns a list of all module type
-        ///   definitions for the portal.<br/>
-        ///   GetModuleDefinitions Stored Procedure
+        /// Get module definitions
         /// </summary>
-        /// <returns>
-        /// A SQL data reader.
-        /// </returns>
-        [Obsolete("Replace me, bad design practice to pass SqlDataReaders to the UI")]
-        public SqlDataReader GetModuleDefinitions()
+        /// <returns></returns>
+        public List<CurrentModuleDefination> GetModuleDefinitions()
         {
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
-            var command = new SqlCommand("rb_GetModuleDefinitions", connection) {
+            var command = new SqlCommand("rb_GetModuleDefinitions", connection)
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
             };
@@ -941,10 +1021,22 @@ namespace Appleseed.Framework.Site.Data
             connection.Open();
             var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
 
+            List<CurrentModuleDefination> modulelist = new List<CurrentModuleDefination>();
+            CurrentModuleDefination module = new CurrentModuleDefination();
+            while (dr.Read())
+            {
+                Guid moddef = new Guid();
+                Guid.TryParse(dr["GeneralModDefID"].ToString(), out moddef);
+                module.GeneralModDefID = moddef;
+                module.FriendlyName = dr["FriendlyName"].ToString();
+                module.DesktopSrc = dr["DesktopSrc"].ToString();
+                module.MobileSrc = dr["MobileSrc"].ToString();
+                modulelist.Add(module);
+            }
+            return modulelist;
             // Return the data reader
-            return dr;
+            //return dr;
         }
-
         /// <summary>
         /// Gets the module GUID.
         /// </summary>
@@ -958,22 +1050,28 @@ namespace Appleseed.Framework.Site.Data
         {
             var moduleGuid = Guid.Empty;
             var cacheGuid = string.Format("{0}GUID", Key.ModuleSettings(moduleId));
-            if (CurrentCache.Get(cacheGuid) == null) {
+            if (CurrentCache.Get(cacheGuid) == null)
+            {
                 using (var connection = Config.SqlConnectionString)
-                using (var command = new SqlCommand("rb_GetGuid", connection)) {
+                using (var command = new SqlCommand("rb_GetGuid", connection))
+                {
                     command.CommandType = CommandType.StoredProcedure;
                     var parameterModuleId = new SqlParameter(StringsModuleId, SqlDbType.Int, 4) { Value = moduleId };
                     command.Parameters.Add(parameterModuleId);
                     connection.Open();
-                    using (var dr = command.ExecuteReader()) {
-                        if (dr.Read()) {
+                    using (var dr = command.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
                             moduleGuid = dr.GetGuid(0);
                         }
                     }
                 }
 
                 CurrentCache.Insert(cacheGuid, moduleGuid);
-            } else {
+            }
+            else
+            {
                 moduleGuid = (Guid)CurrentCache.Get(cacheGuid);
             }
 
@@ -994,19 +1092,25 @@ namespace Appleseed.Framework.Site.Data
         {
             var portalList = new List<ListItem>();
 
-            using (var sqlCommand = new SqlCommand("rb_GetModuleInUse") {
+            using (var sqlCommand = new SqlCommand("rb_GetModuleInUse")
+            {
                 CommandType = CommandType.StoredProcedure
-            }) {
+            })
+            {
                 var parameterdefId = new SqlParameter(StringsModuleId, SqlDbType.UniqueIdentifier) { Value = defId };
                 sqlCommand.Parameters.Add(parameterdefId);
 
-                using (var portals = DBHelper.GetDataReader(sqlCommand)) {
-                    while (portals.Read()) {
-                        if (Convert.ToInt32(portals["PortalID"]) < 0) {
+                using (var portals = DBHelper.GetDataReader(sqlCommand))
+                {
+                    while (portals.Read())
+                    {
+                        if (Convert.ToInt32(portals["PortalID"]) < 0)
+                        {
                             continue;
                         }
 
-                        var item = new ListItem {
+                        var item = new ListItem
+                        {
                             Text = portals["PortalName"].ToString(),
                             Value = portals["PortalID"].ToString(),
                             Selected = portals["checked"].ToString() == "1"
@@ -1028,25 +1132,30 @@ namespace Appleseed.Framework.Site.Data
         /// <returns>
         /// A data table.
         /// </returns>
-        [Obsolete("Replace me, bad design practice to pass SqlDataReaders to the UI")]
         public DataTable GetModulesAllPortals()
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlDataAdapter("rb_GetModulesAllPortals", connection)) {
+            using (var command = new SqlDataAdapter("rb_GetModulesAllPortals", connection))
+            {
                 // Mark the Command as a SPROC
                 command.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 // Create and Fill the DataSet
-                using (var dataTable = new DataTable()) {
-                    try {
+                using (var dataTable = new DataTable())
+                {
+                    try
+                    {
                         command.Fill(dataTable);
-                    } finally {
+                    }
+                    finally
+                    {
                         connection.Close(); // by Manu fix close bug #2
                     }
 
                     // Translate
-                    foreach (var dr in dataTable.Rows.Cast<DataRow>().Where(dr => dr[1].ToString() == StringsNoModule)) {
+                    foreach (var dr in dataTable.Rows.Cast<DataRow>().Where(dr => dr[1].ToString() == StringsNoModule))
+                    {
                         dr[1] = General.GetString(StringsNoModule);
                         break;
                     }
@@ -1057,30 +1166,60 @@ namespace Appleseed.Framework.Site.Data
             }
         }
 
+        ///// <summary>
+        ///// The GetModuleByName method returns a list of all module with
+        /////   the specified Name (Type) within the Portal.
+        /////   It is used to get all instances of a specified module used in a Portal.
+        /////   e.g. All Image Gallery
+        ///// </summary>
+        ///// <param name="moduleName">
+        ///// Name of the module.
+        ///// </param>
+        ///// <param name="portalId">
+        ///// The portal ID.
+        ///// </param>
+        ///// <returns>
+        ///// A SQL data reader.
+        ///// </returns>
+        ///// <remarks>
+        ///// Other relevant sources: GetModuleByName Stored Procedure
+        ///// </remarks>
+        //[Obsolete("Replace me, bad design practice to pass SqlDataReaders to the UI")]
+        //public SqlDataReader GetModulesByName(string moduleName, int portalId)
+        //{
+        //    // Create Instance of Connection and Command Object
+        //    var connection = Config.SqlConnectionString;
+        //    var command = new SqlCommand("rb_GetModulesByName", connection) {
+        //        // Mark the Command as a SPROC
+        //        CommandType = CommandType.StoredProcedure
+        //    };
+
+        //    // Add Parameters to SPROC
+        //    var parameterFriendlyName = new SqlParameter("@moduleName", SqlDbType.NVarChar, 128) { Value = moduleName };
+        //    command.Parameters.Add(parameterFriendlyName);
+        //    var parameterPortalId = new SqlParameter(StringsPortalId, SqlDbType.Int, 4) { Value = portalId };
+        //    command.Parameters.Add(parameterPortalId);
+
+        //    // Open the database connection and execute the command
+        //    connection.Open();
+        //    var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
+
+        //    // Return the data reader
+        //    return dr;
+        //}
+
         /// <summary>
-        /// The GetModuleByName method returns a list of all module with
-        ///   the specified Name (Type) within the Portal.
-        ///   It is used to get all instances of a specified module used in a Portal.
-        ///   e.g. All Image Gallery
+        /// Get modules by Name
         /// </summary>
-        /// <param name="moduleName">
-        /// Name of the module.
-        /// </param>
-        /// <param name="portalId">
-        /// The portal ID.
-        /// </param>
-        /// <returns>
-        /// A SQL data reader.
-        /// </returns>
-        /// <remarks>
-        /// Other relevant sources: GetModuleByName Stored Procedure
-        /// </remarks>
-        [Obsolete("Replace me, bad design practice to pass SqlDataReaders to the UI")]
-        public SqlDataReader GetModulesByName(string moduleName, int portalId)
+        /// <param name="moduleName">modulename</param>
+        /// <param name="portalId">portal id</param>
+        /// <returns></returns>
+        public List<ModuleItem> GetModulesByName(string moduleName, int portalId)
         {
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
-            var command = new SqlCommand("rb_GetModulesByName", connection) {
+            var command = new SqlCommand("rb_GetModulesByName", connection)
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
             };
@@ -1095,9 +1234,20 @@ namespace Appleseed.Framework.Site.Data
             connection.Open();
             var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
 
+            List<ModuleItem> modulelist = new List<ModuleItem>();
+
+            while (dr.Read())
+            {
+                ModuleItem module = new ModuleItem();
+                module.ID = Convert.ToInt32(dr["ModuleID"]);
+                module.Title = dr["ModuleTitle"].ToString();
+                modulelist.Add(module);
+            }
+
             // Return the data reader
-            return dr;
+            return modulelist;
         }
+
 
         /// <summary>
         /// Gets the modules in page.
@@ -1116,7 +1266,8 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
-            var command = new SqlCommand(StringsGetModulesInPage, connection) {
+            var command = new SqlCommand(StringsGetModulesInPage, connection)
+            {
                 CommandType = CommandType.StoredProcedure
             };
 
@@ -1145,12 +1296,12 @@ namespace Appleseed.Framework.Site.Data
         /// <returns>
         /// A data table.
         /// </returns>
-        [Obsolete("Replace me, bad design practice to pass SqlDataReaders to the UI")]
         public DataTable GetModulesSinglePortal(int portalId)
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlDataAdapter("rb_GetModulesSinglePortal", connection)) {
+            using (var command = new SqlDataAdapter("rb_GetModulesSinglePortal", connection))
+            {
                 // Mark the Command as a SPROC
                 command.SelectCommand.CommandType = CommandType.StoredProcedure;
 
@@ -1159,15 +1310,20 @@ namespace Appleseed.Framework.Site.Data
                 command.SelectCommand.Parameters.Add(parameterPortalId);
 
                 // Create and Fill the DataSet
-                using (var dataTable = new DataTable()) {
-                    try {
+                using (var dataTable = new DataTable())
+                {
+                    try
+                    {
                         command.Fill(dataTable);
-                    } finally {
+                    }
+                    finally
+                    {
                         connection.Close(); // by Manu fix close bug #2
                     }
 
                     // Translate
-                    foreach (var dr in dataTable.Rows.Cast<DataRow>().Where(dr => dr[1].ToString() == StringsNoModule)) {
+                    foreach (var dr in dataTable.Rows.Cast<DataRow>().Where(dr => dr[1].ToString() == StringsNoModule))
+                    {
                         dr[1] = General.GetString(StringsNoModule);
                         break;
                     }
@@ -1195,11 +1351,14 @@ namespace Appleseed.Framework.Site.Data
         public GeneralModuleDefinition GetSingleModuleDefinition(Guid generalModDefId)
         {
             // Create Instance of Connection and Command Object
-            using (var sqlCommand = new SqlCommand("rb_GetSingleModuleDefinition") {
+            using (var sqlCommand = new SqlCommand("rb_GetSingleModuleDefinition")
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
-            }) {
-                var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier) {
+            })
+            {
+                var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier)
+                {
                     Value = generalModDefId
                 };
                 sqlCommand.Parameters.Add(parameterGeneralModDefId);
@@ -1207,7 +1366,8 @@ namespace Appleseed.Framework.Site.Data
                 // Execute the command and get the data reader 
                 var dr = DBHelper.GetDataReader(sqlCommand);
                 var moduleDefinition = new GeneralModuleDefinition();
-                while (dr.Read()) {
+                while (dr.Read())
+                {
                     moduleDefinition.FriendlyName = dr["FriendlyName"].ToString();
                     moduleDefinition.DesktopSource = dr["DesktopSrc"].ToString();
                     moduleDefinition.MobileSource = dr["MobileSrc"].ToString();
@@ -1267,20 +1427,26 @@ namespace Appleseed.Framework.Site.Data
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
             using (
-                var command = new SqlCommand("rb_GetSolutionModuleDefinitions", connection) {
+                var command = new SqlCommand("rb_GetSolutionModuleDefinitions", connection)
+                {
                     // Mark the Command as a SPROC
                     CommandType = CommandType.StoredProcedure
-                }) {
+                })
+            {
                 var parameterSolutionId = new SqlParameter("@SolutionID", SqlDbType.Int, 4) { Value = solutionId };
                 command.Parameters.Add(parameterSolutionId);
 
                 // Open the database connection and execute the command
                 connection.Open();
-                using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection)) {
-                    try {
+                using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection))
+                {
+                    try
+                    {
                         // Always call Read before accessing data.
-                        while (reader.Read()) {
-                            var definition = new SolutionModuleDefinition {
+                        while (reader.Read())
+                        {
+                            var definition = new SolutionModuleDefinition
+                            {
                                 SolutionModuleDefinitionId = reader.GetInt32(0),
                                 GeneralModuleDefinitionId = reader.GetGuid(1),
                                 SolutionsId = reader.GetInt32(2)
@@ -1288,7 +1454,9 @@ namespace Appleseed.Framework.Site.Data
 
                             definitions.Add(definition);
                         }
-                    } finally {
+                    }
+                    finally
+                    {
                         reader.Close(); // by Manu, fixed bug 807858
                     }
                 }
@@ -1311,7 +1479,8 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
-            var command = new SqlCommand("rb_GetSolutions", connection) {
+            var command = new SqlCommand("rb_GetSolutions", connection)
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
             };
@@ -1363,26 +1532,31 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_UpdateGeneralModuleDefinitions", connection)) {
+            using (var command = new SqlCommand("rb_UpdateGeneralModuleDefinitions", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Update Parameters to SPROC
-                var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier) {
+                var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier)
+                {
                     Value = generalModDefId
                 };
                 command.Parameters.Add(parameterGeneralModDefId);
-                var parameterFriendlyName = new SqlParameter(StringsFriendlyName, SqlDbType.NVarChar, 128) {
+                var parameterFriendlyName = new SqlParameter(StringsFriendlyName, SqlDbType.NVarChar, 128)
+                {
                     Value = friendlyName
                 };
                 command.Parameters.Add(parameterFriendlyName);
-                var parameterDesktopSrc = new SqlParameter(StringsDesktopSrc, SqlDbType.NVarChar, 256) {
+                var parameterDesktopSrc = new SqlParameter(StringsDesktopSrc, SqlDbType.NVarChar, 256)
+                {
                     Value = desktopSrc
                 };
                 command.Parameters.Add(parameterDesktopSrc);
                 var parameterMobileSrc = new SqlParameter(StringsMobileSrc, SqlDbType.NVarChar, 256) { Value = mobileSrc };
                 command.Parameters.Add(parameterMobileSrc);
-                var parameterAssemblyName = new SqlParameter(StringsAssemblyName, SqlDbType.VarChar, 50) {
+                var parameterAssemblyName = new SqlParameter(StringsAssemblyName, SqlDbType.VarChar, 50)
+                {
                     Value = assemblyName
                 };
                 command.Parameters.Add(parameterAssemblyName);
@@ -1396,9 +1570,12 @@ namespace Appleseed.Framework.Site.Data
                 // Execute the command
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateGeneralModuleDefinitions", ex));
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateGeneralModuleDefinitions", ex);
                 }
@@ -1493,8 +1670,10 @@ namespace Appleseed.Framework.Site.Data
         {
             // Changes by Geert.Audenaert@Syntegra.Com Date: 6/2/2003
             // Create Instance of Connection and Command Object
-            using (var connection = Config.SqlConnectionString) {
-                using (var command = new SqlCommand("rb_UpdateModule", connection)) {
+            using (var connection = Config.SqlConnectionString)
+            {
+                using (var command = new SqlCommand("rb_UpdateModule", connection))
+                {
                     // Mark the Command as a SPROC
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -1503,58 +1682,69 @@ namespace Appleseed.Framework.Site.Data
                     command.Parameters.Add(parameterModuleId);
                     var parameterPageId = new SqlParameter(StringsPageId, SqlDbType.Int, 4) { Value = pageId };
                     command.Parameters.Add(parameterPageId);
-                    var parameterModuleOrder = new SqlParameter(StringsModuleOrder, SqlDbType.Int, 4) {
+                    var parameterModuleOrder = new SqlParameter(StringsModuleOrder, SqlDbType.Int, 4)
+                    {
                         Value = moduleOrder
                     };
                     command.Parameters.Add(parameterModuleOrder);
                     var parameterTitle = new SqlParameter(StringsModuleTitle, SqlDbType.NVarChar, 256) { Value = title };
                     command.Parameters.Add(parameterTitle);
-                    var parameterPaneName = new SqlParameter(StringsPaneName, SqlDbType.NVarChar, 256) {
+                    var parameterPaneName = new SqlParameter(StringsPaneName, SqlDbType.NVarChar, 256)
+                    {
                         Value = paneName
                     };
                     command.Parameters.Add(parameterPaneName);
                     var parameterCacheTime = new SqlParameter(StringsCacheTime, SqlDbType.Int, 4) { Value = cacheTime };
                     command.Parameters.Add(parameterCacheTime);
-                    var parameterEditRoles = new SqlParameter(StringsEditRoles, SqlDbType.NVarChar, 256) {
+                    var parameterEditRoles = new SqlParameter(StringsEditRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = editRoles
                     };
                     command.Parameters.Add(parameterEditRoles);
-                    var parameterViewRoles = new SqlParameter(StringsViewRoles, SqlDbType.NVarChar, 256) {
+                    var parameterViewRoles = new SqlParameter(StringsViewRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = viewRoles
                     };
                     command.Parameters.Add(parameterViewRoles);
-                    var parameterAddRoles = new SqlParameter(StringsAddRoles, SqlDbType.NVarChar, 256) {
+                    var parameterAddRoles = new SqlParameter(StringsAddRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = addRoles
                     };
                     command.Parameters.Add(parameterAddRoles);
-                    var parameterDeleteRoles = new SqlParameter(StringsDeleteRoles, SqlDbType.NVarChar, 256) {
+                    var parameterDeleteRoles = new SqlParameter(StringsDeleteRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = deleteRoles
                     };
                     command.Parameters.Add(parameterDeleteRoles);
-                    var parameterPropertiesRoles = new SqlParameter(StringsPropertiesRoles, SqlDbType.NVarChar, 256) {
+                    var parameterPropertiesRoles = new SqlParameter(StringsPropertiesRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = propertiesRoles
                     };
                     command.Parameters.Add(parameterPropertiesRoles);
 
                     // Added by jviladiu@portalservices.net (19/08/2004)
-                    var parameterMoveModuleRoles = new SqlParameter(StringsMoveModuleRoles, SqlDbType.NVarChar, 256) {
+                    var parameterMoveModuleRoles = new SqlParameter(StringsMoveModuleRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = moveModuleRoles
                     };
                     command.Parameters.Add(parameterMoveModuleRoles);
 
                     // Added by jviladiu@portalservices.net (19/08/2004)
-                    var parameterDeleteModuleRoles = new SqlParameter(StringsDeleteModuleRoles, SqlDbType.NVarChar, 256) {
+                    var parameterDeleteModuleRoles = new SqlParameter(StringsDeleteModuleRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = deleteModuleRoles
                     };
                     command.Parameters.Add(parameterDeleteModuleRoles);
 
                     // Change by Geert.Audenaert@Syntegra.Com
                     // Date: 6/2/2003
-                    var parameterPublishingRoles = new SqlParameter(StringsPublishingRoles, SqlDbType.NVarChar, 256) {
+                    var parameterPublishingRoles = new SqlParameter(StringsPublishingRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = publishingRoles
                     };
                     command.Parameters.Add(parameterPublishingRoles);
-                    var parameterSupportWorkflow = new SqlParameter(StringsSupportWorkflow, SqlDbType.Bit, 1) {
+                    var parameterSupportWorkflow = new SqlParameter(StringsSupportWorkflow, SqlDbType.Bit, 1)
+                    {
                         Value = supportWorkflow
                     };
                     command.Parameters.Add(parameterSupportWorkflow);
@@ -1562,7 +1752,8 @@ namespace Appleseed.Framework.Site.Data
                     // End Change Geert.Audenaert@Syntegra.Com
                     // Change by Geert.Audenaert@Syntegra.Com
                     // Date: 27/2/2003
-                    var parameterApprovalRoles = new SqlParameter(StringsApprovalRoles, SqlDbType.NVarChar, 256) {
+                    var parameterApprovalRoles = new SqlParameter(StringsApprovalRoles, SqlDbType.NVarChar, 256)
+                    {
                         Value = approvalRoles
                     };
                     command.Parameters.Add(parameterApprovalRoles);
@@ -1572,14 +1763,16 @@ namespace Appleseed.Framework.Site.Data
                     command.Parameters.Add(parameterShowMobile);
 
                     // Addition by john.mandia@whitelightsolutions.com to add show on every page functionality
-                    var parameterShowEveryWhere = new SqlParameter(StringsShowEveryWhere, SqlDbType.Bit, 1) {
+                    var parameterShowEveryWhere = new SqlParameter(StringsShowEveryWhere, SqlDbType.Bit, 1)
+                    {
                         Value = showEveryWhere
                     };
                     command.Parameters.Add(parameterShowEveryWhere);
 
                     // Change by baj@reedtek.com
                     // Date: 16/5/2003
-                    var parameterSupportCollapsable = new SqlParameter(StringsSupportCollapsible, SqlDbType.Bit, 1) {
+                    var parameterSupportCollapsable = new SqlParameter(StringsSupportCollapsible, SqlDbType.Bit, 1)
+                    {
                         Value = supportCollapsable
                     };
                     command.Parameters.Add(parameterSupportCollapsable);
@@ -1587,9 +1780,12 @@ namespace Appleseed.Framework.Site.Data
                     // End Change baj@reedtek.com
                     connection.Open();
 
-                    try {
+                    try
+                    {
                         command.ExecuteNonQuery();
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex)
+                    {
                         // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModule", ex);
                         ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModule", ex);
                     }
@@ -1616,12 +1812,14 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_UpdateModuleDefinitions", connection)) {
+            using (var command = new SqlCommand("rb_UpdateModuleDefinitions", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
                 // Add Parameters to SPROC
-                var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier) {
+                var parameterGeneralModDefId = new SqlParameter(StringsGeneralModDefId, SqlDbType.UniqueIdentifier)
+                {
                     Value = generalModDefId
                 };
                 command.Parameters.Add(parameterGeneralModDefId);
@@ -1634,9 +1832,12 @@ namespace Appleseed.Framework.Site.Data
 
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModuleDefinitions", ex);
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModuleDefinitions", ex);
                 }
@@ -1660,7 +1861,8 @@ namespace Appleseed.Framework.Site.Data
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_UpdateModuleOrder", connection)) {
+            using (var command = new SqlCommand("rb_UpdateModuleOrder", connection))
+            {
                 // Mark the Command as a SPROC
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -1673,9 +1875,12 @@ namespace Appleseed.Framework.Site.Data
                 command.Parameters.Add(parameterPaneName);
                 connection.Open();
 
-                try {
+                try
+                {
                     command.ExecuteNonQuery();
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModuleOrder", ex);
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModuleOrder", ex);
                 }
@@ -1715,8 +1920,10 @@ namespace Appleseed.Framework.Site.Data
 
         public int UpdateModuleTitle(int moduleId, string title)
         {
-            using (var connection = Config.SqlConnectionString) {
-                using (var command = new SqlCommand("rb_UpdateModuleTitle", connection)) {
+            using (var connection = Config.SqlConnectionString)
+            {
+                using (var command = new SqlCommand("rb_UpdateModuleTitle", connection))
+                {
                     // Mark the Command as a SPROC
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -1729,9 +1936,12 @@ namespace Appleseed.Framework.Site.Data
                     // End Change baj@reedtek.com
                     connection.Open();
 
-                    try {
+                    try
+                    {
                         command.ExecuteNonQuery();
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex)
+                    {
                         // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModule", ex);
                         ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModuleTitle", ex);
                         throw new Exception("An Error Occurred in UpdateModuleTitle");
@@ -1742,6 +1952,12 @@ namespace Appleseed.Framework.Site.Data
             }
         }
 
+        /// <summary>
+        /// Get module settings in page
+        /// </summary>
+        /// <param name="PageId">page id</param>
+        /// <param name="PaneName">pane name</param>
+        /// <returns>list of module settings</returns>
         public List<IModuleSettings> getModulesSettingsInPage(int PageId, string PaneName)
         {
 
@@ -1750,10 +1966,12 @@ namespace Appleseed.Framework.Site.Data
 
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
-            using (var command = new SqlCommand("rb_GetModulesSettingsInPage", connection) {
+            using (var command = new SqlCommand("rb_GetModulesSettingsInPage", connection)
+            {
                 // Mark the Command as a SPROC
                 CommandType = CommandType.StoredProcedure
-            }) {
+            })
+            {
 
                 // Add Parameters to SPROC
                 var parameterPageId = new SqlParameter(StringsPageId, SqlDbType.Int, 4) { Value = PageId };
@@ -1764,10 +1982,13 @@ namespace Appleseed.Framework.Site.Data
 
                 // Open the database connection and execute the command
                 connection.Open();
-                using (var reader = command.ExecuteReader()) {
-                    try {
+                using (var reader = command.ExecuteReader())
+                {
+                    try
+                    {
                         // Always call Read before accessing data.
-                        while (reader.Read()) {
+                        while (reader.Read())
+                        {
                             IModuleSettings module = new ModuleSettings();
                             module.ModuleID = reader.GetInt32(0);
                             module.ModuleDefID = reader.GetInt32(1);
@@ -1778,7 +1999,9 @@ namespace Appleseed.Framework.Site.Data
 
                             modules.Add(module);
                         }
-                    } finally {
+                    }
+                    finally
+                    {
                         reader.Close();
                         connection.Close();
                     }
@@ -1786,22 +2009,69 @@ namespace Appleseed.Framework.Site.Data
             }
 
             return modules;
-
-
         }
 
+        /// <summary>
+        /// Get module by portal id
+        /// </summary>
+        /// <param name="portalID"></param>
+        /// <returns></returns>
+        public List<IModuleSettings> GetModuleByPortalID(int portalID)
+        {
+            var modules = new List<IModuleSettings>();
+            // Create Instance of Connection and Command Object
+            using (var connection = Config.SqlConnectionString)
+            using (var command = new SqlCommand("rb_GetHtmlModuleByPortalID", connection)
+            {
+                // Mark the Command as a SPROC
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+
+                // Add Parameters to SPROC
+                var parameterPageId = new SqlParameter(SelectedPortalID, SqlDbType.Int, 4) { Value = portalID };
+                command.Parameters.Add(parameterPageId);
+
+                // Open the database connection and execute the command
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    try
+                    {
+                        // Always call Read before accessing data.
+                        while (reader.Read())
+                        {
+                            IModuleSettings module = new ModuleSettings();
+                            module.ModuleID = reader.GetInt32(0);
+                            module.ModuleTitle = reader.GetString(1);
+                            modules.Add(module);
+                        }
+                    }
+                    finally
+                    {
+                        reader.Close();
+                        connection.Close();
+                    }
+                }
+            }
+            return modules;
+        }
 
         #endregion
 
         internal static int AddModuleDefinition(Guid generalModuleDefId, int portalId)
         {
             var moduleDefId = -1;
-            using (AppleseedDBContext context = new AppleseedDBContext()) {
+            using (AppleseedDBContext context = new AppleseedDBContext())
+            {
                 var current = context.rb_ModuleDefinitions.Where(d => d.GeneralModDefID == generalModuleDefId && d.PortalID == portalId).FirstOrDefault();
 
-                if (current != default(rb_ModuleDefinitions)) {
+                if (current != default(rb_ModuleDefinitions))
+                {
                     moduleDefId = current.ModuleDefID;
-                } else {
+                }
+                else
+                {
                     var entity = new rb_ModuleDefinitions() { PortalID = portalId, GeneralModDefID = generalModuleDefId };
                     context.rb_ModuleDefinitions.AddObject(entity);
                     context.SaveChanges();
