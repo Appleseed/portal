@@ -34,6 +34,7 @@ namespace Appleseed
 
     using Page = Appleseed.Framework.Web.UI.Page;
     using System.Collections;
+    using System.Data.SqlClient;
 
     /// <summary>
     /// The DesktopDefault.aspx page is used 
@@ -69,6 +70,23 @@ namespace Appleseed
             // this.Load += new EventHandler(this.DesktopDefault_Load);
             base.OnInit(e);
             this.DesktopDefault_Load(this, null);
+        }
+
+
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+            //Javascript loading at the bottom of the page - Done by Ashish - 28/05/15
+            //Appleseed.Framework.Site.Data.TabSettings objdr = new Appleseed.Framework.Site.Data.TabSettings();
+            SqlDataReader SRJS = Appleseed.Framework.Site.Data.TabSettings.JSDataReader(PortalSettings.ActivePage.PageID, "TabLinkJS");
+            var sb = new StringBuilder();
+            while (SRJS.Read())
+            {
+                sb.AppendLine("<script type=\"text/javascript\">");
+                sb.AppendLine(SRJS[0].ToString());
+                sb.AppendLine("</script>");
+            }
+            this.ClientScript.RegisterStartupScript(this.GetType(), "JS", sb.ToString());
         }
 
         /// <summary>

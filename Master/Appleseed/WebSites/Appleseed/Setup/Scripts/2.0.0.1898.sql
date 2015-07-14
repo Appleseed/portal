@@ -1,5 +1,6 @@
-DECLARE @TAB_ID int;
 
+DECLARE @TAB_ID int;
+/*
 DECLARE db_cursor CURSOR FOR
 SELECT PAGEID from [dbo].[rb_Pages] where PortalID = 0 and AuthorizedRoles like '%Admins%'
 
@@ -17,3 +18,4 @@ BEGIN
 	FETCH NEXT FROM db_cursor INTO @TAB_ID 
 END
 CLOSE db_cursor
+*/

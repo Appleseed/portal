@@ -1,0 +1,31 @@
+﻿.Content {
+    height: 480px;
+   overflow-y:auto;
+}
+
+.control {
+    height: 10%;
+}
+
+.maincontain{
+    height:100%;
+}
+
+#footerpopup{
+   padding:10px;
+}
+
+#Page_Modules .ModuleWrap{
+    width : 75% !important;
+}
+
+#newjsTree .jstree-anchor{
+    color: #4d4d4d;
+  font-size: 13px;
+}
+
+#Content{
+     height: 441px;
+   overflow-y:auto;
+}
+
