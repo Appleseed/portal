@@ -902,6 +902,13 @@
     <Compile Include="DesktopModules\CoreModules\FileManager\FileManager.ascx.designer.cs">
       <DependentUpon>FileManager.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx.cs">
+      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx.designer.cs">
+      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\HTMLDocument\AlohaHtmlEditorService.asmx.cs">
       <DependentUpon>AlohaHtmlEditorService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -8324,6 +8331,7 @@
     <Content Include="DesktopModules\CoreModules\FileManager\example.jpg" />
     <Content Include="DesktopModules\CoreModules\FileManager\FileManager.ascx" />
     <Content Include="DesktopModules\CoreModules\FileManager\FileManager.xml" />
+    <Content Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx" />
     <Content Include="DesktopModules\CoreModules\FileManager\images\btnDelete.jpg" />
     <Content Include="DesktopModules\CoreModules\FileManager\images\btnNewFolder.jpg" />
     <Content Include="DesktopModules\CoreModules\FileManager\images\btnUp.jpg" />
