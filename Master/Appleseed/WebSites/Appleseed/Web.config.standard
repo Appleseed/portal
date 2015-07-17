@@ -621,6 +621,7 @@
 			<add name="AppleseedUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
 			<add name="AppleseedSeoUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedSeoUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
 		</providers>
+    
 		<rewrites>
 			<!--<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />-->
 			<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
