@@ -165,12 +165,32 @@
 		<add key="AddWwwToRequest" value="false" />
 		<add key="MaxTokenDays" value="7" /> <!-- In days -->
 		<add key="ViewEngineCacheTime" value="10" />
-    <add key="webpages:Version" value="2.0.0.0" />
-    <add key="PreserveLoginUrl" value="true" />
-    <add key="PortalSettingsCacheTime" value="0" />
-	<add key="SelfUpdaterTags" value="Appleseed" />
-
+		<add key="webpages:Version" value="2.0.0.0" />
+		<add key="PreserveLoginUrl" value="true" />
+		<add key="PortalSettingsCacheTime" value="0" />
+		<add key="SelfUpdaterTags" value="Appleseed" />
 		
+		
+		<add key="friendlyUrlExtension" value=".aspx" />              
+		<!--Connection string for Evolutility Database-->
+     
+		<add key="SQLConnection" value="Server=HARI;Database=Evolutility;uid=sa;pwd=123;Trusted_Connection=no;" />
+		<add key="SQLConnectionDico" value="Server=HARI;Database=Evolutility;uid=sa;pwd=123;Trusted_Connection=no;" />
+
+		<!-- Filemanager Default Listing view - SmallView / DetailView -->
+		<add key="FileManager.DefaultView" value="DetailView" />
+
+		<!-- Filemanager supported extenstion list for edit in file manager.
+        list must be comma separated -->
+		<add key="FileManager.Edit.SupportExtenstion" value="html,txt,aspx,ascx,css,js,xml" />
+
+		<!--File Manager - Allow folders in left side Tree-->
+		<add key="FileManager.AllowFolders.Tree" value="Design|DesktopModules|Portals|rb_logs" />
+
+		<!--For loading default.css | True = load on top/false = leave as it is -->
+		<add key="CSSLoadTop" value="true" />
+		<!--Xslt file path -->
+		<add key="XsltFilePath" value="/Portals/_Appleseed/XsltSource.Xslt" />
 		 
 	</appSettings>
 	<system.net>
@@ -586,7 +606,7 @@
 		<urlBuilder defaultProvider="SqlUrlBuilder">
 			<providers>
 				<clear />
-				<add name="SqlUrlBuilder" type="Appleseed.Framework.Web.SqlUrlBuilderProvider, Appleseed.Framework.Core" handlerflag="site" handlersplitter="__" pageidnosplitter="true" friendlypagename="default.aspx" aliasinurl="false" langinurl="false" cacheminutes="5" ignoretargetpage="PageLayout.aspx" ShowHieranchy="true" />
+				<add name="SqlUrlBuilder" type="Appleseed.Framework.Web.SqlUrlBuilderProvider, Appleseed.Framework.Core" handlerflag="site" handlersplitter="__" pageidnosplitter="true" friendlypagename="default.aspx" aliasinurl="false" langinurl="false" cacheminutes="5" ignoretargetpage="PageLayout.aspx" ShowHieranchy="true" friendlyUrlExtension=".aspx" />
 			</providers>
 		</urlBuilder>
 		<geographic defaultProvider="GeographicProvider">
@@ -602,8 +622,10 @@
 			<add name="AppleseedSeoUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedSeoUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
 		</providers>
 		<rewrites>
-			<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />
-			<add name="AppleseedSeoUrl" provider="AppleseedSeoUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />
+			<!--<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />-->
+			<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
+			<!--<add name="AppleseedSeoUrl" provider="AppleseedSeoUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />-->
+			<add name="AppleseedSeoUrl" provider="AppleseedSeoUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
 		</rewrites>
 	</urlrewritingnet>
 	<system.codedom>
@@ -612,11 +634,13 @@
 		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
 			<dependentAssembly>
 				<assemblyIdentity name="System.Web.Extensions" publicKeyToken="31bf3856ad364e35" />
-				<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" />
+				<!--<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" />-->
+				<bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
 			</dependentAssembly>
 			<dependentAssembly>
 				<assemblyIdentity name="System.Web.Extensions.Design" publicKeyToken="31bf3856ad364e35" />
-				<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" />
+				<!--<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" /> -->
+				<bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
 			</dependentAssembly>
       <dependentAssembly>
         <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
@@ -637,7 +661,8 @@
       </dependentAssembly>      
 	  <dependentAssembly>
         <assemblyIdentity name="System.Web.DataVisualization" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" />
+        <!--<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" /> -->
+		<bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
       </dependentAssembly>
 		</assemblyBinding>
 	</runtime>
