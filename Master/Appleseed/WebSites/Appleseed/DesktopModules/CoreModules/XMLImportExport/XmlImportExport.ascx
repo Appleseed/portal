@@ -31,12 +31,12 @@
 <style>
     .LeftFloat {
         width: 50%;
-        float:left;
-        padding:5px;
+        float: left;
+        padding: 5px;
     }
 </style>
 
-<div style="width:100%;">
+<div style="width: 100%;">
     <div class="LeftFloat">
         <h3>Export XML</h3>
         <div id="divTree" class="trvClass" style="height: 300px; overflow: auto;">
@@ -47,18 +47,25 @@
 
     <div class="LeftFloat">
         <div>
-            <h3>Import XML</h3>    
-            <asp:FileUpload ID="fileUploadXML" runat="server" /> <br />
+            <h3>Import XML</h3>
+            <asp:FileUpload ID="fileUploadXML" runat="server" />
+            <br />
             <asp:Button ID="btnImportXml" runat="server" Text="Import" OnClick="btnImportXml_Click" />
         </div>
         <div>
             <asp:Repeater ID="rptLogTable" runat="server">
                 <HeaderTemplate>
                     <table id="tblLog" border="0">
-                        <tr><th><h4>Import Log table</h4></th></tr>
+                        <tr>
+                            <th>
+                                <h4>Import Log table</h4>
+                            </th>
+                        </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <tr><td><%#Eval("LogMessage")%> </td></tr>
+                    <tr>
+                        <td><%#Eval("LogMessage")%> </td>
+                    </tr>
                 </ItemTemplate>
                 <FooterTemplate>
                     </table>
@@ -77,7 +84,7 @@
     $('.ExportClass').click(function (e) {
         if (pageid != '') {
             e.preventDefault();
-            window.location.href =  '/DesktopModules/CoreModules/XMLImportExport/ExportXml.aspx?pid=' + $("#" + pageid).next().attr("href").split('/')[1];
+            window.location.href = '/DesktopModules/CoreModules/XMLImportExport/ExportXml.aspx?pid=' + $("#" + pageid).next().attr("href").split('/')[1];
             return false;
         }
         else {
