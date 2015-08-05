@@ -1271,7 +1271,15 @@
       <Script>2.0.0.1901.sql</Script>
     </Scripts>
   </Release>
- 
+
+  <Release>
+    <ID>1902</ID>
+    <Version>2.0.0.1902</Version>
+    <Date>2015-08-01T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1902.sql</Script>
+    </Scripts>
+  </Release>
   <!--DEPRECATED: Don´t add more scripts, this is only for backward compatibility -->
   <!--Please use DBScripts folder in Appleseed.Core portable area -->
 
