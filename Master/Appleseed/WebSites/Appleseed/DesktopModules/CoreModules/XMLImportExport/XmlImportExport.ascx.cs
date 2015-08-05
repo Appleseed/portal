@@ -28,6 +28,15 @@
         XMLImportExportDB xmlFile = new XMLImportExportDB();
 
         /// <summary>
+        /// GUID of module (mandatory)
+        /// </summary>
+        /// <value></value>
+        public override Guid GuidID
+        {
+            get { return new Guid("{6D0CA478-CEA8-4C32-B6E3-B8B5F9B64D4E}"); }
+        }
+
+        /// <summary>
         /// Create a tree for pages
         /// </summary>
         /// <param name="sender"></param>

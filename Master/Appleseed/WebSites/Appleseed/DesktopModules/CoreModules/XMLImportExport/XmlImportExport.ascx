@@ -77,7 +77,7 @@
     $('.ExportClass').click(function (e) {
         if (pageid != '') {
             e.preventDefault();
-            window.location.href = window.location.protocol + '//' + window.location.hostname + '/DesktopModules/CoreModules/XMLImportExport/ExportXml.aspx?pid=' + $("#" + pageid).next().attr("href").split('/')[1];
+            window.location.href =  '/DesktopModules/CoreModules/XMLImportExport/ExportXml.aspx?pid=' + $("#" + pageid).next().attr("href").split('/')[1];
             return false;
         }
         else {
