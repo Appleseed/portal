@@ -6,7 +6,7 @@
 */
 
 .aloha-editable-highlight {
-	outline: #FFE767 solid 5px !important;
+	outline: #000 dashed 2px !important;
 }
 
 .aloha-editable-active, .aloha-editable-active[contenteditable=true]:focus {

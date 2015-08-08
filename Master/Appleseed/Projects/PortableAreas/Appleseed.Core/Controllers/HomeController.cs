@@ -33,7 +33,8 @@ namespace Appleseed.Core.Controllers
 
 
             List<string[]> datos = new List<string[]>();
-            
+            var settings = PortalSettings.HasEnablePageFriendlyUrl(Portal.PageID, Config.DefaultPortal);
+            var pageextenstion = System.Configuration.ConfigurationManager.AppSettings["friendlyUrlExtension"];
             foreach (Appleseed.Framework.Web.UI.WebControls.LanguageCultureItem l in lcc)
             {
                 string[] dato = new string[3];
@@ -42,14 +43,14 @@ namespace Appleseed.Core.Controllers
                 array[0] = '/';
                 string[] lang = aux.Split(array);
 
-                dato[0] = HttpUrlBuilder.BuildUrl("~/site/0/Home?lang="+lang[0]);
-                
+                dato[0] = settings == true ? HttpUrlBuilder.BuildUrl("~/Home" + pageextenstion + "?lang=" + lang[0]) : HttpUrlBuilder.BuildUrl("~/site/0/Home?lang=" + lang[0]);
+
                 LanguageSwitcher lswitcher = new LanguageSwitcher();
                 dato[1] = lswitcher.GetFlagImgLCI(l);
                 dato[1] = dato[1].Replace("images", "~/aspnet_client");
 
                 dato[1] = HttpUrlBuilder.BuildUrl(dato[1]);
-                
+
                 dato[2] = lswitcher.getNameLCI(l);
                 datos.Add(dato);
             }
@@ -57,6 +58,7 @@ namespace Appleseed.Core.Controllers
             ViewData["datos"] = datos;
             return View();
         }
+
 
       
         public ActionResult SaveTitle(string id, string value){
