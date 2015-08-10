@@ -268,7 +268,7 @@ namespace Appleseed.Admin
         {
             if (!this.Page.IsPostBack)
             {
-
+                
                 // Invalidate settings cache
                 if (CurrentCache.Exists(Key.TabSettings(this.PageID)))
                 {
@@ -670,6 +670,7 @@ namespace Appleseed.Admin
             var page = this.PortalSettings.ActivePage;
 
             // Populate Page Names, etc.
+            this.txtPageID.Text = page.PageID.ToString();
             this.tabName.Text = page.PageName;
             this.friendlyUrl.Text = page.FriendlyURL;
             this.mobilePageName.Text = page.MobilePageName;

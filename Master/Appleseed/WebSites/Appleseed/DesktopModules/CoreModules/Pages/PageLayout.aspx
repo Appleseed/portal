@@ -63,7 +63,16 @@
                                 </div>
                             </td>
                         </tr>
-
+                         <tr>
+                            <td class="Normal" width="100">
+                                <rbfwebui:Localize ID="Localize2" runat="server" Text="Page ID" TextKey="AM_PAGE_ID">
+                                </rbfwebui:Localize>
+                            </td>
+                            <td colspan="3">
+                                <asp:TextBox ID="txtPageID" runat="server" CssClass="NormalTextBox" MaxLength="50"
+                                    Width="300" Enabled="false"/>
+                            </td>
+                        </tr>
                         <tr>
                             <td class="Normal" nowrap="nowrap">
                                 <rbfwebui:Localize ID="roles_auth" runat="server" Text="Authorized Roles" TextKey="AM_ROLESAUTH">
