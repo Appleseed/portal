@@ -30,6 +30,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             Aloha.ready(function () {
+                Aloha.settings.jQuery = jQuery.noConflict(true);
                 Aloha.jQuery('.area-content').aloha();
             });
             $('body').css('padding-top', '0px');
