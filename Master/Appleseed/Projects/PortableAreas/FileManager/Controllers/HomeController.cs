@@ -255,6 +255,51 @@ namespace FileManager.Controllers
             Directory.Delete(source, true);
         }
 
+        public void DragDirectory(string sourcepath, string destpath, string source)
+        {
+            var destinationPath = "/" + Request.Url.Host + destpath;
+            var sourcePath = "/" + Request.Url.Host + sourcepath;
+
+            var fullOldName = Request.MapPath(sourcepath);
+            var fullNewName = Request.MapPath(destpath);
+
+            Directory.CreateDirectory(fullNewName + "\\" + source);
+            var newDestination = string.Format(@"{0}\{1}", Request.MapPath(destpath), source);
+
+            /* start  - copy sub directory  */
+            var dir = new DirectoryInfo(fullOldName);
+            var dirs = dir.GetDirectories();
+
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException(
+                    "Source directory does not exist or could not be found: "
+                    + fullOldName);
+            }
+
+            if (!Directory.Exists(newDestination))
+            {
+                Directory.CreateDirectory(newDestination);
+            }
+
+            var files = dir.GetFiles();
+            foreach (var file in files)
+            {
+                var temppath = Path.Combine(newDestination, file.Name);
+                file.CopyTo(temppath, false);
+            }
+
+            foreach (var subdir in dirs)
+            {
+                var temppath = Path.Combine(newDestination, subdir.Name);
+                CopyDirectories(subdir.FullName, temppath);
+
+            }
+            /* end sub directory */
+
+            Directory.Delete(fullOldName, true);
+        }
+
         private class Folders
         {
             public string Source { get; private set; }

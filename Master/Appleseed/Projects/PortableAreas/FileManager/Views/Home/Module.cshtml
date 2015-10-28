@@ -560,7 +560,11 @@
             ,
             "plugins": [ "dnd", "search", "state", "types", "unique", "crrm", "themes"]
         }).on('move_node.jstree', function (event, data) {
-            //movenode(data.node.id, data.node.parent, data.old_parent, data.position);
+            var nodepath = data.node.original.attr.id;
+            var destinationPath = data.instance._model.data[data.parent].original.attr.id;
+            var node =  data.node.data;
+
+            movenode(nodepath,destinationPath,node);
         }).on("select_node.jstree", function (e, data) {
             OpenFolder(data,"Left");
         }).bind("rename_node.jstree", function (event, data) {
@@ -648,6 +652,27 @@
         });
 
     }
+
+    function  movenode(nodepath,destinationPath, node)
+    {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("DragDirectory")',
+            data: {
+                sourcepath : nodepath,
+                destpath : destinationPath,
+                source: node
+            },
+            success: function (folderView) {
+                $('#newjsTree').jstree('refresh');
+            },
+            error: function (result) {
+                AppendError(result.responseText);
+            }
+        });
+
+    }
+
     function OpenFolder(folder, side) {
         if (folder === "/Portals/_Appleseed") {
             LoadFoldersContent(folder, true);
