@@ -53,6 +53,7 @@
             myCommand.CommandType = CommandType.StoredProcedure;
             myConnection.Open();
             myCommand.ExecuteNonQuery();
+            myConnection.Close(); //Added by Ashish - Connection Pool Issue
         }
 
         /// <summary>
@@ -93,6 +94,7 @@
             myCommand.CommandType = CommandType.StoredProcedure;
             myConnection.Open();
             myCommand.ExecuteNonQuery();
+            myConnection.Close(); //Added by Ashish - Connection Pool Issue
         }
 
     }
