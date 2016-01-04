@@ -295,6 +295,9 @@ namespace Appleseed.Framework.Helpers
             connection.Open();
             var result = command.ExecuteReader(CommandBehavior.CloseConnection);
 
+            //Added by Ashish - Connection Pool Issue
+            connection.Close();
+
             // return the data reader 
             return result;
         }
@@ -536,6 +539,11 @@ namespace Appleseed.Framework.Helpers
             {
                 ErrorHandler.Publish(LogLevel.Error, string.Format("Error in Search:SearchPortal()-> {0} {1}", e, select), e);
                 throw new Exception("Error in Search selection.");
+            }
+            //Added by Ashish - Connection Pool Issue
+            finally
+            {
+                sqlCommand.Connection.Close();
             }
         }
 
