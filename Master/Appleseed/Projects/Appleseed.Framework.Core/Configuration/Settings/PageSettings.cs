@@ -342,6 +342,7 @@ namespace Appleseed.Framework.Site.Configuration
                     {
                         // by Manu, fixed bug 807858
                         result.Close();
+                        connection.Close(); //Added by Ashish - Connection Pool Isues
                     }
 
                     return tabs;
