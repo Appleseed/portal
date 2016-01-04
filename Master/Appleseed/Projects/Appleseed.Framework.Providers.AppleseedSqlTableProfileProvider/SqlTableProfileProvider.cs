@@ -790,7 +790,7 @@ namespace Microsoft.Samples {
                 reader.Close();
                 reader = null;
             }
-
+            conn.Close(); //Added by Ashish - Connection Pool Issues
             cmd.Dispose();
 
 
