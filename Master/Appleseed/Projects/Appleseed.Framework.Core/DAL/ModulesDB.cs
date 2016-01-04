@@ -301,6 +301,11 @@ namespace Appleseed.Framework.Site.Data
                     {
                         ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in AddGeneralModuleDefinitions. ", ex);
                     }
+                    //Added by Ashish - Connection Pool Issue
+                    finally
+                    {
+                        connection.Close();
+                    }
 
                     // Return the newly created ID
                     return new Guid(parameterGeneralModDefId.Value.ToString());
@@ -497,6 +502,11 @@ namespace Appleseed.Framework.Site.Data
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in AddModule. ", ex);
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in AddModule. ", ex);
                 }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
+                }
 
                 return (int)parameterModuleId.Value;
             }
@@ -568,6 +578,11 @@ namespace Appleseed.Framework.Site.Data
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in DeleteModule. Parameter : " + moduleId, ex);
                 }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -610,6 +625,11 @@ namespace Appleseed.Framework.Site.Data
                         // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in DeleteModuleDefinition. Parameter : " + defID.ToString(), ex);
                         ErrorHandler.Publish(
                             LogLevel.Warn, "An Error Occurred in DeleteModuleDefinition. Parameter : " + defId, ex);
+                    }
+                    //Added by Ashish - Connection Pool Issue
+                    finally
+                    {
+                        connection.Close();
                     }
                 }
             }
@@ -658,6 +678,8 @@ namespace Appleseed.Framework.Site.Data
                                 retorno = true;
                             }
                         }
+                        //Added by Ashish - Connection Pool Issue
+                        result.Close();
                     }
 
                     return retorno;
@@ -703,6 +725,8 @@ namespace Appleseed.Framework.Site.Data
                         var m = new ModuleItem { ID = (int)result["ModuleId"] };
                         modList.Add(m);
                     }
+                    //Added by Ashish - Connection Pool issue
+                    result.Close();
                 }
 
                 return modList;
@@ -770,16 +794,23 @@ namespace Appleseed.Framework.Site.Data
             var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
             List<CurrentModuleDefination> modulelist = new List<CurrentModuleDefination>();
 
-            while (dr.Read())
+            try
             {
-                CurrentModuleDefination module = new CurrentModuleDefination();
-                module.FriendlyName = dr["FriendlyName"].ToString();
-                module.DesktopSrc = dr["DesktopSrc"].ToString();
-                module.MobileSrc = dr["MobileSrc"].ToString();
-                module.Admin = Convert.ToBoolean(dr["Admin"].ToString());
-                module.ModuleDefId = Convert.ToInt32(dr["ModuleDefId"].ToString());
-                modulelist.Add(module);
+                while (dr.Read())
+                {
+                    CurrentModuleDefination module = new CurrentModuleDefination();
+                    module.FriendlyName = dr["FriendlyName"].ToString();
+                    module.DesktopSrc = dr["DesktopSrc"].ToString();
+                    module.MobileSrc = dr["MobileSrc"].ToString();
+                    module.Admin = Convert.ToBoolean(dr["Admin"].ToString());
+                    module.ModuleDefId = Convert.ToInt32(dr["ModuleDefId"].ToString());
+                    modulelist.Add(module);
+                }
             }
+            //Added by Ashish - Connection Pool Issue
+            finally { dr.Close(); }
+            
+
             return modulelist;
             // Return the data reader
             // return dr;
@@ -830,6 +861,9 @@ namespace Appleseed.Framework.Site.Data
 
                         result.Add(genModDef);
                     }
+                    //Added by Ashish - Connection Pool Issue
+                    if (dr != null)
+                        dr.Close();
                 }
             }
 
@@ -947,6 +981,11 @@ namespace Appleseed.Framework.Site.Data
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in GetModuleDefinitionByGuid. Parameter : " + guid, ex);
                 }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
+                }
 
                 return (int)parameterModuleId.Value;
             }
@@ -998,6 +1037,11 @@ namespace Appleseed.Framework.Site.Data
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in GetModuleDefinitionByName. Parameter : " + moduleName, ex);
                 }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
+                }
 
                 return (int)parameterModuleId.Value;
             }
@@ -1023,16 +1067,26 @@ namespace Appleseed.Framework.Site.Data
 
             List<CurrentModuleDefination> modulelist = new List<CurrentModuleDefination>();
             CurrentModuleDefination module = new CurrentModuleDefination();
-            while (dr.Read())
+            try
             {
-                Guid moddef = new Guid();
-                Guid.TryParse(dr["GeneralModDefID"].ToString(), out moddef);
-                module.GeneralModDefID = moddef;
-                module.FriendlyName = dr["FriendlyName"].ToString();
-                module.DesktopSrc = dr["DesktopSrc"].ToString();
-                module.MobileSrc = dr["MobileSrc"].ToString();
-                modulelist.Add(module);
+                while (dr.Read())
+                {
+                    Guid moddef = new Guid();
+                    Guid.TryParse(dr["GeneralModDefID"].ToString(), out moddef);
+                    module.GeneralModDefID = moddef;
+                    module.FriendlyName = dr["FriendlyName"].ToString();
+                    module.DesktopSrc = dr["DesktopSrc"].ToString();
+                    module.MobileSrc = dr["MobileSrc"].ToString();
+                    modulelist.Add(module);
+                }
             }
+
+             //Added by Ashish - Connection Pool Issue
+            finally
+            {
+                dr.Close();
+            }
+
             return modulelist;
             // Return the data reader
             //return dr;
@@ -1065,7 +1119,11 @@ namespace Appleseed.Framework.Site.Data
                         {
                             moduleGuid = dr.GetGuid(0);
                         }
+                        if (dr != null)
+                            dr.Close();
                     }
+                    if (connection.State == ConnectionState.Open)
+                        connection.Close();
                 }
 
                 CurrentCache.Insert(cacheGuid, moduleGuid);
@@ -1235,13 +1293,20 @@ namespace Appleseed.Framework.Site.Data
             var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
 
             List<ModuleItem> modulelist = new List<ModuleItem>();
-
-            while (dr.Read())
+            try
             {
-                ModuleItem module = new ModuleItem();
-                module.ID = Convert.ToInt32(dr["ModuleID"]);
-                module.Title = dr["ModuleTitle"].ToString();
-                modulelist.Add(module);
+                while (dr.Read())
+                {
+                    ModuleItem module = new ModuleItem();
+                    module.ID = Convert.ToInt32(dr["ModuleID"]);
+                    module.Title = dr["ModuleTitle"].ToString();
+                    modulelist.Add(module);
+                }
+            }
+            //Added by Ashish - Connection Pool Issue
+            finally
+            {
+                dr.Close();
             }
 
             // Return the data reader
@@ -1579,6 +1644,11 @@ namespace Appleseed.Framework.Site.Data
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateGeneralModuleDefinitions", ex));
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateGeneralModuleDefinitions", ex);
                 }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -1789,6 +1859,11 @@ namespace Appleseed.Framework.Site.Data
                         // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModule", ex);
                         ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModule", ex);
                     }
+                    //Added by Ashish - Connection Pool Issue
+                    finally
+                    {
+                        connection.Close();
+                    }
 
                     return (int)parameterModuleId.Value;
                 }
@@ -1841,6 +1916,11 @@ namespace Appleseed.Framework.Site.Data
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModuleDefinitions", ex);
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModuleDefinitions", ex);
                 }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -1883,6 +1963,11 @@ namespace Appleseed.Framework.Site.Data
                 {
                     // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModuleOrder", ex);
                     ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModuleOrder", ex);
+                }
+                //Added by Ashish - Connection Pool Issue
+                finally
+                {
+                    connection.Close();
                 }
             }
         }
@@ -1945,6 +2030,11 @@ namespace Appleseed.Framework.Site.Data
                         // ErrorHandler.Publish(Appleseed.Framework.LogLevel.Warn, "An Error Occurred in UpdateModule", ex);
                         ErrorHandler.Publish(LogLevel.Warn, "An Error Occurred in UpdateModuleTitle", ex);
                         throw new Exception("An Error Occurred in UpdateModuleTitle");
+                    }
+                    //Added by Ashish - Connection Pool Issue
+                    finally
+                    {
+                        connection.Close();
                     }
 
                     return (int)parameterModuleId.Value;
