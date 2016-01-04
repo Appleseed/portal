@@ -140,6 +140,8 @@ namespace Appleseed.Framework.Content.Data
                         {
                             // Close the datareader
                             result.Close();
+                            if (connection != null)
+                                connection.Close();
                         }
                     }
                 }
@@ -275,6 +277,11 @@ namespace Appleseed.Framework.Content.Data
                                 break;
                             }
                         }
+                    }
+                    // Added by Ashish - Connection Pool Issues
+                    if (sqlDatard != null)
+                    {
+                        sqlDatard.Close();
                     }
 
                     var moduleVersion = new SqlParameter("@VersionNo", SqlDbType.Int, 4) { Value = publishedVersion };
@@ -432,6 +439,7 @@ namespace Appleseed.Framework.Content.Data
             SqlDataAdapter dtAdpter = new SqlDataAdapter(myCommand);
             DataSet dtSet = new DataSet();
             dtAdpter.Fill(dtSet);
+            connection.Close();
             return dtSet;
         }
 
