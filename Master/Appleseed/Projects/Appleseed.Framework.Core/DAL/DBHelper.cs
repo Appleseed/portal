@@ -479,7 +479,12 @@ namespace Appleseed.Framework.Data
                 DataReaderToObject(reader, inst, fieldsToSkip, piList);
                 items.Add(inst);
             }
-
+            // Added by Ashish - Connection Pool Issue
+            if (reader != null)
+            {
+                reader.Close();
+                selectCmd.Connection.Close();
+            }
             return items;
         }
 
