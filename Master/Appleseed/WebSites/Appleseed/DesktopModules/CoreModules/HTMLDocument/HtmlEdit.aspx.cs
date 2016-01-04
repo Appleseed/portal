@@ -133,6 +133,11 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 }
 
             }
+            //Added by Ashish - Connection pool Issue
+            if (drList != null)
+            {
+                drList.Close();
+            }
 
             if (drpVirsionList.Items.Count == 0)
             {
