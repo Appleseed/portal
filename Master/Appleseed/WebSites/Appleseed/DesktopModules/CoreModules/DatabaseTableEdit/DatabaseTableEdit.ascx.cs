@@ -134,6 +134,7 @@ namespace Appleseed.Content.Web.Modules
                 lblConnectedError.Visible = true;
                 lblConnectedError.Text = ex.Message;
             }
+            cmd.Connection.Close(); // Added by Ashish - Connection Pool Issue
         }
 
 
