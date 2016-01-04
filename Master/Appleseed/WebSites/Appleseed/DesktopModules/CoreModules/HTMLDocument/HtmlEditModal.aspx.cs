@@ -148,6 +148,11 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     }
                 }
             }
+            //Added by Ashish - Connection pool Issue
+            if (drList != null)
+            {
+                drList.Close();
+            }
             text.UpdateHtmlText(
                 this.ModuleID,
                 this.Server.HtmlEncode(this.DesktopText.Text),
