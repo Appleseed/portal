@@ -53,6 +53,10 @@ namespace PageManagerTree.Massive {
             while (rdr.Read()) {
                 result.Add(rdr.RecordToExpando());
             }
+            if(rdr != null)
+            {
+                rdr.Close();
+            }
             return result;
         }
         public static dynamic RecordToExpando(this IDataReader rdr) {
@@ -199,12 +203,22 @@ namespace PageManagerTree.Massive {
                 while (rdr.Read()) {
                     yield return rdr.RecordToExpando(); ;
                 }
+                //Added by Ashish - Connection Pool Issues
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
             }
         }
         public virtual IEnumerable<dynamic> Query(string sql, DbConnection connection, params object[] args) {
             using (var rdr = CreateCommand(sql, connection, args).ExecuteReader()) {
                 while (rdr.Read()) {
                     yield return rdr.RecordToExpando(); ;
+                }
+                //Added by Ashish - Connection Pool Issues
+                if (rdr != null)
+                {
+                    rdr.Close();
                 }
             }
         }
