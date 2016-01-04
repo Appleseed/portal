@@ -75,6 +75,7 @@
                     mobDetails = textData["MobileDetails"].ToString();
                 }
             }
+            textData.Close(); //Added by Ashish - Connection pool issue fixed
             saveText.UpdateHtmlText(
                 Convert.ToInt32(moduleID),
                 HtmlText,
