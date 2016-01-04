@@ -208,6 +208,8 @@ namespace Appleseed.Content.Web.Modules
                 SourceListBox.DataTextField = "ItemDesc";
                 SourceListBox.DataSource = contentDB.GetSourceModuleData(ModuleTypeID, SourceModID);
                 SourceListBox.DataBind();
+                //Added by Ashish - Connection Pool Issues
+                contentDB.GetSourceModuleData(ModuleTypeID, SourceModID).Close();
             }
         }
 
