@@ -549,6 +549,12 @@ namespace Appleseed.Framework.Site.Data
                 var item = new PageItem { ID = Convert.ToInt32(dr["PageID"]), Name = (string)dr["PageName"] };
                 result.Add(item);
             }
+            // Added by Ashish - Connection Pool Issue
+            if (dr != null)
+            {
+                dr.Close();
+                
+            }
 
             return result;
         }
@@ -607,6 +613,7 @@ namespace Appleseed.Framework.Site.Data
                 finally
                 {
                     result.Close(); // by Manu, fixed bug 807858
+                    connection.Close(); //Added by Ashish - Connection Pool Issues
                 }
             }
 
@@ -706,6 +713,7 @@ namespace Appleseed.Framework.Site.Data
 
                 connection.Open();
                 sqlCommand.ExecuteNonQuery();
+                connection.Close();
             }
         }
 
