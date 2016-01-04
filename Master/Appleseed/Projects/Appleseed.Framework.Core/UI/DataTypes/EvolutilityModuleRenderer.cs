@@ -59,16 +59,25 @@
                 List<EvolutilityModuleItem> modules = new List<EvolutilityModuleItem>();
                 modules.Add(new EvolutilityModuleItem() { ModuleID = 0, ModuleName = "Select Evolutility Module" });
                 SqlDataReader modelReader = moduleDB.GetEvolutilyModuleList();
-                if (modelReader.HasRows)
+                try
                 {
-                    while (modelReader.Read())
+                    if (modelReader.HasRows)
                     {
-                        modules.Add(new EvolutilityModuleItem()
+                        while (modelReader.Read())
                         {
-                            ModuleID = Convert.ToInt32(modelReader["ID"]),
-                            ModuleName = modelReader["TITLE"].ToString()
-                        });
+                            modules.Add(new EvolutilityModuleItem()
+                            {
+                                ModuleID = Convert.ToInt32(modelReader["ID"]),
+                                ModuleName = modelReader["TITLE"].ToString()
+                            });
+                        }
                     }
+
+                }
+                //Added by Ashish - Connection Pool Issues
+                finally
+                {
+                    modelReader.Close();
                 }
 
                 return modules;
