@@ -32,6 +32,7 @@
             SqlDataAdapter dtAdpter = new SqlDataAdapter(myCommand);
             DataSet dtSet = new DataSet();
             dtAdpter.Fill(dtSet);
+            myConnection.Close(); // Added By Ashish - Connection Pool Issue
             return dtSet;
         }
 
@@ -50,6 +51,7 @@
             SqlDataAdapter dtAdpter = new SqlDataAdapter(myCommand);
             DataSet dateTree = new DataSet();
             dtAdpter.Fill(dateTree);
+            myConnection.Close(); // Added By Ashish - Connection Pool Issue
             return dateTree;
         }
 
