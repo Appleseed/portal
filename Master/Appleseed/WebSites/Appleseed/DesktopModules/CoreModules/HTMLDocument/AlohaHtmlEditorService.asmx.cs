@@ -48,6 +48,11 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     }
                 }
             }
+            //Added by Ashish - Connection pool Issue
+            if (drList != null)
+            {
+                drList.Close();
+            }
             text.UpdateHtmlText(
                  Convert.ToInt32(moduleid),
                data,
