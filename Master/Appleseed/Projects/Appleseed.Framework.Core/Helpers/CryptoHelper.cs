@@ -83,7 +83,8 @@ namespace Appleseed.Framework.Helpers
 
                         insertCommand.ExecuteNonQuery();
                     }
-                }
+                }//Added by Ashish - Connection Pool Issue
+                myConnection.Close();
             }
         }
 
@@ -120,6 +121,7 @@ namespace Appleseed.Framework.Helpers
                     insertCommand.Parameters.Add(parameterSalt);
 
                     insertCommand.ExecuteNonQuery();
+                    myConnection.Close(); //Added by Ashish - Connection Pool Issue
                 }
             }
         }
