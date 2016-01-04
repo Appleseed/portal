@@ -601,6 +601,7 @@ namespace Appleseed.Framework.Site.Data
                         finally
                         {
                             dr.Close(); // by Manu, fixed bug 807858
+                            connection.Close(); //Added by Ashish - Connection Pool Issues
                         }
                     }
 
