@@ -1,0 +1,30 @@
+.ModuleContent{
+	padding:10px;
+	border:none;
+	margin-top: 5px;
+	margin-right:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	color:#333333;
+	max-width:940px;
+	position:relative;
+}
+
+div.Control_Panel_Table{
+	position:absolute;
+	top:0px;
+	right:0;
+	z-index:150;
+    margin: 0px;
+    padding: 0px;
+}
+
+select.multiselect{
+	height:280px!important;
+	max-height:280px!important;
+	width:470px!important;
+}
+
+.appleseedlangclass{
+	height:350px;
+}
