@@ -28,7 +28,7 @@ namespace Appleseed
             
             string lnkid = Request.QueryString["lnkid"];
             if (!string.IsNullOrEmpty(lnkid))
-            {
+            { 
                 int pageId = 0;
                 if (int.TryParse(lnkid, out pageId))
                 {
