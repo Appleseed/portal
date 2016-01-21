@@ -66,7 +66,14 @@ namespace Appleseed.Framework.Web
                 if (urlElements.IsPlaceHolder) return string.Empty;
 
                 // if it is a tab link it means it is a link to an external resource
-                if (urlElements.TabLink.Length != 0) return urlElements.TabLink;
+                //if (urlElements.TabLink.Length != 0) return urlElements.TabLink;
+                if (urlElements.TabLink.Length != 0)
+                {
+                    if (urlElements.TabLink.ToLower().Contains("http://") || urlElements.TabLink.ToLower().Contains("https://"))
+                        return urlElements.TabLink;
+                    else
+                        return "http://" + urlElements.TabLink;
+                }
             }
             //End Navigation Enhancements
 

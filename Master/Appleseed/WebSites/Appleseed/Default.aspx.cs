@@ -25,6 +25,17 @@ namespace Appleseed
             
             string user = Request.Params["u"];
             string pass = Request.Params["p"];
+            
+            string lnkid = Request.QueryString["lnkid"];
+            if (!string.IsNullOrEmpty(lnkid))
+            {
+                int pageId = 0;
+                if (int.TryParse(lnkid, out pageId))
+                {
+                    this.Response.Redirect(Appleseed.Framework.HttpUrlBuilder.BuildUrl(pageId),true);
+                }
+            }
+
             if (!string.IsNullOrEmpty(user) && !string.IsNullOrEmpty(pass)) {
                 bool rem = (Request.Params["rem"] ?? "0").ToString().Equals("1") ? true : false;
                 PortalSecurity.SignOn(user, pass, rem, "~/DesktopDefault.aspx");
