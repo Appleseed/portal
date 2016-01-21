@@ -186,6 +186,16 @@ namespace Appleseed
         /// </param>
         private void DesktopDefault_Load(object sender, EventArgs e)
         {
+            int pageId = 0; 
+            string lnkid = Request.QueryString["lnkid"];
+            if (!string.IsNullOrEmpty(lnkid))
+            {
+               
+                if (int.TryParse(lnkid, out pageId))
+                {
+                    this.Response.Redirect(Appleseed.Framework.HttpUrlBuilder.BuildUrl(pageId), true);
+                }
+            }
 
             if (!string.IsNullOrEmpty(Request.Params["panelist"]))
             {
@@ -193,7 +203,7 @@ namespace Appleseed
             }
             // intento obtener el id de la pagina desde el query
             string query = Request.Url.Query;
-            int pageId = 0;
+            //int pageId = 0;
             if (query.Contains("?") && query.ToLower().Contains("pageid"))
             {
                 int index = query.IndexOf('?');
