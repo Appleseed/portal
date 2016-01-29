@@ -36,6 +36,14 @@ namespace Appleseed.Framework.UrlRewriting
             }
 
             DataTable dtPages = DB.GetPagesFlatTable(portalID);
+
+            //When friendly URl applied and go to Home page from and sub pages 
+            if (pagepath.ToLower().Contains("default.aspx"))
+            {
+                string page_ID = "1";
+                return page_ID;
+            }
+
             foreach (DataRow pageRow in dtPages.Rows)
             {
                 int pageId = Convert.ToInt32(pageRow["PageID"]);
