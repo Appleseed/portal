@@ -2902,6 +2902,19 @@ namespace Appleseed.Framework.Site.Configuration
             }
         }
 
+        /// <summary>
+        /// Update Portal Setting Parent Page Cache
+        /// </summary>
+        /// <param name="currentPageId">Current Page Id</param>
+        /// <param name="previousPageId">Previous page Id</param>
+        public static void UpdatePortalSettingParentPageCache(int currentPageId, int previousPageId)
+        {
+            var portalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+            var currentPage = portalSettings.DesktopPages.First(pg => pg.PageID == previousPageId);
+            currentPage.ParentPageID = currentPageId;
+            HttpContext.Current.Items["PortalSettings"] = portalSettings;
+        }
+
         #endregion
     }
 }

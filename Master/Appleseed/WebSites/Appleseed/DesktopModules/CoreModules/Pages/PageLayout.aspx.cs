@@ -28,6 +28,7 @@ namespace Appleseed.Admin
 
     using ImageButton = System.Web.UI.WebControls.ImageButton;
     using Appleseed.Framework.Web;
+    using System.Linq;
 
     /// <summary>
     /// Edit page for page layouts
@@ -371,9 +372,11 @@ namespace Appleseed.Admin
                     // jviladiu@portalServices.net (05/10/2004)
                     CurrentCache.RemoveAll("_PageNavigationSettings_");
                     PortalSettings.RemovePortalSettingsCache(PageID, PortalSettings.PortalAlias);
-
+                    
                     // Clear AppleseedSiteMapCache
                     AppleseedSiteMapProvider.ClearAllAppleseedSiteMapCaches();
+
+                    PortalSettings.UpdatePortalSettingParentPageCache(Int32.Parse(this.parentPage.SelectedItem.Value), this.PageID);
 
                     // redirect back to the admin page
                     // int adminIndex = portalSettings.DesktopPages.Count-1;        
@@ -675,6 +678,7 @@ namespace Appleseed.Admin
             this.friendlyUrl.Text = page.FriendlyURL;
             this.mobilePageName.Text = page.MobilePageName;
             this.showMobile.Checked = page.ShowMobile;
+            this.lblCurrentPageLink.Text = HttpUrlBuilder.BuildUrl(page.PageID);
 
             // Populate the "ParentPage" Data
             var t = new PagesDB();

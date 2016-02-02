@@ -163,6 +163,10 @@
       <Project>{552CCD6F-0A37-4366-9E3E-22B2A0221584}</Project>
       <Name>Appleseed.Framework.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Appleseed.Framework.Providers.AppleseedSiteMapProvider\Appleseed.Framework.Providers.AppleseedSiteMapProvider.csproj">
+      <Project>{c667c927-2e8b-44c6-bac8-85ec9447c2c4}</Project>
+      <Name>Appleseed.Framework.Providers.AppleseedSiteMapProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Appleseed.PortalTemplate\Appleseed.PortalTemplate.csproj">
       <Project>{2A0BD0AC-3734-476A-B039-E7C2215E9487}</Project>
       <Name>Appleseed.PortalTemplate</Name>

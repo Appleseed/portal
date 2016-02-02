@@ -467,6 +467,14 @@ namespace PageManagerTree.Controllers
 
         public JsonResult moveNode(int pageID, int newParent, int idOldNode, int selectedposition)
         {
+            //Cache clearing
+            Appleseed.Framework.Web.SqlUrlBuilderProvider.ClearCachePageUrl(pageID);
+            Appleseed.Framework.Web.UrlBuilderHelper.ClearUrlElements(pageID);
+            CurrentCache.RemoveAll("_PageNavigationSettings_");
+            PortalSettings.RemovePortalSettingsCache(pageID, PortalSettings.PortalAlias);
+            Appleseed.Framework.Providers.AppleseedSiteMapProvider.AppleseedSiteMapProvider.ClearAllAppleseedSiteMapCaches();
+            PortalSettings.UpdatePortalSettingParentPageCache(newParent, pageID);
+
             if (UserProfile.isCurrentUserAdmin || UserProfile.CurrentUser.HasPermission(AccessPermissions.PAGE_EDITING))
             {
                 PagesDB db = new PagesDB();

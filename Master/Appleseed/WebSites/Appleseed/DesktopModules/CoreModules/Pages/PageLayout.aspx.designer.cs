@@ -94,6 +94,24 @@ namespace Appleseed.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtPageID;
         
         /// <summary>
+        /// Localize3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Appleseed.Framework.Web.UI.WebControls.Localize Localize3;
+        
+        /// <summary>
+        /// lblCurrentPageLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCurrentPageLink;
+        
+        /// <summary>
         /// roles_auth control.
         /// </summary>
         /// <remarks>

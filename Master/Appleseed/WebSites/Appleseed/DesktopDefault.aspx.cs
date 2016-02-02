@@ -186,11 +186,11 @@ namespace Appleseed
         /// </param>
         private void DesktopDefault_Load(object sender, EventArgs e)
         {
-            int pageId = 0; 
+            int pageId = 0;
             string lnkid = Request.QueryString["lnkid"];
             if (!string.IsNullOrEmpty(lnkid))
             {
-               
+
                 if (int.TryParse(lnkid, out pageId))
                 {
                     this.Response.Redirect(Appleseed.Framework.HttpUrlBuilder.BuildUrl(pageId), true);
@@ -237,15 +237,18 @@ namespace Appleseed
                 this.Response.Redirect(HttpUrlBuilder.BuildUrl(pageId));
             }
 
-                string urlToRedirect = "";
-                bool redirect = HttpUrlBuilder.ValidateProperUrl(pageId, ref urlToRedirect);
-                if (!redirect)
-                {
-                    this.Response.Redirect(urlToRedirect);
-                }
+            string urlToRedirect = "";
+            bool redirect = HttpUrlBuilder.ValidateProperUrl(pageId, ref urlToRedirect);
+            if (!redirect)
+            {
+                this.Response.Redirect(urlToRedirect);
+            }
+
+            SecurePages page;
+            Enum.TryParse<SecurePages>(pageId.ToString(), out page);
 
             if (!PortalSecurity.IsInRoles(this.PortalSettings.ActivePage.AuthorizedRoles) &&
-                !this.User.IsInRole("Admins"))
+                !this.User.IsInRole("Admins") && !UserProfile.HasPageAccess(page))
             {
                 PortalSecurity.AccessDenied();
             }
@@ -266,7 +269,7 @@ namespace Appleseed
                     this.Response.Redirect("~/DesktopDefault.aspx");
                 }
 
-                
+
                 if (string.IsNullOrEmpty(Request.Params["panelist"]))
                 {
                     this.LoadPage();

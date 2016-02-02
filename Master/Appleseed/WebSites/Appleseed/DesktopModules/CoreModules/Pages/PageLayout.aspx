@@ -15,7 +15,7 @@
                     <li class="tabDefault"><a href="#Page_Modules">Page Modules</a></li>
                     <li class="tabDefault"><a href="#PageSettings">Page Settings</a></li>
                 </ul>
-                <div id="Page_Information" style="height: 331px;" class="tabPanel">
+                <div id="Page_Information" class="tabPanel">
                     <% if (Request.QueryString.GetValues("ModalChangeMaster") == null)
                        { %>
                     <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">
@@ -71,6 +71,15 @@
                             <td colspan="3">
                                 <asp:TextBox ID="txtPageID" runat="server" CssClass="NormalTextBox" MaxLength="50"
                                     Width="300" Enabled="false"/>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="Normal" width="100">
+                                <rbfwebui:Localize ID="Localize3" runat="server" Text="Page Link" TextKey="AM_PAGE_LINK">
+                                </rbfwebui:Localize>
+                            </td>
+                            <td colspan="3">
+                                <asp:Label runat="server" ID="lblCurrentPageLink"></asp:Label>
                             </td>
                         </tr>
                         <tr>
