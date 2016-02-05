@@ -572,6 +572,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
         IList<Country> cs = GeographicProvider.Current.GetCountries(CountryFields.Name);
         this.ddlCountry.DataSource = cs;
         this.ddlCountry.DataBind();
+        this.ddlCountry.SelectedValue = DefaultCountryCode();
     }
 
     private string DefaultCountryCode()
