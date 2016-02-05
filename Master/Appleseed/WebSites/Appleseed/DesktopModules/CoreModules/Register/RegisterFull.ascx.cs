@@ -157,6 +157,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
                     }
                     catch (Exception exc)
                     {
+                        this.ddlCountry.SelectedValue = DefaultCountryCode();
                         ErrorHandler.Publish(LogLevel.Error, Resources.Appleseed.PROFILE_COUNTRY_WRONG_ID, exc);
                     }
                     if (((string)profileCommon.GetPropertyValue("Email")).Equals(string.Empty))
@@ -169,6 +170,10 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
                     this.tfPhone.Text = (string)profileCommon.GetPropertyValue("Phone");
                     this.chbReceiveNews.Checked = (bool)profileCommon.GetPropertyValue("SendNewsletter");
                 }
+                else
+                {
+                    this.ddlCountry.SelectedValue = DefaultCountryCode();
+                }
             }
             else
             {
@@ -177,6 +182,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
                 BirthdayField = _defaultRegisterDate;
                 this.tfEmail.Text = string.Empty;
                 this.tfPwd.Text = string.Empty;
+                this.ddlCountry.SelectedValue = DefaultCountryCode();
             }
         }
         if (Session["CameFromSocialNetwork"] != null) {
@@ -566,6 +572,15 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
         IList<Country> cs = GeographicProvider.Current.GetCountries(CountryFields.Name);
         this.ddlCountry.DataSource = cs;
         this.ddlCountry.DataBind();
+    }
+
+    private string DefaultCountryCode()
+    {
+        if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["DefaultCountry_US"]))
+        {
+            return ConfigurationManager.AppSettings["DefaultCountry_US"];
+        }
+        return "US";
     }
 
 
