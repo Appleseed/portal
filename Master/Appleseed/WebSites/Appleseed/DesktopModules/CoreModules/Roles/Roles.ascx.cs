@@ -58,6 +58,7 @@ namespace Appleseed.Content.Web.Modules
             // the rolename is an hyperlink to the list of users of the role
             Control dl = e.Item.FindControl("ImageButton1");
             Control d2 = e.Item.FindControl("ImageButton2");
+            Control imgPerm = e.Item.FindControl("ImageButton3");
             HyperLink d3 = (HyperLink)e.Item.FindControl("Name");
 
             AppleseedRole role = ((AppleseedRole)e.Item.DataItem);
@@ -81,6 +82,11 @@ namespace Appleseed.Content.Web.Modules
             {
                 if (role.Name.Equals("Admins"))
                     d2.Visible = false;
+            }
+            if (imgPerm != null)
+            {
+                if (role.Name.Equals("Admins"))
+                    imgPerm.Visible = false;
             }
         }
 
@@ -191,6 +197,11 @@ namespace Appleseed.Content.Web.Modules
                 Response.Redirect(
                     HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Roles/SecurityRoles.aspx", PageID,
                                             "mID=" + ModuleID.ToString() + "&roleID=" + _roleId));
+            }
+            else if (e.CommandName == "setpermissions")
+            {
+                Response.Redirect(
+              HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Roles/AccessPermissionViewer.aspx?rid=" + e.CommandArgument));
             }
             // reset the enable state of the add
             // set add button -- bja

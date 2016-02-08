@@ -601,13 +601,13 @@ using System.Text;
                 {
                     if (fieldset.Attributes.Count > 0)
                     {
-                        // add built fieldset
-                        fieldset.Controls.Add(tbl);
+                        if (tabDefault.Controls.Count == 1 && HasTabAcess(currentGroup)) 
+ 	                    { 
+                            // add built fieldset
+                            fieldset.Controls.Add(tbl);
+                            tabPanel.Controls.Add(fieldset);
+                            tabPanelGroup.Controls.Add(tabPanel);
 
-                        tabPanel.Controls.Add(fieldset);
-                        tabPanelGroup.Controls.Add(tabPanel);
-
-                        if(tabDefault.Controls.Count == 1){
                             var TabName = string.Empty;
                             foreach (var t in tabDefault.Controls) {
                                 TabName = ((HtmlGenericControl)t).InnerText;
@@ -616,12 +616,11 @@ using System.Text;
                                 dicc.Add(TabName, TabName);
                                 tabGroup.Controls.Add(tabDefault);
                             }
-                        }
-                        else{
-                            tabGroup.Controls.Add(tabDefault);
+                            else{
+                                tabGroup.Controls.Add(tabDefault);
+                            }
                         }
                     }
-
                     // start a new fieldset
                     fieldset = CreateNewFieldSet(currentItem);
 
@@ -857,6 +856,24 @@ using System.Text;
             return row;
         }
 
+        private bool HasTabAcess(SettingItemGroup currentItem)
+        {
+            if (Appleseed.Framework.Security.UserProfile.isCurrentUserAdmin)
+            {
+                return true;
+            }
+
+            switch (currentItem)
+            {
+                case SettingItemGroup.SECURITY_USER_SETTINGS:
+                    return false;
+
+                case SettingItemGroup.THEME_LAYOUT_SETTINGS:
+                    return Appleseed.Framework.Security.UserProfile.CurrentUser.HasPermission(Appleseed.Framework.Security.AccessPermissions.PORTAL_THEME_AND_LAYOUT_ADMINISTRATION);
+            }
+
+            return true;
+        } 
         #endregion
     }
 

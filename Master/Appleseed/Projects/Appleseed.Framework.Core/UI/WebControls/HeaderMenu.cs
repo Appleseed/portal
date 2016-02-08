@@ -30,6 +30,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
     [
         History("John.Mandia@whitelightsolutions.com", "2003/10/25",
             "Added ability to have more control over the menu by adding more settings.")]
+
+    [History("ashish.patel@haptix.biz", "2014/11/19", "Updated code for Logoff confirmation message")]
     public class HeaderMenu : DataList, INamingContainer
     {
         private object innerDataSource = null;
@@ -168,7 +170,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             set { _showLangString = value; }
         }
 
-      
+
         /// <summary>
         /// 
         /// </summary>
@@ -332,8 +334,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
             if (Page is Page)
             {
-                if (!((Page) Page).ClientScript.IsClientScriptIncludeRegistered("rb-popup"))
-                    ((Page) Page).ClientScript.RegisterClientScriptInclude(((Page) Page).GetType(), "rb-popup",
+                if (!((Page)Page).ClientScript.IsClientScriptIncludeRegistered("rb-popup"))
+                    ((Page)Page).ClientScript.RegisterClientScriptInclude(((Page)Page).GetType(), "rb-popup",
                                                                            Path.ApplicationRoot +
                                                                            "/aspnet_client/popupHelper/popup.js");
             }
@@ -352,7 +354,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 ArrayList list = new ArrayList();
 
                 // Obtain PortalSettings from Current Context
-                PortalSettings PortalSettings = (PortalSettings) HttpContext.Current.Items["PortalSettings"];
+                PortalSettings PortalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
 
                 string homeLink = "<a";
                 string menuLink;
@@ -392,10 +394,10 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     bool HasEditPermissionsOnTabs = false;
                     int TabModuleID = 0;
 
-//					SqlDataReader result = modules.FindModulesByGuid(PortalSettings.PortalID, TabGuid);
-//					while(result.Read()) 
-//					{
-//						TabModuleID=(int)result["ModuleId"];
+                    //					SqlDataReader result = modules.FindModulesByGuid(PortalSettings.PortalID, TabGuid);
+                    //					while(result.Read()) 
+                    //					{
+                    //						TabModuleID=(int)result["ModuleId"];
 
                     foreach (ModuleItem m in modules.FindModuleItemsByGuid(PortalSettings.PortalID, TabGuid))
                     {
@@ -404,6 +406,15 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         {
                             TabModuleID = m.ID;
                             break;
+                        }
+                    }
+
+                    if (!HasEditPermissionsOnTabs || !ShowTabMan)
+                    {
+                        if (UserProfile.HasEditThisPageAccess())
+                        {
+                            HasEditPermissionsOnTabs = true;
+                            this.ShowTabMan = true;
                         }
                     }
 
@@ -426,7 +437,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         list.Add(menuLink);
                     }
 
-                    if (ShowDragNDrop && HasEditPermissionsOnTabs) {
+                    if (ShowDragNDrop && HasEditPermissionsOnTabs)
+                    {
 
                         menuLink = "<a";
                         if (CssClass.Length != 0)
@@ -440,29 +452,31 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // 19/08/2004 Jonathan Fong
                         // www.gt.com.au
-                        if ( Context.User.Identity.AuthenticationType == "LDAP" ) {
+                        if (Context.User.Identity.AuthenticationType == "LDAP")
+                        {
                             // added Class support by Mario Endara <mario@softworks.com.uy> 2004/10/04
                             menuLink = "<a";
-                            if ( CssClass.Length != 0 )
+                            if (CssClass.Length != 0)
                                 menuLink = menuLink + " class=\"" + CssClass + "\"";
 
                             menuLink = menuLink + " href='" +
-                                       HttpUrlBuilder.BuildUrl( "~/DesktopModules/CoreModules/Register/Register.aspx") +
+                                       HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Register/Register.aspx") +
                                        "'>" + "Profile" + "</a>";
-                            list.Add( menuLink );
+                            list.Add(menuLink);
                         }
                         // If user is form add edit user link
-                        else if ( !( HttpContext.Current.User is WindowsPrincipal ) ) {
+                        else if (!(HttpContext.Current.User is WindowsPrincipal))
+                        {
                             // added Class support by Mario Endara <mario@softworks.com.uy> 2004/10/04
                             menuLink = "<a";
-                            if ( CssClass.Length != 0 )
+                            if (CssClass.Length != 0)
                                 menuLink = menuLink + " class=\"" + CssClass + "\"";
 
                             menuLink = menuLink + " href='" +
-                                       HttpUrlBuilder.BuildUrl( "~/DesktopModules/CoreModules/Register/Register.aspx") +
+                                       HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Register/Register.aspx") +
                                        "'>" +
-                                       General.GetString( "HEADER_EDIT_PROFILE", "Edit profile", this ) + "</a>";
-                            list.Add( menuLink );
+                                       General.GetString("HEADER_EDIT_PROFILE", "Edit profile", this) + "</a>";
+                            list.Add(menuLink);
                         }
                     }
 
@@ -489,7 +503,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                             // added code for redirection on same page after logged out
                             menuLink = menuLink + " href='javascript:void();' onclick=\"if(confirm('" + General.GetString("LOGOFF_CNF_MSG", "Log Off Confirmation: \\nAre you sure you want to log off?", null) + "')){window.location = '/DesktopModules/CoreModules/Admin/Logoff.aspx?redirecturl=" + href + "';  }else{return false;} \">" + General.GetString("HEADER_LOGOFF", "Logoff", null) + "</a>";
 
-                            
+
 
                             list.Add(menuLink);
                         }
@@ -516,7 +530,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         if (CssClass.Length != 0)
                             menuLink = menuLink + " class=\"" + CssClass + "\"";
 
-                        menuLink += string.Concat(" id=\"", this.ClientID, "_logon_link" , "\"");
+                        menuLink += string.Concat(" id=\"", this.ClientID, "_logon_link", "\"");
                         menuLink = menuLink + " href='" + HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/Logon.aspx") +
                                    "'>" + General.GetString("LOGON", "Logon", null) + "</a>";
                         list.Add(menuLink);
@@ -527,8 +541,9 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         if (bool.Parse(PortalSettings.CustomSettings["SITESETTINGS_ALLOW_NEW_REGISTRATION"].ToString()))
                             allowNewRegistration = true;
 
-                    if (ShowRegister && allowNewRegistration) {
-                        
+                    if (ShowRegister && allowNewRegistration)
+                    {
+
                         menuLink = "<a";
                         if (CssClass.Length != 0)
                             menuLink = menuLink + " class=\"" + CssClass + "\"";
@@ -557,7 +572,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                 LanguageSwitcher ls = new LanguageSwitcher();
                 Appleseed.Framework.Web.UI.WebControls.LanguageCultureCollection lcc = Appleseed.Framework.Localization.LanguageSwitcher.GetLanguageCultureList();
-                if ((ShowLanguages)  && (lcc.Count > 1))
+                if ((ShowLanguages) && (lcc.Count > 1))
                 {
                     var mb = new StringBuilder();
 
@@ -566,15 +581,17 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         mb.AppendFormat(" class=\"{0}\"", CssClass);
 
                     mb.AppendFormat("id = \"popUpLang\" >");
-                    
-                    if ((ShowLangString) || (ShowLanguages)){
+
+                    if ((ShowLangString) || (ShowLanguages))
+                    {
                         string aux = General.GetString("LANGUAGE", "Language", null);
                         mb.AppendFormat("{0}", aux);
                     }
-                    if (ShowFlags){
+                    if (ShowFlags)
+                    {
                         CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
-                        string dir = HttpUrlBuilder.BuildUrl("~/aspnet_client/flags/flags_"+cultureInfo.ToString() +".gif");
-                        mb.AppendFormat("<img src=\"{0}\" alt=\"\" style=\"left:13px;position:relative\"/>",dir);
+                        string dir = HttpUrlBuilder.BuildUrl("~/aspnet_client/flags/flags_" + cultureInfo.ToString() + ".gif");
+                        mb.AppendFormat("<img src=\"{0}\" alt=\"\" style=\"left:13px;position:relative\"/>", dir);
                     }
                     mb.Append("</a>");
                     list.Add(mb);
@@ -588,7 +605,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 //this new list control won't appear in the list, since it has no DataItem. However we need it for "holding" the Signin Control.
                 var newItem = new DataListItem(this.Controls.Count, ListItemType.Item);
                 this.Controls.Add(newItem);
-                
+
                 var logonDialogPlaceHolder = new PlaceHolder();
                 newItem.Controls.Add(logonDialogPlaceHolder);
 
@@ -634,62 +651,74 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 string iframeheight = "385px";
                 string dialogheightdiv = "390";
                 string dialogheight = "420";
-                if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().Contains("signinloginview.ascx")) {
+                if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().Contains("signinloginview.ascx"))
+                {
                     iframeheight = "250px";
                     dialogheightdiv = "260";
                     dialogheight = "300";
                 }
-                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().Contains("/signin.ascx")) {
+                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().Contains("/signin.ascx"))
+                {
                     iframeheight = "280px";
                     dialogheightdiv = "290";
                     dialogheight = "330";
-                } else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().Contains("both.ascx")) {
-                        if ((PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_TWITTER_APP_ID") &&
-                            PortalSettings.CustomSettings["SITESETTINGS_TWITTER_APP_ID"].ToString().Equals(string.Empty) ||
-                            PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_TWITTER_APP_SECRET") &&
-                            PortalSettings.CustomSettings["SITESETTINGS_TWITTER_APP_SECRET"].ToString().Equals(string.Empty)) &&
-                            (PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_FACEBOOK_APP_ID") &&
-                            PortalSettings.CustomSettings["SITESETTINGS_FACEBOOK_APP_ID"].ToString().Equals(string.Empty) ||
-                            PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_FACEBOOK_APP_SECRET") &&
-                            PortalSettings.CustomSettings["SITESETTINGS_FACEBOOK_APP_SECRET"].ToString().Equals(string.Empty)) && 
-                            PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_GOOGLE_LOGIN") &&
-                            PortalSettings.CustomSettings["SITESETTINGS_GOOGLE_LOGIN"].ToString().Length != 0 &&
-                            !bool.Parse(PortalSettings.CustomSettings["SITESETTINGS_GOOGLE_LOGIN"].ToString())
-                            ) {
-                            iframewidth = "250px";
-                            dialogwidth = "280";
-                            iframeheight = "280px";
-                            dialogheightdiv = "290";
-                            dialogheight = "330";
-                        } else {
-                            iframewidth = "550px";
-                            dialogwidth = "580";
-                            iframeheight = "345px";
-                            dialogheightdiv = "370";
-                            dialogheight = "400";
-                        }
                 }
-                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinsocialnetwork.ascx")) {
+                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().Contains("both.ascx"))
+                {
+                    if ((PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_TWITTER_APP_ID") &&
+                        PortalSettings.CustomSettings["SITESETTINGS_TWITTER_APP_ID"].ToString().Equals(string.Empty) ||
+                        PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_TWITTER_APP_SECRET") &&
+                        PortalSettings.CustomSettings["SITESETTINGS_TWITTER_APP_SECRET"].ToString().Equals(string.Empty)) &&
+                        (PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_FACEBOOK_APP_ID") &&
+                        PortalSettings.CustomSettings["SITESETTINGS_FACEBOOK_APP_ID"].ToString().Equals(string.Empty) ||
+                        PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_FACEBOOK_APP_SECRET") &&
+                        PortalSettings.CustomSettings["SITESETTINGS_FACEBOOK_APP_SECRET"].ToString().Equals(string.Empty)) &&
+                        PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_GOOGLE_LOGIN") &&
+                        PortalSettings.CustomSettings["SITESETTINGS_GOOGLE_LOGIN"].ToString().Length != 0 &&
+                        !bool.Parse(PortalSettings.CustomSettings["SITESETTINGS_GOOGLE_LOGIN"].ToString())
+                        )
+                    {
+                        iframewidth = "250px";
+                        dialogwidth = "280";
+                        iframeheight = "280px";
+                        dialogheightdiv = "290";
+                        dialogheight = "330";
+                    }
+                    else
+                    {
+                        iframewidth = "550px";
+                        dialogwidth = "580";
+                        iframeheight = "345px";
+                        dialogheightdiv = "370";
+                        dialogheight = "400";
+                    }
+                }
+                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinsocialnetwork.ascx"))
+                {
                     dialogwidth = "370";
                     iframewidth = "320px";
                     iframeheight = "200px";
                     dialogheightdiv = "240";
                     dialogheight = "260";
-                } else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("cool.ascx")) {
+                }
+                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("cool.ascx"))
+                {
                     iframewidth = "320px";
                     dialogwidth = "350";
                     iframeheight = "250px";
                     dialogheightdiv = "260";
                     dialogheight = "300";
                 }
-                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinwithsocialnetwork.ascx")) {
+                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinwithsocialnetwork.ascx"))
+                {
                     iframeheight = "440px";
                     dialogheightdiv = "445";
                     dialogheight = "500";
                     dialogwidth = "370";
                     iframewidth = "320px";
                 }
-                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinlink.ascx")) {
+                else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinlink.ascx"))
+                {
                     iframeheight = "150px";
                     dialogheightdiv = "165";
                     dialogheight = "200";
@@ -699,13 +728,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 string div = this.ClientID + "_logon_dialog";
                 var url = HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/SignIn/SignInPage.aspx?iframe=true");
                 writer.Write(string.Concat("<div id=\"", this.ClientID, "_logon_dialog\" style=\"display:none\" >"));
-                writer.Write(string.Concat("<div id=\"AppleseedLogin\" style=\"height: "+dialogheightdiv+"px !important\" >"));
-                writer.Write("<iframe id=\"iframeAppleseedLogin\" src=\""+empty+"\" onload=\"check()\" width=\""+iframewidth+"\" height=\""+iframeheight+"\"></iframe>");
+                writer.Write(string.Concat("<div id=\"AppleseedLogin\" style=\"height: " + dialogheightdiv + "px !important\" >"));
+                writer.Write("<iframe id=\"iframeAppleseedLogin\" src=\"" + empty + "\" onload=\"check()\" width=\"" + iframewidth + "\" height=\"" + iframeheight + "\"></iframe>");
                 writer.Write("</div>");
-                
-               
 
-          
+
+
+
 
 
                 //_logonControl.RenderControl(writer);
@@ -713,10 +742,10 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 // writer.Write(string.Concat("<div id=\"", this.ClientID, "_logon_dialog\" style=\"display:none\" >"));
                 writer.Write(string.Concat("<div id=\"AppleseedLang\" style=\"display:none\" class=\"appleseedlangclass\" >"));
                 writer.Write("</div>");
-               
+
                 writer.Write("<script type=\"text/javascript\">");
 
-                
+
                 //string ajax = "$.ajax({" +
                 //              "url: " + "\"" + url + "\"," +
                 //              "cache: false," +
@@ -727,18 +756,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                 writer.Write(string.Concat(@"
                         $(document).ready(function () {
-                            $('#iframeAppleseedLogin').attr('src','",empty,@"');
+                            $('#iframeAppleseedLogin').attr('src','", empty, @"');
                             $('#AppleseedLogin').dialog({
                                 autoOpen: false,
                                 modal: true,
-                                width: ",dialogwidth,@",
+                                width: ", dialogwidth, @",
                                 height: ", dialogheight, @",
                                 resizable: false,
                                 title: 'Sign In'
                             });
 
                             $('#", this.ClientID, @"_logon_link').click(function () {
-                                $('#iframeAppleseedLogin').attr('src','",url, @"');
+                                $('#iframeAppleseedLogin').attr('src','", url, @"');
                                 
                                
 
@@ -752,15 +781,15 @@ namespace Appleseed.Framework.Web.UI.WebControls
                            
                         });"
                        ));
-                
-                
-                
+
+
+
                 writer.Write("\nfunction check(){\n" +
                 "$(document).ready(function () {\n" +
                     "$('#iframeAppleseedLogin').ready(function() {\n" +
                         "if(!(document.getElementById('iframeAppleseedLogin').src.match(\"/empty.htm\"))){\n" +
                         "try{\n" +
-                        "if(!(document.getElementById(\"iframeAppleseedLogin\").contentWindow.location.href =="+
+                        "if(!(document.getElementById(\"iframeAppleseedLogin\").contentWindow.location.href ==" +
                                                               "document.getElementById(\"iframeAppleseedLogin\").src)){\n" +
                                       "window.parent.location = document.getElementById(\"iframeAppleseedLogin\").contentWindow.location.href;\n" +
                                 "$('#AppleseedLogin').dialog('close');\n" +
@@ -772,11 +801,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                  "})\n" +
                             "};\n"
                        );
-                
+
                 writer.Write(getStringPopUpLanguages());
                 writer.Write("</script>");
-                          
-               
+
+
 
             }
             base.Render(writer);
@@ -787,8 +816,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
             string txt = General.GetString("LANGUAGE", "Language", null);
             string dir = HttpUrlBuilder.BuildUrl("~/appleseed.Core/home/lstLanguages");
             string url = "\"" + dir + "\"";
-           string post = "\"Post\"";
-           return string.Concat(@"
+            string post = "\"Post\"";
+            return string.Concat(@"
                 $(document).ready(function () {
                     $('#AppleseedLang').dialog({
                         autoOpen: false,
@@ -797,11 +826,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         height: 300,
                         resizable: false
                     });
-                    $('#ui-dialog-title-AppleseedLang').append('", txt,@"');
+                    $('#ui-dialog-title-AppleseedLang').append('", txt, @"');
                     $('#popUpLang').click(function () {
                         $('#AppleseedLang').dialog('open');
                         $.ajax({
-                            type:",post,@",
+                            type:", post, @",
                             url:", url, @",
                             success: function (data){
                                 $('#AppleseedLang').html(data)
@@ -810,7 +839,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         return false;    
                     });
                 });"
-            );
+             );
         }
     }
 }

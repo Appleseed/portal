@@ -1116,6 +1116,13 @@
     <Compile Include="DesktopModules\CoreModules\Register\RequireRegistration.ascx.designer.cs">
       <DependentUpon>RequireRegistration.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\Roles\AccessPermissionViewer.aspx.cs">
+      <DependentUpon>AccessPermissionViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Roles\AccessPermissionViewer.aspx.designer.cs">
+      <DependentUpon>AccessPermissionViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\Roles\Roles.ascx.cs">
       <DependentUpon>Roles.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8416,7 +8423,9 @@
     <Content Include="DesktopModules\CoreModules\Register\Register.aspx" />
     <Content Include="DesktopModules\CoreModules\Register\RegisterFull.ascx" />
     <Content Include="DesktopModules\CoreModules\Register\RequireRegistration.ascx" />
+    <Content Include="DesktopModules\CoreModules\Roles\AccessPermissionViewer.aspx" />
     <Content Include="DesktopModules\CoreModules\Roles\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Roles\role.upgrade.script.sql" />
     <Content Include="DesktopModules\CoreModules\Roles\Roles.ascx" />
     <Content Include="DesktopModules\CoreModules\Roles\SecurityRoles.aspx" />
     <Content Include="DesktopModules\CoreModules\SecurityCheck\install.xml" />
@@ -8537,6 +8546,7 @@
     <Content Include="images\img\tridown.gif" />
     <Content Include="images\img\trileft.gif" />
     <Content Include="images\img\_reply.gif" />
+    <Content Include="images\rolepermissions.png" />
     <Content Include="images\root.png" />
     <Content Include="images\sign-in-google.png" />
     <Content Include="images\sign-in-with-linkedin.jpg" />

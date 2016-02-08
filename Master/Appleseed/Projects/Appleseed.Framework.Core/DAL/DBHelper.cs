@@ -480,11 +480,12 @@ namespace Appleseed.Framework.Data
                 items.Add(inst);
             }
             // Added by Ashish - Connection Pool Issue
-            if (reader != null)
+            if(reader != null)
             {
                 reader.Close();
                 selectCmd.Connection.Close();
             }
+            
             return items;
         }
 

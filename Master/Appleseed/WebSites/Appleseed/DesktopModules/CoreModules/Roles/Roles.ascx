@@ -1,10 +1,10 @@
 <%@ Control Inherits="Appleseed.Content.Web.Modules.Roles"
-    Language="c#" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="Roles.ascx.cs" %>
+    Language="c#" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="Roles.ascx.cs" %>
 <table border="0" cellpadding="2" cellspacing="0">
-   
+
     <tr>
         <td>
-            <asp:DataList ID="rolesList" runat="server" OnItemCommand="rolesList_ItemCommand" OnItemDataBound="RolesList_ItemDataBound" DataKeyField="Id" >
+            <asp:DataList ID="rolesList" runat="server" OnItemCommand="rolesList_ItemCommand" OnItemDataBound="RolesList_ItemDataBound" DataKeyField="Id">
                 <ItemTemplate>
                     <table cellspacing="3">
                         <tr>
@@ -15,9 +15,15 @@
                             </td>
                             <td>
                                 <rbfwebui:ImageButton ID="ImageButton1" runat="server" AlternateText="Delete this item"
-                                    CausesValidation="false" CommandName="delete"  CommandArgument='<%# Eval( "Id" ) %>'
+                                    CausesValidation="false" CommandName="delete" CommandArgument='<%# Eval( "Id" ) %>'
                                     ImageUrl='<%# this.CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl %>'
                                     TextKey="DELETE_THIS_ITEM" />
+                            </td>
+                            <td>
+                                <rbfwebui:ImageButton ID="ImageButton3" runat="server" AlternateText="Set access permissions"
+                                    CausesValidation="false" CommandName="setpermissions" CommandArgument='<%# Eval( "Id" ) %>'
+                                    ImageUrl="~/images/rolepermissions.png"
+                                     />
                             </td>
                             <td>
                                 <rbfwebui:HyperLink ID="Name" runat="server" CssClass="Normal" Text='<%# Eval("Name") %>' />
@@ -30,7 +36,7 @@
                         <tr>
                             <td>
                                 <asp:Label ID="roleId" runat="server" Text='<%# Eval("Id") %>' Visible="false" />
-                                
+
                                 <asp:TextBox ID="roleName" runat="server" CssClass="NormalTextBox" Text='<%# Eval("Name") %>' />
                             </td>
                             <td>
@@ -47,10 +53,10 @@
     </tr>
     <tr>
         <td>
-            <asp:TextBox ID='txtNewRole' runat='server'  ValidationGroup="roleValidationGroup" />&nbsp;
+            <asp:TextBox ID='txtNewRole' runat='server' ValidationGroup="roleValidationGroup" />&nbsp;
             <rbfwebui:LinkButton ID="AddRoleBtn" runat="server" CssClass="CommandButton" Text="Add New Role"
                 TextKey="AM_ADDROLE" OnClick="AddRole_Click" ValidationGroup="roleValidationGroup" />
-            <asp:RequiredFieldValidator ID="txtNewRoleValidator"  ValidationGroup="roleValidationGroup" runat="server" ControlToValidate="txtNewRole" ErrorMessage="Role Name can't be empty" />
+            <asp:RequiredFieldValidator ID="txtNewRoleValidator" ValidationGroup="roleValidationGroup" runat="server" ControlToValidate="txtNewRole" ErrorMessage="Role Name can't be empty" />
         </td>
     </tr>
     <tr>

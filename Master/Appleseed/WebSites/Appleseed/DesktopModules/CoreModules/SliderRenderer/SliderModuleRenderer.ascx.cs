@@ -84,12 +84,12 @@ namespace Appleseed.DesktopModules.CoreModules.SliderRenderer
             ltrSliderLi.Text = sbGenereateHtml.ToString();
         }
 
-        public override bool EnableSlider
-        {
-            get
-            {
-                return true;
-            }
-        }
+        //public override bool EnableSlider
+        //{
+        //    get
+        //    {
+        //        return true;
+        //    }
+        //}
     }
 }

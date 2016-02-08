@@ -711,22 +711,6 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 this.BaseSettings.Add("TopicName", topicName);
             }
 
-            // Slider Configuration
-            if (this.EnableSlider)
-            {
-                var group2 = SettingItemGroup.MODULE_SPECIAL_SETTINGS;
-
-                var modules = new SettingItem<string, DropDownList>(new Appleseed.Framework.UI.DataTypes.SliderDataType())
-                {
-                    Order = (int)group + 10,
-                    Group = group2,
-                    EnglishName = "Slider",
-                    Description = "Select the Slider"
-                };
-
-                this.BaseSettings.Add("Sliders", modules);
-            }
-
             // Default configuration
             this.pageId = 0;
 
@@ -1166,7 +1150,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             {
                 return this.ModuleConfiguration != null && this.ModuleID != 0 &&
                        (this.SupportsArrows && this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
-                        PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedMoveModuleRoles));
+                       (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedMoveModuleRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING))); 
             }
         }
 
@@ -1221,7 +1205,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
-                return PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedDeleteModuleRoles) &&
+                return (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedDeleteModuleRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_DELETION)) && 
                        this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID;
             }
         }
@@ -1241,7 +1225,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 return this.ModuleConfiguration != null &&
                        this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                        (((this.SupportsWorkflow && this.Version == WorkFlowVersion.Staging) || !this.SupportsWorkflow) &&
-                        (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedEditRoles) &&
+                        ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedEditRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_HTML_CONTENT_EDITING)) && 
                          (!string.IsNullOrEmpty(this.EditUrl)) &&
                          (this.WorkflowStatus == WorkflowState.Original || this.WorkflowStatus == WorkflowState.Working)));
             }
@@ -1338,7 +1322,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             get
             {
                 return this.ModuleConfiguration != null &&
-                       (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) &&
+                        ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)) && 
                         this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                         !string.IsNullOrEmpty(this.PropertiesUrl));
             }
@@ -1399,7 +1383,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             get
             {
                 return this.ModuleConfiguration != null &&
-                       (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) &&
+                       ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)) &&
                         this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                         !string.IsNullOrEmpty(this.SecurityUrl));
             }
@@ -2555,17 +2539,6 @@ namespace Appleseed.Framework.Web.UI.WebControls
         ///   <c>true</c> if searchable; otherwise, <c>false</c>.
         /// </value>
         public virtual bool Searchable
-        {
-            get
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether enable slider
-        /// </summary>
-        public virtual bool EnableSlider
         {
             get
             {
