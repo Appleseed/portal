@@ -47,7 +47,7 @@ CREATE TABLE [dbo].[aspnet_RolePermissions](
 ) ON [PRIMARY]
 END
 GO
-IF NOT EXISTS(SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[aspnet_RolePermissions]') AND type in (N'U'))
+IF EXISTS(SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[aspnet_RolePermissions]') AND type in (N'U'))
 BEGIN
 INSERT INTO [dbo].[aspnet_Roles] ([ApplicationId], [RoleId], [RoleName], [LoweredRoleName], [Description]) VALUES (N'ca8dee6b-0b81-4462-af3b-6a22b36a0304', N'9b0eb3ff-c772-49f0-a91c-792332ba4b94', N'Builder', N'builder', NULL)
 
