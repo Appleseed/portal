@@ -23,10 +23,10 @@ namespace Appleseed.Framework.Web.UI
     ///     Can be inherited
     /// </summary>
     [History("jminond", "2005/03/10", "Tab to page conversion")]
-    [History("jviladiu@portalServices.net", "2004/07/22", 
+    [History("jviladiu@portalServices.net", "2004/07/22",
         "Added Security Access. Now inherits from Appleseed.Framework.UI.SecurePage")]
     [History("jviladiu@portalServices.net", "2004/07/22", "Clean Methods that only call to base")]
-    [History("Jes1111", "2003/03/04", 
+    [History("Jes1111", "2003/03/04",
         "Smoothed out page event inheritance hierarchy - placed security checks and cache flushing")]
     public class EditItemPage : SecurePage
     {
@@ -40,7 +40,7 @@ namespace Appleseed.Framework.Web.UI
             // Verify that the current user has access to edit this module
             // Removed by Mario Endara <mario@softworks.com.uy> (2004/11/04)
             // if (PortalSecurity.HasEditPermissions(ModuleID) == false && PortalSecurity.IsInRoles("Admins") == false)
-            if (PortalSecurity.HasEditPermissions(this.ModuleID) == false)
+            if (PortalSecurity.HasEditPermissions(this.ModuleID) == false && (!UserProfile.HasEditThisPageAccess()) && (!UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_HTML_CONTENT_EDITING)))
             {
                 PortalSecurity.AccessDeniedEdit();
             }
