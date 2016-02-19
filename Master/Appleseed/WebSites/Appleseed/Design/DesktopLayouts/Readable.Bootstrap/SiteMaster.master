@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  Inherits="Appleseed.AppleseedMaster" %>
+<%@ Register TagPrefix="as" TagName="Admin" Src="DesktopAdmin.ascx" %>
+<%@ Register TagPrefix="head" TagName="Banner" Src="DesktopPortalBanner.ascx" %>
+<%@ Register TagPrefix="foot" TagName="Footer" Src="DesktopFooter.ascx" %>
+
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrap", ResolveClientUrl ("~/Design/Themes/Readable.Bootstrap/js/bootstrap.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapcontentfix", ResolveClientUrl ("~/Design/Themes/Readable.Bootstrap/js/bootstrap-content-area-fix.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapmenufix", ResolveClientUrl ("~/Design/Themes/Readable.Bootstrap/js/bootstrap-menu-fix.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminmenuunwrap", ResolveClientUrl ("~/Design/Themes/Readable.Bootstrap/js/admin-menu-table-unwrap.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminbarmargin", ResolveClientUrl ("~/Design/Themes/Readable.Bootstrap/js/admin-bar-margin.js")); %>
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head runat="server">
+    <title></title>	
+</head>  
+
+<body cz-shortcut-listen="true">
+    <form id="form1" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" >
+			<Services>
+				<asp:ServiceReference InlineScript="false" Path="~/DesktopModules/CoreModules/Admin/PortalService.asmx" />
+			</Services>
+		</asp:ScriptManager>
+        <as:Admin ID="Admin" selectedtabindex="0" runat="server" ContentContainerSelector=".DefaultLayoutDiv"></as:Admin>
+        <div class="clearfix"></div>
+        <div class="header-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="Table1">
+				        <head:Banner ID="Banner" selectedtabindex="0" runat="server">
+				        </head:Banner>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+			        <asp:ContentPlaceHolder ID="TopPane" runat="server">
+			        </asp:ContentPlaceHolder>
+			        <div class="Main_Table" cellspacing="0" cellpadding="0" id="Table2">
+				        <div class="row">
+					        <div class="Main_Content_Table col-md-12">
+						        <asp:ContentPlaceHolder ID="Content" runat="server">
+						        </asp:ContentPlaceHolder>
+					        </div>
+				        </div>
+			        </div>
+                </div>
+            </div>
+        </div>
+		
+        <footer id="footer_div clear">
+            <div class="container">
+                <div class="row">
+			        <asp:ContentPlaceHolder ID="BottomPane" runat="server">
+			        </asp:ContentPlaceHolder>
+                </div>
+            
+            </div>
+		</footer>
+    </form>
+</body>
+</html>
