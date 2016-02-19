@@ -11,3 +11,5 @@
 *.dat
 *.DotSettings
 *.tmp
+/Master/Appleseed/builds
+/Master/Appleseed/.vs
