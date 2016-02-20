@@ -6,8 +6,6 @@ and are used according to the enclosed DPL licence
 
 Duemetri Public License (DPL) Version 1.0 
 
-The software is called "Rainbow Portal"
- 
 This software is Copyright (c) Duemetri sas (tm) and Contributors. All rights reserved.
 
 Redistributions in source code must retain the above copyright notice, this list of conditions, and the following disclaimer. 
