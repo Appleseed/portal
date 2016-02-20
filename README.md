@@ -12,7 +12,7 @@ SQL Server (Express) 2005/2008/2012/2014
 Visual Studio 2015 ( Visual Studio 14 ) for development
 
 ## Quick Install
- - Create an Empty SQL Server Database in your SQL Server Instance
+ * Create an Empty SQL Server Database in your SQL Server Instance
  - Give a user access to your SQL Server Databse ( Network Service is recommended )
  - Unzip the zip archive to a non-windows controled folder C:\Appleseed\ ( ie : Not the Windows folder)
  - Create a Site in IIS with a .NET 4.0 Application Pool
