@@ -7887,9 +7887,11 @@
     <Content Include="DesktopModules\CoreModules\XMLImportExport\FINAL.ANANT.Appleseed.XMLImportExport_ExportXML.sql" />
     <Content Include="DesktopModules\CoreModules\XMLImportExport\FINAL.ANANT.Appleseed.XMLImportExport_ImportXML.sql" />
     <Content Include="DesktopModules\CoreModules\XMLImportExport\XmlImportExport.ascx" />
+    <Content Include="developer.readme.txt" />
     <Content Include="favicon.ico" />
     <Content Include="get_aspx_ver.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="httpCompression.txt" />
     <Content Include="images\1x1black.gif" />
     <Content Include="images\brick.png" />
     <Content Include="images\file.png" />
@@ -7937,8 +7939,6 @@
     <Content Include="images\img\page_edit.gif" />
     <Content Include="images\img\page_remove.gif" />
     <Content Include="images\img\plus.gif" />
-    <Content Include="images\img\rain-100pure.gif" />
-    <Content Include="images\img\rain-powered.gif" />
     <Content Include="images\img\reply.png" />
     <Content Include="images\img\right-bottom.gif" />
     <Content Include="images\img\right-round.gif" />
@@ -8057,24 +8057,25 @@
     <None Include="Setup\History.xsx">
       <DependentUpon>History.xsd</DependentUpon>
     </None>
-    <Content Include="Portals\_Appleseed\corporate_black_logo.png" />
+    <Content Include="Portals\_Appleseed\appleseed-logo-160x33.png" />
+    <Content Include="Portals\_Appleseed\appleseed-logo-white-160x33.png" />
     <Content Include="Portals\_Appleseed\documents\Documents.txt" />
-    <Content Include="Portals\_Appleseed\education_logo.png" />
     <Content Include="Portals\_Appleseed\FlashGallery\effect2-marquee.swf" />
     <Content Include="Portals\_Appleseed\History.xml" />
     <Content Include="Portals\_Appleseed\History.xsl" />
     <Content Include="Portals\_Appleseed\IconContainer\navlink.gif" />
-    <Content Include="Portals\_Appleseed\images\CorporateBlack\corporate_black_logo.png" />
-    <Content Include="Portals\_Appleseed\images\CorporateBlack\glasses.jpg" />
-    <Content Include="Portals\_Appleseed\images\default\beta-small.gif" />
     <Content Include="Portals\_Appleseed\images\default\poweredby_simple.gif" />
+    <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.business.jpg" />
+    <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.coffee.jpg" />
+    <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.trade.jpg" />
     <Content Include="Portals\_Appleseed\MagicUrl\MagicUrlList.xml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xsl" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xsl" />
     <Content Include="Portals\_Appleseed\PortalIcon.ico" />
     <Content Include="Portals\_Appleseed\Quiz\Demo1.xml" />
     <Content Include="Portals\_Appleseed\Quiz\Demo2.xml" />
-    <Content Include="Portals\_Appleseed\Terms.txt" />
-    <Content Include="Portals\_Appleseed\Terms_en.txt" />
-    <Content Include="Portals\_Appleseed\Terms_it.txt" />
     <Content Include="Portals\_Appleseed\xml\sales.xml" />
     <Content Include="Portals\_Appleseed\xml\sales.xsl" />
     <Content Include="Portals\_Appleseed\xml\sales2.xml" />
@@ -8217,6 +8218,7 @@
     </Content>
     <Content Include="Shared\PanesMasterDefault.master" />
     <Content Include="Shared\SiteMasterDefault.master" />
+    <Content Include="Styles\Site.css" />
     <Content Include="UploadDialog.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
