@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle( "Appleseed.Framework.Providers.AppleseedRoleProvider" )]
 [assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "--" )]
+[assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct( "Appleseed.Framework.Providers.AppleseedRoleProvider" )]
-[assembly: AssemblyCopyright( "Copyright © -- 2006" )]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2016")]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 

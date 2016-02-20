@@ -1,6 +1,7 @@
 ---------------------
 --1.1.7.1111Z.sql
 ---------------------
+-- Updated by Eric Ramseur@anant.us 2/20/2016
 -- by Manu and Uwe Lesta and Charles on 27 - feb - 2005
 -- CLEAN INSTALL of system tables AND procedures
 -- Modules structures will be created by module itself
@@ -49,15 +50,22 @@ GO
 CREATE PROC rb_PortalSettings_IU 	@PortalID	int,  	@SettingName	nvarchar(50),  	@SettingValue	nvarchar(256)  AS  SET NOCOUNT ON  	UPDATE [rb_PortalSettings] 	SET SettingValue = @SettingValue 	WHERE PortalID	=	@PortalID AND SettingName	=	@SettingName  	IF @@ROWCOUNT = 0 	BEGIN 	INSERT [rb_PortalSettings] (PortalID,  		SettingName,  		SettingValue) 	VALUES (@PortalID,  		@SettingName,  		@SettingValue) 	END  Return 
 GO
 --	@PortalID	,	@SettingName	,	@SettingValue
-EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_PAGE_LAYOUT'	, 	N'Corporate-Black' -- N'zen-3col-hmenu'
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_PAGE_LAYOUT'	, 	N'Flatly.Bootstrap' -- Bootstrap Layout
 GO
 EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_REGISTER_TYPE'	,	N'~/desktopmodules/coremodules/register/registerfull.ascx'
 GO
-EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_THEME'	,	N'Corporate-Black' -- N'zen-example1' N'Default' FCKEditor V2
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_THEME'	,	N'Flatly.Bootstrap' --Bootstrap Theme
 GO
-EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_ALT_THEME'	, N'Corporate-Black-Alt' -- N'zen-example1' 
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_ALT_THEME'	, N'Flatly.Bootstrap' 
 GO
 EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_LANGLIST'	, N'en;es;ar;bg;ca;cs;da;de;es-MX;fr;hr;is;it;ko;nl;nl-BE;no;pl;pt;ru;sl;sv;tr;uk;zh-CN;zh-TW;'
+GO
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_LOGO'	, N'appleseed-logo-white-160x33.png' 
+GO
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_DEFAULT_EDITOR'	, N'Syrinx CkEditor' 
+GO
+--Turn on Friendly URLS by default
+EXEC rb_PortalSettings_IU 	0	,	N'ENABLE_PAGE_FRIENDLY_URL'	, N'True' 
 GO
 IF EXISTS (SELECT * FROM sysobjects WHERE id = object_id(N'[rb_PortalSettings_IU]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 DROP PROCEDURE [rb_PortalSettings_IU]
@@ -220,7 +228,7 @@ EXEC rb_Modules_IU 	5,	1,	'{0B113F51-FEA3-499A-98E7-7B83C192FDBB}', 1, N'TopPane
 GO
 EXEC rb_Modules_IU 	1, 1, '{A0F1F62B-FDC7-4DE5-BBAD-A5DAF31D960A}', -1, N'LeftPane', N'Login', N'Admins;', N'Unauthenticated Users;Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 1, 0, NULL, 0, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
 GO
-EXEC rb_Modules_IU 	2,	1,	'{0B113F51-FEA3-499A-98E7-7B83C192FDBB}', 1, N'ContentPane', N'Appleseed Portal RC2!', N'Admins', N'All Users', N'Admins', N'Admins', N'Admins', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
+EXEC rb_Modules_IU 	2,	1,	'{0B113F51-FEA3-499A-98E7-7B83C192FDBB}', 1, N'ContentPane', N'Welcome to Appleseed Portal', N'Admins', N'All Users', N'Admins', N'Admins', N'Admins', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
 GO
 EXEC rb_Modules_IU 	7,	1,	'{2502DB18-B580-4F90-8CB4-C15E6E531020}', 2, N'ContentPane', N'Appleseed Portal Blog Feed', N'Admins', N'All Users', N'Admins', N'Admins', N'Admins', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
 GO
@@ -438,34 +446,33 @@ GO
 
 DELETE FROM rb_HtmlText_st WHERE ModuleID = 5
 GO
+-- default home slider 
 INSERT rb_HtmlText_st
 (ModuleID, DesktopHtml, MobileSummary, MobileDetails)
-VALUES (5, '<style type="text/css">
+VALUES (5, N'&lt;style type=&quot;text/css&quot;&gt;
         /****************/
         /****SLIDER*****/
         /***************/
-/*contenedor */	
+/*container */  
 .slideshow{
-    width:940px;
-    height:300px;
     margin-top:10px;
     overflow:hidden;
-    position:relative;}
+    position:relative;
+    list-style-type: none;}
+
+li.content{
+    list-style-type: none;}
     
-/* JPG */	
+/* JPG */  
 .slider_image{
-    width:430px;
-    height:300px;
-    display:inline-block;}	
+    width:100%;
+    height:auto;
+    display:inline-block;}  
     
 /* TEXT */
 .wrap_text{
-    height:300px;
-    width:390px;
-    right:-440px;
-    top:30px;
-    color:#fff;
-    position:absolute;}	
+
+}  
 
 /* LINKS */
 .continue{
@@ -483,10 +490,10 @@ VALUES (5, '<style type="text/css">
 #fsn {
     display:block;
     height:25px;
-    margin:10px auto -5px;
+    margin:10px auto 15px;
     position:relative;
     text-align:center;
-    width:940px;
+    width:100%;
     z-index:0;
 }
 #fsn ul {
@@ -521,57 +528,64 @@ VALUES (5, '<style type="text/css">
 
 #Content_moduleType{
     color:#666;}
-</style>
-<!-- include Cycle plugin -->
-<script type="text/javascript" src="~/aspnet_client/js/jquery.cycle.min.js"></script>
-<!--  initialize the slideshow when the DOM is ready -->
-<script type="text/javascript">
+&lt;/style&gt;
+&lt;!-- include Cycle plugin --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;~/aspnet_client/js/jquery.cycle.min.js&quot;&gt;&lt;/script&gt;
+&lt;!--  initialize the slideshow when the DOM is ready --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 $(document).ready(function () {
-    $(''.slideshow'').after(''<div id="fsn"><ul id="fs_pagination">'').cycle({
+    $(&#39;.slideshow&#39;).after(&#39;&lt;div id=&quot;fsn&quot;&gt;&lt;ul id=&quot;fs_pagination&quot;&gt;&#39;).cycle({
         timeout: 5000, // milliseconds between slide transitions (0 to disable auto advance)
-        fx: ''fade'', // choose a transition type, ex: fade, scrollUp, shuffle, etc...            
-        pager: ''#fs_pagination'', // selector for element to use as pager container
-        pause: true, // true to enable "pause on hover"
+        fx: &#39;fade&#39;, // choose a transition type, ex: fade, scrollUp, shuffle, etc...            
+        pager: &#39;#fs_pagination&#39;, // selector for element to use as pager container
+        pause: true, // true to enable &quot;pause on hover&quot;
         pauseOnPagerHover: 0 // true to pause when hovering over pager link
    });
 });
-</script>
-    <!-- Jquery Container-->
-    <ul class="slideshow">
-            <!-- IMAGE & TEXT Number (1) -->
-            <li class="content">
-                <img class="slider_image" src="~/Design/DesktopLayouts/Education/images/slider1.jpg" width="430" height="300"/>
-                    <div class="wrap_text">
-                        <h1>Grow your business.</h1>
-                            <h2>You downloaded Appleseed Portal to help you run your company online. As we work to make this easier for you in upcoming versions, you still have some basic things you can do. You should consider taking these steps as soon as you can if you haven''t.</h2>
-                        <br/>
-                    <a class="continue" href="">Continue Reading » </a>			
-                </div>
-            </li>
-            <!-- IMAGE & TEXT Number (2) -->
-            <li class="content">
-                <img  class="slider_image" src="~/Design/DesktopLayouts/Education/images/slider2.jpg" width="430" height="300" />
-                    <div class="wrap_text">
-                        <h1>Connect with others.</h1>
-                            <h2>There are several ways for you to connect to other entrepreneurs, prospective customers and business partners. Here are a few suggestions that can get you started in your quest to build a great company.</h2>
-                        <br/>
-                    <a class="continue" href="">Continue Reading » </a>
-                    </div>		
-            </li>
-            <!-- IMAGE & TEXT Number (3) -->
-            <li class="content">
-                <img class="slider_image" src="~/Design/DesktopLayouts/Education/images/slider3.jpg" width="430" height="300" />
-                    <div class="wrap_text">				
-                        <h1>Trade with the world.</h1>
-                            <h2>Once you have your business setup, and have a network of businesses to help you deliver your products and services, you are ready to trade. Start small, and get bigger. The sky is the limit, until you surpass it.</h2>
-                        <br/>
-                    <a class="continue" href="">Continue Reading » </a>
-                </div>			
-            </li>
-    </ul>
-        <!-- End Jquery Container-->', '', '')
+&lt;/script&gt;
+    &lt;!-- Jquery Container--&gt;
+    &lt;ul class=&quot;slideshow&quot;&gt;
+        &lt;!-- IMAGE &amp; TEXT Number (1) --&gt;
+        &lt;li class=&quot;content&quot;&gt;
+            &lt;div class=&quot;col-sm-5&quot;&gt;
+                &lt;img class=&quot;slider_image&quot; src=&quot;~/Portals/_Appleseed/images/default/slider/Appleseed.slider.business.jpg&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;wrap_text col-sm-7&quot;&gt;
+                &lt;h1&gt;Grow your business.&lt;/h1&gt;
+                &lt;h3&gt;You downloaded Appleseed Portal to help you run your company online. As we work to make this easier for you in upcoming versions, you still have some basic things you can do. You should consider taking these steps as soon as you can if you haven&#39;t.&lt;/h3&gt;
+                &lt;br/&gt;
+                &lt;a class=&quot;continue&quot; href=&quot;&quot;&gt;Continue Reading &#187; &lt;/a&gt;      
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!-- IMAGE &amp; TEXT Number (2) --&gt;
+        &lt;li class=&quot;content&quot;&gt;
+            &lt;div class=&quot;col-sm-5&quot;&gt;
+                &lt;img  class=&quot;slider_image&quot; src=&quot;~/Portals/_Appleseed/images/default/slider/Appleseed.slider.coffee.jpg&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;wrap_text col-sm-7&quot;&gt;
+                &lt;h1&gt;Connect with others.&lt;/h1&gt;
+                &lt;h3&gt;There are several ways for you to connect to other entrepreneurs, prospective customers and business partners. Here are a few suggestions that can get you started in your quest to build a great company.&lt;/h3&gt;
+                &lt;br/&gt;
+            &lt;a class=&quot;continue&quot; href=&quot;&quot;&gt;Continue Reading &#187; &lt;/a&gt;
+            &lt;/div&gt;    
+        &lt;/li&gt;
+        &lt;!-- IMAGE &amp; TEXT Number (3) --&gt;
+        &lt;li class=&quot;content&quot;&gt;
+            &lt;div class=&quot;col-sm-5&quot;&gt;
+                &lt;img class=&quot;slider_image&quot; src=&quot;~/Portals/_Appleseed/images/default/slider/Appleseed.slider.trade.jpg&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;wrap_text col-sm-7&quot;&gt;       
+                &lt;h1&gt;Trade with the world.&lt;/h1&gt;
+                &lt;h3&gt;Once you have your business setup, and have a network of businesses to help you deliver your products and services, you are ready to trade. Start small, and get bigger. The sky is the limit, until you surpass it.&lt;/h3&gt;
+                &lt;br/&gt;
+            &lt;a class=&quot;continue&quot; href=&quot;&quot;&gt;Continue Reading &#187; &lt;/a&gt;
+            &lt;/div&gt;      
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- End Jquery Container--&gt;', '', '')
 DELETE FROM rb_HtmlText_st WHERE ModuleID = 6
 GO
+-- default footer module 
 INSERT rb_HtmlText_st
 (ModuleID, DesktopHtml, MobileSummary, MobileDetails)
 VALUES (6, '<style type="text/css">
@@ -619,7 +633,7 @@ VALUES (6, '<style type="text/css">
         <ul> 
             <li><a href="#" class="no_deco">HOME        </a>  <a href="#">Who we are</a> | <a href="#">Work Team</a>                   </li> 
             <li><a href="#" class="no_deco">SERVICES    </a>  <a href="#">Web Design</a> | <a href="#">CMS</a> | <a href="#">CRM</a>   </li> 
-            <li><a href="#" class="no_deco">PROYECTS    </a>  <a href="#">Open Source</a> | <a href="#">Partners</a>                   </li> 
+            <li><a href="#" class="no_deco">PROJECTS    </a>  <a href="#">Open Source</a> | <a href="#">Partners</a>                   </li> 
             <li><a href="#" class="no_deco">MEMBERS     </a>  <a href="#">Log in</a> | <a href="#">Register</a>                        </li> 
             <li><a href="#" class="no_deco">PORTFOLIO   </a>  <a href="#">Web Design</a> | <a href="#">App</a>                         </li> 
             <li><a href="#" class="no_deco">CONTACT US  </a>  <a href="#">Our Offices</a> | <a href="#">Request a quote</a>            </li> 
@@ -666,9 +680,11 @@ EXEC rb_ModuleSettings_IU 	6	,	N'Editor'	,	N'Plain Text'
 GO
 EXEC rb_ModuleSettings_IU 	6	,	N'MODULESETTINGS_MODULE_THEME'	,	N'Module-No-Style'
 GO
-EXEC rb_ModuleSettings_IU 	7	,	N'XML URL'	,	N'http://feeds.feedburner.com/appleseedapp'
+--EXEC rb_ModuleSettings_IU 	7	,	N'XML URL'	,	N'http://feeds.feedburner.com/appleseedapp'
+--GO
+EXEC rb_ModuleSettings_IU 	2	,	N'SHARE_MODULE'	,	N'False'
 GO
-EXEC rb_ModuleSettings_IU 	2	,	N'SHARE_MODULE'	,	N'True'
+EXEC rb_ModuleSettings_IU 	2	,	N'Editor'	,	N'Syrinx CkEditor'
 GO
 IF EXISTS (SELECT * FROM sysobjects WHERE id = object_id(N'[rb_ModuleSettings_IU]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 DROP PROCEDURE [rb_ModuleSettings_IU]

@@ -3647,16 +3647,6 @@ INSERT INTO dbo.aspnet_UsersInRoles VALUES (N'{BE7DC028-7238-45D3-AF35-DD3FE4AEF
 go
 
 
-
-
-
-
-
-
-
-
-
-
 alter table aspnet_Membership add
   foreign key(ApplicationId) references aspnet_Applications(ApplicationId),
   foreign key(UserId) references aspnet_Users(UserId)

@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("Appleseed.AppCode")]
 [assembly: AssemblyDescription("This is the core framework dll for the Appleseed portal project")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed Portal Core Framework")]
-[assembly: AssemblyCopyright("Copyright © improv 2005")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,6 +32,6 @@ using System.Security;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.7.0")]
+[assembly: AssemblyFileVersion("1.0.7.0")]
 

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed Portal")]
-[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2014")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2016")]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 

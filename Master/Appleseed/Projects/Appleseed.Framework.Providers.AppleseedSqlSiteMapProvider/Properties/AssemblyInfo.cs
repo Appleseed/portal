@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Appleseed.Framework.Providers.AppleseedSqlSiteMapProvider")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("MGF")]
+[assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed.Framework.Providers.AppleseedSqlSiteMapProvider")]
-[assembly: AssemblyCopyright("Copyright © MGF 2006")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

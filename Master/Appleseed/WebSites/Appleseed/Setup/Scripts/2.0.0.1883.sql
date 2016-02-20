@@ -65,3 +65,7 @@ GO
 commit
 go
 
+ -- Add custom profile for admin
+INSERT INTO [dbo].[aspnet_CustomProfile] ([UserId], [Name], [CategoryId], [Company], [Address], [Zip], [City], [CountryCode], [StateId], [Fax], [Phone], [SendNewsletter], [LastUpdatedDate], [Email], [BirthDate])
+ VALUES (N'be7dc028-7238-45d3-af35-dd3fe4aefb7e', N'Administrator', NULL, N'', NULL, NULL, NULL, N'US', NULL, NULL, N'', 0, CAST(N'2016-02-20 13:09:12.260' AS DateTime), N'admin@appleseedportal.net', CAST(N'2016-01-01 00:00:00.000' AS DateTime))
+GO
