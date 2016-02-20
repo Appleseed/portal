@@ -67,6 +67,11 @@ GO
 --Turn on Friendly URLS by default
 EXEC rb_PortalSettings_IU 	0	,	N'ENABLE_PAGE_FRIENDLY_URL'	, N'True' 
 GO
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_ALLOW_NEW_REGISTRATION'	, N'False' 
+GO
+EXEC rb_PortalSettings_IU 	0	,	N'SITESETTINGS_ADDTHIS_USERNAME'	, N' ' 
+GO
+
 IF EXISTS (SELECT * FROM sysobjects WHERE id = object_id(N'[rb_PortalSettings_IU]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 DROP PROCEDURE [rb_PortalSettings_IU]
 GO
