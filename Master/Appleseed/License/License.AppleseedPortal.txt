@@ -1,6 +1,6 @@
-http://appleseedapp.net/
 
-Copyright 2014 Appleseed Portal : Eric Ramseur, Rahul Singh, ANANT Corporation [http://www.anant.us]
+
+Copyright 2010-2016 Appleseed Portal : Eric Ramseur, Rahul Singh, ANANT Corporation [http://www.anant.us]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,10 +16,17 @@ Copyright 2014 Appleseed Portal : Eric Ramseur, Rahul Singh, ANANT Corporation [
 
 --
 
+NOTICE Section 
+
+Appleseed Portal Project & Logos are Copyright 2010-2016 by Anant Corporation
+The name and logo may NOT be used in any other product produced from this code unless 
+given permission by the copyright holders.
+
 The official version of the product will be released by :
 
 ANANT Corporation [http://www.anant.us]
 
+The official website is : http://appleseedapp.net/
 --
 
 Apache License
