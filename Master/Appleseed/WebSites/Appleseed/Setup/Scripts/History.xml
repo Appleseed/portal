@@ -1280,7 +1280,7 @@
       <Script>2.0.0.1902.sql</Script>
     </Scripts>
   </Release>
-  <!--DEPRECATED: Don´t add more scripts, this is only for backward compatibility -->
-  <!--Please use DBScripts folder in Appleseed.Core portable area -->
+ 
+  <!--The DBScripts folder in Appleseed.Core portable area can be used to make changes to MVC modules -->
 
 </History>
