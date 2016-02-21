@@ -12,6 +12,8 @@ SQL Server (Express) 2005/2008/2012/2014
 Visual Studio 2015 ( Visual Studio 14 ) for development
 
 ## Quick Install
+ * Release
+   * Grab the latest release : https://github.com/Appleseed/portal/releases   
  * Database
    * Create an Empty SQL Server Database in a SQL Server Instance
      * Give a user access to your SQL Server Databse [ Network Service is recommended ]
