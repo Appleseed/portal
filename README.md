@@ -32,6 +32,11 @@ Visual Studio 2015 ( Visual Studio 14 ) for development
         * This should be removed after install
      * \rb_logs -- Needs write to provide error / info logs
      * \Portals -- Needs write to allow writing site files 
+ * Post Installation
+   * On successful installation you should see a bootstrap theme and a login
+   * Use the default login admin@appleseedportal.net | admin
+   * Use Edit Profile to change your password
+     
 
 
 ## Website 
