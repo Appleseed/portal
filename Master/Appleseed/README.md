@@ -37,7 +37,7 @@ https://github.com/Appleseed
 
 ## Documentation 
 
-https://github.com/Appleseed/Learn
+http://learn.appleseedapp.net
 
 ## Issue Tracker  
 
