@@ -44,6 +44,16 @@ namespace Appleseed.Framework.UrlRewriting
                 return page_ID;
             }
 
+            // Check requested page url contains the /site when friendly URL is on
+            var handlerFlag = System.Configuration.ConfigurationManager.AppSettings["handlerFlag"];
+            if (pagepath.Contains("/" + handlerFlag))
+            {
+                string[] splitpaths = pagepath.Split('/');
+                int index = Array.IndexOf(splitpaths, handlerFlag);
+                int requesetedPageId = Convert.ToInt32(splitpaths[index + 1]);
+                pagepath = HttpUrlBuilder.BuildUrl(requesetedPageId);
+            }
+
             foreach (DataRow pageRow in dtPages.Rows)
             {
                 int pageId = Convert.ToInt32(pageRow["PageID"]);

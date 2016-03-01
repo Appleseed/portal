@@ -481,6 +481,11 @@ namespace Appleseed.Core.Controllers
         /// <returns>return </returns>
         public JsonResult MoveModule(string sourcePane, string targetPane, string pageId, string moduleid)
         {
+            
+            //If targetPane is "0" then it will return So module will not lost
+            if (string.Compare(targetPane, "0") == 0)
+                return Json(new { error = true });
+
             // get source arraylist
             var sourceList = this.GetModules(sourcePane, Int32.Parse(pageId));
 
