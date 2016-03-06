@@ -1,5 +1,7 @@
 # Appleseed Portal 1.0.7.x
 
+[![Build status](https://ci.appveyor.com/api/projects/status/l7094auld06wr5iw?svg=true)](https://ci.appveyor.com/project/ramseur/portal)
+
 Appleseed Portal is an open source Portal and Content Management System focused on 
 providing a high-performance,easy to use framework. The software gives designers, 
 developers, and modern entrepreneurs a singular system to build powerful applications 
