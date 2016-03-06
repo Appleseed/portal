@@ -2,13 +2,13 @@
 <package>
   <metadata>
     <id>Appleseed.Portal</id>
-    <version>1.0.2.0</version>
+    <version>1.0.7.0</version>
     <authors>ANANT Corporation</authors>
     <description>Appleseed Portal and CMS distribution</description>
     <summary></summary>
     <language>en-US</language>    
-    <projectUrl>http://appleseedapp.com/</projectUrl>
-	<iconUrl>http://anant.us/favicon.ico</iconUrl>
+    <projectUrl>http://appleseedapp.net/</projectUrl>
+	<iconUrl>http://appleseedapp.net/favicon.ico</iconUrl>
 	<tags>Appleseed</tags>
   </metadata>
   <files>
