@@ -202,7 +202,7 @@ namespace Appleseed.Framework.Site.Configuration
                         Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterEditButton);
-                var parameterPageName = new SqlParameter("@PageName", SqlDbType.NVarChar, 50)
+                var parameterPageName = new SqlParameter("@PageName", SqlDbType.NVarChar, 200)
                     {
                         Direction = ParameterDirection.Output
                     };
@@ -217,7 +217,7 @@ namespace Appleseed.Framework.Site.Configuration
                         Direction = ParameterDirection.Output
                     };
                 command.Parameters.Add(parameterParentPageId);
-                var parameterMobilePageName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 50)
+                var parameterMobilePageName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 200)
                     {
                         Direction = ParameterDirection.Output
                     };
