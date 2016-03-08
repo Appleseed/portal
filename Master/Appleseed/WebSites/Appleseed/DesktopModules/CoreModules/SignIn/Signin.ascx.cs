@@ -20,27 +20,29 @@
 namespace Appleseed.DesktopModules.CoreModules.SignIn
 {
     using System;
-using System.Data.SqlClient;
+    using System.Data.SqlClient;
     using System.Text;
     using System.Web.Security;
     using System.Web.UI.WebControls;
 
     using Appleseed.Framework;
-using Appleseed.Framework.Content.Security;
+    using Appleseed.Framework.Content.Security;
     using Appleseed.Framework.DataTypes;
     using Appleseed.Framework.Helpers;
     using Appleseed.Framework.Providers.AppleseedMembershipProvider;
     using Appleseed.Framework.Security;
     using Appleseed.Framework.Settings;
-using Appleseed.Framework.Users.Data;
+    using Appleseed.Framework.Users.Data;
     using Appleseed.Framework.Web.UI.WebControls;
 
     using Resources;
-using System.Web.Profile;
-using System.Data;
-using System.Net.Mail;
+    using System.Web.Profile;
+    using System.Data;
+    using System.Net.Mail;
 
     using Localize = Appleseed.Framework.Web.UI.WebControls.Localize;
+    using System.Web;
+    using System.Configuration;
 
     /// <summary>
     /// The SignIn User Control enables clients to authenticate themselves using
@@ -162,6 +164,14 @@ using System.Net.Mail;
             // //Hide control if not needed
             // if (Request.IsAuthenticated)
             //     this.Visible = false;
+
+            if (Request.Cookies["userid"] != null)
+                email.Text = Request.Cookies["email"].Value;
+            if (Request.Cookies["pwd"] != null)
+                password.Attributes.Add("value", Request.Cookies["pwd"].Value);
+            if (Request.Cookies["userid"] != null && Request.Cookies["pwd"] != null)
+                RememberCheckBox.Checked = true;
+
             this.LoginBtn.Click += this.LoginBtnClick;
             //this.SendPasswordBtn.Click += this.SendPasswordBtnClick;
             this.RegisterBtn.Click += this.RegisterBtnClick;
@@ -180,6 +190,24 @@ using System.Net.Mail;
         private void LoginBtnClick(object sender, EventArgs e)
         {
             this.Session["PersistedUser"] = this.RememberCheckBox.Checked;
+
+            int timeout = Convert.ToInt32(ConfigurationManager.AppSettings["RememberMe.Session.TimeOut"]);
+            //HttpCookie myCookie = new HttpCookie("MyTestCookie");
+            //DateTime now = DateTime.Now;
+            if (RememberCheckBox.Checked)
+            {
+                Response.Cookies["email"].Value = email.Text;
+                Response.Cookies["password"].Value = password.Text;
+                Response.Cookies["email"].Expires = DateTime.MaxValue;
+                Response.Cookies["password"].Expires = DateTime.MaxValue;
+            }
+            else
+            {
+                Response.Cookies["email"].Expires = DateTime.Now.AddDays(timeout);
+                Response.Cookies["password"].Expires = DateTime.Now.AddDays(timeout);
+            }
+
+
             if (PortalSecurity.SignOn(this.email.Text.Trim(), this.password.Text, this.RememberCheckBox.Checked) == null)
             {
                 this.Message.Text = Appleseed.Signin_LoginBtnClick_Login_failed;
@@ -198,10 +226,12 @@ using System.Net.Mail;
             this.Response.Redirect(HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Register/Register.aspx"));
         }
 
-        private void SendPasswordBtnClickLink(object sender, EventArgs e) {
+        private void SendPasswordBtnClickLink(object sender, EventArgs e)
+        {
             var url = HttpUrlBuilder.BuildUrl("~/Password/ForgotPassword");
 
-            if (!string.IsNullOrEmpty(this.email.Text)) {
+            if (!string.IsNullOrEmpty(this.email.Text))
+            {
                 url += "?email=" + this.email.Text;
             }
 

@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  Inherits="Appleseed.AppleseedMaster" %>
+<%@ Register TagPrefix="as" TagName="Admin" Src="DesktopAdmin.ascx" %>
+<%@ Register TagPrefix="head" TagName="Banner" Src="DesktopPortalBanner.ascx" %>
+<%@ Register TagPrefix="foot" TagName="Footer" Src="DesktopFooter.ascx" %>
+
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrap", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/bootstrap.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapcontentfix", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/bootstrap-content-area-fix.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapmenufix", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/bootstrap-menu-fix.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminmenuunwrap", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/admin-menu-table-unwrap.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminbarmargin", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/admin-bar-margin.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "less", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/less/less-1.7.3.min.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "modernizr", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/modernizr/modernizr.min.js"); %>
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head runat="server">
+    <title>Appleseed Portal</title>	
+    <meta name="viewport" content="initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Design/Themes/Appleseed.Admin/assets/lib/font-awesome/css/font-awesome.css">
+    <!-- Styles -->
+    <!-- Core stylesheet -->
+    <link rel="stylesheet" href="/Design/Themes/Appleseed.Admin/css/main.css">
+    <!-- Theme styles - less version -->
+    <!--<link rel="stylesheet/less" type="text/css" href="/Design/Themes/Appleseed.Admin/css/less/theme.less">-->
+</head>  
+
+
+<body class="bg-dark dk" cz-shortcut-listen="true">
+    <form id="form1" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" >
+			<Services>
+				<asp:ServiceReference InlineScript="false" Path="~/DesktopModules/CoreModules/Admin/PortalService.asmx" />
+			</Services>
+		</asp:ScriptManager>
+        <as:Admin ID="Admin" selectedtabindex="0" runat="server" ContentContainerSelector=".DefaultLayoutDiv"></as:Admin>
+        <div class="clearfix"></div>
+        <header class="header-container">
+            <head:Banner ID="Banner" selectedtabindex="0" runat="server">
+            </head:Banner>
+            <asp:ContentPlaceHolder ID="TopPane" runat="server">
+            </asp:ContentPlaceHolder>
+        </header>
+        <div class="container main-container">
+            <div class="row">
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <footer id="footer_div" class="container">
+            <div class="row">
+                <asp:ContentPlaceHolder ID="BottomPane" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="row" id="bottom_footer">
+                <foot:Footer ID="Footer" runat="server">
+                </foot:Footer>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

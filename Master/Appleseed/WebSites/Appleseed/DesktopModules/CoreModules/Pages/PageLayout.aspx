@@ -44,7 +44,7 @@
                                 </rbfwebui:Localize>
                             </td>
                             <td colspan="3">
-                                <asp:TextBox ID="tabName" runat="server" CssClass="NormalTextBox" MaxLength="50"
+                                <asp:TextBox ID="tabName" runat="server" CssClass="NormalTextBox" MaxLength="200"
                                     Width="300" OnTextChanged="PageSettings_Change" />
                             </td>
                         </tr>

@@ -203,10 +203,10 @@ namespace Appleseed.Framework.Site.Data
                     pageName = "New Page";
                 }
 
-                var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 50)
+                var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 200)
                     {
                         // Fixes tab name to long
-                        Value = pageName.Length > 50 ? pageName.Substring(0, 49) : pageName
+                        Value = pageName.Length > 200 ? pageName.Substring(0, 199) : pageName
                     };
 
                 command.Parameters.Add(parameterTabName);
@@ -223,7 +223,7 @@ namespace Appleseed.Framework.Site.Data
                 var parameterShowMobile = new SqlParameter("@ShowMobile", SqlDbType.Bit, 1) { Value = showMobile };
                 command.Parameters.Add(parameterShowMobile);
 
-                var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 50)
+                var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 200)
                     {
                         Value = mobilePageName
                     };
@@ -683,7 +683,7 @@ namespace Appleseed.Framework.Site.Data
                     pageName = "&nbsp;";
                 }
 
-                var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 50)
+                var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 200)
                 {
                     Value = pageName.Length > 50 ? pageName.Substring(0, 49) : pageName
                 };
@@ -696,7 +696,7 @@ namespace Appleseed.Framework.Site.Data
                     Value = authorizedRoles
                 };
                 sqlCommand.Parameters.Add(parameterAuthRoles);
-                var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 50)
+                var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 200)
                 {
                     Value = mobilePageName
                 };
