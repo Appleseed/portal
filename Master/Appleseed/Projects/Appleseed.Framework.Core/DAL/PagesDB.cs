@@ -685,7 +685,7 @@ namespace Appleseed.Framework.Site.Data
 
                 var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 200)
                 {
-                    Value = pageName.Length > 50 ? pageName.Substring(0, 49) : pageName
+                    Value = pageName.Length > 200 ? pageName.Substring(0, 199) : pageName
                 };
 
                 sqlCommand.Parameters.Add(parameterTabName);
