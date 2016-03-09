@@ -78,6 +78,9 @@
     <DocumentationFile>bin\Release\Appleseed.Framework.Core.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\Libs\ckeditor_aspnet_3.6.6.2\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="DUEMETRI.UI.WebControls.HWMenu, Version=1.0.0.1335, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\DUEMETRI.UI.WebControls.HWMenu.dll</HintPath>
@@ -364,6 +367,7 @@
     <Compile Include="UI\WebControls\BindEnum.cs" />
     <Compile Include="UI\WebControls\BreadCrumbs.cs" />
     <Compile Include="UI\WebControls\CachedPortalModuleControl.cs" />
+    <Compile Include="UI\WebControls\CKEditorTextbox.cs" />
     <Compile Include="UI\WebControls\CodeMirrorTextBox.cs" />
     <Compile Include="UI\WebControls\MVCModuleControl.cs">
       <SubType>ASPXCodeBehind</SubType>

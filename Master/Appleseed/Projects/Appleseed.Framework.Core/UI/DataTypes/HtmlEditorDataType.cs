@@ -27,6 +27,7 @@ namespace Appleseed.Framework.DataTypes
     using Syrinx.Gui.AspNet;
 
     using FreeTextBox = Appleseed.Framework.Web.UI.WebControls.FreeTextBox;
+    using Appleseed.Framework.UI.WebControls;
 
 
     /// <summary>
@@ -60,7 +61,8 @@ namespace Appleseed.Framework.DataTypes
         {
             get
             {
-                return "Code Mirror Plain Text;TinyMCE Editor;FCKeditor;Syrinx CkEditor;FreeTextBox;Aloha Editor".Split(';');
+                //return "Code Mirror Plain Text;TinyMCE Editor;FCKeditor;Syrinx CkEditor;FreeTextBox;Aloha Editor".Split(';');
+                return "Code Mirror Plain Text;CKeditor;Aloha Editor".Split(';');
             }
         }
 
@@ -97,40 +99,40 @@ namespace Appleseed.Framework.DataTypes
             var pS = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
 
             var editor = new SettingItem<string, DropDownList>(new HtmlEditorDataType())
-            {
-                // Order = 1; modified by Hongwei Shen(hongwei.shen@gmail.com) 11/9/2005
-                Order = (int)group + 1,
-                Group = group,
-                EnglishName = "Editor",
-                Description = "Select the Html Editor for Module"
-            };
+                {
+                    // Order = 1; modified by Hongwei Shen(hongwei.shen@gmail.com) 11/9/2005
+                    Order = (int)group + 1,
+                    Group = group,
+                    EnglishName = "Editor",
+                    Description = "Select the Html Editor for Module"
+                };
 
             var controlWidth = new SettingItem<int, TextBox>(new BaseDataType<int, TextBox>())
-            {
-                Value = 700,
-                Order = (int)group + 2,
-                Group = group,
-                EnglishName = "Editor Width",
-                Description = "The width of editor control"
-            };
+                {
+                    Value = 700,
+                    Order = (int)group + 2,
+                    Group = group,
+                    EnglishName = "Editor Width",
+                    Description = "The width of editor control"
+                };
 
             var controlHeight = new SettingItem<int, TextBox>(new BaseDataType<int, TextBox>())
-            {
-                Value = 400,
-                Order = (int)group + 3,
-                Group = group,
-                EnglishName = "Editor Height",
-                Description = "The height of editor control"
-            };
+                {
+                    Value = 400,
+                    Order = (int)group + 3,
+                    Group = group,
+                    EnglishName = "Editor Height",
+                    Description = "The height of editor control"
+                };
 
             var showUpload = new SettingItem<bool, CheckBox>(new BaseDataType<bool, CheckBox>())
-            {
-                Value = true,
-                Order = (int)group + 4,
-                Group = group,
-                EnglishName = "Upload?",
-                Description = "Only used if Editor is ActiveUp HtmlTextBox"
-            };
+                {
+                    Value = true,
+                    Order = (int)group + 4,
+                    Group = group,
+                    EnglishName = "Upload?",
+                    Description = "Only used if Editor is ActiveUp HtmlTextBox"
+                };
 
             SettingItem<string, Panel> moduleImageFolder = null;
             if (pS != null)
@@ -142,13 +144,13 @@ namespace Appleseed.Framework.DataTypes
                             new FolderDataType(
                                 HttpContext.Current.Server.MapPath(string.Format("{0}/images", pS.PortalFullPath)),
                                 "default"))
-                        {
-                            Value = "default",
-                            Order = (int)group + 5,
-                            Group = group,
-                            EnglishName = "Default Image Folder",
-                            Description = "This folder is used for editor in this module to take and upload images"
-                        };
+                            {
+                                Value = "default",
+                                Order = (int)group + 5,
+                                Group = group,
+                                EnglishName = "Default Image Folder",
+                                Description = "This folder is used for editor in this module to take and upload images"
+                            };
                 }
 
                 // Set the portal default values
@@ -242,25 +244,25 @@ namespace Appleseed.Framework.DataTypes
                 case "FCKeditor": // 9/8/2010
                     var conector = Path.ApplicationRootPath("/app_support/FCKconnectorV2.aspx");
                     var fckv2 = new FCKTextBoxV2
-                    {
-                        ImageFolder = moduleImageFolder,
-                        BasePath = Path.WebPathCombine(Path.ApplicationRoot, "aspnet_client/FCKeditorV2.6.6/"),
-                        AutoDetectLanguage = false,
-                        DefaultLanguage = PortalSettings.PortalUILanguage.Name.Substring(0, 2),
-                        ID = string.Concat("FCKTextBox", uniqueId),
-                        ImageBrowserURL =
-                            Path.WebPathCombine(
-                                Path.ApplicationRoot,
-                                string.Format(
-                                    "aspnet_client/FCKeditorV2.6.6/editor/filemanager/browser/default/browser.html?Type=Image%26Connector={0}",
-                                    conector)),
-                        LinkBrowserURL =
-                            Path.WebPathCombine(
-                                Path.ApplicationRoot,
-                                string.Format(
-                                    "aspnet_client/FCKeditorV2.6.6/editor/filemanager/browser/default/browser.html?Connector={0}",
-                                    conector))
-                    };
+                        {
+                            ImageFolder = moduleImageFolder,
+                            BasePath = Path.WebPathCombine(Path.ApplicationRoot, "aspnet_client/FCKeditorV2.6.6/"),
+                            AutoDetectLanguage = false,
+                            DefaultLanguage = PortalSettings.PortalUILanguage.Name.Substring(0, 2),
+                            ID = string.Concat("FCKTextBox", uniqueId),
+                            ImageBrowserURL =
+                                Path.WebPathCombine(
+                                    Path.ApplicationRoot,
+                                    string.Format(
+                                        "aspnet_client/FCKeditorV2.6.6/editor/filemanager/browser/default/browser.html?Type=Image%26Connector={0}",
+                                        conector)),
+                            LinkBrowserURL =
+                                Path.WebPathCombine(
+                                    Path.ApplicationRoot,
+                                    string.Format(
+                                        "aspnet_client/FCKeditorV2.6.6/editor/filemanager/browser/default/browser.html?Connector={0}",
+                                        conector))
+                        };
 
                     // fckv2.EditorAreaCSS = PortalSettings.GetCurrentTheme().CssFile;
                     desktopText = fckv2;
@@ -271,36 +273,50 @@ namespace Appleseed.Framework.DataTypes
                         Path.ApplicationRoot, "aspnet_client/ckeditor/ckeditor.js");
 
                     var sckvtb = new SyrinxCkTextBox
-                    {
-                        ImageFolder = moduleImageFolder,
-                        BaseContentUrl = Path.WebPathCombine(Path.ApplicationRoot, "aspnet_client/ckeditor/"),
-                        Resizable = false,
-                        Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
-                    };
+                        {
+                            ImageFolder = moduleImageFolder,
+                            BaseContentUrl = Path.WebPathCombine(Path.ApplicationRoot, "aspnet_client/ckeditor/"),
+                            Resizable = false,
+                            Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
+                        };
 
                     desktopText = sckvtb;
                     break;
 
                 case "FreeTextBox":
                     var freeText = new FreeTextBox
-                    {
-                        ImageGalleryUrl =
-                            Path.WebPathCombine(
-                                Path.ApplicationFullPath,
-                                "app_support/ftb.imagegallery.aspx?rif={0}&cif={0}&mID=" + moduleId),
-                        ImageFolder = moduleImageFolder,
-                        ImageGalleryPath = Path.WebPathCombine(PortalSettings.PortalFullPath, moduleImageFolder),
-                        ID = string.Concat("FreeText", uniqueId),
-                        Language = GetFtbLanguage(PortalSettings.PortalUILanguage.Name),
-                        JavaScriptLocation = ResourceLocation.ExternalFile,
-                        ButtonImagesLocation = ResourceLocation.ExternalFile,
-                        ToolbarImagesLocation = ResourceLocation.ExternalFile,
-                        SupportFolder = Path.WebPathCombine(Path.ApplicationFullPath, "aspnet_client/FreeTextBox")
-                    };
+                        {
+                            ImageGalleryUrl =
+                                Path.WebPathCombine(
+                                    Path.ApplicationFullPath,
+                                    "app_support/ftb.imagegallery.aspx?rif={0}&cif={0}&mID=" + moduleId),
+                            ImageFolder = moduleImageFolder,
+                            ImageGalleryPath = Path.WebPathCombine(PortalSettings.PortalFullPath, moduleImageFolder),
+                            ID = string.Concat("FreeText", uniqueId),
+                            Language = GetFtbLanguage(PortalSettings.PortalUILanguage.Name),
+                            JavaScriptLocation = ResourceLocation.ExternalFile,
+                            ButtonImagesLocation = ResourceLocation.ExternalFile,
+                            ToolbarImagesLocation = ResourceLocation.ExternalFile,
+                            SupportFolder = Path.WebPathCombine(Path.ApplicationFullPath, "aspnet_client/FreeTextBox")
+                        };
 
                     // freeText.ToolbarLayout =
                     // "ParagraphMenu,FontFacesMenu,FontSizesMenu,FontForeColorPicker,FontBackColorPicker,FontForeColorsMenu|Bold,Italic,Underline,Strikethrough;Superscript,Subscript,RemoveFormat;CreateLink,Unlink|JustifyLeft,JustifyRight,JustifyCenter,JustifyFull;BulletedList,NumberedList,Indent,Outdent;InsertRule|Delete,Cut,Copy,Paste;Undo,Redo,Print;InsertTable,InsertTableColumnAfter,InsertTableColumnBefore,InsertTableRowAfter,InsertTableRowBefore,DeleteTableColumn,DeleteTableRow,InsertImageFromGallery";
                     desktopText = freeText;
+                    break;
+
+                case "CKeditor": // 09/03/2016
+                    var CKfckv2 = new CKEditorTextbox
+                    {
+                        ImageFolder = moduleImageFolder,
+                        ResizeEnabled = false,
+                        Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
+                    };
+
+                    CKfckv2.BasePath = Path.WebPathCombine(
+                        Path.ApplicationRoot, "/aspnet_client/CKeditorV4.5.7");
+
+                    desktopText = CKfckv2;
                     break;
 
                 // case "Code Mirror Plain Text":
