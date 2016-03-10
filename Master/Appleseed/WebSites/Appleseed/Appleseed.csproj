@@ -809,6 +809,13 @@
     <Compile Include="DesktopModules\CoreModules\Admin\AddEditPage.aspx.designer.cs">
       <DependentUpon>AddEditPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\Admin\AdminLeftMenu.ascx.cs">
+      <DependentUpon>AdminLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Admin\AdminLeftMenu.ascx.designer.cs">
+      <DependentUpon>AdminLeftMenu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\Admin\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7716,6 +7723,7 @@
     <Content Include="DesktopModules\CoreModules\AddTab\install.xml" />
     <Content Include="DesktopModules\CoreModules\AddTab\readme.txt" />
     <Content Include="DesktopModules\CoreModules\Admin\AddEditPage.aspx" />
+    <Content Include="DesktopModules\CoreModules\Admin\AdminLeftMenu.ascx" />
     <Content Include="DesktopModules\CoreModules\Admin\ChangePassword.aspx" />
     <Content Include="DesktopModules\CoreModules\Admin\CustomPropertyPage.aspx" />
     <Content Include="DesktopModules\CoreModules\Admin\Logoff.aspx" />
@@ -8212,6 +8220,8 @@
     <Content Include="Setup\Scripts\2.0.0.1900.sql" />
     <Content Include="Setup\Scripts\2.0.0.1901.sql" />
     <Content Include="Setup\Scripts\2.0.0.1902.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1903.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1904.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>
     </Content>
