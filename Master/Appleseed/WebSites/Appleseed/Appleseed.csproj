@@ -8040,6 +8040,7 @@
     <Content Include="Design\Themes\Readable.Bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
+    <None Include="Properties\PublishProfiles\Appleseed.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
     <None Include="Setup\History.xsc">
       <DependentUpon>History.xsd</DependentUpon>
