@@ -19,14 +19,13 @@ namespace Appleseed.Framework.DataTypes
     using Appleseed.Framework.Settings;
     using Appleseed.Framework.Site.Configuration;
     using Appleseed.Framework.UI.WebControls.CodeMirror;
-    using Appleseed.Framework.UI.WebControls.TinyMCE;
+
     using Appleseed.Framework.Web.UI.WebControls;
 
     using FreeTextBoxControls;
 
     using Syrinx.Gui.AspNet;
 
-    using FreeTextBox = Appleseed.Framework.Web.UI.WebControls.FreeTextBox;
     using Appleseed.Framework.UI.WebControls;
 
 
@@ -61,7 +60,6 @@ namespace Appleseed.Framework.DataTypes
         {
             get
             {
-                //return "Code Mirror Plain Text;TinyMCE Editor;FCKeditor;Syrinx CkEditor;FreeTextBox;Aloha Editor".Split(';');
                 return "Code Mirror Plain Text;CKeditor;Aloha Editor".Split(';');
             }
         }
@@ -235,75 +233,6 @@ namespace Appleseed.Framework.DataTypes
 
             switch (this.Value)
             {
-                case "TinyMCE Editor":
-                    var tinyMce = new TinyMCETextBox { ImageFolder = moduleImageFolder };
-                    desktopText = tinyMce;
-                    break;
-
-
-                case "FCKeditor": // 9/8/2010
-                    var conector = Path.ApplicationRootPath("/app_support/FCKconnectorV2.aspx");
-                    var fckv2 = new FCKTextBoxV2
-                        {
-                            ImageFolder = moduleImageFolder,
-                            BasePath = Path.WebPathCombine(Path.ApplicationRoot, "aspnet_client/FCKeditorV2.6.6/"),
-                            AutoDetectLanguage = false,
-                            DefaultLanguage = PortalSettings.PortalUILanguage.Name.Substring(0, 2),
-                            ID = string.Concat("FCKTextBox", uniqueId),
-                            ImageBrowserURL =
-                                Path.WebPathCombine(
-                                    Path.ApplicationRoot,
-                                    string.Format(
-                                        "aspnet_client/FCKeditorV2.6.6/editor/filemanager/browser/default/browser.html?Type=Image%26Connector={0}",
-                                        conector)),
-                            LinkBrowserURL =
-                                Path.WebPathCombine(
-                                    Path.ApplicationRoot,
-                                    string.Format(
-                                        "aspnet_client/FCKeditorV2.6.6/editor/filemanager/browser/default/browser.html?Connector={0}",
-                                        conector))
-                        };
-
-                    // fckv2.EditorAreaCSS = PortalSettings.GetCurrentTheme().CssFile;
-                    desktopText = fckv2;
-                    break;
-
-                case "Syrinx CkEditor":
-                    CkEditor.CkEditorJS = Path.WebPathCombine(
-                        Path.ApplicationRoot, "aspnet_client/ckeditor/ckeditor.js");
-
-                    var sckvtb = new SyrinxCkTextBox
-                        {
-                            ImageFolder = moduleImageFolder,
-                            BaseContentUrl = Path.WebPathCombine(Path.ApplicationRoot, "aspnet_client/ckeditor/"),
-                            Resizable = false,
-                            Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
-                        };
-
-                    desktopText = sckvtb;
-                    break;
-
-                case "FreeTextBox":
-                    var freeText = new FreeTextBox
-                        {
-                            ImageGalleryUrl =
-                                Path.WebPathCombine(
-                                    Path.ApplicationFullPath,
-                                    "app_support/ftb.imagegallery.aspx?rif={0}&cif={0}&mID=" + moduleId),
-                            ImageFolder = moduleImageFolder,
-                            ImageGalleryPath = Path.WebPathCombine(PortalSettings.PortalFullPath, moduleImageFolder),
-                            ID = string.Concat("FreeText", uniqueId),
-                            Language = GetFtbLanguage(PortalSettings.PortalUILanguage.Name),
-                            JavaScriptLocation = ResourceLocation.ExternalFile,
-                            ButtonImagesLocation = ResourceLocation.ExternalFile,
-                            ToolbarImagesLocation = ResourceLocation.ExternalFile,
-                            SupportFolder = Path.WebPathCombine(Path.ApplicationFullPath, "aspnet_client/FreeTextBox")
-                        };
-
-                    // freeText.ToolbarLayout =
-                    // "ParagraphMenu,FontFacesMenu,FontSizesMenu,FontForeColorPicker,FontBackColorPicker,FontForeColorsMenu|Bold,Italic,Underline,Strikethrough;Superscript,Subscript,RemoveFormat;CreateLink,Unlink|JustifyLeft,JustifyRight,JustifyCenter,JustifyFull;BulletedList,NumberedList,Indent,Outdent;InsertRule|Delete,Cut,Copy,Paste;Undo,Redo,Print;InsertTable,InsertTableColumnAfter,InsertTableColumnBefore,InsertTableRowAfter,InsertTableRowBefore,DeleteTableColumn,DeleteTableRow,InsertImageFromGallery";
-                    desktopText = freeText;
-                    break;
 
                 case "CKeditor": // 09/03/2016
                     var CKfckv2 = new CKEditorTextbox

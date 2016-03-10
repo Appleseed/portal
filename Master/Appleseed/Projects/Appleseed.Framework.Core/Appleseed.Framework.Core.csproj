@@ -379,9 +379,7 @@
     <Compile Include="UI\WebControls\DesktopPanesBase.cs" />
     <Compile Include="UI\WebControls\DesktopPanes.cs" />
     <Compile Include="UI\WebControls\DesktopPanesTemplate.cs" />
-    <Compile Include="UI\WebControls\FCKTextBox.cs" />
     <Compile Include="UI\WebControls\FlashMovie.cs" />
-    <Compile Include="UI\WebControls\FreeTextBox.cs" />
     <Compile Include="UI\WebControls\HeaderImage.cs" />
     <Compile Include="UI\WebControls\HeaderMenu.cs" />
     <Compile Include="UI\WebControls\HeaderTitle.cs" />
@@ -408,11 +406,7 @@
     </Compile>
     <Compile Include="UI\WebControls\SmartScroller.cs" />
     <Compile Include="UI\WebControls\SolpartNavigation.cs" />
-    <Compile Include="UI\WebControls\SyrinxCkTextBox.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="UI\WebControls\TextEditor.cs" />
-    <Compile Include="UI\WebControls\TinyMCETextBox.cs" />
     <Compile Include="UI\WebControls\UploadDialogTextBox.cs" />
     <Compile Include="UI\WebControls\ViewControlButtons.cs" />
     <Compile Include="UI\WebControls\XmlEditGrid.cs" />
