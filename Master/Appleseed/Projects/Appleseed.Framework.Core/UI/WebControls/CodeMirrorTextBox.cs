@@ -40,7 +40,22 @@ namespace Appleseed.Framework.UI.WebControls.CodeMirror
         {
             if (!Page.ClientScript.IsClientScriptIncludeRegistered(this.GetType(), "CodeMirror"))
             {
-                Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "CodeMirror", HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirror/js/codemirror.js"));
+                Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "CodeMirror", HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/js/codemirror.js"));
+                Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "CodeMirror_mode_xml", HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/mode/xml/xml.js"));
+                Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "CodeMirror_mode_js", HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/mode/javascript/javascript.js"));
+                Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "CodeMirror_mode_css", HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/mode/css/css.js"));
+                Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "CodeMirror_mode_htmlmixed", HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/mode/htmlmixed/htmlmixed.js"));
+
+                Literal cssFile = new Literal() { Text = @"<link href=""" + HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/css/docs.css") + @""" type=""text/css"" rel=""stylesheet"" />" };
+                Page.Header.Controls.Add(cssFile);
+                cssFile = new Literal() { Text = @"<link href=""" + HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/css/codemirror.css") + @""" type=""text/css"" rel=""stylesheet"" />" };
+                Page.Header.Controls.Add(cssFile);
+
+                var jsToAdd = "<script type=\"text/javascript\"> $(document).ready(function(){ var editor = CodeMirror.fromTextArea(document.getElementById('" + this.ClientID + "'), { mode: \"text/html\", extraKeys: {\"Ctrl-Space\": \"autocomplete\"},value: document.getElementById('" + this.ClientID + "').innerHTML }); }); </script>";
+
+
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "CM_load", jsToAdd);
+
             }
             base.OnLoad(e);
         }
@@ -53,18 +68,8 @@ namespace Appleseed.Framework.UI.WebControls.CodeMirror
         {
             this.Attributes["id"] = this.ClientID;
             writer.Write(string.Concat("<div style=\"border: 1px solid grey; padding: 3px 0px 3px 3px; width: ", new Unit(this.Width.Value + 3, UnitType.Pixel), "\">"));
+
             base.Render(writer);
-            var rootPath = string.Concat(Appleseed.Framework.Settings.Path.ApplicationRoot, @"/aspnet_client/CodeMirror/");
-            var jsToAdd = string.Concat(@"
-            <script type=""text/javascript""> 
-                var editor", this.ClientID, @" = CodeMirror.fromTextArea('", this.ClientID, @"', {
-                    height: """, this.Height, @""",
-                    parserfile: [""parsexml.js"", ""parsecss.js"", ""tokenizejavascript.js"", ""parsejavascript.js"", ""parsehtmlmixed.js""],
-                    stylesheet: [""", rootPath, @"css/xmlcolors.css"", """, rootPath, @"css/jscolors.css"", """, rootPath, @"css/csscolors.css""],
-                    path: """, rootPath, @"js/""
-                });
-            </script>");
-            writer.Write(jsToAdd);
             writer.Write("</div>");
         }
     }
