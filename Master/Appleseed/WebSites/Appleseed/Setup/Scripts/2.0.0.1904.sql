@@ -347,3 +347,14 @@ ALTER TABLE rb_pages alter column PageName nvarchar(200)
 ALTER TABLE rb_pages alter column MobilePageName nvarchar(200)
 GO
 
+if EXISTS(select * from rb_PortalSettings where SettingName='SITESETTINGS_DEFAULT_EDITOR' AND SettingValue='Syrinx CkEditor')
+BEGIN
+update [rb_PortalSettings] set SettingValue='CKeditor' where SettingName='SITESETTINGS_DEFAULT_EDITOR'
+END
+GO
+
+if EXISTS(select * from rb_ModuleSettings where ModuleID=2)
+BEGIN
+UPDATE [rb_ModuleSettings] SEt SettingValue='CKeditor' where ModuleID=2
+END
+GO
