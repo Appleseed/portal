@@ -3254,6 +3254,9 @@
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\about\dialogs\about.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\accordion\accordion.png" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\accordion\CSSAccordion\accordion.css" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\accordion\plugin.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\clipboard\dialogs\paste.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\colordialog\dialogs\colordialog.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\dialog\dialogDefinition.js" />

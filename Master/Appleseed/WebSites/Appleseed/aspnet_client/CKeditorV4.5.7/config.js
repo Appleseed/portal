@@ -6,5 +6,15 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
-	// config.uiColor = '#AADC6E';
+    // config.uiColor = '#AADC6E';
+
+    // Referencing the new plugin
+    config.extraPlugins = 'accordion';
+
+    // Define the toolbar buttons you want to have available
+    config.toolbar = 'accordion';
+    config.toolbar_MyToolbar =
+       [
+          ['accordion', 'accordion']
+       ];
 };
