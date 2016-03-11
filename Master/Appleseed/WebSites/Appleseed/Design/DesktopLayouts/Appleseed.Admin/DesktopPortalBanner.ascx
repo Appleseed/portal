@@ -1,7 +1,6 @@
 <%@ Control Language="c#" %>
 <%@ Register Assembly="Appleseed.Framework.Core" Namespace="Appleseed.Framework.Web.UI.WebControls" TagPrefix="rbfwebui" %>
 <%@ Register Assembly="Appleseed.Framework.Web.UI.WebControls" Namespace="Appleseed.Framework.Web.UI.WebControls" TagPrefix="rbfwebui" %>
-<%@ Register Src="~/DesktopModules/CoreModules/Admin/AdminLeftMenu.ascx" TagPrefix="uc1" TagName="AdminLeftMenu" %>
 
 <script runat="server">
     private void Page_Load(object sender, System.EventArgs e)
@@ -141,11 +140,7 @@
             </div>
             <!-- /.main-search -->
         </div>
-        <%--Start Admin menu--%>
-        <div>
-            <uc1:AdminLeftMenu runat="server" id="AdminLeftMenu" />
-        </div>
-        <%--End Admin menu--%>
+       
         <!-- /.search-bar -->
         <div class="media user-media bg-dark dker">
             <div class="user-media-toggleHover">
