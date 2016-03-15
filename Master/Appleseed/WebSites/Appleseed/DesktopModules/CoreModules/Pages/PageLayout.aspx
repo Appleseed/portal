@@ -63,17 +63,17 @@
                                 </div>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td class="Normal" width="100">
                                 <rbfwebui:Localize ID="Localize2" runat="server" Text="Page ID" TextKey="AM_PAGE_ID">
                                 </rbfwebui:Localize>
                             </td>
                             <td colspan="3">
                                 <asp:TextBox ID="txtPageID" runat="server" CssClass="NormalTextBox" MaxLength="50"
-                                    Width="300" Enabled="false"/>
+                                    Width="300" Enabled="false" />
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td class="Normal" width="100">
                                 <rbfwebui:Localize ID="Localize3" runat="server" Text="Page Link" TextKey="AM_PAGE_LINK">
                                 </rbfwebui:Localize>
@@ -222,7 +222,7 @@
                                 </rbfwebui:Localize>
                             </td>
                             <td width="*" colspan="2">
-                                 <div id="newjsTree" class="newjsTree"></div>
+                                <div id="newjsTree" class="newjsTree"></div>
                                 <table border="0" cellpadding="2" cellspacing="0" width="100%" class="hidecontent">
                                     <tr>
                                         <td class="NormalBold">&nbsp;
@@ -485,7 +485,7 @@
                 </div>
             </div>
 
-           
+
             <%--</td>
         </tr>
         <tr>
@@ -508,7 +508,7 @@
     </table>--%>
         </div>
     </div>
-       <script type="text/javascript" src="/PageManagerTree/Scripts/jquery.jstree.js"></script>
+    <script type="text/javascript" src="/PageManagerTree/Scripts/jquery.jstree.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var page = $('#Content_PageIdField').val();
@@ -701,7 +701,7 @@
         }
 
     </script>
- 
+
     <script type="text/javascript">
         $(document).ready(function(){
             $( "#divPageTabs" ).tabs();
@@ -820,34 +820,34 @@
             }
            
 
-        //Redirect to Edit secuirty page
+            //Redirect to Edit secuirty page
             function editModule(paneId) {
-                    var id = paneId;
-                    var url = <%= getUrlToEdit()%>;
+                var id = paneId;
+                var url = <%= getUrlToEdit()%>;
                     url += '&mID=';
                     url += id;
                     window.location = url;
-            }
-
-        function moveModule(source, target, paneId) {
-            var page = $('#Content_PageIdField').val();
-            $.ajax({
-                url: "/Appleseed.Core/PageLayout/MoveModule",
-                type: "POST",
-                timeout: 180000, 
-                dataType: 'json',
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify({
-                    sourcePane: source,
-                    targetPane: target,
-                    pageId: page,
-                    moduleid: paneId
-                }),
-                success: function (data) {
-                    $('#newjsTree').jstree('refresh');
                 }
-            });
-        }	
+
+                function moveModule(source, target, paneId) {
+                    var page = $('#Content_PageIdField').val();
+                    $.ajax({
+                        url: "/Appleseed.Core/PageLayout/MoveModule",
+                        type: "POST",
+                        timeout: 180000, 
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify({
+                            sourcePane: source,
+                            targetPane: target,
+                            pageId: page,
+                            moduleid: paneId
+                        }),
+                        success: function (data) {
+                            $('#newjsTree').jstree('refresh');
+                        }
+                    });
+                }	
     </script>
 
 </asp:Content>
