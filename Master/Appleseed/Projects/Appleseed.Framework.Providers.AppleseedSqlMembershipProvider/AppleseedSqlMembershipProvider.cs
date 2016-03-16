@@ -104,7 +104,7 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         ///   The error code user not found.
         /// </summary>
         private const int ErrorCodeUserNotFound = 1;
-        
+
         /// <summary>
         ///   The new password length.
         /// </summary>
@@ -359,8 +359,9 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         /// ChangePassword returns true if the password was updated successfully.
         ///     Otherwise, it returns false.
         /// </returns>
-        public override bool AdminChangePassword(string username, string Password) {
-            if(Appleseed.Framework.Security.PortalSecurity.IsInRole("Admins")) 
+        public override bool AdminChangePassword(string username, string Password)
+        {
+            if (Appleseed.Framework.Security.PortalSecurity.IsInRole("Admins"))
                 return this.ChangeUserPassword(this.ApplicationName, username, Password);
             else
                 return false;
@@ -466,8 +467,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_ChangePasswordQuestionAndAnswer", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_ChangePasswordQuestionAndAnswer",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -520,7 +521,9 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             {
                 var newToken = new aspnet_ResetPasswordTokens
                     {
-                       TokenId = newTokenId, UserId = userId, CreationDate = DateTime.UtcNow 
+                        TokenId = newTokenId,
+                        UserId = userId,
+                        CreationDate = DateTime.UtcNow
                     };
                 entities.aspnet_ResetPasswordTokens.AddObject(newToken);
                 entities.SaveChanges();
@@ -562,23 +565,23 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         /// <remarks>
         /// </remarks>
         public override MembershipUser CreateUser(
-            string username, 
-            string password, 
-            string email, 
-            string passwordQuestion, 
-            string passwordAnswer, 
-            bool isApproved, 
-            object providerUserKey, 
+            string username,
+            string password,
+            string email,
+            string passwordQuestion,
+            string passwordAnswer,
+            bool isApproved,
+            object providerUserKey,
             out MembershipCreateStatus status)
         {
             return CreateUser(
-                this.ApplicationName, 
-                username, 
-                password, 
-                email, 
-                passwordQuestion, 
-                passwordAnswer, 
-                isApproved, 
+                this.ApplicationName,
+                username,
+                password,
+                email,
+                passwordQuestion,
+                passwordAnswer,
+                isApproved,
                 out status);
         }
 
@@ -615,13 +618,13 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         /// <remarks>
         /// </remarks>
         public override MembershipUser CreateUser(
-            string portalAlias, 
-            string username, 
-            string password, 
-            string email, 
-            string passwordQuestion, 
-            string passwordAnswer, 
-            bool isApproved, 
+            string portalAlias,
+            string username,
+            string password,
+            string email,
+            string passwordQuestion,
+            string passwordAnswer,
+            bool isApproved,
             out MembershipCreateStatus status)
         {
             if (string.IsNullOrWhiteSpace(username))
@@ -658,8 +661,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_CreateUser", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_CreateUser",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -761,8 +764,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Users_DeleteUser", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Users_DeleteUser",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -860,8 +863,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_FindUsersByEmail", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_FindUsersByEmail",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -983,8 +986,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_FindUsersByName", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_FindUsersByName",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1114,8 +1117,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetAllUsers", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetAllUsers",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1228,8 +1231,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetNumberOfUsersOnline", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetNumberOfUsersOnline",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1394,8 +1397,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetPassword", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetPassword",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1488,8 +1491,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetUserByUserId", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetUserByUserId",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1523,18 +1526,18 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                         var lastLockedOutDate = reader.IsDBNull(10) ? DateTime.Now : reader.GetDateTime(10);
 
                         u = this.InstantiateNewUser(
-                            this.Name, 
-                            userName, 
-                            (Guid)providerUserKey, 
-                            email, 
-                            passwordQuestion, 
-                            comment, 
-                            isApproved, 
-                            isLockedOut, 
-                            creationDate, 
-                            lastLoginDate, 
-                            lastActivityDate, 
-                            lastPasswordChangedDate, 
+                            this.Name,
+                            userName,
+                            (Guid)providerUserKey,
+                            email,
+                            passwordQuestion,
+                            comment,
+                            isApproved,
+                            isLockedOut,
+                            creationDate,
+                            lastLoginDate,
+                            lastActivityDate,
+                            lastPasswordChangedDate,
                             lastLockedOutDate);
 
                         this.LoadUserProfile(u);
@@ -1607,8 +1610,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetUserByName", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetUserByName",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1644,18 +1647,18 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                         var lastLockedOutDate = reader.IsDBNull(10) ? DateTime.Now : reader.GetDateTime(10);
 
                         u = this.InstantiateNewUser(
-                            this.Name, 
-                            username, 
-                            providerUserKey, 
-                            email, 
-                            passwordQuestion, 
-                            comment, 
-                            isApproved, 
-                            isLockedOut, 
-                            creationDate, 
-                            lastLoginDate, 
-                            lastActivityDate, 
-                            lastPasswordChangedDate, 
+                            this.Name,
+                            username,
+                            providerUserKey,
+                            email,
+                            passwordQuestion,
+                            comment,
+                            isApproved,
+                            isLockedOut,
+                            creationDate,
+                            lastLoginDate,
+                            lastActivityDate,
+                            lastPasswordChangedDate,
                             lastLockedOutDate);
                         this.LoadUserProfile(u);
                     }
@@ -1720,8 +1723,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetUserByEmail", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetUserByEmail",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -1938,8 +1941,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_ResetPassword", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_ResetPassword",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = conn
                 };
 
@@ -2029,8 +2032,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_UnlockUser", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_UnlockUser",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -2099,8 +2102,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         {
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_UpdateUser", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_UpdateUser",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
@@ -2201,8 +2204,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_GetPasswordWithFormat", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_GetPasswordWithFormat",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = conn
                 };
 
@@ -2219,6 +2222,12 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             var dbPasswordSalt = string.Empty;
             var passwordFormat = MembershipPasswordFormat.Clear;
 
+            int failedPasswordAttemptCount = 0;
+            int failedPasswordAnswerAttemptCount = 0;
+            bool isApproved;
+            DateTime lastLoginDate = DateTime.Now;
+            DateTime lastActivityDate = DateTime.Now;
+
             try
             {
                 cmd.Connection.Open();
@@ -2234,16 +2243,44 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                             (MembershipPasswordFormat)
                             Enum.Parse(typeof(MembershipPasswordFormat), reader.GetInt32(1).ToString());
                         dbPasswordSalt = reader.GetString(2);
+
+                        failedPasswordAttemptCount = reader.GetInt32(3);
+                        failedPasswordAnswerAttemptCount = reader.GetInt32(4);
+                        isApproved = reader.GetBoolean(5);
+                        lastLoginDate = reader.GetDateTime(6);
+                        lastActivityDate = reader.GetDateTime(7);
                     }
 
                     reader.Close();
-                    if (((int)returnCode.Value) > 0)
-                    {
-                        return false;
-                    }
                 }
 
-                return this.CheckPassword(password, dbPassword, dbPasswordSalt, passwordFormat);
+                var flag = this.CheckPassword(password, dbPassword, dbPasswordSalt, passwordFormat);
+
+                if (flag && failedPasswordAttemptCount == 0 && failedPasswordAnswerAttemptCount == 0)
+                    return true;
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("dbo.aspnet_Membership_UpdateUserInfo", conn);
+                DateTime utcNow = DateTime.UtcNow;
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
+                sqlCommand.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = username;
+                sqlCommand.Parameters.Add("@IsPasswordCorrect", SqlDbType.Bit).Value = (object)Convert.ToBoolean(flag ? 1 : 0);
+                sqlCommand.Parameters.Add("@UpdateLastLoginActivityDate", SqlDbType.Bit).Value = (object)true;
+                sqlCommand.Parameters.Add("@MaxInvalidPasswordAttempts", SqlDbType.Int).Value = (object)this.MaxInvalidPasswordAttempts;
+                sqlCommand.Parameters.Add("@PasswordAttemptWindow", SqlDbType.Int).Value = (object)this.PasswordAttemptWindow;
+                sqlCommand.Parameters.Add("@CurrentTimeUtc", SqlDbType.DateTime).Value = (object)utcNow;
+                sqlCommand.Parameters.Add("@LastLoginDate", SqlDbType.DateTime).Value = (object)(flag ? utcNow : lastLoginDate);
+                sqlCommand.Parameters.Add("@LastActivityDate", SqlDbType.DateTime).Value = (object)(flag ? utcNow : lastActivityDate);
+                SqlParameter sqlParameter = new SqlParameter("@ReturnValue", SqlDbType.Int);
+                sqlParameter.Direction = ParameterDirection.ReturnValue;
+                sqlCommand.Parameters.Add(sqlParameter);
+                sqlCommand.ExecuteNonQuery();
+
+                return flag;
+
             }
             catch (SqlException e)
             {
@@ -2261,7 +2298,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                     reader.Close();
                 }
 
-                conn.Close();
+                if (conn != null)
+                    conn.Close();
             }
         }
 
@@ -2285,29 +2323,35 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             {
                 var maxDays = 7;
 
-                try{
+                try
+                {
                     maxDays = int.Parse(ConfigurationManager.AppSettings["MaxTokenDays"]);
                 }
-                catch(Exception){
+                catch (Exception)
+                {
                     maxDays = 7;
                 }
-                try {
-                    var token = entities.aspnet_ResetPasswordTokens.Include("aspnet_Membership").Single(t => t.UserId == userId && t.TokenId == tokenId 
+                try
+                {
+                    var token = entities.aspnet_ResetPasswordTokens.Include("aspnet_Membership").Single(t => t.UserId == userId && t.TokenId == tokenId
                         && t.aspnet_Membership.aspnet_Applications.ApplicationName.ToLower() == this.ApplicationName.ToLower());
 
-                    if (token.CreationDate >= DateTime.Now.AddDays(-maxDays)) {
+                    if (token.CreationDate >= DateTime.Now.AddDays(-maxDays))
+                    {
                         return true;
 
                     }
-                    else {
+                    else
+                    {
                         // The token is old
 
                         entities.aspnet_ResetPasswordTokens.DeleteObject(token);
                         entities.SaveChanges();
                         return false;
-                    }                    
+                    }
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
 
                     ErrorHandler.Publish(LogLevel.Error, e);
                     return false;
@@ -2348,18 +2392,18 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             var lastLockedOutDate = reader.IsDBNull(11) ? DateTime.Now : reader.GetDateTime(11);
 
             var u = this.InstantiateNewUser(
-                this.Name, 
-                username, 
-                providerUserKey, 
-                email, 
-                passwordQuestion, 
-                comment, 
-                isApproved, 
-                isLockedOut, 
-                creationDate, 
-                lastLoginDate, 
-                lastActivityDate, 
-                lastPasswordChangedDate, 
+                this.Name,
+                username,
+                providerUserKey,
+                email,
+                passwordQuestion,
+                comment,
+                isApproved,
+                isLockedOut,
+                creationDate,
+                lastLoginDate,
+                lastActivityDate,
+                lastPasswordChangedDate,
                 lastLockedOutDate);
 
             return u;
@@ -2438,8 +2482,8 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             var cmd = new SqlCommand
                 {
-                    CommandText = "aspnet_Membership_SetPassword", 
-                    CommandType = CommandType.StoredProcedure, 
+                    CommandText = "aspnet_Membership_SetPassword",
+                    CommandType = CommandType.StoredProcedure,
                     Connection = new SqlConnection(this.ConnectionString)
                 };
 
