@@ -212,6 +212,8 @@ namespace Appleseed.DesktopModules.CoreModules.SignIn
             {
                 this.Message.Text = Appleseed.Signin_LoginBtnClick_Login_failed;
                 this.Message.TextKey = "LOGIN_FAILED";
+                //Get Failed Password Attampt Counter 
+                //e.g. ((AppleseedUser)((AppleseedMembershipProvider)System.Web.Security.Membership.Provider).GetUser(PortalSettings.PortalAlias, email.Text, true)).FailedPasswordAttemptCount
             }
         }
 

@@ -59,6 +59,9 @@ namespace Appleseed.Content.Web.Modules
             {
                 Message.Text = "Login failed";
                 Message.TextKey = "LOGIN_FAILED";
+                //Get Failed Password Attampt Counter 
+                //e.g. ((AppleseedUser)((AppleseedMembershipProvider)System.Web.Security.Membership.Provider).GetUser(PortalSettings.PortalAlias, email.Text, true)).FailedPasswordAttemptCount
+
             }
         }
 

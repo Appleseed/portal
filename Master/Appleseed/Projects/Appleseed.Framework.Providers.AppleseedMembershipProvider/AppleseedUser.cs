@@ -267,6 +267,24 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider {
             }
         }
 
+        private int failedPasswordAttemptCount;
+
+        /// <summary>
+        /// Gets or sets the FailedPasswordAttemptCount.
+        /// </summary>
+        /// <value>The FailedPasswordAttemptCount.</value>
+        public int FailedPasswordAttemptCount
+        {
+            get
+            {
+                return failedPasswordAttemptCount;
+            }
+            set
+            {
+                failedPasswordAttemptCount = value;
+            }
+        }
+
         #endregion
 
     }

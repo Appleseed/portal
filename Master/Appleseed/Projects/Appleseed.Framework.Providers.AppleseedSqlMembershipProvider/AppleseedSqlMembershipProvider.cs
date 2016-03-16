@@ -1543,6 +1543,26 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                         this.LoadUserProfile(u);
                     }
                 }
+                reader.Close();
+
+                cmd = new SqlCommand
+                {
+                    CommandText = "SELECT * FROM aspnet_Membership WHERE UserId = '" + providerUserKey + "'",
+                    CommandType = CommandType.Text,
+                    Connection = new SqlConnection(this.ConnectionString)
+                };
+
+                cmd.Connection.Open();
+
+                using (reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        u.FailedPasswordAttemptCount = (int)reader["FailedPasswordAttemptCount"];
+                    }
+                }
+                reader.Close();
             }
             catch (SqlException e)
             {
@@ -1622,7 +1642,7 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             AppleseedUser u = null;
             SqlDataReader reader = null;
-
+            var providerUserKey = Guid.Empty;
             try
             {
                 cmd.Connection.Open();
@@ -1642,7 +1662,7 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                         var lastActivityDate = reader.IsDBNull(6) ? DateTime.Now : reader.GetDateTime(6);
                         var lastPasswordChangedDate = reader.IsDBNull(7) ? DateTime.Now : reader.GetDateTime(7);
 
-                        var providerUserKey = new Guid(reader.GetValue(8).ToString());
+                        providerUserKey = new Guid(reader.GetValue(8).ToString());
                         var isLockedOut = reader.IsDBNull(9) ? false : reader.GetBoolean(9);
                         var lastLockedOutDate = reader.IsDBNull(10) ? DateTime.Now : reader.GetDateTime(10);
 
@@ -1662,6 +1682,26 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                             lastLockedOutDate);
                         this.LoadUserProfile(u);
                     }
+                    reader.Close();
+
+                    cmd = new SqlCommand
+                    {
+                        CommandText = "SELECT * FROM aspnet_Membership WHERE UserId = '" + providerUserKey.ToString().Replace("{", string.Empty).Replace("}", string.Empty) + "'",
+                        CommandType = CommandType.Text,
+                        Connection = new SqlConnection(this.ConnectionString)
+                    };
+
+                    cmd.Connection.Open();
+
+                    using (reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            u.FailedPasswordAttemptCount = (int)reader["FailedPasswordAttemptCount"];
+                        }
+                    }
+                    reader.Close();
                 }
             }
             catch (SqlException e)
