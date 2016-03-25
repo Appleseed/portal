@@ -359,6 +359,7 @@ UPDATE [rb_ModuleSettings] SEt SettingValue='CKeditor' where ModuleID=2
 END
 GO
 
+/*Increase the size of pagename for parentpage*/
 ALTER PROCEDURE [dbo].[rb_GetTabsParent]
 (
 	@PortalID int,
