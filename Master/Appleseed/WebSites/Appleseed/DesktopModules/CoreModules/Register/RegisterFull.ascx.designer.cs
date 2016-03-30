@@ -174,6 +174,15 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull {
     protected global::System.Web.UI.WebControls.TextBox tfPwdAgain;
     
     /// <summary>
+    /// rfvPwdAgain control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPwdAgain;
+    
+    /// <summary>
     /// cfvPwd control.
     /// </summary>
     /// <remarks>
@@ -478,6 +487,15 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtNewPwdAgain;
+    
+    /// <summary>
+    /// rfvNewPwdAgain control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNewPwdAgain;
     
     /// <summary>
     /// cfvNewPwdAgain control.
