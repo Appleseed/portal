@@ -100,6 +100,7 @@
                                             <div>
                                                 <asp:TextBox ID="tfPwdAgain" runat="server" TextMode="Password"
                                                     ValidationGroup="USER"></asp:TextBox>
+
                                                 <asp:RequiredFieldValidator ID="rfvPwdAgain" runat="server" ControlToValidate="tfPwdAgain" Display="Dynamic"
                                                     Text="<%$ Resources:Appleseed, MUST_ENTER_PASSWORD%>"  textkey="MUST_ENTER_PASSWORD" Font-Size="11px"
                                                     ValidationGroup="USER"></asp:RequiredFieldValidator>
@@ -304,6 +305,7 @@
                                         ValidationGroup="CHANGE_PWD"></asp:TextBox>
                                 </div>
                                 <div>
+
                                     <asp:RequiredFieldValidator ID="rfvNewPwdAgain" runat="server" ControlToValidate="txtNewPwdAgain" Display="Dynamic"
                                         Text="<%$ Resources:Appleseed, MUST_ENTER_PASSWORD%>"  textkey="MUST_ENTER_PASSWORD" Font-Size="11px"
                                         ValidationGroup="CHANGE_PWD"></asp:RequiredFieldValidator>
