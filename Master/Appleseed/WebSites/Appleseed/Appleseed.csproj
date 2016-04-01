@@ -200,6 +200,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\Facebook.Web.dll</HintPath>
     </Reference>
+    <Reference Include="FileBrowser">
+      <HintPath>..\..\Libs\FileBrowser\FileBrowser.dll</HintPath>
+    </Reference>
     <Reference Include="FirebirdSql.Data.FirebirdClient">
       <HintPath>..\..\Libs\FirebirdSql.Data.FirebirdClient.dll</HintPath>
     </Reference>
@@ -229,6 +232,9 @@
     </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\..\Libs\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="IZ.WebFileManager">
+      <HintPath>..\..\Libs\FileBrowser\IZ.WebFileManager.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -581,6 +587,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Appleseed.zh-TW.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.de.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.es.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.fr.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.he.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.it.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.nl.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.no.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.pt.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.ru.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sk.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Cyrl-CS.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Latn-CS.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sv.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.tr.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.zh-CN.designer.cs" />
     <Compile Include="app_support\FCK.filemanager\imagegallery.aspx.designer.cs">
       <DependentUpon>imagegallery.aspx</DependentUpon>
     </Compile>
@@ -896,6 +919,27 @@
     </Compile>
     <Compile Include="DesktopModules\CoreModules\EventLogs\EventLogs.ascx.designer.cs">
       <DependentUpon>EventLogs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileBrowser\EditFile.aspx.cs">
+      <DependentUpon>EditFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileBrowser\EditFile.aspx.designer.cs">
+      <DependentUpon>EditFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileBrowser\FileBrowser.aspx.cs">
+      <DependentUpon>FileBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileBrowser\FileBrowser.aspx.designer.cs">
+      <DependentUpon>FileBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileBrowser\FileBrowserModule.ascx.cs">
+      <DependentUpon>FileBrowserModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\FileBrowser\FileBrowserModule.ascx.designer.cs">
+      <DependentUpon>FileBrowserModule.ascx</DependentUpon>
     </Compile>
     <Compile Include="DesktopModules\CoreModules\FileManager\FileManager.ascx.cs">
       <DependentUpon>FileManager.ascx</DependentUpon>
@@ -6011,6 +6055,109 @@
     <Content Include="DesktopModules\CoreModules\EventLogs\example.jpg" />
     <Content Include="DesktopModules\CoreModules\EventLogs\install.xml" />
     <Content Include="DesktopModules\CoreModules\EventLogs\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\css\fineuploader.css" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\css\style.css" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\css\style.min.css" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\EditFile.aspx" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\FileBrowser.aspx" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\FileBrowserModule.ascx" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\camera.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-bookmark.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-code.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-empty.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-excel-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-excel.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-exe.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-font.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-illustrator.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-indesign.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-link.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-note.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-pdf-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-pdf.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-photoshop.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-picture.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-powerpoint-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-powerpoint.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-premiere.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-sound.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-text.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-video.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-word-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-word.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-zip-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\file-zip.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-document-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-document.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-flash.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-house-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-house.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-music.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-picture-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-picture.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-video-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder-video.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\16\folder.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\camera.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-bookmark.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-code.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-empty.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-excel-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-excel.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-exe.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-font.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-illustrator.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-indesign.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-link.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-note.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-pdf-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-pdf.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-photoshop.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-picture.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-powerpoint-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-powerpoint.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-premiere.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-sound.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-text.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-video.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-word-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-word.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-zip-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\file-zip.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-document-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-document.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-flash.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-house-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-house.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-music.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-picture-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-picture.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-video-alt.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder-video.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\32\folder.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\box-out.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\clipboard.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\cloud-up.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Copy.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Delete.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\editfile.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\FileLarge.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\FileSmall.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\FolderLarge.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\FolderSmall.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\FolderUp.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Move.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\NewFolder.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Process.gif" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Refresh.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Rename.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\RootFolderLarge.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\RootFolderSmall.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Show.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\View.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\_View.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.js" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js" />
     <Content Include="DesktopModules\CoreModules\FileManager\example.jpg" />
     <Content Include="DesktopModules\CoreModules\FileManager\FileManager.ascx" />
     <Content Include="DesktopModules\CoreModules\FileManager\FileManager.xml" />
@@ -6339,6 +6486,10 @@
     <Content Include="Design\Themes\Appleseed.Admin\js\core.js.map" />
     <Content Include="Design\Themes\Appleseed.Admin\js\countdown.js.map" />
     <Content Include="Design\Themes\Appleseed.Admin\js\style-switcher.js.map" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\IZWebFileManagerThumbnailHandler.ashx" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.js.bundle" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js.map" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\MyUpload.ashx" />
     <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
@@ -6531,6 +6682,74 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Appleseed.vi.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.cs1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.de.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.de1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.es.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.es1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.fr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.fr1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.he.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.he1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.it.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.it1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.nl.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.nl1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.no.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.no1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.pt.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.pt1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.ru.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.ru1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sk.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.sk1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Cyrl-CS.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.sr-Cyrl-CS1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Latn-CS.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.sr-Latn-CS1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sv.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.sv1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.tr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.tr1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>IZWebFileManagerResource.zh-CN1.designer.cs</LastGenOutput>
     </Content>
     <EmbeddedResource Include="DesktopModules\CoreModules\ModuleDefinitions_OFM\ModuleDefinitions.aspx.resx">
       <DependentUpon>ModuleDefinitions.aspx.cs</DependentUpon>

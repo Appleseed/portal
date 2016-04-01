@@ -17,4 +17,7 @@ CKEDITOR.editorConfig = function( config ) {
        [
           ['accordion', 'accordion']
        ];
+    config.filebrowserBrowseUrl = '/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx';
+    config.filebrowserImageBrowseUrl = '/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx';
+    config.filebrowserFlashBrowseUrl = '/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx';
 };

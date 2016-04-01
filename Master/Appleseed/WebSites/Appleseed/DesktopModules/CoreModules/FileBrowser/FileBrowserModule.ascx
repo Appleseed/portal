@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FileBrowserModule.ascx.cs" Inherits="Appleseed.DesktopModules.CoreModules.FileBrowser.FileBrowserModule" %>
+<iframe src="/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx" height="650" width="100%" style="border:0px"></iframe>
