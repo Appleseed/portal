@@ -358,3 +358,75 @@ BEGIN
 UPDATE [rb_ModuleSettings] SEt SettingValue='CKeditor' where ModuleID=2
 END
 GO
+
+/*Increase the size of pagename for parentpage*/
+ALTER PROCEDURE [dbo].[rb_GetTabsParent]
+(
+	@PortalID int,
+	@PageID int
+)
+AS
+--Create a Temporary table to hold the tabs for this query
+CREATE TABLE #PageTree
+(
+        [PageID] [int],
+        [PageName] [nvarchar] (200),
+        [ParentPageID] [int],
+        [PageOrder] [int],
+        [NestLevel] [int],
+        [TreeOrder] [varchar] (1000)
+)
+SET NOCOUNT ON  -- Turn off echo of "... row(s) affected"
+DECLARE @LastLevel smallint
+SET @LastLevel = 0
+-- First, the parent Levels
+INSERT INTO     #PageTree
+SELECT  PageID,
+        PageName,
+        ParentPageID,
+        PageOrder,
+        0,
+        cast(100000000 + PageOrder AS varchar)
+FROM    rb_Pages
+WHERE   ParentPageID IS NULL AND PortalID =@PortalID
+ORDER BY PageOrder
+-- Next, the children Levels
+WHILE (@@rowcount > 0)
+BEGIN
+  SET @LastLevel = @LastLevel + 1
+  INSERT        #PageTree (PageID, PageName, ParentPageID, PageOrder, NestLevel, TreeOrder) 
+                SELECT  rb_Pages.PageID,
+                        Replicate('-', @LastLevel *2) + rb_Pages.PageName,
+                        rb_Pages.ParentPageID,
+                        rb_Pages.PageOrder,
+                        @LastLevel,
+                        cast(#PageTree.TreeOrder AS varchar) + '.' + cast(100000000 + rb_Pages.PageOrder AS varchar)
+                FROM    rb_Pages join #PageTree on rb_Pages.ParentPageID= #PageTree.PageID
+                WHERE   EXISTS (SELECT 'X' FROM #PageTree WHERE PageID = rb_Pages.ParentPageID AND NestLevel = @LastLevel - 1)
+                 AND PortalID =@PortalID
+                ORDER BY #PageTree.PageOrder
+END
+--Get the Orphans
+  INSERT        #PageTree (PageID, PageName, ParentPageID, PageOrder, NestLevel, TreeOrder) 
+                SELECT  rb_Pages.PageID,
+                        '(Orphan)' + rb_Pages.PageName,
+                        rb_Pages.ParentPageID,
+                        rb_Pages.PageOrder,
+                        999999999,
+                        '999999999'
+                FROM    rb_Pages 
+                WHERE   NOT EXISTS (SELECT 'X' FROM #PageTree WHERE PageID = rb_Pages.PageID)
+                         AND PortalID =@PortalID
+-- Reorder the tabs by using a 2nd Temp table AND an identity field to keep them straight.
+select IDENTITY(int,1,2) AS ord , cast(PageID AS varchar) AS PageID into #Pages
+from #PageTree
+order by NestLevel, TreeOrder
+-- Change the PageOrder in the sirt temp table so that tabs are ordered in sequence
+update #PageTree set PageOrder=(select ord from #Pages WHERE cast(#Pages.PageID AS int)=#PageTree.PageID) 
+-- Return Temporary Table
+SELECT PageID, PageName, TreeOrder
+FROM #PageTree 
+UNION
+SELECT 0 PageID, ' ROOT_LEVEL' PageName, '-1' AS TreeOrder
+order by TreeOrder
+GO

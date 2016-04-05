@@ -100,6 +100,10 @@
                                             <div>
                                                 <asp:TextBox ID="tfPwdAgain" runat="server" TextMode="Password"
                                                     ValidationGroup="USER"></asp:TextBox>
+
+                                                <asp:RequiredFieldValidator ID="rfvPwdAgain" runat="server" ControlToValidate="tfPwdAgain" Display="Dynamic"
+                                                    Text="<%$ Resources:Appleseed, MUST_ENTER_PASSWORD%>"  textkey="MUST_ENTER_PASSWORD" Font-Size="11px"
+                                                    ValidationGroup="USER"></asp:RequiredFieldValidator>
                                                 <asp:CompareValidator ID="cfvPwd" runat="server" 
                                                     ControlToValidate="tfPwdAgain" ControlToCompare="tfPwd" 
                                                     Type="String" Operator="Equal" Display="Dynamic"
@@ -301,6 +305,10 @@
                                         ValidationGroup="CHANGE_PWD"></asp:TextBox>
                                 </div>
                                 <div>
+
+                                    <asp:RequiredFieldValidator ID="rfvNewPwdAgain" runat="server" ControlToValidate="txtNewPwdAgain" Display="Dynamic"
+                                        Text="<%$ Resources:Appleseed, MUST_ENTER_PASSWORD%>"  textkey="MUST_ENTER_PASSWORD" Font-Size="11px"
+                                        ValidationGroup="CHANGE_PWD"></asp:RequiredFieldValidator>
                                     <asp:CompareValidator ID="cfvNewPwdAgain" runat="server" 
                                         ControlToValidate="txtNewPwdAgain" ControlToCompare="txtNewPwd" 
                                         Type="String" Operator="Equal" Display="Dynamic"
