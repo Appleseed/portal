@@ -348,7 +348,7 @@ namespace Appleseed.Core.Controllers
                 }
                 return Json(new { error = false, value = sb.ToString() });
             }
-            catch 
+            catch
             {
                 return Json(new { error = true });
             }
@@ -446,7 +446,7 @@ namespace Appleseed.Core.Controllers
                     moddb.DeleteModule(mID);
 
                     // reorder the modules in the pane
-                  var  modules = this.GetModules(pane, Int32.Parse(pageId));
+                    var modules = this.GetModules(pane, Int32.Parse(pageId));
                     var list = this.OrderModules(modules);
 
                     foreach (ModuleItem item in modules)
@@ -479,9 +479,9 @@ namespace Appleseed.Core.Controllers
         /// <param name="pageId">Page id</param>
         /// <param name="moduleid">Module id</param>
         /// <returns>return </returns>
-        public JsonResult MoveModule(string sourcePane, string targetPane, string pageId, string moduleid)
+        public JsonResult MoveModule(string sourcePane, string targetPane, string pageId, string moduleid, string positionid)
         {
-            
+
             //If targetPane is "0" then it will return So module will not lost
             if (string.Compare(targetPane, "0") == 0)
                 return Json(new { error = true });
@@ -489,32 +489,54 @@ namespace Appleseed.Core.Controllers
             // get source arraylist
             var sourceList = this.GetModules(sourcePane, Int32.Parse(pageId));
 
-            var mID = Convert.ToInt32( moduleid); //(ModuleItem)sourceList[index];
+            var mID = Convert.ToInt32(moduleid); //(ModuleItem)sourceList[index];
 
             if (PortalSecurity.IsInRoles(PortalSecurity.GetMoveModulePermissions(mID)))
             {
-                // add it to the database
                 var admin = new ModulesDB();
-                admin.UpdateModuleOrder(mID, 99, targetPane);
-
-                // reorder the modules in the source pane
-                sourceList = this.GetModules(sourcePane, Int32.Parse(pageId));
-                var list = this.OrderModules(sourceList);
-
-                // resave the order
-                foreach (ModuleItem item in sourceList)
+                admin.UpdateModuleOrder(mID, 999, targetPane);
+                var trgCurrent = this.GetModules(targetPane, Int32.Parse(pageId));
+                List<ModuleItem> newList = new List<ModuleItem>();
+                ModuleItem newM = new ModuleItem();
+                for (int i = 0; i < trgCurrent.Count; i++)
                 {
-                    admin.UpdateModuleOrder(item.ID, item.Order, sourcePane);
+                    if (((ModuleItem)trgCurrent[i]).ID != mID)
+                    {
+                        newList.Add((ModuleItem)trgCurrent[i]);
+                    }
+                    else
+                    {
+                        newM = (ModuleItem)trgCurrent[i];
+                    }
+                }
+                var posi = Convert.ToInt32(positionid);
+                if (posi == 0)
+                {
+                    newList.Insert(0, newM);
+                }
+                else if (posi <= newList.Count)
+                {
+                    newList.Insert(posi, newM);
+                }
+                else
+                {
+                    newList.Add(newM);
+                }
+                int order = 1;
+                foreach (var item in newList)
+                {
+                    admin.UpdateModuleOrder(item.ID, order++, targetPane);
                 }
 
-                // reorder the modules in the target pane
-                var targetList = this.GetModules(targetPane, Int32.Parse(pageId));
-                var list2 = this.OrderModules(targetList);
-
-                // resave the order
-                foreach (ModuleItem item in targetList)
+                if (sourcePane != targetPane)
                 {
-                    admin.UpdateModuleOrder(item.ID, item.Order, targetPane);
+                    order = 1;
+                    sourceList = this.GetModules(sourcePane, Int32.Parse(pageId));
+                    for (int j = 0; j < sourceList.Count; j++)
+                    {
+                        var newMdl = (ModuleItem)sourceList[j];
+                        admin.UpdateModuleOrder(newMdl.ID, order++, sourcePane);
+                    }
                 }
 
                 return Json(new { error = false });
@@ -524,7 +546,6 @@ namespace Appleseed.Core.Controllers
                 return Json(new { error = true });
             }
         }
-
         # endregion
     }
 }
