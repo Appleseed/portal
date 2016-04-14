@@ -1442,26 +1442,26 @@ namespace Appleseed.Framework.Web.UI
 
             this.ModuleGuidInCookie();
           
-            // AddThis
-            if (!this.Page.ClientScript.IsStartupScriptRegistered("ADD_THIS"))
-            {
-                if (this.PortalSettings != null && this.PortalSettings.CustomSettings != null)
-                {
-                    var addThisUsernameSetting = this.PortalSettings.CustomSettings["SITESETTINGS_ADDTHIS_USERNAME"];
-                    if (addThisUsernameSetting != null)
-                    {
-                        if (Convert.ToString(addThisUsernameSetting).Trim().Length > 0)
-                        {
-                            var addThisUsername = Convert.ToString(addThisUsernameSetting);
-                            this.Page.ClientScript.RegisterClientScriptInclude(
-                                this.Page.GetType(),
-                                "ADD_THIS",
-                                "http://s7.addthis.com/js/250/addthis_widget.js#username=" + addThisUsername);
-                        }
-                    }
-                }
+            //// AddThis
+            //if (!this.Page.ClientScript.IsStartupScriptRegistered("ADD_THIS"))
+            //{
+            //    if (this.PortalSettings != null && this.PortalSettings.CustomSettings != null)
+            //    {
+            //        var addThisUsernameSetting = this.PortalSettings.CustomSettings["SITESETTINGS_ADDTHIS_USERNAME"];
+            //        if (addThisUsernameSetting != null)
+            //        {
+            //            if (Convert.ToString(addThisUsernameSetting).Trim().Length > 0)
+            //            {
+            //                var addThisUsername = Convert.ToString(addThisUsernameSetting);
+            //                this.Page.ClientScript.RegisterClientScriptInclude(
+            //                    this.Page.GetType(),
+            //                    "ADD_THIS",
+            //                    "http://s7.addthis.com/js/250/addthis_widget.js#username=" + addThisUsername);
+            //            }
+            //        }
+            //    }
 
-            }
+            //}
 
             base.OnInit(e);
         }

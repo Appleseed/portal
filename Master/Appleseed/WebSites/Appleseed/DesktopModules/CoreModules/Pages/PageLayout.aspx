@@ -756,7 +756,7 @@
                 },
                 "plugins": ["contextmenu", "dnd", "search", "state", "types", "unique", "crrm", "themes"]
             }).on('move_node.jstree', function (event, data) {
-                moveModule(data.old_parent, data.node.parent, data.node.id)
+                moveModule(data.old_parent, data.node.parent, data.node.id, data.position)
             });
 
             $('.newjsTree .jstree-anchor').css('font-size','normal');
@@ -829,7 +829,7 @@
                     window.location = url;
                 }
 
-                function moveModule(source, target, paneId) {
+        function moveModule(source, target, paneId,position) {
                     var page = $('#Content_PageIdField').val();
                     $.ajax({
                         url: "/Appleseed.Core/PageLayout/MoveModule",
@@ -841,7 +841,8 @@
                             sourcePane: source,
                             targetPane: target,
                             pageId: page,
-                            moduleid: paneId
+                            moduleid: paneId,
+                            positionid :position
                         }),
                         success: function (data) {
                             $('#newjsTree').jstree('refresh');
