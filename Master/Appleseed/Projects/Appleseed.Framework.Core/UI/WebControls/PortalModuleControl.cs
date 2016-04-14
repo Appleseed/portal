@@ -4751,42 +4751,42 @@ namespace Appleseed.Framework.Web.UI.WebControls
         /// </param>
         private void HtmRenderButtons(Control placeHolder)
         {
-            if (this.ShareModule)
-            {
-                var publisherkeysetting = this.PortalSettings.CustomSettings["SITESETTINGS_ADDTHIS_USERNAME"];
-                if (publisherkeysetting != null)
-                {
-                    if (Convert.ToString(publisherkeysetting).Trim().Length > 0)
-                    {
-                        var culture = Thread.CurrentThread.CurrentUICulture.Name;
-                        var sb = new StringBuilder();
-                        sb.Append(
-                            "<script type=\"text/javascript\">var addthis_config = {data_track_clickback:true, ");
-                        sb.AppendFormat("ui_language:\"{0}\"", culture);
-                        if (this.PortalSettings != null &&
-                            this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_GOOGLEANALYTICS") &&
-                            !this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString().Equals(string.Empty))
-                        {
+            //if (this.ShareModule)
+            //{
+            //    var publisherkeysetting = this.PortalSettings.CustomSettings["SITESETTINGS_ADDTHIS_USERNAME"];
+            //    if (publisherkeysetting != null)
+            //    {
+            //        if (Convert.ToString(publisherkeysetting).Trim().Length > 0)
+            //        {
+            //            var culture = Thread.CurrentThread.CurrentUICulture.Name;
+            //            var sb = new StringBuilder();
+            //            sb.Append(
+            //                "<script type=\"text/javascript\">var addthis_config = {data_track_clickback:true, ");
+            //            sb.AppendFormat("ui_language:\"{0}\"", culture);
+            //            if (this.PortalSettings != null &&
+            //                this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_GOOGLEANALYTICS") &&
+            //                !this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString().Equals(string.Empty))
+            //            {
 
-                            sb.AppendFormat(", data_ga_property:\"{0}\", ", this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString());
-                            sb.AppendFormat("data_ga_social:true");
-                        }
-                        sb.Append("};</script>");
-                        sb.Append("<div class=\"addthis_toolbox addthis_default_style\">");
-                        sb.AppendFormat(
-                            " <a href=\"http://www.addthis.com/bookmark.php?v=250&amp;username={0}\"  class=\"addthis_button_compact\">{1}</a>",
-                            publisherkeysetting,
-                            General.GetString("SHARE", "Share"));
-                        sb.Append(" <span class=\"addthis_separator\">|</span>");
-                        sb.Append(" <a class=\"addthis_button_facebook\"></a>");
-                        sb.Append(" <a class=\"addthis_button_twitter\"></a>");
-                        sb.Append(" <a class=\"addthis_button_myspace\"></a>");
-                        sb.Append("</div>");
+            //                sb.AppendFormat(", data_ga_property:\"{0}\", ", this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString());
+            //                sb.AppendFormat("data_ga_social:true");
+            //            }
+            //            sb.Append("};</script>");
+            //            sb.Append("<div class=\"addthis_toolbox addthis_default_style\">");
+            //            sb.AppendFormat(
+            //                " <a href=\"http://www.addthis.com/bookmark.php?v=250&amp;username={0}\"  class=\"addthis_button_compact\">{1}</a>",
+            //                publisherkeysetting,
+            //                General.GetString("SHARE", "Share"));
+            //            sb.Append(" <span class=\"addthis_separator\">|</span>");
+            //            sb.Append(" <a class=\"addthis_button_facebook\"></a>");
+            //            sb.Append(" <a class=\"addthis_button_twitter\"></a>");
+            //            sb.Append(" <a class=\"addthis_button_myspace\"></a>");
+            //            sb.Append("</div>");
 
-                        placeHolder.Controls.Add(new LiteralControl(sb.ToString()));
-                    }
-                }
-            }
+            //            placeHolder.Controls.Add(new LiteralControl(sb.ToString()));
+            //        }
+            //    }
+            //}
 
             if (!this.buildButtons)
             {
