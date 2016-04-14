@@ -1999,15 +1999,15 @@ namespace Appleseed.Framework.Site.Configuration
                 baseSettings.Add("SITESETTINGS_SNAPENGAGE", SnapEngage);
 
 
-                var addThisUsername = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 56,
-                        Group = group,
-                        EnglishName = "AddThis Username",
-                        Description = "Username for AddThis sharing and tracking.",
-                        Value = "appleseedapp"
-                    };
-                baseSettings.Add("SITESETTINGS_ADDTHIS_USERNAME", addThisUsername);
+                //var addThisUsername = new SettingItem<string, TextBox>
+                //    {
+                //        Order = groupOrderBase + 56,
+                //        Group = group,
+                //        EnglishName = "AddThis Username",
+                //        Description = "Username for AddThis sharing and tracking.",
+                //        Value = "appleseedapp"
+                //    };
+                //baseSettings.Add("SITESETTINGS_ADDTHIS_USERNAME", addThisUsername);
 
                 groupOrderBase = (int)SettingItemGroup.CULTURE_SETTINGS;
                 group = SettingItemGroup.CULTURE_SETTINGS;
