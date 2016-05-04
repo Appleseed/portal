@@ -173,7 +173,7 @@ namespace Appleseed
                     {
                         context.RewritePath(
                             string.Format(
-                                "~/default.aspx?pageid={0}{1}", pname, context.Request.ServerVariables["QUERY_STRING"]));
+                                "~/default.aspx?pageid={0}&{1}", pname, context.Request.ServerVariables["QUERY_STRING"]));
                     }
                 }
             }
@@ -566,6 +566,11 @@ namespace Appleseed
                 ErrorHandler.Publish(LogLevel.Error, exc);
             }
 
+        }
+
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            System.Data.SqlClient.SqlConnection.ClearAllPools();
         }
 
         //private bool CheckForSelfUpdates()
