@@ -55,6 +55,10 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
                 drpPageList.DataSource = pages;
                 drpPageList.DataBind();
 
+                divDyanamicPage.Visible = false;
+
+                drpPageList.Items.Add(new ListItem() { Text = "Dynamic Page", Value = "-1" });
+
                 //div for messages will be false when page is loaded
                 divErrorMessage.Visible = false;
                 divSuccessMessage.Visible = false;
@@ -76,6 +80,10 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             // Load pages into grid 
             this.gdPages.DataSource = pgdb.GetFriendlyURlPages();
             this.gdPages.DataBind();
+
+            //Load Dynamic Pages into Grid
+            this.gdDynamicPages.DataSource = pgdb.GetFriendlyURlFromDynamicPages();
+            this.gdDynamicPages.DataBind();
         }
 
         /// <summary>
@@ -87,7 +95,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
         protected void btnSave_Click(object sender, EventArgs e)
         {
             int pageId = Convert.ToInt32(drpPageList.SelectedValue);
-            this.AddUpdateFriendlyUrl(pageId, txtFriendlyURL.Text);
+            this.AddUpdateFriendlyUrl(pageId, txtFriendlyURL.Text, 0);
             LoadGrid();
         }
 
@@ -96,12 +104,19 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
         /// </summary>
         /// <param name="pageId">page id</param>
         /// <param name="friendlyurl">friendly url</param>
-        private void AddUpdateFriendlyUrl(int pageId, string friendlyurl)
+        private void AddUpdateFriendlyUrl(int pageId, string friendlyurl, int dynamicPageId)
         {
             PagesDB pages = new PagesDB();
-
-            //when friendlyURL saved, Set result as (0/1) 
-            string result = pages.UpdateFriendlyURL(pageId, friendlyurl);
+            string result = string.Empty;
+            if (drpPageList.SelectedValue == "-1")
+            {
+                result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text) + lblFriendlyExtension.Text, dynamicPageId);
+            }
+            else
+            {
+                //when friendlyURL saved, Set result as (0/1) 
+                result = pages.UpdateFriendlyURL(pageId, friendlyurl);
+            }
 
             //If result get 0 then error message will display
             divErrorMessage.Visible = (result == "0");
@@ -124,9 +139,14 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             divErrorMessage.Visible = false;
             divSuccessMessage.Visible = false;
 
-            PagesDB pages = new PagesDB();
-            // Get and Set friendlyURL from db to Textbox when change the dropdown value
-            txtFriendlyURL.Text = pages.GetFriendlyURl(Convert.ToInt32(drpPageList.SelectedValue));
+            divDyanamicPage.Visible = (drpPageList.SelectedValue == "-1");
+
+            if (drpPageList.SelectedValue != "-1")
+            {
+                PagesDB pages = new PagesDB();
+                // Get and Set friendlyURL from db to Textbox when change the dropdown value
+                txtFriendlyURL.Text = pages.GetFriendlyURl(Convert.ToInt32(drpPageList.SelectedValue));
+            }
         }
 
         /// <summary>
@@ -184,7 +204,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             TextBox txtFriendlyUrl = (TextBox)row.FindControl("txtFriendlyUrl");
             System.Web.UI.WebControls.Label lblPageID = (System.Web.UI.WebControls.Label)row.FindControl("lblPageID");
             int pageID = Convert.ToInt32(lblPageID.Text);
-            AddUpdateFriendlyUrl(pageID, txtFriendlyUrl.Text.ToLower());
+            AddUpdateFriendlyUrl(pageID, txtFriendlyUrl.Text.ToLower(), 0);
             this.gdPages.EditIndex = -1;
             this.LoadGrid();
         }
@@ -193,10 +213,13 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
         {
             if (PageID > 0)
             {
-                var page = pages.First(pg => pg.ID == PageID);
-                FullPageName = string.IsNullOrEmpty(FullPageName) ? page.Name.TrimStart('-') : page.Name.TrimStart('-') + "/" + FullPageName;
-                if (page.ParentPageId > 0)
-                    AppendFullPageName(page.ParentPageId);
+                var page = pages.FirstOrDefault(pg => pg.ID == PageID);
+                if (page != null)
+                {
+                    FullPageName = string.IsNullOrEmpty(FullPageName) ? page.Name.TrimStart('-') : page.Name.TrimStart('-') + "/" + FullPageName;
+                    if (page.ParentPageId > 0)
+                        AppendFullPageName(page.ParentPageId);
+                }
             }
         }
 
@@ -212,7 +235,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Row.DataItem;
 
                 FullPageName = string.Empty;
-                AppendFullPageName(Convert.ToInt32(((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageID")).Text));                
+                AppendFullPageName(Convert.ToInt32(((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageID")).Text));
                 ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFullName")).Text = FullPageName;
 
                 if (e.Row.RowState == DataControlRowState.Normal || e.Row.RowState == DataControlRowState.Alternate)
@@ -222,6 +245,111 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
                 }
 
             }
+        }
+
+        /// <summary>
+        /// Row bound 
+        /// </summary>
+        /// <param name="sender">The source of event.</param>
+        /// <param name="e">The <see cref="System.Web.UI.WebControls.GridViewRowEventArgs"/> instance containing the event data.</param>
+        protected void gdDynamicPages_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                System.Data.DataRowView drv = (System.Data.DataRowView)e.Row.DataItem;
+
+                if (e.Row.RowState == DataControlRowState.Normal || e.Row.RowState == DataControlRowState.Alternate)
+                {
+                    System.Web.UI.WebControls.Label lblPageFriendlyUrl = ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFriendlyUrl"));
+                    lblPageFriendlyUrl.Text = drv["FriendlyUrl"].ToString(); // (drv["FriendlyUrl"].ToString().StartsWith("/") ? drv["FriendlyUrl"].ToString() : "/" + drv["FriendlyUrl"].ToString()) + lblFriendlyExtension.Text;
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Row Deleteting It will clear friendly url
+        /// </summary>
+        /// <param name="sender"> The source of event.</param>
+        /// <param name="e"> The <see cref="System.Web.UI.WebControls.GridViewDeleteEventArgs"/> instance containing the event data.</param>
+        protected void gdDynamicPages_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)gdDynamicPages.Rows[e.RowIndex];
+            System.Web.UI.WebControls.Label lblPageID = (System.Web.UI.WebControls.Label)row.FindControl("lblPageID");
+            int pageID = Convert.ToInt32(lblPageID.Text);
+
+            new PagesDB().DeleteDynamicFriendlyUrl(pageID);
+
+            //remove from cache
+            SqlUrlBuilderProvider.ClearCachePageUrl(pageID);
+            UrlBuilderHelper.ClearUrlElements(pageID);
+
+            this.LoadGrid();
+        }
+
+        /// <summary>
+        /// Row Editing
+        /// </summary>
+        /// <param name="sender"> The source of event.</param>
+        /// <param name="e"> The <see cref="System.Web.UI.WebControls.GridViewEditEventArgs"/> instance containing the event data.</param>
+        protected void GdDynamicPages_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gdDynamicPages.EditIndex = e.NewEditIndex;
+            LoadGrid();
+        }
+
+        /// <summary>
+        /// Cancel edit
+        /// </summary>
+        /// <param name="sender">The source of event.</param>
+        /// <param name="e">The <see cref="System.Web.UI.WebControls.GridViewCancelEditEventArgs"/> instance containing the event data.</param>
+        protected void gdDynamicPages_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            this.gdDynamicPages.EditIndex = -1;
+            divErrorMessage.Visible = false;
+            divSuccessMessage.Visible = false;
+            this.LoadGrid();
+        }
+
+        /// <summary>
+        /// Update friendly url data
+        /// </summary>
+        /// <param name="sender">The source of event.</param>
+        /// <param name="e">The <see cref="System.Web.UI.WebControls.GridViewUpdateEventArgs"/> instance containing the event data.</param>
+        protected void gdDynamicPages_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)gdDynamicPages.Rows[e.RowIndex];
+            TextBox txtFriendlyUrl = (TextBox)row.FindControl("txtFriendlyUrl");
+            TextBox txtRedirectToUrl = (TextBox)row.FindControl("txtRedirectToUrl");
+            System.Web.UI.WebControls.Label lblPageID = (System.Web.UI.WebControls.Label)row.FindControl("lblPageID");
+            int pageID = Convert.ToInt32(lblPageID.Text);
+            AddUpdateDaynamicPagesFriendlyUrl(pageID, txtRedirectToUrl.Text, txtFriendlyUrl.Text);
+            this.gdDynamicPages.EditIndex = -1;
+            this.LoadGrid();
+        }
+
+        /// <summary>
+        /// Add Update friendly url
+        /// </summary>
+        /// <param name="daynamicPageId">page id</param>
+        /// <param name="friendlyurl">friendly url</param>
+        private void AddUpdateDaynamicPagesFriendlyUrl(int daynamicPageId, string redirectToUrl, string friendlyurl)
+        {
+            PagesDB pages = new PagesDB();
+
+            //when friendlyURL saved, Set result as (0/1) 
+            //change this method for rb_Pages_DynamicRedirects Table.
+            string result = pages.UpdateFriendlyURL(redirectToUrl, friendlyurl, daynamicPageId);
+
+            //If result get 0 then error message will display
+            divErrorMessage.Visible = (result == "0");
+
+            //If result get 1 then success message will display
+            divSuccessMessage.Visible = (result != "0");
+
+            //remove from cache
+            SqlUrlBuilderProvider.ClearCachePageUrl(daynamicPageId);
+            UrlBuilderHelper.ClearUrlElements(daynamicPageId);
         }
     }
 }

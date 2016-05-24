@@ -1299,6 +1299,14 @@
     </Scripts>
   </Release>
 
+  <Release>
+    <ID>1905</ID>
+    <Version>2.0.0.1905</Version>
+    <Date>2016-05-11T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1905.sql</Script>
+    </Scripts>
+  </Release>
   
   <!--The DBScripts folder in Appleseed.Core portable area can be used to make changes to MVC modules -->
 
