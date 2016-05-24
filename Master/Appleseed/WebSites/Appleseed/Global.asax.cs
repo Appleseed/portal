@@ -120,6 +120,24 @@ namespace Appleseed
         /// </param>
         protected void AppleseedApplication_BeginRequest(object sender, EventArgs e)
         {
+            string rawUrlLower = Request.RawUrl.ToLower();
+            if (rawUrlLower != "/" && !rawUrlLower.Contains("/installer") && !rawUrlLower.Contains("/webresource.axd") && !File.Exists(Server.MapPath(rawUrlLower.Split('?')[0])))
+            {
+                Appleseed.Framework.Site.Data.PagesDB pagedb = new Framework.Site.Data.PagesDB();
+                string redirectToUrl = pagedb.GetDynamicPageUrl(rawUrlLower);
+                if (!string.IsNullOrEmpty(redirectToUrl))
+                {
+                    Response.Redirect(redirectToUrl, true);
+                    return;
+                }
+            }
+            //Appleseed.Framework.Site.Data.PagesDB pagedb = new Framework.Site.Data.PagesDB();
+            //string redirectToUrl = pagedb.GetDynamicPageUrl(Request.RawUrl);
+            //if (!string.IsNullOrEmpty(redirectToUrl))
+            //{
+            //    Response.Redirect(redirectToUrl, true);
+            //    return;
+            //}
             string Addwww = System.Configuration.ConfigurationManager.AppSettings.Get("AddWwwToRequest");
             if (Addwww != null && Addwww.Equals("true"))
             {
@@ -447,7 +465,7 @@ namespace Appleseed
             // moved from PortalSettings
             var f = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(Portal)).Location);
             HttpContext.Current.Application.Lock();
-            HttpContext.Current.Application["CodeVersion"] = 1904; //f.FilePrivatePart;
+            HttpContext.Current.Application["CodeVersion"] = 1905; //f.FilePrivatePart;
             HttpContext.Current.Application["NugetSelfUpdatesToInstall"] = false;
             HttpContext.Current.Application.UnLock();
 

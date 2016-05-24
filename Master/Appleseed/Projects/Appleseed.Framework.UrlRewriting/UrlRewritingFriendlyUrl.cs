@@ -62,6 +62,13 @@ namespace Appleseed.Framework.UrlRewriting
                     return pageId.ToString();
             }
 
+            string dynamicPage = DB.GetDynamicPageUrl(pagepath);
+            if (!string.IsNullOrEmpty(dynamicPage))
+            {
+                //-1 for dynamic pages
+                return "-1";
+            }
+
             // if page is not found it will throw 404 error
             throw new HttpException(404, "Page not Found", 3);
         }

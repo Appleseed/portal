@@ -204,10 +204,10 @@ namespace Appleseed.Framework.Site.Data
                 }
 
                 var parameterTabName = new SqlParameter("@PageName", SqlDbType.NVarChar, 200)
-                    {
-                        // Fixes tab name to long
-                        Value = pageName.Length > 200 ? pageName.Substring(0, 199) : pageName
-                    };
+                {
+                    // Fixes tab name to long
+                    Value = pageName.Length > 200 ? pageName.Substring(0, 199) : pageName
+                };
 
                 command.Parameters.Add(parameterTabName);
 
@@ -215,24 +215,24 @@ namespace Appleseed.Framework.Site.Data
                 command.Parameters.Add(parameterTabOrder);
 
                 var parameterAuthRoles = new SqlParameter("@AuthorizedRoles", SqlDbType.NVarChar, 256)
-                    {
-                        Value = authorizedRoles
-                    };
+                {
+                    Value = authorizedRoles
+                };
                 command.Parameters.Add(parameterAuthRoles);
 
                 var parameterShowMobile = new SqlParameter("@ShowMobile", SqlDbType.Bit, 1) { Value = showMobile };
                 command.Parameters.Add(parameterShowMobile);
 
                 var parameterMobileTabName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 200)
-                    {
-                        Value = mobilePageName
-                    };
+                {
+                    Value = mobilePageName
+                };
                 command.Parameters.Add(parameterMobileTabName);
 
                 var parameterPageId = new SqlParameter(StrPageId, SqlDbType.Int, 4)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterPageId);
 
                 connection.Open();
@@ -307,9 +307,9 @@ namespace Appleseed.Framework.Site.Data
                 var parameterPageId = new SqlParameter(StrPageId, SqlDbType.Int, 4) { Value = pageId };
                 sqlCommand.Parameters.Add(parameterPageId);
                 var parameterCrumbs = new SqlParameter("@CrumbsXML", SqlDbType.NVarChar, 4000)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 sqlCommand.Parameters.Add(parameterCrumbs);
 
                 // Execute the command
@@ -334,11 +334,11 @@ namespace Appleseed.Framework.Site.Data
                     crumbXml.FirstChild.ChildNodes.Cast<XmlNode>().Where(node => node.Attributes != null).Select(
                         node =>
                         new PageItem
-                            {
-                                ID = Int16.Parse(node.Attributes.GetNamedItem("tabID").Value),
-                                Name = node.InnerText,
-                                Order = Int16.Parse(node.Attributes.GetNamedItem("level").Value)
-                            }).ToList();
+                        {
+                            ID = Int16.Parse(node.Attributes.GetNamedItem("tabID").Value),
+                            Name = node.InnerText,
+                            Order = Int16.Parse(node.Attributes.GetNamedItem("level").Value)
+                        }).ToList();
             }
         }
 
@@ -400,9 +400,9 @@ namespace Appleseed.Framework.Site.Data
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
             var sqlCommand = new SqlCommand("rb_GetTabsByPortal", connection)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
+            {
+                CommandType = CommandType.StoredProcedure
+            };
 
             // Mark the Command as a SPROC
             // Add Parameters to SPROC
@@ -451,12 +451,12 @@ namespace Appleseed.Framework.Site.Data
                     {
 
                         var tabItem = new PageItem
-                            {
-                                ID = (int)result["PageID"],
-                                Name = (string)result["PageName"],
-                                Order = (int)result["PageOrder"],
-                                NestLevel = (int)result["NestLevel"]
-                            };
+                        {
+                            ID = (int)result["PageID"],
+                            Name = (string)result["PageName"],
+                            Order = (int)result["PageOrder"],
+                            NestLevel = (int)result["NestLevel"]
+                        };
 
                         if (result["NestLevel"] != null)
                         {
@@ -527,9 +527,9 @@ namespace Appleseed.Framework.Site.Data
             // Create Instance of Connection and Command Object
             var connection = Config.SqlConnectionString;
             var sqlCommand = new SqlCommand("rb_GetTabsParent", connection)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
+            {
+                CommandType = CommandType.StoredProcedure
+            };
 
             // Mark the Command as a SPROC
             // Add Parameters to SPROC
@@ -553,7 +553,7 @@ namespace Appleseed.Framework.Site.Data
             if (dr != null)
             {
                 dr.Close();
-                
+
             }
 
             return result;
@@ -598,13 +598,13 @@ namespace Appleseed.Framework.Site.Data
                     while (result.Read())
                     {
                         var tabDetails = new PageStripDetails
-                            {
-                                PageID = (int)result["PageID"],
-                                ParentPageID = Int32.Parse("0" + result["ParentPageID"]),
-                                PageName = (string)result["PageName"],
-                                PageOrder = (int)result["PageOrder"],
-                                AuthorizedRoles = (string)result["AuthorizedRoles"]
-                            };
+                        {
+                            PageID = (int)result["PageID"],
+                            ParentPageID = Int32.Parse("0" + result["ParentPageID"]),
+                            PageName = (string)result["PageName"],
+                            PageOrder = (int)result["PageOrder"],
+                            AuthorizedRoles = (string)result["AuthorizedRoles"]
+                        };
 
                         // Update the AuthorizedRoles Variable
                         desktopPages.Add(tabDetails);
@@ -965,6 +965,228 @@ namespace Appleseed.Framework.Site.Data
         }
         #endregion
 
- 
+        #region Dynamic Page - Friendly URL
+        public string GetDynamicPageUrl(string pageUrl)
+        {
+            string redirectToUrl = "";
+            try
+            {
+                using (var connection = Config.SqlConnectionString)
+                using (var sqlCommand = new SqlCommand("select * from rb_Pages_DynamicRedirects where FriendlyUrl = '" + pageUrl + "'", connection))
+                {
+
+                    // Mark the Command as a SPROC
+                    sqlCommand.CommandType = CommandType.Text;
+                    // Add Parameters to SPROC
+                    connection.Open();
+                    try
+                    {
+                        SqlDataReader reder = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                        if (reder.HasRows && reder.Read())
+                        {
+                            redirectToUrl = reder["RedirectToUrl"].ToString();
+                        }
+                        reder.Close();
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return redirectToUrl;
+        }
+
+        /// <summary>
+        /// Get Friendly Url Dynamic Pages
+        /// </summary>
+        /// <returns> returns data</returns>
+        public DataTable GetFriendlyURlFromDynamicPages()
+        {
+            // Create Instance of Connection and Command Object
+            using (var sqlConnection = Config.SqlConnectionString)
+            {
+                string commandText = "select *, ROW_NUMBER() OVER(ORDER BY RedirectToUrl) AS SRINDEX from rb_Pages_DynamicRedirects where ISNULL(FriendlyURL, '') <> ''";
+                var da = new SqlDataAdapter(commandText, sqlConnection);
+
+                var dataTable = new DataTable("rb_Pages_DynamicRedirects");
+
+                // Read the result set
+                try
+                {
+                    da.Fill(dataTable);
+                }
+                finally
+                {
+                    da.Dispose();
+                }
+
+                return dataTable;
+            }
+        }
+
+
+        /// <summary>
+        /// Delete friendly url
+        /// </summary>
+        /// <param name="pageId">page id</param>
+        public void DeleteDynamicFriendlyUrl(int dynamicPageID)
+        {
+            using (var sqlConnection = Config.SqlConnectionString)
+            {
+                string commandText = "update rb_Pages_DynamicRedirects set FriendlyURL='' where DynamicPageID='" + dynamicPageID + "'";
+
+                SqlCommand sqlCommand = new SqlCommand(commandText, sqlConnection);
+                sqlConnection.Open();
+                try
+                {
+                    sqlCommand.ExecuteNonQuery();
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+
+        
+
+        /// <summary>
+        /// Update dynamic friendly URL
+        /// </summary>
+        /// <param name="redirectToUrl">redirectToUrl</param>
+        /// <param name="friendlyUrl">friendlyUrl</param>
+        /// <param name="dynamicPageId">dynamicPageId</param>
+        /// <returns></returns>
+        public string UpdateFriendlyURL(string redirectToUrl, string friendlyUrl, int dynamicPageId)
+        {
+            string dbRedirectToUrl = string.Empty;
+            if (!IsAlreadyExistsDynamicFriendlyUrl(friendlyUrl, dynamicPageId))
+            {
+                using (var connection = Config.SqlConnectionString)
+                using (var sqlCommand = new SqlCommand("update rb_Pages_DynamicRedirects  set RedirectToUrl='" + redirectToUrl + "' , FriendlyUrl='" + friendlyUrl + "' where DynamicPageID=" + dynamicPageId, connection))
+                {
+                    // Mark the Command as a Text
+                    sqlCommand.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    try
+                    {
+                        var result = sqlCommand.ExecuteScalar();
+                    }
+                    finally
+                    {
+                        connection.Close();
+
+                    }
+                }
+                return "1";
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        /// <summary>
+        /// Check for duplicate Friendly Url 
+        /// </summary>
+        /// <param name="friendlyURL"> Page Friendly URL</param>
+        /// <param name="dynamicPageID">dynamic Page ID</param>
+        /// <returns>0 / 1 </returns>
+        public bool IsAlreadyExistsDynamicFriendlyUrl(string friendlyURL, int dynamicPageID)
+        {
+            int result = 0;
+            using (var connection = Config.SqlConnectionString)
+            using (var sqlCommand = new SqlCommand("select count(*) from rb_Pages_DynamicRedirects where ISNULL(FriendlyUrl, '') = '" + friendlyURL + "' and dynamicPageID !=" + dynamicPageID, connection))
+            {
+                sqlCommand.CommandType = CommandType.Text;
+                connection.Open();
+                try
+                {
+                    result = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                    if (result == 0)
+                    {
+                        sqlCommand.CommandText = "select count(*) from rb_pages where ISNULL(FriendlyUrl, '') = '" + friendlyURL + "'";
+                        result = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                    }
+                }
+
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return result > 0;
+        }
+
+        /// <summary>
+        /// Get dynamicpage id by friendlyurl 
+        /// </summary>
+        /// <param name="friendlyURL"> Page Friendly URL</param>
+        /// <returns>dyanamic page id </returns>
+        public int GetDyanamicIDByFriendlyUrl(string friendlyURL)
+        {
+            using (var connection = Config.SqlConnectionString)
+            using (var sqlCommand = new SqlCommand("select dynamicPageID from rb_Pages_DynamicRedirects where ISNULL(FriendlyUrl, '') = '" + friendlyURL + "' ", connection))
+            {
+                // Mark the Command as a SPROC
+                sqlCommand.CommandType = CommandType.Text;
+                // Add Parameters to SPROC
+                connection.Open();
+                try
+                {
+                    return Convert.ToInt32(sqlCommand.ExecuteScalar());
+                }
+
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        // <summary>
+        /// Create Friendly URL
+        /// </summary>
+        /// <param name="redirectToUrl"></param>
+        /// <param name="friendlyUrl"></param>
+        /// <param name="dynamicPageId"></param>
+        /// <returns></returns>
+        public string CreateFriendlyURL(string redirectToUrl, string friendlyUrl, int dynamicPageId)
+        {
+            if (!IsAlreadyExistsDynamicFriendlyUrl(friendlyUrl, dynamicPageId))
+            {
+                using (var connection = Config.SqlConnectionString)
+                using (var sqlCommand = new SqlCommand("insert into rb_Pages_DynamicRedirects values('" + friendlyUrl + "','" + redirectToUrl + "')", connection))
+                {
+                    // Mark the Command as a Test
+                    sqlCommand.CommandType = CommandType.Text;
+                    connection.Open();
+                    try
+                    {
+                        sqlCommand.ExecuteScalar();
+                    }
+                    finally
+                    {
+                        connection.Close();
+
+                    }
+                }
+                return "1";
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        #endregion
+
     }
 }

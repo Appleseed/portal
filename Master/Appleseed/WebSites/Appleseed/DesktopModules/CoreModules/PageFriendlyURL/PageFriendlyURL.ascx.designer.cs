@@ -40,6 +40,33 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL {
         protected global::System.Web.UI.WebControls.DropDownList drpPageList;
         
         /// <summary>
+        /// divDyanamicPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDyanamicPage;
+        
+        /// <summary>
+        /// txtDyanmicPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDyanmicPage;
+        
+        /// <summary>
+        /// rqvtxtDyanmicPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtDyanmicPage;
+        
+        /// <summary>
         /// txtFriendlyURL control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL {
         protected global::System.Web.UI.WebControls.Label lblFriendlyExtension;
         
         /// <summary>
+        /// rvftxtFriendlyUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvftxtFriendlyUrl;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -74,5 +110,14 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gdPages;
+        
+        /// <summary>
+        /// gdDynamicPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdDynamicPages;
     }
 }
