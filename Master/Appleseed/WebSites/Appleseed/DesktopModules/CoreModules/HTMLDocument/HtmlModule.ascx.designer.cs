@@ -73,7 +73,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HtmlMoudleIframe;
+        protected global::System.Web.UI.HtmlControls.HtmlIframe HtmlMoudleIframe;
         
         /// <summary>
         /// HtmlHolder2 control.

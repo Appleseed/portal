@@ -101,7 +101,7 @@ namespace Appleseed.Framework
                 return this.datatype.DataSource;
             }
         }
-        
+
         /// <summary>
         ///   Gets or sets Provide help for parameter.
         ///   Should be a brief, descriptive text that explains what
@@ -309,7 +309,14 @@ namespace Appleseed.Framework
                     else
                     {
                         // WLF: Convert is required because some values come in as strings and need to be parsed.
-                        this.Value = (T)Convert.ChangeType(value, typeof(T));
+                        try
+                        {
+                            this.Value = (T)Convert.ChangeType(value, typeof(T));
+                        }
+                        catch (Exception ex)
+                        {
+                            ErrorHandler.Publish(LogLevel.Warn, "Error Occured while Loding Setting Item value - "+ value + ".  Execption - " + ex.Message, ex);
+                        }
                     }
                 }
             }
