@@ -8,13 +8,16 @@ using System.Web;
 
 namespace Appleseed.Framework.UI.WebControls
 {
+    /// <summary>
+    /// class CKEditor
+    /// </summary>
     public class CKEditorTextbox : CKEditor.NET.CKEditorControl, IHtmlEditor
     {
         /// <summary>
         /// Control Text
         /// </summary>
         /// <value></value>
-        public string Text
+        public override string Text
         {
             get { return base.Text; }
             set { base.Text = value; }
@@ -22,6 +25,9 @@ namespace Appleseed.Framework.UI.WebControls
 
         private string _imageFolder = string.Empty;
 
+        /// <summary>
+        /// Image Folder string
+        /// </summary>
         public string ImageFolder
         {
             get

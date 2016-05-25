@@ -194,7 +194,6 @@ namespace Appleseed.Framework.Scheduler
             using (var ss = new MemoryStream((byte[])dr["Argument"]))
             {
                 this.arg = bf.Deserialize(ss);
-                ss.Close();
             }
 
             this.IDTask = (int)dr["IDTask"];

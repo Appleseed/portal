@@ -327,7 +327,7 @@ namespace Appleseed.Framework.Update
             catch (Exception exception)
             {
                 ErrorHandler.Publish(LogLevel.Error, "An error occurred during the installation process.", exception);
-                throw exception;
+                throw ;
             }
             return true;
         }

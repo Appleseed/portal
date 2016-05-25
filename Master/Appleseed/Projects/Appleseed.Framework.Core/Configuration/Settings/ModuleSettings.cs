@@ -339,11 +339,6 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     str = Path.WebPathCombine(new[] { Path.ApplicationRoot, reader["DesktopSrc"].ToString() });
                 }
-                // Added by Ashish - Connection Pool Issues
-                if (reader != null)
-                {
-                    reader.Close();
-                }
             }
 
             return str;
@@ -438,11 +433,6 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     desktopSrc = reader[StringsDesktopSrc].ToString();
                 }
-                // Added by Ashish - Connection Pool Issues
-                if (reader != null)
-                {
-                    reader.Close();
-                }
             }
 
             virtualPath += desktopSrc;
@@ -512,7 +502,6 @@ namespace Appleseed.Framework.Site.Configuration
                 command.Parameters.Add(parameter3);
                 connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close(); //Added by Ashish Patel - Connection Pool Issue
             }
 
             CurrentCache.Remove(Key.ModuleSettings(moduleId));

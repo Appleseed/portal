@@ -315,11 +315,10 @@ namespace Appleseed.Framework.Design
             var serializer = new XmlSerializer(typeof(Theme));
 
             // Create an XmlTextWriter using a FileStream.
-            using (Stream fs = new FileStream(this.currentTheme.ThemeFileName, FileMode.Create))
+            Stream fs = new FileStream(this.currentTheme.ThemeFileName, FileMode.Create);
             using (XmlWriter writer = new XmlTextWriter(fs, new UTF8Encoding()))
             {
                 serializer.Serialize(writer, this.currentTheme);
-                writer.Close();
             }
         }
 
@@ -516,7 +515,6 @@ namespace Appleseed.Framework.Design
                     }
                     finally
                     {
-                        fs.Close();
                     }
                 }
             }

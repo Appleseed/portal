@@ -16,7 +16,7 @@
         <div id="HtmlModuleText" runat="server"></div>
         <asp:PlaceHolder ID="HtmlHolder" runat="server"></asp:PlaceHolder>
         <div id="HtmlModuleDialog" runat="server" style="display: none">
-            <iframe id="HtmlMoudleIframe" runat="server"></iframe>
+            <iframe id="HtmlMoudleIframe"></iframe>
         </div>
     </div>
     <% }

@@ -95,7 +95,6 @@ namespace Appleseed.Content.Web.Modules
                 SqlCon.Open();
 
                 SqlCon.Close();
-                SqlCon.Dispose();
                 retValue = true;
             }
             catch (Exception)

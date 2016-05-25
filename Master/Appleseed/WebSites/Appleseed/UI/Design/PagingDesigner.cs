@@ -34,8 +34,7 @@ namespace Appleseed.Framework.Web.UI.Design
         {
             var paging = (Paging)this.Component;
 
-            using (var sw = new StringWriter())
-            {
+             var sw = new StringWriter();
                 using (var tw = new HtmlTextWriter(sw))
                 {
                     paging.HideOnSinglePage = false;
@@ -45,7 +44,6 @@ namespace Appleseed.Framework.Web.UI.Design
                 }
 
                 return sw.ToString();
-            }
         }
 
         #endregion

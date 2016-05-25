@@ -734,11 +734,6 @@ namespace Appleseed.Content.Web.Modules
                         selected = true;
                     }
                 }
-                //Added by Ashish - Connection Pool Issues
-                if (dr != null)
-                {
-                    dr.Close();
-                }
 
                 if (tabla.Rows.Count == 0)
                 {
@@ -756,11 +751,6 @@ namespace Appleseed.Content.Web.Modules
                                 {
                                     selected = true;
                                 }
-                            }
-                            //Added by Ashish - Connection Pool Issues
-                            if (dr1 != null)
-                            {
-                                dr1.Close();
                             }
                         }
                     }
@@ -780,11 +770,6 @@ namespace Appleseed.Content.Web.Modules
                             {
                                 selected = true;
                             }
-                        }
-                        //Added by Ashish - Connection Pool Issues
-                        if (dr2 != null)
-                        {
-                            dr2.Close();
                         }
                     }
                 }
@@ -831,11 +816,6 @@ namespace Appleseed.Content.Web.Modules
                 if (dr.Read())
                 {
                     controlPath = string.Format("{0}/{1}", Framework.Settings.Path.ApplicationRoot, dr["DesktopSrc"]);
-                }
-                // Added by Ashish - Connection Pool Issues
-                if (dr != null)
-                {
-                    dr.Close();
                 }
             }
 

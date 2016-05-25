@@ -272,9 +272,9 @@ namespace Appleseed.Framework.Site.Configuration
                 // The new parameter "PortalLanguage" has been added to sp rb_GetPageSettings  
                 // Onur Esnaf
                 var parameterPortalLanguage = new SqlParameter("@PortalLanguage", SqlDbType.NVarChar, 12)
-                    {
-                       Value = Thread.CurrentThread.CurrentUICulture.Name 
-                    };
+                {
+                    Value = Thread.CurrentThread.CurrentUICulture.Name
+                };
                 command.Parameters.Add(parameterPortalLanguage);
 
                 // Open the database connection and execute the command
@@ -311,9 +311,9 @@ namespace Appleseed.Framework.Site.Configuration
                 // The new parameter "PortalLanguage" has been added to sp rb_GetPageSettings  
                 // Onur Esnaf
                 var parameterPortalLanguage = new SqlParameter("@PortalLanguage", SqlDbType.NVarChar, 12)
-                    {
-                       Value = Thread.CurrentThread.CurrentUICulture.Name 
-                    };
+                {
+                    Value = Thread.CurrentThread.CurrentUICulture.Name
+                };
                 command.Parameters.Add(parameterPortalLanguage);
 
                 // Open the database connection and execute the command
@@ -340,9 +340,6 @@ namespace Appleseed.Framework.Site.Configuration
                     }
                     finally
                     {
-                        // by Manu, fixed bug 807858
-                        result.Close();
-                        connection.Close(); //Added by Ashish - Connection Pool Isues
                     }
 
                     return tabs;
@@ -376,7 +373,8 @@ namespace Appleseed.Framework.Site.Configuration
                 command.Parameters.Add(parameterPageId);
                 var parameterKey = new SqlParameter("@SettingName", SqlDbType.NVarChar, 50) { Value = key };
                 command.Parameters.Add(parameterKey);
-                if ((key == "CustomLayout" || key == "CustomTheme" || key == "CustomThemeAlt") && (value == General.GetString("PAGESETTINGS_SITEDEFAULT"))) { 
+                if ((key == "CustomLayout" || key == "CustomTheme" || key == "CustomThemeAlt") && (value == General.GetString("PAGESETTINGS_SITEDEFAULT")))
+                {
                     value = string.Empty;
                 }
                 var parameterValue = new SqlParameter("@SettingValue", SqlDbType.NVarChar, 1500) { Value = value };
@@ -389,7 +387,6 @@ namespace Appleseed.Framework.Site.Configuration
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
 
@@ -454,7 +451,6 @@ namespace Appleseed.Framework.Site.Configuration
                     finally
                     {
                         dr.Close(); // by Manu, fixed bug 807858
-                        connection.Close();
                     }
                 }
 
@@ -566,50 +562,51 @@ namespace Appleseed.Framework.Site.Configuration
             var group = SettingItemGroup.NAVIGATION_SETTINGS;
 
             var tabPlaceholder = new SettingItem<bool, CheckBox>(new BaseDataType<bool, CheckBox>())
-                {
-                    Group = group, 
-                    Order = groupOrderBase, 
-                    Value = false, 
-                    EnglishName = "Act as a Placeholder?", 
-                    Description = "Allows this tab to act as a navigation placeholder only."
-                };
+            {
+                Group = group,
+                Order = groupOrderBase,
+                Value = false,
+                EnglishName = "Act as a Placeholder?",
+                Description = "Allows this tab to act as a navigation placeholder only."
+            };
             baseSettings.Add("TabPlaceholder", tabPlaceholder);
 
             var tabLink = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    Value = string.Empty, 
-                    Order = groupOrderBase + 1, 
-                    EnglishName = "Static Link URL", 
-                    Description = "Allows this tab to act as a navigation link to any URL."
-                };
+            {
+                Group = group,
+                Value = string.Empty,
+                Order = groupOrderBase + 1,
+                EnglishName = "Static Link URL",
+                Description = "Allows this tab to act as a navigation link to any URL."
+            };
             baseSettings.Add("TabLink", tabLink);
 
             var tabUrlKeyword = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    Order = groupOrderBase + 2, 
-                    EnglishName = "URL Keyword", 
-                    Description = "Allows you to specify a keyword that would appear in your URL."
-                };
+            {
+                Group = group,
+                Order = groupOrderBase + 2,
+                EnglishName = "URL Keyword",
+                Description = "Allows you to specify a keyword that would appear in your URL."
+            };
             baseSettings.Add("TabUrlKeyword", tabUrlKeyword);
 
             var urlPageName = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    Order = groupOrderBase + 3, 
-                    EnglishName = "URL Page Name", 
-                    Description =
+            {
+                Group = group,
+                Order = groupOrderBase + 3,
+                EnglishName = "URL Page Name",
+                Description =
                         "This setting allows you to specify a name for this tab that will show up in the URL instead of default.aspx"
-                };
+            };
             baseSettings.Add("UrlPageName", urlPageName);
 
             var PageList = new ArrayList(new PagesDB().GetPagesFlat(this.PortalSettings.PortalID));
-            var noSelectedPage = new PageItem { Name = General.GetString("NONE") , ID = -1};
+            var noSelectedPage = new PageItem { Name = General.GetString("NONE"), ID = -1 };
             PageList.Insert(0, noSelectedPage);
-            
 
-            var FB_LikeGate_Page = new SettingItem<string, ListControl>(new CustomListDataType(PageList, "Name", "ID")){
+
+            var FB_LikeGate_Page = new SettingItem<string, ListControl>(new CustomListDataType(PageList, "Name", "ID"))
+            {
                 Group = group,
                 Order = groupOrderBase + 4,
                 EnglishName = "FB Like Gate Page",
@@ -619,7 +616,7 @@ namespace Appleseed.Framework.Site.Configuration
             baseSettings.Add("FB_LikeGate_Page", FB_LikeGate_Page);
 
             #region
-            
+
             //Adding the CSS and JavaScript Section
             var groupOrderCSSJS = (int)SettingItemGroup.ADD_CSS_JAVASCRIPT;
             var groupCSSJS = SettingItemGroup.ADD_CSS_JAVASCRIPT;
@@ -632,7 +629,7 @@ namespace Appleseed.Framework.Site.Configuration
                 Order = groupOrderCSSJS + 1,
                 EnglishName = "Enter CSS",
                 Description = "Allows this tab to add CS"
-                , 
+                ,
             };
 
             ((TextBox)tabLinkCSS.EditControl).TextMode = TextBoxMode.MultiLine;
@@ -645,10 +642,10 @@ namespace Appleseed.Framework.Site.Configuration
             {
                 Group = groupCSSJS,
                 Order = groupOrderCSSJS + 2,
-                Value=string.Empty,
+                Value = string.Empty,
                 EnglishName = "Enter JS",
                 Description = "Allow this tab to add JS"
-                
+
             };
             ((TextBox)tabLinkJS.EditControl).TextMode = TextBoxMode.MultiLine;
             ((TextBox)tabLinkJS.EditControl).Height = 400;
@@ -660,53 +657,53 @@ namespace Appleseed.Framework.Site.Configuration
             // groupOrderBase = (int)SettingItemGroup.META_SETTINGS;
             group = SettingItemGroup.META_SETTINGS;
             var tabTitle = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    EnglishName = "Tab / Page Title", 
-                    Description =
+            {
+                Group = group,
+                EnglishName = "Tab / Page Title",
+                Description =
                         "Allows you to enter a title (Shows at the top of your browser) for this specific Tab / Page. Enter something here to override the default portal wide setting."
-                };
+            };
             baseSettings.Add("TabTitle", tabTitle);
 
             var tabMetaKeyWords = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    EnglishName = "Tab / Page Keywords", 
-                    Description =
+            {
+                Group = group,
+                EnglishName = "Tab / Page Keywords",
+                Description =
                         "This setting is to help with search engine optimization. Enter 1-15 Default Keywords that represent what this Tab / Page is about.Enter something here to override the default portal wide setting."
-                };
+            };
             baseSettings.Add("TabMetaKeyWords", tabMetaKeyWords);
             var tabMetaDescription = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    EnglishName = "Tab / Page Description", 
-                    Description =
+            {
+                Group = group,
+                EnglishName = "Tab / Page Description",
+                Description =
                         "This setting is to help with search engine optimization. Enter a description (Not too long though. 1 paragraph is enough) that describes this particular Tab / Page. Enter something here to override the default portal wide setting."
-                };
+            };
             baseSettings.Add("TabMetaDescription", tabMetaDescription);
             var tabMetaEncoding = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    EnglishName = "Tab / Page Encoding", 
-                    Description =
+            {
+                Group = group,
+                EnglishName = "Tab / Page Encoding",
+                Description =
                         "Every time your browser returns a page it looks to see what format it is retrieving. This allows you to specify the content type for this particular Tab / Page. Enter something here to override the default portal wide setting."
-                };
+            };
             baseSettings.Add("TabMetaEncoding", tabMetaEncoding);
             var tabMetaOther = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    EnglishName = "Additional Meta Tag Entries", 
-                    Description =
+            {
+                Group = group,
+                EnglishName = "Additional Meta Tag Entries",
+                Description =
                         "This setting allows you to enter new tags into this Tab / Page's HEAD Tag. Enter something here to override the default portal wide setting."
-                };
+            };
             baseSettings.Add("TabMetaOther", tabMetaOther);
             var tabKeyPhrase = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                {
-                    Group = group, 
-                    EnglishName = "Tab / Page Keyphrase", 
-                    Description =
+            {
+                Group = group,
+                EnglishName = "Tab / Page Keyphrase",
+                Description =
                         "This setting can be used by a module or by a control. It allows you to define a message/phrase for this particular Tab / Page This can be used for search engine optimisation. Enter something here to override the default portal wide setting."
-                };
+            };
             baseSettings.Add("TabKeyPhrase", tabKeyPhrase);
 
             // changed Thierry (Tiptopweb) : have a dropdown menu to select layout and themes
@@ -719,7 +716,7 @@ namespace Appleseed.Framework.Site.Configuration
 
 
             var noCustomLayout = new LayoutItem { Name = General.GetString("PAGESETTINGS_SITEDEFAULT", "(Site Default)") };
-            
+
             layoutsList.Insert(0, noCustomLayout);
 
             // get the list of available themes
@@ -730,45 +727,45 @@ namespace Appleseed.Framework.Site.Configuration
 
             // changed: Jes1111 - 2004-08-06
             var customLayout = new SettingItem<string, ListControl>(new CustomListDataType(layoutsList, "Name", "Name"))
-                {
-                    Group = group, 
-                    Order = groupOrderBase + 11, 
-                    EnglishName = "Custom Layout", 
-                    Description = "Set a custom layout for this tab only"
-                };
+            {
+                Group = group,
+                Order = groupOrderBase + 11,
+                EnglishName = "Custom Layout",
+                Description = "Set a custom layout for this tab only"
+            };
             baseSettings.Add("CustomLayout", customLayout);
 
             // SettingItem CustomTheme = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>());
             // changed: Jes1111 - 2004-08-06
             var customTheme = new SettingItem<string, ListControl>(new CustomListDataType(themesList, "Name", "Name"))
-                {
-                    Group = group, 
-                    Order = groupOrderBase + 12, 
-                    EnglishName = "Custom Theme", 
-                    Description = "Set a custom theme for the modules in this tab only"
-                };
+            {
+                Group = group,
+                Order = groupOrderBase + 12,
+                EnglishName = "Custom Theme",
+                Description = "Set a custom theme for the modules in this tab only"
+            };
             baseSettings.Add("CustomTheme", customTheme);
 
             // SettingItem CustomThemeAlt = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>());
             // changed: Jes1111 - 2004-08-06
             var customThemeAlt = new SettingItem<string, ListControl>(
                 new CustomListDataType(themesList, "Name", "Name"))
-                {
-                    Group = group, 
-                    Order = groupOrderBase + 13, 
-                    EnglishName = "Custom Alt Theme", 
-                    Description = "Set a custom alternate theme for the modules in this tab only"
-                };
+            {
+                Group = group,
+                Order = groupOrderBase + 13,
+                EnglishName = "Custom Alt Theme",
+                Description = "Set a custom alternate theme for the modules in this tab only"
+            };
             baseSettings.Add("CustomThemeAlt", customThemeAlt);
 
             var customMenuImage =
                 new SettingItem<string, ListControl>(new CustomListDataType(this.GetImageMenu(), "Key", "Value"))
-                    {
-                        Group = group, 
-                        Order = groupOrderBase + 14, 
-                        EnglishName = "Custom Image Menu", 
-                        Description = "Set a custom menu image for this tab"
-                    };
+                {
+                    Group = group,
+                    Order = groupOrderBase + 14,
+                    EnglishName = "Custom Image Menu",
+                    Description = "Set a custom menu image for this tab"
+                };
             baseSettings.Add("CustomMenuImage", customMenuImage);
 
             groupOrderBase = (int)SettingItemGroup.CULTURE_SETTINGS;
@@ -783,20 +780,20 @@ namespace Appleseed.Framework.Site.Configuration
                 var c in cultureList.Where(c => c != CultureInfo.InvariantCulture && !baseSettings.ContainsKey(c.Name)))
             {
                 var localizedTabKeyPhrase = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                    {
-                        Order = counter, 
-                        Group = group, 
-                        EnglishName = string.Format("Tab Key Phrase ({0})", c.Name), 
-                        Description = string.Format("Key Phrase this Tab/Page for {0} culture.", c.EnglishName)
-                    };
+                {
+                    Order = counter,
+                    Group = group,
+                    EnglishName = string.Format("Tab Key Phrase ({0})", c.Name),
+                    Description = string.Format("Key Phrase this Tab/Page for {0} culture.", c.EnglishName)
+                };
                 baseSettings.Add(string.Format("TabKeyPhrase_{0}", c.Name), localizedTabKeyPhrase);
                 var localizedTitle = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
-                    {
-                        Order = counter, 
-                        Group = group, 
-                        EnglishName = string.Format("Title ({0})", c.Name), 
-                        Description = string.Format("Set title for {0} culture.", c.EnglishName)
-                    };
+                {
+                    Order = counter,
+                    Group = group,
+                    EnglishName = string.Format("Title ({0})", c.Name),
+                    Description = string.Format("Set title for {0} culture.", c.EnglishName)
+                };
                 baseSettings.Add(c.Name, localizedTitle);
                 counter++;
             }

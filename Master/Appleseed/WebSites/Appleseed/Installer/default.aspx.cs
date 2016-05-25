@@ -1003,7 +1003,6 @@ using System.Configuration;
                 using (var connection = new SqlConnection(this.GetDatabaseConnectionString()))
                 {
                     connection.Open();
-                    connection.Close();
                 }
 
                 errorMessage = string.Empty;

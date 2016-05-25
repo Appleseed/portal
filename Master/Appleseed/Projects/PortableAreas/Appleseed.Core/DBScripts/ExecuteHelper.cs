@@ -366,9 +366,6 @@ namespace Appleseed.Core.ExecuteScripts
                     }
                     finally
                     {
-                        sqlCommand.Dispose();
-                        myConnection.Close();
-                        myConnection.Dispose();
                     }
                 }
             }

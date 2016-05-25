@@ -153,9 +153,6 @@ namespace Appleseed.Framework.Web
 
 					finally
 					{
-						// Close the connection
-						if (conn != null)
-							conn.Close();
 					}
 				}
 
@@ -290,9 +287,6 @@ namespace Appleseed.Framework.Web
 
 					finally
 					{
-						// Close the connection
-						if (conn != null)
-							conn.Close();
 					}
 				}
 			}

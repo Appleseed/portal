@@ -589,23 +589,91 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Appleseed.zh-TW.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.de.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.es.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.fr.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.he.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.it.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.nl.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.no.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.pt.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.ru.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sk.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Cyrl-CS.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Latn-CS.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sv.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.tr.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.zh-CN.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.de1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.es1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.fr1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.he1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.it1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.nl1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.no1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.no.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.pt1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.pt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.ru1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sk1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Cyrl-CS1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sr-Cyrl-CS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Latn-CS1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sr-Latn-CS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sv1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.tr1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.zh-CN1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="app_support\FCK.filemanager\imagegallery.aspx.designer.cs">
       <DependentUpon>imagegallery.aspx</DependentUpon>
     </Compile>

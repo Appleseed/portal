@@ -92,7 +92,6 @@ namespace Appleseed.Framework.Scheduler
                         ary.Add(new SchedulerTask(dr));
                     }
 
-                    dr.Close();
                 }
             }
 
@@ -147,7 +146,6 @@ namespace Appleseed.Framework.Scheduler
                     throw new SchedulerException("Not assembly in database");
                 }
 
-                dr.Close(); // _cn is closed by behavior.
             }
 
             Assembly a;
@@ -272,7 +270,6 @@ namespace Appleseed.Framework.Scheduler
                 var bf = new BinaryFormatter();
                 bf.Serialize(ss, task.Argument);
                 arg = ss.ToArray();
-                ss.Close();
             }
 
             int idtask;
