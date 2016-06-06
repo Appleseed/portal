@@ -15,7 +15,7 @@ DECLARE @PAGEID INT,
 		@ModuleID INT
 if not exists(select * from rb_pages where PageName='PageFriendlyUrl')
 BEGIN
-EXEC rb_AddTab 0,100,'PageFriendlyUrl',50,'Admins;',0,'', @PAGEID output
+EXEC rb_AddTab 0,100,'PageFriendlyUrl',1205,'Admins;',0,'', @PAGEID output
 END
 
 select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID='C1EA4115-E7F2-4CBC-B1E7-DDA46791493C'
