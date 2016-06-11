@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+	<Module>
+		<FriendlyName>Admin - Evolutility Module List</FriendlyName>
+		<DesktopSource>DesktopModules/CoreModules/Evolutility_ModuleList/Evolutility_ModuleList.ascx</DesktopSource>
+		<MobileSource></MobileSource>
+	</Module>
+</Modules>

@@ -192,6 +192,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\EnterpriseObjects.dll</HintPath>
     </Reference>
+    <Reference Include="Evolutility.DataServer">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.DataServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.ExportWizard">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.ExportWizard.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.SideBar">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.SideBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.UIServer">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.UIServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.Wizard">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.Wizard.dll</HintPath>
+    </Reference>
     <Reference Include="Evolve.MailTemplates">
       <HintPath>..\..\Libs\Evolve.MailTemplates.dll</HintPath>
     </Reference>
@@ -989,6 +1004,108 @@
     </Compile>
     <Compile Include="DesktopModules\CoreModules\EventLogs\EventLogs.ascx.designer.cs">
       <DependentUpon>EventLogs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolAdvModSettings.aspx.cs">
+      <DependentUpon>EvolAdvModSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolAdvModSettings.aspx.designer.cs">
+      <DependentUpon>EvolAdvModSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvanced.ModuleRenderer.ascx.cs">
+      <DependentUpon>EvolutilityAdvanced.ModuleRenderer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvanced.ModuleRenderer.ascx.designer.cs">
+      <DependentUpon>EvolutilityAdvanced.ModuleRenderer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererPage.aspx.cs">
+      <DependentUpon>EvolutilityAdvancedModuleRendererPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererPage.aspx.designer.cs">
+      <DependentUpon>EvolutilityAdvancedModuleRendererPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererService.asmx.cs">
+      <DependentUpon>EvolutilityAdvancedModuleRendererService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormDocument.aspx.cs">
+      <DependentUpon>EvolutilityFormDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormDocument.aspx.designer.cs">
+      <DependentUpon>EvolutilityFormDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormTest.aspx.cs">
+      <DependentUpon>EvolutilityFormTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormTest.aspx.designer.cs">
+      <DependentUpon>EvolutilityFormTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityModuleList.aspx.cs">
+      <DependentUpon>EvolutilityModuleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityModuleList.aspx.designer.cs">
+      <DependentUpon>EvolutilityModuleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\Evolutility_ModuleList.ascx.cs">
+      <DependentUpon>Evolutility_ModuleList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\Evolutility_ModuleList.ascx.designer.cs">
+      <DependentUpon>Evolutility_ModuleList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\Evolutility_ModuleRenderer.ascx.cs">
+      <DependentUpon>Evolutility_ModuleRenderer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\Evolutility_ModuleRenderer.ascx.designer.cs">
+      <DependentUpon>Evolutility_ModuleRenderer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoField.aspx.cs">
+      <DependentUpon>EvoDicoField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoField.aspx.designer.cs">
+      <DependentUpon>EvoDicoField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoForm.aspx.cs">
+      <DependentUpon>EvoDicoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoForm.aspx.designer.cs">
+      <DependentUpon>EvoDicoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoPanel.aspx.cs">
+      <DependentUpon>EvoDicoPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoPanel.aspx.designer.cs">
+      <DependentUpon>EvoDicoPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoTest.aspx.cs">
+      <DependentUpon>EvoDicoTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoTest.aspx.designer.cs">
+      <DependentUpon>EvoDicoTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDoc.aspx.cs">
+      <DependentUpon>EvoDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDoc.aspx.designer.cs">
+      <DependentUpon>EvoDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\Evolutility_Wizard.aspx.cs">
+      <DependentUpon>Evolutility_Wizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\Evolutility_Wizard.aspx.designer.cs">
+      <DependentUpon>Evolutility_Wizard.aspx</DependentUpon>
     </Compile>
     <Compile Include="DesktopModules\CoreModules\FileBrowser\EditFile.aspx.cs">
       <DependentUpon>EditFile.aspx</DependentUpon>
@@ -6125,6 +6242,25 @@
     <Content Include="DesktopModules\CoreModules\EventLogs\example.jpg" />
     <Content Include="DesktopModules\CoreModules\EventLogs\install.xml" />
     <Content Include="DesktopModules\CoreModules\EventLogs\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\ANANT.Evolutility.Advanced.DBScript.sql" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolAdvModSettings.aspx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvanced.ModuleRenderer.ascx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererPage.aspx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererService.asmx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormDocument.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormTest.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityModuleList.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\Evolutility_ModuleList.ascx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\Evolutility_ModuleRenderer.ascx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoField.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoForm.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoPanel.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoTest.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDoc.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\Evolutility_Wizard.aspx" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\css\fineuploader.css" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\css\style.css" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\css\style.min.css" />
@@ -6226,6 +6362,7 @@
     <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Show.png" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\View.png" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\_View.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\install.xml" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.js" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js" />
     <Content Include="DesktopModules\CoreModules\FileManager\example.jpg" />
@@ -6736,6 +6873,7 @@
     <Content Include="Setup\Scripts\2.0.0.1903.sql" />
     <Content Include="Setup\Scripts\2.0.0.1904.sql" />
     <Content Include="Setup\Scripts\2.0.0.1905.sql" />
+    <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>
     </Content>

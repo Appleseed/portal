@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="EvolutilityAdvancedModuleRendererService.asmx.cs" Class="Appleseed.DesktopModules.CoreModules.EvolutilityAdvanced.ModuleRenderer.EvolutilityAdvancedModuleRendererService" %>

@@ -651,6 +651,17 @@ using System.Configuration;
                                 }
 
                                 break;
+                            case "SQLConnection":
+                            case "SQLConnectionDico":
+                                {
+                                    var attrPREFIXValue = setting.Attributes["value"];
+                                    if (attrPREFIXValue != null)
+                                    {
+                                        attrPREFIXValue.Value = this.GetDatabaseConnectionString();
+                                        dirty = true;
+                                    }
+                                }
+                                break;
                         }
                     }
                 }

@@ -47,9 +47,6 @@
                                     <td>
                                         <img class="actionicon" src="/aspnet_client/jQuery/jsTree/delete.png" title="Delete" onclick="deletePage();" /></td>
                                     <td><a href="#" onclick="deletePage();">Delete</a></td>
-                                      <td>
-                                        <img class="actionicon" src="/aspnet_client/jQuery/jsTree/delete.png" title="Delete" onclick="deletePage();" /></td>
-                                    <td><a href="#" onclick="deletePage();">Delete</a></td>
                                 </tr>
                             </table>
                         </td>
