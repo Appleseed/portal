@@ -121,6 +121,7 @@
         <div class="col-md-9">
             <div class="col-md-9">
                 <asp:Button ID="btnSave" Text="Save" CssClass="buttonMargin" runat="server" OnClick="btnSave_Click" CausesValidation="true" ValidationGroup="Save" />
+                <asp:Button ID="btnSaveWithoutExtension" width="180px" Text="Save Without Extension" CssClass="buttonMargin" runat="server" OnClick="btnSaveWithoutExtension_Click" CausesValidation="true" ValidationGroup="Save" />
             </div>
         </div>
     </div>
@@ -136,7 +137,7 @@
         <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowEditing="GdPages_RowEditing"
             OnRowDeleting="gdPages_RowDeleting" OnRowCancelingEdit="gdPages_RowCancelingEdit" OnRowDataBound="gdPages_RowDataBound" OnRowUpdating="gdPages_RowUpdating" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Sr #">
+                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Page#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageID" Text='<%# Eval("PageID") %>'></asp:Label>
                     </ItemTemplate>
@@ -176,7 +177,7 @@
     <div class="module-row">
         <asp:GridView ID="gdDynamicPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowUpdating="gdDynamicPages_RowUpdating" OnRowCancelingEdit="gdDynamicPages_RowCancelingEdit" OnRowEditing="GdDynamicPages_RowEditing" OnRowDeleting="gdDynamicPages_RowDeleting" OnRowDataBound="gdDynamicPages_RowDataBound" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Sr #">
+                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="SR#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblSrNo" Text='<%# Eval("SRINDEX") %>'></asp:Label>
                        <asp:Label runat="server" ID="lblPageID"  Visible="false" Text='<%# Eval("DynamicPageId") %>'></asp:Label>
