@@ -34,10 +34,13 @@
 
     
 </script>
-<asp:Menu ID="biMenu" runat="server"
-    DataSourceID="biSMDS"
-    DynamicEnableDefaultPopOutImage="False"
-    StaticEnableDefaultPopOutImage="False">
-</asp:Menu>
-<asp:Literal ID="ltrTopMenu" runat="server"></asp:Literal>
+<div class="admin-left-menu-inner">
+    <asp:Menu ID="biMenu" runat="server"
+        DataSourceID="biSMDS"
+        DynamicEnableDefaultPopOutImage="False"
+        StaticEnableDefaultPopOutImage="False">
+    </asp:Menu>
+
+    <asp:Literal ID="ltrTopMenu" runat="server"></asp:Literal>
+</div>
 <asp:SiteMapDataSource ID="biSMDS" ShowStartingNode="false" runat="server" />
