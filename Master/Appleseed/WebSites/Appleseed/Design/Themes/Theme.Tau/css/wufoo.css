@@ -1,0 +1,251 @@
+/*** Theme.Tau.Wufoo CSS overides ***/
+/*** Update on Dropbox to make changes to the Wufoo forms ***/
+
+div#container {
+  width: 95%;
+}
+
+.wufoo {
+	font-family: 'Montserrat', Trebuchet, sans-serif;
+}
+
+.wufoo header.info[class] {
+	display: none !important; 
+}
+
+.wufoo .info h2 {
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.01em;
+    margin-top: 72px;
+    margin-bottom: 14px;
+    color: #263238;
+}
+
+.wufoo .info div {
+    font-size: 20px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: bold;
+    color: #546e7a;
+}
+
+.wufoo .paging-context var {
+	display: block;
+    float: left;
+    background: none;
+    border: 2px solid #546e7a;
+    color: #546e7a;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0px; 
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+.wufoo .paging-context .selected var {
+    background: #546e7a;
+    border: 2px solid #546e7a;
+    color: #FFF;
+}
+
+.wufoo .paging-context b {
+    font-size: 16px;
+    font-weight: bold;
+    color: #546e7a;
+}
+
+.wufoo li span label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #546e7a;
+}
+
+.wufoo li.focused {
+    background: #f0faff;
+}
+
+.wufoo li.focused label.desc, .wufoo li.focused legend.desc, .wufoo li.focused div, .wufoo li.focused span, .wufoo li.focused div label, .wufoo li.focused span label, .safari .wufoo li.focused input.file {
+    color: #546e7a;
+}
+
+.wufoo label.desc, .wufoo legend.desc {
+	font-size: 20px;
+}
+
+@media (max-width: 480px) {
+
+	.wufoo label.desc, .wufoo legend.desc {
+		width: 100%;
+		text-align: left;
+	}
+
+}
+
+.wufoo select.select  {
+	margin: 35px 0px;
+}
+
+@media (max-width: 480px) {
+
+	.wufoo select.select  {
+		margin: 15px 0px;
+	}
+
+}
+
+.wufoo .instruct {
+    background: #f0faff;
+    margin-top: 9px;
+}
+
+.wufoo input.text, 
+.wufoo input.search, 
+.wufoo textarea.textarea {
+    border: 3px solid #b0bec5;
+    background: none;
+    height: 50px;
+    text-shadow: none;
+    outline: 0;
+    border-radius: 0;
+    font-size: 20px;
+    line-height: 50px;
+    padding: 0px 10px;
+}
+
+.wufoo input#Field1,
+.wufoo input#Field3,
+.wufoo input#Field10,
+.wufoo input#Field30 {
+    width: 95%;
+}
+
+@media (max-width: 480px) {
+
+	.wufoo input.text, 
+	.wufoo input.search, 
+	.wufoo textarea.textarea {
+	    height: 30px;
+    	line-height: 30px;
+	}
+
+	.wufoo input.medium, 
+	.wufoo select.medium{
+	  width:75%;
+	}
+
+}
+
+.wufoo input.text:focus {
+    border-color: #2c3e50;
+    color: #263238;
+}
+
+.wufoo input.btTxt,
+.wufoo button[type="submit"] {
+    color: #2961ff;
+    background: transparent;
+    position: relative;
+    font-size: 14px;
+    height: 48px;
+    line-height: 42px;
+    border: 3px solid #2961ff;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .01em;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 24px 0 24px;
+    transition: 0.3s all ease-in-out;
+}
+
+.wufoo input[type="submit"]#saveForm {
+    float: right;	
+}
+
+@media (max-width: 480px) {
+
+	.wufoo input[type="submit"]#saveForm {
+	    float: left;
+	    margin-bottom: 15px;	
+	}
+
+}
+
+.wufoo button[type="submit"]#previousPageButton {
+    float: left;	
+}
+
+.wufoo input.btTxt:hover, 
+.wufoo button[type="submit"]:hover {
+	background: #2961ff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.wufoo.rightLabel li {
+	width: 95% !important;
+}
+
+.wufoo.rightLabel .buttons div {
+	width: 70% !important;
+}
+
+@media (max-width: 480px) {
+
+	.wufoo.rightLabel .buttons {
+		padding-left: 0;
+	}
+
+}
+
+.wufoo p.instruct {
+	display: none;
+}
+
+.wufoo #errorLi {
+	display: none;
+}
+
+.wufoo li.error {
+    position: relative;
+}
+
+.wufoo p.error {
+	width: 120px;
+    position: absolute;
+    top: 35px;
+    line-height: 14px!important;
+}
+
+@media (max-width: 480px) {
+
+	.wufoo p.error {
+	    top: 0px;
+	    left: 160px;
+	}
+
+}
+
+/*.wufoo input.btTxt:after {
+    position: absolute;
+    content: '';
+    top: 12px;
+    right: 16px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 15.6px;
+    border-color: transparent transparent transparent #2961ff;
+    z-index: 97;
+    transition: 0.3s all ease-in-out;
+}
+
+.wufoo input.btTxt:hover:after {
+    border-color: transparent transparent transparent #fff;
+}*/

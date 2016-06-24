@@ -255,8 +255,9 @@ table.Control_Panel_Table td {
 div.div_ev_Table input[type="submit"],
 div#Content_ctl00_pnlForm input[type="submit"]
 {
-    color: #ffffff;
-    background-color: #2c3e50;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -264,8 +265,8 @@ div#Content_ctl00_pnlForm input[type="submit"]
     font-size:15px!important;
     font-weight:bold;
     text-decoration: none;
-    margin: 5px 10px 5px 0px;  
-    padding:5px 15px!important;
+    margin: 5px 10px 5px 0px; 
+    padding:10px 16px!important;
 }   
  
 div.div_ev_Table input[type="submit"]:link,
@@ -273,7 +274,7 @@ div.div_ev_Table input[type="submit"]:visited,
 div#Content_ctl00_pnlForm input[type="submit"]:link,
 div#Content_ctl00_pnlForm input[type="submit"]:visited
 {
-    color:#fff;
+    color:#333;
     text-decoration: none;
 }
 
@@ -282,17 +283,18 @@ div.div_ev_Table input[type="submit"]:focus,
 div#Content_ctl00_pnlForm input[type="submit"]:hover,
 div#Content_ctl00_pnlForm input[type="submit"]:focus
 {
-    color:#fff;
+    color:#333;
     cursor:pointer;
-    background-color: #1a242f;
     text-decoration: none;
+    background-color: #e6e6e6;
+    border-color: #adadad;
 }
 
 div.div_ev_Table input[type="submit"]:active,
 div#Content_ctl00_pnlForm input[type="submit"]:active
 {   
-    color:#fff;
-    background-color: #2c3e50;
+    color:#333;
+    background-color: #FFF;
 }
 
 .admin-wrapper {
@@ -312,6 +314,11 @@ table.ModuleWrap {
 table.ModuleWrap td {
     padding-top: 3px;
     padding-bottom: 3px;
+    padding-right: 10px;
+}
+
+table.ModuleWrap td hr {
+    margin: 0px;
 }
 
 table.ModuleWrap table table td {
@@ -333,11 +340,20 @@ table.signInBody td {
 
 #Content_authRoles td {
     display: block;
+    padding-top: 0px;
 }
 
 #Content_authRoles label {
     vertical-align: 2px;
-    margin: 0px 3px;
+    margin: 0px 6px;
+}
+
+#footerpopup {
+    padding: 8px 0px 0px !important;
+}
+
+#footerpopup select {
+    margin-right: 10px;
 }
 
 option {

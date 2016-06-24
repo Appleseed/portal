@@ -1,0 +1,23 @@
+{
+  "name": "Anant",
+  "version": "0.0.0",
+  "authors": [
+    "Justin Bartlett <justbartlett@gmail.com>"
+  ],
+  "description": "HTML, CSS, and jQuery for the new Anant website",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://anant.us",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "bootstrap": "~3.3.5"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

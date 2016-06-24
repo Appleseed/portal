@@ -1,0 +1,223 @@
+// DAZ Studio version 4.6.1.17 filetype DAZ Script
+/**********************************************************************
+	File: Fix Multiple Legacy Figure Scene.dsa
+
+	Copyright (C) 2002-2013 DAZ 3D, Inc. All Rights Reserved.
+
+	This file is part of the DAZ Script Documentation.
+
+	This file may be used only in accordance with the DAZ Script 
+	license provided with the DAZ Script Documentation.
+
+	The contents of this file may not be disclosed to third parties, 
+	copied or duplicated in any form, in whole or in part, without the 
+	prior written permission of DAZ 3D, Inc, except as explicitly
+	allowed in the DAZ Script license.
+
+	See http://www.daz3d.com to contact DAZ 3D, Inc or for more 
+	information about DAZ Script.
+**********************************************************************/
+
+/*********************************************************************/
+// Array : This function returns array of two elements.  
+// First item is 1 if changes happened to the line, 0 if they did not.
+// Second item is the line as it should write to file.
+function fixMorphLine( sLine ) {
+	// Define the regular expression used to strip the -# at the end of the URL
+	var regexMorphUrl = new RegExp( "(\\s*\"url\" : \"/data/auto_adapted/.+/Morphs/.+(?=#).+)-[0-9]+" );
+	// Get the captured strings
+	var aCaptures = regexMorphUrl.exec( sLine );
+	// If we have more than one captures
+	if( aCaptures && aCaptures.length > 1 ){
+		// Return the stripped line
+		return [1, aCaptures[1] + "\","];
+	// If we didn't have any captures
+	} else {
+		// Return the original line
+		return [0, sLine];
+	}
+};
+
+/*********************************************************************/
+// Number : This function returns -1 on file read error, 1 if the duf file is gzipped and 0 otherwise
+function isGZippedDUF( sFilename ) {
+	// Create a new file object for our file
+	var oFile = new DzFile( sFilename );
+	// If the file can be opened for reading
+	if( oFile.open( DzFile.ReadOnly ) ){
+		// If file size is less than 2 bytes
+		if( oFile.size() < 2 ){
+			// Close the file
+			oFile.close();
+			
+			// The file is not useful... we're done
+			return -1;
+		}
+		
+		// Define the first two chars of a gzipped file
+		var nGzChar1 = 31;
+		var nGzChar2 = -117;
+		
+		// Get the first two chars of the file we're checking
+		var nFileChar1 = oFile.readByte();
+		var nFileChar2 = oFile.readByte();
+		
+		// Close the file
+		oFile.close();
+		
+		// Return 1 if the duf file is gzipped, 0 otherwise
+		return (nFileChar1 == nGzChar1 && nFileChar2 == nGzChar2 ) ? 1 : 0;
+	// If the file cannot be opened
+	} else {
+		// Return read error
+		return -1;
+	}	
+};
+
+/*********************************************************************/
+// void : Asks user for a scene file to fix, and then writes that fixed file to path/to/original/file_fix.duf
+function doFileFix() {
+	// Prompt the user to select a scene file
+	var sFilename = FileDialog.doFileDialog( true, "Select a DSON Scene File:", 
+		App.getLoadSavePath(), "DSON Scene Files (*.duf)" );
+	
+	// If the user cancelled
+	if( sFilename.isEmpty() ){
+		// We're done...
+		return;
+	}
+	
+	// Get whether the file is gzipped
+	var nIsGzipped = isGZippedDUF( sFilename );
+	
+	// If there was an error reading the file
+	if( nIsGzipped < 0 ){
+		// Inform the user
+		MessageBox.critical( String("Could not process \"%1\".").arg( sFilename ), "File Fix Error", "&OK");
+		
+		// We're done...
+		return;
+	}
+		
+	// Create a file info object for easy path operations
+	var oInFileInfo = new DzFileInfo( sFilename );
+	// Construct the name of our target file; don't overwrite the original
+	var sOutFilename = String("%1/%2_fix.duf").arg( oInFileInfo.path() ).arg( oInFileInfo.baseName() );
+	
+	// Every thing seems valid, so lets save the picked location;
+	// the next time they load/save it will default to this path
+	App.setLoadSavePath( oInFileInfo.path() );
+	
+	// Create a file info object for easy path operations
+	var oOutFileInfo = new DzFileInfo( sOutFilename );
+	// If the fix file is already present
+	if( oOutFileInfo.exists() ){
+		// Ask if we should overwrite
+		var nResult = MessageBox.warning( 		
+			String("The fixed file \"%1\" already exists.\nWould you like to replace it?").arg( sOutFilename ),
+			"Existing File", "&Yes", "&No" );
+		// If the user selected 'No'
+		if( nResult != 0 ){
+			// We're done...
+			return;
+		}
+	}
+	
+	// Declare stream variables; their class is determined by the original files type
+	var oInStream = null;
+	var oOutStream = null;
+	
+	// If the file is gzipped
+	if( nIsGzipped == 1 ){
+		// Create new gzip files
+		oInStream = new DzGZFile( sFilename );
+		oOutStream = new DzGZFile( sOutFilename );
+		// or if uncompressed was desired
+		//oOutStream = new DzFile( sOutFilename );
+	// If the file was not gzipped
+	} else {
+		// Create new files
+		oInStream = new DzFile( sFilename );
+		oOutStream = new DzFile( sOutFilename );
+	}
+	
+	// If the files cannot be opened for reading/writing
+	if( !oInStream.open( DzFile.ReadOnly|DzFile.Text ) || !oOutStream.open( DzFile.WriteOnly|DzFile.Text ) ){
+		// We're done...
+		return;
+	}
+	
+	// Let the user know we're busy
+	setBusyCursor();
+	
+	// Declare working variables
+	var sInLine;
+	
+	// Initialize
+	var bFound = false;
+	
+	// Until we reach the modifiers section or the end of the file
+	while( !bFound && !oInStream.eof() ){
+		// Read a line from the source file
+		sInLine = oInStream.readLine();
+		// Write the line to our target file
+		oOutStream.write( sInLine );		
+		
+		// If we have reached the modifiers section
+		if( sInLine.indexOf( "\"modifiers\" : [" ) > -1 ){
+			// Break the loop
+			bFound = true;
+		}
+	}
+	
+	// Declare working variables
+	var aOutLine;
+		
+	// Initialize
+	var nReplaced = 0;
+	bFound = false;
+	
+	// Until we reach the materials section or the end of the file
+	while( !bFound && !oInStream.eof() ){
+		// Read a line from the source file
+		sInLine = oInStream.readLine();
+		
+		// Fix the line
+		aOutLine = fixMorphLine( sInLine );
+		
+		// Update the count 
+		nReplaced += aOutLine[0];
+		
+		// Write the line to our target file
+		oOutStream.write( aOutLine[1] );
+
+		// If the line was not changed and we've reached the materials line
+		if( aOutLine[0] == 0 && sInLine.indexOf( "\"materials\" : [" ) > -1 ){
+			// Break the loop
+			bFound = true;
+		}
+	}
+	
+	// Until we reach the end of the file
+	while( !oInStream.eof() ){ 
+		// Read a line from the source file
+		sInLine = oInStream.readLine();
+		// Write the line to our target file
+		oOutStream.write( sInLine );
+	}
+	
+	// Close read/write streams
+	oInStream.close();
+	oOutStream.close();
+	
+	// Let the user know we're done
+	clearBusyCursor();
+	
+	// Notify the user that the fixed file is generated
+	MessageBox.information( String("%1 has %2 fixes to file %3").arg( sOutFilename ).arg( nReplaced ).arg( sFilename ),
+		"File Fix Finished", "&OK");
+};
+
+/*********************************************************************/
+// Execute the script's main function
+doFileFix();

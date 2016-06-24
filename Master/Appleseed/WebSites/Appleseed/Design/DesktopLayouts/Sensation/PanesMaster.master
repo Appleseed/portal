@@ -1,0 +1,25 @@
+﻿<%@ master language="C#" masterpagefile="~/Design/DesktopLayouts/Sensation/SiteMaster.master" autoeventwireup="true" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
+
+	<div class="sixteen columns">
+	<asp:ContentPlaceHolder ID="TopPane" runat="server"></asp:ContentPlaceHolder>
+	</div>
+	
+	<div class="wrapper ">
+		<div class="container">
+		
+			<asp:ContentPlaceHolder ID="LeftPane" runat="server"></asp:ContentPlaceHolder>
+		    
+			<asp:ContentPlaceHolder ID="ContentPane" runat="server"></asp:ContentPlaceHolder>
+		    
+			<asp:ContentPlaceHolder ID="RightPane" runat="server"></asp:ContentPlaceHolder>
+		    
+			<br class="clear">
+		</div>
+	</div>  
+	
+	<div class="sixteen columns">
+	<asp:ContentPlaceHolder ID="BottomPane" runat="server"></asp:ContentPlaceHolder>
+	</div>
+	
+</asp:Content>

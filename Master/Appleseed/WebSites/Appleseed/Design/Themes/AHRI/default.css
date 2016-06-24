@@ -1,0 +1,1179 @@
+@import url(Slyder_Styles.css);
+@import url(as-admin-bar.css);
+@import url(Menu.css);
+@import url(jquery-ui-1.8.8.custom.css);
+        
+        /*******************************************************/
+        /************* Reset styles DO NOT REMOVE **************/
+        /*******************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+    font-family: Arial, Helvetica, Sans-serif;
+	font-size: 12px;
+    line-height: 17px;
+	color: #333;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+ol, ul {
+	list-style-type: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";}
+    
+blockquote, q {
+	quotes: "" "";}
+        /*****************************************/
+        /*********   Common Classes   ************/
+        /*****************************************/
+
+h1{
+	font-size:	24px;
+	font-weight:	bold;
+	line-height:	28px;
+	color:		#fff;
+	padding:        10px 0px 15px 0px; 
+}
+
+h2{
+	font-size:	20px;
+	font-weight:	bold;
+	line-height:	24px;
+	color:		#479;
+	padding:        5px 0px ;
+}
+
+h3{
+	font-size:	18px;
+	font-weight:	normal;
+	line-height:	22px;
+	color:		#479;
+	padding:        5px 0px;
+}
+
+h4{
+	font-size:	16px;
+	font-weight:	normal;
+	line-height:	19px;
+	color:		#247;
+	padding: 	5px 0px;
+}
+
+h5{
+	color:		#247;
+	font-size:	15px;
+	font-weight:	normal;
+	line-height:	17px;
+	padding: 	5px 0px;
+}
+
+h6{
+	color:		#247;
+	font-size:	13px;
+	font-weight:	normal;
+	line-height:	15px;
+	padding: 	5px 0px;
+}
+
+p {
+	font-size:14px;
+	line-height:17px;
+	color:#333;
+	display:block;
+	padding: 5px 0px 5px;
+}
+
+a:link,
+a.Normal:link{
+	color:#479;
+	text-decoration:none;
+	outline: none;
+	font-weight: bold;
+}
+
+a:visited,
+a.Normal:visited{
+	color:#479;
+	text-decoration:none;}
+
+a:hover,
+a.Normal:hover,
+a:focus,
+a.Normal:focus,
+a:active,
+a.Normal:active{
+	color:#D82;
+	text-decoration:none;
+	cursor:pointer;}
+
+.center{
+	margin: 0 auto;}
+
+.float_right{
+	float:right;}
+
+.clear{
+	clear:both;}
+    
+.float_left{
+	float:left;}
+    
+.Small {
+	font-size:10px;
+	color:#333;}
+
+.Error /* Error and warning messages */{
+	color:#b31212;
+	font-size:12px;}
+
+.Message /* Informative messages */{
+	font-weight:normal;
+	font-size:12px;
+	color:#b31212;
+	background-color:#ffcc00;}
+
+.Head               	/* Add,announcements,articles,blog,ecc ecc */{
+	font-weight:bold;
+	font-size:18px;
+	color:#ae2929;
+	line-height:25px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-align:left;
+	padding:0px 15px 0px 0px;}
+
+.Normal{
+	font-size:12px;
+	line-height:16px;
+	color:#333;
+	text-align:left;}
+
+.NormalItalic{
+    font-style:italic;}
+.bold{
+    font-weight: bold;
+}
+span.SiteTitle{
+    font-size: 30px;
+    font-weight: bold;
+    color: #0086CD;
+    position: relative;
+    height: 52px;
+    padding-top: 30px;
+    display: block;
+}
+/*
+ul.corporate_black{
+    padding:0px 0px 10px 20px;
+    list-style-type: none;
+}
+
+ul.corporate_black li{
+    padding-left: 25px ;
+    background-image: url("../../DesktopLayouts/Corporate-black/images/list_type_bg.png");
+    background-position: 0px -5px;
+    background-repeat: no-repeat;   
+    height: 25px; 
+}
+ul.vertical_navigation{
+    padding-bottom: 10px;
+}
+ul.vertical_navigation li{
+    display: block;
+    height: 29px ;
+    font-size: 14px;
+    border-bottom: 1px solid #999;
+    padding-left: 5px;
+    line-height: 29px;
+}
+ul.vertical_navigation li a:link,
+ul.vertical_navigation li a:visited{
+    background-image: url("../../DesktopLayouts/Corporate-black/images/list_type_bg.png");
+    background-position: 0px 0px;
+    background-repeat: no-repeat;   
+    color: #0087cd;
+    padding-left: 25px;
+    display: block;
+}
+
+ul.vertical_navigation li a:hover,
+ul.vertical_navigation li a:active{
+    color:#cd0000;
+    background-position: 5px -30px;
+}
+*/
+
+hr{
+    height: 1px;
+    border: none;
+}
+            /*****************************************/
+            /**********  Layout Classes   ************/
+            /*****************************************/	
+
+.DefaultLayoutDiv  {
+	min-height:485px;
+	position:relative;
+	margin: 0 auto;
+	padding:0px 0px 5px 0px;
+	background: url('/Portals/_Appleseed/images/AHRI/ahri-body-bkgd.png') left top repeat-x, url('/Portals/_Appleseed/images/AHRI/ahri-waves.png') center 120px repeat-x; 
+}
+
+.PortalHeader{
+	width:960px;}
+
+.Main_Table{
+	width:960px;
+	border: none;
+	margin: 0 auto;}
+
+td.Main_Content_Table{
+    width: 960px;}
+    
+#Table2 {
+	margin-top: 55px;
+}
+
+#Content_Table{
+    margin:0 auto;
+    width: 960px;}
+    
+#Content_Table td{
+    vertical-align: top;}
+
+td.CenterTD,
+td.RightTD{
+    min-width: 320px!important;
+
+    width: auto;
+    overflow: hidden;
+    position: relative;}
+
+td.LeftTD{
+    min-width: 320px!important;
+    max-width: 320px!important;
+    width: 320px;
+}
+
+.banner_div{
+    width: 100%;
+    height: auto;
+}
+
+#leftpane,
+#contentpane,
+#rightpane,
+#toppane,
+#bottompane{
+    /*min-height: 150px;*/
+    padding: 0px;
+    max-width: 940px;
+	margin:0 auto;}
+
+#contentpane h1 {
+	color: #247;
+}
+
+        /*****************************************/
+        /**********  Header Classes   ************/
+        /*****************************************/
+
+.header{
+	width:960px;
+	height:90px;
+	margin: 0 auto;
+	padding: 0px 10px 0px 10px ;
+}	
+
+.header-wrapper {
+	height: 90px;
+}
+
+.userMenu{
+	position:relative;
+	width: 485px;
+	/*height:68px;*/
+	z-index:400;
+	float:right;
+	vertical-align: top;
+	overflow: hidden;
+	margin-top: 5px;
+}
+    
+.logo_div{
+	position: relative; 
+	/*width: 250px; */
+	/*height: 90px;*/
+	margin: -26px 0 0px 40px;
+	z-index:350;
+	/*overflow:hidden;*/
+	float:left;
+}
+    
+.logo_div img{
+	width: 250px; 
+}
+
+#search {
+	margin: 5px 0px 20px 10px;
+	/*height: 30px;*/
+	float: right;
+}
+
+#search input {
+	float: left;
+}
+
+#search .userInput {
+	font-size: 12px;
+	color: #999;
+	padding: 0px;
+	width: 157px;
+	border: 0;
+	margin: 1px 2px 0 0;
+	/*border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;*/
+}
+
+.social-dir-search {	
+	position: absolute;
+	top: -85px;
+	right: 0px;
+}
+
+.social-dir-search {
+	position: absolute;
+	top: -78px;
+	right: -8px;
+}
+
+.social-dir-search div {
+	display: inline-block;
+}
+
+.social-dir-search img {
+	margin-right: 6px;
+}
+
+.social-dir-search img:hover {
+	opacity: 0.7;
+}
+
+.social-dir-search .social-buttons{	
+	vertical-align: middle;
+}
+
+#dir-search-button {
+	background-color: #08C;
+	background: url('/Portals/_Appleseed/images/AHRI/white-arrow-bkgd.png') 290px center no-repeat, url('/Portals/_Appleseed/images/AHRI/ahri-blue-gradient-3-36.png') left top repeat-x; 
+	border: 1px solid #468;
+	/*-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;*/
+	display:inline-block!important;
+	color:#fff;
+	font-size:16px!important;
+	font-weight:bold;
+	line-height:36px!important;
+	padding:0px 35px 0 10px!important;
+	min-height:36px!important;
+	margin-top: -15px;
+}
+
+#dir-search-button:hover {
+	background: url('/Portals/_Appleseed/images/AHRI/white-arrow-bkgd.png') 290px center no-repeat, url('/Portals/_Appleseed/images/AHRI/ahri-blue-gradient-4-36.png') left top repeat-x; 
+}
+
+
+        /*****************************************/
+        /**********  Right Sidebar Styles    ************/
+        /*****************************************/
+	
+.sidebar {
+	border: 1px solid #CCC;
+}
+
+.sidebar ul {
+	padding: 30px 15px;
+}
+
+.sidebar li {
+	padding-bottom: 50px;
+}
+
+.sidebar-heading {
+	padding: 25px 15px 5px;
+}
+
+.sidebar-heading.orange {
+	background-color: #D82;
+	background-image: url('/Portals/_Appleseed/images/AHRI/ahri-orange-gradient-60.png');
+	background-repeat: repeat-x;
+}
+
+.sidebar-heading.blue {
+	background-color: #479;
+	background-image: url('/Portals/_Appleseed/images/AHRI/ahri-blue-gradient-60.png');
+	background-repeat: repeat-x;
+}
+
+.sidebar-heading h3 {
+	color: #FFF;
+	text-transform: uppercase;
+	padding: 0;
+}
+
+        /*****************************************/
+        /**********  Footer Styles    ************/
+        /*****************************************/
+	
+#footer_div {
+	width:100%;
+	margin:0 auto ;
+	padding:5px 0px 0px 0px ;
+	background: #479;
+	position: relative;
+	color: #FFF;
+}
+
+#footer_div .footer_upper {
+	margin: 50px 0 0px;
+}
+
+#footer_div .footer_col {
+	margin: 0px 0 75px;
+}
+
+#footer_div h2 {
+	color: #FFF;
+	font-size: 20px;
+	font-weight: normal;
+	font-family: "Open Sans", Arial, Helvetica, Sans-serif;
+}
+
+#footer_div p {
+	color: #FFF;
+	opacity: 0.7;
+	margin: 5px 0;
+	font-size: 12px;
+}
+
+#footer_div .footer_upper p {
+	font-size: 14px;
+}
+
+#footer_div li {
+	margin: 6px 0;
+}
+
+#footer_div li a {
+	font-size: 13px;
+}
+
+#footer_div img {
+	opacity: 0.8;
+}
+
+#footer_div ul,
+#footer_div p,
+#footer_div span,
+#footer_div .twtr-hd,
+#footer_div .twtr-tweet-wrap,
+#footer_div .twtr-ft div{
+    padding-left: 0px;
+}
+
+#footer_div a.deco:link,
+#footer_div a.deco:visited,
+#footer_div a.deco:hover,
+#footer_div a:active{
+	color: #FFF;
+    text-decoration: underline;
+}
+#footer_div a:link,
+#footer_div a:visited{
+	color: #a1b8cb;
+    text-decoration: none;   
+}
+
+#footer_div a:hover,
+#footer_div a:active{
+	color: #FFF;
+}
+
+#footer_div span{
+    font-size: 16px;
+    line-height: 22px;
+}
+#footer_div hr{
+    color:#468;
+    background-color:#468;
+    margin-bottom: 4px;
+    height: 2px;
+}
+#copyright{
+    width: 100%;
+    margin: 35px 0 25px 0;
+    background-color: #479;
+}
+#copyright div {
+    width: 960px;
+    padding: 0px 0px;
+    margin: 0 auto;
+}
+#copyright div p {
+    text-align:center;
+}
+
+.footer_logo_div {
+    width: 315px;
+    padding: 0px 0px;
+    margin: 0 auto;
+}
+
+        /*****************************************/
+        /**********  Module Theme     ************/
+        /*****************************************/
+
+.ModuleWrap{
+	margin:0 auto;
+	width:100%;
+	max-width:940px!important;
+	position: relative;
+}
+
+#rightpane .ModuleWrap{
+	margin-bottom: 25px;
+}
+
+.ModuleContent{
+	padding:0px;
+	border:none;
+	max-width:940px;
+	position:relative;
+}
+
+.content-module {	
+	margin-bottom:20px;
+}
+
+.module_Body table{
+	border-spacing:0px!important;
+	max-width:940px;}
+    
+.module_Body table td{
+    padding: 3px 0px;}
+
+span.titulosofertas,
+.ModuleTitle{       /* Title of each module */
+	font-weight:	normal;
+	font-size:	18px;
+	color:		#247;
+	line-height:	20px;
+	text-align:	left;
+	padding:    	0px;
+	margin:		0px;
+}
+
+#mID1 .ModuleTitle{  
+	color:		#ABF;
+}
+
+.ModuleContent hr{
+    height: 1px;
+    color:#0087cd;
+    background-color: #247;
+    margin-bottom: 5px;
+}
+
+div.Control_Panel_Table{
+	position:absolute;
+	top:8px;
+	right:0;
+	z-index:400;}
+	
+	table.Control_Panel_Table td{
+	padding: 0 2px;
+}
+ 
+
+.ModuleTitle_Alt {       
+	font-weight:	normal;
+	font-size:	16px;
+	color:		#fff;
+	line-height:	20px;
+	text-align:	left;
+    display:        block;
+    background-color: #333;
+    padding: 10px;
+}
+
+.module_Body_alt{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.section_name h4 {
+	color: #FFF;
+	margin: 20px 10px;
+	font-weight: bold;
+	font-size: 13px;
+}
+ 
+        /************************************************/
+        /**********  Admin Modules Classes   ************/
+        /************************************************/	
+ 
+.div_ev_Table{          /***** contenedor de tabla editar propiedades de modulo ****/
+    padding:20px 10px 10px 10px;
+	border:none;
+	margin: 0px auto 10px; 
+	color:#ffffff;
+	min-width: 960px;}
+
+div.div_ev_Table table{
+		max-width:790px!important;
+        min-width: 500px;
+}
+
+.div_ev_Table_modal{          /***** contenedor de tabla editar propiedades de modulo ****/
+    padding:20px 20px 10px 20px;
+	border:none;
+	margin: 0px auto 10px; 
+	color:#ffffff;
+	width:770px!important;}
+
+div.div_ev_Table_modal table{
+		max-width:730px!important;
+        min-width: 500px;
+}
+
+div.div_ev_Table table table{
+        min-width: 30px;
+}     
+
+div.div_ev_Table table td{
+    padding: 2px;
+}
+
+
+table.ModuleWrap td{
+    padding-top: 3px;
+    padding-bottom: 3px;} 
+    
+table.ModuleWrap table table td{
+    vertical-align: top;}
+
+table.ModuleWrap a:link,
+table.ModuleWrap a:visited,
+table.ModuleWrap a:hover,
+table.ModuleWrap a:focus,
+table.ModuleWrap a:active{
+	cursor:pointer;
+	text-decoration:none;}
+
+table.signInBody td{
+    vertical-align: bottom;
+}
+option
+{
+    background-color: #e5e5e5;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #cecece;
+	min-height:23px;
+	font-size:13px;
+	line-height:22px;
+	height:23px;
+	color:#003366;
+	padding:3px 0px 0px 5px;
+    display: block;}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+		outline:1px solid #0bd4ff!important;
+        background-color: #f7f7f7;
+}
+input[type="text"]:active,
+input[type="password"]:active{
+    background-color: #fff;
+}
+
+
+input[type="text"],
+input[type="password"],
+input#Content_RightPane_ctl01_password,
+input#Content_RightPane_ctl01_email,
+input.NormalTextBox,
+option [selected],
+select,
+select.NormalTextBox,
+textarea
+{
+    background-color: #f2f2f2;
+	border:1px solid #cccccc!important;
+	min-height:25px;
+	font-size:14px;
+	line-height:25px;
+	color:#808080;
+	padding:0px 0px 0px 5px;
+    outline: none;
+}
+
+select,
+select.NormalTextBox{
+    height:27px;
+    padding:1px 0 0 1px !important;
+}
+/*select#Content_ContentPane_ctl01_EditTable_SITESETTINGS_LANGLIST{
+    height:125px!important;
+}*/
+select.SelectList{
+	height:250px!important;
+	max-height:250px!important;
+}
+select.NormalTextBox{
+	margin-right:5px!important;
+}
+select#Content_ContentPane_ctl01_tabList{
+    height:150px;
+}
+select.multiselect{
+	height:280px!important;
+	max-height:280px!important;
+	width:470px!important;
+}
+
+select#Content_ContentPane_ctl01_DestListBox,
+select#Content_ContentPane_ctl01_SourceListBox{
+    height: 220px;
+    overflow: auto;
+}
+select#Content_ContentPane_ctl01_SourceListBox{ 
+    margin-right: 8px;
+}
+
+a.CommandButton#Content_ContentPane_ctl01_DeleteLeft_Btn,
+a.CommandButton#Content_ContentPane_ctl01_MoveLeft_Btn,
+a.CommandButton#Content_ContentPane_ctl01_MoveRight_Btn,
+a.CommandButton#Content_ContentPane_ctl01_CopyRight_Btn,
+a.CommandButton#Content_ContentPane_ctl01_CopyAll_Btn,
+a.CommandButton#Content_ContentPane_ctl01_DeleteRight_Btn
+{
+    width:60px!important;
+    text-align: center;
+}
+td.rb_LangSw_sel img{
+    padding-right: 5px;
+}
+        /**************************************************/
+        /**********  Command Buttons Classes   ************/
+        /**************************************************/	
+
+.CommandButton,
+input.Normal[type="submit"],
+input[type="submit"],
+a.CommandButton
+{
+	background-color: #08C;
+	background-image: url("/Portals/_Appleseed/images/AHRI/ahri-blue-gradient-3-36.png"); /*search_button.png*/
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	border: 1px solid #468;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	display:inline-block!important;
+	color:#fff;
+	font-size:12px!important;
+	font-weight:bold;
+	line-height:23px!important;
+	padding:0px 10px!important;
+	min-height:23px!important;
+}   
+ 
+a.CommandButton:link,
+a.CommandButton:visited,
+input.CommandButton a:link,
+input.CommandButton:visited,
+input.Normal[type="submit"]:link,
+input.Normal[type="submit"]:visited
+{
+    color:#fff;
+    background-position: 0px 0px;
+}
+
+a.CommandButton:hover,
+a.CommandButton:focus,
+input.CommandButton:hover,
+input.CommandButton:focus,
+input.Normal[type="submit"]:hover,
+input.Normal[type="submit"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus
+{
+	color:#fff;
+	cursor:pointer;
+	background-image: url("/Portals/_Appleseed/images/AHRI/ahri-blue-gradient-4-36.png"); /*search_button_ro.png*/
+}
+
+a.CommandButton:active,
+input.CommandButton:active
+{	
+	color:#fff;
+	background-image: url("/Portals/_Appleseed/images/AHRI/ahri-blue-gradient-4-36.png"); /*search_button_ro.png*/
+}
+
+.content-module a.CommandButton {
+	font-size: 16px!important;
+	padding: 5px 10px!important;
+	margin-right: 20px;
+}
+
+input.imgLoginStyle  {
+    background-color:#333; 
+    border: none!important;
+    height:22px!important;
+    width:70px!important;
+    color: #ccc;
+}
+
+input.imgLoginStyle:hover,
+input.imgLoginStyle:active{
+    color: #fff;
+}
+
+input.lnkRegisterStyle{
+    border: none!important;
+    height:22px!important;
+    width:70px!important;
+}
+
+input.lnkRegisterStyle:hover,
+input.lnkRegisterStyle:active{
+}
+
+/* Standard Appleseed Classes */
+
+#ContentPane_ctl00_Desktopthreepanes1_ThreePanes_ctl03_allUsers{	
+	width:100%;
+}
+
+#ContentPane_ctl00_Desktopthreepanes1_ThreePanes_ctl03_allUsers td{
+
+	color:#333333;
+	border:1px solid #999999;
+}
+
+table.registerForm td{
+	padding:5px;
+	min-height:40px;
+}
+
+select#Content_topPane,
+select#Content_leftPane,
+select#Content_contentPane,
+select#Content_rightPane,
+select#Content_bottomPane{
+	width:170px;
+	min-width:170px!important;
+	height:190px;
+	background-color:#fefefe;
+}
+
+/* Alternate styles for admin and edit Tabs */
+.rb_AlternateLayoutTable{
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+
+/*******************************************************/
+/****************** Site Link classes ******************/
+/*******************************************************/
+                  
+.SiteLink_Border_Right,
+.SiteLink_Border_Left{
+    position: relative;
+    width: 1px;
+    height: 24px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    float: left; 
+}
+.SiteLink_Border_Right{
+}
+
+.SiteLink_Border_Left{
+}
+
+div.SiteLink_bg{
+	display:inline-block;
+	float: left;
+	padding: 0px;
+	height: 24px;
+}
+span.SiteLink {
+	font-weight:normal;
+	font-size:12px;
+	color:#247;
+	text-align:center;
+	vertical-align: bottom;
+	display:inline-block;
+	padding:0px 1px;
+	line-height:25px;
+	height: 29px;
+
+}
+
+.SiteLink A:link,
+.SiteLink A:visited{
+	display:block;
+	color:#247;
+	text-align:center;
+	text-decoration:none;
+	outline: none;
+	font-size: 12px;
+}
+
+.SiteLink A:hover{
+	color:#222;
+}
+.SiteLink A:active{
+	color:#222;
+}
+
+table.SiteLink{
+    vertical-align: top;
+    padding: 0px;
+    height: 29px;
+    float: right;
+	margin-right: 14px
+}
+
+table.SiteLink td{
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+}
+
+td.SubHead{
+	color:#2d71b3;
+	font-size:12px;
+	line-height:15px;
+	min-height:25px!important;
+	min-width:200px;
+	padding: 0px 0px 5px 5px;
+	vertical-align:middle;
+}
+
+td.Normal{
+    color:#4d4d4d;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+td.SubHead span
+{
+    color:#ae2929;
+    font-size: 20px;
+    line-height: 30px;
+   	font-weight:bold;
+
+}
+
+.SubSubHead{
+	padding:    	0px 5px;
+	font-weight:	bold;
+	font-size:		14px;
+	color:			#ae2929;
+}
+
+#Content_moduleType{
+	color:#666;}
+
+ /***************************************/
+ /**************text areas**************/
+/***************************************/
+
+#Content_ContentPane_ctl01_moduleType,
+#Content_ContentPane_ctl01_paneLocation,
+#Content_ContentPane_ctl01_viewPermissions,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_PAGE_TITLE,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_DOCTYPE,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_PAGE_META_KEYWORDS,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_PAGE_META_DESCRIPTION,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_PAGE_META_ENCODING,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_PAGE_META_OTHERS,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_PAGE_KEY_PHRASE,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_BODYATTS,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_GOOGLEANALYTICS,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_ALTERNATIVE_URL,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_ADDTHIS_USERNAME,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_DEFAULT_EDITOR,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_SNAPENGAGE,
+#Content_paneLocation,
+#Content_moduleType,
+#Content_viewPermissions
+{width:424px!important;}
+
+
+
+
+#Content_ContentPane_ctl01_moduleTitle,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_EDITOR_WIDTH,
+#Content_ContentPane_ctl01_EditTable_SITESETTINGS_EDITOR_HEIGHT,
+#Content_moduleTitle
+{width:417px!important;}
+
+#Content_ctl00_startdate,
+#Content_ContentPane_ctl01_parentTabDropDown,
+#Content_ContentPane_ctl01_PermissionDropDown,
+#Content_ContentPane_ctl01_tb_MobileTabName,
+#Content_ContentPane_ctl01_TabTitleTextBox,
+#Content_ctl00_tfName,
+#Content_ctl00_tfCompany,
+#Content_ctl00_tfPhone,
+#Content_ctl00_tfEmail,
+#Content_ctl00_ddlCountry,
+#Content_ContentPane_ctl02_txtNewRole,
+#Content_cacheTime,
+#Content_ctl00_tfPwd,
+#Content_ctl00_tfPwdAgain
+{width:270px!important;}
+
+
+
+
+#Content_ctl00_ddlDay,
+#Content_ctl00_ddlYear
+{width:70px!important;}
+
+#Content_ctl00_ddlMonth
+{width:130px!important;}
+
+#Content_ContentPane_ctl01_dgFile td{
+	text-align:center;
+	vertical-align:middle;}
+	
+			/********************************/
+			/**********USERS TABLE*************/
+			/********************************/
+#Content_ContentPane_ctl01_allUsers,
+#Content_ContentPane_ctl01_myDataGrid{
+	margin:15px 10px 20px 15px;
+	border:1px solid #666;}
+
+#Content_ContentPane_ctl01_allUsers th,
+#Content_ContentPane_ctl01_myDataGrid th{
+	height:30px;
+	width:700px;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+	border:1px solid #006699;
+		}	
+
+#Content_ContentPane_ctl01_allUsers td,
+#Content_ContentPane_ctl01_myDataGrid td{
+	height:22px;
+	width:700px;
+	text-align:center;
+	vertical-align:middle;
+	border:1px solid #006699;}
+
+
+/* Home Page
+================================================== */
+
+.membership-links img{
+	vertical-align: bottom;
+}
+
+.membership-links .image-div{
+	margin: 0 auto;
+	/*height: 230px;*/
+}
+
+.membership-links .width200{
+	width: 200px;
+}
+
+.membership-links .width360{
+	width: 360px;
+}
+
+.membership-links .height189{
+	margin-top: 41px;
+}
+
+.membership-links .height182{
+	margin-top: 48px;
+}
+ 
+.membership-links h3{
+	text-align: center;
+	font-size: 20px;
+	padding-bottom: 15px;
+}
+
+.membership-links .current h3{
+	
+}
+
+.membership-links a{
+	display: block;
+}
+
+.membership-links a:hover{
+	background-image: url('/Portals/_Appleseed/images/AHRI/yellow-arrow-bkgd.png');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
+.membership-links a:hover h3{
+	color: #F80;
+}

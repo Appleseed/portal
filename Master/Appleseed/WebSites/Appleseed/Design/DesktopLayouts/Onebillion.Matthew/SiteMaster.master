@@ -1,0 +1,62 @@
+<%@ Master Language="C#" AutoEventWireup="true"   Inherits="Appleseed.AppleseedMaster" %>
+
+<%@ Register TagPrefix="head" TagName="Banner" Src="DesktopPortalBanner.ascx" %>
+<%@ Register TagPrefix="foot" TagName="Footer" Src="DesktopFooter.ascx" %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "ControlPanelMenu", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/aspnet_client/js/ControlPanelMenu.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "Isotope", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/jquery.isotope.min.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "onebillion_Custom", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/custom.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "Isotope", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/jquery.isotope.min.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "onebillion_SelectNav", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/selectnav.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "onebillion_Ender", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/ender.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "Carousel", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/carousel.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "FlexSlider", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/jquery.flexslider.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "onebillion_ShortCodes", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/shortcodes.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "ImageBox", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/imagebox.min.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "Twitter", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/twitter.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "Tooltip", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/tooltip.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "Effects", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/onebillion/js/effects.js"); %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head runat="server">
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Sensation</title>
+
+  <!-- Mobile Specific
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" type="text/css"  href="css/style.css">
+  <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  
+  <!-- Web Fonts
+  ================================================== -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+  <!-- JS
+  ================================================== -->
+  <!-- loaded in registerclientscriptinclude -->
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release">
+        <Services>
+            <asp:ServiceReference InlineScript="false" Path="~/DesktopModules/CoreModules/Admin/PortalService.asmx" />
+        </Services>
+    </asp:ScriptManager>
+    <head:Banner ID="Banner" selectedtabindex="0" runat="server"></head:Banner>
+    <asp:ContentPlaceHolder ID="Content" runat="server">
+    </asp:ContentPlaceHolder>
+    <foot:Footer ID="Footer" runat="server"></foot:Footer>
+    </form>
+</body>
+</html>

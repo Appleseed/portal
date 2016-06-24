@@ -1,0 +1,99 @@
+/* xTabPanelGroup Demo default css */
+ /*
+table{
+
+height:auto;
+}
+.tabPanelGroup
+{
+	margin: 20px auto 10px;
+	padding: 0;
+	border: none;
+	width: 750px!important;
+	height: auto !important;
+}
+.tabPanel
+{
+    height: 408px!important;
+    width: 728px!important;
+    position:relative;
+	margin: 0 auto;
+	padding: 10px;
+	color: Black;
+	background-color: #f7f7f7;
+    overflow: auto!important;
+    border:  1px solid #ccc;
+    top:0px!important;
+}
+
+.tabPanel td.Normal input.NormalTextBox
+{
+	margin: 0 auto;
+	padding: 10px;
+	color: Black;
+	background-color: transparent;
+	border: none;
+}
+
+.tabGroup
+{
+	margin: 0 auto;
+	padding: 0;
+	width: 750px!important;
+	cursor:pointer;
+    height:60px!important;
+}
+.tabDefault
+{
+    height: 48px!important;
+    width: 138px!important;
+	color:#999999 ;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+}
+
+.tabSelected
+{
+    height: 49px!important;
+    width: 138px!important;
+	color: #0077be;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: none;
+    border-left: 1px solid #ccc; 
+    background-color: #f7f7f7;
+    cursor: default;
+
+}
+
+.tabSelected,
+.tabDefault{
+    text-align:center;
+	margin: 0 auto;
+    padding: 10px 5px 0px 5px ;
+	font-size: 13px;
+	font-weight: normal;
+    float: left;
+    overflow: hidden;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.SettingsTableGroup{
+    width: 90%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.SettingsTableGroup td{
+    padding: 2px;
+}
+div#Content_EditTable.st_control{
+    height: 500px!important;
+}                  */

@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  Inherits="Appleseed.AppleseedMaster" %>
+<%@ Register TagPrefix="as" TagName="Admin" Src="DesktopAdmin.ascx" %>
+<%@ Register TagPrefix="head" TagName="Banner" Src="DesktopPortalBanner.ascx" %>
+<%@ Register TagPrefix="foot" TagName="Footer" Src="DesktopFooter.ascx" %>
+
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrap", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/bootstrap.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapcontentfix", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/bootstrap-content-area-fix.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapmenufix", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/bootstrap-menu-fix.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminmenuunwrap", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/admin-menu-table-unwrap.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminbarmargin", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/admin-bar-margin.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "themepunchrevolution", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/jquery.themepunch.revolution.min.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "themepunchpluginsn", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/jquery.themepunch.plugins.min.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "touchSwipe", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/jquery.touchSwipe.min.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "mousewheel", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/jquery.mousewheel.min.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "prettyPhoto", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/jquery.prettyPhoto.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "scripts", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/scripts.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "retina", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/retina.js")); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "carouFredSel", ResolveClientUrl ("~/Design/Themes/Flati.Bootstrap/js/jquery.carouFredSel-6.2.1-packed.js")); %>
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head runat="server">
+    <title>Flati.Bootstrap</title>	
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+    <!--<link href='http://fonts.googleapis.com/css?family=Lato|Open+Sans:400,400italic,700,700italic,300italic,300' rel='stylesheet' type='text/css'>-->
+    <!--[if IE]>
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:600italic" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    <!-- Stylesheets -->
+    <link href="/Design/Themes/Flati.Bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/Design/Themes/Flati.Bootstrap/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Design/Themes/Flati.Bootstrap/css/theme.css" rel="stylesheet">
+    <link href="/Design/Themes/Flati.Bootstrap/css/colour.css" rel="stylesheet" type="text/css"/>
+    <link href="/Design/Themes/Flati.Bootstrap/css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
+    <link href="/Design/Themes/Flati.Bootstrap/css/zocial.css" rel="stylesheet" type="text/css"/>
+    <link href="/Design/Themes/Flati.Bootstrap/css/settings.css" rel="stylesheet" type="text/css"/>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>  
+
+
+<body cz-shortcut-listen="true">
+    <form id="form1" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" >
+			<Services>
+				<asp:ServiceReference InlineScript="false" Path="~/DesktopModules/CoreModules/Admin/PortalService.asmx" />
+			</Services>
+		</asp:ScriptManager>
+        <as:Admin ID="Admin" selectedtabindex="0" runat="server" ContentContainerSelector=".DefaultLayoutDiv"></as:Admin>
+        <div class="clearfix"></div>
+        <div class="header-container">
+            <div class="row">
+                <div id="Table1">
+			        <head:Banner ID="Banner" selectedtabindex="0" runat="server">
+			        </head:Banner>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <asp:ContentPlaceHolder ID="TopPane" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="container">           
+	        <div class="Main_Table" cellspacing="0" cellpadding="0" id="Table2">
+		        <div class="row">
+			        <div class="Main_Content_Table">
+				        <asp:ContentPlaceHolder ID="Content" runat="server">
+				        </asp:ContentPlaceHolder>
+			        </div>
+		        </div>
+	        </div>
+        </div>
+		<footer id="footer_div" class="container">
+            <div class="row">
+    	        <asp:ContentPlaceHolder ID="BottomPane" runat="server">
+    	        </asp:ContentPlaceHolder>
+                <foot:Footer ID="Footer" runat="server">
+                </foot:Footer>
+            </div>
+		</footer>
+    </form>
+</body>
+</html>

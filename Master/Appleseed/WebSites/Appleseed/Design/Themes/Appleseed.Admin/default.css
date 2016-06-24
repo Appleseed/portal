@@ -1,5 +1,4 @@
 @import url(Slyder_Styles.css);
-/*@import url(Menu.css);*/
 @import url(jquery-ui-1.9.2.custom.css);
 @import url(bootstrap.css);
 @import url(as-admin-bar.css);
@@ -167,7 +166,11 @@ a.Normal:active{
     
 .float_left{
 	float:left;}
-    
+
+.no-padding {
+	padding: 0 !important;
+}
+
 .Small {
 	font-size:10px;
 	color:#333;}
@@ -462,7 +465,11 @@ div.Control_Panel_Table{
 	height: 35px;
 }
 
-.Site-Settings a.CommandButton {
+.Administration .footer_box {
+	display: none;
+}
+
+[class*="Site-Settings"] a.CommandButton {
 	margin-top: 20px;
 }
  

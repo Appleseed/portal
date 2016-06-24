@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  Inherits="Appleseed.AppleseedMaster" %>
+<%@ Register TagPrefix="head" TagName="Banner" Src="DesktopPortalBanner.ascx" %>
+<%@ Register TagPrefix="foot" TagName="Footer" Src="DesktopFooter.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]> <html class="ie6" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
+
+<head runat="server">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!--[if IE 7]>
+    <link href="ie7.css" rel="stylesheet" type="text/css" media="screen" />
+  <![endif]-->
+  <!--[if IE 9]>
+    <link href="<%# Appleseed.Framework.Settings.Path.ApplicationFullPath  %>Design/Themes/LNESC/ie9.css" rel="stylesheet" type="text/css" media="screen" />
+  <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/lyw3ftz.js"></script>
+  <script type="text/javascript" src="<%# Appleseed.Framework.Settings.Path.ApplicationFullPath  %>"Portals/_Appleseed/_scripts/js/easySlider1.7.js"></script>  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#slider").easySlider({
+				auto: true,
+				continuous: true,
+				numeric: true
+			});
+		});
+	</script>
+</head>
+<!-- TODO: put asp.net tag to always get the CSS directory regardless of location -->
+<body>
+  
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" >
+      <Services>
+        <asp:ServiceReference InlineScript="false" Path="~/DesktopModules/CoreModules/Admin/PortalService.asmx" />
+      </Services>
+    </asp:ScriptManager>
+        
+    <head:Banner ID="Banner" selectedtabindex="0" runat="server">
+     </head:Banner>
+         
+      <asp:ContentPlaceHolder ID="TopPane" runat="server">
+      </asp:ContentPlaceHolder>
+
+
+      <asp:ContentPlaceHolder ID="Content" runat="server">
+      </asp:ContentPlaceHolder>
+
+      <asp:ContentPlaceHolder ID="BottomPane" runat="server">
+      </asp:ContentPlaceHolder>
+
+      <foot:Footer ID="Footer" runat="server">
+      </foot:Footer>
+
+</form>
+
+</body>
+
+
+<script type='text/javascript'>
+
+jQuery(document).ready(function() {
+   jQuery('#students.element .over').hide();
+   jQuery('#teachers.element .over').hide();
+   jQuery('#donors.element .over').hide();
+   jQuery('.solution').hide();
+});
+
+jQuery('#students.element').mouseover(function(){
+   jQuery('#students.element .over').show();
+   });
+
+jQuery('#students.element').mouseout(function(){
+   jQuery('#students.element .over').hide();
+   });
+
+jQuery('#teachers.element').mouseover(function(){
+   jQuery('#teachers.element .over').show();
+   });
+
+jQuery('#teachers.element').mouseout(function(){
+   jQuery('#teachers.element .over').hide();
+   });
+
+jQuery('#donors.element').mouseover(function(){
+   jQuery('#donors.element .over').show();
+   });
+
+jQuery('#donors.element').mouseout(function(){
+   jQuery('#donors.element .over').hide();
+   });
+
+jQuery('#action #share').mouseover(function(){
+   jQuery('#action #share a').addClass('active');
+   jQuery('#share-sub').addClass('show');
+   });
+
+jQuery('#action #share').mouseout(function(){
+   jQuery('#action #share a').removeClass('active');
+   jQuery('#share-sub').removeClass('show');
+   });
+
+jQuery('#action #support').mouseover(function(){
+   jQuery('#action #support a').addClass('active');
+   jQuery('#support-sub').addClass('show');
+   });
+
+jQuery('#action #support').mouseout(function(){
+   jQuery('#action #support a').removeClass('active');
+   jQuery('#support-sub').removeClass('show');
+   });
+
+jQuery('#action #donate').mouseover(function(){
+   jQuery('#action #donate a').addClass('active');
+   jQuery('#donate-sub').addClass('show');
+   });
+
+jQuery('#action #donate').mouseout(function(){
+   jQuery('#action #donate a').removeClass('active');
+   jQuery('#donate-sub').removeClass('show');
+   });
+
+jQuery('#truth-wrapper').mouseover(function(){
+   jQuery('.solution').show();
+   });
+
+jQuery('#truth-wrapper').mouseout(function(){
+   jQuery('.solution').hide();
+   });
+
+jQuery('#truth-link1').click(function(){
+   jQuery('.one-truth').removeClass('current-truth');
+   jQuery('#truth1').addClass('current-truth');
+   });
+
+jQuery('#truth-link2').click(function(){
+   jQuery('.one-truth').removeClass('current-truth');
+   jQuery('#truth2').addClass('current-truth');
+   });
+
+jQuery('#truth-link3').click(function(){
+   jQuery('#truth-wrapper div').removeClass('current-truth');
+   jQuery('#truth3').addClass('current-truth');
+   });
+
+
+
+</script>  
+     
+</html>

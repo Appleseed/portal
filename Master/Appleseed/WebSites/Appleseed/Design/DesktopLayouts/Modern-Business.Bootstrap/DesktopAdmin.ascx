@@ -61,9 +61,7 @@
 </script>
 
 <asp:Panel ID="BarPanel" runat="server" Visible="false">
-    <div id="as-admin-bar" class="navbar navbar-admin navbar-fixed-top" role="navigation">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <%--    <div class="navbar navbar-default navbar-fixed-top" role="navigation">--%>          
+    <div id="as-admin-bar" class="navbar navbar-admin navbar-fixed-top" role="navigation">      
         <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".userMenu">
