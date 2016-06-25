@@ -2,6 +2,11 @@
     Language="c#" MasterPageFile="~/Shared/SiteMasterDefault.master" CodeBehind="HtmlEdit.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
+    <style>
+        textarea {
+            color: #808080;
+        }
+    </style>
     <div class="div_ev_Table">
         <% if (Request.QueryString.GetValues("ModalChangeMaster") == null)
            {%>
