@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Modules>
 	<Module>
-		<FriendlyName>Page Friendly URL</FriendlyName>
+		<FriendlyName>Admin - Short Links</FriendlyName>
 		<DesktopSource>DesktopModules/CoreModules/PageFriendlyURL/PageFriendlyURL.ascx</DesktopSource>
 		<MobileSource></MobileSource>
 	</Module>

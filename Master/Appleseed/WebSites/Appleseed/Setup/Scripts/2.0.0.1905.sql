@@ -25,7 +25,7 @@ select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID=
 /* Add PageFriendlyUrl Module on new created page if not loaded */
 IF NOT EXISTS(SELECT * FROM rb_Modules WHERE ModuleDefID=@ModuleDefId)
 BEGIN
-EXEC rb_addModule @PAGEID,1,'Page Friendly URL','ContentPane',@ModuleDefId,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+EXEC rb_addModule @PAGEID,1,'Short Links','ContentPane',@ModuleDefId,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
 END
 
 /*renaming page friendly url module to Admin - Short Links*/
