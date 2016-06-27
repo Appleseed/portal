@@ -20,6 +20,14 @@ BEGIN
 	EXEC  [rb_UpdateTabCustomSettings] @TabID = @PAGEID,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
 END
 
+--if exists(select * from rb_pages where PageName='Packages')
+--BEGIN
+--	--set @PAGEID = null
+--	--select @PAGEID = PageID from rb_pages where PageName='Packages'
+EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
+EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
+--END
+
 select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID='C1EA4115-E7F2-4CBC-B1E7-DDA46791493C'
 
 /* Add PageFriendlyUrl Module on new created page if not loaded */
@@ -35,3 +43,22 @@ UPDATE [rb_GeneralModuleDefinitions] SET FriendlyName = 'Admin - Short Links' wh
 DECLARE @newMFIDFB int
 SELECT @newMFIDFB = ModuleDefID FROM [rb_ModuleDefinitions] WHERE GeneralModDefID = 'D7B8B22F-366B-4D80-9E49-13C09120A89F'
 UPDATE [rb_Modules] SET [ModuleDefID] = @newMFIDFB WHERE [ModuleDefID] = 7 AND TabID = 155
+
+/* 27/6/2016 */
+/* delete Pages page*/
+IF EXISTS(SELECT * FROM rb_pages WHERE [PageName]='Pages' and PageID=200)
+BEGIN
+	DELETE FROM rb_pages WHERE PageID=200 or parentpageid = 200
+END
+
+IF EXISTS(SELECT * FROM rb_pages WHERE [PageName]='Database Editor' and PageID=151)
+BEGIN
+	DELETE FROM rb_pages WHERE [PageName]='Database Editor' and PageID=151
+END
+
+IF EXISTS(SELECT * FROM rb_pages WHERE [PageName]='Database Tool' and PageID=152)
+BEGIN
+	DELETE FROM rb_pages WHERE [PageName]='Database Tool' and PageID=152
+END
+
+EXEC rb_addModule 150,1,'Database Table Edit','ContentPane',4,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
