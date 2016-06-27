@@ -38,7 +38,7 @@
                 MainDirectory="~/" CustomThumbnailHandler="~/DesktopModules/CoreModules/FileBrowser/IZWebFileManagerThumbnailHandler.ashx"
                 ShowHiddenFilesAndFolders="false" FileViewMode="Thumbnails" ClientOpenItemFunction="fileSelected"
                 DefaultAccessMode="Write"
-                ShowAddressBar="false" ShowSearchBox="true" AllowDelete="true" AllowOverwrite="true" AllowUpload="true">
+                ShowAddressBar="false" ShowSearchBox="true" AllowDelete="true" AllowOverwrite="true" ShowUploadBar="false" AllowUpload="true">
                 <RootDirectories>
                     <iz:RootDirectory DirectoryPath="~/" Text="Root" />
                 </RootDirectories>

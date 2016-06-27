@@ -72,13 +72,13 @@
 
     <div class="module-row">
         <div id="url-instructions">
-            <p>To create a "friendly" url, select the specific page to which the friendly url should be applied from the Page dropdown list. </p>
-            <p>Then, in the Friendly URL text box, create the friendly url.</p>
+            <p>To create a "Short" url, select the specific page to which the Short url should be applied from the Page dropdown list. </p>
+            <p>Then, in the Short URL text box, create the Short url.</p>
         </div>
     </div>
     <div class="module-row">
         <br />
-        <h5>Add Friendly Url</h5>
+        <h5>Add Short Url</h5>
     </div>
     <div class="module-row">
         <div class="col-md-9">
@@ -108,10 +108,10 @@
     <div class="module-row">
         <div class="col-md-9">
             <div class="col-md-3">
-                <h6>Friendly URL</h6>
+                <h6>Short URL</h6>
             </div>
             <div class="col-md-6">
-                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Friendly Page Url" />
+                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Short Page Url" />
                 <asp:Label ID="lblFriendlyExtension" runat="server" /><br />
                 <asp:RequiredFieldValidator ID="rvftxtFriendlyUrl" runat="server" Display="Dynamic" ErrorMessage="Please enter valid Url " ControlToValidate="txtFriendlyURL" ValidationGroup="Save" />
             </div>
@@ -129,7 +129,7 @@
     <div class="module-row" style="clear:both;">
         <br />
         <br />
-        <h5>Update/Delete Friendly Url</h5>
+        <h5>Update/Delete Short Url</h5>
     </div>
     <br />
     <label>Pages</label>
@@ -149,7 +149,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Friendly Url">
+                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Short Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -163,7 +163,7 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="field-5" ItemStyle-CssClass="field-5">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete friendly url?');" Text="Delete"></asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -194,7 +194,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Friendly Url">
+                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Short Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -208,7 +208,7 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="field-5" ItemStyle-CssClass="field-5">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete friendly url?');" Text="Delete"></asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
 
