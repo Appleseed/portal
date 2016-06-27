@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>File Browser</title>
     <link href="/DesktopModules/CoreModules/FileBrowser/css/fineuploader.css" rel="stylesheet" />
-    <link href="/DesktopModules/CoreModules/FileBrowser/css/style.min.css" rel="stylesheet" />
+    <link href="/DesktopModules/CoreModules/FileBrowser/css/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
