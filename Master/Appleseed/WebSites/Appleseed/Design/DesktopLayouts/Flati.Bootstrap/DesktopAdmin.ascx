@@ -43,10 +43,6 @@
                             <li><a href="/215">Recycle Bin</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">Site Content</a>
-                        <asp:TreeView ID="asSiteTree" runat="server" DataSourceID="biSMDS" CssClass="sitecontent" ExpandDepth="0" />
-                    </li>
                 </ul>
                 <div class="navbar-collapse collapse userMenu">
                     <!-- begin User Menu at the Top of the Page -->
@@ -91,4 +87,3 @@
         </div>
     </div>
 </asp:Panel>
-<asp:SiteMapDataSource ID="biSMDS" ShowStartingNode="false" runat="server" />

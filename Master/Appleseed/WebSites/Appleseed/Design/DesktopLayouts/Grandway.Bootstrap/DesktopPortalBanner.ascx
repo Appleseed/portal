@@ -13,54 +13,12 @@
         this.Page.Header.Controls.Add(keywords);
     }
 
-    StringBuilder sbrMenu = new StringBuilder();
     protected override void OnPreRender(EventArgs e)
     {
         base.OnPreRender(e);
-        this.biMenu.DataBind();
-        sbrMenu.AppendLine("<ul class=\"dl-menu\">");
-        foreach (MenuItem item in this.biMenu.Items)
-        {
-            string currentcss = "";
-            if (Request.Url.AbsolutePath.ToLower().Contains(item.NavigateUrl.ToLower().Split('.').GetValue(0).ToString()))
-                currentcss = "current";
-            
-            if (item.ChildItems.Count == 0)
-            {
-                sbrMenu.AppendLine("<li class=" + currentcss + " ><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            }
-            else
-            {
-                sbrMenu.AppendLine("<li class=" + currentcss + " ><a href=" + item.NavigateUrl + ">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-        this.biMenu.Visible = false;
-        ltrTopMenu.Text = sbrMenu.ToString();
+       
     }
 
-    private void RenderSubLinks(MenuItem parent)
-    {
-        sbrMenu.AppendLine("<ul class=\"dl-submenu\">");
-        foreach (MenuItem item in parent.ChildItems)
-        {
-            if (item.ChildItems.Count == 0)
-            {
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            }
-            else
-            {
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-    }
 </script>
 
 <div class="container" style="margin-top:10px;">
@@ -74,7 +32,7 @@
                 </div>
                 <div >
                     <!-- Portal Title -->
-                    <rbfwebui:HeaderTitle ID="PortalTitle" runat="server" EnableViewState="false"></rbfwebui:HeaderTitle>
+                    <%--<rbfwebui:HeaderTitle ID="PortalTitle" runat="server" EnableViewState="false"></rbfwebui:HeaderTitle>--%>
                     <!-- End Portal Title -->
                     <!-- Portal Title - hidden by default - 
                     change visible="false" to visible ="true" to allow it to show-->

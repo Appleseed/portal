@@ -18,46 +18,11 @@
         }
     }
 
-    StringBuilder sbrMenu = new StringBuilder();
     protected override void OnPreRender(EventArgs e)
     {
         base.OnPreRender(e);
-        this.asSiteTree.DataBind();
-        sbrMenu.AppendLine("<ul class=\"dropdown-menu\" data-role=\"dropdown\">");
-        foreach (TreeNode item in this.asSiteTree.Nodes)
-        {
-            if (item.ChildNodes.Count == 0)
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            else
-            {
-                sbrMenu.AppendLine("<li class=\"dropdown\"><a href=" + item.NavigateUrl + " class=\"dropdown-toggle\">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-        this.asSiteTree.Visible = false;
-        ltrTopMenu.Text = sbrMenu.ToString();
     }
 
-    private void RenderSubLinks(TreeNode parent)
-    {
-        sbrMenu.AppendLine("<ul class=\"dropdown-menu \" data-role=\"dropdown\">");
-        foreach (TreeNode item in parent.ChildNodes)
-        {
-            if (item.ChildNodes.Count == 0)
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            else
-            {
-                sbrMenu.AppendLine("<li class=\"dropdown\"><a href=" + item.NavigateUrl + " class=\"dropdown-toggle\">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-    }
 </script>
 
 <asp:Panel ID="BarPanel" runat="server" Visible="false">
@@ -84,11 +49,7 @@
                             <li><a href="/215">Recycle Bin</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#">Site Content</a>
-                        <asp:TreeView ID="asSiteTree" runat="server" DataSourceID="biSMDS" CssClass="sitecontent" ExpandDepth="5" />
-                        <asp:Literal ID="ltrTopMenu" runat="server"></asp:Literal>
-                    </li>
+					
                 </ul>
                 <div class="navbar-collapse collapse userMenu">
                     <!-- begin User Menu at the Top of the Page -->

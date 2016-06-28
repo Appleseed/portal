@@ -13,46 +13,11 @@
         this.Page.Header.Controls.Add(keywords);
     }
 
-    StringBuilder sbrMenu = new StringBuilder();
     protected override void OnPreRender(EventArgs e)
     {
         base.OnPreRender(e);
-        this.biMenu.DataBind();
-        sbrMenu.AppendLine("<ul class=\"element-menu dark navbar-right\" data-role=\"dropdown\"> ");
-        foreach (MenuItem item in this.biMenu.Items)
-        {
-            if (item.ChildItems.Count == 0)
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            else
-            {
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + " class=\"dropdown-toggle\">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-        this.biMenu.Visible = false;
-        ltrTopMenu.Text = sbrMenu.ToString();
     }
 
-    private void RenderSubLinks(MenuItem parent)
-    {
-        sbrMenu.AppendLine("<ul class=\"dropdown-menu dark\" data-role=\"dropdown\">");
-        foreach (MenuItem item in parent.ChildItems)
-        {
-            if (item.ChildItems.Count == 0)
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            else
-            {
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + " class=\"dropdown-toggle\">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-    }
 </script>
 
 <header class="bg-dark">
@@ -70,15 +35,9 @@
             <span class="element-divider"></span>
             <a class="element1 pull-menu" href="#"></a>
             <!-- Begin Portal Menu -->
-            <asp:Menu ID="biMenu" runat="server"
-                DataSourceID="biSMDS"
-                DynamicEnableDefaultPopOutImage="False"
-                StaticEnableDefaultPopOutImage="False">
-            </asp:Menu>
-            <asp:Literal ID="ltrTopMenu" runat="server"></asp:Literal>
+           
             <!-- End Portal Menu -->
         </div>
     </div>
 </header>
 
-<asp:SiteMapDataSource ID="biSMDS" ShowStartingNode="false" runat="server" />

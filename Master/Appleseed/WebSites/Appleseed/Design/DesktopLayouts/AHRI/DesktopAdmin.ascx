@@ -41,15 +41,6 @@
                         <li class=""><a href="http://file.app.clients.anant.us">File.App</a></li>                       
                 </ul>       
                 </li>
-                <li class="menupop">
-                   <a href="javascript:;"><span> Site Content </span></a>
-                   <ul>
-                        <li class="">
-                        <asp:TreeView ID="asSiteTree" runat="server" DataSourceID="biSMDS" CssClass="sitecontent" ExpandDepth="0" />
-                        </li>
-                   </ul>
-                </li>
-
                 <div id="adminbarsearch-wrap" class="userMenu">
                    <rbfwebui:HeaderMenu   ID="PortalHeaderMenu" runat="server" 
                               CssClass="SiteLink" RepeatDirection="Horizontal" cellspacing="0"
@@ -71,4 +62,4 @@
     
   </asp:Panel>
 
-  <asp:SiteMapDataSource ID="biSMDS" ShowStartingNode="false" runat="server" />
+ 

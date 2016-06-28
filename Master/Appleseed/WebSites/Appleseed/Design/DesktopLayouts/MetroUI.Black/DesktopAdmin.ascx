@@ -17,45 +17,9 @@
             UserPanel.Visible = true;
         }
     }
-    StringBuilder sbrMenu = new StringBuilder();
     protected override void OnPreRender(EventArgs e)
     {
         base.OnPreRender(e);
-        this.asSiteTree.DataBind();
-        sbrMenu.AppendLine("<ul class=\"dropdown-menu dark\" data-role=\"dropdown\">");
-        foreach (TreeNode item in this.asSiteTree.Nodes)
-        {
-            if (item.ChildNodes.Count == 0)
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            else
-            {
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + " class=\"dropdown-toggle\">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
-        this.asSiteTree.Visible = false;
-        ltrTopMenu.Text = sbrMenu.ToString();
-    }
-
-    private void RenderSubLinks(TreeNode parent)
-    {
-        sbrMenu.AppendLine("<ul class=\"dropdown-menu dark\" data-role=\"dropdown\">");
-        foreach (TreeNode item in parent.ChildNodes)
-        {
-            if (item.ChildNodes.Count == 0)
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
-            else
-            {
-                sbrMenu.AppendLine("<li><a href=" + item.NavigateUrl + " class=\"dropdown-toggle\">" + item.Text + "</a>");
-                RenderSubLinks(item);
-                sbrMenu.AppendLine("</li>");
-            }
-        }
-
-        sbrMenu.AppendLine("</ul>");
     }
 </script>
 
@@ -78,12 +42,6 @@
                             <li><a href="<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/215">Recycle Bin</a></li>
                             <li><a href="http://file.app.clients.anant.us">File.App</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle">Site Content</a>
-                        <asp:TreeView ID="asSiteTree" runat="server" DataSourceID="biSMDS" CssClass="sitecontent" ExpandDepth="5" />
-                        <asp:Literal ID="ltrTopMenu" runat="server"></asp:Literal>
-
                     </li>
                 </ul>
 
@@ -129,4 +87,3 @@
         </div>
     </header>
 </asp:Panel>
-<asp:SiteMapDataSource ID="biSMDS" ShowStartingNode="false" runat="server" />
