@@ -13,9 +13,9 @@ END
 DECLARE @PAGEID INT,
 		@ModuleDefId INT,
 		@ModuleID INT
-if not exists(select * from rb_pages where PageName='PageFriendlyUrl')
+if not exists(select * from rb_pages where PageName='Short Links')
 BEGIN
-	EXEC rb_AddTab 0,100,'PageFriendlyUrl',1205,'Admins;',0,'', @PAGEID output
+	EXEC rb_AddTab 0,100,'Short Links',1205,'Admins;',0,'', @PAGEID output
 	EXEC  [rb_UpdateTabCustomSettings] @TabID = @PAGEID,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
 	EXEC  [rb_UpdateTabCustomSettings] @TabID = @PAGEID,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
 END
