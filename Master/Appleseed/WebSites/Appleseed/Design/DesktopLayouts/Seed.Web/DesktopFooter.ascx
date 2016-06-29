@@ -1,6 +1,0 @@
-<%@ Control Language="c#" %>
-
-
-
-
-			
