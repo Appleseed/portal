@@ -868,3 +868,19 @@
     });
 
 </script>
+<style type="text/css">
+    #left
+    {
+        width:33%!important;
+    }
+    footer p{
+        color:#fff!important;
+    }
+
+     footer a{
+        color:#f4f4f4!important;
+    }
+     footer a:hover{
+        color:#CCC!important;
+    }
+</style>
