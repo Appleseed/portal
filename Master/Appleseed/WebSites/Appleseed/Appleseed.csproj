@@ -5050,6 +5050,7 @@
     <Content Include="Design\Themes\Appleseed.Admin\assets\lib\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Design\Themes\Appleseed.Admin\bootstrap.css" />
     <Content Include="Design\Themes\Appleseed.Admin\bootstrap.min.css" />
+    <Content Include="Design\Themes\Appleseed.Admin\css\admin-modules.css" />
     <Content Include="Design\Themes\Appleseed.Admin\css\bootstrap-fileupload.min.css" />
     <Content Include="Design\Themes\Appleseed.Admin\css\bootstrap-wysihtml5-hack.css" />
     <Content Include="Design\Themes\Appleseed.Admin\css\colorpicker_hack.css" />

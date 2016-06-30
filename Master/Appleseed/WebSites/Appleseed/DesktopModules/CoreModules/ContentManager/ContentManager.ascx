@@ -1,6 +1,24 @@
 <%@ control autoeventwireup="false" inherits="Appleseed.Content.Web.Modules.ContentManager"
     language="c#" Codebehind="ContentManager.ascx.cs" %>
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+<style>
+    a.CommandButton1 {
+    color: #ffffff;
+    background-color: #2c3e50;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block!important;
+    font-size: 15px!important;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 5px 10px 5px 0px;
+    padding: 5px 15px!important;
+    width: 109px;
+    text-align: center;
+}
+</style>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="637">
     <tr>
         <td width="250">
             <span class="ItemTitle">ModuleTypes</span>
@@ -72,7 +90,7 @@
         </td>
     </tr>
 </table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="637">
     <tr>
         <td>
             <span class="ItemTitle">Source</span>
@@ -85,32 +103,32 @@
     </tr>
     <tr>
         <td valign="top" width="250">
-            <asp:listbox id="SourceListBox" runat="server" rows="15" style="width: 250px; overflow-y: auto;
-                overflow-x: hidden;" width="250px"></asp:listbox>
+            <asp:listbox id="SourceListBox" runat="server" rows="20" style="width: 250px; overflow-y: auto;
+                overflow-x: hidden;height:280px;" width="250px"></asp:listbox>
         </td>
-        <td valign="top" width="120">
+        <td style="vertical-align:top" width="120">
             <p>
-                <rbfwebui:linkbutton id="DeleteLeft_Btn" runat="server" cssclass="CommandButton"
-                    text="<- Delete" textkey="DeleteLeft" width="120px"></rbfwebui:linkbutton></p>
+                <rbfwebui:linkbutton id="DeleteLeft_Btn" runat="server" cssclass="CommandButton1"
+                    text="<- Delete" textkey="DeleteLeft"></rbfwebui:linkbutton></p>
             <p>
-                <rbfwebui:linkbutton id="MoveLeft_Btn" runat="server" cssclass="CommandButton" text="<- Move"
-                    textkey="MoveItemLeft" width="120px"></rbfwebui:linkbutton></p>
+                <rbfwebui:linkbutton id="MoveLeft_Btn" runat="server" cssclass="CommandButton1" text="<- Move"
+                    textkey="MoveItemLeft"></rbfwebui:linkbutton></p>
             <p>
-                <rbfwebui:linkbutton id="MoveRight_Btn" runat="server" cssclass="CommandButton" text="Move ->"
-                    textkey="MoveItemRight" width="120px"></rbfwebui:linkbutton></p>
+                <rbfwebui:linkbutton id="MoveRight_Btn" runat="server" cssclass="CommandButton1" text="Move ->"
+                    textkey="MoveItemRight" ></rbfwebui:linkbutton></p>
             <p>
-                <rbfwebui:linkbutton id="CopyRight_Btn" runat="server" cssclass="CommandButton" text="Copy ->"
-                    textkey="CopyItem" width="120px"></rbfwebui:linkbutton></p>
+                <rbfwebui:linkbutton id="CopyRight_Btn" runat="server" cssclass="CommandButton1" text="Copy ->"
+                    textkey="CopyItem" ></rbfwebui:linkbutton></p>
             <p>
-                <rbfwebui:linkbutton id="CopyAll_Btn" runat="server" cssclass="CommandButton" text=" Copy All ->"
-                    textkey="CopyAll" width="120px"></rbfwebui:linkbutton></p>
+                <rbfwebui:linkbutton id="CopyAll_Btn" runat="server" cssclass="CommandButton1" text=" Copy All ->"
+                    textkey="CopyAll"></rbfwebui:linkbutton></p>
             <p>
-                <rbfwebui:linkbutton id="DeleteRight_Btn" runat="server" cssclass="CommandButton"
-                    text="Delete->" textkey="DeleteRight" width="120px"></rbfwebui:linkbutton></p>
+                <rbfwebui:linkbutton id="DeleteRight_Btn" runat="server" cssclass="CommandButton1"
+                    text="Delete->" textkey="DeleteRight"></rbfwebui:linkbutton></p>
         </td>
         <td valign="top" width="250">
-            <asp:listbox id="DestListBox" runat="server" rows="15" style="width: 250px; overflow-y: auto;
-                overflow-x: hidden;" width="250px"></asp:listbox>
+            <asp:listbox id="DestListBox" runat="server" rows="20" style="width: 250px; overflow-y: auto;
+                overflow-x: hidden;height:280px;" width="250px"></asp:listbox>
         </td>
     </tr>
 </table>
