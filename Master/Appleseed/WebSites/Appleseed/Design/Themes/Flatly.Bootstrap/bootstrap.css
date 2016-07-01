@@ -3953,6 +3953,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-top: 19.5px;
     padding-bottom: 19.5px;
   }
+  #admin-left-menu.navbar-nav > li > a,
   #left_admin_menu.navbar-nav > li > a {
     padding-top: 14.5px;
     padding-bottom: 14.5px;

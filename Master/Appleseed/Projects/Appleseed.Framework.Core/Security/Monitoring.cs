@@ -157,7 +157,6 @@ namespace Appleseed.Framework.Security
                 }
                 finally
                 {
-                    myConnection.Close();
                 }
             }
         }

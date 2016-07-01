@@ -243,7 +243,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
 
                 return (int)parameterPageId.Value;
@@ -279,7 +278,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -321,7 +319,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
 
                 // Build a Hash table from the XML string returned
@@ -612,8 +609,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    result.Close(); // by Manu, fixed bug 807858
-                    connection.Close(); //Added by Ashish - Connection Pool Issues
                 }
             }
 
@@ -713,7 +708,6 @@ namespace Appleseed.Framework.Site.Data
 
                 connection.Open();
                 sqlCommand.ExecuteNonQuery();
-                connection.Close();
             }
         }
 
@@ -768,7 +762,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -812,7 +805,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -852,7 +844,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -932,7 +923,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    sqlConnection.Close();
                 }
             }
         }
@@ -959,13 +949,17 @@ namespace Appleseed.Framework.Site.Data
 
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
         #endregion
 
         #region Dynamic Page - Friendly URL
+        /// <summary>
+        /// Get Dynamic PageUrl
+        /// </summary>
+        /// <param name="pageUrl">page Url</param>
+        /// <returns></returns>
         public string GetDynamicPageUrl(string pageUrl)
         {
             string redirectToUrl = "";
@@ -991,12 +985,12 @@ namespace Appleseed.Framework.Site.Data
 
                     finally
                     {
-                        connection.Close();
                     }
                 }
             }
             catch (Exception ex)
             {
+                ErrorHandler.Publish(LogLevel.Warn, "Get Dynamic Page Url - ",ex);
             }
             return redirectToUrl;
         }
@@ -1033,7 +1027,7 @@ namespace Appleseed.Framework.Site.Data
         /// <summary>
         /// Delete friendly url
         /// </summary>
-        /// <param name="pageId">page id</param>
+        /// <param name="dynamicPageID">dynamic Page ID</param>
         public void DeleteDynamicFriendlyUrl(int dynamicPageID)
         {
             using (var sqlConnection = Config.SqlConnectionString)
@@ -1048,7 +1042,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    sqlConnection.Close();
                 }
             }
         }
@@ -1080,7 +1073,6 @@ namespace Appleseed.Framework.Site.Data
                     }
                     finally
                     {
-                        connection.Close();
 
                     }
                 }
@@ -1118,7 +1110,6 @@ namespace Appleseed.Framework.Site.Data
 
                 finally
                 {
-                    connection.Close();
                 }
             }
 
@@ -1146,12 +1137,11 @@ namespace Appleseed.Framework.Site.Data
 
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Create Friendly URL
         /// </summary>
         /// <param name="redirectToUrl"></param>
@@ -1174,7 +1164,6 @@ namespace Appleseed.Framework.Site.Data
                     }
                     finally
                     {
-                        connection.Close();
 
                     }
                 }

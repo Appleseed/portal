@@ -219,7 +219,6 @@ namespace Appleseed.Framework.Site.Data
                     }
                     finally
                     {
-                        connection.Close();
                     }
 
                     return (int)parameterPortalId.Value;
@@ -531,7 +530,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -600,8 +598,6 @@ namespace Appleseed.Framework.Site.Data
                         }
                         finally
                         {
-                            dr.Close(); // by Manu, fixed bug 807858
-                            connection.Close(); //Added by Ashish - Connection Pool Issues
                         }
                     }
 
@@ -700,7 +696,6 @@ namespace Appleseed.Framework.Site.Data
                     }
                     finally
                     {
-                        connection.Close();
                     }
                 }
             }

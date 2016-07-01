@@ -118,7 +118,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -157,7 +156,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -188,7 +186,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -219,7 +216,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -261,7 +257,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -302,7 +297,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -333,7 +327,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -374,7 +367,6 @@ namespace Appleseed.Framework.Site.Data
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }

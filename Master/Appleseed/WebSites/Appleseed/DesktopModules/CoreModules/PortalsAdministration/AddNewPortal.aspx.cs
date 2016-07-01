@@ -253,7 +253,6 @@ namespace Appleseed.AdminAll
             } finally {
                 myCommand.Dispose();
                 myConnection.Close();
-                myConnection.Dispose();
             }
             // Return the dataset
             return myDataSet;
@@ -499,11 +498,8 @@ namespace Appleseed.AdminAll
 
             // close the conections
             myConnection.Close();
-            myConnection.Dispose();
             my2ndConnection.Close();
-            my2ndConnection.Dispose();
             my3rdConnection.Close();
-            my3rdConnection.Dispose();
 
             // Create paths
             portals.CreatePortalPath(portalPath);

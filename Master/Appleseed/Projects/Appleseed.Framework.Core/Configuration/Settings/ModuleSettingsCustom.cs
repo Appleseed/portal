@@ -70,11 +70,6 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     controlPath += dr[StringsDesktopSrc].ToString();
                 }
-                // Added by Ashish - Connection Pool Issues
-                if (dr != null)
-                {
-                    dr.Close();
-                }
             }
 
             PortalModuleControlCustom portalModule;
@@ -141,9 +136,7 @@ namespace Appleseed.Framework.Site.Configuration
                     {
                         settings[dr["SettingName"].ToString()] = dr["SettingValue"].ToString();
                     }
-                    dr.Close(); // Added by Ashish - Connection Pool Issues
                 }
-                connection.Close(); // Added by Ashish - Connection Pool Issues
             }
 
             foreach (string key in customSettings.Keys)
@@ -218,7 +211,6 @@ namespace Appleseed.Framework.Site.Configuration
 
                 connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
             }
         }
 

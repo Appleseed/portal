@@ -1297,6 +1297,9 @@
     <Scripts>
       <Script>2.0.0.1904.sql</Script>
     </Scripts>
+    <Modules>
+      <Installer>DesktopModules/CoreModules/FileBrowser/install.xml</Installer>
+    </Modules>
   </Release>
 
   <Release>
@@ -1305,9 +1308,15 @@
     <Date>2016-05-11T00:00:00.0000000-03:00</Date>
     <Scripts>
       <Script>2.0.0.1905.sql</Script>
+      <Script>ANANT.Evolutility.Advanced.DBScript.sql</Script>
     </Scripts>
+    <Modules>
+      <Installer>DesktopModules/CoreModules/Evolutility_ModuleList/install.xml</Installer>
+      <Installer>DesktopModules/CoreModules/Evolutility_ModuleRenderer/install.xml</Installer>
+      <Installer>DesktopModules/CoreModules/EvolutilityAdvanced.ModuleRenderer/install.xml</Installer>
+    </Modules>
   </Release>
-  
+
   <!--The DBScripts folder in Appleseed.Core portable area can be used to make changes to MVC modules -->
 
 </History>

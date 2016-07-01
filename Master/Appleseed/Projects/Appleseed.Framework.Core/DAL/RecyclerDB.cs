@@ -148,7 +148,6 @@ namespace Appleseed.Framework.Site.Data
                     m.MobileSrc = result["MobileSrc"].ToString();
                     m.Admin = bool.Parse(result["Admin"].ToString());
                 }
-                connection.Close(); //Added by Ashish Patel - Connection pool issue
 
                 return m;
             }
@@ -193,8 +192,6 @@ namespace Appleseed.Framework.Site.Data
                     }
                     finally
                     {
-                        // by Manu fix close bug #2
-                        connection.Close();
                     }
 
                     // Translate
@@ -260,11 +257,6 @@ namespace Appleseed.Framework.Site.Data
                 {
                     ErrorHandler.Publish(
                         LogLevel.Warn, "An Error Occurred in MoveModuleToNewTab. Parameter : " + moduleId, ex);
-                }
-                //Added by Ashish - Connection Pool Issue
-                finally
-                {
-                    connection.Close();
                 }
             }
         }

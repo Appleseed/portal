@@ -59,9 +59,6 @@ namespace Appleseed.Framework.Data
                 }
                 finally
                 {
-                    sqlCommand.Dispose();
-                    connection.Close();
-                    connection.Dispose();
                 }
             }
 
@@ -310,9 +307,6 @@ namespace Appleseed.Framework.Data
                 }
                 finally
                 {
-                    sqlCommand.Dispose();
-                    connection.Close();
-                    connection.Dispose();
                 }
             }
 
@@ -399,9 +393,6 @@ namespace Appleseed.Framework.Data
                     }
                     finally
                     {
-                        sqlDataAdapter.Dispose();
-                        connection.Close();
-                        connection.Dispose();
                     }
                 }
             }
@@ -433,7 +424,6 @@ namespace Appleseed.Framework.Data
             using (var objStreamReader = new StreamReader(scriptPath, Encoding.Default))
             {
                 strScript = objStreamReader.ReadToEnd();
-                objStreamReader.Close();
             }
 
             return strScript + Environment.NewLine; // Append carriage for execute last command 

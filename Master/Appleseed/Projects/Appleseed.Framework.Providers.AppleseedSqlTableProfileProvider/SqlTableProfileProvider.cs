@@ -285,10 +285,20 @@ namespace Microsoft.Samples {
                 return svc;
 
             SqlConnection conn = null;
-            try {
+
+            try
+            {
                 conn = new SqlConnection(_sqlConnectionString);
                 conn.Open();
+            }
+            catch
+            {
+                System.Data.SqlClient.SqlConnection.ClearAllPools();
+                conn = new SqlConnection(_sqlConnectionString);
+                conn.Open();
+            }
 
+            try {
                 GetProfileDataFromTable(collection, svc, username, conn);
             }
             finally {

@@ -18,7 +18,7 @@ END
 
 DECLARE db_cursor CURSOR FOR
 
-SELECT PAGEID from  [rb_Pages] where ParentPageID=100 or PageName='Administration'
+SELECT PAGEID from  [rb_Pages] where ParentPageID=100 or ParentPageID=280 or PageName='Administration'
 
 OPEN db_cursor
 

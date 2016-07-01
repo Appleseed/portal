@@ -27,24 +27,20 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span>Admin</span>
                 </button>
-                <a href="<%= Appleseed.Framework.Settings.Path.ApplicationFullPath %>" class="navbar-brand">
-                    <img alt='Appleseed' src='<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/Design/Themes/Appleseed.Admin/images/brick.png' class='admin-logo' height='16' width='16' />AS
+                <a href="/1" class="navbar-brand">
+                    <img alt='Appleseed' src='/Design/Themes/Appleseed.Admin/images/brick.png' class='admin-logo' height='16' width='16' />AS
                 </a>
                 <ul id="admin-left-menu" class="nav navbar-nav">
                     <li>
-                        <a href="<%= Appleseed.Framework.Settings.Path.ApplicationFullPath %>/100"><span>Administration</span></a>
+                        <a href="/100"><span>Administration</span></a>
                         <ul>
-                            <li><a href="<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/240">Site Settings</a></li>
-                            <li><a href="<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/110">Page Manager</a></li>
-                            <li><a href="<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/281">User Manager</a></li>
-                            <li><a href="<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/120">Global Modules</a></li>
-                            <li><a href="<%=Appleseed.Framework.Settings.Path.ApplicationFullPath  %>/215">Recycle Bin</a></li>
-                            <li><a href="http://file.app.clients.anant.us">File.App</a></li>
+                            <li><a href="/240">Site Settings</a></li>
+                            <li><a href="/110">Page Manager</a></li>
+                            <li><a href="/281">User Manager</a></li>
+                            <li><a href="/155">File Manager</a></li>
+                            <!--<li><a href="/120">Global Modules</a></li>-->
+                            <li><a href="/215">Recycle Bin</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#">Site Content</a>
-                        <asp:TreeView ID="asSiteTree" runat="server" DataSourceID="biSMDS" CssClass="sitecontent" ExpandDepth="0" />
                     </li>
                 </ul>
                 <div class="navbar-collapse collapse userMenu">
@@ -90,4 +86,3 @@
         </div>
     </div>
 </asp:Panel>
-<asp:SiteMapDataSource ID="biSMDS" ShowStartingNode="false" runat="server" />

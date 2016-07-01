@@ -259,6 +259,7 @@ div#Content_ctl00_pnlForm input[type="submit"]
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    border: none;
     display:inline-block!important;
     font-size:15px!important;
     font-weight:bold;
@@ -311,6 +312,11 @@ table.ModuleWrap {
 table.ModuleWrap td {
     padding-top: 3px;
     padding-bottom: 3px;
+    padding-right: 10px;
+}
+
+table.ModuleWrap td hr {
+    margin: 0px;
 }
 
 table.ModuleWrap table table td {
@@ -332,11 +338,20 @@ table.signInBody td {
 
 #Content_authRoles td {
     display: block;
+    padding-top: 0px;
 }
 
 #Content_authRoles label {
     vertical-align: 2px;
-    margin: 0px 3px;
+    margin: 0px 6px;
+}
+
+#footerpopup {
+    padding: 8px 0px 0px !important;
+}
+
+#footerpopup select {
+    margin-right: 10px;
 }
 
 option {
@@ -403,6 +418,7 @@ textarea {
     select.NormalTextBox {
         height: 27px;
         padding: 1px 0 0 1px !important;
+        margin-right: 10px;
     }
         /*select#Content_ContentPane_ctl01_EditTable_SITESETTINGS_LANGLIST{
             height:125px!important;

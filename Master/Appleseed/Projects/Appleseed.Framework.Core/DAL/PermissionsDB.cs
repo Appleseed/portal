@@ -150,7 +150,6 @@
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }
@@ -175,7 +174,6 @@
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
         }

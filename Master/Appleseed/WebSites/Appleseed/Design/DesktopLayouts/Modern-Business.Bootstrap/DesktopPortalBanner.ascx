@@ -15,7 +15,6 @@
 
 <header>	
     <div id="PortBan" class="navbar navbar-default navbar-static-top" role="navigation">
-         <nav id="navBannerId" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button id="btnPortalBannerToggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Banner_biMenu">

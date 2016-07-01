@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,6 +41,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -54,7 +55,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Appleseed</RootNamespace>
     <AssemblyName>Appleseed</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -117,6 +118,7 @@
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForMsdeployDependsOn);
     </CopyAllFilesToSingleFolderForMsdeployDependsOn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -137,6 +139,7 @@
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForMsdeployDependsOn);
     </CopyAllFilesToSingleFolderForMsdeployDependsOn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ajax">
@@ -188,6 +191,21 @@
     <Reference Include="EnterpriseObjects, Version=1.0.2151.32914, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\EnterpriseObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.DataServer">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.DataServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.ExportWizard">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.ExportWizard.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.SideBar">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.SideBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.UIServer">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.UIServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Evolutility.Wizard">
+      <HintPath>..\..\Libs\Evolutility\Evolutility.Wizard.dll</HintPath>
     </Reference>
     <Reference Include="Evolve.MailTemplates">
       <HintPath>..\..\Libs\Evolve.MailTemplates.dll</HintPath>
@@ -332,7 +350,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Design" />
@@ -341,7 +358,7 @@
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DataVisualization.Design" />
-    <Reference Include="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\MVC 4\System.Web.Helpers.dll</HintPath>
@@ -373,7 +390,6 @@
       <HintPath>..\..\Libs\MVC 4\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -383,6 +399,7 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="TripleASP.TableEditor, Version=0.9.1103.35121, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\TripleASP.TableEditor.dll</HintPath>
@@ -587,23 +604,91 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Appleseed.zh-TW.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.de.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.es.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.fr.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.he.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.it.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.nl.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.no.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.pt.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.ru.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sk.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Cyrl-CS.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Latn-CS.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sv.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.tr.designer.cs" />
-    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.zh-CN.designer.cs" />
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.de1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.es1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.fr1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.he1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.it1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.nl1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.no1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.no.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.pt1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.pt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.ru1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sk1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Cyrl-CS1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sr-Cyrl-CS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sr-Latn-CS1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sr-Latn-CS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.sv1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.tr1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.zh-CN1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IZWebFileManagerResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="app_support\FCK.filemanager\imagegallery.aspx.designer.cs">
       <DependentUpon>imagegallery.aspx</DependentUpon>
     </Compile>
@@ -919,6 +1004,108 @@
     </Compile>
     <Compile Include="DesktopModules\CoreModules\EventLogs\EventLogs.ascx.designer.cs">
       <DependentUpon>EventLogs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolAdvModSettings.aspx.cs">
+      <DependentUpon>EvolAdvModSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolAdvModSettings.aspx.designer.cs">
+      <DependentUpon>EvolAdvModSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvanced.ModuleRenderer.ascx.cs">
+      <DependentUpon>EvolutilityAdvanced.ModuleRenderer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvanced.ModuleRenderer.ascx.designer.cs">
+      <DependentUpon>EvolutilityAdvanced.ModuleRenderer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererPage.aspx.cs">
+      <DependentUpon>EvolutilityAdvancedModuleRendererPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererPage.aspx.designer.cs">
+      <DependentUpon>EvolutilityAdvancedModuleRendererPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererService.asmx.cs">
+      <DependentUpon>EvolutilityAdvancedModuleRendererService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormDocument.aspx.cs">
+      <DependentUpon>EvolutilityFormDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormDocument.aspx.designer.cs">
+      <DependentUpon>EvolutilityFormDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormTest.aspx.cs">
+      <DependentUpon>EvolutilityFormTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormTest.aspx.designer.cs">
+      <DependentUpon>EvolutilityFormTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityModuleList.aspx.cs">
+      <DependentUpon>EvolutilityModuleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityModuleList.aspx.designer.cs">
+      <DependentUpon>EvolutilityModuleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\Evolutility_ModuleList.ascx.cs">
+      <DependentUpon>Evolutility_ModuleList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleList\Evolutility_ModuleList.ascx.designer.cs">
+      <DependentUpon>Evolutility_ModuleList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\Evolutility_ModuleRenderer.ascx.cs">
+      <DependentUpon>Evolutility_ModuleRenderer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\Evolutility_ModuleRenderer.ascx.designer.cs">
+      <DependentUpon>Evolutility_ModuleRenderer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoField.aspx.cs">
+      <DependentUpon>EvoDicoField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoField.aspx.designer.cs">
+      <DependentUpon>EvoDicoField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoForm.aspx.cs">
+      <DependentUpon>EvoDicoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoForm.aspx.designer.cs">
+      <DependentUpon>EvoDicoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoPanel.aspx.cs">
+      <DependentUpon>EvoDicoPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoPanel.aspx.designer.cs">
+      <DependentUpon>EvoDicoPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoTest.aspx.cs">
+      <DependentUpon>EvoDicoTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoTest.aspx.designer.cs">
+      <DependentUpon>EvoDicoTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDoc.aspx.cs">
+      <DependentUpon>EvoDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDoc.aspx.designer.cs">
+      <DependentUpon>EvoDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\Evolutility_Wizard.aspx.cs">
+      <DependentUpon>Evolutility_Wizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Evolutility_Wizard\Evolutility_Wizard.aspx.designer.cs">
+      <DependentUpon>Evolutility_Wizard.aspx</DependentUpon>
     </Compile>
     <Compile Include="DesktopModules\CoreModules\FileBrowser\EditFile.aspx.cs">
       <DependentUpon>EditFile.aspx</DependentUpon>
@@ -4863,6 +5050,7 @@
     <Content Include="Design\Themes\Appleseed.Admin\assets\lib\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Design\Themes\Appleseed.Admin\bootstrap.css" />
     <Content Include="Design\Themes\Appleseed.Admin\bootstrap.min.css" />
+    <Content Include="Design\Themes\Appleseed.Admin\css\admin-modules.css" />
     <Content Include="Design\Themes\Appleseed.Admin\css\bootstrap-fileupload.min.css" />
     <Content Include="Design\Themes\Appleseed.Admin\css\bootstrap-wysihtml5-hack.css" />
     <Content Include="Design\Themes\Appleseed.Admin\css\colorpicker_hack.css" />
@@ -6055,6 +6243,25 @@
     <Content Include="DesktopModules\CoreModules\EventLogs\example.jpg" />
     <Content Include="DesktopModules\CoreModules\EventLogs\install.xml" />
     <Content Include="DesktopModules\CoreModules\EventLogs\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\ANANT.Evolutility.Advanced.DBScript.sql" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolAdvModSettings.aspx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvanced.ModuleRenderer.ascx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererPage.aspx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\EvolutilityAdvancedModuleRendererService.asmx" />
+    <Content Include="DesktopModules\CoreModules\EvolutilityAdvanced.ModuleRenderer\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormDocument.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityFormTest.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\EvolutilityModuleList.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\Evolutility_ModuleList.ascx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleList\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\Evolutility_ModuleRenderer.ascx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_ModuleRenderer\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoField.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoForm.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoPanel.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDicoTest.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\EvoDoc.aspx" />
+    <Content Include="DesktopModules\CoreModules\Evolutility_Wizard\Evolutility_Wizard.aspx" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\css\fineuploader.css" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\css\style.css" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\css\style.min.css" />
@@ -6156,6 +6363,7 @@
     <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\Show.png" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\View.png" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\img\cmd\_View.png" />
+    <Content Include="DesktopModules\CoreModules\FileBrowser\install.xml" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.js" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js" />
     <Content Include="DesktopModules\CoreModules\FileManager\example.jpg" />
@@ -6666,6 +6874,7 @@
     <Content Include="Setup\Scripts\2.0.0.1903.sql" />
     <Content Include="Setup\Scripts\2.0.0.1904.sql" />
     <Content Include="Setup\Scripts\2.0.0.1905.sql" />
+    <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>
     </Content>

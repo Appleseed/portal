@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Appleseed Web Installer</title>
+    <title>Appleseed.Portal Web Installer</title>
     <link rel="stylesheet" href="style/default.css" type="text/css" />
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
@@ -20,7 +20,7 @@
                         <tr>
                             <td colspan="2" valign="top" height="75" background="images/installer_top_bg.png"
                                 style="background-repeat: repeat-x; color: #fff; font-size: 20px; padding: 10px;">
-                                Appleseed Web Installer
+                                Appleseed.Portal Web Installer
                             </td>
                         </tr>
                         <tr>
@@ -144,10 +144,10 @@
                                                 <asp:Literal EnableViewState="False" ID="lblErrMsgConnect" runat="server" /></div>
                                             <div style="padding-left: 20px; padding-top: 20px">
                                                 IP address or Server Name:
-                                                <asp:TextBox CssClass="dataentry" ID="db_server" runat="server" value="(local)"></asp:TextBox><br />
+                                                <asp:TextBox CssClass="dataentry" ID="db_server" runat="server" value=".\SQLExpress"></asp:TextBox><br />
                                                 <asp:RadioButtonList ID="db_Connect" runat="server" SelectedIndexChanged="ConnectToDb_CheckChanged">
-                                                    <asp:ListItem Value="Windows Authentication">Windows Authentication</asp:ListItem>
-                                                    <asp:ListItem Value="SQL Server Authentication" Selected="True">SQL Server Authentication</asp:ListItem>
+                                                    <asp:ListItem Value="Windows Authentication" Selected="True">Windows Authentication</asp:ListItem>
+                                                    <asp:ListItem Value="SQL Server Authentication" >SQL Server Authentication</asp:ListItem>
                                                 </asp:RadioButtonList>
                                                 <div style="padding-left: 20px; padding-top: 20px">
                                                     <table>

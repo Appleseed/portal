@@ -416,11 +416,6 @@ namespace Appleseed.Framework.Site.Configuration
                 }
                 finally
                 {
-                    // by Manu fix close bug #2
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        connection.Close();
-                    }
                 }
             }
 
@@ -535,7 +530,6 @@ namespace Appleseed.Framework.Site.Configuration
                 finally
                 {
                     result.Close(); // by Manu, fixed bug 807858
-                    connection.Close();
                 }
             }
 
@@ -1023,8 +1017,6 @@ namespace Appleseed.Framework.Site.Configuration
                             // Get the text of the conditions
                             termsOfService = s.ReadToEnd();
 
-                            // Close Streamreader
-                            s.Close();
                         }
                     }
                     else
@@ -1185,7 +1177,7 @@ namespace Appleseed.Framework.Site.Configuration
         {
             get
             {
-                using (var sw = new StringWriter())
+                var sw = new StringWriter();
                 {
                     var writer = new XmlTextWriter(sw) { Formatting = Formatting.None };
                     writer.WriteStartDocument(true);
@@ -2232,7 +2224,6 @@ namespace Appleseed.Framework.Site.Configuration
                     finally
                     {
                         dr.Close(); // by Manu, fixed bug 807858
-                        connection.Close();
                     }
                 }
 
@@ -2454,7 +2445,6 @@ namespace Appleseed.Framework.Site.Configuration
                 }
                 finally
                 {
-                    connection.Close();
                 }
             }
 
@@ -2610,6 +2600,9 @@ namespace Appleseed.Framework.Site.Configuration
                 // Create Instance of Connection and Command Object
                 using (var connection = Config.SqlConnectionString)
                 {
+                    // Open the database connection and execute the command
+                    connection.Open(); 
+
                     using (var command = new SqlCommand("rb_GetPortalSetting", connection))
                     {
                         // Mark the Command as a SPROC
@@ -2630,9 +2623,6 @@ namespace Appleseed.Framework.Site.Configuration
                             };
                         command.Parameters.Add(parameterSettingName);
 
-                        // Open the database connection and execute the command
-                        connection.Open();
-
                         try
                         {
                             // Better null check here by Manu
@@ -2652,7 +2642,6 @@ namespace Appleseed.Framework.Site.Configuration
                         }
                         finally
                         {
-                            connection.Close();
                         }
                     }
 
@@ -2673,9 +2662,6 @@ namespace Appleseed.Framework.Site.Configuration
                             };
                         command.Parameters.Add(parameterSettingName);
 
-                        // Open the database connection and execute the command
-                        connection.Open();
-
                         try
                         {
                             // Better null check here by Manu
@@ -2695,7 +2681,6 @@ namespace Appleseed.Framework.Site.Configuration
                         }
                         finally
                         {
-                            connection.Close();
                         }
                     }
                 }

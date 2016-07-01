@@ -48,6 +48,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
             if (!IsPostBack)
             {
+                btnSaveWithoutExtension.Visible = false;
                 drpPageList.DataTextField = "Name";
                 drpPageList.DataValueField = "ID";
 
@@ -104,13 +105,21 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
         /// </summary>
         /// <param name="pageId">page id</param>
         /// <param name="friendlyurl">friendly url</param>
-        private void AddUpdateFriendlyUrl(int pageId, string friendlyurl, int dynamicPageId)
+        private void AddUpdateFriendlyUrl(int pageId, string friendlyurl, int dynamicPageId, bool addExtension = true)
         {
             PagesDB pages = new PagesDB();
             string result = string.Empty;
             if (drpPageList.SelectedValue == "-1")
             {
-                result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text) + lblFriendlyExtension.Text, dynamicPageId);
+                if (addExtension)
+                {
+                    result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text) + lblFriendlyExtension.Text, dynamicPageId);
+                }
+                else
+                {
+                    result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text), dynamicPageId);
+                }
+
             }
             else
             {
@@ -143,9 +152,14 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
             if (drpPageList.SelectedValue != "-1")
             {
+                btnSaveWithoutExtension.Visible = false;
                 PagesDB pages = new PagesDB();
                 // Get and Set friendlyURL from db to Textbox when change the dropdown value
                 txtFriendlyURL.Text = pages.GetFriendlyURl(Convert.ToInt32(drpPageList.SelectedValue));
+            }
+            else
+            {
+                btnSaveWithoutExtension.Visible = true;
             }
         }
 
@@ -350,6 +364,13 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             //remove from cache
             SqlUrlBuilderProvider.ClearCachePageUrl(daynamicPageId);
             UrlBuilderHelper.ClearUrlElements(daynamicPageId);
+        }
+
+        protected void btnSaveWithoutExtension_Click(object sender, EventArgs e)
+        {
+            int pageId = Convert.ToInt32(drpPageList.SelectedValue);
+            this.AddUpdateFriendlyUrl(pageId, txtFriendlyURL.Text, 0, false);
+            LoadGrid();
         }
     }
 }

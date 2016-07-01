@@ -235,7 +235,6 @@ namespace Appleseed.Framework.Helpers
                 }
                 finally
                 {
-                    sr.Close();
                 }
 
                 return sb.ToString();

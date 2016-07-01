@@ -72,13 +72,13 @@
 
     <div class="module-row">
         <div id="url-instructions">
-            <p>To create a "friendly" url, select the specific page to which the friendly url should be applied from the Page dropdown list. </p>
-            <p>Then, in the Friendly URL text box, create the friendly url.</p>
+            <p>To create a "Short" url, select the specific page to which the Short url should be applied from the Page dropdown list. </p>
+            <p>Then, in the Short URL text box, create the Short url.</p>
         </div>
     </div>
     <div class="module-row">
         <br />
-        <h5>Add Friendly Url</h5>
+        <h5>Add Short Url</h5>
     </div>
     <div class="module-row">
         <div class="col-md-9">
@@ -108,10 +108,10 @@
     <div class="module-row">
         <div class="col-md-9">
             <div class="col-md-3">
-                <h6>Friendly URL</h6>
+                <h6>Short URL</h6>
             </div>
             <div class="col-md-6">
-                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Friendly Page Url" />
+                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Short Page Url" />
                 <asp:Label ID="lblFriendlyExtension" runat="server" /><br />
                 <asp:RequiredFieldValidator ID="rvftxtFriendlyUrl" runat="server" Display="Dynamic" ErrorMessage="Please enter valid Url " ControlToValidate="txtFriendlyURL" ValidationGroup="Save" />
             </div>
@@ -121,6 +121,7 @@
         <div class="col-md-9">
             <div class="col-md-9">
                 <asp:Button ID="btnSave" Text="Save" CssClass="buttonMargin" runat="server" OnClick="btnSave_Click" CausesValidation="true" ValidationGroup="Save" />
+                <asp:Button ID="btnSaveWithoutExtension" width="180px" Text="Save Without Extension" CssClass="buttonMargin" runat="server" OnClick="btnSaveWithoutExtension_Click" CausesValidation="true" ValidationGroup="Save" />
             </div>
         </div>
     </div>
@@ -128,7 +129,7 @@
     <div class="module-row" style="clear:both;">
         <br />
         <br />
-        <h5>Update/Delete Friendly Url</h5>
+        <h5>Update/Delete Short Url</h5>
     </div>
     <br />
     <label>Pages</label>
@@ -136,7 +137,7 @@
         <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowEditing="GdPages_RowEditing"
             OnRowDeleting="gdPages_RowDeleting" OnRowCancelingEdit="gdPages_RowCancelingEdit" OnRowDataBound="gdPages_RowDataBound" OnRowUpdating="gdPages_RowUpdating" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Sr #">
+                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Page#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageID" Text='<%# Eval("PageID") %>'></asp:Label>
                     </ItemTemplate>
@@ -148,7 +149,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Friendly Url">
+                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Short Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -162,7 +163,7 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="field-5" ItemStyle-CssClass="field-5">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete friendly url?');" Text="Delete"></asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -176,7 +177,7 @@
     <div class="module-row">
         <asp:GridView ID="gdDynamicPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowUpdating="gdDynamicPages_RowUpdating" OnRowCancelingEdit="gdDynamicPages_RowCancelingEdit" OnRowEditing="GdDynamicPages_RowEditing" OnRowDeleting="gdDynamicPages_RowDeleting" OnRowDataBound="gdDynamicPages_RowDataBound" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Sr #">
+                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="SR#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblSrNo" Text='<%# Eval("SRINDEX") %>'></asp:Label>
                        <asp:Label runat="server" ID="lblPageID"  Visible="false" Text='<%# Eval("DynamicPageId") %>'></asp:Label>
@@ -193,7 +194,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Friendly Url">
+                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Short Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -207,7 +208,7 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="field-5" ItemStyle-CssClass="field-5">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete friendly url?');" Text="Delete"></asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
 

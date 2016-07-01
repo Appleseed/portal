@@ -12,6 +12,11 @@ body {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
+.no-padding {
+  padding: 0 !important;
+}
+
 /*********************************************************/
 /*                 Layout Styles                         */
 /*********************************************************/
@@ -22,7 +27,7 @@ body {
 #top:before,
 .head:before,
 .Footer:before,
-#wrap:after,
+#wrap:after,
 #top:after,
 .head:after,
 .Footer:after {
@@ -47,8 +52,6 @@ body {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 250px;
-  z-index: 999;
 }
 #left,
 #left-wide {
@@ -59,22 +62,21 @@ body {
 }
 #left {
   width: 70px;
+  z-index: 1000;
+}
+#left-wide {
+  width: 250px;
+  z-index: 0;
 }
 #left.show,
 #left-wide.show {
   -webkit-transition: left 0.3s ease-in-out;
   -o-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease;
-  left: 70px;
+  left: 0px;
 }
 #left.show {
   left: 0px;
-}
-#left {
-  z-index: 1000;
-}
-#left-wide {
-  z-index: -1;
 }
 
 #right {
@@ -101,6 +103,8 @@ body {
 .button {
   color: #000;
 }
+
+
 @media (min-width: 768px) {
   .header-container .navbar {
     display: none;
@@ -306,7 +310,7 @@ body {
 }
 @media (min-width: 992px) {
   .search-bar {
-    width: 250px;
+    width: 100%;
     padding: 10px 15px;
   }
   .search-bar .input-group-btn {
@@ -350,7 +354,7 @@ body {
 .user-media .media-body {
   display: block;
   float: left;
-  margin-left: 12px;
+  margin-left: 0px;
 }
 .user-media .media-body h5.media-heading {
   color: #fff;
@@ -461,6 +465,13 @@ body {
 .menu.affix:hover {
   overflow-y: scroll;
 }
+
+#left .menu-button {
+  visibility: hidden; /*hiding until left mini is functional 2016-03-12 mlp */
+  background: transparent;
+  border: none;
+}
+
 @media (min-width: 768px) {
 
   body:not(.sidebar-left-mini) .menu li.active > ul, 
@@ -532,6 +543,7 @@ body {
   }
 }
 body:not(.sidebar-left-mini) .menu .nav-header {
+  display: none; /*hiding until left mini is functional 2016-03-12 mlp */
   padding: 3px 0px !important;
   text-transform: uppercase;
   text-align: center;
@@ -583,7 +595,7 @@ body:not(.sidebar-left-mini) .menu .nav-header {
 
 .menus .fa,
 #menu-toggle .fa {
-  display: none;
+  display: inline-block;
 }
 
 .ie .menus .fa,
@@ -632,11 +644,11 @@ body:not(.sidebar-left-mini) .menu .nav-header {
 /* ============== LEFT Second (Wide) Sidebar Styles ================= */
 
 #left-wide .user-media {
-  width: 250px;
+  width: 100%;
 }
 
 #left-wide .wide-menu {
-  min-height: 625px;
+  /*min-height: 625px;*/
 }
 
 #left-wide .wide-menu, #left-wide .wide-menu ul {
@@ -657,6 +669,10 @@ body:not(.sidebar-left-mini) .menu .nav-header {
   color: #f4f4f4;
 }
 
+#left-wide .wide-menu li, #left-wide .wide-menu a:hover {
+  color: #CCC;
+}
+
 #left-wide .wide-menu li, #left-wide .wide-menu a {
   position: relative;
   display: block;
@@ -671,6 +687,11 @@ body:not(.sidebar-left-mini) .menu .nav-header {
   background: transparent;
   font-weight: normal;
   color: #f4f4f4;
+}
+#left-wide .wide-menu > a.ui-state-default:hover,
+#left-wide .wide-menu > a.ui-state-active:hover,
+#left-wide .wide-menu > ul.ui-widget-content a:hover {
+  color: #CCC;
 }
 
 #left-wide .wide-menu .ui-widget {
@@ -738,6 +759,24 @@ body:not(.sidebar-left-mini) .menu .nav-header {
 
 #left span.link-title {
   display: block;
+}
+
+/* ============== Admin left Menu Styles ================= */
+
+.admin-left-menu-inner {
+  padding: 10px;
+  min-height: 600px;
+}
+
+.admin-left-menu-inner a:link, 
+.admin-left-menu-inner a:visited,
+.menus a:link, 
+.menus a:visited {
+  color: #CCC;
+}
+.admin-left-menu-inner a:hover,
+.menus a:hover {
+  color: #FFF;
 }
 
 /* ============== NOTICE Styles ================= */

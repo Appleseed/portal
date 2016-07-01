@@ -135,7 +135,6 @@ namespace Appleseed.Framework.Helpers
                 }
                 finally
                 {
-                    dataReader.Close(); // by Manu, fixed bug 807858
                 }
             }
         }
@@ -434,7 +433,6 @@ namespace Appleseed.Framework.Helpers
                     }
                     finally
                     {
-                        dataReader.Close(); // by Manu, fixed bug 807858
                     }
                 }
             }

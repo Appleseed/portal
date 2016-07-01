@@ -131,8 +131,6 @@
 
             if (fileUploadXML.HasFile)
             {
-                try
-                {
                     string xmlContent;
                     using (StreamReader xmlStremReader = new StreamReader(fileUploadXML.PostedFile.InputStream))
                     {
@@ -141,11 +139,6 @@
                         rptLogTable.DataSource = sqlDrLog;
                         rptLogTable.DataBind();
                     }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
             }
         }
     }

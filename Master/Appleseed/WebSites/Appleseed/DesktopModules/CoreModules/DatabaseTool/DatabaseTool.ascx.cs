@@ -93,7 +93,7 @@ namespace Appleseed.Content.Web.Modules
                 SqlCon.Open();
 
                 SqlCon.Close();
-                SqlCon.Dispose();
+                //SqlCon.Dispose();
                 retValue = true;
             }
             catch (Exception ex)
@@ -117,9 +117,9 @@ namespace Appleseed.Content.Web.Modules
             {
                 SqlConnection SqlCon = new SqlConnection(ConnectionString);
                 SqlDataAdapter DA =
-                    new SqlDataAdapter(
-                        "Select name,id from sysobjects where uid=USER_ID('" + user + "') AND xtype='" + xtype +
-                        "' order by name", SqlCon);
+                   new SqlDataAdapter(
+                       "Select name,id from sysobjects where uid=USER_ID('" + user + "') AND xtype='" + xtype +
+                       "' order by name", SqlCon);
                 SqlCon.Open();
 
                 DataSet DS = new DataSet();

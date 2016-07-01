@@ -959,7 +959,6 @@ namespace Appleseed.Framework.Security
                 }
                 finally
                 {
-                    myConnection.Close();
                 }
 
                 return parameterRoles.Value.ToString();
@@ -1050,7 +1049,6 @@ namespace Appleseed.Framework.Security
                     }
                     finally
                     {
-                        myConnection.Close();
                     }
 
                     return IsInRoles(parameterAccessRoles.Value.ToString()) &&

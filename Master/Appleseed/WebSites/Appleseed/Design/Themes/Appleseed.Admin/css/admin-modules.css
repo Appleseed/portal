@@ -1,0 +1,106 @@
+/************************************************/
+/**********  Admin Modules Classes   ************/
+/************************************************/	
+
+.Administration .header-container {
+	z-index: 1;
+}
+
+.Administration .ModuleTitle {
+    color: #FFF;
+}
+
+.Administration .tabPanel {
+	
+}
+
+.Administration .ui-jqgrid .ui-jqgrid-titlebar {
+	height: 30px;
+}
+
+.Administration #leftpane .ModuleContent,
+.Administration #contentpane .ModuleContent {
+	margin-top: 50px;
+	padding: 20px 20px 20px 20px;
+}
+@media (max-width: 768px) {
+
+	.Administration #leftpane .ModuleContent,
+	.Administration #contentpane .ModuleContent {
+		margin-top: -20px;
+	}
+
+}
+
+@media (max-width: 480px) {
+
+	.SettingsTableGroup .st-control input[type="text"],
+	.SettingsTableGroup .st-control select {
+		width: 160px!important
+	}
+
+	.admin-left-menu-inner,
+	.menus .menu {
+		height: 800px;
+	}
+
+}
+
+.Administration #contentpane p,
+.Administration #contentpane span,
+.Administration #contentpane a {
+	color: #CCC;
+}
+.Administration #contentpane a:hover {
+	color: #FFF;
+}
+
+.Administration #contentpane .FileManagerDirectoryTree a.jstree-anchor {
+	color: #4d4d4d;
+}
+.Administration #contentpane .FileManagerDirectoryTree a.jstree-anchor:hover {
+	color: #4d4d4d;
+}
+
+.Administration .ui-tabs .ui-tabs-nav {
+	/*height: 35px;*/
+}
+
+.Administration .footer_box {
+	display: none;
+}
+
+[class*="Site-Settings"] a.CommandButton {
+	margin-top: 20px;
+}
+
+#menu-toggle {
+  float: right;
+  margin: 10px;
+}
+
+#menu-toggle .fa-bars {
+  font-size:36px;
+}
+
+.menus .fa-search {
+  font-size: 20px;
+}
+
+.menus .menu-button .fa {
+  font-size: 40px;
+}
+
+.menus .menu-button .fa.arrow {
+  font-size: 14px;
+  display: none;
+}
+
+.menus .menu-button .fa-img {
+  display: none;
+}
+
+.Administration,
+.Register,
+[class*="logon"] {
+    font-size: 14px;

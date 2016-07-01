@@ -66,8 +66,6 @@ namespace Appleseed.KickStarter.CommonClasses
 						{
 							sqlDataAdapter.Fill(dataSet);
 							sqlCommand.Dispose(); //by Manu fix close bug #2
-							sqlConnection.Close(); //by Manu fix close bug #2
-							sqlConnection.Dispose(); //by Manu fix close bug #2
 						}
 						return dataSet;
 					}
@@ -80,7 +78,6 @@ namespace Appleseed.KickStarter.CommonClasses
 
 				finally 
 				{
-					sqlConnection.Close();
 				}
 			}
 		}
@@ -134,10 +131,6 @@ namespace Appleseed.KickStarter.CommonClasses
 				finally 
 				{
 
-					if (sqlConnection.State == ConnectionState.Open) 
-					{
-						sqlConnection.Close();
-					}
 				}
 			}
 		}

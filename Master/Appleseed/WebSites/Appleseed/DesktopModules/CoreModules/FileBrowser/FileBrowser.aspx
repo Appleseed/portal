@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>File Browser</title>
     <link href="/DesktopModules/CoreModules/FileBrowser/css/fineuploader.css" rel="stylesheet" />
-    <link href="/DesktopModules/CoreModules/FileBrowser/css/style.min.css" rel="stylesheet" />
+    <link href="/DesktopModules/CoreModules/FileBrowser/css/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,7 +38,7 @@
                 MainDirectory="~/" CustomThumbnailHandler="~/DesktopModules/CoreModules/FileBrowser/IZWebFileManagerThumbnailHandler.ashx"
                 ShowHiddenFilesAndFolders="false" FileViewMode="Thumbnails" ClientOpenItemFunction="fileSelected"
                 DefaultAccessMode="Write"
-                ShowAddressBar="false" ShowSearchBox="true" AllowDelete="true" AllowOverwrite="true" AllowUpload="true">
+                ShowAddressBar="false" ShowSearchBox="true" AllowDelete="true" AllowOverwrite="true" ShowUploadBar="false" AllowUpload="true">
                 <RootDirectories>
                     <iz:RootDirectory DirectoryPath="~/" Text="Root" />
                 </RootDirectories>
