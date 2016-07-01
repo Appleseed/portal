@@ -40,7 +40,7 @@
 </div>
 
 <div class="menus">
-  <div id="left">
+  <div id="left" style="display:none;">
     <!-- mini menu -->
     <ul class="menu" class="bg-dark">
       <li class="active">
@@ -126,7 +126,7 @@
   <!-- /#left -->
 
   <!-- wide sidebar -->
-  <div id="left-wide">
+  <div id="left-wide" style="float:right;">
     <div class="search-bar">
       <div class="main-search" action="">
         <div class="input-group">
@@ -855,7 +855,9 @@
             .addClass("selected-item");
 
         $('#menu-toggle').click(function() {
-          $('#left,#left-wide').toggleClass( "show" );
+            //$('#left,#left-wide').toggleClass( "show" );
+           // $('#left-wide').css('left', '0px');
+            $('#left-wide').toggleClass("show");
         });
 
         $( "#menu.wide-menu li a" ).click(function() {
@@ -872,6 +874,7 @@
     #left
     {
         width:33%!important;
+
     }
     footer p{
         color:#fff!important;

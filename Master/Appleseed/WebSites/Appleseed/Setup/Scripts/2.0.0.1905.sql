@@ -61,7 +61,10 @@ BEGIN
 	DELETE FROM rb_pages WHERE [PageName]='Database Tool' and PageID=152
 END
 
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =150 AND ModuleDefId = 4)
+BEGIN
 EXEC rb_addModule 150,1,'Database Table Edit','ContentPane',4,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+END
 
 /*30/06/2016*/
 UPDATE rb_Pages SET PageName = 'Global Modules' WHERE PageID = 120
@@ -77,12 +80,20 @@ UPDATE rb_Pages SET PageName = 'Monitoring' WHERE PageID = 170
 GO
 
 DECLARE @ModuleID INT
-
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =170 AND ModuleDefId = 11)
+BEGIN
 EXEC rb_addModule 170,1,'Monitoring','ContentPane',11,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+END
 
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =170 AND ModuleDefId = 29)
+BEGIN
 EXEC rb_addModule 170,2,'Error Logs','ContentPane',29,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+END
 
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =170 AND ModuleDefId = 6)
+BEGIN
 EXEC rb_addModule 170,3,'Event Logs','ContentPane',6,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+END
 GO
 
 UPDATE rb_Modules SET [TabID] = 280 where TabID = 281
@@ -92,5 +103,19 @@ DELETE FROM rb_Modules WHERE tabid in (SELECT pageId FROM rb_pages WHERE ParentP
 GO
 
 DELETE FROM rb_Pages WHERE ParentPageID = 280
+GO
+
+/*01/07/2016*/
+DECLARE @ModuleID1 INT
+
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 1)
+BEGIN
+EXEC rb_addModule 180,1,'Add Module Control','ContentPane',1,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+END
+
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 9)
+BEGIN
+EXEC rb_addModule 180,2,'Module Definitions','ContentPane',9,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+END
 GO
 

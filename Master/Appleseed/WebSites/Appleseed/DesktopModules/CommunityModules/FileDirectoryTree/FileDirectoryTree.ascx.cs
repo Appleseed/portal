@@ -307,8 +307,8 @@ namespace Appleseed.Content.Web.Modules
                     Required = true,
                     Order = groupBase + 20,
                     Group = group,
-                    Value = Path.ApplicationRoot + "/portals"
-                };
+                    Value = Path.ApplicationRoot + "/rb_logs"
+            };
 
             // Changed to virutal root from physical
 

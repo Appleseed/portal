@@ -39,7 +39,7 @@
                 </a>
                 <ul id="left_admin_menu" class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="/100" class="dropdown-toggle"><span>Site Manager</span></a>
+                        <a href="/100" class="dropdown-toggle"><span>Administration</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/240">Site Settings</a></li>
                             <li><a href="/110">Page Manager</a></li>

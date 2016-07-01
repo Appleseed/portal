@@ -73,7 +73,7 @@ body {
   -webkit-transition: left 0.3s ease-in-out;
   -o-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease;
-  left: 70px;
+  left: 0px;
 }
 #left.show {
   left: 0px;
