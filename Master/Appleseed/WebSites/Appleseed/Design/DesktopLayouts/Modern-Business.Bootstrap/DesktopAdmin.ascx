@@ -41,7 +41,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/240">Site Settings</a></li>
                             <li><a href="/110">Page Manager</a></li>
-                            <li><a href="/281">User Manager</a></li>
+                            <li><a href="/280">User Manager</a></li>
                             <li><a href="/155">File Manager</a></li>
                             <!--<li><a href="/120">Global Modules</a></li>-->
                             <li><a href="/215">Recycle Bin</a></li>
