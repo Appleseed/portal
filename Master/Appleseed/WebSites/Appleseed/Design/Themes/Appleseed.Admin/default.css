@@ -331,7 +331,7 @@ header {
 	width:100%;
 	margin:0 auto ;
 	padding:0px 0px 0px 0px ;
-    position: relative;
+    /*position: relative;*/
     color: #999;
 }
 #footer_div p{

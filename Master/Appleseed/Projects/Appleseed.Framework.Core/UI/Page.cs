@@ -1688,8 +1688,8 @@ namespace Appleseed.Framework.Web.UI
             script.Append("<script type=\"text/javascript\">");
             script.Append("var _gaq = _gaq || [];");
             script.AppendFormat("_gaq.push(['_setAccount', '{0}']);", this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString());
+            script.Append("_gaq.push(['_setSiteSpeedSampleRate', 5]);");
             script.Append("_gaq.push(['_trackPageview']);");
-            script.Append("_gaq.push(['_trackPageLoadTime']);");
             if (Request.IsAuthenticated && useCustVars) {
                 var email = Membership.GetUser().Email;
                 var index = email.IndexOf('@');
