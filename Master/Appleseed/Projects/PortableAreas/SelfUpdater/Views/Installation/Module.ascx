@@ -167,7 +167,7 @@
 
 
 
-<input class="buttonAppliedChanges" type="button" value="Apply Changes" onclick="InstallPackages()" />
+<input class="buttonAppliedChanges CommandButton" type="button" value="Apply Changes" onclick="InstallPackages()" />
 
 
 <script type="text/javascript">
