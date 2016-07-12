@@ -1702,39 +1702,28 @@ namespace Appleseed.Framework.Web.UI
             var script = new StringBuilder();
 
             script.Append("<script type=\"text/javascript\">");
-            script.Append("var _gaq = _gaq || [];");
-            script.AppendFormat("_gaq.push(['_setAccount', '{0}']);", this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString());
-            script.Append("_gaq.push(['_setSiteSpeedSampleRate', 5]);");
-            script.Append("_gaq.push(['_trackPageview']);");
+            script.AppendLine("(function(i, s, o, g, r, a, m) {");
+            script.AppendLine("i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() {");
+            script.AppendLine("(i[r].q = i[r].q || []).push(arguments)");
+            script.AppendLine("}, i[r].l = 1 * new Date(); a = s.createElement(o),");
+            script.AppendLine("m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)");
+            script.AppendLine("})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');");
             if (Request.IsAuthenticated && useCustVars)
             {
+                script.AppendLine("ga('set', 'User Type1', 'Member');");
+                script.AppendLine("ga('set', 'Authenticated2', 'Yes');");
                 var email = Membership.GetUser().Email;
                 var index = email.IndexOf('@');
-
-                // Slot 1, visitor-level scope.
-                script.Append("_gaq.push(['_setCustomVar', 1, \"User Type\", \"Member\", 1]);");
-
-                // Slot 2, session-level scope.
-                script.Append("_gaq.push(['_setCustomVar', 2, \"Authenticated\", \"Yes\", 2]);");
                 if (index >= 0 && index < email.Length - 1)
                 {
-                    // Slot 3, visitor-level scope.
-                    script.Append("_gaq.push(['_setCustomVar', 3, \"Domain\", \"" + email.Substring(index + 1).ToLowerInvariant() + "\", 1]);");
+                    script.AppendLine("ga('set', 'Domain3', '" + email.Substring(index + 1).ToLowerInvariant() + "');");
                 }
             }
-            script.Append("(function() {");
-            script.Append("var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;");
-            script.Append("ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';");
-            script.Append("var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);");
-            script.Append("})();");
+
+            script.AppendLine("ga('create', '" + this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString() + "', 'auto',{'siteSpeedSampleRate': 10});");
+            script.AppendLine("ga('send', 'pageview');");
             script.Append("</script>");
 
-
-
-
-
-            // TODO: Add tracking variables
-            // Sets the script in the head
             if (Header != null)
                 Header.Controls.Add(new LiteralControl(script.ToString()));
 
