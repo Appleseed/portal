@@ -325,7 +325,7 @@ namespace Appleseed.Framework
             if (string.IsNullOrEmpty(currentAlias))
             {
                 // jes1111 - currentAlias = ConfigurationSettings.AppSettings["DefaultPortal"];
-                currentAlias = currentSetting != null ? currentSetting.PortalAlias : Config.DefaultPortal;
+                currentAlias = currentSetting != null && currentSetting.PortalAlias != null ? currentSetting.PortalAlias : Config.DefaultPortal;
             }
 
             // prepare for additional querystring values

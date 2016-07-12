@@ -283,6 +283,46 @@ namespace Appleseed.Framework.Site.Data
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public void DeletePageToRecycler(int pageId)
+        {
+            // Create Instance of Connection and Command Object
+            using (var connection = Config.SqlConnectionString)
+            using (var sqlCommand = new SqlCommand("rb_DeleteTabToRecycler", connection))
+            {
+                // Mark the Command as a SPROC
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                // Add Parameters to SPROC
+                var parameterPageId = new SqlParameter(StrPageId, SqlDbType.Int, 4) { Value = pageId };
+                sqlCommand.Parameters.Add(parameterPageId);
+
+                var paramDeletedBy = new SqlParameter("@DeletedBy", SqlDbType.NVarChar, 250)
+                {
+                    Value = Helpers.MailHelper.GetCurrentUserEmailAddress()
+                };
+                sqlCommand.Parameters.Add(paramDeletedBy);
+
+                var paramDeletedDate = new SqlParameter("@DateDeleted", SqlDbType.DateTime, 8)
+                {
+                    Value = DateTime.Now
+                };
+                sqlCommand.Parameters.Add(paramDeletedDate);
+
+                // Open the database connection and execute the command
+                connection.Open();
+                try
+                {
+                    sqlCommand.ExecuteNonQuery();
+                }
+                finally
+                {
+                }
+            }
+        }
+
+        /// <summary>
         /// This user control will render the breadcrumb navigation for the current tab.
         ///   Ver. 1.0 - 24. Dec. 2002 - First release by Cory Isakson
         /// </summary>
@@ -990,7 +1030,7 @@ namespace Appleseed.Framework.Site.Data
             }
             catch (Exception ex)
             {
-                ErrorHandler.Publish(LogLevel.Warn, "Get Dynamic Page Url - ",ex);
+                ErrorHandler.Publish(LogLevel.Warn, "Get Dynamic Page Url - ", ex);
             }
             return redirectToUrl;
         }
@@ -1046,7 +1086,7 @@ namespace Appleseed.Framework.Site.Data
             }
         }
 
-        
+
 
         /// <summary>
         /// Update dynamic friendly URL

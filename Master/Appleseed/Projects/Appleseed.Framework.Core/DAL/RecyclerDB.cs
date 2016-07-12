@@ -261,6 +261,87 @@ namespace Appleseed.Framework.Site.Data
             }
         }
 
+        /// <summary>
+        /// Get Pages from Recycle
+        /// </summary>
+        /// <param name="portalId"></param>
+        /// <param name="sortField"></param>
+        /// <returns></returns>
+        public static DataTable GetPagesInRecycler(int portalId, string sortField)
+        {
+            string StringsNoModule = "NO_MODULE";
+            // Create Instance of Connection and Command Object
+            using (var connection = Config.SqlConnectionString)
+            using (var command = new SqlDataAdapter("rb_GetPagesInRecycler", connection))
+            {
+                // Mark the Command as a SPROC
+                command.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                // Add Parameters to SPROC
+                var parameterModuleId = new SqlParameter("@PortalID", SqlDbType.Int, 4) { Value = portalId };
+                command.SelectCommand.Parameters.Add(parameterModuleId);
+
+                var parameterSortField = new SqlParameter("@SortField", SqlDbType.VarChar, 50) { Value = sortField };
+                command.SelectCommand.Parameters.Add(parameterSortField);
+
+                // Create and Fill the DataSet
+                using (var dataTable = new DataTable())
+                {
+                    try
+                    {
+                        command.Fill(dataTable);
+                    }
+                    finally
+                    {
+                    }
+
+                    // Translate
+                    foreach (var dr in dataTable.Rows.Cast<DataRow>().Where(dr => dr[1].ToString() == StringsNoModule))
+                    {
+                        dr[1] = General.GetString(StringsNoModule);
+                        break;
+                    }
+
+                    // Return the data reader
+                    return dataTable;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageId"></param>
+        /// <param name="parentId"></param>
+        public static void RestorePage(int pageId, int parentId)
+        {
+            // Create Instance of Connection and Command Object
+            using (var connection = Config.SqlConnectionString)
+            using (var command = new SqlCommand("rb_RestoreTab", connection))
+            {
+                // Mark the Command as a SPROC
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Add Parameters to SPROC
+                var parameterModuleId = new SqlParameter("@PageID", SqlDbType.Int, 4) { Value = pageId };
+                command.Parameters.Add(parameterModuleId);
+
+                var parameterTabId = new SqlParameter("@ParentID", SqlDbType.Int, 4) { Value = parentId };
+                command.Parameters.Add(parameterTabId);
+
+                connection.Open();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    ErrorHandler.Publish(
+                        LogLevel.Warn, "An Error Occurred in RestorePage. Parameter : " + pageId, ex);
+                }
+            }
+        }
+
         #endregion
     }
 }

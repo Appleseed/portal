@@ -2,6 +2,9 @@
     language="c#" Codebehind="view.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
+    <h3>Recycler Restore</h3>
+    <hr />
+    <h4 id="selecteditem" runat="server">Selected Page - Xyz </h4>
         <asp:panel id="pnlMain" runat="server" visible="True">
             <table cellpadding="0" cellspacing="0" class="PrintPage" width="100%">
                 <tr>

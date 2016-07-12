@@ -243,7 +243,9 @@ namespace PageManagerTree.Controllers
                 if ((UserProfile.isCurrentUserAdmin) || UserProfile.CurrentUser.HasPermission(AccessPermissions.PAGE_DELETION))
                 {
                     var tabs = new PagesDB();
-                    tabs.DeletePage(id);
+                    // tabs.DeletePage(id);
+                    // Add to recycle
+                    tabs.DeletePageToRecycler(id);
                     return Json(new { error = false });
                 }
                 else

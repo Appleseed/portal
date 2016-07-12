@@ -16,7 +16,7 @@ namespace Appleseed.Framework.Web.UI
     /// <summary>
     /// The view item page.
     /// </summary>
-    [History("jviladiu@portalServices.net", "2004/07/22", 
+    [History("jviladiu@portalServices.net", "2004/07/22",
         "Added Security Access. Now inherits from Appleseed.Framework.UI.SecurePage")]
     [History("jviladiu@portalServices.net", "2004/07/22", "Clean Methods that only call to base")]
     public class ViewItemPage : SecurePage
@@ -28,12 +28,16 @@ namespace Appleseed.Framework.Web.UI
         /// </summary>
         protected override void LoadSettings()
         {
-            // Verify that the current user has access to view this module
-            if (PortalSecurity.HasViewPermissions(this.ModuleID) == false)
+            if (this.ModuleID > 0)
             {
-                // Removed by Mario Endara <mario@softworks.com.uy> (2004/11/04)
-                // && PortalSecurity.IsInRoles("Admins") == false)
-                PortalSecurity.AccessDenied();
+
+                // Verify that the current user has access to view this module
+                if (PortalSecurity.HasViewPermissions(this.ModuleID) == false)
+                {
+                    // Removed by Mario Endara <mario@softworks.com.uy> (2004/11/04)
+                    // && PortalSecurity.IsInRoles("Admins") == false)
+                    PortalSecurity.AccessDenied();
+                }
             }
 
             base.LoadSettings();

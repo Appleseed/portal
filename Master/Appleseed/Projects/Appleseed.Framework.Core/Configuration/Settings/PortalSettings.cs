@@ -2828,6 +2828,9 @@ namespace Appleseed.Framework.Site.Configuration
 
         private static string GetPortalSettingsCacheKey(int pageId, string portalAlias)
         {
+            if (string.IsNullOrEmpty(portalAlias)) {
+                portalAlias = string.Empty;
+            }
             return String.Format("{0}_{1}_{2}", GetPortalSettingsCacheKeyPrefix(), portalAlias.ToLower(), pageId);
         }
 

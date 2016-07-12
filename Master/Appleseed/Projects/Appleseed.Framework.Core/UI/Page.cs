@@ -39,7 +39,7 @@ namespace Appleseed.Framework.Web.UI
     using Appleseed.Framework.Site.Data;
 
     using Path = Appleseed.Framework.Settings.Path;
-	using System.Web.Security;
+    using System.Web.Security;
     using Newtonsoft.Json.Linq;
     using System.Data.SqlClient;
 
@@ -569,7 +569,7 @@ namespace Appleseed.Framework.Web.UI
             {
                 return this.page ?? (this.page = this.PageID > 0
                                                      ? // _Page = Page.GetPageCustomSettings(PageID);
-                    // _Page = Page.GetPageCustomSettings(PageID);
+                                                       // _Page = Page.GetPageCustomSettings(PageID);
                                                  this.PortalSettings.ActivePage.GetPageCustomSettings(this.PageID)
                                                      : // Or provides an empty hash table
                                                  new Dictionary<string, ISettingItem>());
@@ -1044,7 +1044,7 @@ namespace Appleseed.Framework.Web.UI
                 this.Header.Controls.Add(new LiteralControl(metaElement + "\n"));
             }
 
-             //ADD THE CSS <LINK> ELEMENT(S)
+            //ADD THE CSS <LINK> ELEMENT(S)
             if (ConfigurationManager.AppSettings["CSSLoadTop"] == null || !bool.Parse(ConfigurationManager.AppSettings["CSSLoadTop"]))
             {
                 foreach (string cssFile in this.cssFileList.Values)
@@ -1079,13 +1079,13 @@ namespace Appleseed.Framework.Web.UI
                 sb.AppendLine("</style>");
 
                 //CSS - custom CSS loaded from the TabMenu - Done by Ashish Patel on 28/05/15
-                
+
                 SqlDataReader dr = Appleseed.Framework.Site.Data.TabSettings.CSSDataReader(PortalSettings.ActivePage.PageID, "TabLinkCSS");
-                
+
                 while (dr.Read())
                 {
                     sb.AppendLine("<style type=\"text/css\">");
-                    sb.AppendLine (dr[0].ToString());
+                    sb.AppendLine(dr[0].ToString());
                     sb.AppendLine("</style>");
                 }
 
@@ -1101,19 +1101,19 @@ namespace Appleseed.Framework.Web.UI
             }
         }
 
-       /* protected virtual void BuildDefaultCss()
-        {
-            
-            // ADD THE CSS <LINK> ELEMENT(S)
-            foreach (string cssFile in this.cssFileList.Values)
-            {
-                this.Header.Controls.Add(
-                    new LiteralControl(
-                        string.Format("<link rel=\"stylesheet\" href=\"{0}\" type=\"text/css\"/>\n", cssFile)));
-            }
+        /* protected virtual void BuildDefaultCss()
+         {
 
-            
-        }*/
+             // ADD THE CSS <LINK> ELEMENT(S)
+             foreach (string cssFile in this.cssFileList.Values)
+             {
+                 this.Header.Controls.Add(
+                     new LiteralControl(
+                         string.Format("<link rel=\"stylesheet\" href=\"{0}\" type=\"text/css\"/>\n", cssFile)));
+             }
+
+
+         }*/
 
         /// <summary>
         /// Loads the settings.
@@ -1223,18 +1223,21 @@ namespace Appleseed.Framework.Web.UI
         /// </param>
         protected virtual void OnCancel(EventArgs e)
         {
-            if (Request.QueryString.GetValues("ModalChangeMaster") == null) {
-                if (this.Cancel != null) {
+            if (Request.QueryString.GetValues("ModalChangeMaster") == null)
+            {
+                if (this.Cancel != null)
+                {
                     this.Cancel(this, e); // Invokes the delegates
                 }
 
                 // any other code goes here
                 this.RedirectBackToReferringPage();
-            } else if (Request.QueryString.GetValues("camefromEditPage") != null)
+            }
+            else if (Request.QueryString.GetValues("camefromEditPage") != null)
                 this.RedirectBackToReferringPage();
             else
                 Response.Write("<script type=\"text/javascript\">window.parent.$('#iframemodal').dialog(\"close\");</script>");
-            
+
         }
 
         /// <summary>
@@ -1270,7 +1273,7 @@ namespace Appleseed.Framework.Web.UI
             this.OnFlushCache();
 
             // Verify that the current user has access to delete in this module
-            if (PortalSecurity.HasDeletePermissions(this.ModuleID) == false)
+            if (this.ModuleID > 0 && PortalSecurity.HasDeletePermissions(this.ModuleID) == false)
             {
                 PortalSecurity.AccessDeniedEdit();
             }
@@ -1317,12 +1320,13 @@ namespace Appleseed.Framework.Web.UI
         /// prerender event
         /// </summary>
         /// <param name="e">an instance of EventArgs</param>
-        protected override void OnPreRender(EventArgs e) {
+        protected override void OnPreRender(EventArgs e)
+        {
 
-            if(Request.Browser.Browser.ToString().ToLower().Contains("ie"))
-                HttpContext.Current.Response.AddHeader("p3p", "CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""); 
-                //Response.AppendHeader("P3P", "CP=\"CAO PSA OUR\"");
-            
+            if (Request.Browser.Browser.ToString().ToLower().Contains("ie"))
+                HttpContext.Current.Response.AddHeader("p3p", "CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\"");
+            //Response.AppendHeader("P3P", "CP=\"CAO PSA OUR\"");
+
             base.OnPreRender(e);
         }
 
@@ -1337,35 +1341,43 @@ namespace Appleseed.Framework.Web.UI
         protected override void OnInit(EventArgs e)
         {
             bool FacebookSetting = false;
-            try{
+            try
+            {
                 if (PageSettings.ContainsKey("FB_LikeGate_Page") &&
                    !string.IsNullOrEmpty(PageSettings["FB_LikeGate_Page"].ToString()) &&
                     int.Parse(PageSettings["FB_LikeGate_Page"].ToString()) != -1
                     )
                     FacebookSetting = true;
             }
-            catch(Exception){
+            catch (Exception)
+            {
                 FacebookSetting = false;
-            }            
-            
-            if (FacebookSetting) {
-                if (Request.QueryString["signed_request"] != null) {
+            }
+
+            if (FacebookSetting)
+            {
+                if (Request.QueryString["signed_request"] != null)
+                {
 
                     // Decode signed_request value and saved it in session
                     userLikedPage();
 
                 }
 
-                if (Session["FacebookLikeGate"] != null) {
+                if (Session["FacebookLikeGate"] != null)
+                {
 
                     bool liked = false;
-                    try {
+                    try
+                    {
                         liked = (bool)Session["FacebookLikeGate"];
                     }
-                    catch (Exception) {
+                    catch (Exception)
+                    {
                         liked = false;
                     }
-                    if (!liked) {
+                    if (!liked)
+                    {
 
                         int id = int.Parse(PageSettings["FB_LikeGate_Page"].ToString());
                         string url = HttpUrlBuilder.BuildUrl(id);
@@ -1373,11 +1385,11 @@ namespace Appleseed.Framework.Web.UI
                         Response.Redirect(url);
                         //}
                     }
-                    
+
                 }
-                
+
             }
-            
+
 
 
             this.LoadSettings();
@@ -1441,7 +1453,7 @@ namespace Appleseed.Framework.Web.UI
             }
 
             this.ModuleGuidInCookie();
-          
+
             //// AddThis
             //if (!this.Page.ClientScript.IsStartupScriptRegistered("ADD_THIS"))
             //{
@@ -1514,16 +1526,20 @@ namespace Appleseed.Framework.Web.UI
         {
             // TODO : Assign masters and themes here... :-)
             //// this.Theme = "Default";
-            if (Request.QueryString.GetValues("ModalChangeMaster") == null) {
-                if (this.PortalSettings != null) {
+            if (Request.QueryString.GetValues("ModalChangeMaster") == null)
+            {
+                if (this.PortalSettings != null)
+                {
                     var masterLayoutPath = string.Concat(this.PortalSettings.PortalLayoutPath, this.MasterpageBasePage);
                     if (HttpContext.Current != null &&
-                        (File.Exists(HttpContext.Current.Server.MapPath(masterLayoutPath)) && this.Page.Master != null)) {
+                        (File.Exists(HttpContext.Current.Server.MapPath(masterLayoutPath)) && this.Page.Master != null))
+                    {
                         this.Page.MasterPageFile = masterLayoutPath;
                         this.IsMasterPageLayout = true;
                     }
                 }
-            } else {
+            }
+            else {
                 //TO DO
                 //Find the layout master for modals, if it don't exists set the default Modal Master
                 this.Page.MasterPageFile = "~/Shared/ModalMaster.Master";
@@ -1684,22 +1700,24 @@ namespace Appleseed.Framework.Web.UI
 
 
             var script = new StringBuilder();
-            
+
             script.Append("<script type=\"text/javascript\">");
             script.Append("var _gaq = _gaq || [];");
             script.AppendFormat("_gaq.push(['_setAccount', '{0}']);", this.PortalSettings.CustomSettings["SITESETTINGS_GOOGLEANALYTICS"].ToString());
             script.Append("_gaq.push(['_setSiteSpeedSampleRate', 5]);");
             script.Append("_gaq.push(['_trackPageview']);");
-            if (Request.IsAuthenticated && useCustVars) {
+            if (Request.IsAuthenticated && useCustVars)
+            {
                 var email = Membership.GetUser().Email;
                 var index = email.IndexOf('@');
 
                 // Slot 1, visitor-level scope.
                 script.Append("_gaq.push(['_setCustomVar', 1, \"User Type\", \"Member\", 1]);");
-                
+
                 // Slot 2, session-level scope.
                 script.Append("_gaq.push(['_setCustomVar', 2, \"Authenticated\", \"Yes\", 2]);");
-                if (index >= 0 && index < email.Length - 1) {
+                if (index >= 0 && index < email.Length - 1)
+                {
                     // Slot 3, visitor-level scope.
                     script.Append("_gaq.push(['_setCustomVar', 3, \"Domain\", \"" + email.Substring(index + 1).ToLowerInvariant() + "\", 1]);");
                 }
@@ -1717,9 +1735,9 @@ namespace Appleseed.Framework.Web.UI
 
             // TODO: Add tracking variables
             // Sets the script in the head
-            if(Header != null)
+            if (Header != null)
                 Header.Controls.Add(new LiteralControl(script.ToString()));
-            
+
         }
 
         /// <summary>
@@ -1737,13 +1755,16 @@ namespace Appleseed.Framework.Web.UI
         }
 
 
-        private void InsertSnapEngageScript() {
+        private void InsertSnapEngageScript()
+        {
 
-            try {
+            try
+            {
 
                 if (this.PortalSettings == null ||
                      !this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_SNAPENGAGE") ||
-                      this.PortalSettings.CustomSettings["SITESETTINGS_SNAPENGAGE"].ToString().Equals(string.Empty)) {
+                      this.PortalSettings.CustomSettings["SITESETTINGS_SNAPENGAGE"].ToString().Equals(string.Empty))
+                {
                     return;
                 }
 
@@ -1761,10 +1782,12 @@ namespace Appleseed.Framework.Web.UI
                 var container = Page.Controls[0];
                 c = FindClosingBodyLiteral(container);
 
-                if (c == null) {
+                if (c == null)
+                {
                     c = FindClosingBodyLiteral(Page);
                 }
-                if (c != null) {
+                if (c != null)
+                {
                     script.Append(c.Text);
                     c.Text = script.ToString();
                 }
@@ -1773,26 +1796,31 @@ namespace Appleseed.Framework.Web.UI
                     var controlCollection = Page.Controls[0].Controls;
                     var insertAt = controlCollection.Count; //get last control in page
                     //if (insertAt > 2) insertAt = insertAt - 2; // try to skip closing html and body tags
-                    if (insertAt == 0) {
+                    if (insertAt == 0)
+                    {
                         controlCollection = Page.Controls;
                         insertAt = controlCollection.Count;
                     }
                     controlCollection.AddAt(insertAt, new LiteralControl(script.ToString()));
                 }
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 ErrorHandler.Publish(LogLevel.Error, "Error adding SnapEngage script", e);
             }
         }
 
-        private LiteralControl FindClosingBodyLiteral(Control container) {
+        private LiteralControl FindClosingBodyLiteral(Control container)
+        {
             LiteralControl c = null;
             var literals = FindControls<LiteralControl>(container);
             literals.Reverse();
 
-            foreach (LiteralControl ctrl in literals) {
+            foreach (LiteralControl ctrl in literals)
+            {
 
-                if (ctrl.Text.Contains("</body>")) {
+                if (ctrl.Text.Contains("</body>"))
+                {
                     c = ctrl;
                     break;
                 }
@@ -1822,7 +1850,7 @@ namespace Appleseed.Framework.Web.UI
                 if (c is T)
                     foundControls.Add((T)c);
                 else if (c.Controls.Count > 0)
-                    FindControls<T>(c, foundControls);                
+                    FindControls<T>(c, foundControls);
             }
         }
 
@@ -1830,11 +1858,13 @@ namespace Appleseed.Framework.Web.UI
 
         #region Facebook_LikeGate
 
-        private void userLikedPage() {
+        private void userLikedPage()
+        {
 
 
-            try {
-                
+            try
+            {
+
                 string payload = Request.QueryString["signed_request"].Split('.')[1];
                 var encoding = new UTF8Encoding();
                 var decodedJson = payload.Replace("=", string.Empty).Replace('-', '+').Replace('_', '/');
@@ -1849,14 +1879,15 @@ namespace Appleseed.Framework.Web.UI
 
                 Session.Add("FacebookLikeGate", like);
 
-                
-                
+
+
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 ErrorHandler.Publish(LogLevel.Error, ex);
-                
+
             }
-            
+
         }
 
         #endregion
