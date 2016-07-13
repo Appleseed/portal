@@ -70,12 +70,6 @@
                 <asp:DropDownList ID="drpVirsionList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="drpVirsionList_SelectedIndexChanged" />
                 <asp:Button ID="btnPsVersion" Text="Publish this Version" runat="server" OnClick="btnPsVersion_Click" />
                 <asp:Button ID="btnHsVersion" Text="Version History" runat="server" OnClick="btnHsVersion_Click" />
-                <a href="/DesktopModules/CoreModules/FileManager/FileManagerPopup.aspx?mID=155&ModalChangeMaster=true" onclick="openModelInModal('/DesktopModules/CoreModules/FileManager/FileManagerPopup.aspx?mID=155&ModalChangeMaster=true','File Manager');return false;" title="Open File Manager" style="display: block" class="rb_mod_btn btn-img-only CommandButton">
-                    <%--<img src="/DesktopModules/CoreModules/FileManager/images/FileManager.png"
-                        alt="Edit" style="border-style: None; height: 23px; width: 23px; border-width: 0px;">--%>
-                    File Manager
-                </a>
-           
         </div>
     </div>
 </asp:Content>
