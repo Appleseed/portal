@@ -169,68 +169,68 @@ namespace Appleseed.Framework.Site.Configuration
 
                 // Add Parameters to SPROC
                 var parameterPortalAlias = new SqlParameter("@PortalAlias", SqlDbType.NVarChar, 128)
-                    {
-                        Value = portalAlias // Specify the Portal Alias Dynamically 
-                    };
+                {
+                    Value = portalAlias // Specify the Portal Alias Dynamically 
+                };
                 command.Parameters.Add(parameterPortalAlias);
                 var parameterPageId = new SqlParameter(StringsAtPageId, SqlDbType.Int, 4) { Value = pageId };
                 command.Parameters.Add(parameterPageId);
                 var parameterPortalLanguage = new SqlParameter("@PortalLanguage", SqlDbType.NVarChar, 12)
-                    {
-                        Value = this.PortalContentLanguage.Name
-                    };
+                {
+                    Value = this.PortalContentLanguage.Name
+                };
                 command.Parameters.Add(parameterPortalLanguage);
 
                 // Add out parameters to Sproc
                 var parameterPortalId = new SqlParameter(StringsAtPortalId, SqlDbType.Int, 4)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterPortalId);
                 var parameterPortalName = new SqlParameter("@PortalName", SqlDbType.NVarChar, 128)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterPortalName);
                 var parameterPortalPath = new SqlParameter("@PortalPath", SqlDbType.NVarChar, 128)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterPortalPath);
                 var parameterEditButton = new SqlParameter("@AlwaysShowEditButton", SqlDbType.Bit, 1)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterEditButton);
                 var parameterPageName = new SqlParameter("@PageName", SqlDbType.NVarChar, 200)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterPageName);
                 var parameterPageOrder = new SqlParameter("@PageOrder", SqlDbType.Int, 4)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterPageOrder);
                 var parameterParentPageId = new SqlParameter("@ParentPageID", SqlDbType.Int, 4)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterParentPageId);
                 var parameterMobilePageName = new SqlParameter("@MobilePageName", SqlDbType.NVarChar, 200)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterMobilePageName);
                 var parameterAuthRoles = new SqlParameter("@AuthRoles", SqlDbType.NVarChar, 512)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterAuthRoles);
                 var parameterShowMobile = new SqlParameter("@ShowMobile", SqlDbType.Bit, 1)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
+                {
+                    Direction = ParameterDirection.Output
+                };
                 command.Parameters.Add(parameterShowMobile);
                 var parameterFriendURL = new SqlParameter("@FriendURL", SqlDbType.NVarChar, 1024)
                 {
@@ -252,15 +252,15 @@ namespace Appleseed.Framework.Site.Configuration
                     while (result.Read())
                     {
                         var tabDetails = new PageStripDetails
-                            {
-                                PageID = (int)result["PageID"],
-                                ParentPageID = Int32.Parse("0" + result["ParentPageID"]),
-                                PageName = (string)result["PageName"],
-                                FriendlyURL = (string)result["FriendlyURL"],
-                                PageOrder = (int)result["PageOrder"],
-                                PageLayout = this.CurrentLayout,
-                                AuthorizedRoles = (string)result["AuthorizedRoles"]
-                            };
+                        {
+                            PageID = (int)result["PageID"],
+                            ParentPageID = Int32.Parse("0" + result["ParentPageID"]),
+                            PageName = (string)result["PageName"],
+                            FriendlyURL = (string)result["FriendlyURL"],
+                            PageOrder = (int)result["PageOrder"],
+                            PageLayout = this.CurrentLayout,
+                            AuthorizedRoles = (string)result["AuthorizedRoles"]
+                        };
                         this.PortalAlias = portalAlias;
 
                         // Update the AuthorizedRoles Variable
@@ -280,13 +280,13 @@ namespace Appleseed.Framework.Site.Configuration
                     while (result.Read())
                     {
                         var tabDetails = new PageStripDetails
-                            {
-                                PageID = (int)result["PageID"],
-                                PageName = (string)result["MobilePageName"],
-                                FriendlyURL = (string)result["FriendlyURL"],
-                                PageLayout = this.CurrentLayout,
-                                AuthorizedRoles = (string)result["AuthorizedRoles"]
-                            };
+                        {
+                            PageID = (int)result["PageID"],
+                            PageName = (string)result["MobilePageName"],
+                            FriendlyURL = (string)result["FriendlyURL"],
+                            PageLayout = this.CurrentLayout,
+                            AuthorizedRoles = (string)result["AuthorizedRoles"]
+                        };
                         this.MobilePages.Add(tabDetails);
                     }
 
@@ -296,14 +296,14 @@ namespace Appleseed.Framework.Site.Configuration
                     while (result.Read())
                     {
                         var m = new ModuleSettings
-                            {
-                                ModuleID = (int)result["ModuleID"],
-                                ModuleDefID = (int)result["ModuleDefID"],
-                                GuidID = (Guid)result["GeneralModDefID"],
-                                PageID = (int)result["TabID"],
-                                PaneName = (string)result["PaneName"],
-                                ModuleTitle = (string)result["ModuleTitle"]
-                            };
+                        {
+                            ModuleID = (int)result["ModuleID"],
+                            ModuleDefID = (int)result["ModuleDefID"],
+                            GuidID = (Guid)result["GeneralModDefID"],
+                            PageID = (int)result["TabID"],
+                            PaneName = (string)result["PaneName"],
+                            ModuleTitle = (string)result["ModuleTitle"]
+                        };
                         var value = result["AuthorizedEditRoles"];
                         m.AuthorizedEditRoles = !Convert.IsDBNull(value) ? (string)value : string.Empty;
                         value = result["AuthorizedViewRoles"];
@@ -412,7 +412,7 @@ namespace Appleseed.Framework.Site.Configuration
 
                     throw new DatabaseUnreachableException("This may be a new db", sqex);
 
-                   // return;
+                    // return;
                 }
                 finally
                 {
@@ -1511,61 +1511,61 @@ namespace Appleseed.Framework.Site.Configuration
                 var image =
                     new SettingItem<string, TextBox>(
                         new UploadedFileDataType(Path.WebPathCombine(Path.ApplicationRoot, portalPath)))
-                        {
-                            Order = groupOrderBase + 5,
-                            Group = group,
-                            EnglishName = "Logo",
-                            Description =
+                    {
+                        Order = groupOrderBase + 5,
+                        Group = group,
+                        EnglishName = "Logo",
+                        Description =
                                 "Enter the name of logo file here. The logo will be searched in your portal dir. For the default portal is (~/_Appleseed)."
-                        };
+                    };
 
                 baseSettings.Add("SITESETTINGS_LOGO", image);
 
                 // ArrayList layoutList = new LayoutManager(PortalPath).GetLayouts();
                 var tabLayoutSetting =
                     new SettingItem<string, ListControl>(new CustomListDataType(layoutList, StringsName, StringsName))
-                        {
-                            Value = "Default",
-                            Order = groupOrderBase + 10,
-                            Group = group,
-                            EnglishName = "Page layout",
-                            Description = "Specify the site level page layout here."
-                        };
+                    {
+                        Value = "Default",
+                        Order = groupOrderBase + 10,
+                        Group = group,
+                        EnglishName = "Page layout",
+                        Description = "Specify the site level page layout here."
+                    };
                 baseSettings.Add("SITESETTINGS_PAGE_LAYOUT", tabLayoutSetting);
 
                 // ArrayList themeList = new ThemeManager(PortalPath).GetThemes();
                 var theme =
                     new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
-                        {
-                            Required = true,
-                            Order = groupOrderBase + 15,
-                            Group = group,
-                            EnglishName = "Theme",
-                            Description = "Specify the site level theme here."
-                        };
+                    {
+                        Required = true,
+                        Order = groupOrderBase + 15,
+                        Group = group,
+                        EnglishName = "Theme",
+                        Description = "Specify the site level theme here."
+                    };
                 baseSettings.Add("SITESETTINGS_THEME", theme);
 
                 // SettingItem ThemeAlt = new SettingItem(new CustomListDataType(new ThemeManager(PortalPath).GetThemes(), strName, strName));
                 var themeAlt =
                     new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
-                        {
-                            Required = true,
-                            Order = groupOrderBase + 20,
-                            Group = group,
-                            EnglishName = "Alternate theme",
-                            Description = "Specify the site level alternate theme here."
-                        };
+                    {
+                        Required = true,
+                        Order = groupOrderBase + 20,
+                        Group = group,
+                        EnglishName = "Alternate theme",
+                        Description = "Specify the site level alternate theme here."
+                    };
                 baseSettings.Add("SITESETTINGS_ALT_THEME", themeAlt);
 
                 // Jes1111 - 2004-08-06 - Zen support
                 var allowModuleCustomThemes = new SettingItem<bool, CheckBox>
-                    {
-                        Order = groupOrderBase + 25,
-                        Group = group,
-                        Value = true,
-                        EnglishName = "Allow Module Custom Themes?",
-                        Description = "Select to allow Custom Theme to be set on Modules."
-                    };
+                {
+                    Order = groupOrderBase + 25,
+                    Group = group,
+                    Value = true,
+                    EnglishName = "Allow Module Custom Themes?",
+                    Description = "Select to allow Custom Theme to be set on Modules."
+                };
                 baseSettings.Add("SITESETTINGS_ALLOW_MODULE_CUSTOM_THEMES", allowModuleCustomThemes);
 
                 //Ashish.patel@haptix.biz - 2014/12/10 - Add Textbox for enter the path for user specific jQuery
@@ -1594,32 +1594,44 @@ namespace Appleseed.Framework.Site.Configuration
                 groupOrderBase = (int)SettingItemGroup.SECURITY_USER_SETTINGS;
                 group = SettingItemGroup.SECURITY_USER_SETTINGS;
 
+                // checkbox for enable private site
+                //Ashish.patel@haptix.biz - 2016/07/07 - To may site private
+                var enablePrivateSite = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 4,
+                    Group = group,
+                    EnglishName = "Private Site",
+                    Description = "This will make entire site as private which require to login",
+                    Value = false
+                };
+                baseSettings.Add("ENABLE_PRIVATE_SITE", enablePrivateSite);
+
                 // Show input for Portal Administrators when using Windows Authentication and Multi-portal
                 // cisakson@yahoo.com 28.April.2003
                 // This setting is removed in Global.asa for non-Windows authentication sites.
                 var portalAdmins = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 5,
-                        Group = group,
-                        Value = Config.ADAdministratorGroup,
-                        Required = false,
-                        Description =
+                {
+                    Order = groupOrderBase + 5,
+                    Group = group,
+                    Value = Config.ADAdministratorGroup,
+                    Required = false,
+                    Description =
                             "Show input for Portal Administrators when using Windows Authentication and Multi-portal"
-                    };
+                };
 
                 // jes1111 - PortalAdmins.Value = ConfigurationSettings.AppSettings["ADAdministratorGroup"];
                 baseSettings.Add("WindowsAdmins", portalAdmins);
 
                 // Allow new registrations?
                 var allowNewRegistrations = new SettingItem<bool, CheckBox>
-                    {
-                        Order = groupOrderBase + 10,
-                        Group = group,
-                        Value = true,
-                        EnglishName = "Allow New Registrations?",
-                        Description =
+                {
+                    Order = groupOrderBase + 10,
+                    Group = group,
+                    Value = true,
+                    EnglishName = "Allow New Registrations?",
+                    Description =
                             "Check this to allow users register themselves. Leave blank for register through User Manager only."
-                    };
+                };
                 baseSettings.Add("SITESETTINGS_ALLOW_NEW_REGISTRATION", allowNewRegistrations);
 
                 // MH: added dynamic load of register types depending on the  content in the DesktopModules/Register/ folder
@@ -1644,64 +1656,64 @@ namespace Appleseed.Framework.Site.Configuration
 
                 // Register Layout Setting
                 var regType = new SettingItem<string, ListControl>(new CustomListDataType(regPages, "Key", "Value"))
-                    {
-                        Required = true,
-                        Value = "RegisterFull.ascx",
-                        EnglishName = "Register Type",
-                        Description = "Choose here how Register Page should look like.",
-                        Order = groupOrderBase + 15,
-                        Group = group
-                    };
+                {
+                    Required = true,
+                    Value = "RegisterFull.ascx",
+                    EnglishName = "Register Type",
+                    Description = "Choose here how Register Page should look like.",
+                    Order = groupOrderBase + 15,
+                    Group = group
+                };
                 baseSettings.Add("SITESETTINGS_REGISTER_TYPE", regType);
 
                 // MH:end
                 // Register Layout Setting module id reference by manu
                 var regModuleId = new SettingItem<int, TextBox>
-                    {
-                        Value = 0,
-                        Required = true,
-                        Order = groupOrderBase + 16,
-                        Group = group,
-                        EnglishName = "Register Module ID",
-                        Description =
+                {
+                    Value = 0,
+                    Required = true,
+                    Order = groupOrderBase + 16,
+                    Group = group,
+                    EnglishName = "Register Module ID",
+                    Description =
                             "Some custom registration may require additional settings, type here the ID of the module from where we should load settings (0= not used). Usually this module is added in an hidden area."
-                    };
+                };
                 baseSettings.Add("SITESETTINGS_REGISTER_MODULEID", regModuleId);
 
                 // Send mail on new registration to
                 var onRegisterSendTo = new SettingItem<string, TextBox>
-                    {
-                        Value = string.Empty,
-                        Required = false,
-                        Order = groupOrderBase + 17,
-                        Group = group,
-                        EnglishName = "Send Mail To",
-                        Description = "On new registration a mail will be send to the email address you provide here."
-                    };
+                {
+                    Value = string.Empty,
+                    Required = false,
+                    Order = groupOrderBase + 17,
+                    Group = group,
+                    EnglishName = "Send Mail To",
+                    Description = "On new registration a mail will be send to the email address you provide here."
+                };
                 baseSettings.Add("SITESETTINGS_ON_REGISTER_SEND_TO", onRegisterSendTo);
 
                 // Send mail on new registration to User from
                 var onRegisterSendFrom = new SettingItem<string, TextBox>
-                    {
-                        Value = string.Empty,
-                        Required = false,
-                        Order = groupOrderBase + 18,
-                        Group = group,
-                        EnglishName = "Send Mail From",
-                        Description =
+                {
+                    Value = string.Empty,
+                    Required = false,
+                    Order = groupOrderBase + 18,
+                    Group = group,
+                    EnglishName = "Send Mail From",
+                    Description =
                             "On new registration a mail will be send to the new user from the email address you provide here."
-                    };
+                };
                 baseSettings.Add("SITESETTINGS_ON_REGISTER_SEND_FROM", onRegisterSendFrom);
 
                 // Terms of service
                 var termsOfService = new SettingItem<string, TextBox>(new PortalUrlDataType())
-                    {
-                        Order = groupOrderBase + 20,
-                        Group = group,
-                        EnglishName = "Terms file name",
-                        Description =
+                {
+                    Order = groupOrderBase + 20,
+                    Group = group,
+                    EnglishName = "Terms file name",
+                    Description =
                             "Type here a file name used for showing terms and condition in each register page. Provide localized version adding _<culturename>. E.g. Terms.txt, will search for Terms.txt and for Terms_en-US.txt"
-                    };
+                };
                 baseSettings.Add("SITESETTINGS_TERMS_OF_SERVICE", termsOfService);
 
                 var loginPages = new Hashtable();
@@ -1717,14 +1729,14 @@ namespace Appleseed.Framework.Site.Configuration
                 }
 
                 var logonType = new SettingItem<string, ListControl>(new CustomListDataType(loginPages, "Key", "Value"))
-                    {
-                        Required = false,
-                        Value = "Signin.ascx",
-                        EnglishName = "Login Type",
-                        Description = "Choose here how login Page should look like.",
-                        Order = groupOrderBase + 21,
-                        Group = group
-                    };
+                {
+                    Required = false,
+                    Value = "Signin.ascx",
+                    EnglishName = "Login Type",
+                    Description = "Choose here how login Page should look like.",
+                    Order = groupOrderBase + 21,
+                    Group = group
+                };
                 baseSettings.Add("SITESETTINGS_LOGIN_TYPE", logonType);
 
                 // ReCaptcha public and private key
@@ -1837,25 +1849,25 @@ namespace Appleseed.Framework.Site.Configuration
 
                 // added: Jes1111 - page DOCTYPE setting
                 var docType = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 5,
-                        Group = group,
-                        EnglishName = "DOCTYPE string",
-                        Description =
+                {
+                    Order = groupOrderBase + 5,
+                    Group = group,
+                    EnglishName = "DOCTYPE string",
+                    Description =
                             "Allows you to enter a DOCTYPE string which will be inserted as the first line of the HTML output page (i.e. above the <html> element). Use this to force Quirks or Standards mode, particularly in IE. See <a href=\"http://gutfeldt.ch/matthias/articles/doctypeswitch/table.html\" target=\"_blank\">here</a> for details. NOTE: Appleseed.Zen requires a setting that guarantees Standards mode on all browsers.",
-                        Value = string.Empty
-                    };
+                    Value = string.Empty
+                };
 
                 baseSettings.Add("SITESETTINGS_DOCTYPE", docType);
 
                 // by John Mandia <john.mandia@whitelightsolutions.com>
                 var tabTitle = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 10,
-                        Group = group,
-                        EnglishName = "Page title",
-                        Description = "Allows you to enter a default tab / page title (Shows at the top of your browser)."
-                    };
+                {
+                    Order = groupOrderBase + 10,
+                    Group = group,
+                    EnglishName = "Page title",
+                    Description = "Allows you to enter a default tab / page title (Shows at the top of your browser)."
+                };
                 baseSettings.Add("SITESETTINGS_PAGE_TITLE", tabTitle);
 
                 /*
@@ -1870,36 +1882,36 @@ namespace Appleseed.Framework.Site.Configuration
                 BaseSettings.Add("SITESETTINGS_PAGE_URL_KEYWORD", TabUrlKeyword);
                 */
                 var tabMetaKeyWords = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 15,
-                        Group = group,
-                        EnglishName = "Page keywords",
-                        Description =
+                {
+                    Order = groupOrderBase + 15,
+                    Group = group,
+                    EnglishName = "Page keywords",
+                    Description =
                             "This setting is to help with search engine optimisation. Enter 1-15 Default Keywords that represent what your site is about."
-                    };
+                };
 
                 // john.mandia@whitelightsolutions.com: No Default Value In Case People Don't want Meta Keywords; http://sourceforge.net/tracker/index.php?func=detail&aid=915614&group_id=66837&atid=515929
                 baseSettings.Add("SITESETTINGS_PAGE_META_KEYWORDS", tabMetaKeyWords);
                 var tabMetaDescription = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 20,
-                        Group = group,
-                        EnglishName = "Page description",
-                        Description =
+                {
+                    Order = groupOrderBase + 20,
+                    Group = group,
+                    EnglishName = "Page description",
+                    Description =
                             "This setting is to help with search engine optimisation. Enter a default description (Not too long though. 1 paragraph is enough) that describes your portal."
-                    };
+                };
 
                 // john.mandia@whitelightsolutions.com: No Default Value In Case People Don't want a defautl descripton
                 baseSettings.Add("SITESETTINGS_PAGE_META_DESCRIPTION", tabMetaDescription);
                 var tabMetaEncoding = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 25,
-                        Group = group,
-                        EnglishName = "Page encoding",
-                        Description =
+                {
+                    Order = groupOrderBase + 25,
+                    Group = group,
+                    EnglishName = "Page encoding",
+                    Description =
                             "Every time your browser returns a page it looks to see what format it is retrieving. This allows you to specify the default content type.",
-                        Value = "<META http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1252\" />"
-                    };
+                    Value = "<META http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1252\" />"
+                };
                 baseSettings.Add("SITESETTINGS_PAGE_META_ENCODING", tabMetaEncoding);
 
                 // chckbox for enable friendly URL
@@ -1916,68 +1928,68 @@ namespace Appleseed.Framework.Site.Configuration
                 baseSettings.Add("ENABLE_PAGE_FRIENDLY_URL", enableFriendlyURL);
 
                 var tabMetaOther = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 30,
-                        Group = group,
-                        EnglishName = "Default Additional Meta Tag Entries",
-                        Description =
+                {
+                    Order = groupOrderBase + 30,
+                    Group = group,
+                    EnglishName = "Default Additional Meta Tag Entries",
+                    Description =
                             "This setting allows you to enter new tags into the Tab / Page's HEAD Tag. As an example we have added a portal tag to identify the version, but you could have a meta refresh tag or something else like a css reference instead.",
-                        Value = string.Empty
-                    };
+                    Value = string.Empty
+                };
                 baseSettings.Add("SITESETTINGS_PAGE_META_OTHERS", tabMetaOther);
                 var tabKeyPhrase = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 35,
-                        Group = group,
-                        EnglishName = "Default Page Keyphrase",
-                        Description =
+                {
+                    Order = groupOrderBase + 35,
+                    Group = group,
+                    EnglishName = "Default Page Keyphrase",
+                    Description =
                             "This setting can be used by a module or by a control. It allows you to define a common message for the entire portal e.g. Welcome to x portal! This can be used for search engine optimisation. It allows you to define a keyword rich phrase to be used throughout your portal.",
-                        Value = "Enter your default keyword rich Tab / Page phrase here. "
-                    };
+                    Value = "Enter your default keyword rich Tab / Page phrase here. "
+                };
                 baseSettings.Add("SITESETTINGS_PAGE_KEY_PHRASE", tabKeyPhrase);
 
                 // added: Jes1111 - <body> element attributes setting
                 var bodyAttributes = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 45,
-                        Group = group,
-                        EnglishName = "&lt;body&gt; attributes",
-                        Description =
+                {
+                    Order = groupOrderBase + 45,
+                    Group = group,
+                    EnglishName = "&lt;body&gt; attributes",
+                    Description =
                             "Allows you to enter a string which will be inserted within the <body> element, e.g. leftmargin=\"0\" bottommargin=\"0\", etc. NOTE: not advisable to use this to inject onload() function calls as there is a programmatic function for that. NOTE also that is your CSS is well sorted you should not need anything here.",
-                        Required = false
-                    };
+                    Required = false
+                };
                 baseSettings.Add("SITESETTINGS_BODYATTS", bodyAttributes);
 
                 // end by John Mandia <john.mandia@whitelightsolutions.com>
                 var glAnalytics = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 50,
-                        Group = group,
-                        EnglishName = "Google-Analytics Code",
-                        Description = "Allows you get the tracker, with this can view the statistics of your site.",
-                        Value = string.Empty
-                    };
+                {
+                    Order = groupOrderBase + 50,
+                    Group = group,
+                    EnglishName = "Google-Analytics Code",
+                    Description = "Allows you get the tracker, with this can view the statistics of your site.",
+                    Value = string.Empty
+                };
                 baseSettings.Add("SITESETTINGS_GOOGLEANALYTICS", glAnalytics);
 
                 var glAnalyticsCustomVars = new SettingItem<bool, CheckBox>
-                    {
-                        Order = groupOrderBase + 52,
-                        Group = group,
-                        EnglishName = "Use Google-Analytics Custom Vars?",
-                        Description =
+                {
+                    Order = groupOrderBase + 52,
+                    Group = group,
+                    EnglishName = "Use Google-Analytics Custom Vars?",
+                    Description =
                             "Allows you to use custom vars to track members, authenticated users and their domain names.",
-                        Value = false
-                    };
+                    Value = false
+                };
                 baseSettings.Add("SITESETTINGS_GOOGLEANALYTICS_CUSTOMVARS", glAnalyticsCustomVars);
 
                 var alternativeUrl = new SettingItem<string, TextBox>
-                    {
-                        Order = groupOrderBase + 55,
-                        Group = group,
-                        EnglishName = "Alternative site url",
-                        Description = "Indicate the site url for an alternative way.",
-                        Value = string.Empty
-                    };
+                {
+                    Order = groupOrderBase + 55,
+                    Group = group,
+                    EnglishName = "Alternative site url",
+                    Description = "Indicate the site url for an alternative way.",
+                    Value = string.Empty
+                };
                 baseSettings.Add("SITESETTINGS_ALTERNATIVE_URL", alternativeUrl);
 
                 var SnapEngage = new SettingItem<string, TextBox>
@@ -2007,15 +2019,15 @@ namespace Appleseed.Framework.Site.Configuration
                 var langList =
                     new SettingItem<string, ListControl>(
                         new MultiSelectListDataType(AppleseedCultures, "DisplayName", "Name"))
-                        {
-                            Group = group,
-                            Order = groupOrderBase + 10,
-                            EnglishName = "Language list",
-                            Value = Config.DefaultLanguage,
-                            Required = false,
-                            Description =
+                    {
+                        Group = group,
+                        Order = groupOrderBase + 10,
+                        EnglishName = "Language list",
+                        Value = Config.DefaultLanguage,
+                        Required = false,
+                        Description =
                                 "This is a list of the languages that the site will support. You can select multiples languages by pressing shift in your keyboard"
-                        };
+                    };
 
                 // jes1111 - LangList.Value = ConfigurationSettings.AppSettings["DefaultLanguage"]; 
                 baseSettings.Add("SITESETTINGS_LANGLIST", langList);
@@ -2023,14 +2035,14 @@ namespace Appleseed.Framework.Site.Configuration
                 var langDefault =
                     new SettingItem<string, DropDownList>(
                         new ListDataType<string, DropDownList>(AppleseedCultures, "DisplayName", "Name"))
-                        {
-                            Group = group,
-                            Order = groupOrderBase + 20,
-                            EnglishName = "Default Language",
-                            Value = Config.DefaultLanguage,
-                            Required = false,
-                            Description = "This is the default language for the site."
-                        };
+                    {
+                        Group = group,
+                        Order = groupOrderBase + 20,
+                        EnglishName = "Default Language",
+                        Value = Config.DefaultLanguage,
+                        Required = false,
+                        Description = "This is the default language for the site."
+                    };
 
                 // jes1111 - LangList.Value = ConfigurationSettings.AppSettings["DefaultLanguage"]; 
                 baseSettings.Add("SITESETTINGS_DEFAULTLANG", langDefault);
@@ -2042,57 +2054,57 @@ namespace Appleseed.Framework.Site.Configuration
 
                 // Show modified by summary on/off
                 var showModifiedBy = new SettingItem<bool, CheckBox>
-                    {
-                        Order = groupOrderBase + 10,
-                        Group = group,
-                        Value = false,
-                        EnglishName = "Show modified by",
-                        Description = "Check to show by whom the module is last modified."
-                    };
+                {
+                    Order = groupOrderBase + 10,
+                    Group = group,
+                    Value = false,
+                    EnglishName = "Show modified by",
+                    Description = "Check to show by whom the module is last modified."
+                };
                 baseSettings.Add("SITESETTINGS_SHOW_MODIFIED_BY", showModifiedBy);
 
                 // Default Editor Configuration used for new modules and workflow modules. jviladiu@portalServices.net 13/07/2004
                 var defaultEditor = new SettingItem<string, DropDownList>(new HtmlEditorDataType())
-                    {
-                        Order = groupOrderBase + 20,
-                        Group = group,
-                        Value = "FCKeditor",
-                        EnglishName = "Default Editor",
-                        Description = "This Editor is used by workflow and is the default for new modules."
-                    };
+                {
+                    Order = groupOrderBase + 20,
+                    Group = group,
+                    Value = "FCKeditor",
+                    EnglishName = "Default Editor",
+                    Description = "This Editor is used by workflow and is the default for new modules."
+                };
                 baseSettings.Add("SITESETTINGS_DEFAULT_EDITOR", defaultEditor);
 
                 // Default Editor Width. jviladiu@portalServices.net 13/07/2004
                 var defaultWidth = new SettingItem<int, TextBox>
-                    {
-                        Order = groupOrderBase + 25,
-                        Group = group,
-                        Value = 700,
-                        EnglishName = "Editor Width",
-                        Description = "Default Editor Width"
-                    };
+                {
+                    Order = groupOrderBase + 25,
+                    Group = group,
+                    Value = 700,
+                    EnglishName = "Editor Width",
+                    Description = "Default Editor Width"
+                };
                 baseSettings.Add("SITESETTINGS_EDITOR_WIDTH", defaultWidth);
 
                 // Default Editor Height. jviladiu@portalServices.net 13/07/2004
                 var defaultHeight = new SettingItem<int, TextBox>
-                    {
-                        Order = groupOrderBase + 30,
-                        Group = group,
-                        Value = 400,
-                        EnglishName = "Editor Height",
-                        Description = "Default Editor Height"
-                    };
+                {
+                    Order = groupOrderBase + 30,
+                    Group = group,
+                    Value = 400,
+                    EnglishName = "Editor Height",
+                    Description = "Default Editor Height"
+                };
                 baseSettings.Add("SITESETTINGS_EDITOR_HEIGHT", defaultHeight);
 
                 // Show Upload (Active up editor only). jviladiu@portalServices.net 13/07/2004
                 var showUpload = new SettingItem<bool, CheckBox>
-                    {
-                        Value = true,
-                        Order = groupOrderBase + 35,
-                        Group = group,
-                        EnglishName = "Upload?",
-                        Description = "Only used if Editor is ActiveUp HtmlTextBox"
-                    };
+                {
+                    Value = true,
+                    Order = groupOrderBase + 35,
+                    Group = group,
+                    EnglishName = "Upload?",
+                    Description = "Only used if Editor is ActiveUp HtmlTextBox"
+                };
                 baseSettings.Add("SITESETTINGS_SHOWUPLOAD", showUpload);
 
                 // Default Image Folder. jviladiu@portalServices.net 29/07/2004
@@ -2102,39 +2114,39 @@ namespace Appleseed.Framework.Site.Configuration
                             HttpContext.Current.Server.MapPath(
                                 string.Format("{0}/{1}/images", Path.ApplicationRoot, portalPath)),
                             "default"))
-                        {
-                            Order = groupOrderBase + 40,
-                            Group = group,
-                            Value = "default",
-                            EnglishName = "Default Image Folder",
-                            Description = "Set the default image folder used by Current Editor"
-                        };
+                    {
+                        Order = groupOrderBase + 40,
+                        Group = group,
+                        Value = "default",
+                        EnglishName = "Default Image Folder",
+                        Description = "Set the default image folder used by Current Editor"
+                    };
                 baseSettings.Add("SITESETTINGS_DEFAULT_IMAGE_FOLDER", defaultImageFolder);
                 groupOrderBase = (int)SettingItemGroup.MISC_SETTINGS;
                 group = SettingItemGroup.MISC_SETTINGS;
 
                 // Show module arrows to an administrator
                 var showModuleArrows = new SettingItem<bool, CheckBox>
-                    {
-                        Order = groupOrderBase + 50,
-                        Group = group,
-                        Value = false,
-                        EnglishName = "Show module arrows",
-                        Description = "Check to show the arrows in the module title to move modules."
-                    };
+                {
+                    Order = groupOrderBase + 50,
+                    Group = group,
+                    Value = false,
+                    EnglishName = "Show module arrows",
+                    Description = "Check to show the arrows in the module title to move modules."
+                };
                 baseSettings.Add("SITESETTINGS_SHOW_MODULE_ARROWS", showModuleArrows);
 
                 // BOWEN 11 June 2005
                 // Use Recycler Module for deleted modules
                 var useRecycler = new SettingItem<bool, CheckBox>
-                    {
-                        Order = groupOrderBase + 55,
-                        Group = group,
-                        Value = true,
-                        EnglishName = "Use Recycle Bin for Deleted Modules",
-                        Description =
+                {
+                    Order = groupOrderBase + 55,
+                    Group = group,
+                    Value = true,
+                    EnglishName = "Use Recycle Bin for Deleted Modules",
+                    Description =
                             "Check to make deleted modules go to the recycler instead of permanently deleting them."
-                    };
+                };
                 baseSettings.Add("SITESETTINGS_USE_RECYCLER", useRecycler);
 
                 var detailErrorMessage = new SettingItem<bool, CheckBox>
@@ -2264,11 +2276,11 @@ namespace Appleseed.Framework.Site.Configuration
             // jes1111 - if(ConfigurationSettings.AppSettings["ProxyServer"].Length > 0) 
             var webProxy = new WebProxy { Address = new Uri(Config.ProxyServer) };
             var credentials = new NetworkCredential
-                {
-                    Domain = Config.ProxyDomain,
-                    UserName = Config.ProxyUserID,
-                    Password = Config.ProxyPassword
-                };
+            {
+                Domain = Config.ProxyDomain,
+                UserName = Config.ProxyUserID,
+                Password = Config.ProxyPassword
+            };
             webProxy.Credentials = credentials;
             return webProxy;
 
@@ -2554,6 +2566,21 @@ namespace Appleseed.Framework.Site.Configuration
                 return false;
             }
         }
+        public bool EnabledPrivateSite
+        {
+            get
+            {
+                try
+                {
+                    // return the true / false value
+                    return Convert.ToBoolean(this.CustomSettings["ENABLE_PRIVATE_SITE"].Value);
+                }
+                catch { }
+
+                // If nothing then it's return false
+                return false;
+            }
+        }
         #endregion
 
         #region Implemented Interfaces
@@ -2601,7 +2628,7 @@ namespace Appleseed.Framework.Site.Configuration
                 using (var connection = Config.SqlConnectionString)
                 {
                     // Open the database connection and execute the command
-                    connection.Open(); 
+                    connection.Open();
 
                     using (var command = new SqlCommand("rb_GetPortalSetting", connection))
                     {
@@ -2611,16 +2638,16 @@ namespace Appleseed.Framework.Site.Configuration
                         // Add Parameters to SPROC
                         // Specify the Portal Alias Dynamically 
                         var parameterPortalAlias = new SqlParameter("@PortalAlias", SqlDbType.NVarChar, 50)
-                            {
-                                Value = portalAlias
-                            };
+                        {
+                            Value = portalAlias
+                        };
                         command.Parameters.Add(parameterPortalAlias);
 
                         // Specify the SettingName 
                         var parameterSettingName = new SqlParameter("@SettingName", SqlDbType.NVarChar, 50)
-                            {
-                                Value = "SITESETTINGS_LANGLIST"
-                            };
+                        {
+                            Value = "SITESETTINGS_LANGLIST"
+                        };
                         command.Parameters.Add(parameterSettingName);
 
                         try
@@ -2652,14 +2679,14 @@ namespace Appleseed.Framework.Site.Configuration
 
                         // Add Parameters to SPROC
                         var parameterPortalAlias = new SqlParameter("@PortalAlias", SqlDbType.NVarChar, 50)
-                            {
-                                Value = portalAlias
-                            };
+                        {
+                            Value = portalAlias
+                        };
                         command.Parameters.Add(parameterPortalAlias);
                         var parameterSettingName = new SqlParameter("@SettingName", SqlDbType.NVarChar, 50)
-                            {
-                                Value = "SITESETTINGS_DEFAULTLANG"
-                            };
+                        {
+                            Value = "SITESETTINGS_DEFAULTLANG"
+                        };
                         command.Parameters.Add(parameterSettingName);
 
                         try
@@ -2801,6 +2828,9 @@ namespace Appleseed.Framework.Site.Configuration
 
         private static string GetPortalSettingsCacheKey(int pageId, string portalAlias)
         {
+            if (string.IsNullOrEmpty(portalAlias)) {
+                portalAlias = string.Empty;
+            }
             return String.Format("{0}_{1}_{2}", GetPortalSettingsCacheKeyPrefix(), portalAlias.ToLower(), pageId);
         }
 

@@ -247,7 +247,11 @@ namespace Appleseed
             SecurePages page;
             Enum.TryParse<SecurePages>(pageId.ToString(), out page);
 
-            if (!PortalSecurity.IsInRoles(this.PortalSettings.ActivePage.AuthorizedRoles) &&
+            if (this.PortalSettings.EnabledPrivateSite && !Request.IsAuthenticated)
+            {
+                PortalSecurity.AccessDenied();
+            }
+            else if (!PortalSecurity.IsInRoles(this.PortalSettings.ActivePage.AuthorizedRoles) &&
                 !this.User.IsInRole("Admins") && !UserProfile.HasPageAccess(page))
             {
                 PortalSecurity.AccessDenied();

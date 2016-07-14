@@ -75,7 +75,6 @@
                         alt="Edit" style="border-style: None; height: 23px; width: 23px; border-width: 0px;">--%>
                     File Manager
                 </a>
-           
         </div>
     </div>
 </asp:Content>

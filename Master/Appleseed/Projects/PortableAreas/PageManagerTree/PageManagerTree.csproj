@@ -140,8 +140,8 @@
     <Content Include="Views\Home\Index.ascx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\img\" />
+    <Folder Include="Controllers\App_Data\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

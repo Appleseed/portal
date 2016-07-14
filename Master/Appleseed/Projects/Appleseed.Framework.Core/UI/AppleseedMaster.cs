@@ -58,7 +58,7 @@ namespace Appleseed
                     HtmlGenericControl includeDefaultCSS = new HtmlGenericControl("link");
                     includeDefaultCSS.Attributes.Add("type", "text/css");
                     includeDefaultCSS.Attributes.Add("rel", "stylesheet");
-                    includeDefaultCSS.Attributes.Add("href", psCSS.CurrentThemeDefault.CssFile);
+                    includeDefaultCSS.Attributes.Add("href", psCSS.GetCurrentTheme().CssFile);
                     page.Header.Controls.AddAt(index++, includeDefaultCSS);
 
 

@@ -13,6 +13,15 @@ namespace Appleseed {
     public partial class recyclerViewPage {
         
         /// <summary>
+        /// selecteditem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl selecteditem;
+        
+        /// <summary>
         /// pnlMain control.
         /// </summary>
         /// <remarks>

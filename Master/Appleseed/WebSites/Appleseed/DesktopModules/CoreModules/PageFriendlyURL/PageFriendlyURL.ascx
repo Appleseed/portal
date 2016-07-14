@@ -8,7 +8,6 @@
 
     .buttonMargin {
         margin-top: 16px;
-        width: 10%;
     }
 
     .success {
@@ -120,8 +119,8 @@
     <div class="module-row">
         <div class="col-md-9">
             <div class="col-md-9">
-                <asp:Button ID="btnSave" Text="Save" CssClass="buttonMargin" runat="server" OnClick="btnSave_Click" CausesValidation="true" ValidationGroup="Save" />
-                <asp:Button ID="btnSaveWithoutExtension" width="180px" Text="Save Without Extension" CssClass="buttonMargin" runat="server" OnClick="btnSaveWithoutExtension_Click" CausesValidation="true" ValidationGroup="Save" />
+                <asp:Button ID="btnSave" Text="Save" CssClass="buttonMargin CommandButton" runat="server" OnClick="btnSave_Click" CausesValidation="true" ValidationGroup="Save" />
+                <asp:Button ID="btnSaveWithoutExtension" Text="Save Without Extension" CssClass="buttonMargin CommandButton" runat="server" OnClick="btnSaveWithoutExtension_Click" CausesValidation="true" ValidationGroup="Save" />
             </div>
         </div>
     </div>

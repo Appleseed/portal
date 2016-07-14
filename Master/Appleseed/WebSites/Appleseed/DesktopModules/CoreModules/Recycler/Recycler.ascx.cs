@@ -29,8 +29,11 @@ namespace Appleseed.Content.Web.Modules
         {
             DataTable dt = RecyclerDB.GetModulesInRecycler(this.PortalSettings.PortalID, SortField);
             DataGrid1.DataSource = dt;
-
             DataGrid1.DataBind();
+
+            dt = RecyclerDB.GetPagesInRecycler(this.PortalSettings.PortalID, SortField);
+            dtgPages.DataSource = dt;
+            dtgPages.DataBind();
         }
 
         /// <summary>
