@@ -1,4 +1,4 @@
-# Appleseed Portal 1.0.7.x
+# Appleseed Portal 1.0.8.x
 
 [![Build status](https://ci.appveyor.com/api/projects/status/l34d30kqfnirw4ol?svg=true)](https://ci.appveyor.com/project/AnantCorporation/portal)
 
