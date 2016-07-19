@@ -1028,11 +1028,11 @@ namespace Appleseed.Framework.Site.Data
             var dr = command.ExecuteReader(CommandBehavior.CloseConnection);
 
             List<CurrentModuleDefination> modulelist = new List<CurrentModuleDefination>();
-            CurrentModuleDefination module = new CurrentModuleDefination();
             try
             {
                 while (dr.Read())
                 {
+                    CurrentModuleDefination module = new CurrentModuleDefination();
                     Guid moddef = new Guid();
                     Guid.TryParse(dr["GeneralModDefID"].ToString(), out moddef);
                     module.GeneralModDefID = moddef;
