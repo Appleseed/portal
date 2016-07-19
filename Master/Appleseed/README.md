@@ -1,4 +1,4 @@
-# Appleseed Portal 1.0.7.x
+# Appleseed Portal 1.0.8.x
 
 Appleseed Portal is an open source Portal and Content Management System focused on 
 providing a high-performance,easy to use framework. The software gives designers, 
