@@ -171,3 +171,13 @@ order by #tree.sequence--, rb_Pages.PageOrder
 drop table #tree
 --drop table #z
 GO
+
+ALTER  PROCEDURE [dbo].[rb_GetHtmlTextVersionHistory]
+(
+    @ModuleID  int
+)
+AS
+BEGIN
+	SELECT VersionNo, CreatedByUserName, CreatedDate, ModifiedByUserName, ModifiedDate from rb_HtmlText_st where ModuleID = @ModuleID and Published = 0
+END
+GO
