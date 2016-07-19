@@ -1,15 +1,13 @@
 ﻿<%@ Page Language="C#" CodeBehind="HtmlVersonHistory.aspx.cs" Inherits="Appleseed.DesktopModules.CoreModules.HTMLDocument.HtmlVersonHistory" MasterPageFile="~/Shared/ModalMaster.master" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div>
         <p>
-            <asp:Button ID="btnCompareAndMarge" Text="Compare and Merge" runat="server" OnClientClick="return CheckVersionSelection();" OnClick="btnCompareAndMarge_Click" />
+            <asp:Button ID="btnCompareAndMarge" Text="Compare and Merge" CssClass="CommandButton" runat="server" OnClientClick="return CheckVersionSelection();" OnClick="btnCompareAndMarge_Click" />
             <%--<asp:Button ID="btnCompareAndMarge" Text="Companre and Merge" runat="server" OnClientClick="CheckVersionSelection()" />--%>
-            <asp:Button ID="btnBack" Text="Back" runat="server" OnClick="btnBack_Click" />
+            <asp:Button ID="btnBack" Text="Back" CssClass="CommandButton" runat="server" OnClick="btnBack_Click" />
+            <asp:Button ID="btnDelete" Text="Delete" runat="server" CssClass="CommandButton" OnClientClick="return DeleteVersion();" OnClick="btnDelete_Click" />
         </p>
-
         <asp:Repeater ID="RptVersionHistory" runat="server">
             <HeaderTemplate>
                 <table id="TblVersionHistory" class="display tblclsVersion" border="1" cellspacing="1" style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000">
@@ -56,6 +54,9 @@
                 </table>
             </FooterTemplate>
         </asp:Repeater>
+        <p>
+            Note: Published version will not be displayed in above version history.
+        </p>
     </div>
     <script type="text/javascript">
         var verList = "";
@@ -89,6 +90,13 @@
                 alert("Select any two versions to compare and merge.");
                 return false;
             }
+        }
+
+        function DeleteVersion() {
+            if (confirm("Are you sure want to delete?")) {
+                return true;
+            }
+            return false;
         }
 
     </script>

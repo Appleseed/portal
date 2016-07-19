@@ -58,6 +58,15 @@ namespace Appleseed.AdminAll {
         protected global::Appleseed.Framework.Web.UI.WebControls.Button chbPortableAreas;
         
         /// <summary>
+        /// h3HeaderText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h3HeaderText;
+        
+        /// <summary>
         /// tableInstaller control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace Appleseed.AdminAll {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox InstallerFileName;
+        
+        /// <summary>
+        /// cvinstallFilename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvinstallFilename;
         
         /// <summary>
         /// Requiredfieldvalidator1 control.
@@ -148,6 +166,15 @@ namespace Appleseed.AdminAll {
         protected global::System.Web.UI.WebControls.TextBox DesktopSrc;
         
         /// <summary>
+        /// cvDesktopSrc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvDesktopSrc;
+        
+        /// <summary>
         /// Req2 control.
         /// </summary>
         /// <remarks>
@@ -182,6 +209,15 @@ namespace Appleseed.AdminAll {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MobileSrc;
+        
+        /// <summary>
+        /// cvMobileSrc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvMobileSrc;
         
         /// <summary>
         /// Label5 control.

@@ -75,9 +75,9 @@ namespace Appleseed.Framework.Content.Data
             // Change by Geert.Audenaert@Syntegra.Com
             // Date: 6/2/2003
             var parameterWorkflowVersion = new SqlParameter("@WorkflowVersion", SqlDbType.Int, 4)
-                {
-                    Value = (int)version
-                };
+            {
+                Value = (int)version
+            };
             command.Parameters.Add(parameterWorkflowVersion);
 
             var moduleVersion = new SqlParameter("@VersionNo", SqlDbType.Int, 4) { Value = versionsModule };
@@ -188,9 +188,9 @@ namespace Appleseed.Framework.Content.Data
                 // Change by Geert.Audenaert@Syntegra.Com
                 // Date: 6/2/2003
                 var parameterWorkflowVersion = new SqlParameter("@WorkflowVersion", SqlDbType.Int, 4)
-                    {
-                        Value = (int)version
-                    };
+                {
+                    Value = (int)version
+                };
                 command.Parameters.Add(parameterWorkflowVersion);
 
                 // End Change Geert.Audenaert@Syntegra.Com
@@ -257,9 +257,9 @@ namespace Appleseed.Framework.Content.Data
                     // Change by Geert.Audenaert@Syntegra.Com
                     // Date: 6/2/2003
                     var parameterWorkflowVersion = new SqlParameter("@WorkflowVersion", SqlDbType.Int, 4)
-                        {
-                            Value = (int)version
-                        };
+                    {
+                        Value = (int)version
+                    };
                     command.Parameters.Add(parameterWorkflowVersion);
 
                     //Add by Ashish.patel@haptix.biz
@@ -441,6 +441,21 @@ namespace Appleseed.Framework.Content.Data
             dtAdpter.Fill(dtSet);
             connection.Close();
             return dtSet;
+        }
+
+        /// <summary>
+        /// Delete the html version
+        /// </summary>
+        /// <param name="moduleID"></param>
+        /// <param name="versonNo"></param>
+        public void DeleteHtmlVersion(int moduleID, int versonNo)
+        {
+            var connection = Config.SqlConnectionString;
+            SqlCommand myCommand = new SqlCommand("Delete from rb_HtmlText_st where ModuleID=" + moduleID + " and VersionNo=" + versonNo, connection);
+            myCommand.CommandType = CommandType.Text;
+            connection.Open();
+            myCommand.ExecuteReader();
+            connection.Close();
         }
 
         /// <summary>

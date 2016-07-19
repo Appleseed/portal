@@ -1,11 +1,10 @@
 <%@ Page AutoEventWireup="false" Inherits="Appleseed.AdminAll.ModuleDefinitions"
-    Language="c#" MasterPageFile="~/Shared/SiteMasterDefault.master" Codebehind="ModuleDefinitions.aspx.cs" %>
+    Language="c#" MasterPageFile="~/Shared/SiteMasterDefault.master" CodeBehind="ModuleDefinitions.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
     <table border="0" cellpadding="4" cellspacing="0" width="98%">
         <tr valign="top">
-            <td width="150">
-                &nbsp;
+            <td width="150">&nbsp;
             </td>
             <td width="*">
                 <table cellpadding="0" cellspacing="0" width="500">
@@ -22,28 +21,28 @@
                 </table>
                 <p>
                     <rbfwebui:Button ID="btnUseInstaller" runat="server" CausesValidation="False" class="CommandButton"
-                        designtimedragdrop="400" Text="Use installer" TextKey="USE_INSTALLER" />&nbsp;
+                        designtimedragdrop="400" Text="Use Installer" TextKey="USE_INSTALLER" />&nbsp;
                     <rbfwebui:Button ID="btnDescription" runat="server" CausesValidation="False" class="CommandButton"
                         Text="Install Manually" TextKey="INSTALL_MANUALLY" />&nbsp;
                     <rbfwebui:Button ID="chbMVCAction" runat="server" CausesValidation="False" class="CommandButton"
-                        Text="MVC Action" TextKey="MVC_ACTION" />&nbsp;
+                        Text="MVC Action" TextKey="MVC_ACTION" Visible="false" />&nbsp;
                     <rbfwebui:Button ID="chbPortableAreas" runat="server" CausesValidation="False" class="CommandButton"
-                        Text="Portable Areas" TextKey="PORTABLE_AREAS" />&nbsp;
+                        Text="Portable Areas" TextKey="PORTABLE_AREAS" Visible="false" />&nbsp;
                 </p>
+                <h3 id="h3HeaderText" runat="server">Install Manually</h3>
                 <table id="tableInstaller" runat="server" border="0" cellpadding="3" cellspacing="0"
                     width="750">
                     <tr>
                         <td class="SubHead" nowrap="nowrap" width="106">
                             <rbfwebui:Label ID="Label7" runat="server" Text="Friendly Name" TextKey="INSTALLER_FILE">Installer file</rbfwebui:Label>:
                         </td>
-                        <td width="6">
-                        </td>
+                        <td width="6"></td>
                         <td>
                             <asp:TextBox ID="InstallerFileName" runat="server" Columns="30" CssClass="NormalTextBox"
                                 MaxLength="150" Width="390"></asp:TextBox>
+                            <asp:CustomValidator ID="cvinstallFilename" runat="server" ControlToValidate="InstallerFileName" OnServerValidate="cvinstallFilename_ServerValidate" ErrorMessage="Invalid installer File"></asp:CustomValidator>
                         </td>
-                        <td width="10">
-                        </td>
+                        <td width="10"></td>
                         <td class="Normal" width="250">
                             <asp:RequiredFieldValidator ID="Requiredfieldvalidator1" runat="server" ControlToValidate="InstallerFileName"
                                 CssClass="Error" Display="Dynamic" ErrorMessage="Enter an Installer Name" textkey="ERROR_ENTER_A_FILE_NAME"></asp:RequiredFieldValidator>
@@ -56,15 +55,13 @@
                         <td class="SubHead" width="105">
                             <rbfwebui:Label ID="Label2" runat="server" Text="Friendly Name" TextKey="FRIENDLY_NAME"></rbfwebui:Label>:
                         </td>
-                        <td rowspan="6" width="3">
-                            &nbsp;
+                        <td rowspan="6" width="3">&nbsp;
                         </td>
                         <td>
                             <asp:TextBox ID="FriendlyName" runat="server" Columns="30" CssClass="NormalTextBox"
                                 MaxLength="150" Width="390"></asp:TextBox>
                         </td>
-                        <td rowspan="6" width="10">
-                            &nbsp;
+                        <td rowspan="6" width="10">&nbsp;
                         </td>
                         <td class="Normal" width="250">
                             <asp:RequiredFieldValidator ID="Req1" runat="server" ControlToValidate="FriendlyName"
@@ -81,6 +78,7 @@
                                 MaxLength="150" Width="390"></asp:TextBox>
                         </td>
                         <td class="Normal">
+                            <asp:CustomValidator ID="cvDesktopSrc" runat="server" ControlToValidate="DesktopSrc" OnServerValidate="cvDesktopSrc_ServerValidate" ErrorMessage="Invalid installer File"></asp:CustomValidator>
                             <asp:RequiredFieldValidator ID="Req2" runat="server" ControlToValidate="DesktopSrc"
                                 CssClass="Error" Display="Dynamic" ErrorMessage="You Must Enter Source Path for the Desktop Module"
                                 textkey="ERROR_ENTER_A_SOURCE_PATH"></asp:RequiredFieldValidator><rbfwebui:Label
@@ -98,7 +96,7 @@
                                 MaxLength="150" Width="390"></asp:TextBox>
                         </td>
                         <td>
-                            &nbsp;
+                            <asp:CustomValidator ID="cvMobileSrc" runat="server" ControlToValidate="MobileSrc" OnServerValidate="cvMobileSrc_ServerValidate" ErrorMessage="Invalid installer File"></asp:CustomValidator>
                         </td>
                     </tr>
                     <tr>
@@ -108,20 +106,17 @@
                         <td>
                             <rbfwebui:Label ID="lblGUID" runat="server" CssClass="Normal" Font-Bold="True" ForeColor="Silver"></rbfwebui:Label>
                         </td>
-                        <td>
-                        </td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td class="SubHead" valign="top" width="116">
-                        </td>
+                        <td class="SubHead" valign="top" width="116"></td>
                         <td>
                             <rbfwebui:LinkButton ID="selectAllButton" runat="server" CssClass="CommandButton"
                                 Text="Select all" TextKey="SELECT_ALL"></rbfwebui:LinkButton>&nbsp;&nbsp;
                             <rbfwebui:LinkButton ID="selectNoneButton" runat="server" CssClass="CommandButton"
                                 Text="Select none" TextKey="SELECT_NONE"></rbfwebui:LinkButton>
                         </td>
-                        <td>
-                        </td>
+                        <td></td>
                     </tr>
                     <%-- <tr>
                             <td class="SubHead" valign="top" width="116">
@@ -163,7 +158,7 @@
                         <td class="SubHead" width="105">
                             <rbfwebui:Button ID="btnRegisterPortableAreas" runat="server" Text="Registrar todas"
                                 OnClick="btnRegisterPortableAreas_Click" />
-                            <asp:BulletedList ID="registeredAreas" runat="server" Width="100%">                            
+                            <asp:BulletedList ID="registeredAreas" runat="server" Width="100%">
                             </asp:BulletedList>
                         </td>
                     </tr>
@@ -178,14 +173,16 @@
                         </div>
                     </p>
                     <p>
-                        <rbfwebui:LinkButton ID="UpdateButton" runat="server" class="CommandButton" Text="Update"
-                            TextKey="UPDATE" OnClick="OnUpdate">Update</rbfwebui:LinkButton>&nbsp;
+                        <rbfwebui:LinkButton ID="UpdateButton" runat="server" class="CommandButton" Text=""
+                            TextKey="-" OnClick="OnUpdate">Update</rbfwebui:LinkButton>&nbsp;
                         <rbfwebui:LinkButton ID="CancelButton" runat="server" CausesValidation="False" class="CommandButton"
                             Text="Cancel" TextKey="CANCEL" OnClick="OnCancel">Cancel</rbfwebui:LinkButton>&nbsp;
                         <rbfwebui:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" class="CommandButton"
-                            Text="Delete this module type" TextKey="DELETE_THIS_MODULE_TYPE" OnClick="OnDelete">Delete this module type</rbfwebui:LinkButton></p>
+                            Text="Delete this module type" TextKey="DELETE_THIS_MODULE_TYPE" OnClick="OnDelete">Delete this module type</rbfwebui:LinkButton>
+                    </p>
                     <p>
-                        <rbfwebui:Label ID="lblErrorDetail" runat="server" CssClass="Error"></rbfwebui:Label></p>
+                        <rbfwebui:Label ID="lblErrorDetail" runat="server" CssClass="Error"></rbfwebui:Label>
+                    </p>
                 </div>
             </td>
         </tr>
