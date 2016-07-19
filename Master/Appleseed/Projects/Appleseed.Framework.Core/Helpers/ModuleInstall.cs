@@ -195,7 +195,7 @@ namespace Appleseed.Framework.Helpers
         /// <param name="install">
         /// if set to <c>true</c> [install].
         /// </param>
-        public static void InstallGroup(string groupFileName, bool install)
+        public static void InstallGroup(string groupFileName, bool install, bool throwEx = false)
         {
             var modules = GetInstallGroup(groupFileName);
 
@@ -215,6 +215,10 @@ namespace Appleseed.Framework.Helpers
             {
                 var ex = new Exception("Tried to install 0 modules in groupFileName:" + groupFileName);
                 ErrorHandler.Publish(LogLevel.Warn, ex);
+                if (throwEx)
+                {
+                    throw ex;
+                }
             }
         }
 

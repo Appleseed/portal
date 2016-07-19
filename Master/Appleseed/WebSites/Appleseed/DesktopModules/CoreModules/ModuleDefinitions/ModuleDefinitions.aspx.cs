@@ -78,9 +78,10 @@ namespace Appleseed.AdminAll
 
                     this.btnUseInstaller.Visible = false;
                     this.btnDescription.Visible = true;
-                    this.chbMVCAction.Visible = true;
+                    //this.chbMVCAction.Visible = true;
                     this.DeleteButton.Visible = true;
-                    this.chbPortableAreas.Visible = true;
+                    this.h3HeaderText.InnerText = this.btnUseInstaller.Text;
+                    //this.chbPortableAreas.Visible = true;
 
                     break;
                 case EditMode.Manually:
@@ -91,9 +92,10 @@ namespace Appleseed.AdminAll
 
                     this.btnUseInstaller.Visible = true;
                     this.btnDescription.Visible = false;
-                    this.chbMVCAction.Visible = true;
+                    //this.chbMVCAction.Visible = true;
                     this.DeleteButton.Visible = true;
-                    this.chbPortableAreas.Visible = true;
+                    //this.chbPortableAreas.Visible = true;
+                    this.h3HeaderText.InnerText = this.btnDescription.Text;
 
                     break;
                 case EditMode.MVC:
@@ -188,6 +190,8 @@ namespace Appleseed.AdminAll
             {
                 this.ChangeInstallMode(EditMode.Installer);
 
+                ((Appleseed.Framework.Web.UI.WebControls.LinkButton)this.UpdateButton).TextKey = "ADD";
+                this.DeleteButton.Visible = false;
                 // new module definition
                 this.InstallerFileName.Text = @"DesktopModules/[ModuleFolder]/install.xml";
                 this.FriendlyName.Text = string.Empty;
@@ -196,6 +200,7 @@ namespace Appleseed.AdminAll
             }
             else
             {
+                ((Appleseed.Framework.Web.UI.WebControls.LinkButton)this.UpdateButton).TextKey = "UPDATE";
                 // Obtain the module definition to edit from the database
                 var dr = modules.GetSingleModuleDefinition(this.defId);
 
@@ -284,14 +289,15 @@ namespace Appleseed.AdminAll
             {
                 try
                 {
-                    if (this.chbMVCAction.Visible || this.chbPortableAreas.Visible)
+                    // Removed MVC Action and Portable Area installation code
+                    //if (this.chbMVCAction.Visible || this.chbPortableAreas.Visible)
                     {
                         // Es un módulo clásico
                         if (!this.btnUseInstaller.Visible)
                         {
                             ModuleInstall.InstallGroup(
                                 this.Server.MapPath(Path.ApplicationRoot + "/" + this.InstallerFileName.Text),
-                                this.lblGUID.Text == string.Empty);
+                                this.lblGUID.Text == string.Empty, true);
                         }
                         else
                         {
@@ -304,20 +310,22 @@ namespace Appleseed.AdminAll
 
                         // Update the module definition
                     }
-                    else
-                    {
-                        // Es una acción MVC
-                        var path = this.ddlAction.SelectedValue;
 
-                        path = path.Substring(path.IndexOf("Areas"));
-                        path = path.Replace("\\", "/");
-                        path = path.Replace(".aspx", string.Empty);
-                        path = path.Replace(".ascx", string.Empty);
+                    // Removed MVC Action and Portable Area installation code
+                    //else
+                    //{
+                    //    // Es una acción MVC
+                    //    var path = this.ddlAction.SelectedValue;
 
-                        var name = this.FriendlyNameMVC.Text;
+                    //    path = path.Substring(path.IndexOf("Areas"));
+                    //    path = path.Replace("\\", "/");
+                    //    path = path.Replace(".aspx", string.Empty);
+                    //    path = path.Replace(".ascx", string.Empty);
 
-                        this.defId = ModelServices.AddMVCActionModule(name, path);
-                    }
+                    //    var name = this.FriendlyNameMVC.Text;
+
+                    //    this.defId = ModelServices.AddMVCActionModule(name, path);
+                    //}
 
                     var modules = new ModulesDB();
 
@@ -482,6 +490,10 @@ namespace Appleseed.AdminAll
         private void btnDescription_Click(object sender, EventArgs e)
         {
             this.ChangeInstallMode(EditMode.Manually);
+            if (this.defId.Equals(Guid.Empty))
+            {
+                this.DeleteButton.Visible = false;
+            }
         }
 
         /// <summary>
@@ -496,6 +508,10 @@ namespace Appleseed.AdminAll
         private void btnUseInstaller_Click(object sender, EventArgs e)
         {
             this.ChangeInstallMode(EditMode.Installer);
+            if (this.defId.Equals(Guid.Empty))
+            {
+                this.DeleteButton.Visible = false;
+            }
         }
 
         /// <summary>
@@ -561,6 +577,45 @@ namespace Appleseed.AdminAll
         }
 
         #endregion
+
+        protected void cvinstallFilename_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (!this.btnUseInstaller.Visible)
+            {
+                if (!string.IsNullOrEmpty(InstallerFileName.Text) && !File.Exists(this.Server.MapPath(Path.ApplicationRoot + "/" + this.InstallerFileName.Text)))
+                {
+                    args.IsValid = false;
+                }
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
+
+        protected void cvDesktopSrc_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (!string.IsNullOrEmpty(this.DesktopSrc.Text) && !File.Exists(this.Server.MapPath(Path.ApplicationRoot + "/" + this.DesktopSrc.Text)))
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
+
+        protected void cvMobileSrc_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (!string.IsNullOrEmpty(MobileSrc.Text) && !File.Exists(this.Server.MapPath(Path.ApplicationRoot + "/" + this.MobileSrc.Text)))
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 
     /// <summary>
