@@ -107,15 +107,19 @@ GO
 
 /*01/07/2016*/
 DECLARE @ModuleID1 INT
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 10)
+BEGIN
+EXEC rb_addModule 180,1,'Module Types','ContentPane',10,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+END
 
 IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 1)
 BEGIN
-EXEC rb_addModule 180,1,'Add Module Control','ContentPane',1,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+EXEC rb_addModule 180,2,'Add Module Control','ContentPane',1,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
 END
 
 IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 9)
 BEGIN
-EXEC rb_addModule 180,2,'Module Definitions','ContentPane',9,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+EXEC rb_addModule 180,3,'Module Definitions','ContentPane',9,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
 END
 GO
 
