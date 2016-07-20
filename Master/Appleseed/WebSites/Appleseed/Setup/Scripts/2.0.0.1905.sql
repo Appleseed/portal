@@ -122,4 +122,35 @@ BEGIN
 EXEC rb_addModule 180,3,'Module Definitions','ContentPane',9,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
 END
 GO
-
+/*change module type ordering by a-z*/
+ALTER PROCEDURE [dbo].[rb_GetCurrentModuleDefinitions]
+(
+    @PortalID  int
+)
+AS
+BEGIN
+/* returns all module definitions for the specified portal */
+SELECT  
+    rb_GeneralModuleDefinitions.FriendlyName,
+    rb_GeneralModuleDefinitions.DesktopSrc,
+    rb_GeneralModuleDefinitions.MobileSrc,
+    rb_GeneralModuleDefinitions.Admin,
+    rb_ModuleDefinitions.ModuleDefID
+FROM
+    rb_ModuleDefinitions
+INNER JOIN
+    rb_GeneralModuleDefinitions ON rb_ModuleDefinitions.GeneralModDefID = rb_GeneralModuleDefinitions.GeneralModDefID
+WHERE   
+    rb_ModuleDefinitions.PortalID = @PortalID
+ORDER BY
+rb_GeneralModuleDefinitions.FriendlyName
+END
+GO
+/* returns all module definitions for the specified portal */
+ALTER PROCEDURE [dbo].[rb_GetModuleDefinitions]
+AS
+BEGIN
+SELECT     GeneralModDefID, FriendlyName, DesktopSrc, MobileSrc
+FROM         rb_GeneralModuleDefinitions
+ORDER BY FriendlyName
+END
