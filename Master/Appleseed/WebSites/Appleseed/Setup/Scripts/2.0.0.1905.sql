@@ -24,8 +24,8 @@ END
 --BEGIN
 --	--set @PAGEID = null
 --	--select @PAGEID = PageID from rb_pages where PageName='Packages'
-EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
-EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
+--EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
+--EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
 --END
 
 select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID='C1EA4115-E7F2-4CBC-B1E7-DDA46791493C'
@@ -105,11 +105,51 @@ GO
 DELETE FROM rb_Pages WHERE ParentPageID = 280
 GO
 
-/*01/07/2016*/
-DECLARE @ModuleID1 INT
-IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 10)
+
+IF NOT EXISTS(SELECT * FROM rb_GeneralModuleDefinitions WHERE GeneralModDefID='1CDF009A-60E9-4CE0-997B-E632D3F0D996')
 BEGIN
-EXEC rb_addModule 180,1,'Module Types','ContentPane',10,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+INSERT INTO [dbo].[rb_GeneralModuleDefinitions]
+         ([GeneralModDefID]
+         ,[FriendlyName]
+         ,[DesktopSrc]
+         ,[MobileSrc]
+         ,[AssemblyName]
+         ,[ClassName]
+         ,[Admin]
+         ,[Searchable])
+   VALUES
+         ('1CDF009A-60E9-4CE0-997B-E632D3F0D996'
+         ,'Admin - Module Instances'
+         ,'/DesktopModules/CoreModules/AdminModuleInstances/AdminModuleInstances.ascx'
+         ,''
+         ,'Appleseed.DLL'
+         ,'Appleseed.DesktopModules.CoreModules.AdminModuleInstances.AdminModuleInstances'
+         ,1
+         ,0)
+END
+GO
+
+/*add new module - Module Instances changes */
+IF NOT EXISTS(SELECT * FROM rb_ModuleDefinitions WHERE GeneralModDefID='1CDF009A-60E9-4CE0-997B-E632D3F0D996')
+BEGIN
+INSERT INTO [dbo].[rb_ModuleDefinitions]
+         ([PortalID]
+         ,[GeneralModDefID])
+   VALUES
+         (0
+         ,'1CDF009A-60E9-4CE0-997B-E632D3F0D996')
+END
+GO
+
+DECLARE @ModuleID1 INT
+
+Declare @MfID int
+
+Select @MfID = ModuleDefID from rb_ModuleDefinitions where [GeneralModDefID] = '1CDF009A-60E9-4CE0-997B-E632D3F0D996'
+
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = @MfID)
+BEGIN
+EXEC rb_addModule 180,1,'Module Instances', 'ContentPane',@MfID,0,'Admins', 'Admins;','Admins;','Admins;','Admins;', 'Admins;','Admins;',0,NULL,0,0,0 ,@ModuleID1 output
 END
 
 IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 1)

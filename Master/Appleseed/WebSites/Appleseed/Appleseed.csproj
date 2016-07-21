@@ -904,6 +904,13 @@
     <Compile Include="DesktopModules\CoreModules\AddTab\AddTab.ascx.designer.cs">
       <DependentUpon>AddTab.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx.cs">
+      <DependentUpon>AdminModuleInstances.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx.designer.cs">
+      <DependentUpon>AdminModuleInstances.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\Admin\AddEditPage.aspx.cs">
       <DependentUpon>AddEditPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -6196,6 +6203,9 @@
     <Content Include="DesktopModules\CoreModules\AddTab\AddTab.ascx" />
     <Content Include="DesktopModules\CoreModules\AddTab\install.xml" />
     <Content Include="DesktopModules\CoreModules\AddTab\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx" />
+    <Content Include="DesktopModules\CoreModules\AdminModuleInstances\install.xml" />
+    <Content Include="DesktopModules\CoreModules\AdminModuleInstances\readme.txt" />
     <Content Include="DesktopModules\CoreModules\Admin\AddEditPage.aspx" />
     <Content Include="DesktopModules\CoreModules\Admin\AdminLeftMenu.ascx" />
     <Content Include="DesktopModules\CoreModules\Admin\ChangePassword.aspx" />

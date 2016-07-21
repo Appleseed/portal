@@ -655,6 +655,38 @@ namespace Appleseed.Framework.Site.Data
             return desktopPages;
         }
 
+        public List<ModuleInstance> GetPagesByModule(int modDefId)
+        {
+            var connection = Config.SqlConnectionString;
+            SqlCommand myCommand = new SqlCommand("select * from rb_Modules where ModuleDefID=" + modDefId, connection);
+            List<ModuleInstance> lstPageItems = new List<ModuleInstance>();
+            myCommand.CommandType = CommandType.Text;
+            connection.Open();
+            var reader = myCommand.ExecuteReader(CommandBehavior.CloseConnection);
+            while (reader.Read())
+            {
+                var modItem = new ModuleItem() { ID = Convert.ToInt32(reader["ModuleID"]), Title = reader["ModuleTitle"].ToString() };
+                //lstPageItems.Add(new ModuleInstance() { ModuleItem = modItem, ModuleTitle = reader["ModuleTitle"].ToString(), ID = reader["TabID"].ToString(), Date = Convert.ToDateTime(reader["LastModified"]).ToString("dd/MM/yyyy") });
+                lstPageItems.Add(new ModuleInstance() { ModuleItem = modItem, ModuleTitle = reader["ModuleTitle"].ToString(), ID = reader["TabID"].ToString(), Date = reader["LastModified"].ToString() });
+            }
+            reader.Close();
+
+            foreach (var item in lstPageItems)
+            {
+                myCommand = new SqlCommand("select * from rb_Pages where PageID =" + item.ID, connection);
+                myCommand.CommandType = CommandType.Text;
+                connection.Open();
+                var rdrPage = myCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                while (rdrPage.Read())
+                {
+                    item.PageName = rdrPage["PageName"].ToString();
+                }
+                rdrPage.Close();
+            }
+
+            return lstPageItems;
+        }
+
         /// <summary>
         /// UpdatePage Method<br/>
         ///   UpdatePage Stored Procedure
@@ -687,15 +719,15 @@ namespace Appleseed.Framework.Site.Data
         /// friendly url
         /// </param>
         public void UpdatePage(
-          int portalId,
-          int pageId,
-          int parentPageId,
-          string pageName,
-          int pageOrder,
-          string authorizedRoles,
-          string mobilePageName,
-          bool showMobile,
-          string friendlyURL = "")
+              int portalId,
+              int pageId,
+              int parentPageId,
+              string pageName,
+              int pageOrder,
+              string authorizedRoles,
+              string mobilePageName,
+              bool showMobile,
+              string friendlyURL = "")
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)

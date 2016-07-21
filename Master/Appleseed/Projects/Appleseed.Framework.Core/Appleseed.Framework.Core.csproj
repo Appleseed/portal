@@ -189,6 +189,7 @@
     <Compile Include="Configuration\Items\CurrentModuleDefination.cs" />
     <Compile Include="Configuration\Items\ISettingItem.cs" />
     <Compile Include="Configuration\Items\JsTreeItem.cs" />
+    <Compile Include="Configuration\Items\ModuleInstance.cs" />
     <Compile Include="Configuration\Items\PagesBox.cs" />
     <Compile Include="Configuration\Items\SettingItem.cs" />
     <Compile Include="Configuration\Items\SettingItemGroups.cs" />
@@ -308,9 +309,7 @@
     <Compile Include="Security\Security.cs" />
     <Compile Include="Security\SpecialRoles.cs" />
     <Compile Include="Security\UserProfile.cs" />
-    <Compile Include="Service\Client\communityService.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Service\Client\communityService.cs" />
     <Compile Include="Service\ServiceClasses.cs" />
     <Compile Include="Service\ServiceHelper.cs" />
     <Compile Include="Settings\Cache\CurrentCache.cs" />
