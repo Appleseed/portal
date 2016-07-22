@@ -43,7 +43,9 @@ namespace Appleseed.Framework.Helpers
         public string CreatePasswordHash(string pwd, string salt)
         {
             string saltAndPwd = String.Concat(pwd, salt);
+            #pragma warning disable CS0618 // Type or member is obsolete
             string hashedPwd = FormsAuthentication.HashPasswordForStoringInConfigFile(saltAndPwd, "SHA1");
+            #pragma warning restore CS0618 // Type or member is obsolete
             return hashedPwd;
         }
 

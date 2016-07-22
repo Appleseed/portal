@@ -35,6 +35,11 @@ namespace Appleseed.Framework.Scheduler
         #region Constants and Fields
 
         /// <summary>
+        /// load schedule objects from caches
+        /// </summary>
+        private static object loadSchedCache = new Object();
+
+        /// <summary>
         /// The cache.
         /// </summary>
         protected SortedList _cache;
@@ -91,7 +96,7 @@ namespace Appleseed.Framework.Scheduler
             // Singleton
             if (theScheduler == null)
             {
-                lock (typeof(CachedScheduler))
+                lock (loadSchedCache)
                 {
                     if (theScheduler == null)
                     {

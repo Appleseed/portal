@@ -98,27 +98,27 @@ namespace Appleseed.Framework
         /// <summary>
         ///     Modification description
         /// </summary>
-        public virtual string Comment { get; set; }
+        public string Comment { get; set; }
 
         /// <summary>
         ///     Modification date
         /// </summary>
-        public virtual DateTime Date { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         ///     The Email of the Author
         /// </summary>
-        public virtual string Email { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         ///     The Author name
         /// </summary>
-        public virtual string Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         ///     Modification Version
         /// </summary>
-        public virtual string Version { get; set; }
+        public string Version { get; set; }
 
         #endregion
     }

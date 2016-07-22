@@ -655,6 +655,11 @@ namespace Appleseed.Framework.Site.Data
             return desktopPages;
         }
 
+        /// <summary>
+        /// Get pages of specific modules
+        /// </summary>
+        /// <param name="modDefId">module id</param>
+        /// <returns></returns>
         public List<ModuleInstance> GetPagesByModule(int modDefId)
         {
             var connection = Config.SqlConnectionString;

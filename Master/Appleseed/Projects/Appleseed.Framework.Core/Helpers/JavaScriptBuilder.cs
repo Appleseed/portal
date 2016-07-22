@@ -183,13 +183,16 @@ namespace Appleseed.Framework.Helpers
             // - if not then there's almost certainly a problem in the JavaScript
             if (this.openBlocks > 0)
             {
-                throw new InvalidOperationException("JavaScriptBuilder: code blocks are still open");
+                ErrorHandler.Publish(LogLevel.Error, "JavaScriptBuilder: code blocks are still open");
+                return null;
             }
-
-            // Add the <script> tags and some comment blocks, so that
-            // browsers that don't support scripts will not crash horribly
-            return string.Format(
-                "<script language=\"javascript\">{0}<!--{0}{1}// -->{0}</script>", Environment.NewLine, this.sb);
+            else
+            {
+                // Add the <script> tags and some comment blocks, so that
+                // browsers that don't support scripts will not crash horribly
+                return string.Format(
+                    "<script language=\"javascript\">{0}<!--{0}{1}// -->{0}</script>", Environment.NewLine, this.sb);
+            }
         }
 
         #endregion

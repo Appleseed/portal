@@ -157,6 +157,7 @@
     <Content Include="DBScripts\20121220\01.AddingFileManagerGeneralModuleDefinition.sql" />
     <Content Include="DBScripts\20121221\02.ChangeComponentModuleSProc.sql" />
     <Content Include="DBScripts\20121220\02.ChangeOldFileManager.sql" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="PortableAreaUtils.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DBScripts\ExecuteHelper.cs" />

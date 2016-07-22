@@ -1738,14 +1738,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
         /// </summary>
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public virtual Guid GuidID
-        {
-            get
-            {
-                // 1.1.8.1324 - 24/01/2003
-                throw new NotImplementedException("You must implement a unique GUID for your module");
-            }
-        }
+        public virtual Guid GuidID { get; }
 
         /// <summary>
         ///   Gets Module button that will launch the module help in a pop-up window
