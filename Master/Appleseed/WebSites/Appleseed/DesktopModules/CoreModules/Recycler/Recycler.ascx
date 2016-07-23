@@ -21,11 +21,13 @@
             }
 
     .gridHeaderSortASC A {
-        background: url(/images/SortOrderAsc.png) no-repeat 95% 50%;
+        background: url(/images/SortOrderAsc.png) no-repeat 100% 50%;
+        background-size: 15px;
     }
 
     .gridHeaderSortDESC A {
-        background: url(/images/SortOrderDesc.png) no-repeat 95% 50%;
+        background: url(/images/SortOrderDesc.png) no-repeat 100% 50%;
+        background-size: 15px;
     }
 </style>
 
