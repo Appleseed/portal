@@ -21,18 +21,63 @@ namespace Appleseed.Content.Web.Modules
         {
             if (!Page.IsPostBack)
             {
-                BindData("ModuleTitle");
+                BindData("ModuleTitle", true);
+                BindPagesData("PageName",true);
             }
         }
 
-        protected void BindData(string SortField)
+        protected void BindData(string SortField,bool IsLoad = false)
         {
             DataTable dt = RecyclerDB.GetModulesInRecycler(this.PortalSettings.PortalID, SortField);
-            DataGrid1.DataSource = dt;
-            DataGrid1.DataBind();
 
-            dt = RecyclerDB.GetPagesInRecycler(this.PortalSettings.PortalID, SortField);
-            dtgPages.DataSource = dt;
+            DataView dv = new DataView(dt);
+
+            if (GridViewSortDirection == SortDirection.Ascending)
+            {
+                if (!IsLoad)
+                {
+                    GridViewSortDirection = SortDirection.Descending;
+                    dv.Sort = SortField + DESCENDING;
+                }
+                else
+                {
+                    dv.Sort = SortField + ASCENDING;
+                }
+            }
+            else
+            {
+                GridViewSortDirection = SortDirection.Ascending;
+                dv.Sort = SortField + ASCENDING;
+            }
+
+            DataGrid1.DataSource = dv;
+            DataGrid1.DataBind();
+        }
+
+        public void BindPagesData( string SortField, bool IsLoad = false)
+        {
+            DataTable dt1 = RecyclerDB.GetPagesInRecycler(this.PortalSettings.PortalID, SortField);
+            DataView dv1 = new DataView(dt1);
+
+            if (GridViewSortDirectionPages == SortDirection.Ascending)
+            {
+                if (!IsLoad)
+                {
+                    GridViewSortDirectionPages = SortDirection.Descending;
+                    dv1.Sort = SortField + DESCENDING;
+                }
+                else
+                {
+                    dv1.Sort = SortField + ASCENDING;
+                }
+            }
+            else
+            {
+                GridViewSortDirectionPages = SortDirection.Ascending;
+                dv1.Sort = SortField + ASCENDING;
+            }
+
+            dtgPages.DataSource = dv1;
             dtgPages.DataBind();
         }
 
@@ -65,6 +110,17 @@ namespace Appleseed.Content.Web.Modules
         {
             string SortField = e.SortExpression.ToString();
             BindData(SortField);
+
+            int i = 0;
+            foreach (DataGridColumn col in DataGrid1.Columns)
+            {
+                if (col.SortExpression == e.SortExpression)
+                    DataGrid1.Columns[i].HeaderStyle.CssClass =
+                      "gridHeaderSort" + (GridViewSortDirection == SortDirection.Ascending ? ASCENDING.Trim() : DESCENDING.Trim());
+                else
+                    DataGrid1.Columns[i].HeaderStyle.CssClass = "gridHeader";
+                i++;
+            }
         }
 
         /// <summary>
@@ -132,6 +188,51 @@ namespace Appleseed.Content.Web.Modules
 //			}
         }
 
+        private const string ASCENDING = " ASC";
+        private const string DESCENDING = " DESC";
+
+        public SortDirection GridViewSortDirection
+        {
+            get
+            {
+                if (ViewState["sortDirection"] == null)
+                    ViewState["sortDirection"] = SortDirection.Ascending;
+
+                return (SortDirection)ViewState["sortDirection"];
+            }
+            set { ViewState["sortDirection"] = value; }
+        }
+
+        public SortDirection GridViewSortDirectionPages
+        {
+            get
+            {
+                if (ViewState["sortDirectionPages"] == null)
+                    ViewState["sortDirectionPages"] = SortDirection.Ascending;
+
+                return (SortDirection)ViewState["sortDirectionPages"];
+            }
+            set { ViewState["sortDirectionPages"] = value; }
+        }
+
+
         #endregion
+
+        protected void dtgPages_SortCommand(object source, DataGridSortCommandEventArgs e)
+        {
+            string SortField = e.SortExpression.ToString();
+            BindPagesData(SortField);
+
+            int i = 0;
+            foreach (DataGridColumn col in dtgPages.Columns)
+            {
+                if (col.SortExpression == e.SortExpression)
+                    dtgPages.Columns[i].HeaderStyle.CssClass =
+                      "gridHeaderSort" + (GridViewSortDirectionPages == SortDirection.Ascending ? ASCENDING.Trim() : DESCENDING.Trim());
+                else
+                    dtgPages.Columns[i].HeaderStyle.CssClass = "gridHeader";
+                i++;
+            }
+        }
     }
 }

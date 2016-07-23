@@ -6581,6 +6581,8 @@
     <Content Include="images\img\tridown.gif" />
     <Content Include="images\img\trileft.gif" />
     <Content Include="images\img\_reply.gif" />
+    <Content Include="images\SortOrderAsc.png" />
+    <Content Include="images\SortOrderDesc.png" />
     <Content Include="images\rolepermissions.png" />
     <Content Include="images\root.png" />
     <Content Include="images\sign-in-google.png" />
