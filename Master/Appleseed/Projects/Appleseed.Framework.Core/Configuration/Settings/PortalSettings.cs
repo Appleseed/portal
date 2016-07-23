@@ -2566,6 +2566,10 @@ namespace Appleseed.Framework.Site.Configuration
                 return false;
             }
         }
+
+        /// <summary>
+        /// Whether Private Site is enabled or not
+        /// </summary>
         public bool EnabledPrivateSite
         {
             get

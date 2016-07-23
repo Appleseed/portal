@@ -1524,6 +1524,7 @@
     <Compile Include="DesktopModules\CoreModules\XMLImportExport\XmlImportExport.ascx.designer.cs">
       <DependentUpon>XmlImportExport.ascx</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Installer\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

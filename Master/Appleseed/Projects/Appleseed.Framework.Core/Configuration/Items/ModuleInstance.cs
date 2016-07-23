@@ -16,10 +16,24 @@ namespace Appleseed.Framework
         /// </summary>
         public ModuleItem ModuleItem { get; set; }
 
-
+        /// <summary>
+        /// Module ID
+        /// </summary>
         public string ID { get; set; }
+
+        /// <summary>
+        /// Page name
+        /// </summary>
         public string PageName { get; set; }
+
+        /// <summary>
+        /// Module title
+        /// </summary>
         public string ModuleTitle { get; set; }
+
+        /// <summary>
+        /// Date
+        /// </summary>
         public string Date { get; set; }
     }
 }

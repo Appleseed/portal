@@ -16,7 +16,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
     /// <summary>
     /// This class contains the data 
     /// </summary>
-    internal class ViewControlData
+    internal class ViewControlData : IDisposable
     {
         private string name_ = string.Empty; // button name
         private string alt_text_ = string.Empty; // alternate text
@@ -207,6 +207,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 }
             }
         } // end of setup
+
+        public void Dispose()
+        {
+            this.button_.Dispose();
+        }
     } // end of ViewControlData
 
     /// ----------------------------------------------------------------------

@@ -247,6 +247,7 @@
     <Compile Include="Exceptions\AppleseedRedirect.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="General.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\ADHelper.cs" />
     <Compile Include="Helpers\CryptoHelper.cs" />
     <Compile Include="Helpers\CssHelper.cs" />

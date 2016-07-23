@@ -127,14 +127,23 @@ namespace Appleseed.Framework.Design
         {
             get
             {
-                if (this.WebPath == string.Empty)
-                {
-                    throw new ArgumentNullException("Path", "Value cannot be null!");
-                }
-
-                // Try to get current theme from public folder
-                return System.IO.Path.Combine(this.Path, "Theme.xml");
+                return GetThemeFileName();
             }
+        }
+
+        /// <summary>
+        /// Get theme file name
+        /// </summary>
+        /// <returns></returns>
+        private string GetThemeFileName()
+        {
+            if (this.WebPath == string.Empty)
+            {
+                throw new ArgumentNullException("Path", "Value cannot be null!");
+            }
+
+            // Try to get current theme from public folder
+            return System.IO.Path.Combine(this.Path, "Theme.xml");
         }
 
         /// <summary>

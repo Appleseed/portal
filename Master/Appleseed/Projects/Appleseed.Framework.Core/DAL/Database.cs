@@ -37,39 +37,44 @@ namespace Appleseed.Framework.Settings
             // 2) Connection problems are thrown immediately as errors.
             get
             {
-                if (HttpContext.Current.Application[dbKey] == null)
+                return GetDatabaseVersion();
+            }
+        }
+
+        private static int GetDatabaseVersion()
+        {
+            if (HttpContext.Current.Application[dbKey] == null)
+            {
+                try
                 {
-                    try
-                    {
-                        // Create rb version if it is missing
-                        const string CreateRbVersions =
-                            "IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N\'[rb_Versions]\') AND OBJECTPROPERTY(id, N\'IsUserTable\') = 1) " +
-                            "CREATE TABLE [rb_Versions] ([Release] [int] NOT NULL , [Version] [nvarchar] (50) NULL , [ReleaseDate] [datetime] NULL ) ON [PRIMARY]";
-                        DBHelper.ExeSQL(CreateRbVersions);
-                    }
-                    catch (SqlException ex)
-                    {
-                        throw new DatabaseUnreachableException(
-                            "Failed to get Database Version - most likely cannot connect to db or no permission.", ex);
+                    // Create rb version if it is missing
+                    const string CreateRbVersions =
+                        "IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N\'[rb_Versions]\') AND OBJECTPROPERTY(id, N\'IsUserTable\') = 1) " +
+                        "CREATE TABLE [rb_Versions] ([Release] [int] NOT NULL , [Version] [nvarchar] (50) NULL , [ReleaseDate] [datetime] NULL ) ON [PRIMARY]";
+                    DBHelper.ExeSQL(CreateRbVersions);
+                }
+                catch (SqlException ex)
+                {
+                    throw new DatabaseUnreachableException(
+                        "Failed to get Database Version - most likely cannot connect to db or no permission.", ex);
 
-                        // Jes1111
-                        // Appleseed.Framework.Configuration.ErrorHandler.HandleException("If this fails most likely cannot connect to db or no permission", ex);
-                        // If this fails most likely cannot connect to db or no permission
-                        // throw;
-                    }
-
-                    var version =
-                        DBHelper.ExecuteSqlScalar<int?>("SELECT TOP 1 Release FROM rb_Versions ORDER BY Release DESC");
-
-                    // Caches db version
-                    var curVersion = version != null ? Int32.Parse(version.ToString()) : 1110;
-                    HttpContext.Current.Application.Lock();
-                    HttpContext.Current.Application[dbKey] = curVersion;
-                    HttpContext.Current.Application.UnLock();
+                    // Jes1111
+                    // Appleseed.Framework.Configuration.ErrorHandler.HandleException("If this fails most likely cannot connect to db or no permission", ex);
+                    // If this fails most likely cannot connect to db or no permission
+                    // throw;
                 }
 
-                return (int)HttpContext.Current.Application[dbKey];
+                var version =
+                    DBHelper.ExecuteSqlScalar<int?>("SELECT TOP 1 Release FROM rb_Versions ORDER BY Release DESC");
+
+                // Caches db version
+                var curVersion = version != null ? Int32.Parse(version.ToString()) : 1110;
+                HttpContext.Current.Application.Lock();
+                HttpContext.Current.Application[dbKey] = curVersion;
+                HttpContext.Current.Application.UnLock();
             }
+
+            return (int)HttpContext.Current.Application[dbKey];
         }
 
         /// <summary>

@@ -79,10 +79,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
         /// </summary>
         private DesktopPanes desktopPanes;
 
+        #pragma warning disable CS0618 // Type or member is obsolete
         /// <summary>
         ///   The template verbs.
         /// </summary>
         private TemplateEditingVerb[] templateVerbs;
+        #pragma warning restore CS0618 // Type or member is obsolete
 
         /// <summary>
         ///   The template verbs dirty.
@@ -140,7 +142,9 @@ namespace Appleseed.Framework.Web.UI.WebControls
             {
                 // When templates are not defined, render a read-only fixed-size block. 
                 // Once templates are defined or are being edited, the control should allow resizing.
+                #pragma warning disable CS0618 // Type or member is obsolete
                 return this.desktopPanes.ContentPaneTemplate == null || InTemplateMode;
+                #pragma warning restore CS0618 // Type or member is obsolete
             }
         }
 
