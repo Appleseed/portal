@@ -1714,6 +1714,7 @@
     <ProjectReference Include="..\..\Projects\PortableAreas\UserManager\UserManager.csproj">
       <Project>{d6e88aa9-5288-4bab-8186-1f958ef316ee}</Project>
       <Name>UserManager</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

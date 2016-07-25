@@ -272,10 +272,10 @@
     <Compile Include="KickStarter\CommonClasses\DataChangeEventArgs.cs" />
     <Compile Include="KickStarter\CommonClasses\Error.cs" />
     <Compile Include="KickStarter\CommonClasses\SQLHelper.cs" />
-    <Compile Include="Models\AppleseedModel.Designer.cs">
-      <DependentUpon>AppleseedModel.edmx</DependentUpon>
+    <Compile Include="Models\AppleseedModel4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AppleseedModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelServices.cs" />
     <Compile Include="Monitoring\MonitoringAction.cs" />
