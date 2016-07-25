@@ -245,9 +245,6 @@
     <Reference Include="Hammock">
       <HintPath>..\..\Libs\Hammock\Hammock.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\..\Libs\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\..\Libs\Ionic.Zip.dll</HintPath>
     </Reference>
