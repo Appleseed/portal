@@ -37,7 +37,6 @@
     <HeaderStyle CssClass="NormalBold" />
     <Columns>
         <rbfwebui:TemplateColumn SortExpression="ModuleTitle">
-            <HeaderStyle CssClass="gridHeaderSortASC" />
             <HeaderTemplate>
                 <rbfwebui:LinkButton ID="linkButton1" runat="server" CommandName="Sort" CommandArgument="ModuleTitle">Module Name</rbfwebui:LinkButton>
             </HeaderTemplate>
@@ -49,7 +48,7 @@
             </ItemTemplate>
         </rbfwebui:TemplateColumn>
         <rbfwebui:BoundColumn DataField="DateDeleted" DataFormatString="{0:MM/dd/yy}" HeaderText="Date Deleted"
-            SortExpression="DateDeleted">
+            SortExpression="DateDeleted" HeaderStyle-CssClass="gridHeaderSortDESC">
         </rbfwebui:BoundColumn>
         <rbfwebui:BoundColumn DataField="DeletedBy" HeaderText="Deleted By" SortExpression="DeletedBy">
         </rbfwebui:BoundColumn>
@@ -65,7 +64,6 @@
     <HeaderStyle CssClass="NormalBold" />
     <Columns>
         <rbfwebui:TemplateColumn SortExpression="PageName">
-            <HeaderStyle CssClass="gridHeaderSortASC" />
             <HeaderTemplate>
                 <rbfwebui:LinkButton ID="linkButton2" runat="server" CommandName="Sort" CommandArgument="PageName">Page Name</rbfwebui:LinkButton>
             </HeaderTemplate>
@@ -77,7 +75,7 @@
             </ItemTemplate>
         </rbfwebui:TemplateColumn>
         <rbfwebui:BoundColumn DataField="DateDeleted" DataFormatString="{0:MM/dd/yy}" HeaderText="Date Deleted"
-            SortExpression="DateDeleted">
+            SortExpression="DateDeleted" HeaderStyle-CssClass="gridHeaderSortDESC">
         </rbfwebui:BoundColumn>
         <rbfwebui:BoundColumn DataField="DeletedBy" HeaderText="Deleted By" SortExpression="DeletedBy">
         </rbfwebui:BoundColumn>
