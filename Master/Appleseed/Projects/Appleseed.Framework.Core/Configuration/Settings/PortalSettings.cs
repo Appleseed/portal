@@ -1591,6 +1591,18 @@ namespace Appleseed.Framework.Site.Configuration
                  };
                 baseSettings.Add("SITESETTINGS_JQUERY_UI", txtjQueryUI);
 
+                // Ashish.patel@haptix.biz - 2016 / 08 / 03 - Add Textbox for HTML Wrapper Class
+                var txtHTMLWrapperClass =
+                 new SettingItem<string, TextBox>()
+                 {
+                     Order = groupOrderBase + 40,
+                     Group = group,
+                     EnglishName = "HTML Wrapper Class",
+                     Description =
+                         "HTML Wrapper Class"
+                 };
+                baseSettings.Add("HTML_WRAPPER_CLASS", txtHTMLWrapperClass);
+
                 groupOrderBase = (int)SettingItemGroup.SECURITY_USER_SETTINGS;
                 group = SettingItemGroup.SECURITY_USER_SETTINGS;
 
@@ -2832,7 +2844,8 @@ namespace Appleseed.Framework.Site.Configuration
 
         private static string GetPortalSettingsCacheKey(int pageId, string portalAlias)
         {
-            if (string.IsNullOrEmpty(portalAlias)) {
+            if (string.IsNullOrEmpty(portalAlias))
+            {
                 portalAlias = string.Empty;
             }
             return String.Format("{0}_{1}_{2}", GetPortalSettingsCacheKeyPrefix(), portalAlias.ToLower(), pageId);

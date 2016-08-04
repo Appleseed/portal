@@ -11,7 +11,7 @@
 <div id="HTMLContainer" runat="server">
 
     <% if (HasEditPermission())
-       {%>
+        {%>
     <div id="HTMLEditContainer" runat="server" style="position: relative;">
         <div id="HtmlModuleText" runat="server"></div>
         <asp:PlaceHolder ID="HtmlHolder" runat="server"></asp:PlaceHolder>
@@ -20,8 +20,8 @@
         </div>
     </div>
     <% }
-       else
-       { %>
+        else
+        { %>
     <asp:PlaceHolder ID="HtmlHolder2" runat="server"></asp:PlaceHolder>
     <% } %>
 </div>
