@@ -1132,20 +1132,6 @@
     <Compile Include="DesktopModules\CoreModules\FileBrowser\FileBrowserModule.ascx.designer.cs">
       <DependentUpon>FileBrowserModule.ascx</DependentUpon>
     </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManager.ascx.cs">
-      <DependentUpon>FileManager.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManager.ascx.designer.cs">
-      <DependentUpon>FileManager.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx.cs">
-      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx.designer.cs">
-      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DesktopModules\CoreModules\HTMLDocument\AlohaHtmlEditorService.asmx.cs">
       <DependentUpon>AlohaHtmlEditorService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -1691,10 +1677,6 @@
     <ProjectReference Include="..\..\Projects\PortableAreas\Appleseed.Core\Appleseed.Core.csproj">
       <Project>{22C4BA46-65C9-49E2-8A23-86DD2F44B744}</Project>
       <Name>Appleseed.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Projects\PortableAreas\FileManager\FileManager.csproj">
-      <Project>{8d606cc2-ca1b-4320-b4a1-811430123396}</Project>
-      <Name>FileManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Projects\PortableAreas\PageManagerTree\PageManagerTree.csproj">
       <Project>{36310014-77B3-4DB6-B391-B4036D1BDDD3}</Project>
@@ -6375,17 +6357,6 @@
     <Content Include="DesktopModules\CoreModules\FileBrowser\install.xml" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.js" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js" />
-    <Content Include="DesktopModules\CoreModules\FileManager\example.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\FileManager.ascx" />
-    <Content Include="DesktopModules\CoreModules\FileManager\FileManager.xml" />
-    <Content Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\btnDelete.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\btnNewFolder.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\btnUp.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\dir.gif" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\fileedit.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\install.xml" />
-    <Content Include="DesktopModules\CoreModules\FileManager\readme.txt" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\AlohaHtmlEditorService.asmx" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\HtmlDocument.xml" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\HtmlEdit.aspx" />

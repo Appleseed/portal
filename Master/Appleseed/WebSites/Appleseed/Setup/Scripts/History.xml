@@ -29,7 +29,6 @@
       <Installer>DesktopModules/CoreModules/DatabaseTableEdit/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/DatabaseTool/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/EventLogs/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/FileManager/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Users/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/ModuleDefinitions/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/ModuleDefinitionsAll/install.xml</Installer>
@@ -938,14 +937,6 @@
       <Installer>DesktopModules/CommunityModules/XmlFeed/install.xml</Installer>
       <!--<Installer>DesktopModules/CommunityModules/XmlLang/install.xml</Installer>-->
       <Installer>DesktopModules/CommunityModules/XmlModule/install.xml</Installer>
-    </Modules>
-  </Release>
-  <Release>
-    <ID>1793</ID>
-    <Version>1.5.0.1793</Version>
-    <Date>2005-04-15T00:00:00.0000000+01:00</Date>
-    <Modules>
-      <Installer>DesktopModules/CoreModules/FileManager/install.xml</Installer>
     </Modules>
   </Release>
   <Release>

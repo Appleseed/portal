@@ -40,9 +40,13 @@ END
 UPDATE [rb_GeneralModuleDefinitions] SET FriendlyName = 'Admin - Short Links' where GeneralModDefID = 'C1EA4115-E7F2-4CBC-B1E7-DDA46791493C'
 
 /* replacing new file browser with old file manager */
-DECLARE @newMFIDFB int
-SELECT @newMFIDFB = ModuleDefID FROM [rb_ModuleDefinitions] WHERE GeneralModDefID = 'D7B8B22F-366B-4D80-9E49-13C09120A89F'
-UPDATE [rb_Modules] SET [ModuleDefID] = @newMFIDFB WHERE [ModuleDefID] = 7 AND TabID = 155
+select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID='D7B8B22F-366B-4D80-9E49-13C09120A89F'
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE ModuleDefID=@ModuleDefId)
+BEGIN
+	EXEC rb_addModule 155,1,'File Manager','ContentPane',@ModuleDefId,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+END
+DELETE FROM  rb_GeneralModuleDefinitions WHERE GeneralModDefID = 'DE97F04D-FB0A-445d-829A-61E4FA69ADB2'
+DELETE FROM  rb_ModuleDefinitions WHERE GeneralModDefID = 'DE97F04D-FB0A-445d-829A-61E4FA69ADB2'
 
 /* 27/6/2016 */
 /* delete Pages page*/
