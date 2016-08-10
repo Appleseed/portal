@@ -227,6 +227,14 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             }
         }
 
+        public bool IsCKEditorCurrentEditor
+        {
+            get
+            {
+                return this.Settings["Editor"].Value.ToString().ToLower() == "ckeditor";
+            }
+        }
+
         /// <summary>
         ///   Gets a value indicating whether permission for Compare and BackToStage buttons
         /// </summary>
@@ -440,6 +448,20 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             else if (!string.IsNullOrEmpty(this.PortalSettings.CustomSettings["HTML_WRAPPER_CLASS"].ToString()))
             {
                 this.HTMLContainer.Attributes.Add("class", this.PortalSettings.CustomSettings["HTML_WRAPPER_CLASS"].ToString());
+            }
+
+            if (this.PortalSettings.EnabledCKEditorInlineEditing && IsCKEditorCurrentEditor)
+            {
+                this.ckEditor.ID = "ckEditor_" + this.ModuleID.ToString();
+                this.ckEditor.Attributes.Add("contenteditable", "true");
+                this.ckEditor.Attributes.Add("pageid", this.PageID.ToString());
+                this.ckEditor.ClientIDMode = ClientIDMode.Static;
+                this.plCkEditorScript.Visible = this.IsCKEditorCurrentEditor;
+                this.plcCkEditorJS.Visible = this.IsCKEditorCurrentEditor;
+            }
+            else
+            {
+                this.ckEditor.Attributes.Remove("contenteditable");
             }
 
             //porlaisettings.bas

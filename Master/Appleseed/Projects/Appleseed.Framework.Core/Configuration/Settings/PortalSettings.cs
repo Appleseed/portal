@@ -1603,6 +1603,17 @@ namespace Appleseed.Framework.Site.Configuration
                  };
                 baseSettings.Add("HTML_WRAPPER_CLASS", txtHTMLWrapperClass);
 
+                //Ashish.patel@haptix.biz - 2016/08/09 - To may site private
+                var enableCKEditorInlineEditing = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 45,
+                    Group = group,
+                    EnglishName = "CkEditor Inline Editing",
+                    Description = "This will enable CKEditor Inline Editing",
+                    Value = false
+                };
+                baseSettings.Add("CKEDITOR_INLINE_EDITING", enableCKEditorInlineEditing);
+
                 groupOrderBase = (int)SettingItemGroup.SECURITY_USER_SETTINGS;
                 group = SettingItemGroup.SECURITY_USER_SETTINGS;
 
@@ -2590,6 +2601,25 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     // return the true / false value
                     return Convert.ToBoolean(this.CustomSettings["ENABLE_PRIVATE_SITE"].Value);
+                }
+                catch { }
+
+                // If nothing then it's return false
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Enable CKEditor Inline Editing
+        /// </summary>
+        public bool EnabledCKEditorInlineEditing
+        {
+            get
+            {
+                try
+                {
+                    // return the true / false value
+                    return Convert.ToBoolean(this.CustomSettings["CKEDITOR_INLINE_EDITING"].Value);
                 }
                 catch { }
 

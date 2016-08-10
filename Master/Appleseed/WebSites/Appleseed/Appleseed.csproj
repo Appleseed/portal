@@ -3510,6 +3510,9 @@
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\pagebreak\images\pagebreak.gif" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\pastefromword\filter\default.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\preview\preview.html" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\savebtn\icons\loader.gif" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\savebtn\icons\savebtn.png" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\savebtn\plugin.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\scayt\dialogs\options.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\scayt\dialogs\toolbar.css" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\showblocks\images\block_address.png" />
@@ -3630,6 +3633,8 @@
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\templates\templates\images\template1.gif" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\templates\templates\images\template2.gif" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\templates\templates\images\template3.gif" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\versionbtn\icons\versionbtn.png" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\versionbtn\plugin.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\wsc\dialogs\ciframe.html" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\wsc\dialogs\tmpFrameset.html" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\wsc\dialogs\wsc.css" />

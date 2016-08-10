@@ -22,6 +22,15 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         protected global::System.Web.UI.WebControls.PlaceHolder plcAloha;
         
         /// <summary>
+        /// plcCkEditorJS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plcCkEditorJS;
+        
+        /// <summary>
         /// HTMLContainer control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl HtmlModuleText;
+        
+        /// <summary>
+        /// ckEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ckEditor;
         
         /// <summary>
         /// HtmlHolder control.
@@ -83,5 +101,14 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder plcAlohaStartupJs;
+        
+        /// <summary>
+        /// plCkEditorScript control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plCkEditorScript;
     }
 }
