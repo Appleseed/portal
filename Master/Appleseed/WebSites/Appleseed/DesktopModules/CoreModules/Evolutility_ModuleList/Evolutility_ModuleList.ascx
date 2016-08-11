@@ -12,12 +12,12 @@
                 Evolutility Modules List</h1>
         </td>
         <td align="Right" style="vertical-align: middle">Add New: 
-           <a href="/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?"
-onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?','Evolutility Module - Add New');return false;">Wizard</a>
-            <a href="/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=dbscan"
-onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=dbscan','Evolutility Module - Add New');return false;">DB Mapper</a>
-              <a href="/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=xml2db"
-onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=xml2db','Evolutility Module - Add New');return false;">Import XML</a>
+           <a runat="server" id="WizardBasic" href="/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?mid="
+onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?mid=','Evolutility Module - Add New');return false;">Wizard</a>
+            <a runat="server" id="DBMapper" href="/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=dbscan&mid="
+onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=dbscan&mid=','Evolutility Module - Add New');return false;">DB Mapper</a>
+              <a runat="server" id="ImportXML" href="/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=xml2db&mid="
+onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility_Wizard.aspx?WIZ=xml2db&mid=','Evolutility Module - Add New');return false;">Import XML</a>
     </tr>
 </table>
 
@@ -38,4 +38,26 @@ onclick="openInModal('/DesktopModules/CoreModules/Evolutility_Wizard/Evolutility
         ToolbarPosition="Top" RowsPerPage="20" ShowTitle="true" Height="100%" Width="100%"
         DisplayModeStart="List" UserComments="None"></EVOL:UIServer>
 </p>
+<asp:HiddenField runat="server" ID="hdnModuleID" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[id*=WizardBasic]').attr("onclick", "openInModal('" + $('[id*=WizardBasic]').attr("href") + "');");
+        $('[id*=WizardBasic]').attr("href", "javascript:void(0)");
+        $('[id*=DBMapper]').attr("onclick", "openInModal('" + $('[id*=DBMapper]').attr("href") + "');");
+        $('[id*=DBMapper]').attr("href", "javascript:void(0)");
+        $('[id*=ImportXML]').attr("onclick", "openInModal('" + $('[id*=ImportXML]').attr("href") + "');");
+        $('[id*=ImportXML]').attr("href", "javascript:void(0)");
+        $("a[href*='EvolutilityFormTest.aspx']").each(function (index, item) {
+            $(this).attr("href", $(this).attr("href") + "&mid=" + $('[id*=hdnModuleID]').val());
+        });
+        $("a[href*='EvolutilityFormDocument.aspx']").each(function (index, item) {
+            $(this).attr("href", $(this).attr("href") + "&mid=" + $('[id*=hdnModuleID]').val());
+        });
+        $("a[href*='Evolutility_Wizard.aspx']").each(function (index, item) {
+            if ($(this).attr("href").indexOf('mid=')== -1) {
+                $(this).attr("href", $(this).attr("href") + "&mid=" + $('[id*=hdnModuleID]').val());
+            }
+        });
+    });
+</script>
 

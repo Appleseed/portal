@@ -13,15 +13,49 @@
         /// This method is used to get data from Evolutility Wizazrd model
         /// </summary>
         /// <returns></returns>
-        public SqlDataReader GetEvolutilyModuleList()
+        public SqlDataReader GetEvolutilyModuleList(string sqlConnectionString)
         {
             SqlConnection myConnection = Config.EvolutilitySqlConnectionString;
-            SqlCommand myCommand = new SqlCommand("getModuleList", myConnection);
+            if (!string.IsNullOrEmpty(sqlConnectionString))
+            {
+                myConnection = new SqlConnection(sqlConnectionString);
+            }
 
-            myCommand.CommandType = CommandType.StoredProcedure;
+            SqlCommand myCommand = new SqlCommand("SELECT id,TITLE from [EvoDico_Form]", myConnection);
+
+            myCommand.CommandType = CommandType.Text;
 
             myConnection.Open();
             return myCommand.ExecuteReader(CommandBehavior.CloseConnection);
+        }
+
+        /// <summary>
+        /// To get Evolutily ModuleID
+        /// </summary>
+        /// <param name="sqlConnectionString">Evolutily db connection string</param>
+        /// <param name="moduleAppTitle">module app title</param>
+        /// <returns></returns>
+        public int GetEvolutilyModuleID(string sqlConnectionString, string moduleAppTitle)
+        {
+            SqlConnection myConnection = Config.EvolutilitySqlConnectionString;
+            if (!string.IsNullOrEmpty(sqlConnectionString))
+            {
+                myConnection = new SqlConnection(sqlConnectionString);
+            }
+
+            SqlCommand myCommand = new SqlCommand("SELECT id,TITLE from [EvoDico_Form] WHERE TITLE = '"+ moduleAppTitle +"'", myConnection);
+
+            myCommand.CommandType = CommandType.Text;
+
+            myConnection.Open();
+            var sqlRd = myCommand.ExecuteReader(CommandBehavior.CloseConnection);
+            int moduleAppId = 0;
+            if (sqlRd.HasRows && sqlRd.Read())
+            {
+                moduleAppId = System.Convert.ToInt32(sqlRd["ID"]);
+            }
+
+            return moduleAppId;
         }
 
 

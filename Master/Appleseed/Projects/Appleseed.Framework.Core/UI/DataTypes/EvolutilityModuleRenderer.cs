@@ -30,14 +30,15 @@
     public class EvolutilityModuleRenderer : ListDataType<string, DropDownList>
     {
         #region Constructors and Destructors
-
+        private string sqlConnectionString = string.Empty;
         /// <summary>
         ///   Initializes a new instance of the <see cref = "EvolutilityModuleRenderer" /> class.
         /// </summary>
         /// <remarks>
         /// </remarks>
-        public EvolutilityModuleRenderer()
+        public EvolutilityModuleRenderer(string moduleConString)
         {
+            sqlConnectionString = moduleConString;
             // this.Type = PropertiesDataType.List;
             this.InitializeComponents();
         }
@@ -58,9 +59,10 @@
                 EvolutilityModuleDB moduleDB = new EvolutilityModuleDB();
                 List<EvolutilityModuleItem> modules = new List<EvolutilityModuleItem>();
                 modules.Add(new EvolutilityModuleItem() { ModuleID = 0, ModuleName = "Select Evolutility Module" });
-                SqlDataReader modelReader = moduleDB.GetEvolutilyModuleList();
+                SqlDataReader modelReader = null;
                 try
                 {
+                    modelReader = moduleDB.GetEvolutilyModuleList(sqlConnectionString);
                     if (modelReader.HasRows)
                     {
                         while (modelReader.Read())
@@ -77,7 +79,10 @@
                 //Added by Ashish - Connection Pool Issues
                 finally
                 {
-                    modelReader.Close();
+                    if (modelReader != null)
+                    {
+                        modelReader.Close();
+                    }
                 }
 
                 return modules;
@@ -121,34 +126,34 @@
 
         #endregion
 
-        #region Public Methods
+        //#region Public Methods
 
-        /// <summary>
-        /// HTMLs the editor settings.
-        /// </summary>
-        /// <param name="editorSettings">
-        /// The editor settings.
-        /// </param>
-        /// <param name="group">
-        /// The group.
-        /// </param>
-        /// <remarks>
-        /// </remarks>
-        public static void ModuleRendererSettings(Dictionary<string, ISettingItem> editorSettings, SettingItemGroup group)
-        {
-            var modules = new SettingItem<string, DropDownList>(new EvolutilityModuleRenderer())
-                {
-                    Order = (int)group + 1,
-                    Group = group,
-                    EnglishName = "Modules",
-                    Description = "Select the Module"
-                };
+        ///// <summary>
+        ///// HTMLs the editor settings.
+        ///// </summary>
+        ///// <param name="editorSettings">
+        ///// The editor settings.
+        ///// </param>
+        ///// <param name="group">
+        ///// The group.
+        ///// </param>
+        ///// <remarks>
+        ///// </remarks>
+        //public static void ModuleRendererSettings(Dictionary<string, ISettingItem> editorSettings, SettingItemGroup group)
+        //{
+        //    var modules = new SettingItem<string, DropDownList>(new EvolutilityModuleRenderer())
+        //    {
+        //        Order = (int)group + 1,
+        //        Group = group,
+        //        EnglishName = "Modules",
+        //        Description = "Select the Module"
+        //    };
 
-            editorSettings.Add("Modules", modules);
+        //    editorSettings.Add("Modules", modules);
 
-        }
+        //}
 
-        #endregion
+        //#endregion
 
         #region Methods
 
@@ -160,7 +165,7 @@
             base.InitializeComponents();
 
             // Default
-           // this.Value = new EvolutilityModuleItem() { ModuleID = 0, ModuleName = "Select Evolutility Module" };
+            // this.Value = new EvolutilityModuleItem() { ModuleID = 0, ModuleName = "Select Evolutility Module" };
 
         }
 

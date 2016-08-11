@@ -25,3 +25,23 @@
     </form>
 </body>
 </html>
+<script src="/aspnet_client/jQuery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var edf = $("a[href*='EvoDicoForm.aspx']");
+        $("a[href*='EvoDicoForm.aspx']").attr("href", $(edf).attr("href") + "&mid=" + GetParameterValues("mid"));
+        var edft = $("a[href*='EvoDicoTest.aspx']");
+        $("a[href*='EvoDicoTest.aspx']").attr("href", $(edft).attr("href") + "&mid=" + GetParameterValues("mid"));
+        var edfd = $("a[href*='EvoDoc.aspx']");
+        $("a[href*='EvoDoc.aspx']").attr("href", $(edfd).attr("href") + "&mid=" + GetParameterValues("mid"));
+    });
+    function GetParameterValues(param) {
+        var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < url.length; i++) {
+            var urlparam = url[i].split('=');
+            if (urlparam[0] == param) {
+                return urlparam[1];
+            }
+        }
+    }
+</script>
