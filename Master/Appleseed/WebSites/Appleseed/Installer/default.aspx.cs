@@ -22,8 +22,8 @@ namespace Appleseed.Installer
 
     using Appleseed.Framework.Update;
     using Appleseed.Framework;
-using System.Configuration;
-
+    using System.Configuration;
+    using Microsoft.Win32;
     /// <summary>
     /// The default.
     /// </summary>
@@ -74,7 +74,7 @@ using System.Configuration;
         /// <summary>
         ///   The installer enabled.
         /// </summary> 
-        private const bool InstallerEnabled =  true;
+        private const bool InstallerEnabled = true;
 
         /// <summary>
         ///   constant string used to allow host to pass the database name to the wizard. If the database can be found in the
@@ -122,42 +122,42 @@ using System.Configuration;
             /// <summary>
             ///   The pre install.
             /// </summary>
-            PreInstall, 
+            PreInstall,
 
             /// <summary>
             ///   The license.
             /// </summary>
-            License, 
+            License,
 
             /// <summary>
             ///   The connect to db.
             /// </summary>
-            ConnectToDb, 
+            ConnectToDb,
 
             /// <summary>
             ///   The select db.
             /// </summary>
-            SelectDb, 
+            SelectDb,
 
             /// <summary>
             ///   The site information.
             /// </summary>
-            SiteInformation, 
+            SiteInformation,
 
             /// <summary>
             ///   The install.
             /// </summary>
-            Install, 
+            Install,
 
             /// <summary>
             ///   The done.
             /// </summary>
-            Done, 
+            Done,
 
             /// <summary>
             ///   The errors.
             /// </summary>
-            Errors, 
+            Errors,
         }
 
         #endregion
@@ -581,15 +581,18 @@ using System.Configuration;
                                 }
 
                                 break;
-                            case "SelfUpdaterEntities": {
+                            case "SelfUpdaterEntities":
+                                {
                                     var attrMCSTRValue = connString.Attributes["connectionString"];
-                                    if (attrMCSTRValue != null) {
+                                    if (attrMCSTRValue != null)
+                                    {
                                         attrMCSTRValue.Value = this.GetEntityModelConnectionString().Replace("AppleseedModel", "SelfUpdater");
                                         dirty = true;
                                     }
 
                                     var attrPVValue = connString.Attributes["providerName"];
-                                    if (attrPVValue != null) {
+                                    if (attrPVValue != null)
+                                    {
                                         attrPVValue.Value = "System.Data.EntityClient";
                                         dirty = true;
                                     }
@@ -777,10 +780,30 @@ using System.Configuration;
             var logsDir = HttpContext.Current.Server.MapPath("~/rb_Logs");
             var portalsDir = HttpContext.Current.Server.MapPath("~/Portals");
 
-            this.lblAspNetVersion.Text = string.Format("<span style=\"color:green;\">{0}</span>", Environment.Version);
+            this.lblAspNetVersion.Text = DotNetFrameworkCheck();
             this.lblWebConfigWritable.Text = IfFileWritable(configFile);
             this.lblLogsDirWritable.Text = IfDirectoryWritable(logsDir);
             this.lblPortalsDirWritable.Text = IfDirectoryWritable(portalsDir);
+        }
+
+        /// <summary>
+        /// Checks dot net framework
+        /// </summary>
+        /// <returns></returns>
+        public string DotNetFrameworkCheck()
+        {
+            const string subkey = @"SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\";
+            using (RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32).OpenSubKey(subkey))
+            {
+                if (ndpKey != null && ndpKey.GetValue("Release") != null)
+                {
+                    if ((int)ndpKey.GetValue("Release") >= 394254)
+                    {
+                        return string.Format("<span style=\"color:green;\">4.6.1</span>");
+                    }
+                }
+            }
+            return string.Format("<span style=\"color:red;\">4.6.1 - Not Compatible</span>");
         }
 
         /// <summary>
@@ -825,10 +848,10 @@ using System.Configuration;
         private string GetConnectionString()
         {
             return String.Format(
-                "server={0};uid={1};pwd={2};Trusted_Connection={3}", 
-                this.db_server.Text, 
-                this.db_login.Text, 
-                this.db_password.Text, 
+                "server={0};uid={1};pwd={2};Trusted_Connection={3}",
+                this.db_server.Text,
+                this.db_login.Text,
+                this.db_password.Text,
                 this.db_Connect.SelectedIndex == 0 ? "yes" : "no");
         }
 
@@ -857,11 +880,11 @@ using System.Configuration;
         {
             return
                 string.Format(
-                    "metadata=res://*/Models.AppleseedModel.csdl|res://*/Models.AppleseedModel.ssdl|res://*/Models.AppleseedModel.msl;provider=System.Data.SqlClient;provider connection string=\"Data Source={0};Initial Catalog={1};User ID={2};pwd={3};Trusted_Connection={4};MultipleActiveResultSets=True\"", 
-                    this.db_server.Text, 
-                    this.db_name_list.SelectedValue, 
-                    this.db_login.Text, 
-                    this.db_password.Text, 
+                    "metadata=res://*/Models.AppleseedModel.csdl|res://*/Models.AppleseedModel.ssdl|res://*/Models.AppleseedModel.msl;provider=System.Data.SqlClient;provider connection string=\"Data Source={0};Initial Catalog={1};User ID={2};pwd={3};Trusted_Connection={4};MultipleActiveResultSets=True\"",
+                    this.db_server.Text,
+                    this.db_name_list.SelectedValue,
+                    this.db_login.Text,
+                    this.db_password.Text,
                     this.db_Connect.SelectedIndex == 0 ? "yes" : "no");
         }
 
@@ -877,11 +900,11 @@ using System.Configuration;
         {
             return
                 string.Format(
-                    "metadata=res://*/AppleseedMembershipModel.csdl|res://*/AppleseedMembershipModel.ssdl|res://*/AppleseedMembershipModel.msl;provider=System.Data.SqlClient;provider connection string=\"Data Source={0};Initial Catalog={1};User ID={2};pwd={3};Trusted_Connection={4};MultipleActiveResultSets=True\"", 
-                    this.db_server.Text, 
-                    this.db_name_list.SelectedValue, 
-                    this.db_login.Text, 
-                    this.db_password.Text, 
+                    "metadata=res://*/AppleseedMembershipModel.csdl|res://*/AppleseedMembershipModel.ssdl|res://*/AppleseedMembershipModel.msl;provider=System.Data.SqlClient;provider connection string=\"Data Source={0};Initial Catalog={1};User ID={2};pwd={3};Trusted_Connection={4};MultipleActiveResultSets=True\"",
+                    this.db_server.Text,
+                    this.db_name_list.SelectedValue,
+                    this.db_login.Text,
+                    this.db_password.Text,
                     this.db_Connect.SelectedIndex == 0 ? "yes" : "no");
         }
 
