@@ -9,6 +9,8 @@
     private void Page_Load( object sender, System.EventArgs e ) {
 		PortalTitle.DataBind();
         PortalImage.DataBind();
+        ltrLoggedInUserName.Text = PortalSettings.CurrentUser.Identity.Name;
+        ltrLoggedInUserLastActivityDate.Text =  PortalSettings.CurrentUser.Identity.LastLoginDate.ToString("dd MMM h:mmtt");
     }
 </script>
 
@@ -40,91 +42,6 @@
 </div>
 
 <div class="menus">
-  <div id="left" style="display:none;">
-    <!-- mini menu -->
-    <ul class="menu" class="bg-dark">
-      <li class="active">
-        <button type="button" class="menu-button" href="#home-menu">
-          <i class="fa fa-home"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-home.png" />
-          <span class="link-title">Home</span> 
-        </button> 
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#users-menu">
-          <i class="fa fa-users"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-users.png" />
-          <span class="link-title">Users</span> 
-          <span class="fa arrow"></span> 
-        </button>
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#pages-menu">
-          <i class="fa fa-files-o"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-pages.png" />
-          <span class="link-title">Pages</span> 
-          <span class="fa arrow"></span> 
-        </button>
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#modules-menu">
-          <i class="fa fa-cube"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-cube.png" />
-          <span class="link-title">Modules</span> 
-          <span class="fa arrow"></span> 
-        </button>
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#files-menu">
-          <i class="fa fa-folder"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-folder.png" />
-          <span class="link-title">Files</span> 
-        </button> 
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#design-menu">
-          <i class="fa fa-photo"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-picture.png" />
-          <span class="link-title">Design</span> 
-        </button> 
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#settings-menu">
-          <i class="fa fa-cog"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-cog.png" />
-          <span class="link-title">Settings</span>  
-        </button> 
-      </li>
-      <li class="">
-        <button type="button" class="menu-button" href="#recycler-menu">
-          <i class="fa fa-trash-o"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/fa-trash.png" />
-          <span class="link-title">Recycle</span> 
-        </button> 
-      </li>
-      <li class="nav-divider"></li>
-      <li class="nav-header">Programs</li>
-      <li class="nav-divider"></li>
-      <li class="">
-        <button type="button" class="menu-button" href="javascript:;">
-          <i class="fa fa-tree"></i>
-          <img class="fa-img" src="/Design/Themes/Appleseed.Admin/images/icons/konotreelogo.png" />
-          <span class="link-title">Kono Tree</span> 
-        </button> 
-      </li>
-      <!--<li class="nav-divider"></li>
-      <li class="nav-header">Ads</li>
-      <li class="nav-divider"></li>
-      <li>
-        <a href="https://www.digitalocean.com/?refcode=e29769a0f3a5">
-          <i class="fa fa-ticket"></i>
-          <span class="link-title">AdLink</span> 
-        </a> 
-      </li>-->
-    </ul><!-- /mini menu -->
-  </div>
-  <!-- /#left -->
-
   <!-- wide sidebar -->
   <div id="left-wide" style="float:right;">
     <div class="search-bar">
@@ -151,16 +68,13 @@
           <span class="label label-danger user-label">16</span> 
         </a> 
         <div class="media-body">
-          <h5 class="media-heading">Anant</h5>
+          <h5 class="media-heading"><asp:Literal ID="ltrLoggedInUserName" runat="server"></asp:Literal></h5>
           <ul class="list-unstyled user-info">
-            <li>
-              <a href="javascript:;">Administrator</a></li>
             <li>Last Access :
               <br>
               <small>
                 <i class="fa fa-calendar"></i>
-                <img class="fa-img date-icon" src="/Design/Themes/Appleseed.Admin/images/icons/fa-calendar.png" />
-                <span class="access-date">&nbsp;16 Mar 16:32</span></small> 
+                <span class="access-date">&nbsp;<asp:Literal ID="ltrLoggedInUserLastActivityDate" runat="server"></asp:Literal></span></small> 
             </li>
           </ul>
         </div>
