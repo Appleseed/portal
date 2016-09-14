@@ -79,6 +79,7 @@ var Evol={
 							cn=cn.substring(0,cnA);
 							switch(cn){
 							case 'del':
+								alert("delet");
 								url='Evol.deleteItem()';
 								break;
 							case 'print':
@@ -1206,7 +1207,12 @@ var EvoUI={
 	},
 	
 	isIE:function(){
-		return document.all?true:false;
+		try{
+			return document.all.length > 0 ?true:false;
+		}
+		catch{
+			return document.all ?true:false;
+		}
 	},
 		
 	AJAX:function(url,vars,cb){
