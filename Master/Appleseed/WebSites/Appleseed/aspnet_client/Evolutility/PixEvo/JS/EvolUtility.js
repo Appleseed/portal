@@ -79,7 +79,6 @@ var Evol={
 							cn=cn.substring(0,cnA);
 							switch(cn){
 							case 'del':
-								alert("delet");
 								url='Evol.deleteItem()';
 								break;
 							case 'print':
