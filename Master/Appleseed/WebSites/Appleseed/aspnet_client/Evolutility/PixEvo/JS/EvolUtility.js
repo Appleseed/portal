@@ -1210,7 +1210,7 @@ var EvoUI={
 		try{
 			return document.all.length > 0 ?true:false;
 		}
-		catch{
+		catch(e){
 			return document.all ?true:false;
 		}
 	},
