@@ -2,9 +2,13 @@
     Language="c#" MasterPageFile="~/Shared/SiteMasterDefault.master" CodeBehind="HtmlEdit.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
-    <style>
+    <style type="text/css">
         textarea {
             color: #808080;
+        }
+        .normal div  {
+            width :100% !important;
+            /*height:100vh;*/
         }
     </style>
     <div class="div_ev_Table">

@@ -287,8 +287,8 @@ GO
 
 EXEC rb_Tabs_IU 	155	,	100	,	1055	,	0	,	N'File Manager'	,	N''	,	N'Admins;'	,	0	,	NULL
 GO
-EXEC rb_Modules_IU 	155, 155, '{DE97F04D-FB0A-445d-829A-61E4FA69ADB2}', 1, N'ContentPane', N'File Manager', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
-GO
+--EXEC rb_Modules_IU 	155, 155, '{DE97F04D-FB0A-445d-829A-61E4FA69ADB2}', 1, N'ContentPane', N'File Manager', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
+--GO
 
 EXEC rb_Tabs_IU 	160	,	100	,	1060	,	0	,	N'Language Switcher'	,	N''	,	N'Admins;'	,	0	,	NULL
 GO

@@ -97,40 +97,49 @@ namespace Appleseed.Framework.DataTypes
             var pS = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
 
             var editor = new SettingItem<string, DropDownList>(new HtmlEditorDataType())
-                {
-                    // Order = 1; modified by Hongwei Shen(hongwei.shen@gmail.com) 11/9/2005
-                    Order = (int)group + 1,
-                    Group = group,
-                    EnglishName = "Editor",
-                    Description = "Select the Html Editor for Module"
-                };
+            {
+                // Order = 1; modified by Hongwei Shen(hongwei.shen@gmail.com) 11/9/2005
+                Order = (int)group + 1,
+                Group = group,
+                EnglishName = "Editor",
+                Description = "Select the Html Editor for Module"
+            };
 
             var controlWidth = new SettingItem<int, TextBox>(new BaseDataType<int, TextBox>())
-                {
-                    Value = 700,
-                    Order = (int)group + 2,
-                    Group = group,
-                    EnglishName = "Editor Width",
-                    Description = "The width of editor control"
-                };
+            {
+                Value = 700,
+                Order = (int)group + 2,
+                Group = group,
+                EnglishName = "Editor Width",
+                Description = "The width of editor control"
+            };
 
             var controlHeight = new SettingItem<int, TextBox>(new BaseDataType<int, TextBox>())
-                {
-                    Value = 400,
-                    Order = (int)group + 3,
-                    Group = group,
-                    EnglishName = "Editor Height",
-                    Description = "The height of editor control"
-                };
+            {
+                Value = 400,
+                Order = (int)group + 3,
+                Group = group,
+                EnglishName = "Editor Height",
+                Description = "The height of editor control"
+            };
 
             var showUpload = new SettingItem<bool, CheckBox>(new BaseDataType<bool, CheckBox>())
-                {
-                    Value = true,
-                    Order = (int)group + 4,
-                    Group = group,
-                    EnglishName = "Upload?",
-                    Description = "Only used if Editor is ActiveUp HtmlTextBox"
-                };
+            {
+                Value = true,
+                Order = (int)group + 4,
+                Group = group,
+                EnglishName = "Upload?",
+                Description = "Only used if Editor is ActiveUp HtmlTextBox"
+            };
+
+            var HTMLWrapperClass = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
+            {
+
+                Order = (int)group + 5,
+                Group = group,
+                EnglishName = "HTML Wrapper Class",
+                Description = "HTML Wrapper Class"
+            };
 
             SettingItem<string, Panel> moduleImageFolder = null;
             if (pS != null)
@@ -142,13 +151,13 @@ namespace Appleseed.Framework.DataTypes
                             new FolderDataType(
                                 HttpContext.Current.Server.MapPath(string.Format("{0}/images", pS.PortalFullPath)),
                                 "default"))
-                            {
-                                Value = "default",
-                                Order = (int)group + 5,
-                                Group = group,
-                                EnglishName = "Default Image Folder",
-                                Description = "This folder is used for editor in this module to take and upload images"
-                            };
+                        {
+                            Value = "default",
+                            Order = (int)group + 5,
+                            Group = group,
+                            EnglishName = "Default Image Folder",
+                            Description = "This folder is used for editor in this module to take and upload images"
+                        };
                 }
 
                 // Set the portal default values
@@ -183,6 +192,12 @@ namespace Appleseed.Framework.DataTypes
                             pS.CustomSettings["SITESETTINGS_SHOWUPLOAD"].ToBoolean(CultureInfo.InvariantCulture);
                     }
 
+                    if (pS.CustomSettings["HTML_WRAPPER_CLASS"] != null)
+                    {
+                        HTMLWrapperClass.Value =
+                            pS.CustomSettings["HTML_WRAPPER_CLASS"].ToString(CultureInfo.InvariantCulture);
+                    }
+
                     if (pS.CustomSettings["SITESETTINGS_DEFAULT_IMAGE_FOLDER"] != null)
                     {
                         if (moduleImageFolder != null)
@@ -197,6 +212,7 @@ namespace Appleseed.Framework.DataTypes
             editorSettings.Add("Width", controlWidth);
             editorSettings.Add("Height", controlHeight);
             editorSettings.Add("ShowUpload", showUpload);
+            editorSettings.Add("HTMLWrapperClass", HTMLWrapperClass);
             if (moduleImageFolder != null)
             {
                 editorSettings.Add("MODULE_IMAGE_FOLDER", moduleImageFolder);

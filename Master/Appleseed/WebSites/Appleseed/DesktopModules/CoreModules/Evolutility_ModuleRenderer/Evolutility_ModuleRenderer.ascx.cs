@@ -25,7 +25,7 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleRenderer
     using Appleseed.Framework.Site.Configuration;
     using Appleseed.Framework.Web.UI.WebControls;
     using History = Appleseed.Framework.History;
-
+    using Framework.Site.Data;
     /// <summary>
     /// Selected module render on page
     /// </summary>
@@ -39,18 +39,7 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleRenderer
         {
             try
             {
-                var group = SettingItemGroup.MODULE_SPECIAL_SETTINGS;
-
-                var modules = new SettingItem<string, DropDownList>(new EvolutilityModuleRenderer())
-                {
-                    Order = (int)group + 1,
-                    Group = group,
-                    EnglishName = "Modules",
-                    Description = "Select the Module"
-                };
-
-                this.BaseSettings.Add("Modules", modules);
-
+                var group = SettingItemGroup.BUTTON_DISPLAY_SETTINGS;
 
                 var dataSqlConnections = new SettingItem<string, TextBox>()
                 {
@@ -65,7 +54,7 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleRenderer
 
                 var discoSqlConnections = new SettingItem<string, TextBox>()
                 {
-                    Order = (int)group + 1,
+                    Order = (int)group + 2,
                     Group = group,
                     EnglishName = "Evol.Disco Connection",
                     Description = "Add Disco Connection string"
@@ -73,6 +62,15 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleRenderer
 
                 this.BaseSettings.Add("Evol.Disco.Connection", discoSqlConnections);
 
+                var modules = new SettingItem<string, TextBox>()
+                {
+                    Order = (int)group + 3,
+                    Group = group,
+                    EnglishName = "Modules",
+                    Description = "Enter Module Name"
+                };
+
+                this.BaseSettings.Add("Modules", modules);
             }
             catch { }
         }
@@ -90,20 +88,23 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleRenderer
         {
             try
             {
-                if (this.Settings.ContainsKey("Modules"))
-                {
-                    this.evoModuleRenderer.XMLfile = this.Settings["Modules"].Value.ToString();
-                }
-
-                if (this.Settings.ContainsKey("DataConnection") && !string.IsNullOrEmpty(this.Settings["DataConnection"].Value.ToString()))
+                
+                if (this.Settings.ContainsKey("DataConnection") && this.Settings["DataConnection"].Value != null && !string.IsNullOrEmpty(this.Settings["DataConnection"].Value.ToString()))
                 {
                     this.evoModuleRenderer.SqlConnection = this.Settings["DataConnection"].Value.ToString();
                 }
 
-                if (this.Settings.ContainsKey("Evol.Disco.Connection") && !string.IsNullOrEmpty(this.Settings["Evol.Disco.Connection"].Value.ToString()))
+                if (this.Settings.ContainsKey("Evol.Disco.Connection") && this.Settings["Evol.Disco.Connection"].Value != null && !string.IsNullOrEmpty(this.Settings["Evol.Disco.Connection"].Value.ToString()))
                 {
                     this.evoModuleRenderer.SqlConnectionDico = this.Settings["Evol.Disco.Connection"].Value.ToString();
                 }
+
+                if (this.Settings.ContainsKey("Modules") && this.Settings["Modules"].Value != null && !string.IsNullOrEmpty(this.Settings["Modules"].Value.ToString()))
+                {
+                    var evelModuleId = new EvolutilityModuleDB().GetEvolutilyModuleID(this.evoModuleRenderer.SqlConnection, this.Settings["Modules"].Value.ToString());
+                    this.evoModuleRenderer.XMLfile = evelModuleId.ToString();
+                }
+
             }
             catch { }
         }

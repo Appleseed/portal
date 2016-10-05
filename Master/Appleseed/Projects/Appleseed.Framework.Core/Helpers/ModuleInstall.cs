@@ -195,6 +195,9 @@ namespace Appleseed.Framework.Helpers
         /// <param name="install">
         /// if set to <c>true</c> [install].
         /// </param>
+        /// <param name="throwEx">
+        /// if set to <c>true</c> will throw execption.
+        /// </param>
         public static void InstallGroup(string groupFileName, bool install, bool throwEx = false)
         {
             var modules = GetInstallGroup(groupFileName);

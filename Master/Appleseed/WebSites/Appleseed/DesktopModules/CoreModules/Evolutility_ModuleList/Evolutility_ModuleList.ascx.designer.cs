@@ -31,6 +31,33 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleList {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl evolwizcss;
         
         /// <summary>
+        /// WizardBasic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor WizardBasic;
+        
+        /// <summary>
+        /// DBMapper control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor DBMapper;
+        
+        /// <summary>
+        /// ImportXML control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ImportXML;
+        
+        /// <summary>
         /// evoModuleList control.
         /// </summary>
         /// <remarks>
@@ -38,5 +65,14 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleList {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Evolutility.UIServer evoModuleList;
+        
+        /// <summary>
+        /// hdnModuleID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnModuleID;
     }
 }

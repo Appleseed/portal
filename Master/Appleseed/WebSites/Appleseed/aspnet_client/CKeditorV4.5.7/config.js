@@ -3,19 +3,19 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here. For example:
-	// config.language = 'fr';
+CKEDITOR.editorConfig = function (config) {
+    // Define changes to default configuration here. For example:
+    // config.language = 'fr';
     // config.uiColor = '#AADC6E';
 
     // Referencing the new plugin
-    config.extraPlugins = 'accordion';
+    config.extraPlugins = 'accordion,savebtn,versionbtn';
 
     // Define the toolbar buttons you want to have available
     config.toolbar = 'accordion';
     config.toolbar_MyToolbar =
        [
-          ['accordion', 'accordion']
+          ['accordion']
        ];
     config.filebrowserBrowseUrl = '/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx';
     config.filebrowserImageBrowseUrl = '/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx';

@@ -127,33 +127,38 @@ namespace Appleseed.Framework.Providers.Geographic
         {
             get
             {
-                // Get the names of providers
-                var config = ProviderConfiguration.GetProviderConfiguration(ProviderType);
-
-                // Read specific configuration information for this provider
-                var providerSettings = (ProviderSettings)config.Providers[config.DefaultProvider];
-
-                // In the cache?
-                var cacheKey = "Appleseed::Web::GeographicProvider::" + config.DefaultProvider;
-
-                if (CurrentCache[cacheKey] == null)
-                {
-                    // The assembly should be in \bin or GAC, so we simply need
-
-                    // to get an instance of the type
-                    try
-                    {
-                        CurrentCache.Insert(
-                            cacheKey, ProviderHelper.InstantiateProvider(providerSettings, typeof(GeographicProvider)));
-                    }
-                    catch (Exception e)
-                    {
-                        throw new Exception("Unable to load provider", e);
-                    }
-                }
-
-                return (GeographicProvider)CurrentCache[cacheKey];
+                return GetCurrentObject();
             }
+        }
+
+        private static GeographicProvider GetCurrentObject()
+        {
+            // Get the names of providers
+            var config = ProviderConfiguration.GetProviderConfiguration(ProviderType);
+
+            // Read specific configuration information for this provider
+            var providerSettings = (ProviderSettings)config.Providers[config.DefaultProvider];
+
+            // In the cache?
+            var cacheKey = "Appleseed::Web::GeographicProvider::" + config.DefaultProvider;
+
+            if (CurrentCache[cacheKey] == null)
+            {
+                // The assembly should be in \bin or GAC, so we simply need
+
+                // to get an instance of the type
+                try
+                {
+                    CurrentCache.Insert(
+                        cacheKey, ProviderHelper.InstantiateProvider(providerSettings, typeof(GeographicProvider)));
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Unable to load provider", e);
+                }
+            }
+
+            return (GeographicProvider)CurrentCache[cacheKey];
         }
 
         /// <summary>

@@ -363,9 +363,9 @@ namespace Appleseed.Framework.Update
         /// </param>
         /// <remarks>
         /// </remarks>
-        protected void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
-            // TODO Implement the pattern properly.
+
         }
 
         #endregion

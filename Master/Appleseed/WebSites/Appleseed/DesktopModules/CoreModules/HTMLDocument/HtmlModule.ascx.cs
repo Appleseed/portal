@@ -31,7 +31,6 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
     using Appleseed.PortalTemplate.DTOs;
     using System.Xml.Serialization;
     using System.Web.UI.HtmlControls;
-
     /// <summary>
     /// HTML Document Module
     ///   Represents any text that can contain HTML
@@ -89,11 +88,11 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             // If false the input box for mobile content will be hidden
             var showMobileText = new SettingItem<bool, CheckBox>
-                {
-                    Value = true,
-                    Order = groupOrderBase + 10,
-                    Group = group
-                };
+            {
+                Value = true,
+                Order = groupOrderBase + 10,
+                Group = group
+            };
             this.BaseSettings.Add("ShowMobile", showMobileText);
 
             #region Button Display Settings for this module
@@ -104,13 +103,13 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             // If false the compare button will be hidden
             var showCompareButton = new SettingItem<bool, CheckBox>
-                {
-                    Value = true,
-                    Order = groupOrderBase + 60,
-                    Group = group,
-                    EnglishName = "Show Compare Button?",
-                    Description = "Compare the working version with the live one"
-                };
+            {
+                Value = true,
+                Order = groupOrderBase + 60,
+                Group = group,
+                EnglishName = "Show Compare Button?",
+                Description = "Compare the working version with the live one"
+            };
             this.BaseSettings.Add(StringsCompareButton, showCompareButton);
 
             // end of addition
@@ -225,6 +224,14 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             get
             {
                 return this.Settings["Editor"].Value.ToString().ToLower() == "aloha editor";
+            }
+        }
+
+        public bool IsCKEditorCurrentEditor
+        {
+            get
+            {
+                return this.Settings["Editor"].Value.ToString().ToLower() == "ckeditor";
             }
         }
 
@@ -418,7 +425,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             {
                 if (this.IsAlohaCurrentEditor)
                 {
-                    this.HtmlLiteral.Text = "<div id='aloha-editor-"+this.ModuleID+"' class='area-content' pageid='"+this.PageID+"' moduleid='" + this.ModuleID + "'>" + this.HtmlLiteral.Text + "</div>";
+                    this.HtmlLiteral.Text = "<div id='aloha-editor-" + this.ModuleID + "' class='area-content' pageid='" + this.PageID + "' moduleid='" + this.ModuleID + "'>" + this.HtmlLiteral.Text + "</div>";
                 }
                 this.HtmlHolder.Controls.Add(this.HtmlLiteral);
             }
@@ -434,6 +441,30 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         /// <param name="e"> The <see cref="System.EventsArgs"/> instance containing event data.</param>
         protected override void OnLoad(EventArgs e)
         {
+            if (!string.IsNullOrEmpty(this.Settings["HTMLWrapperClass"].ToString()))
+            {
+                this.HTMLContainer.Attributes.Add("class", this.Settings["HTMLWrapperClass"].ToString());
+            }
+            else if (!string.IsNullOrEmpty(this.PortalSettings.CustomSettings["HTML_WRAPPER_CLASS"].ToString()))
+            {
+                this.HTMLContainer.Attributes.Add("class", this.PortalSettings.CustomSettings["HTML_WRAPPER_CLASS"].ToString());
+            }
+
+            if (this.PortalSettings.EnabledCKEditorInlineEditing && IsCKEditorCurrentEditor)
+            {
+                this.ckEditor.ID = "ckEditor_" + this.ModuleID.ToString();
+                this.ckEditor.Attributes.Add("contenteditable", "true");
+                this.ckEditor.Attributes.Add("pageid", this.PageID.ToString());
+                this.ckEditor.ClientIDMode = ClientIDMode.Static;
+                this.plCkEditorScript.Visible = this.IsCKEditorCurrentEditor;
+                this.plcCkEditorJS.Visible = this.IsCKEditorCurrentEditor;
+            }
+            else
+            {
+                this.ckEditor.Attributes.Remove("contenteditable");
+            }
+
+            //porlaisettings.bas
             if (Appleseed.Framework.Security.PortalSecurity.HasEditPermissions(this.ModuleID) && this.IsAlohaCurrentEditor)
             {
                 bool isAlohaloaded = false;

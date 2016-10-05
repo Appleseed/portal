@@ -1591,6 +1591,29 @@ namespace Appleseed.Framework.Site.Configuration
                  };
                 baseSettings.Add("SITESETTINGS_JQUERY_UI", txtjQueryUI);
 
+                // Ashish.patel@haptix.biz - 2016 / 08 / 03 - Add Textbox for HTML Wrapper Class
+                var txtHTMLWrapperClass =
+                 new SettingItem<string, TextBox>()
+                 {
+                     Order = groupOrderBase + 40,
+                     Group = group,
+                     EnglishName = "HTML Wrapper Class",
+                     Description =
+                         "HTML Wrapper Class"
+                 };
+                baseSettings.Add("HTML_WRAPPER_CLASS", txtHTMLWrapperClass);
+
+                //Ashish.patel@haptix.biz - 2016/08/09 - To may site private
+                var enableCKEditorInlineEditing = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 45,
+                    Group = group,
+                    EnglishName = "CkEditor Inline Editing",
+                    Description = "This will enable CKEditor Inline Editing",
+                    Value = false
+                };
+                baseSettings.Add("CKEDITOR_INLINE_EDITING", enableCKEditorInlineEditing);
+
                 groupOrderBase = (int)SettingItemGroup.SECURITY_USER_SETTINGS;
                 group = SettingItemGroup.SECURITY_USER_SETTINGS;
 
@@ -2566,6 +2589,10 @@ namespace Appleseed.Framework.Site.Configuration
                 return false;
             }
         }
+
+        /// <summary>
+        /// Whether Private Site is enabled or not
+        /// </summary>
         public bool EnabledPrivateSite
         {
             get
@@ -2574,6 +2601,25 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     // return the true / false value
                     return Convert.ToBoolean(this.CustomSettings["ENABLE_PRIVATE_SITE"].Value);
+                }
+                catch { }
+
+                // If nothing then it's return false
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Enable CKEditor Inline Editing
+        /// </summary>
+        public bool EnabledCKEditorInlineEditing
+        {
+            get
+            {
+                try
+                {
+                    // return the true / false value
+                    return Convert.ToBoolean(this.CustomSettings["CKEDITOR_INLINE_EDITING"].Value);
                 }
                 catch { }
 
@@ -2828,7 +2874,8 @@ namespace Appleseed.Framework.Site.Configuration
 
         private static string GetPortalSettingsCacheKey(int pageId, string portalAlias)
         {
-            if (string.IsNullOrEmpty(portalAlias)) {
+            if (string.IsNullOrEmpty(portalAlias))
+            {
                 portalAlias = string.Empty;
             }
             return String.Format("{0}_{1}_{2}", GetPortalSettingsCacheKeyPrefix(), portalAlias.ToLower(), pageId);

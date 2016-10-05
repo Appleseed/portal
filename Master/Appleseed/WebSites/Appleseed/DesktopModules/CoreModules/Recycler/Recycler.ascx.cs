@@ -21,18 +21,49 @@ namespace Appleseed.Content.Web.Modules
         {
             if (!Page.IsPostBack)
             {
-                BindData("ModuleTitle");
+                BindData("DateDeleted", true);
+                BindPagesData("DateDeleted", true);
             }
         }
 
-        protected void BindData(string SortField)
+        protected void BindData(string SortField, bool IsLoad = false)
         {
             DataTable dt = RecyclerDB.GetModulesInRecycler(this.PortalSettings.PortalID, SortField);
-            DataGrid1.DataSource = dt;
-            DataGrid1.DataBind();
 
-            dt = RecyclerDB.GetPagesInRecycler(this.PortalSettings.PortalID, SortField);
-            dtgPages.DataSource = dt;
+            DataView dv = new DataView(dt);
+
+            if (GridViewSortDirection == SortDirection.Descending && !IsLoad)
+            {
+                GridViewSortDirection = SortDirection.Ascending;
+                dv.Sort = SortField + ASCENDING;
+            }
+            else
+            {
+                GridViewSortDirection = SortDirection.Descending;
+                dv.Sort = SortField + DESCENDING;
+            }
+
+            DataGrid1.DataSource = dv;
+            DataGrid1.DataBind();
+        }
+
+        public void BindPagesData(string SortField, bool IsLoad = false)
+        {
+            DataTable dt1 = RecyclerDB.GetPagesInRecycler(this.PortalSettings.PortalID, SortField);
+            DataView dv1 = new DataView(dt1);
+
+            if (GridViewSortDirectionPages == SortDirection.Descending && !IsLoad)
+            {
+                GridViewSortDirectionPages = SortDirection.Ascending;
+                dv1.Sort = SortField + ASCENDING;
+            }
+            else
+            {
+                GridViewSortDirectionPages = SortDirection.Descending;
+                dv1.Sort = SortField + DESCENDING;
+            }
+
+            dtgPages.DataSource = dv1;
             dtgPages.DataBind();
         }
 
@@ -65,6 +96,17 @@ namespace Appleseed.Content.Web.Modules
         {
             string SortField = e.SortExpression.ToString();
             BindData(SortField);
+
+            int i = 0;
+            foreach (DataGridColumn col in DataGrid1.Columns)
+            {
+                if (col.SortExpression == e.SortExpression)
+                    DataGrid1.Columns[i].HeaderStyle.CssClass =
+                      "gridHeaderSort" + (GridViewSortDirection == SortDirection.Ascending ? ASCENDING.Trim() : DESCENDING.Trim());
+                else
+                    DataGrid1.Columns[i].HeaderStyle.CssClass = "gridHeader";
+                i++;
+            }
         }
 
         /// <summary>
@@ -108,13 +150,13 @@ namespace Appleseed.Content.Web.Modules
         /// <param name="stateSaver"></param>
         public override void Install(IDictionary stateSaver)
         {
-//			string currentScriptName = Server.MapPath(this.TemplateSourceDirectory + "/Install.sql");
-//			ArrayList errors = Appleseed.Framework.Data.DBHelper.ExecuteScript(currentScriptName, true);
-//			if (errors.Count > 0)
-//			{
-//				// Call rollback
-//				throw new Exception("Error occurred:" + errors[0].ToString());
-//			}
+            //			string currentScriptName = Server.MapPath(this.TemplateSourceDirectory + "/Install.sql");
+            //			ArrayList errors = Appleseed.Framework.Data.DBHelper.ExecuteScript(currentScriptName, true);
+            //			if (errors.Count > 0)
+            //			{
+            //				// Call rollback
+            //				throw new Exception("Error occurred:" + errors[0].ToString());
+            //			}
         }
 
         /// <summary>
@@ -123,15 +165,60 @@ namespace Appleseed.Content.Web.Modules
         /// <param name="stateSaver"></param>
         public override void Uninstall(IDictionary stateSaver)
         {
-//			string currentScriptName = Server.MapPath(this.TemplateSourceDirectory + "/Uninstall.sql");
-//			ArrayList errors = Appleseed.Framework.Data.DBHelper.ExecuteScript(currentScriptName, true);
-//			if (errors.Count > 0)
-//			{
-//				// Call rollback
-//				throw new Exception("Error occurred:" + errors[0].ToString());
-//			}
+            //			string currentScriptName = Server.MapPath(this.TemplateSourceDirectory + "/Uninstall.sql");
+            //			ArrayList errors = Appleseed.Framework.Data.DBHelper.ExecuteScript(currentScriptName, true);
+            //			if (errors.Count > 0)
+            //			{
+            //				// Call rollback
+            //				throw new Exception("Error occurred:" + errors[0].ToString());
+            //			}
         }
 
+        private const string ASCENDING = " ASC";
+        private const string DESCENDING = " DESC";
+
+        public SortDirection GridViewSortDirection
+        {
+            get
+            {
+                if (ViewState["sortDirection"] == null)
+                    ViewState["sortDirection"] = SortDirection.Descending;
+
+                return (SortDirection)ViewState["sortDirection"];
+            }
+            set { ViewState["sortDirection"] = value; }
+        }
+
+        public SortDirection GridViewSortDirectionPages
+        {
+            get
+            {
+                if (ViewState["sortDirectionPages"] == null)
+                    ViewState["sortDirectionPages"] = SortDirection.Descending;
+
+                return (SortDirection)ViewState["sortDirectionPages"];
+            }
+            set { ViewState["sortDirectionPages"] = value; }
+        }
+
+
         #endregion
+
+        protected void dtgPages_SortCommand(object source, DataGridSortCommandEventArgs e)
+        {
+            string SortField = e.SortExpression.ToString();
+            BindPagesData(SortField);
+
+            int i = 0;
+            foreach (DataGridColumn col in dtgPages.Columns)
+            {
+                if (col.SortExpression == e.SortExpression)
+                    dtgPages.Columns[i].HeaderStyle.CssClass =
+                      "gridHeaderSort" + (GridViewSortDirectionPages == SortDirection.Ascending ? ASCENDING.Trim() : DESCENDING.Trim());
+                else
+                    dtgPages.Columns[i].HeaderStyle.CssClass = "gridHeader";
+                i++;
+            }
+        }
     }
 }

@@ -43,7 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Appleseed.Framework.Core.XML</DocumentationFile>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
     <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
@@ -189,7 +189,9 @@
     <Compile Include="Configuration\Items\CurrentModuleDefination.cs" />
     <Compile Include="Configuration\Items\ISettingItem.cs" />
     <Compile Include="Configuration\Items\JsTreeItem.cs" />
+    <Compile Include="Configuration\Items\ModuleInstance.cs" />
     <Compile Include="Configuration\Items\PagesBox.cs" />
+    <Compile Include="Configuration\Items\ProxyItem.cs" />
     <Compile Include="Configuration\Items\SettingItem.cs" />
     <Compile Include="Configuration\Items\SettingItemGroups.cs" />
     <Compile Include="Configuration\Items\SliderImageItem.cs" />
@@ -219,6 +221,7 @@
     <Compile Include="DAL\PagesDB.cs" />
     <Compile Include="DAL\PermissionsDB.cs" />
     <Compile Include="DAL\PortalsDB.cs" />
+    <Compile Include="DAL\ProxyDB.cs" />
     <Compile Include="DAL\RecyclerDB.cs" />
     <Compile Include="DAL\SliderDB.cs" />
     <Compile Include="DAL\SolutionModuleDefinition.cs" />
@@ -246,6 +249,7 @@
     <Compile Include="Exceptions\AppleseedRedirect.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="General.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\ADHelper.cs" />
     <Compile Include="Helpers\CryptoHelper.cs" />
     <Compile Include="Helpers\CssHelper.cs" />
@@ -270,10 +274,10 @@
     <Compile Include="KickStarter\CommonClasses\DataChangeEventArgs.cs" />
     <Compile Include="KickStarter\CommonClasses\Error.cs" />
     <Compile Include="KickStarter\CommonClasses\SQLHelper.cs" />
-    <Compile Include="Models\AppleseedModel.Designer.cs">
-      <DependentUpon>AppleseedModel.edmx</DependentUpon>
+    <Compile Include="Models\AppleseedModel4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AppleseedModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelServices.cs" />
     <Compile Include="Monitoring\MonitoringAction.cs" />
@@ -308,9 +312,7 @@
     <Compile Include="Security\Security.cs" />
     <Compile Include="Security\SpecialRoles.cs" />
     <Compile Include="Security\UserProfile.cs" />
-    <Compile Include="Service\Client\communityService.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Service\Client\communityService.cs" />
     <Compile Include="Service\ServiceClasses.cs" />
     <Compile Include="Service\ServiceHelper.cs" />
     <Compile Include="Settings\Cache\CurrentCache.cs" />

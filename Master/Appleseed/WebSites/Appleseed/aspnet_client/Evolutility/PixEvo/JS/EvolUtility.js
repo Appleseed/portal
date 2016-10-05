@@ -1206,7 +1206,12 @@ var EvoUI={
 	},
 	
 	isIE:function(){
-		return document.all?true:false;
+		try{
+			return document.all.length > 0 ?true:false;
+		}
+		catch(e){
+			return document.all ?true:false;
+		}
 	},
 		
 	AJAX:function(url,vars,cb){

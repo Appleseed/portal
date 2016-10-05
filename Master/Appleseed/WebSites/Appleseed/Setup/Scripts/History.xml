@@ -29,7 +29,6 @@
       <Installer>DesktopModules/CoreModules/DatabaseTableEdit/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/DatabaseTool/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/EventLogs/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/FileManager/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Users/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/ModuleDefinitions/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/ModuleDefinitionsAll/install.xml</Installer>
@@ -941,14 +940,6 @@
     </Modules>
   </Release>
   <Release>
-    <ID>1793</ID>
-    <Version>1.5.0.1793</Version>
-    <Date>2005-04-15T00:00:00.0000000+01:00</Date>
-    <Modules>
-      <Installer>DesktopModules/CoreModules/FileManager/install.xml</Installer>
-    </Modules>
-  </Release>
-  <Release>
     <ID>1800</ID>
     <Version>1.5.0.1800</Version>
     <Date>2005-05-09T00:00:00.0000000+01:00</Date>
@@ -1323,6 +1314,15 @@
     <Date>2016-07-12T00:00:00.0000000-03:00</Date>
     <Scripts>
       <Script>2.0.0.1906.sql</Script>
+    </Scripts>
+  </Release>
+
+  <Release>
+    <ID>1907</ID>
+    <Version>2.0.0.1907</Version>
+    <Date>2016-08-16T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1907.sql</Script>
     </Scripts>
   </Release>
 

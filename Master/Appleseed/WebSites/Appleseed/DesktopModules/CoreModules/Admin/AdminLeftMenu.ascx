@@ -22,7 +22,7 @@
         }
         if (menuAdmin != null)
         {
-            foreach (MenuItem item in menuAdmin.ChildItems)
+            foreach (MenuItem item in menuAdmin.ChildItems.Cast<MenuItem>().OrderBy(menuItem => menuItem.Text).ToList())
             {
                 sbrMenu.AppendLine("<li ><a href=" + item.NavigateUrl + ">" + item.Text + "</a></li>");
             }

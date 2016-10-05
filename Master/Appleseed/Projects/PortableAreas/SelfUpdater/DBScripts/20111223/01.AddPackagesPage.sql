@@ -34,3 +34,7 @@ GO
 set IDENTITY_INSERT [rb_Pages] OFF
 
 COMMIT
+
+EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
+EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
+GO

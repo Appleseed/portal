@@ -24,8 +24,8 @@ END
 --BEGIN
 --	--set @PAGEID = null
 --	--select @PAGEID = PageID from rb_pages where PageName='Packages'
-EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
-EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
+--EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomTheme', @SettingValue ='Appleseed.Admin'	
+--EXEC  [rb_UpdateTabCustomSettings] @TabID = 5,@SettingName ='CustomLayout', @SettingValue ='Appleseed.Admin'
 --END
 
 select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID='C1EA4115-E7F2-4CBC-B1E7-DDA46791493C'
@@ -40,9 +40,13 @@ END
 UPDATE [rb_GeneralModuleDefinitions] SET FriendlyName = 'Admin - Short Links' where GeneralModDefID = 'C1EA4115-E7F2-4CBC-B1E7-DDA46791493C'
 
 /* replacing new file browser with old file manager */
-DECLARE @newMFIDFB int
-SELECT @newMFIDFB = ModuleDefID FROM [rb_ModuleDefinitions] WHERE GeneralModDefID = 'D7B8B22F-366B-4D80-9E49-13C09120A89F'
-UPDATE [rb_Modules] SET [ModuleDefID] = @newMFIDFB WHERE [ModuleDefID] = 7 AND TabID = 155
+select @ModuleDefId=ModuleDefID from rb_ModuleDefinitions where GeneralModDefID='D7B8B22F-366B-4D80-9E49-13C09120A89F'
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE ModuleDefID=@ModuleDefId)
+BEGIN
+	EXEC rb_addModule 155,1,'File Manager','ContentPane',@ModuleDefId,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
+END
+DELETE FROM  rb_GeneralModuleDefinitions WHERE GeneralModDefID = 'DE97F04D-FB0A-445d-829A-61E4FA69ADB2'
+DELETE FROM  rb_ModuleDefinitions WHERE GeneralModDefID = 'DE97F04D-FB0A-445d-829A-61E4FA69ADB2'
 
 /* 27/6/2016 */
 /* delete Pages page*/
@@ -105,17 +109,92 @@ GO
 DELETE FROM rb_Pages WHERE ParentPageID = 280
 GO
 
-/*01/07/2016*/
+
+IF NOT EXISTS(SELECT * FROM rb_GeneralModuleDefinitions WHERE GeneralModDefID='1CDF009A-60E9-4CE0-997B-E632D3F0D996')
+BEGIN
+INSERT INTO [dbo].[rb_GeneralModuleDefinitions]
+         ([GeneralModDefID]
+         ,[FriendlyName]
+         ,[DesktopSrc]
+         ,[MobileSrc]
+         ,[AssemblyName]
+         ,[ClassName]
+         ,[Admin]
+         ,[Searchable])
+   VALUES
+         ('1CDF009A-60E9-4CE0-997B-E632D3F0D996'
+         ,'Admin - Module Instances'
+         ,'/DesktopModules/CoreModules/AdminModuleInstances/AdminModuleInstances.ascx'
+         ,''
+         ,'Appleseed.DLL'
+         ,'Appleseed.DesktopModules.CoreModules.AdminModuleInstances.AdminModuleInstances'
+         ,1
+         ,0)
+END
+GO
+
+/*add new module - Module Instances changes */
+IF NOT EXISTS(SELECT * FROM rb_ModuleDefinitions WHERE GeneralModDefID='1CDF009A-60E9-4CE0-997B-E632D3F0D996')
+BEGIN
+INSERT INTO [dbo].[rb_ModuleDefinitions]
+         ([PortalID]
+         ,[GeneralModDefID])
+   VALUES
+         (0
+         ,'1CDF009A-60E9-4CE0-997B-E632D3F0D996')
+END
+GO
+
 DECLARE @ModuleID1 INT
+
+Declare @MfID int
+
+Select @MfID = ModuleDefID from rb_ModuleDefinitions where [GeneralModDefID] = '1CDF009A-60E9-4CE0-997B-E632D3F0D996'
+
+IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = @MfID)
+BEGIN
+EXEC rb_addModule 180,1,'Module Instances', 'ContentPane',@MfID,0,'Admins', 'Admins;','Admins;','Admins;','Admins;', 'Admins;','Admins;',0,NULL,0,0,0 ,@ModuleID1 output
+END
 
 IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 1)
 BEGIN
-EXEC rb_addModule 180,1,'Add Module Control','ContentPane',1,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+EXEC rb_addModule 180,2,'Add Module Control','ContentPane',1,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
 END
 
 IF NOT EXISTS(SELECT * FROM rb_Modules WHERE TabId =180 AND ModuleDefId = 9)
 BEGIN
-EXEC rb_addModule 180,2,'Module Definitions','ContentPane',9,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
+EXEC rb_addModule 180,3,'Module Definitions','ContentPane',9,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID1 output
 END
 GO
-
+/*change module type ordering by a-z*/
+ALTER PROCEDURE [dbo].[rb_GetCurrentModuleDefinitions]
+(
+    @PortalID  int
+)
+AS
+BEGIN
+/* returns all module definitions for the specified portal */
+SELECT  
+    rb_GeneralModuleDefinitions.FriendlyName,
+    rb_GeneralModuleDefinitions.DesktopSrc,
+    rb_GeneralModuleDefinitions.MobileSrc,
+    rb_GeneralModuleDefinitions.Admin,
+    rb_ModuleDefinitions.ModuleDefID
+FROM
+    rb_ModuleDefinitions
+INNER JOIN
+    rb_GeneralModuleDefinitions ON rb_ModuleDefinitions.GeneralModDefID = rb_GeneralModuleDefinitions.GeneralModDefID
+WHERE   
+    rb_ModuleDefinitions.PortalID = @PortalID
+ORDER BY
+rb_GeneralModuleDefinitions.FriendlyName
+END
+GO
+/* returns all module definitions for the specified portal */
+ALTER PROCEDURE [dbo].[rb_GetModuleDefinitions]
+AS
+BEGIN
+SELECT     GeneralModDefID, FriendlyName, DesktopSrc, MobileSrc
+FROM         rb_GeneralModuleDefinitions
+ORDER BY FriendlyName
+END

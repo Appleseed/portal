@@ -3,13 +3,13 @@
 <%@ Register TagPrefix="head" TagName="Banner" Src="DesktopPortalBanner.ascx" %>
 <%@ Register TagPrefix="foot" TagName="Footer" Src="DesktopFooter.ascx" %>
 
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrap", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/bootstrap.js"); %>
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapcontentfix", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/bootstrap-content-area-fix.js"); %>
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapmenufix", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/bootstrap-menu-fix.js"); %>
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminmenuunwrap", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/admin-menu-table-unwrap.js"); %>
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminbarmargin", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/admin-bar-margin.js"); %>
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "less", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/less/less-1.7.3.min.js"); %>
-<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "modernizr", Appleseed.Framework.Settings.Path.ApplicationFullPath + "/Design/Themes/Appleseed.Admin/js/modernizr/modernizr.min.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrap", "/Design/Themes/Appleseed.Admin/js/bootstrap.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapcontentfix", "/Design/Themes/Appleseed.Admin/js/bootstrap-content-area-fix.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "bootstrapmenufix",  "/Design/Themes/Appleseed.Admin/js/bootstrap-menu-fix.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminmenuunwrap",  "/Design/Themes/Appleseed.Admin/js/admin-menu-table-unwrap.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "adminbarmargin", "/Design/Themes/Appleseed.Admin/js/admin-bar-margin.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "less",  "/Design/Themes/Appleseed.Admin/js/less/less-1.7.3.min.js"); %>
+<% this.Page.ClientScript.RegisterClientScriptInclude(this.Page.GetType(), "modernizr",  "/Design/Themes/Appleseed.Admin/js/modernizr/modernizr.min.js"); %>
 <!DOCTYPE HTML>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->

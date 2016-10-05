@@ -20,7 +20,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
     using Appleseed.Framework.Settings;
 
     using Page = Appleseed.Framework.Web.UI.Page;
-using System.Text;
+    using System.Text;
     using System.Collections.Generic;
 
     #region Event argument class
@@ -359,42 +359,42 @@ using System.Text;
             // the scripts needed for using grouping tabs
             if (this.groupingTabsCreated)
             {
-             /*   // Jonathan - tabsupport
-                if (((Page)this.Page).IsClientScriptRegistered("x_core") == false)
-                {
-                    ((Page)this.Page).RegisterClientScript(
-                        "x_core", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_core.js"));
-                }
+                /*   // Jonathan - tabsupport
+                   if (((Page)this.Page).IsClientScriptRegistered("x_core") == false)
+                   {
+                       ((Page)this.Page).RegisterClientScript(
+                           "x_core", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_core.js"));
+                   }
 
-                if (((Page)this.Page).IsClientScriptRegistered("x_event") == false)
-                {
-                    ((Page)this.Page).RegisterClientScript(
-                        "x_event", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_event.js"));
-                }
+                   if (((Page)this.Page).IsClientScriptRegistered("x_event") == false)
+                   {
+                       ((Page)this.Page).RegisterClientScript(
+                           "x_event", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_event.js"));
+                   }
 
-                if (((Page)this.Page).IsClientScriptRegistered("x_dom") == false)
-                {
-                    ((Page)this.Page).RegisterClientScript(
-                        "x_dom", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_dom.js"));
-                }
+                   if (((Page)this.Page).IsClientScriptRegistered("x_dom") == false)
+                   {
+                       ((Page)this.Page).RegisterClientScript(
+                           "x_dom", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_dom.js"));
+                   }
 
-                if (((Page)this.Page).IsClientScriptRegistered("tabs_js") == false)
-                {
-                    ((Page)this.Page).RegisterClientScript(
-                        "tabs_js", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_tpg.js"));
-                }
+                   if (((Page)this.Page).IsClientScriptRegistered("tabs_js") == false)
+                   {
+                       ((Page)this.Page).RegisterClientScript(
+                           "tabs_js", Path.WebPathCombine(Path.ApplicationRoot, "/aspnet_client/x/x_tpg.js"));
+                   }
 
-                // End tab support
+                   // End tab support
 
-                // this piece of script was previously in PropertyPage.aspx, but it should be
-                // part of the SettingsTable control when using tabs. So, I moved it to here.
-                // It is startup script
-                if (!this.Page.ClientScript.IsStartupScriptRegistered("tab_startup_js"))
-                {
-                    var script = string.Format("<script language=\"javascript\" type=\"text/javascript\"> var tabW = {0};  var tabH = {1};  var tpg1 = new xTabPanelGroup('tpg1', tabW, tabH, 50, 'tabPanel', 'tabGroup', 'tabDefault', 'tabSelected'); </script>", this.Width.Value, this.Height.Value);
+                   // this piece of script was previously in PropertyPage.aspx, but it should be
+                   // part of the SettingsTable control when using tabs. So, I moved it to here.
+                   // It is startup script
+                   if (!this.Page.ClientScript.IsStartupScriptRegistered("tab_startup_js"))
+                   {
+                       var script = string.Format("<script language=\"javascript\" type=\"text/javascript\"> var tabW = {0};  var tabH = {1};  var tpg1 = new xTabPanelGroup('tpg1', tabW, tabH, 50, 'tabPanel', 'tabGroup', 'tabDefault', 'tabSelected'); </script>", this.Width.Value, this.Height.Value);
 
-                    this.Page.ClientScript.RegisterStartupScript(this.Page.GetType(), "tab_startup_js", script);
-                }*/
+                       this.Page.ClientScript.RegisterStartupScript(this.Page.GetType(), "tab_startup_js", script);
+                   }*/
             }
         }
 
@@ -437,16 +437,16 @@ using System.Text;
                 //}
                 //else
                 //{
-                    var order = ((ISettingItem)this.settings[key]).Order;
+                var order = ((ISettingItem)this.settings[key]).Order;
 
-                    while (settingsOrder.ContainsKey(order))
-                    {
-                        // be sure do not have duplicate order key or 
-                        // we get an error
-                        order++;
-                    }
+                while (settingsOrder.ContainsKey(order))
+                {
+                    // be sure do not have duplicate order key or 
+                    // we get an error
+                    order++;
+                }
 
-                    settingsOrder.Add(order, key);
+                settingsOrder.Add(order, key);
                 //}
             }
 
@@ -473,9 +473,10 @@ using System.Text;
             var legend = new HtmlGenericControl("legend");
             legend.Attributes.Add("class", "SubSubHead");
             var legendText = new Localize
-                {
-                   TextKey = currentItem.Group.ToString(), Text = currentItem.GroupDescription 
-                };
+            {
+                TextKey = currentItem.Group.ToString(),
+                Text = currentItem.GroupDescription
+            };
             legend.Controls.Add(legendText);
             fieldset.Controls.Add(legend);
 
@@ -508,7 +509,7 @@ using System.Text;
 
             foreach (string currentSetting in settingsOrder.GetValueList())
             {
-                var currentItem = (ISettingItem) this.settings[currentSetting];
+                var currentItem = (ISettingItem)this.settings[currentSetting];
 
                 if (currentItem.Group != currentGroup)
                 {
@@ -601,22 +602,24 @@ using System.Text;
                 {
                     if (fieldset.Attributes.Count > 0)
                     {
-                        if (tabDefault.Controls.Count == 1 && HasTabAcess(currentGroup)) 
- 	                    { 
+                        if (tabDefault.Controls.Count == 1 && HasTabAcess(currentGroup))
+                        {
                             // add built fieldset
                             fieldset.Controls.Add(tbl);
                             tabPanel.Controls.Add(fieldset);
                             tabPanelGroup.Controls.Add(tabPanel);
 
                             var TabName = string.Empty;
-                            foreach (var t in tabDefault.Controls) {
+                            foreach (var t in tabDefault.Controls)
+                            {
                                 TabName = ((HtmlGenericControl)t).InnerText;
                             }
-                            if (!dicc.ContainsKey(TabName)) {
+                            if (!dicc.ContainsKey(TabName))
+                            {
                                 dicc.Add(TabName, TabName);
                                 tabGroup.Controls.Add(tabDefault);
                             }
-                            else{
+                            else {
                                 tabGroup.Controls.Add(tabDefault);
                             }
                         }
@@ -630,7 +633,7 @@ using System.Text;
 
                     tabDefault = new HtmlGenericControl("li");
                     tabDefault.Attributes.Add("class", "tabDefault");
-                    
+
                     aDefault = new HtmlGenericControl("a");
                     aDefault.Attributes.Add("href", "#" + currentItem.Group.ToString());
                     aDefault.InnerText = General.GetString(currentItem.Group.ToString());
@@ -646,12 +649,15 @@ using System.Text;
                 tbl.Rows.Add(this.CreateOneSettingRow(currentSetting, currentItem));
             }
 
-            if (tabDefault.Controls.Count == 1) {
+            if (tabDefault.Controls.Count == 1)
+            {
                 var TabName = string.Empty;
-                foreach (var t in tabDefault.Controls) {
+                foreach (var t in tabDefault.Controls)
+                {
                     TabName = ((HtmlGenericControl)t).InnerText;
                 }
-                if (!dicc.ContainsKey(TabName)) {
+                if (!dicc.ContainsKey(TabName))
+                {
                     dicc.Add(TabName, TabName);
                     tabGroup.Controls.Add(tabDefault);
                 }
@@ -696,12 +702,12 @@ using System.Text;
             {
                 var myimg = ((Page)this.Page).CurrentTheme.GetImage("Buttons_Help", "Help.gif");
                 img = new Image
-                    {
-                        ImageUrl = myimg.ImageUrl, 
-                        Height = myimg.Height, 
-                        Width = myimg.Width, 
-                        AlternateText = currentItem.Description
-                    };
+                {
+                    ImageUrl = myimg.ImageUrl,
+                    Height = myimg.Height,
+                    Width = myimg.Width,
+                    AlternateText = currentItem.Description
+                };
 
                 // Jminond: added netscape tooltip support
                 img.Attributes.Add("title", General.GetString(currentSetting + "_DESCRIPTION"));
@@ -711,10 +717,10 @@ using System.Text;
             {
                 // Jes1111 - 17/12/2004
                 img = new Image
-                    {
-                        Width = Unit.Pixel(25), 
-                        ImageUrl = ((Page)this.Page).CurrentTheme.GetImage("Spacer", "Spacer.gif").ImageUrl
-                    };
+                {
+                    Width = Unit.Pixel(25),
+                    ImageUrl = ((Page)this.Page).CurrentTheme.GetImage("Spacer", "Spacer.gif").ImageUrl
+                };
             }
 
             helpCell.Controls.Add(img);
@@ -743,7 +749,7 @@ using System.Text;
             script.Append("<script language=\"javascript\" type=\"text/javascript\">");
             //script.AppendFormat("$.extend($.ui.multiselect, { locale: { addAll: '{0}', removeAll: '{1}', itemsCount: '{2}' }});", "Agregar todo", "Remover todooooo", "items seleccionados");
             script.Append("$.extend($.ui.multiselect, { locale: { addAll: '");
-            script.AppendFormat("{0}",General.GetString("ADD_ALL", "Add all", null));
+            script.AppendFormat("{0}", General.GetString("ADD_ALL", "Add all", null));
             script.Append("',removeAll: '");
             script.AppendFormat("{0}", General.GetString("REMOVE_ALL", "Remove all", null));
             script.Append("',itemsCount: '");
@@ -806,6 +812,9 @@ using System.Text;
                         break;
 
                     case "int":
+                    case "int16":
+                    case "int32":
+                    case "int64":
                         rang.Type = ValidationDataType.Integer;
                         break;
 
@@ -830,19 +839,19 @@ using System.Text;
                         rang.ErrorMessage =
                             General.GetString(
                                 "SETTING_EQUAL_OR_GREATER", "%1% must be equal or greater than %2%!", rang).Replace(
-                                    "%1%", currentSetting).Replace("%2%", currentItem.MinValue.ToString());
+                                    "%1%", General.GetString(currentSetting)).Replace("%2%", currentItem.MinValue.ToString());
                     }
                     else
                     {
                         rang.MaximumValue = currentItem.MaxValue.ToString();
                         rang.ErrorMessage =
                             General.GetString("SETTING_BETWEEN", "%1% must be between %2% and %3%!", rang).Replace(
-                                "%1%", currentSetting).Replace("%2%", currentItem.MinValue.ToString()).Replace(
+                                "%1%", General.GetString(currentSetting)).Replace("%2%", currentItem.MinValue.ToString()).Replace(
                                     "%3%", currentItem.MaxValue.ToString());
                     }
                 }
 
-                rang.ControlToValidate = currentSetting; 
+                rang.ControlToValidate = currentSetting;
                 rang.CssClass = "Error";
                 rang.Display = ValidatorDisplay.Dynamic;
                 rang.EnableClientScript = true;
@@ -873,7 +882,7 @@ using System.Text;
             }
 
             return true;
-        } 
+        }
         #endregion
     }
 

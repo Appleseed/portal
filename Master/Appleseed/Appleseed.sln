@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{B5258F28-F3D0-4E44-85DA-FB9545800BAF}"
 EndProject
@@ -49,11 +49,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageManagerTree", "Projects
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Password", "Projects\PortableAreas\Password\Password.csproj", "{188D29A3-C2A9-4214-8C0C-8201529E1568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "Projects\PortableAreas\FileManager\FileManager.csproj", "{8D606CC2-CA1B-4320-B4A1-811430123396}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager.Test", "Projects\PortableAreas\FileManager.Test\FileManager.Test.csproj", "{B1E9FED0-6134-44B0-9380-512FD9EE39ED}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManager", "Projects\PortableAreas\UserManager\UserManager.csproj", "{D6E88AA9-5288-4BAB-8186-1F958EF316EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppleseedProxy", "Projects\PortableAreas\AppleseedProxy\AppleseedProxy.csproj", "{E3439CE8-7E7C-49F1-8619-964707D1BD24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,18 +135,14 @@ Global
 		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{188D29A3-C2A9-4214-8C0C-8201529E1568}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D606CC2-CA1B-4320-B4A1-811430123396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D606CC2-CA1B-4320-B4A1-811430123396}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D606CC2-CA1B-4320-B4A1-811430123396}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D606CC2-CA1B-4320-B4A1-811430123396}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1E9FED0-6134-44B0-9380-512FD9EE39ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E88AA9-5288-4BAB-8186-1F958EF316EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3439CE8-7E7C-49F1-8619-964707D1BD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3439CE8-7E7C-49F1-8619-964707D1BD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3439CE8-7E7C-49F1-8619-964707D1BD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3439CE8-7E7C-49F1-8619-964707D1BD24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,9 +164,8 @@ Global
 		{DBAED848-FEE6-45D4-9086-E519E0A077A2} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 		{36310014-77B3-4DB6-B391-B4036D1BDDD3} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 		{188D29A3-C2A9-4214-8C0C-8201529E1568} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
-		{8D606CC2-CA1B-4320-B4A1-811430123396} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
-		{B1E9FED0-6134-44B0-9380-512FD9EE39ED} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 		{D6E88AA9-5288-4BAB-8186-1F958EF316EE} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{E3439CE8-7E7C-49F1-8619-964707D1BD24} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Appleseed.ndproj"

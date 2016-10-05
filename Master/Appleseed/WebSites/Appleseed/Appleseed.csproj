@@ -93,7 +93,7 @@
     <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
     <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
     <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <PublishDatabaseSettings>
       <Objects>
         <ObjectGroup Name="ConnectionString-Deployment" Order="1">
@@ -244,9 +244,6 @@
     </Reference>
     <Reference Include="Hammock">
       <HintPath>..\..\Libs\Hammock\Hammock.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\..\Libs\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\..\Libs\Ionic.Zip.dll</HintPath>
@@ -904,6 +901,13 @@
     <Compile Include="DesktopModules\CoreModules\AddTab\AddTab.ascx.designer.cs">
       <DependentUpon>AddTab.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx.cs">
+      <DependentUpon>AdminModuleInstances.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx.designer.cs">
+      <DependentUpon>AdminModuleInstances.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\Admin\AddEditPage.aspx.cs">
       <DependentUpon>AddEditPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1127,20 +1131,6 @@
     </Compile>
     <Compile Include="DesktopModules\CoreModules\FileBrowser\FileBrowserModule.ascx.designer.cs">
       <DependentUpon>FileBrowserModule.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManager.ascx.cs">
-      <DependentUpon>FileManager.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManager.ascx.designer.cs">
-      <DependentUpon>FileManager.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx.cs">
-      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx.designer.cs">
-      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
     </Compile>
     <Compile Include="DesktopModules\CoreModules\HTMLDocument\AlohaHtmlEditorService.asmx.cs">
       <DependentUpon>AlohaHtmlEditorService.asmx</DependentUpon>
@@ -1517,6 +1507,7 @@
     <Compile Include="DesktopModules\CoreModules\XMLImportExport\XmlImportExport.ascx.designer.cs">
       <DependentUpon>XmlImportExport.ascx</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Installer\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1687,9 +1678,9 @@
       <Project>{22C4BA46-65C9-49E2-8A23-86DD2F44B744}</Project>
       <Name>Appleseed.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Projects\PortableAreas\FileManager\FileManager.csproj">
-      <Project>{8d606cc2-ca1b-4320-b4a1-811430123396}</Project>
-      <Name>FileManager</Name>
+    <ProjectReference Include="..\..\Projects\PortableAreas\AppleseedProxy\AppleseedProxy.csproj">
+      <Project>{e3439ce8-7e7c-49f1-8619-964707d1bd24}</Project>
+      <Name>AppleseedProxy</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Projects\PortableAreas\PageManagerTree\PageManagerTree.csproj">
       <Project>{36310014-77B3-4DB6-B391-B4036D1BDDD3}</Project>
@@ -1706,6 +1697,7 @@
     <ProjectReference Include="..\..\Projects\PortableAreas\UserManager\UserManager.csproj">
       <Project>{d6e88aa9-5288-4bab-8186-1f958ef316ee}</Project>
       <Name>UserManager</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -3344,6 +3336,7 @@
     <Content Include="aspnet_client\AlohaHtmlEditor\plugins\shared\languages\iso639-2-de.js" />
     <Content Include="aspnet_client\AlohaHtmlEditor\plugins\shared\languages\iso639-2-en.js" />
     <Content Include="aspnet_client\AlohaHtmlEditor\plugins\shared\languages\languages.js" />
+    <Content Include="aspnet_client\AppleseedProxy\Proxy.js" />
     <Content Include="aspnet_client\Appleseed_scripts\autoResizeModule.js" />
     <Content Include="aspnet_client\Appleseed_scripts\confirmDelete.js" />
     <Content Include="aspnet_client\Appleseed_scripts\MainMenu_Horizontal.js" />
@@ -3522,6 +3515,9 @@
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\pagebreak\images\pagebreak.gif" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\pastefromword\filter\default.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\preview\preview.html" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\savebtn\icons\loader.gif" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\savebtn\icons\savebtn.png" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\savebtn\plugin.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\scayt\dialogs\options.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\scayt\dialogs\toolbar.css" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\showblocks\images\block_address.png" />
@@ -3642,6 +3638,8 @@
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\templates\templates\images\template1.gif" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\templates\templates\images\template2.gif" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\templates\templates\images\template3.gif" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\versionbtn\icons\versionbtn.png" />
+    <Content Include="aspnet_client\CKeditorV4.5.7\plugins\versionbtn\plugin.js" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\wsc\dialogs\ciframe.html" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\wsc\dialogs\tmpFrameset.html" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\wsc\dialogs\wsc.css" />
@@ -6196,6 +6194,9 @@
     <Content Include="DesktopModules\CoreModules\AddTab\AddTab.ascx" />
     <Content Include="DesktopModules\CoreModules\AddTab\install.xml" />
     <Content Include="DesktopModules\CoreModules\AddTab\readme.txt" />
+    <Content Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx" />
+    <Content Include="DesktopModules\CoreModules\AdminModuleInstances\install.xml" />
+    <Content Include="DesktopModules\CoreModules\AdminModuleInstances\readme.txt" />
     <Content Include="DesktopModules\CoreModules\Admin\AddEditPage.aspx" />
     <Content Include="DesktopModules\CoreModules\Admin\AdminLeftMenu.ascx" />
     <Content Include="DesktopModules\CoreModules\Admin\ChangePassword.aspx" />
@@ -6366,17 +6367,6 @@
     <Content Include="DesktopModules\CoreModules\FileBrowser\install.xml" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.js" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js" />
-    <Content Include="DesktopModules\CoreModules\FileManager\example.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\FileManager.ascx" />
-    <Content Include="DesktopModules\CoreModules\FileManager\FileManager.xml" />
-    <Content Include="DesktopModules\CoreModules\FileManager\FileManagerPopup.aspx" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\btnDelete.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\btnNewFolder.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\btnUp.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\dir.gif" />
-    <Content Include="DesktopModules\CoreModules\FileManager\images\fileedit.jpg" />
-    <Content Include="DesktopModules\CoreModules\FileManager\install.xml" />
-    <Content Include="DesktopModules\CoreModules\FileManager\readme.txt" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\AlohaHtmlEditorService.asmx" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\HtmlDocument.xml" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\HtmlEdit.aspx" />
@@ -6484,7 +6474,9 @@
     <Content Include="DesktopModules\CoreModules\SliderRenderer\readme.txt" />
     <Content Include="DesktopModules\CoreModules\SliderRenderer\SliderModuleRenderer.ascx" />
     <Content Include="DesktopModules\CoreModules\SocialNetworksButtons\SocialNetworkButtons.ascx" />
-    <Content Include="DesktopModules\CoreModules\Users\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Users\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="DesktopModules\CoreModules\Users\Users.ascx" />
     <Content Include="DesktopModules\CoreModules\Users\UsersManage.aspx" />
     <Content Include="DesktopModules\CoreModules\XMLImportExport\ANANT.Appleseed.XMLImportExport_AddModule.sql" />
@@ -6571,6 +6563,8 @@
     <Content Include="images\img\tridown.gif" />
     <Content Include="images\img\trileft.gif" />
     <Content Include="images\img\_reply.gif" />
+    <Content Include="images\SortOrderAsc.png" />
+    <Content Include="images\SortOrderDesc.png" />
     <Content Include="images\rolepermissions.png" />
     <Content Include="images\root.png" />
     <Content Include="images\sign-in-google.png" />
@@ -6875,6 +6869,7 @@
     <Content Include="Setup\Scripts\2.0.0.1904.sql" />
     <Content Include="Setup\Scripts\2.0.0.1906.sql" />
     <Content Include="Setup\Scripts\2.0.0.1905.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1907.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>

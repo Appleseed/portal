@@ -71,18 +71,7 @@ namespace Appleseed.Framework.DataTypes
         /// <value>
         ///   The data text field.
         /// </value>
-        public virtual string DataTextField
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public virtual string DataTextField { get; set; }
 
         /// <summary>
         ///   Gets or sets the data value field.
@@ -90,18 +79,7 @@ namespace Appleseed.Framework.DataTypes
         /// <value>
         ///   The data value field.
         /// </value>
-        public virtual string DataValueField
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public virtual string DataValueField { get; set; }
 
         /// <summary>
         ///   Gets the description.
@@ -158,10 +136,6 @@ namespace Appleseed.Framework.DataTypes
                                 lc.SelectedValue = Convert.ToString(this.Value);
                             }
                         }
-                        else
-                        {
-                            throw new NotImplementedException("Unknown editor type. Please implement a value getter here.");
-                        }
                     }
                 }
 
@@ -216,13 +190,7 @@ namespace Appleseed.Framework.DataTypes
         /// <summary>
         ///   Gets the full path.
         /// </summary>
-        public virtual string FullPath
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public virtual string FullPath { get; }
 
         /// <summary>
         ///   Gets or sets the value.

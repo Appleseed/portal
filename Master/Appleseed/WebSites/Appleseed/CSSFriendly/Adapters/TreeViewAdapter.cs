@@ -21,7 +21,7 @@ namespace CSSFriendly
     /// <summary>
     /// The tree view adapter.
     /// </summary>
-    public class TreeViewAdapter : HierarchicalDataBoundControlAdapter, IPostBackEventHandler, IPostBackDataHandler
+    public class TreeViewAdapter : HierarchicalDataBoundControlAdapter, IPostBackEventHandler, IPostBackDataHandler, IDisposable
     {
         #region Constants and Fields
 
@@ -1145,6 +1145,26 @@ namespace CSSFriendly
             writer.WriteEndTag("span");
         }
 
+        /// <summary>
+        /// Dispose method
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(true);
+        }
+
+        /// <summary>
+        /// dispose method
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.viewState.Dispose();
+            }
+        }
         #endregion
     }
 }

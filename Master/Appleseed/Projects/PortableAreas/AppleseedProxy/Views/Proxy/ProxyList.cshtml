@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Appleseed.Framework.Configuration.Items.ProxyItem> 
+<style>
+    .tblProxy {
+        table-layout: fixed;
+        margin-top: 10px;
+    }
+
+        .tblProxy .field-1 {
+            width: 10%;
+        }
+
+        .tblProxy .field-2 {
+            width: 31%;
+        }
+
+        .tblProxy .field-3 {
+            width: 30%;
+        }
+
+        .tblProxy .field-4 {
+            width: 15%;
+        }
+
+        .tblProxy .field-5 {
+            width: 14%;
+        }
+
+        .tblProxy td.field-2 {
+            word-wrap: break-word;
+        }
+
+        .tblProxy td.field-3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tblProxy tr, .tblProxy td, .tblProxy th {
+            border: 1px solid #000;
+            padding: 5px !important;
+        }
+
+        .tblProxy tr, .tblProxy th {
+            font-weight: bold;
+            padding: 5px;
+        }
+</style>
+<b><a id="AddNewProxy" href="/Proxy/CreateProxy">Add New Proxy</a></b>
+
+<table style="width:80%" class="tblProxy">
+    
+    <tr><th class="field-1">Service #</th><th class="field-2">Service Title</th><th class="field-3">Service Url</th><th class="field-3">Proxy Url</th><th class="field-4"></th><th class="field-5"></th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="field-1">
+                @Html.DisplayFor(modelItem => item.ServiceId)
+            </td>
+            <td  class="field-2">
+                @Html.DisplayFor(modelItem => item.ServiceTitle)
+            </td>
+            <td  class="field-3">
+                @Html.DisplayFor(modelItem => item.ServiceUrl)
+            </td>
+            <td class="field-3">
+               @Html.DisplayFor(modelItem => item.ASProxyUrl)
+            </td>
+            <td  class="field-4">
+                @Html.ActionLink("Edit", "CreateProxy", new { id = item.ServiceId }, new { @class = "editProxy CommandButton" })
+            </td>
+            <td  class="field-5">
+                @Html.ActionLink("Delete", "DeleteProxy", new { id = item.ServiceId }, new { @class = "deleteProxy CommandButton" })
+            </td>
+        </tr>
+    }
+</table>
+<div id="dialog-edit" style="display: none">
+
+</div>
+
+<script src="/aspnet_client/AppleseedProxy/Proxy.js"></script>
