@@ -1,4 +1,4 @@
-# Appleseed Portal 1.0.8.x
+# Appleseed Portal 1.1.0.x
 
 Appleseed Portal is an open source Portal and Content Management System focused on 
 providing a high-performance,easy to use framework. The software gives designers, 
@@ -10,6 +10,7 @@ and intranets that run the modern enterprise on the Microsoft.NET and Windows pl
 Windows 7 / 8 / 10 Physical or Cloud
 SQL Server (Express) 2005/2008/2012/2014
 Visual Studio 2015 ( Visual Studio 14 ) for development
+.NET 4.6.1
 
 ## Quick Install
  * Release
