@@ -273,7 +273,7 @@ namespace Appleseed
                     this.Response.Redirect("~/DesktopDefault.aspx");
                 }
 
-
+                Framework.Site.Configuration.PortalSettings.GetPortalSettingsbyPageID(this.PageID, this.PortalSettings.PortalAlias);
                 if (string.IsNullOrEmpty(Request.Params["panelist"]))
                 {
                     this.LoadPage();
