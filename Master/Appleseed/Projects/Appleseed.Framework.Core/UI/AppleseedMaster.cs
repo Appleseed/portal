@@ -67,7 +67,18 @@ namespace Appleseed
                     //var portalSettings = (PortalSettings)context.Items["PortalSettings"];
                     if (psCSS != null)
                     {
-                        var cssHref = page.ResolveUrl("~/Design/jqueryUI/" + psCSS.PortalAlias + "/jquery-ui.custom.css");
+                        var cssHref = page.ResolveUrl("~/Design/jqueryUI/" + psCSS.PortalAlias + "/jquery-ui.css");
+
+                        HtmlGenericControl include = new HtmlGenericControl("link");
+                        include.Attributes.Add("type", "text/css");
+                        include.Attributes.Add("rel", "stylesheet");
+                        include.Attributes.Add("href", cssHref);
+                        page.Header.Controls.AddAt(index++, include);
+                    }
+
+                    if (psCSS != null)
+                    {
+                        var cssHref = page.ResolveUrl("~/Design/jqueryUI/" + psCSS.PortalAlias + "/jquery-ui-anant.css");
 
                         HtmlGenericControl include = new HtmlGenericControl("link");
                         include.Attributes.Add("type", "text/css");
@@ -117,7 +128,18 @@ namespace Appleseed
 
                     if (portalSettings != null)
                     {
-                        var cssHref = page.ResolveUrl("~/Design/jqueryUI/" + portalSettings.PortalAlias + "/jquery-ui.custom.css");
+                        var cssHref = page.ResolveUrl("~/Design/jqueryUI/" + portalSettings.PortalAlias + "/jquery-ui.css");
+
+                        HtmlGenericControl include = new HtmlGenericControl("link");
+                        include.Attributes.Add("type", "text/css");
+                        include.Attributes.Add("rel", "stylesheet");
+                        include.Attributes.Add("href", cssHref);
+                        page.Header.Controls.AddAt(index++, include);
+                    }
+
+                    if (portalSettings != null)
+                    {
+                        var cssHref = page.ResolveUrl("~/Design/jqueryUI/" + portalSettings.PortalAlias + "/jquery-ui-anant.css");
 
                         HtmlGenericControl include = new HtmlGenericControl("link");
                         include.Attributes.Add("type", "text/css");
@@ -235,7 +257,7 @@ namespace Appleseed
                 portalSettings.CustomSettings["SITESETTINGS_JQUERY_UI"].Value != null)
                 scripts.Add(page.ResolveUrl(portalSettings.CustomSettings["SITESETTINGS_JQUERY_UI"].Value.ToString()));
             else
-                scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jquery-ui-1.9.2." + min));
+                scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jquery-ui-1.12.1." + min));
 
             scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jquery.validate." + min));
             scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jquery.validate.unobtrusive." + min));

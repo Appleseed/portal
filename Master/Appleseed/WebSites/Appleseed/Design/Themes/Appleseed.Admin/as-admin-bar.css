@@ -31,6 +31,10 @@
     color:#ffffff;
 }
 
+.navbar-admin .navbar-nav>li>a:focus{
+    background-color:transparent;
+}
+
 .navbar-admin .navbar-nav > li:hover > a {
     background: #ebebeb; /* Old browsers */
     background: -moz-linear-gradient(top,  #ebebeb 0%, #f3f3f3 100%); /* FF3.6+ */

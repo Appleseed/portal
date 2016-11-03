@@ -1,5 +1,6 @@
 @import url(menu.css);
-@import url(jquery-ui-1.9.2.custom.css);
+@import url(/Design/jqueryUI/Appleseed/jquery-ui.css);
+@import url(/Design/jqueryUI/Appleseed/jquery-ui-anant.css);
 @import url(bootstrap.css);
 @import url(as-admin-bar.css);
 @import url(font-awesome.min.css);
@@ -346,14 +347,6 @@ table.signInBody td {
     margin: 0px 6px;
 }
 
-#footerpopup {
-    padding: 8px 0px 0px !important;
-}
-
-#footerpopup select {
-    margin-right: 10px;
-}
-
 option {
     background-color: #e5e5e5;
     border-top: 1px solid #fff;
@@ -695,15 +688,7 @@ div.error-wrapper {
     display: none;
 }
 
-/* Fixes for ui-dialogs */
-
-.ui-dialog {
-    min-width: 330px!important;
-}
-
-.ui-dialog input.CommandButton {
-    margin: 0!important;
-}
+/* Fixes for #AppleseedLogin */
 
 #AppleseedLogin {
     height: 320px!important
