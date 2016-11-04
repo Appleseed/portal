@@ -3,8 +3,6 @@
 @import url(/Design/jqueryUI/Appleseed/jquery-ui-anant.css);
 @import url(bootstrap.css);
 @import url(as-admin-bar.css);
-@import url(font-awesome.min.css);
-@import url(style.css);
 
 /*******************************************************/
 /************* Reset styles DO NOT REMOVE **************/
@@ -735,6 +733,10 @@ div.error-wrapper {
 }
 
 /* Bootstrap Menu Fix */
+
+.header-container {
+    overflow-x: hidden;
+}
 
 .navbar-nav .dropdown:hover > .dropdown-menu {
     display: block;
