@@ -5027,6 +5027,7 @@
     <Content Include="Design\jqueryUI\Appleseed\images\ui-icons_2e83ff_256x240.png" />
     <Content Include="Design\jqueryUI\Appleseed\images\ui-icons_444444_256x240.png" />
     <Content Include="Design\jqueryUI\Appleseed\images\ui-icons_454545_256x240.png" />
+    <Content Include="Design\jqueryUI\Appleseed\images\ui-icons_777777_256x240.png" />
     <Content Include="Design\jqueryUI\Appleseed\images\ui-icons_888888_256x240.png" />
     <Content Include="Design\jqueryUI\Appleseed\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Design\jqueryUI\Appleseed\jquery-ui-anant.css" />
