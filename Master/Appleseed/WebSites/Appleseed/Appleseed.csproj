@@ -4835,7 +4835,6 @@
     <Content Include="aspnet_client\UserManager\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="aspnet_client\UserManager\images\ui-icons_d8e7f3_256x240.png" />
     <Content Include="aspnet_client\UserManager\images\ui-icons_f9bd01_256x240.png" />
-    <Content Include="aspnet_client\UserManager\jquery-ui.css" />
     <Content Include="aspnet_client\UserManager\jquery-ui.min.js" />
     <Content Include="aspnet_client\UserManager\jquery.jqGrid.min.js" />
     <Content Include="aspnet_client\x\docs\x_reference.html" />
