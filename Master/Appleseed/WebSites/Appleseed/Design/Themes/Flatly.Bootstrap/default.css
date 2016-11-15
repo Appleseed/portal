@@ -757,3 +757,7 @@ div.error-wrapper {
         width: 100%;
     }
 }
+
+.desktopmodules_coremodules_signin_signincool_ascx .module_Body{
+    width:1000px;
+}
