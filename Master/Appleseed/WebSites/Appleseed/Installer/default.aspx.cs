@@ -24,6 +24,9 @@ namespace Appleseed.Installer
     using Appleseed.Framework;
     using System.Configuration;
     using Microsoft.Win32;
+    using System.Web.Security;
+    using System.Web.Profile;
+
     /// <summary>
     /// The default.
     /// </summary>
@@ -81,6 +84,21 @@ namespace Appleseed.Installer
         ///   list of database returned, the wizard will skip the database selection page.
         /// </summary>
         private const string QskDatabase = "database"; // query string key
+
+        /// <summary>
+        /// The default user name 
+        /// </summary>
+        private const string defaultUserName = "admin@appleseedportal.net";
+
+        /// <summary>
+        /// The default password
+        /// </summary>
+        private const string defaultpassword = "admin";
+
+        /// <summary>
+        /// The default Full Name
+        /// </summary>
+        private const string defaultFullName = "Administrator";
 
         /*
         /// <summary>
@@ -158,6 +176,11 @@ namespace Appleseed.Installer
             ///   The errors.
             /// </summary>
             Errors,
+
+            /// <summary>
+            /// The user information
+            /// </summary>
+            UserInformation,
         }
 
         #endregion
@@ -277,20 +300,48 @@ namespace Appleseed.Installer
                     break;
 
                 case WizardPanel.SiteInformation:
-
                     if (this.CheckSiteInfoValid())
                     {
                         this.PortalPrefixText = this.rb_portalprefix.Text;
                         this.SmtpServerText = this.rb_smtpserver.Text;
                         this.EmailFromText = this.rb_emailfrom.Text;
 
-                        this.SetActivePanel(WizardPanel.Install, this.Install);
+                        this.SetActivePanel(WizardPanel.UserInformation, this.UserInformation);
                     }
 
+                    break;
+                case WizardPanel.UserInformation:
+                    if (this.Validate_UserInformation(out errorMessage))
+                    {
+                        this.SetActivePanel(WizardPanel.Install, this.Install);
+                    }
+                    else
+                    {
+                        this.ltrUserInfoErr.Text = errorMessage;
+                    }
                     break;
                 case WizardPanel.Install:
                     if (this.InstallConfig())
                     {
+                        if (!string.Equals(this.txtUserName.Text, defaultUserName) || !string.Equals(this.txtPassword.Text, defaultpassword) || !string.Equals(this.txtFullName.Text, defaultFullName))
+                        {
+                            HttpContext.Current.Items["Profile.ApplicationName"] = HttpContext.Current.Items["Membership.ApplicationName"] = HttpContext.Current.Items["Role.ApplicationName"] = "Appleseed";
+                            HttpContext.Current.Items["Profile.ApplicationIdSet"] = false;
+                            Membership.DeleteUser(defaultUserName);
+                            MembershipCreateStatus status = MembershipCreateStatus.Success;
+                            Membership.CreateUser(this.txtUserName.Text, this.txtPassword.Text, this.txtUserName.Text, "question", "answer", true, out status);
+
+                            if (status == MembershipCreateStatus.Success)
+                            {
+                                Roles.AddUserToRole(this.txtUserName.Text, "admins");
+                                var profile = ProfileBase.Create(this.txtUserName.Text);
+                                profile.SetPropertyValue("Name", txtFullName.Text);
+                                profile.Save();
+                            }
+                        }
+
+                        ExpireAllCookies();
+
                         this.SetActivePanel(WizardPanel.Done, this.Done);
                     }
                     else
@@ -302,10 +353,32 @@ namespace Appleseed.Installer
                     }
 
                     break;
-
                 case WizardPanel.Done:
                     Thread.Sleep(3000);
                     break;
+            }
+        }
+        /// <summary>
+        /// To expire all cookies
+        /// </summary>
+        private void ExpireAllCookies()
+        {
+            if (HttpContext.Current != null)
+            {
+                int cookieCount = HttpContext.Current.Request.Cookies.Count;
+                for (var i = 0; i < cookieCount; i++)
+                {
+                    var cookie = HttpContext.Current.Request.Cookies[i];
+                    if (cookie != null)
+                    {
+                        var cookieName = cookie.Name;
+                        var expiredCookie = new HttpCookie(cookieName) { Expires = DateTime.Now.AddDays(-1) };
+                        HttpContext.Current.Response.Cookies.Add(expiredCookie); // overwrite it
+                    }
+                }
+
+                // clear cookies server side
+                HttpContext.Current.Request.Cookies.Clear();
             }
         }
 
@@ -351,8 +424,11 @@ namespace Appleseed.Installer
                     }
 
                     break;
-                case WizardPanel.Install:
+                case WizardPanel.UserInformation:
                     this.SetActivePanel(WizardPanel.SiteInformation, this.SiteInformation);
+                    break;
+                case WizardPanel.Install:
+                    this.SetActivePanel(WizardPanel.UserInformation, this.UserInformation);
                     break;
                 case WizardPanel.Done:
                     this.SetActivePanel(WizardPanel.Install, this.Install);
@@ -432,16 +508,18 @@ namespace Appleseed.Installer
                 var cs = ConfigurationManager.ConnectionStrings["ConnectionString"];
                 if (cs != null)
                 {
-                    //If connectionstring, redirect to home
+                    //   If connectionstring, redirect to home
                     if (!String.IsNullOrEmpty(cs.ConnectionString) && cs.ConnectionString != "foo")
                         Response.Redirect("~");
                 }
-
 
                 this.messages = new ArrayList();
 
                 if (!this.Page.IsPostBack)
                 {
+                    this.txtUserName.Text = defaultUserName;
+                    this.txtPassword.Text = txtPassword2.Text = "admin";
+                    this.txtFullName.Text = defaultFullName;
                     this.SetActivePanel(WizardPanel.PreInstall, this.PreInstall);
                     this.CheckEnvironment();
                 }
@@ -1133,6 +1211,38 @@ namespace Appleseed.Installer
                 return false;
             }
         }
+
+        /// <summary>
+        /// Validate user Information
+        /// </summary>
+        /// <param name="errorMessage">
+        /// The error message.
+        /// </param>
+        /// <returns>
+        /// The validate user information
+        /// </returns>
+        private bool Validate_UserInformation(out string errorMessage)
+        {
+            errorMessage = string.Empty;
+            try
+            {
+                if (!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassword.Text) && txtPassword.Text == txtPassword2.Text)
+                    return true;
+                else if (string.IsNullOrEmpty(txtUserName.Text))
+                    errorMessage = "Please enter user name";
+                else if (string.IsNullOrEmpty(txtPassword.Text))
+                    errorMessage = "Please enter password";
+                else if (txtPassword.Text != txtPassword2.Text)
+                    errorMessage = "Entered password does not matched! Please try again.";
+                return false;
+            }
+            catch (Exception e)
+            {
+                errorMessage = e.Message;
+                return false;
+            }
+        }
+
 
         #endregion
 

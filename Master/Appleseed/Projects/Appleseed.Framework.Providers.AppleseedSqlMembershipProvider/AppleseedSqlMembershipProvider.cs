@@ -466,11 +466,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             }
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_ChangePasswordQuestionAndAnswer",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_ChangePasswordQuestionAndAnswer",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 255).Value = username;
@@ -520,11 +520,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             using (var entities = new AppleseedMembershipEntities(ConfigurationManager.ConnectionStrings["AppleseedMembershipEntities"].ConnectionString))
             {
                 var newToken = new aspnet_ResetPasswordTokens
-                    {
-                        TokenId = newTokenId,
-                        UserId = userId,
-                        CreationDate = DateTime.UtcNow
-                    };
+                {
+                    TokenId = newTokenId,
+                    UserId = userId,
+                    CreationDate = DateTime.UtcNow
+                };
                 entities.aspnet_ResetPasswordTokens.AddObject(newToken);
                 entities.SaveChanges();
             }
@@ -660,11 +660,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                                       : this.EncodePassword(password);
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_CreateUser",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_CreateUser",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 255).Value = username;
@@ -763,11 +763,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             this.DeleteUserProfile(username);
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Users_DeleteUser",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Users_DeleteUser",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 255).Value = username;
@@ -862,11 +862,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             string portalAlias, string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_FindUsersByEmail",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_FindUsersByEmail",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@EmailToMatch", SqlDbType.NVarChar, 256).Value = emailToMatch;
@@ -985,11 +985,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             string portalAlias, string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_FindUsersByName",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_FindUsersByName",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserNameToMatch", SqlDbType.NVarChar, 256).Value = usernameToMatch;
@@ -1116,11 +1116,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             var users = new MembershipUserCollection();
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetAllUsers",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_GetAllUsers",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@PageIndex", SqlDbType.Int).Value = pageIndex;
@@ -1230,11 +1230,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         public override int GetNumberOfUsersOnline(string portalAlias)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetNumberOfUsersOnline",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_GetNumberOfUsersOnline",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@MinutesSinceLastInActive", SqlDbType.Int).Value = Membership.UserIsOnlineTimeWindow;
@@ -1396,11 +1396,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             }
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetPassword",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_GetPassword",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = username;
@@ -1490,11 +1490,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         public override MembershipUser GetUser(object providerUserKey, bool userIsOnline)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetUserByUserId",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_GetUserByUserId",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@UserId", SqlDbType.UniqueIdentifier).Value = providerUserKey;
             cmd.Parameters.Add("@CurrentTimeUtc", SqlDbType.DateTime).Value = DateTime.UtcNow;
@@ -1629,11 +1629,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         public override MembershipUser GetUser(string portalAlias, string username, bool userIsOnline)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetUserByName",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_GetUserByName",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = username;
@@ -1762,11 +1762,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         public override string GetUserNameByEmail(string portalAlias, string email)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetUserByEmail",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_GetUserByEmail",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = email;
@@ -1881,6 +1881,17 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
 
             this.ConnectionString = connectionStringSettings.ConnectionString;
 
+            if (String.IsNullOrEmpty(this.ConnectionString) || this.ConnectionString == "foo")
+            {
+                //Create the XmlDocument.
+                System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                doc.Load(HttpContext.Current.Server.MapPath("/web.config"));
+
+                //Display all the book titles.
+                System.Xml.XmlNodeList elemList = doc.GetElementsByTagName("connectionStrings");
+                this.ConnectionString = elemList[0].ChildNodes[0].Attributes["connectionString"].Value;
+            }
+
             if (this.EnablePasswordRetrieval && (this.PasswordFormat == MembershipPasswordFormat.Hashed))
             {
                 throw new AppleseedMembershipProviderException(
@@ -1980,11 +1991,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             var conn = new SqlConnection(this.ConnectionString);
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_ResetPassword",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = conn
-                };
+            {
+                CommandText = "aspnet_Membership_ResetPassword",
+                CommandType = CommandType.StoredProcedure,
+                Connection = conn
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = username;
@@ -2071,11 +2082,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         public override bool UnlockUser(string portalAlias, string username)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_UnlockUser",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_UnlockUser",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = username;
@@ -2141,11 +2152,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         public override void UpdateUser(string portalAlias, MembershipUser user)
         {
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_UpdateUser",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_UpdateUser",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = user.UserName;
@@ -2243,11 +2254,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             var conn = new SqlConnection(this.ConnectionString);
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_GetPasswordWithFormat",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = conn
-                };
+            {
+                CommandText = "aspnet_Membership_GetPasswordWithFormat",
+                CommandType = CommandType.StoredProcedure,
+                Connection = conn
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 256).Value = username;
@@ -2521,11 +2532,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                                       : this.EncodePassword(newPassword);
 
             var cmd = new SqlCommand
-                {
-                    CommandText = "aspnet_Membership_SetPassword",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = new SqlConnection(this.ConnectionString)
-                };
+            {
+                CommandText = "aspnet_Membership_SetPassword",
+                CommandType = CommandType.StoredProcedure,
+                Connection = new SqlConnection(this.ConnectionString)
+            };
 
             cmd.Parameters.Add("@ApplicationName", SqlDbType.NVarChar, 256).Value = portalAlias;
             cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 255).Value = username;

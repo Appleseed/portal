@@ -1,0 +1,137 @@
+/*** jQueryUI 1.12.1 - Anant Overrides ***/
+
+.ui-dialog {
+	z-index: 1002 !important;
+	/*min-width: 330px!important;*/
+}
+
+.ui-dialog input.CommandButton {
+    margin: 0!important;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    background: transparent;
+	background-image: url(images/ui-icons_444444_256x240.png);
+	background-position: -97px -130px;
+	border: none;
+	padding: 0;
+	width: 15px;
+    height: 15px;
+}
+.ui-dialog .ui-dialog-titlebar-close:hover {
+    background: transparent;
+	background-image: url(images/ui-icons_777777_256x240.png);
+	background-position: -97px -130px;
+}
+.ui-dialog .ui-dialog-titlebar-close:focus {
+	outline: none;
+}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+	font-size: 15px;
+}
+.ui-widget .ui-widget {
+	font-size: 15px;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 15px;
+}
+.Administration .ui-widget,
+.Register .ui-widget,
+[class*="logon"] .ui-widget {
+	font-size: 14px;
+} 
+
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 15px;
+}
+
+.ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
+	font-size: 15px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #2c3e50;
+    background: #2c3e50;
+    color: #FFF;
+}
+
+.ui-state-default:hover, .ui-widget-content .ui-state-default:hover, .ui-widget-header .ui-state-default:hover {
+    border: 1px solid #1a242f;
+    background: #1a242f;
+    color: #FFF;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #1a242f;
+    background: #1a242f;
+    color: #FFF;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button {
+    color: #FFF;
+}
+
+/* Tabs*/
+
+.ui-tabs {
+    padding: 0;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding-bottom: 0.6em;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    margin: 0 .2em 1px 0;
+}
+
+/* User manager - jqgrid */
+
+.ui-jqgrid.ui-widget-content .ui-state-default {
+    border: 1px solid #2c3e50;
+    background: #f6f6f6;
+    color: #2c3e50;
+}
+.ui-jqgrid.ui-widget-content .ui-state-default:hover {
+    background: #eee;
+    color: #2c3e50;
+}
+
+.ui-jqgrid.ui-widget-content .ui-userdata {
+	border-left: 0px none;
+    border-right: 0px none;
+    height: 25px;
+}
+.ui-jqgrid.ui-widget-content .ui-userdata:hover,
+.ui-jqgrid.ui-widget-content .ui-jqgrid-pager:hover {
+    background: #f6f6f6;
+}
+.ui-jqgrid.ui-widget-content .ui-userdata .ui-pg-div{
+    cursor: pointer;
+}
+
+/* Datepicker */
+
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 15px;
+}
+.ui-datepicker table {
+	font-size: 14px;
+}
+
+
+#footerpopup {
+    padding: 8px 0px 0px !important;
+    background: #fff;
+    border: none;
+}
+
+#footerpopup select {
+    margin-right: 10px;
+}

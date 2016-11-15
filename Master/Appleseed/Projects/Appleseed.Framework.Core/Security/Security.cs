@@ -33,17 +33,17 @@ namespace Appleseed.Framework.Security
     /// </summary>
     /// <remarks>
     /// </remarks>
-    [History("jminond", "2004/09/29", 
+    [History("jminond", "2004/09/29",
         "added killsession method mimic of sign out, as well as modified sign on to use cookieexpire in Appleseed.config"
         )]
     [History("gman3001", "2004/09/29", "Call method for recording the user's last visit date on successful signon")]
     [History("jviladiu@portalServices.net", "2004/09/23", "Get users & roles from true portal if UseSingleUserBase=true"
         )]
-    [History("jviladiu@portalServices.net", "2004/08/23", 
+    [History("jviladiu@portalServices.net", "2004/08/23",
         "Deleted repeated code in HasxxxPermissions and GetxxxPermissions")]
-    [History("cisakson@yahoo.com", "2003/04/28", 
+    [History("cisakson@yahoo.com", "2003/04/28",
         "Changed the IsInRole function so it support's a custom setting for Windows portal admins!")]
-    [History("Geert.Audenaert@Syntegra.Com", "2003/03/26", 
+    [History("Geert.Audenaert@Syntegra.Com", "2003/03/26",
         "Changed the IsInRole function so it support's users to in case of windowsauthentication!")]
     [History("Thierry (tiptopweb)", "2003/04/12", "Migrate shopping cart in SignOn for E-Commerce")]
     public class PortalSecurity
@@ -71,7 +71,7 @@ namespace Appleseed.Framework.Security
             {
                 throw new HttpException(403, "Access Denied", 2);
             }
-            
+
             HttpContext.Current.Response.Redirect(
                 HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/Logon.aspx"));
         }
@@ -88,7 +88,7 @@ namespace Appleseed.Framework.Security
             {
                 throw new HttpException(403, "Access Denied Edit", 3);
             }
-            
+
             HttpContext.Current.Response.Redirect(
                 HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/Logon.aspx"));
         }
@@ -551,7 +551,7 @@ namespace Appleseed.Framework.Security
             {
                 return true;
             }
-            
+
             return HttpContext.Current.User.IsInRole(role);
         }
 
@@ -628,7 +628,7 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static void PortalHome()
         {
-            HttpContext.Current.Response.Redirect(HttpUrlBuilder.BuildUrl("~/"+HttpUrlBuilder.DefaultPage));
+            HttpContext.Current.Response.Redirect(HttpUrlBuilder.BuildUrl("~/" + HttpUrlBuilder.DefaultPage));
         }
 
         /// <summary>
@@ -744,6 +744,18 @@ namespace Appleseed.Framework.Security
                 // Set a cookie to persist authentication for each portal 
                 // so user can be reauthenticated 
                 // automatically if they chose to Remember Login
+                int minuteAdd = 0;
+
+                int.TryParse(PortalSettings.CustomSettings["SITESETTINGS_PORTALTIMEOUT"].ToString(), out minuteAdd);
+                if (minuteAdd > 0)
+                {
+                    minuteAdd = Convert.ToInt32(PortalSettings.CustomSettings["SITESETTINGS_PORTALTIMEOUT"]);
+                }
+                else
+                {
+                    minuteAdd = Config.CookieExpire;
+                }
+
                 var hck = HttpContext.Current.Response.Cookies["Appleseed_" + PortalSettings.PortalAlias.ToLower()];
                 if (hck != null)
                 {
@@ -757,19 +769,22 @@ namespace Appleseed.Framework.Security
                     }
                     else
                     {
-                        // jminond - option to kill cookie after certain time always
-                        // jes1111
-                        // 					if(ConfigurationSettings.AppSettings["CookieExpire"] != null)
-                        // 					{
-                        // 						int minuteAdd = int.Parse(ConfigurationSettings.AppSettings["CookieExpire"]);
-                        var minuteAdd = Config.CookieExpire;
-
                         var time = DateTime.Now;
                         var span = new TimeSpan(0, 0, minuteAdd, 0, 0);
-
                         hck.Expires = time.Add(span);
+                    }
+                }
 
-                        // 					}
+                // set session timeout from portal settings
+                if (minuteAdd > 0)
+                {
+                    if (persistent)
+                    {
+                        CreateTicket(user, persistent, DateTime.Now.AddYears(50));
+                    }
+                    else
+                    {
+                        CreateTicket(user, persistent, DateTime.Now.AddMinutes(minuteAdd));
                     }
                 }
 
@@ -783,11 +798,36 @@ namespace Appleseed.Framework.Security
 
                     return usr.Email;
                 }
-                
+
                 HttpContext.Current.Response.Redirect(redirectPage);
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Generate Auth Cookie
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="StayLoggedIn"></param>
+        /// <param name="Type"></param>
+        /// <param name="CookieTime"></param>
+        /// <returns></returns>
+        public static bool CreateTicket(string UserName, bool StayLoggedIn,DateTime CookieTime)
+        {
+            FormsAuthentication.Initialize();
+
+            // Create a new ticket used for authentication
+            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, UserName, DateTime.Now, CookieTime, StayLoggedIn, "Regged", FormsAuthentication.FormsCookiePath);
+
+            string hash = FormsAuthentication.Encrypt(ticket);
+            HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);
+
+            if (ticket.IsPersistent) cookie.Expires = ticket.Expiration;
+
+            HttpContext.Current.Response.Cookies.Add(cookie);
+
+            return true;
         }
 
         /// <summary>
@@ -1067,12 +1107,13 @@ namespace Appleseed.Framework.Security
         /// <param name="username">username</param>
         /// <param name="Password">password</param>
         /// <returns>true/false</returns>
-        public static bool AdminChangeUsersPassword(string username, string Password) {
+        public static bool AdminChangeUsersPassword(string username, string Password)
+        {
 
             var provider = (Appleseed.Framework.Providers.AppleseedMembershipProvider.AppleseedMembershipProvider)Membership.Provider;
             return provider.AdminChangePassword(username, Password);
-        
-        
+
+
         }
 
         #endregion

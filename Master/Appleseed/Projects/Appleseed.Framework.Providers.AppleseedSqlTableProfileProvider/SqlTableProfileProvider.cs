@@ -560,6 +560,19 @@ namespace Microsoft.Samples {
             try {
                 SqlConnection conn = null;
                 try {
+
+                    if (String.IsNullOrEmpty(this._sqlConnectionString) || this._sqlConnectionString == "foo")
+                    {
+                        //Create the XmlDocument.
+                        System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                        doc.Load(HttpContext.Current.Server.MapPath("/web.config"));
+
+                        //Display all the book titles.
+                        System.Xml.XmlNodeList elemList = doc.GetElementsByTagName("connectionStrings");
+                        this._sqlConnectionString = elemList[0].ChildNodes[0].Attributes["connectionString"].Value;
+                    }
+
+
                     conn = new SqlConnection(_sqlConnectionString);
                     conn.Open();
 

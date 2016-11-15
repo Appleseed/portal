@@ -43,3 +43,4 @@ IF NOT EXISTS(SELECT * FROM rb_Modules WHERE ModuleDefID=@ModuleDefId)
 BEGIN
 EXEC rb_addModule @PAGEID,1,'Proxy Settings','ContentPane',@ModuleDefId,0,'Admins','Admins;','Admins;','Admins;','Admins;','Admins;','Admins;',0,NULL,0,0,0,@ModuleID output
 END
+

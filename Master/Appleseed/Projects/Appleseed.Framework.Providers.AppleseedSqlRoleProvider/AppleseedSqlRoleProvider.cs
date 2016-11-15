@@ -613,6 +613,18 @@ namespace Appleseed.Framework.Providers.AppleseedRoleProvider
         /// </exception>
         public override AppleseedRole GetRoleByName(string portalAlias, string roleName)
         {
+
+            if (String.IsNullOrEmpty(this.connectionString) || this.connectionString == "foo")
+            {
+                //Create the XmlDocument.
+                System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                doc.Load(HttpContext.Current.Server.MapPath("/web.config"));
+
+                //Display all the book titles.
+                System.Xml.XmlNodeList elemList = doc.GetElementsByTagName("connectionStrings");
+                this.connectionString = elemList[0].ChildNodes[0].Attributes["connectionString"].Value;
+            }
+
             var cmd = new SqlCommand
                 {
                     CommandText = "aspnet_Roles_GetRoleByName",

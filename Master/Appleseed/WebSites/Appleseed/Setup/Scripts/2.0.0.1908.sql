@@ -1,0 +1,8 @@
+﻿IF NOT EXISTS(SELECT * FROM rb_PortalSettings WHERE  [SettingName] = 'SITESETTINGS_PORTALTIMEOUT')
+BEGIN
+	INSERT INTO [rb_PortalSettings] VALUES(0,'SITESETTINGS_PORTALTIMEOUT',20)
+END
+ELSE
+BEGIN
+	update [rb_PortalSettings] set [SettingValue] = 20 where [SettingName] = 'SITESETTINGS_PORTALTIMEOUT'
+END

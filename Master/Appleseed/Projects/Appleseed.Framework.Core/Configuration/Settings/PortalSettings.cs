@@ -1866,6 +1866,20 @@ namespace Appleseed.Framework.Site.Configuration
                 };
                 baseSettings.Add("SITESETTINGS_LINKEDIN_APP_SECRET", linkedInAppSecret);
 
+                // Textbox for change portal timeout
+                //Ashish.patel@haptix.biz - 2016/11/03 - To make changes of portal timeout
+                var portalTimeout = new SettingItem<string, TextBox>
+                {
+                    Value = string.Empty,
+                    Required = false,
+                    Order = groupOrderBase + 31,
+                    Group = group,
+                    EnglishName = "Portal Timeout (In Minutes)",
+                    Description = "A user can change their portal's timeout without needing to change the web.config file"
+                };
+                baseSettings.Add("SITESETTINGS_PORTALTIMEOUT", portalTimeout);
+
+
 
                 groupOrderBase = (int)SettingItemGroup.META_SETTINGS;
                 group = SettingItemGroup.META_SETTINGS;

@@ -1,9 +1,8 @@
 @import url(menu.css);
-@import url(jquery-ui-1.9.2.custom.css);
+@import url(/Design/jqueryUI/Appleseed/jquery-ui.css);
+@import url(/Design/jqueryUI/Appleseed/jquery-ui-anant.css);
 @import url(bootstrap.css);
 @import url(as-admin-bar.css);
-@import url(font-awesome.min.css);
-@import url(style.css);
 
 /*******************************************************/
 /************* Reset styles DO NOT REMOVE **************/
@@ -344,14 +343,6 @@ table.signInBody td {
 #Content_authRoles label {
     vertical-align: 2px;
     margin: 0px 6px;
-}
-
-#footerpopup {
-    padding: 8px 0px 0px !important;
-}
-
-#footerpopup select {
-    margin-right: 10px;
 }
 
 option {
@@ -695,15 +686,7 @@ div.error-wrapper {
     display: none;
 }
 
-/* Fixes for ui-dialogs */
-
-.ui-dialog {
-    min-width: 330px!important;
-}
-
-.ui-dialog input.CommandButton {
-    margin: 0!important;
-}
+/* Fixes for #AppleseedLogin */
 
 #AppleseedLogin {
     height: 320px!important
@@ -750,6 +733,10 @@ div.error-wrapper {
 }
 
 /* Bootstrap Menu Fix */
+
+.header-container {
+    overflow-x: hidden;
+}
 
 .navbar-nav .dropdown:hover > .dropdown-menu {
     display: block;
