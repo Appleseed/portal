@@ -1,36 +1,36 @@
 IF NOT EXISTS (SELECT * FROM   sys.columns WHERE  object_id = OBJECT_ID(N'[dbo].[rb_HtmlText]') AND name = 'CWCSS')
 BEGIN
-ALTER TABLE rb_HtmlText ADD CWCSS ntext
+ALTER TABLE rb_HtmlText ADD CWCSS ntext NOT NULL DEFAULT('')
 END
 GO
 
 IF NOT EXISTS (SELECT * FROM   sys.columns WHERE  object_id = OBJECT_ID(N'[dbo].[rb_HtmlText]') AND name = 'CWJS')
 BEGIN
-ALTER TABLE rb_HtmlText ADD CWJS ntext
+ALTER TABLE rb_HtmlText ADD CWJS ntext NOT NULL DEFAULT('')
 END
 GO
 
 IF NOT EXISTS (SELECT * FROM   sys.columns WHERE  object_id = OBJECT_ID(N'[dbo].[rb_HtmlText]') AND name = 'CWHTML')
 BEGIN
-ALTER TABLE rb_HtmlText ADD CWHTML ntext
+ALTER TABLE rb_HtmlText ADD CWHTML ntext NOT NULL DEFAULT('')
 END
 GO
 
 IF NOT EXISTS (SELECT * FROM   sys.columns WHERE  object_id = OBJECT_ID(N'[dbo].[rb_HtmlText_st]') AND name = 'CWCSS')
 BEGIN
-ALTER TABLE rb_HtmlText_st ADD CWCSS ntext
+ALTER TABLE rb_HtmlText_st ADD CWCSS ntext NOT NULL DEFAULT('')
 END
 GO
 
 IF NOT EXISTS (SELECT * FROM   sys.columns WHERE  object_id = OBJECT_ID(N'[dbo].[rb_HtmlText_st]') AND name = 'CWJS')
 BEGIN
-ALTER TABLE rb_HtmlText_st ADD CWJS ntext
+ALTER TABLE rb_HtmlText_st ADD CWJS ntext NOT NULL DEFAULT('')
 END
 GO
 
 IF NOT EXISTS (SELECT * FROM   sys.columns WHERE  object_id = OBJECT_ID(N'[dbo].[rb_HtmlText_st]') AND name = 'CWHTML')
 BEGIN
-ALTER TABLE rb_HtmlText_st ADD CWHTML ntext
+ALTER TABLE rb_HtmlText_st ADD CWHTML ntext NOT NULL DEFAULT('')
 END
 GO
 
