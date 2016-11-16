@@ -60,7 +60,7 @@ namespace Appleseed.Framework.DataTypes
         {
             get
             {
-                return "Code Mirror Plain Text;CKeditor;Aloha Editor".Split(';');
+                return "Code Mirror Plain Text;CKeditor;Aloha Editor;Codewriter".Split(';');
             }
         }
 
@@ -262,6 +262,10 @@ namespace Appleseed.Framework.DataTypes
                         Path.ApplicationRoot, "/aspnet_client/CKeditorV4.5.7");
 
                     desktopText = CKfckv2;
+                    break;
+
+                case "Codewriter":
+                    desktopText = new CodeWriterTextbox();
                     break;
 
                 // case "Code Mirror Plain Text":

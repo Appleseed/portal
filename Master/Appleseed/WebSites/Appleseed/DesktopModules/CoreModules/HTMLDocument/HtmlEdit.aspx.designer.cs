@@ -13,6 +13,15 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
     public partial class HtmlEdit {
         
         /// <summary>
+        /// plcNoCodeWriter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plcNoCodeWriter;
+        
+        /// <summary>
         /// Literal1 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,60 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MobileDetails;
+        
+        /// <summary>
+        /// plcCodewriter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plcCodewriter;
+        
+        /// <summary>
+        /// cwCSS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwCSS;
+        
+        /// <summary>
+        /// cwHTML control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwHTML;
+        
+        /// <summary>
+        /// cwJS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwJS;
+        
+        /// <summary>
+        /// hdnPageId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnPageId;
+        
+        /// <summary>
+        /// hdnModuleId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnModuleId;
         
         /// <summary>
         /// PlaceHolderButtons control.

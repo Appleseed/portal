@@ -1620,6 +1620,7 @@
     <Folder Include="App_Themes\Theme1\" />
     <Folder Include="aspnet_client\EvolutilityAdvanced\css\" />
     <Folder Include="Bin\" />
+    <Folder Include="DesktopModules\CoreModules\HTMLDocument\PageModulePreview\" />
     <Folder Include="images\default\" />
     <Folder Include="packages\" />
     <Folder Include="Portals\_Appleseed\Album\" />
@@ -6379,6 +6380,7 @@
     <Content Include="DesktopModules\CoreModules\HTMLDocument\HtmlVersonHistory.aspx" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\install.sql" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\install.xml" />
+    <Content Include="DesktopModules\CoreModules\HTMLDocument\preview.html" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\readme.txt" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\uninstall.sql" />
     <Content Include="DesktopModules\CoreModules\MagicUrls\cancel.gif" />

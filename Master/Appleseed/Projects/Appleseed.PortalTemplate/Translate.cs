@@ -340,6 +340,9 @@ namespace Appleseed.PortalTemplate
             _html.MobileDetails = html.MobileDetails;
             _html.MobileSummary = html.MobileSummary;
             _html.ModuleID = html.ModuleID;
+            _html.CWCSS = html.CWCSS;
+            _html.CWHTML = html.CWHTML;
+            _html.CWJS = html.CWJS;
             return _html;
         }
 
@@ -350,6 +353,9 @@ namespace Appleseed.PortalTemplate
             _html.MobileDetails = html.MobileDetails;
             _html.MobileSummary = html.MobileSummary;
             _html.ModuleID = html.ModuleID;
+            _html.CWCSS = html.CWCSS;
+            _html.CWHTML = html.CWHTML;
+            _html.CWJS = html.CWJS;
             return _html;
         }
 

@@ -63,7 +63,7 @@ namespace Appleseed.PortalTemplate
     #endregion
 		
 		public PortalTemplateDataContext() : 
-				base(global::Appleseed.PortalTemplate.Properties.Settings.Default.Appleseed2ConnectionString, mappingSource)
+				base(global::Appleseed.PortalTemplate.Properties.Settings.Default.AppleseedConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -2070,6 +2070,12 @@ namespace Appleseed.PortalTemplate
 		
 		private string _MobileDetails;
 		
+		private string _CWCSS;
+		
+		private string _CWJS;
+		
+		private string _CWHTML;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2082,6 +2088,12 @@ namespace Appleseed.PortalTemplate
     partial void OnMobileSummaryChanged();
     partial void OnMobileDetailsChanging(string value);
     partial void OnMobileDetailsChanged();
+    partial void OnCWCSSChanging(string value);
+    partial void OnCWCSSChanged();
+    partial void OnCWJSChanging(string value);
+    partial void OnCWJSChanged();
+    partial void OnCWHTMLChanging(string value);
+    partial void OnCWHTMLChanged();
     #endregion
 		
 		public rb_HtmlText()
@@ -2165,6 +2177,66 @@ namespace Appleseed.PortalTemplate
 					this._MobileDetails = value;
 					this.SendPropertyChanged("MobileDetails");
 					this.OnMobileDetailsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CWCSS", DbType="NText", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CWCSS
+		{
+			get
+			{
+				return this._CWCSS;
+			}
+			set
+			{
+				if ((this._CWCSS != value))
+				{
+					this.OnCWCSSChanging(value);
+					this.SendPropertyChanging();
+					this._CWCSS = value;
+					this.SendPropertyChanged("CWCSS");
+					this.OnCWCSSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CWJS", DbType="NText", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CWJS
+		{
+			get
+			{
+				return this._CWJS;
+			}
+			set
+			{
+				if ((this._CWJS != value))
+				{
+					this.OnCWJSChanging(value);
+					this.SendPropertyChanging();
+					this._CWJS = value;
+					this.SendPropertyChanged("CWJS");
+					this.OnCWJSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CWHTML", DbType="NText", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CWHTML
+		{
+			get
+			{
+				return this._CWHTML;
+			}
+			set
+			{
+				if ((this._CWHTML != value))
+				{
+					this.OnCWHTMLChanging(value);
+					this.SendPropertyChanging();
+					this._CWHTML = value;
+					this.SendPropertyChanged("CWHTML");
+					this.OnCWHTMLChanged();
 				}
 			}
 		}
@@ -2572,6 +2644,12 @@ namespace Appleseed.PortalTemplate
 		
 		private string _MobileDetails;
 		
+		private string _CWCSS;
+		
+		private string _CWJS;
+		
+		private string _CWHTML;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2584,6 +2662,12 @@ namespace Appleseed.PortalTemplate
     partial void OnMobileSummaryChanged();
     partial void OnMobileDetailsChanging(string value);
     partial void OnMobileDetailsChanged();
+    partial void OnCWCSSChanging(string value);
+    partial void OnCWCSSChanged();
+    partial void OnCWJSChanging(string value);
+    partial void OnCWJSChanged();
+    partial void OnCWHTMLChanging(string value);
+    partial void OnCWHTMLChanged();
     #endregion
 		
 		public rb_HtmlText_st()
@@ -2667,6 +2751,66 @@ namespace Appleseed.PortalTemplate
 					this._MobileDetails = value;
 					this.SendPropertyChanged("MobileDetails");
 					this.OnMobileDetailsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CWCSS", DbType="NText", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CWCSS
+		{
+			get
+			{
+				return this._CWCSS;
+			}
+			set
+			{
+				if ((this._CWCSS != value))
+				{
+					this.OnCWCSSChanging(value);
+					this.SendPropertyChanging();
+					this._CWCSS = value;
+					this.SendPropertyChanged("CWCSS");
+					this.OnCWCSSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CWJS", DbType="NText", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CWJS
+		{
+			get
+			{
+				return this._CWJS;
+			}
+			set
+			{
+				if ((this._CWJS != value))
+				{
+					this.OnCWJSChanging(value);
+					this.SendPropertyChanging();
+					this._CWJS = value;
+					this.SendPropertyChanged("CWJS");
+					this.OnCWJSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CWHTML", DbType="NText", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CWHTML
+		{
+			get
+			{
+				return this._CWHTML;
+			}
+			set
+			{
+				if ((this._CWHTML != value))
+				{
+					this.OnCWHTMLChanging(value);
+					this.SendPropertyChanging();
+					this._CWHTML = value;
+					this.SendPropertyChanged("CWHTML");
+					this.OnCWHTMLChanged();
 				}
 			}
 		}
