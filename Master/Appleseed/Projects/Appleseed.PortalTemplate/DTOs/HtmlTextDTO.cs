@@ -31,5 +31,11 @@ namespace Appleseed.PortalTemplate.DTOs
             get;
             set;
         }
+
+        public string CWCSS { get; set; }
+
+        public string CWJS { get; set; }
+
+        public string CWHTML { get; set; }
     }
 }

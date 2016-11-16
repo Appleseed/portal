@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TravelAgency" Class="PortalTemplateDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Appleseed;Persist Security Info=True;User ID=sa" SettingsObjectName="Appleseed.PortalTemplate.Properties.Settings" SettingsPropertyName="Appleseed2ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Appleseed;Persist Security Info=True;User ID=sa" SettingsObjectName="Appleseed.PortalTemplate.Properties.Settings" SettingsPropertyName="AppleseedConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.rb_Portals" Member="rb_Portals">
     <Type Name="rb_Portals">
       <Column Name="PortalID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -93,6 +93,9 @@
       <Column Name="DesktopHtml" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="MobileSummary" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="MobileDetails" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CWCSS" Type="System.String" DbType="NText" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CWJS" Type="System.String" DbType="NText" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CWHTML" Type="System.String" DbType="NText" CanBeNull="false" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.rb_ModuleDefinitions" Member="rb_ModuleDefinitions">
@@ -121,6 +124,9 @@
       <Column Name="DesktopHtml" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="MobileSummary" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="MobileDetails" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CWCSS" Type="System.String" DbType="NText" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CWJS" Type="System.String" DbType="NText" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CWHTML" Type="System.String" DbType="NText" CanBeNull="false" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>
