@@ -1628,6 +1628,11 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
         /// </remarks>
         public override MembershipUser GetUser(string portalAlias, string username, bool userIsOnline)
         {
+            if (string.IsNullOrEmpty(username))
+            {
+                return null;
+            }
+
             var cmd = new SqlCommand
             {
                 CommandText = "aspnet_Membership_GetUserByName",
@@ -1647,7 +1652,7 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
             {
                 cmd.Connection.Open();
 
-                using (reader = cmd.ExecuteReader())
+                using (reader = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {
                     if (reader.HasRows)
                     {
@@ -1684,16 +1689,16 @@ namespace Appleseed.Framework.Providers.AppleseedMembershipProvider
                     }
                     reader.Close();
 
-                    cmd = new SqlCommand
+                    var cmdQur = new SqlCommand
                     {
                         CommandText = "SELECT * FROM aspnet_Membership WHERE UserId = '" + providerUserKey.ToString().Replace("{", string.Empty).Replace("}", string.Empty) + "'",
                         CommandType = CommandType.Text,
                         Connection = new SqlConnection(this.ConnectionString)
                     };
 
-                    cmd.Connection.Open();
+                    cmdQur.Connection.Open();
 
-                    using (reader = cmd.ExecuteReader())
+                    using (reader = cmdQur.ExecuteReader(CommandBehavior.CloseConnection))
                     {
                         if (reader.HasRows)
                         {
