@@ -380,6 +380,11 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 string content = $"<!DOCTYPE html><html><head><title></title><style type='text/css'>{css}</style></head><body>{html}</body><script type='text/javascript'>{js}</script></html>";
 
                 rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/PageModulePreview/P" + pageId + "M" + moduleId + ".html";
+                string folderPath = System.Web.HttpContext.Current.Server.MapPath("/DesktopModules/CoreModules/HTMLDocument/PageModulePreview");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
 
                 System.IO.File.WriteAllText(rootPath, content);
                 return "/DesktopModules/CoreModules/HTMLDocument/PageModulePreview/P" + pageId + "M" + moduleId + ".html";
