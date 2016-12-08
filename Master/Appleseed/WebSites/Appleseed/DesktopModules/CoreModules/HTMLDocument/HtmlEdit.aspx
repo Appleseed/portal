@@ -96,8 +96,7 @@
                 <h2>Code Writer</h2>
             </div>
             <div class="col-lg-3">
-                <h3>CSS <a href="#"><span class="glyphicon glyphicon-plus ExternalJSCSS"></span></a>
-                </h3>
+                <h3>CSS</h3>
                 <div style="border: 1px solid gray">
                     <textarea id="cwCSS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
