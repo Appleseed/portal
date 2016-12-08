@@ -184,6 +184,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                         this.cwCSS.InnerText = this.Server.HtmlDecode((string)dr["CWCSS"]);
                         this.cwHTML.InnerText = this.Server.HtmlDecode((string)dr["CWHTML"]);
                         this.cwJS.InnerText = this.Server.HtmlDecode((string)dr["CWJS"]);
+                        this.cwJSCSSRef.InnerText = this.Server.HtmlDecode((string)dr["CWJSCSSREF"]);
                     }
                     else
                     {
@@ -235,7 +236,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 Convert.ToInt32(drpVirsionList.SelectedItem.Value),
                 Convert.ToBoolean(drpVirsionList.SelectedItem.Text.Contains("Published") ? 1 : 0),
                 DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName, DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
-                this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText
+                this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText
                 );
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
@@ -294,7 +295,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
                 DateTime.Now,
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName
-                , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText);
+                , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText);
             Response.Redirect(Request.Url.PathAndQuery, true);
         }
 
@@ -326,7 +327,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
                 DateTime.Now,
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName
-               , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText);
+               , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText);
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
             {
@@ -372,12 +373,12 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         }
 
         [WebMethod]
-        public static string SaveData(string css, string html, string js, string pageId, string moduleId)
+        public static string SaveData(string css, string html, string js, string pageId, string moduleId, string jscssref)
         {
             string rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/preview.html";
             try
             {
-                string content = $"<!DOCTYPE html><html><head><title></title><style type='text/css'>{css}</style></head><body>{html}</body><script type='text/javascript'>{js}</script></html>";
+                string content = $"<!DOCTYPE html><html><head><title></title>{jscssref}<style type='text/css'>{css}</style></head><body>{html}</body><script type='text/javascript'>{js}</script></html>";
 
                 rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/PageModulePreview/P" + pageId + "M" + moduleId + ".html";
                 string folderPath = System.Web.HttpContext.Current.Server.MapPath("/DesktopModules/CoreModules/HTMLDocument/PageModulePreview");
