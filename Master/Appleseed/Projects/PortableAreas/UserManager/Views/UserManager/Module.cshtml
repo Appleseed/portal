@@ -51,7 +51,7 @@
         
     }
 
-    function searchBotton() {
+    function searchBotton(event) {
         if ((13 == event.keyCode) || (13 == event.which)) { event.preventDefault(); search(); }
     }
     
@@ -131,7 +131,7 @@
     }
 
     $("#list5").setCaption(
-        '<input type="search" onkeydown="searchBotton()" name="item_code" id="textSearch" placeholder=\'@General.GetString("search")\' />' +
+        '<input type="search" onkeydown="searchBotton(event)" name="item_code" id="textSearch" placeholder=\'@General.GetString("search")\' />' +
         '<span style="vertical-align:middle; display:inline-block;" class="ui-icon ui-icon-search" onclick="search();return false;"></span>');
     });
     
