@@ -95,32 +95,43 @@
             <div class="col-lg-12">
                 <h2>Code Writer</h2>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <h3>CSS</h3>
                 <div style="border: 1px solid gray">
                     <textarea id="cwCSS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <h3>HTML</h3>
                 <div style="border: 1px solid gray">
                     <textarea id="cwHTML" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <h3>JavaScript</h3>
                 <div style="border: 1px solid gray">
                     <textarea id="cwJS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
             </div>
+
+
+            <div class="col-lg-3">
+                <h3>JS/CSS References</h3>
+                <div style="border: 1px solid gray">
+                    <textarea id="cwJSCSSRef" runat="server" cols="100" rows="5" style="width: 100%;"></textarea>
+                </div>
+            </div>
+
             <div class="col-lg-12">
                 <h3>Preview</h3>
                 <div class="divPreview">
                     <iframe id="ifrmPreview" class="myframe" name="myframe" src="/DesktopModules/CoreModules/HTMLDocument/preview.html"></iframe>
                 </div>
             </div>
-            <asp:HiddenField runat="server" ID="hdnPageId" value="0" ClientIDMode="Static"/>
-            <asp:HiddenField runat="server" ID="hdnModuleId" value="0" ClientIDMode="Static" />
+
+
+            <asp:HiddenField runat="server" ID="hdnPageId" Value="0" ClientIDMode="Static" />
+            <asp:HiddenField runat="server" ID="hdnModuleId" Value="0" ClientIDMode="Static" />
             <link href="/aspnet_client/CodeMirrorV5.12/css/docs.css" type="text/css" rel="stylesheet" />
             <link href="/aspnet_client/CodeMirrorV5.12/css/codemirror.css" type="text/css" rel="stylesheet" />
             <script src="/aspnet_client/CodeMirrorV5.12/js/codemirror.js" type="text/javascript"></script>
@@ -164,6 +175,17 @@
                            indentWithTabs: true
                        });
 
+                    var jscssRefeditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJSCSSRef'),
+                     {
+                         mode: "text/javascript", extraKeys:
+                             {
+                                 "Ctrl-Space": "autocomplete"
+                             },
+                         value: document.getElementById('Content_cwJSCSSRef').innerHTML,
+                         lineNumbers: true,
+                         indentWithTabs: true
+                     });
+
                     function SaveData() {
                         var dt = {};
                         dt.css = csseditor.getValue();
@@ -171,6 +193,7 @@
                         dt.js = jseditor.getValue();
                         dt.pageId = $('#hdnPageId').val();
                         dt.moduleId = $('#hdnModuleId').val();
+                        dt.jscssref = jscssRefeditor.getValue();
 
                         $.ajax({
                             url: "htmledit.aspx/SaveData",
@@ -179,7 +202,7 @@
                             data: JSON.stringify(dt),
                             contentType: "application/json; charset=utf-8",
                             success: function (data) {
-                               // var previewUrl = $('#ifrmPreview').attr('src');
+                                // var previewUrl = $('#ifrmPreview').attr('src');
                                 $('#ifrmPreview').attr('src', '');
                                 $('#ifrmPreview').attr('src', data.d);
                             },
@@ -202,6 +225,11 @@
                     });
 
                     jseditor.on("change", function () {
+                        clearTimeout(refreshTime);
+                        refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                    });
+
+                    jscssRefeditor.on("change", function () {
                         clearTimeout(refreshTime);
                         refreshTime = setTimeout(function () { SaveData(); }, 3000);
                     });
