@@ -92,7 +92,7 @@ namespace UserManager.Controllers
                 foreach (var word in words)
                 {
                     var userMail = mail.Split('@');
-                    if (name.ToUpper().Contains(word.ToUpper()) || (role.ToUpper().Contains(word.ToUpper())) || (userMail[0].ToUpper().Contains(word.ToUpper())))
+                    if (name.ToUpper().Contains(word.ToUpper()) || (role.ToUpper().Contains(word.ToUpper())) || (userMail[0].ToUpper().Contains(word.ToUpper())) || (mail.ToLower().Contains(word.ToLower())))
                     {
                         user.id = i;
                         result.Add(user);
