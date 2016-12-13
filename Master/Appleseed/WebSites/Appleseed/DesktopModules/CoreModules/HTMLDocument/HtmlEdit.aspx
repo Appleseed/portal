@@ -114,7 +114,6 @@
                 </div>
             </div>
 
-
             <div class="col-lg-3">
                 <h3>JS/CSS References</h3>
                 <div style="border: 1px solid gray">
@@ -132,6 +131,7 @@
 
             <asp:HiddenField runat="server" ID="hdnPageId" Value="0" ClientIDMode="Static" />
             <asp:HiddenField runat="server" ID="hdnModuleId" Value="0" ClientIDMode="Static" />
+            <asp:HiddenField runat="server" ID="hdnDefaultJSCSS" value="" ClientIDMode="Static" />
             <link href="/aspnet_client/CodeMirrorV5.12/css/docs.css" type="text/css" rel="stylesheet" />
             <link href="/aspnet_client/CodeMirrorV5.12/css/codemirror.css" type="text/css" rel="stylesheet" />
             <script src="/aspnet_client/CodeMirrorV5.12/js/codemirror.js" type="text/javascript"></script>
@@ -193,7 +193,7 @@
                         dt.js = jseditor.getValue();
                         dt.pageId = $('#hdnPageId').val();
                         dt.moduleId = $('#hdnModuleId').val();
-                        dt.jscssref = jscssRefeditor.getValue();
+                        dt.jscssref = $('#hdnDefaultJSCSS').val() + jscssRefeditor.getValue();
 
                         $.ajax({
                             url: "htmledit.aspx/SaveData",

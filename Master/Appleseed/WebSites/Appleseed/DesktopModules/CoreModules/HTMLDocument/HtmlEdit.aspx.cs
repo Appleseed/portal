@@ -58,6 +58,10 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             }
         }
 
+
+        private string CustomTheme = "CustomTheme";
+        private string CustomThemeAlt = "CustomThemeAlt";
+
         #endregion
 
         #region Methods
@@ -85,7 +89,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             var showUpload = this.ModuleSettings["ShowUpload"].ToBoolean(CultureInfo.InvariantCulture);
             var showMobile = this.ModuleSettings["ShowMobile"].ToBoolean(CultureInfo.InvariantCulture);
 
-            if (IsCodeWriter && !Request.Url.PathAndQuery.ToLower().Contains("modalchangemaster"))
+            if (this.IsCodeWriter && !Request.Url.PathAndQuery.ToLower().Contains("modalchangemaster"))
                 Response.Redirect(Request.Url.PathAndQuery + "&ModalChangeMaster=true", true);
 
             plcCodewriter.Visible = editor.ToLower() == "codewriter";
@@ -173,13 +177,14 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             this.hdnModuleId.Value = this.ModuleID.ToString();
             this.hdnPageId.Value = this.PageID.ToString();
+            this.hdnDefaultJSCSS.Value = $"<link type='text/css' rel='stylesheet' href='/Design/Themes/{this.GetCurrentTheme()}/default.css'></link><script src='/aspnet_client/jQuery/jquery-1.8.3.js'></script>";
 
             // End Change Geert.Audenaert@Syntegra.Com
             try
             {
                 if (dr.Read())
                 {
-                    if (IsCodeWriter)
+                    if (this.IsCodeWriter)
                     {
                         this.cwCSS.InnerText = this.Server.HtmlDecode((string)dr["CWCSS"]);
                         this.cwHTML.InnerText = this.Server.HtmlDecode((string)dr["CWHTML"]);
@@ -241,7 +246,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
             {
-                if (IsCodeWriter)
+                if (this.IsCodeWriter)
                 {
                     Response.Redirect(this.PageID.ToString());
                 }
@@ -257,10 +262,23 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         protected override void OnCancel(EventArgs e)
         {
             base.OnCancel(e);
-            if (IsCodeWriter)
+            if (this.IsCodeWriter)
             {
                 Response.Redirect(this.PageID.ToString());
             }
+        }
+
+
+        private string GetCurrentTheme()
+        {
+            Dictionary<string, ISettingItem> pageSettings = new Appleseed.Framework.Site.Configuration.PageSettings().GetPageCustomSettings(this.Module.PageID);
+
+            string pageTheme = pageSettings[this.CustomTheme]?.Value?.ToString() ?? pageSettings[this.CustomThemeAlt]?.Value?.ToString();
+
+            if (string.IsNullOrEmpty(pageTheme))
+                pageTheme = this.PortalSettings.CurrentLayout;
+
+            return pageTheme;
         }
 
         #endregion
