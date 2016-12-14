@@ -89,7 +89,7 @@
 
                 .myframe {
                     width: 100%;
-                    height: 300px;
+                    height: 250px;
                 }
             </style>
             <div class="col-lg-12">
