@@ -79,17 +79,17 @@
                 }
 
                 .CodeMirror {
-                    height: 250px !important;
+                    height: 240px !important;
                 }
 
                 .divPreview {
-                    height: 250px;
+                    height: 240px;
                     border: 1px solid gray;
                 }
 
                 .myframe {
                     width: 100%;
-                    height: 250px;
+                    height: 240px;
                 }
             </style>
             <div class="col-lg-12">
