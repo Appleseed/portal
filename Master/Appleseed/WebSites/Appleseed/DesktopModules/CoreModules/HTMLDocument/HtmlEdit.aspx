@@ -83,7 +83,7 @@
                 }
 
                 .divPreview {
-                    height: 300px;
+                    height: 250px;
                     border: 1px solid gray;
                 }
 
