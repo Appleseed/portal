@@ -36,7 +36,7 @@ namespace AppleseedProxy.Controllers
         private Appleseed.Framework.DAL.ProxyDB proxyDB = new Appleseed.Framework.DAL.ProxyDB();
 
         #region Invoke Proxy Call
-        //http://api.beefsafetyresource.com/solr/select?q=test&fl=*&json.wrf=angular.callbacks._4&rows=0&wt=json&facet=true&facet.field=&facet.limit=7&facet.mincount=1&facet.sort=count
+        
         [AcceptVerbs("GET", "HEAD", "POST", "PUT", "DELETE")]
         [ValidateInput(false)]
         public void Index([Bind(Prefix = "id")] int proxyid)
