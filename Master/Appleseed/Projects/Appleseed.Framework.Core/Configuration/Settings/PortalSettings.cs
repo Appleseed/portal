@@ -1868,9 +1868,9 @@ namespace Appleseed.Framework.Site.Configuration
 
                 // Textbox for change portal timeout
                 //Ashish.patel@haptix.biz - 2016/11/03 - To make changes of portal timeout
-                var portalTimeout = new SettingItem<string, TextBox>
+                var portalTimeout = new SettingItem<int, TextBox>
                 {
-                    Value = string.Empty,
+                    Value = 0,
                     Required = false,
                     Order = groupOrderBase + 31,
                     Group = group,

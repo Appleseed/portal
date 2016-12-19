@@ -70,7 +70,7 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
         ///   It then uses the Appleseed.HtmlTextDB() data component
         ///   to populate the page's edit controls with the text details.
         /// </remarks>
-       [History("Ashish.patel@haptix.biz", "2014/11/20", "Get verson list and fill it into dropdown list")]
+        [History("Ashish.patel@haptix.biz", "2014/11/20", "Get verson list and fill it into dropdown list")]
         protected override void OnInit(EventArgs e)
         {
             // Controls must be created here
@@ -176,9 +176,9 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
             {
                 if (dr.Read())
                 {
-                    this.DesktopText.Text = this.Server.HtmlDecode((string)dr["DesktopHtml"]);
-                    this.MobileSummary.Text = this.Server.HtmlDecode((string)dr["MobileSummary"]);
-                    this.MobileDetails.Text = this.Server.HtmlDecode((string)dr["MobileDetails"]);
+                    this.DesktopText.Text = this.Server.HtmlDecode((string)dr["DesktopHtml"] ?? string.Empty);
+                    this.MobileSummary.Text = this.Server.HtmlDecode((string)dr["MobileSummary"] ?? string.Empty);
+                    this.MobileDetails.Text = this.Server.HtmlDecode((string)dr["MobileDetails"] ?? string.Empty);
                 }
                 else
                 {

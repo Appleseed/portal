@@ -373,6 +373,7 @@
     <Compile Include="UI\WebControls\CachedPortalModuleControl.cs" />
     <Compile Include="UI\WebControls\CKEditorTextbox.cs" />
     <Compile Include="UI\WebControls\CodeMirrorTextBox.cs" />
+    <Compile Include="UI\WebControls\CodeWriterTextbox.cs" />
     <Compile Include="UI\WebControls\MVCModuleControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

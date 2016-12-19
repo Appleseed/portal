@@ -465,7 +465,7 @@ namespace Appleseed
             // moved from PortalSettings
             var f = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(Portal)).Location);
             HttpContext.Current.Application.Lock();
-            HttpContext.Current.Application["CodeVersion"] = 1908; //f.FilePrivatePart;
+            HttpContext.Current.Application["CodeVersion"] = 1912; //f.FilePrivatePart;
             HttpContext.Current.Application["NugetSelfUpdatesToInstall"] = false;
             HttpContext.Current.Application.UnLock();
 
@@ -519,14 +519,6 @@ namespace Appleseed
             try
             {
                 UpdateDB();
-
-                //while (CheckForSelfUpdates());
-
-                /* MVCContrib PortableAreas*/
-
-                //Handlers for bus messages
-                Bus.AddMessageHandler(typeof(BusMessageHandler));
-                Bus.AddMessageHandler(typeof(DBScriptsHandler));
 
                 //Register first core portable area (just in case...)
                 Appleseed.Core.PortableAreaUtils.RegisterArea<Appleseed.Core.AppleseedCoreRegistration>(RouteTable.Routes, PortableAreaUtils.RegistrationState.Initializing);

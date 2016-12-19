@@ -1608,8 +1608,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                             this.editButton.HRef = HttpUrlBuilder.BuildUrl(
                                 this.EditUrl, this.PageID, string.Format("mID={0}", this.ModuleID));
                         }
-
-                        if (this.editButton.HRef.Contains("/HtmlEdit.aspx"))
+                        // ashish.patel@haptix.biz - 2016/11/11 if editor is "Codewriter" disable popup
+                        if((this.ModuleConfiguration?.Settings?["Editor"]?.ToString()?.ToLower() == "codewriter"))
+                        {
+                            this.editButton.HRef += "&ModalChangeMaster=true";
+                        }
+                        else if (this.editButton.HRef.Contains("/HtmlEdit.aspx"))
                             this.editButton.Attributes.Add("onclick", "openInModal('" + editButton.HRef + "','" + General.GetString("HTML_EDITOR", "Html Editor") + "');return false;");
                         else if (this.editButton.HRef.ToLower().Contains("/evoladvmodsettings.aspx"))
                             this.editButton.Attributes.Add("onclick", "openInModal('" + editButton.HRef + "','" + General.GetString("EVOL_ADVD_MODEL_SETTING_TITLE", "Evolutility Advanced Model Settings") + "');return false;");

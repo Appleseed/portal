@@ -22,15 +22,6 @@ namespace Appleseed.Content.Web.Modules {
         protected global::Appleseed.Framework.Web.UI.WebControls.Localize EmailLabel;
         
         /// <summary>
-        /// PasswordLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Appleseed.Framework.Web.UI.WebControls.Localize PasswordLabel;
-        
-        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Appleseed.Content.Web.Modules {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
+        
+        /// <summary>
+        /// PasswordLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Appleseed.Framework.Web.UI.WebControls.Localize PasswordLabel;
         
         /// <summary>
         /// password control.

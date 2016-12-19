@@ -1620,6 +1620,7 @@
     <Folder Include="App_Themes\Theme1\" />
     <Folder Include="aspnet_client\EvolutilityAdvanced\css\" />
     <Folder Include="Bin\" />
+    <Folder Include="DesktopModules\CoreModules\HTMLDocument\PageModulePreview\" />
     <Folder Include="images\default\" />
     <Folder Include="packages\" />
     <Folder Include="Portals\_Appleseed\Album\" />
@@ -6379,6 +6380,7 @@
     <Content Include="DesktopModules\CoreModules\HTMLDocument\HtmlVersonHistory.aspx" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\install.sql" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\install.xml" />
+    <Content Include="DesktopModules\CoreModules\HTMLDocument\preview.html" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\readme.txt" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\uninstall.sql" />
     <Content Include="DesktopModules\CoreModules\MagicUrls\cancel.gif" />
@@ -6875,6 +6877,10 @@
     <Content Include="Setup\Scripts\2.0.0.1905.sql" />
     <Content Include="Setup\Scripts\2.0.0.1907.sql" />
     <Content Include="Setup\Scripts\2.0.0.1908.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1909.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1910.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1911.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1912.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>

@@ -23,6 +23,9 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
     using LinkButton = Appleseed.Framework.Web.UI.WebControls.LinkButton;
     using System.Data.SqlClient;
+    using System.Web.Services;
+    using System.IO;
+    using System.Web.Hosting;
 
     /// <summary>
     /// The html edit.
@@ -37,6 +40,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         /// </summary>
         protected IHtmlEditor DesktopText;
 
+        public bool IsCodeWriter { get { return this.ModuleSettings["Editor"].ToString().ToLower() == "codewriter"; } }
         #endregion
 
         #region Properties
@@ -53,6 +57,10 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 return al;
             }
         }
+
+
+        private string CustomTheme = "CustomTheme";
+        private string CustomThemeAlt = "CustomThemeAlt";
 
         #endregion
 
@@ -81,15 +89,22 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             var showUpload = this.ModuleSettings["ShowUpload"].ToBoolean(CultureInfo.InvariantCulture);
             var showMobile = this.ModuleSettings["ShowMobile"].ToBoolean(CultureInfo.InvariantCulture);
 
+            if (this.IsCodeWriter && !Request.Url.PathAndQuery.ToLower().Contains("modalchangemaster"))
+                Response.Redirect(Request.Url.PathAndQuery + "&ModalChangeMaster=true", true);
+
+            plcCodewriter.Visible = editor.ToLower() == "codewriter";
+            plcNoCodeWriter.Visible = editor.ToLower() != "codewriter";
+
             var h = new HtmlEditorDataType { Value = editor };
+
             this.DesktopText = h.GetEditor(
                 this.PlaceHolderHTMLEditor,
                 this.ModuleID,
                 showUpload,
                 this.PortalSettings);
-
             this.DesktopText.Width = new Unit(width);
             this.DesktopText.Height = new Unit(height);
+
             if (showMobile)
             {
                 this.MobileRow.Visible = true;
@@ -131,7 +146,6 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     }
                     drpVirsionList.Items.Add(item);
                 }
-
             }
             //Added by Ashish - Connection pool Issue
             if (drList != null)
@@ -146,7 +160,6 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 item.Selected = true;
                 drpVirsionList.Items.Add(item);
             }
-
             LoadHTMLText();
 
             base.OnInit(e);
@@ -162,14 +175,28 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
             // Original: SqlDataReader dr = text.GetHtmlText(ModuleID);
             var dr = text.GetHtmlText(this.ModuleID, WorkFlowVersion.Staging, Convert.ToInt32(drpVirsionList.SelectedItem.Value));
 
+            this.hdnModuleId.Value = this.ModuleID.ToString();
+            this.hdnPageId.Value = this.PageID.ToString();
+            this.hdnDefaultJSCSS.Value = $"<link type='text/css' rel='stylesheet' href='/Design/Themes/{this.GetCurrentTheme()}/default.css'></link><script src='/aspnet_client/jQuery/jquery-1.8.3.js'></script>";
+
             // End Change Geert.Audenaert@Syntegra.Com
             try
             {
                 if (dr.Read())
                 {
-                    this.DesktopText.Text = this.Server.HtmlDecode((string)dr["DesktopHtml"]);
-                    this.MobileSummary.Text = this.Server.HtmlDecode((string)dr["MobileSummary"]);
-                    this.MobileDetails.Text = this.Server.HtmlDecode((string)dr["MobileDetails"]);
+                    if (this.IsCodeWriter)
+                    {
+                        this.cwCSS.InnerText = this.Server.HtmlDecode((string)dr["CWCSS"]);
+                        this.cwHTML.InnerText = this.Server.HtmlDecode((string)dr["CWHTML"]);
+                        this.cwJS.InnerText = this.Server.HtmlDecode((string)dr["CWJS"]);
+                        this.cwJSCSSRef.InnerText = this.Server.HtmlDecode((string)dr["CWJSCSSREF"]);
+                    }
+                    else
+                    {
+                        this.DesktopText.Text = this.Server.HtmlDecode((string)dr["DesktopHtml"]);
+                        this.MobileSummary.Text = this.Server.HtmlDecode((string)dr["MobileSummary"]);
+                        this.MobileDetails.Text = this.Server.HtmlDecode((string)dr["MobileDetails"]);
+                    }
                 }
                 else
                 {
@@ -200,6 +227,10 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             // Create an instance of the HtmlTextDB component
             var text = new HtmlTextDB();
+            if (this.IsCodeWriter)
+            {
+                this.DesktopText.Text = string.Format("<style type='text/css'>{0}</style>{1}<script type='text/javascript'>{2}</script>", this.cwCSS.InnerText, this.cwHTML.InnerText, this.cwJS.InnerText);
+            }
 
             // Update the text within the HtmlText table
             text.UpdateHtmlText(
@@ -208,12 +239,22 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 this.Server.HtmlEncode(this.MobileSummary.Text),
                 this.Server.HtmlEncode(this.MobileDetails.Text),
                 Convert.ToInt32(drpVirsionList.SelectedItem.Value),
-               Convert.ToBoolean(drpVirsionList.SelectedItem.Text.Contains("Published") ? 1 : 0),
-                DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName, DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName
+                Convert.ToBoolean(drpVirsionList.SelectedItem.Text.Contains("Published") ? 1 : 0),
+                DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName, DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
+                this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText
                 );
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
-                Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+            {
+                if (this.IsCodeWriter)
+                {
+                    Response.Redirect(this.PageID.ToString());
+                }
+                else
+                {
+                    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+                }
+            }
             else
                 this.RedirectBackToReferringPage();
         }
@@ -221,6 +262,23 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         protected override void OnCancel(EventArgs e)
         {
             base.OnCancel(e);
+            if (this.IsCodeWriter)
+            {
+                Response.Redirect(this.PageID.ToString());
+            }
+        }
+
+
+        private string GetCurrentTheme()
+        {
+            Dictionary<string, ISettingItem> pageSettings = new Appleseed.Framework.Site.Configuration.PageSettings().GetPageCustomSettings(this.Module.PageID);
+
+            string pageTheme = pageSettings[this.CustomTheme]?.Value?.ToString() ?? pageSettings[this.CustomThemeAlt]?.Value?.ToString();
+
+            if (string.IsNullOrEmpty(pageTheme))
+                pageTheme = this.PortalSettings.CurrentLayout;
+
+            return pageTheme;
         }
 
         #endregion
@@ -239,6 +297,10 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         {
             HtmlTextDB versionDB = new HtmlTextDB();
             int maxVersion = drpVirsionList.Items.Count + 1;
+            if (this.IsCodeWriter)
+            {
+                this.DesktopText.Text = string.Format("<style type='text/css'>{0}</style>{1}<script type='text/javascript'>{2}</script>", this.cwCSS.InnerText, this.cwHTML.InnerText, this.cwJS.InnerText);
+            }
 
             versionDB.UpdateHtmlText(
                 this.ModuleID,
@@ -251,7 +313,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
                 DateTime.Now,
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName
-                );
+                , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText);
             Response.Redirect(Request.Url.PathAndQuery, true);
         }
 
@@ -268,7 +330,10 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         {
             HtmlTextDB versionDB = new HtmlTextDB();
             int maxVersion = Convert.ToInt32(drpVirsionList.SelectedItem.Value);
-
+            if (this.IsCodeWriter)
+            {
+                this.DesktopText.Text = string.Format("<style type='text/css'>{0}</style>{1}<script type='text/javascript'>{2}</script>", this.cwCSS.InnerText, this.cwHTML.InnerText, this.cwJS.InnerText);
+            }
             versionDB.UpdateHtmlText(
                 this.ModuleID,
                 this.Server.HtmlEncode(this.DesktopText.Text),
@@ -280,10 +345,19 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
                 DateTime.Now,
                 Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName
-                );
+               , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText);
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
-                Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+            {
+                if (IsCodeWriter)
+                {
+                    Response.Redirect(this.PageID.ToString());
+                }
+                else
+                {
+                    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+                }
+            }
             else
                 this.RedirectBackToReferringPage();
         }
@@ -314,6 +388,30 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         protected void btnHsVersion_Click(object sender, EventArgs e)
         {
             this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlVersonHistory.aspx?mID=" + this.ModuleID + "&ModalChangeMaster=", true);
+        }
+
+        [WebMethod]
+        public static string SaveData(string css, string html, string js, string pageId, string moduleId, string jscssref)
+        {
+            string rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/preview.html";
+            try
+            {
+                string content = $"<!DOCTYPE html><html><head><title></title>{jscssref}<style type='text/css'>{css}</style></head><body>{html}</body><script type='text/javascript'>{js}</script></html>";
+
+                rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/PageModulePreview/P" + pageId + "M" + moduleId + ".html";
+                string folderPath = System.Web.HttpContext.Current.Server.MapPath("/DesktopModules/CoreModules/HTMLDocument/PageModulePreview");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                System.IO.File.WriteAllText(rootPath, content);
+                return "/DesktopModules/CoreModules/HTMLDocument/PageModulePreview/P" + pageId + "M" + moduleId + ".html";
+            }
+            catch (Exception e)
+            {
+                return rootPath;
+            }
         }
     }
 }

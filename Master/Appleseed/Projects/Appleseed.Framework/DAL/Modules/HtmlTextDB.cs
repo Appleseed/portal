@@ -350,7 +350,7 @@ namespace Appleseed.Framework.Content.Data
         /// </param>
 
         [History("Ashish.patel@haptix.biz", "2014/11/20", "Modifed and add two paremeters")]
-        public void UpdateHtmlText(int moduleId, string desktopHtml, string mobileSummary, string mobileDetails, int version, Boolean published, DateTime createdDate, string createdByUserName, DateTime modifiedDate, string modifiedByUserName)
+        public void UpdateHtmlText(int moduleId, string desktopHtml, string mobileSummary, string mobileDetails, int version, Boolean published, DateTime createdDate, string createdByUserName, DateTime modifiedDate, string modifiedByUserName, string cwCSS = "", string cwJS = "", string cwHTML = "", string cwJSCSSREF = "")
         {
             // Create Instance of Connection and Command Object
             using (var connection = Config.SqlConnectionString)
@@ -390,6 +390,18 @@ namespace Appleseed.Framework.Content.Data
 
                 var prmodifiedByUserName = new SqlParameter("@ModifiedByUserName", SqlDbType.NVarChar) { Value = modifiedByUserName };
                 command.Parameters.Add(prmodifiedByUserName);
+
+                var parameterCWCSS = new SqlParameter("@CWCSS", SqlDbType.NText) { Value = cwCSS };
+                command.Parameters.Add(parameterCWCSS);
+
+                var parameterCWJS = new SqlParameter("@CWJS", SqlDbType.NText) { Value = cwJS };
+                command.Parameters.Add(parameterCWJS);
+
+                var parameterCWHTML = new SqlParameter("@CWHTML", SqlDbType.NText) { Value = cwHTML };
+                command.Parameters.Add(parameterCWHTML);
+
+                var parameterCWJSCSSREF = new SqlParameter("@CWJSCSSREF", SqlDbType.NText) { Value =cwJSCSSREF };
+                command.Parameters.Add(parameterCWJSCSSREF);
 
                 // SqlParameter parameterCulture = new SqlParameter("@Culture", SqlDbType.NVarChar, 8);
                 // parameterCulture.Value = culture.Name;
