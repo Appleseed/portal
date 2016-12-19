@@ -8,7 +8,7 @@ developers, and modern entrepreneurs a singular system to build powerful applica
 and intranets that run the modern enterprise on the Microsoft.NET.  This software can be
 docked using Docker and run on any platform : https://github.com/Appleseed/portal-stack ( Windows / Mac / Linux).
 
-## Requirements 
+## Requirements
 
 ###Docker
 The Portal Stack is released Open Source to host Appleseed.Portal in a Docker Container.
@@ -17,10 +17,10 @@ https://github.com/Appleseed/portal-stack
 OR
 
 ###Native Windows Platform
-Windows 7 | 8 | 10 | 2016 Physical or Cloud
-SQL Server | Express 2005 | 2008 | 2012 | 2014
-Visual Studio 2015 ( Visual Studio 14 ) for Development
-Current Microsoft Framework vesion : .NET 4.6.1 | (.NET Core 1.0 in Development)
+- Windows 7 | 8 | 10 | 2016 Physical or Cloud
+- SQL Server | Express 2005 | 2008 | 2012 | 2014
+- Visual Studio 2015 ( Visual Studio 14 ) for Development
+- Current Microsoft Framework vesion : .NET 4.6.1 | (.NET Core 1.0 in Development)
 
 ## Quick Install -- Windows Native
  * Release
