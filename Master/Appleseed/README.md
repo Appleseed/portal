@@ -3,7 +3,8 @@
 Appleseed Portal is an open source Portal and Content Management System focused on 
 providing a high-performance,easy to use framework. The software gives designers, 
 developers, and modern entrepreneurs a singular system to build powerful applications 
-and intranets that run the modern enterprise on the Microsoft.NET and Windows platforms.
+and intranets that run the modern enterprise on the Microsoft.NET.  This software can be
+docked using Docker and run on any platform : https://github.com/Appleseed/portal-stack ( Windows / Mac / Linux).
 
 ## Requirements 
 
