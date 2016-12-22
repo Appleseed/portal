@@ -689,11 +689,17 @@ div.error-wrapper {
 /* Fixes for #AppleseedLogin */
 
 #AppleseedLogin {
-    height: 320px!important
+    height: 340px!important;
+    padding: 0;
 }
 
 #AppleseedLogin iframe#iframeAppleseedLogin {
-    height: 230px!important;
+    height: 300px!important;
+    width: 340px;
+}
+
+#AppleseedLogin iframe#iframeAppleseedLogin hr {
+    display: none;
 }
 
 /* SignIn Cool Styling */
@@ -756,4 +762,8 @@ div.error-wrapper {
         float: left;
         width: 100%;
     }
+}
+
+.desktopmodules_coremodules_signin_signincool_ascx .module_Body{
+    width:1000px;
 }
