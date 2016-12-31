@@ -230,6 +230,53 @@ td.Main_Content_Table {
         padding: 3px 0px;
     }
 
+    .Administration .module_Body table td {
+        padding: 3px 10px 3px 0px;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .Administration .module_Body table td {
+            display: block;
+            word-wrap: break-word;
+            width: 728px;
+        }
+
+    }
+
+    @media screen and (max-width: 414px) {
+
+        .Administration .module_Body table td {
+            width: 374px;
+        }
+
+    }
+
+    @media screen and (max-width: 375px) {
+
+        .Administration .module_Body table td {
+            width: 335px;
+        }
+
+    }
+
+    @media screen and (max-width: 360px) {
+
+        .Administration .module_Body table td {
+            width: 320px;
+        }
+
+    }
+
+    @media screen and (max-width: 320px) {
+
+        .Administration .module_Body table td {
+            width: 280px;
+        }
+
+    }
+
+
 .ModuleTitle { 
     color: #2c3e50;
 }
@@ -441,6 +488,25 @@ textarea {
             margin-right: 8px;
         }
 
+    @media screen and (max-width: 320px) {
+
+        [class*="Modules"] select {
+            width: 190px !important;
+            margin: 0px 0px 0px 9px !important;
+        }
+
+        [class*="Modules"] input {
+            width: 190px !important;
+            margin: 0px 0px 0px 9px !important;
+        }
+
+        [class*="Modules"] #Content_ContentPane_ctl02_AddModuleBtn {
+            width: 220px !important;
+        }
+
+    }
+
+
 td.rb_LangSw_sel img {
     padding-right: 5px;
 }
@@ -593,6 +659,36 @@ select#Content_bottomPane {
 #Content_ctl00_tfPwd,
 #Content_ctl00_tfPwdAgain {
     width: 270px!important;
+}
+
+@media screen and (max-width: 468px) {
+
+    #Content_ContentPane_ctl01_TabTitleTextBox,
+    #Content_ContentPane_ctl01_AddTabButton {
+        float: left;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    #Content_ctl00_startdate,
+    #Content_ContentPane_ctl01_parentTabDropDown,
+    #Content_ContentPane_ctl01_PermissionDropDown,
+    #Content_ContentPane_ctl01_tb_MobileTabName,
+    #Content_ContentPane_ctl01_TabTitleTextBox,
+    #Content_ctl00_tfName,
+    #Content_ctl00_tfCompany,
+    #Content_ctl00_tfPhone,
+    #Content_ctl00_tfEmail,
+    #Content_ctl00_ddlCountry,
+    #Content_ContentPane_ctl02_txtNewRole,
+    #Content_cacheTime,
+    #Content_ctl00_tfPwd,
+    #Content_ctl00_tfPwdAgain {
+        width: 200px!important;
+    }
+
 }
 
 #Content_ctl00_ddlDay,
