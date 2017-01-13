@@ -1,6 +1,50 @@
 <%@ control autoeventwireup="false" inherits="Appleseed.Content.Web.Modules.SigninCool"
     language="c#" Codebehind="SigninCool.ascx.cs" %>
 
+<style>
+    /* SignIn Cool Styling */
+    .signin-page {
+        width: 300px;
+        margin: 0 auto;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+    }
+    .signin-page .input-row {
+        margin-bottom: 10px;
+    }
+    .signin-page input[type="text"],
+    .signin-page input[type="password"] {
+        width: 300px;
+        height: 40px;
+        font-size: 15px;
+        border: 1px solid #cccccc!important;
+        box-shadow: none;
+    }
+    .signin-page input[type="checkbox"]{
+        margin: 0px 5px 0px 10px;
+        vertical-align: -2px;
+    }
+    .signin-page input[type="checkbox"] + label {
+        font-size: 15px;
+    }
+    .signin-page .forgot-link {
+        font-size: 15px;
+        text-decoration: none;
+    }
+    .signin-page .forgot-link:hover {
+        color: #6696ff;
+    }
+    .signin-page .login-button {
+        width: 300px;
+        height: 44px;
+        color: #fff;
+        cursor: pointer;
+        background: #1a242f;
+        text-decoration: none;
+    }
+</style>
+
+
 <div class="signin-page">
     
     <asp:Panel DefaultButton="LoginBtn" runat="server">
