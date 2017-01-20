@@ -112,7 +112,7 @@ body {
   #left,
   #left-wide {
     position: relative;
-    float: left;
+    float: left !important;
     left: auto;
   }
   #left {

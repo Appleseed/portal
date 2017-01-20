@@ -253,10 +253,19 @@ td.Main_Content_Table {
 
         .Administration .module_Body table td,
         .Administration .module_Body table td input[type="text"],
-        .Administration .module_Body table td textarea {
+        .Administration .module_Body table td textarea,
+        .ui-jgrid,
+        .ui-jgrid .ui-jgrid-titlebar,
+        .ui-jgrid .ui-jgrid-hbox,
+        .ui-jgrid .ui-jgrid-hdiv,
+        .ui-jgrid .ui-jgrid-bdiv,
+        .ui-jgrid .ui-jgrid-labels,
+        .ui-jgrid .ui-jgrid-htable,
+        .ui-jgrid .ui-jgrid-btable,
+        .ui-jgrid .ui-userdata {
             display: block;
             word-wrap: break-word;
-            width: 728px !important;
+            width: 498px !important;
         }
 
         .Administration .module_Body table {
@@ -269,7 +278,16 @@ td.Main_Content_Table {
 
         .Administration .module_Body table td,
         .Administration .module_Body table td input[type="text"],
-        .Administration .module_Body table td textarea {
+        .Administration .module_Body table td textarea,
+        .ui-jgrid,
+        .ui-jgrid .ui-jgrid-titlebar,
+        .ui-jgrid .ui-jgrid-hbox,
+        .ui-jgrid .ui-jgrid-hdiv,
+        .ui-jgrid .ui-jgrid-bdiv,
+        .ui-jgrid .ui-jgrid-labels,
+        .ui-jgrid .ui-jgrid-htable,
+        .ui-jgrid .ui-jgrid-btable,
+        .ui-jgrid .ui-userdata {
             width: 374px !important;
         }
 
@@ -279,7 +297,16 @@ td.Main_Content_Table {
 
         .Administration .module_Body table td,
         .Administration .module_Body table td input[type="text"],
-        .Administration .module_Body table td textarea {
+        .Administration .module_Body table td textarea,
+        .ui-jgrid,
+        .ui-jgrid .ui-jgrid-titlebar,
+        .ui-jgrid .ui-jgrid-hbox,
+        .ui-jgrid .ui-jgrid-hdiv,
+        .ui-jgrid .ui-jgrid-bdiv,
+        .ui-jgrid .ui-jgrid-labels,
+        .ui-jgrid .ui-jgrid-htable,
+        .ui-jgrid .ui-jgrid-btable,
+        .ui-jgrid .ui-userdata {
             width: 335px !important;
         }
 
@@ -289,7 +316,16 @@ td.Main_Content_Table {
 
         .Administration .module_Body table td,
         .Administration .module_Body table td input[type="text"],
-        .Administration .module_Body table td textarea {
+        .Administration .module_Body table td textarea,
+        .ui-jgrid,
+        .ui-jgrid .ui-jgrid-titlebar,
+        .ui-jgrid .ui-jgrid-hbox,
+        .ui-jgrid .ui-jgrid-hdiv,
+        .ui-jgrid .ui-jgrid-bdiv,
+        .ui-jgrid .ui-jgrid-labels,
+        .ui-jgrid .ui-jgrid-htable,
+        .ui-jgrid .ui-jgrid-btable,
+        .ui-jgrid .ui-userdata {
             width: 320px !important;
         }
 
@@ -299,7 +335,16 @@ td.Main_Content_Table {
 
         .Administration .module_Body table td,
         .Administration .module_Body table td input[type="text"],
-        .Administration .module_Body table td textarea {
+        .Administration .module_Body table td textarea,
+        .ui-jgrid,
+        .ui-jgrid .ui-jgrid-titlebar,
+        .ui-jgrid .ui-jgrid-hbox,
+        .ui-jgrid .ui-jgrid-hdiv,
+        .ui-jgrid .ui-jgrid-bdiv,
+        .ui-jgrid .ui-jgrid-labels,
+        .ui-jgrid .ui-jgrid-htable,
+        .ui-jgrid .ui-jgrid-btable,
+        .ui-jgrid .ui-userdata {
             width: 280px !important;
         }
 
