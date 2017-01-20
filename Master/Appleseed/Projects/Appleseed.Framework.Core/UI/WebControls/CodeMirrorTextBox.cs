@@ -51,7 +51,7 @@ namespace Appleseed.Framework.UI.WebControls.CodeMirror
                 cssFile = new Literal() { Text = @"<link href=""" + HttpUrlBuilder.BuildUrl("~/aspnet_client/CodeMirrorV5.12/css/codemirror.css") + @""" type=""text/css"" rel=""stylesheet"" />" };
                 Page.Header.Controls.Add(cssFile);
 
-                var jsToAdd = "<script type=\"text/javascript\"> $(document).ready(function(){ var editor = CodeMirror.fromTextArea(document.getElementById('" + this.ClientID + "'), { mode: \"text/html\", extraKeys: {\"Ctrl-Space\": \"autocomplete\"},value: document.getElementById('" + this.ClientID + "').innerHTML }); }); </script>";
+                var jsToAdd = "<script type=\"text/javascript\"> $(document).ready(function(){ var editor = CodeMirror.fromTextArea(document.getElementById('" + this.ClientID + "'), { mode: \"text/html\", extraKeys: {\"Ctrl-Space\": \"autocomplete\"},value: document.getElementById('" + this.ClientID + "').innerHTML,lineNumbers: true,indentWithTabs: true }); }); </script>";
 
 
                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "CM_load", jsToAdd);
@@ -67,8 +67,8 @@ namespace Appleseed.Framework.UI.WebControls.CodeMirror
         protected override void Render(System.Web.UI.HtmlTextWriter writer)
         {
             this.Attributes["id"] = this.ClientID;
-            writer.Write(string.Concat("<div style=\"border: 1px solid grey; padding: 3px 0px 3px 3px; width: ", new Unit(this.Width.Value + 3, UnitType.Pixel), "\">"));
-
+            this.Style.Add("width", "100%");
+            writer.Write(string.Concat("<div style=\"border: 1px solid grey;\" >"));
             base.Render(writer);
             writer.Write("</div>");
         }

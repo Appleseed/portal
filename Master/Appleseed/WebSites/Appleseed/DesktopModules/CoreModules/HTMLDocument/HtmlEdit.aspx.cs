@@ -94,6 +94,8 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             plcCodewriter.Visible = editor.ToLower() == "codewriter";
             plcNoCodeWriter.Visible = editor.ToLower() != "codewriter";
+            plcCSSCMEditor.Visible = editor.ToLower() == "code mirror plain text";
+            plcCSSCKEditor.Visible = editor.ToLower() == "ckeditor";
 
             var h = new HtmlEditorDataType { Value = editor };
 
