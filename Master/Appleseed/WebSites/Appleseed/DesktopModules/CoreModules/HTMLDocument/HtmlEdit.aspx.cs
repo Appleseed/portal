@@ -192,6 +192,12 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                         this.cwHTML.InnerText = this.Server.HtmlDecode((string)dr["CWHTML"]);
                         this.cwJS.InnerText = this.Server.HtmlDecode((string)dr["CWJS"]);
                         this.cwJSCSSRef.InnerText = this.Server.HtmlDecode((string)dr["CWJSCSSREF"]);
+                        this.DesktopText.Text = this.Server.HtmlDecode((string)dr["DesktopHtml"]);
+                        if (this.cwCSS.InnerText.Trim() == string.Empty && this.cwHTML.InnerText.Trim() == string.Empty && this.cwJS.InnerText.Trim() == string.Empty && this.DesktopText.Text != string.Empty)
+                        {
+                            this.cwHTML.InnerText = this.DesktopText.Text;
+                        }
+                        this.DesktopText.Text = string.Empty;
                     }
                     else
                     {

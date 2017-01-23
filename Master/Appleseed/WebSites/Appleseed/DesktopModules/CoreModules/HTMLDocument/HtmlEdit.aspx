@@ -21,6 +21,11 @@
             {
                 height:347px !important;
             }
+            textarea
+            {
+                line-height:20px;
+                color:#000000 !important;
+            }
         </style>
     </asp:PlaceHolder>
     <asp:PlaceHolder runat="server" ID="plcCSSCMEditor" Visible="false">
