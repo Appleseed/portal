@@ -6,12 +6,36 @@
         textarea {
             color: #808080;
         }
-
-        .normal div {
-            width: 100% !important;
-            /*height:100vh;*/
-        }
     </style>
+    <asp:PlaceHolder runat="server" ID="plcCSSCKEditor" Visible="false">
+        <style type="text/css">
+            .normal div {
+                width: 100% !important;
+                /*height:100vh;*/
+            }
+            .Content
+            {
+                height:485px !important;
+            }
+            #cke_1_contents
+            {
+                height:347px !important;
+            }
+            textarea
+            {
+                line-height:20px;
+                color:#000000 !important;
+            }
+        </style>
+    </asp:PlaceHolder>
+    <asp:PlaceHolder runat="server" ID="plcCSSCMEditor" Visible="false">
+        <style type="text/css">
+            .normal {
+                width: 1000px !important;
+                /*height:100vh;*/
+            }
+        </style>
+    </asp:PlaceHolder>
     <div class="div_ev_Table">
         <asp:PlaceHolder runat="server" ID="plcNoCodeWriter" Visible="false">
 
@@ -131,7 +155,7 @@
 
             <asp:HiddenField runat="server" ID="hdnPageId" Value="0" ClientIDMode="Static" />
             <asp:HiddenField runat="server" ID="hdnModuleId" Value="0" ClientIDMode="Static" />
-            <asp:HiddenField runat="server" ID="hdnDefaultJSCSS" value="" ClientIDMode="Static" />
+            <asp:HiddenField runat="server" ID="hdnDefaultJSCSS" Value="" ClientIDMode="Static" />
             <link href="/aspnet_client/CodeMirrorV5.12/css/docs.css" type="text/css" rel="stylesheet" />
             <link href="/aspnet_client/CodeMirrorV5.12/css/codemirror.css" type="text/css" rel="stylesheet" />
             <script src="/aspnet_client/CodeMirrorV5.12/js/codemirror.js" type="text/javascript"></script>

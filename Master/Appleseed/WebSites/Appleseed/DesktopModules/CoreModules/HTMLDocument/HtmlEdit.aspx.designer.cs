@@ -13,6 +13,24 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
     public partial class HtmlEdit {
         
         /// <summary>
+        /// plcCSSCKEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plcCSSCKEditor;
+        
+        /// <summary>
+        /// plcCSSCMEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plcCSSCMEditor;
+        
+        /// <summary>
         /// plcNoCodeWriter control.
         /// </summary>
         /// <remarks>
