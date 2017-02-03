@@ -29,6 +29,12 @@ namespace MB.FileBrowser
                 response.success = true;
                 response.msg = String.Format(successMsg, filename);
                 string extension = System.IO.Path.GetExtension(filename).Remove(0, 1).ToLower();
+                string uploadExts = System.Configuration.ConfigurationManager.AppSettings["FileManager.Upload.SupportExtenstion"];
+                if (string.IsNullOrEmpty(uploadExts))
+                {
+                    uploadExts = "jpg,jpeg,doc,docx,zip,gif,png,pdf,rar,svg,svgz,xls,xlsx,ppt,pps,pptx";
+                }
+
                 if (context.Request.Files[0].InputStream.Length > 1024 * 1024 * MaxAllowedSize)
                 {
                     string msg = GetResource("Upload_Error_1", culture, "File exceeds maximum size allowed ({0} Mb)");
@@ -36,7 +42,7 @@ namespace MB.FileBrowser
                     response.exitcode = 1;
                     response.msg = String.Format(msg, MaxAllowedSize);
                 }
-                else if (!AllowedFilesType.GetAllowed().Contains(extension))
+                else if (!uploadExts.ToLower().Contains(extension.ToLower()))
                 {
                     response.success = false;
                     response.exitcode = 2;
