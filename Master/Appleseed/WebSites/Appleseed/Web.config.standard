@@ -182,10 +182,10 @@
 
 		<!-- Filemanager supported extenstion list for edit in file manager.
         list must be comma separated -->
-		<add key="FileManager.Edit.SupportExtenstion" value="html,txt,aspx,ascx,css,js,xml" />
+              <add key="FileManager.Edit.SupportExtenstion" value="zip,7z,rar,rtf,wpd,wks,wps,gif,bmp,tif,tiff,doc,docx,png,jpeg,jpg,pdf,html,txt,aspx,ascx,css,js,xml"/>
 
-		<!--File Manager - Allow folders in left side Tree-->
-		<add key="FileManager.AllowFolders.Tree" value="Design|DesktopModules|Portals|rb_logs" />
+    <!--File Manager - Allow folders in left side Tree-->
+             <add key="FileManager.AllowFolders.Tree" value="Portals|Design|DesktopModules|rb_logs"/>
 
 		<!--For loading default.css | True = load on top/false = leave as it is -->
 		<add key="CSSLoadTop" value="true" />
