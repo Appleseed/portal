@@ -349,7 +349,7 @@
                         if (responseJSON.success) {
                             WFM_FileManager1_Controller.OnRefresh(WFM_FileManager1_FileView, '');
                         } else {
-                            bootbox.alert('Si è verificato un errore: ' + responseJSON.msg);
+                            bootbox.alert('Error: ' + responseJSON.msg);
                         }
                         $fileview.spin(false);
                     }
