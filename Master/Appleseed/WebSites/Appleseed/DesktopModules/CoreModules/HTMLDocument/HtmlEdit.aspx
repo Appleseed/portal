@@ -119,31 +119,31 @@
             <div class="col-lg-12">
                 <h2>Code Writer</h2>
             </div>
-            <div class="col-lg-3">
-                <h3>CSS</h3>
-                <div style="border: 1px solid gray">
-                    <textarea id="cwCSS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <h3>HTML</h3>
-                <div style="border: 1px solid gray">
-                    <textarea id="cwHTML" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <h3>JavaScript</h3>
-                <div style="border: 1px solid gray">
-                    <textarea id="cwJS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
-                </div>
-            </div>
-
-            <div class="col-lg-3">
+             <div class="col-lg-6">
                 <h3>JS/CSS References</h3>
                 <div style="border: 1px solid gray">
                     <textarea id="cwJSCSSRef" runat="server" cols="100" rows="5" style="width: 100%;"></textarea>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <h3>CSS</h3>
+                <div style="border: 1px solid gray">
+                    <textarea id="cwCSS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
+                </div>
+            </div>
+             <div class="col-lg-6">
+                <h3>JavaScript</h3>
+                <div style="border: 1px solid gray">
+                    <textarea id="cwJS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>HTML</h3>
+                <div style="border: 1px solid gray">
+                    <textarea id="cwHTML" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
+                </div>
+            </div>
+           
 
             <div class="col-lg-12">
                 <h3>Preview</h3>

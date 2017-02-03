@@ -121,6 +121,15 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         protected global::System.Web.UI.WebControls.PlaceHolder plcCodewriter;
         
         /// <summary>
+        /// cwJSCSSRef control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwJSCSSRef;
+        
+        /// <summary>
         /// cwCSS control.
         /// </summary>
         /// <remarks>
@@ -128,15 +137,6 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea cwCSS;
-        
-        /// <summary>
-        /// cwHTML control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwHTML;
         
         /// <summary>
         /// cwJS control.
@@ -148,13 +148,13 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea cwJS;
         
         /// <summary>
-        /// cwJSCSSRef control.
+        /// cwHTML control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwJSCSSRef;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea cwHTML;
         
         /// <summary>
         /// hdnPageId control.
