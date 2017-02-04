@@ -112,7 +112,7 @@ body {
   #left,
   #left-wide {
     position: relative;
-    float: left !important;
+    float: left;
     left: auto;
   }
   #left {
@@ -2954,6 +2954,10 @@ body.error .logo h1 {
         border: 1px solid #CCC;
     }
 
+    .Administration .module_Body #jqtreePageManagement .toolbar table td {
+        vertical-align: middle;
+    }
+
     @media screen and (max-width: 768px) {
 
         .Administration .module_Body table td,
@@ -2975,6 +2979,15 @@ body.error .logo h1 {
 
         .Administration .module_Body table {
             margin-left: 0px !important; 
+        }
+
+        .Administration .module_Body #jqtreePageManagement .toolbar table td {
+            display: inline-block;
+            width: auto !important;
+        }
+
+        .Administration .module_Body #jqtreePageManagement .toolbar table.innertable td {
+            display: inline;
         }
 
     }
