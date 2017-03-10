@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<Modules>
-	<Module>
-		<FriendlyName>File Directory Tree</FriendlyName>
-		<DesktopSource>DesktopModules/CommunityModules/FileDirectoryTree/FileDirectoryTree.ascx</DesktopSource>
-		<MobileSource></MobileSource>
-	</Module>
-</Modules>

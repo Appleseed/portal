@@ -782,8 +782,8 @@ drop table #tree
 --drop table #z'
 go
 
-drop procedure rb_GetPicturesPaged
-go
+--drop procedure rb_GetPicturesPaged
+--go
 
 drop procedure rb_GetPortalSettings
 go
