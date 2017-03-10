@@ -246,8 +246,8 @@ EXEC rb_Tabs_IU 	100	,	NULL	,	1000	,	0	,	N'Administration'	,	N'Admin'	,	N'Admins
 GO
 -- replace #++# by
 -- N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
-EXEC rb_Modules_IU 	100, 100, '{A1E37A0F-4EE9-4B83-9482-43466FC21E08}', 1, N'ContentPane', N'Add New Page', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
-GO
+--EXEC rb_Modules_IU 	100, 100, '{A1E37A0F-4EE9-4B83-9482-43466FC21E08}', 1, N'ContentPane', N'Add New Page', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
+--GO
 EXEC rb_Modules_IU 	1001, 100, '{72C6F60A-50C4-4F20-8F89-3E8A27820557}', 1, N'ContentPane', N'Appleseed Version', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
 GO
 EXEC rb_Modules_IU 	1002, 100, '{52AD3A51-121D-48BC-9782-02076E0D6A69}', 1, N'ContentPane', N'Who''s Logged On?', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
@@ -267,10 +267,10 @@ GO
 EXEC rb_Modules_IU 	130, 130, '{33F254F8-2537-4486-A91D-E8544D407200}', 1, N'ContentPane', N'Cache Viewer', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
 GO
 
-EXEC rb_Tabs_IU 	140	,	100	,	1040	,	0	,	N'Content Manager'	,	N''	,	N'Admins;'	,	0	,	NULL
-GO
-EXEC rb_Modules_IU 	140, 140, '{EDDD32E0-2135-4276-9157-3478995CCCD2}', 1, N'ContentPane', N'Content manager', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
-GO
+--EXEC rb_Tabs_IU 	140	,	100	,	1040	,	0	,	N'Content Manager'	,	N''	,	N'Admins;'	,	0	,	NULL
+--GO
+--EXEC rb_Modules_IU 	140, 140, '{EDDD32E0-2135-4276-9157-3478995CCCD2}', 1, N'ContentPane', N'Content manager', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
+--GO
 
 EXEC rb_Tabs_IU 	150	,	100	,	1050	,	0	,	N'Database'	,	N''	,	N'Admins;'	,	0	,	NULL
 GO
@@ -305,12 +305,12 @@ GO
 EXEC rb_Modules_IU 	1711,171, '{3B8E3585-58B7-4F56-8AB6-C04A2BFA6589}', 2, N'ContentPane', N'Monitoring', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
 GO
 
-EXEC rb_Tabs_IU 	172	,	170	,	1072	,	0	,	N'Error Logs'	,	N''	,	N'Admins;'	,	0	,	NULL
-GO
-EXEC rb_Modules_IU 	172, 172, '{2502DB18-B580-4F90-8CB4-C15E6E53100B}', 1, N'ContentPane', N'Error Logs', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
-GO
-EXEC rb_ModuleSettings_IU 	172	,	N'Directory'	,	N'~/rb_logs' --TODO
-GO
+--EXEC rb_Tabs_IU 	172	,	170	,	1072	,	0	,	N'Error Logs'	,	N''	,	N'Admins;'	,	0	,	NULL
+--GO
+--EXEC rb_Modules_IU 	172, 172, '{2502DB18-B580-4F90-8CB4-C15E6E53100B}', 1, N'ContentPane', N'Error Logs', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
+--GO
+--EXEC rb_ModuleSettings_IU 	172	,	N'Directory'	,	N'~/rb_logs' --TODO
+--GO
 
 EXEC rb_Tabs_IU 	173	,	170	,	1073	,	0	,	N'EventLogs'	,	N''	,	N'Admins;'	,	0	,	NULL
 GO
@@ -345,8 +345,8 @@ GO
 
 EXEC rb_Tabs_IU 	201	,	200	,	1201	,	0	,	N'Add New Page'	,	N''	,	N'Admins;'	,	0	,	NULL
 GO
-EXEC rb_Modules_IU 	201, 201, '{A1E37A0F-4EE9-4B83-9482-43466FC21E08}', 1, N'ContentPane', N'Add New Page', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
-GO
+--EXEC rb_Modules_IU 	201, 201, '{A1E37A0F-4EE9-4B83-9482-43466FC21E08}', 1, N'ContentPane', N'Add New Page', N'Admins', N'Admins;', N'Admins;', N'Admins;', N'Admins;', 0, 0, NULL, 0, 0, NULL, NULL, '', NULL, '', NULL, 0, 0, N'Admins;', N'Admins;'
+--GO
 
 EXEC rb_Tabs_IU 	202	,	200	,	1202	,	0	,	N'Add Module To Page'	,	N''	,	N'Admins;'	,	0	,	NULL
 GO

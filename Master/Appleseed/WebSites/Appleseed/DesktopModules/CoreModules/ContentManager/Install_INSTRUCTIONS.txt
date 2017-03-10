@@ -1,6 +1,0 @@
-10/24/2004 Notes on rebuild with Appleseed latest version.
--uninstall is broken.
-
-Steps for Appleseed install.
-
-1:  Install module using Appleseed installer in Admin All.

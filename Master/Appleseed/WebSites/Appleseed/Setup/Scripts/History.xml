@@ -24,7 +24,7 @@
     <Date>2003-10-27T00:00:00.0000000+01:00</Date>
     <Modules>
       <Installer>DesktopModules/CoreModules/AddModule/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/AddTab/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/AddTab/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/CacheViewer/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/DatabaseTableEdit/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/DatabaseTool/install.xml</Installer>
@@ -38,7 +38,7 @@
       <Installer>DesktopModules/CoreModules/PortalsAdministration/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Roles/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Recycler/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/SecurityCheck/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/SecurityCheck/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/SignIn/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/SiteSettings/install.xml</Installer>
       <!--<Installer>DesktopModules/CommunityModules/AmazonFull/install.xml</Installer>
@@ -51,11 +51,11 @@
       <Installer>DesktopModules/CommunityModules/DailyDilbert/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/Discussion/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/Documents/install.xml</Installer>-->
-      <Installer>DesktopModules/CommunityModules/EnhancedHTML/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/EnhancedHTML/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/EnhancedLinks/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/Events/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/FAQs/install.xml</Installer>-->
-      <Installer>DesktopModules/CommunityModules/FileDirectoryTree/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/FileDirectoryTree/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/FlashModule/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/HTMLDocument/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/IframeModule/install.xml</Installer>
@@ -64,7 +64,7 @@
       <!--<Installer>DesktopModules/CommunityModules/MapQuest/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/MileStones/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/PageKeyPhrase/install.xml</Installer>-->
-      <Installer>DesktopModules/CommunityModules/Pictures/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/Pictures/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/PortalSearch/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/Quiz/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/Quote/install.xml</Installer>
@@ -86,7 +86,7 @@
       <Installer>DesktopModules/CommunityModules/XmlModule/install.xml</Installer>
 
       <!-- must be the last one -->
-      <Installer>DesktopModules/CoreModules/ContentManager/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/ContentManager/install.xml</Installer>-->
 
       <!--
 			We exclude ecommerce from fresh installations
@@ -703,7 +703,7 @@
     <Version>1.4.0.1767</Version>
     <Date>2004-07-02T00:00:00.0000000+01:00</Date>
     <Modules>
-      <Installer>DesktopModules/CommunityModules/EnhancedHTML/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/EnhancedHTML/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Tasks/install.xml</Installer>
       <Installer>DesktopModules/CommunityModules/Documents/install.xml</Installer>-->
     </Modules>
@@ -777,7 +777,7 @@
     <Version>1.4.0.1776</Version>
     <Date>2004-09-29T00:00:00.0000000+01:00</Date>
     <Modules>
-      <Installer>DesktopModules/CoreModules/AddTab/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/AddTab/install.xml</Installer>-->
     </Modules>
   </Release>
   <Release>
@@ -791,7 +791,7 @@
     <Version>1.4.0.1778</Version>
     <Date>2004-10-04T00:00:00.0000000+01:00</Date>
     <Modules>
-      <Installer>DesktopModules/CommunityModules/Pictures/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/Pictures/install.xml</Installer>-->
     </Modules>
   </Release>
   <Release>
@@ -836,7 +836,7 @@
     <Date>2004-11-21T00:00:00.0000000+01:00</Date>
     <Script>1.4.0.1784.sql</Script>
     <Modules>
-      <Installer>DesktopModules/CoreModules/SecurityCheck/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/SecurityCheck/install.xml</Installer>-->
     </Modules>
   </Release>
   <Release>
@@ -874,9 +874,9 @@
     <Date>2005-01-24T00:00:00.0000000+01:00</Date>
     <Modules>
       <Installer>DesktopModules/CoreModules/AddModule/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/AddTab/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/AddTab/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/CacheViewer/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/ContentManager/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/ContentManager/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/DatabaseTableEdit/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/DatabaseTool/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/EventLogs/install.xml</Installer>
@@ -886,7 +886,7 @@
       <Installer>DesktopModules/CoreModules/Newsletter/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/PortalsAdministration/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Roles/install.xml</Installer>
-      <Installer>DesktopModules/CoreModules/SecurityCheck/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/SecurityCheck/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/SiteSettings/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Pages/install.xml</Installer>
       <Installer>DesktopModules/CoreModules/Users/install.xml</Installer>
@@ -900,11 +900,11 @@
       <!--<Installer>DesktopModules/CommunityModules/DailyDilbert/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Discussion/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Documents/install.xml</Installer>-->
-      <Installer>DesktopModules/CommunityModules/EnhancedHTML/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/EnhancedHTML/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/EnhancedLinks/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Events/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/FAQs/install.xml</Installer>-->
-      <Installer>DesktopModules/CommunityModules/FileDirectoryTree/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/FileDirectoryTree/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/FlashModule/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/GoogleSearch/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/HTMLDocument/install.xml</Installer>
@@ -915,7 +915,7 @@
       <!--<Installer>DesktopModules/CommunityModules/MapQuest/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/MileStones/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/PageKeyPhrase/install.xml</Installer>-->
-      <Installer>DesktopModules/CommunityModules/Pictures/install.xml</Installer>
+      <!--<Installer>DesktopModules/CommunityModules/Pictures/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/PortalSearch/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Quiz/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Quote/install.xml</Installer>-->
@@ -990,7 +990,7 @@
     <Date>2005-06-20T00:00:00.0000000+01:00</Date>
     <Script>1.4.0.1807.sql</Script>
     <Modules>
-      <Installer>DesktopModules/CoreModules/MagicUrls/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/MagicUrls/install.xml</Installer>-->
       <!--<Installer>DesktopModules/CommunityModules/Articles/install.xml</Installer>-->
     </Modules>
   </Release>
@@ -1067,7 +1067,7 @@
     <Version>2.0.0.1880</Version>
     <Date>2005-11-13T00:00:00.0000000+01:00</Date>
     <Modules>
-      <Installer>DesktopModules/CoreModules/ContentManager/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/ContentManager/install.xml</Installer>-->
     </Modules>
   </Release>
   <Release>
@@ -1364,6 +1364,14 @@
     <Date>2016-12-13T00:00:00.0000000-03:00</Date>
     <Scripts>
       <Script>2.0.0.1912.sql</Script>
+    </Scripts>
+  </Release>
+  <Release>
+    <ID>1913</ID>
+    <Version>2.0.0.1913</Version>
+    <Date>2017-03-09T00:00:00.0000000-03:00</Date>
+    <Scripts>
+      <Script>2.0.0.1913.sql</Script>
     </Scripts>
   </Release>
   <!--The DBScripts folder in Appleseed.Core portable area can be used to make changes to MVC modules -->
