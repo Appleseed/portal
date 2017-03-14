@@ -66,14 +66,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\DateTextBoxWebForms.dll</HintPath>
     </Reference>
-    <Reference Include="DevSolution.Portal, Version=1.0.1263.40256, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\DevSolution.Portal.dll</HintPath>
-    </Reference>
-    <Reference Include="EasyListBox, Version=2.4.4.11, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\EasyListBox.dll</HintPath>
-    </Reference>
     <Reference Include="flashwebcontrol, Version=0.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\flashwebcontrol.dll</HintPath>

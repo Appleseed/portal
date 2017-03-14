@@ -142,9 +142,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ajax">
-      <HintPath>..\..\Libs\Ajax.dll</HintPath>
-    </Reference>
     <Reference Include="AjaxControlToolkit, Version=3.0.20229.20843, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\AjaxControlToolkit.dll</HintPath>
@@ -163,34 +160,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\DateTextBoxWebForms.dll</HintPath>
     </Reference>
-    <Reference Include="DevSolution.Portal, Version=1.0.1263.40256, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\DevSolution.Portal.dll</HintPath>
-    </Reference>
     <Reference Include="DotNetOpenAuth">
       <HintPath>..\..\Libs\DotNetOpenAuth.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenAuth.resources">
       <HintPath>..\..\Libs\DotNetOpenAuth.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="DUEMETRI.UI.WebControls.HWMenu, Version=1.0.0.1335, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\DUEMETRI.UI.WebControls.HWMenu.dll</HintPath>
-    </Reference>
-    <Reference Include="DUEMETRI.UI.WebControls.Panes">
-      <HintPath>..\..\Libs\DUEMETRI.UI.WebControls.Panes.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\Dynamic.dll</HintPath>
-    </Reference>
-    <Reference Include="EasyListBox, Version=3.0.3296.0, Culture=neutral, PublicKeyToken=35f58cdf8e21380e">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\EasyListBox.dll</HintPath>
-    </Reference>
-    <Reference Include="EnterpriseObjects, Version=1.0.2151.32914, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\EnterpriseObjects.dll</HintPath>
     </Reference>
     <Reference Include="Evolutility.DataServer">
       <HintPath>..\..\Libs\Evolutility\Evolutility.DataServer.dll</HintPath>
@@ -206,9 +180,6 @@
     </Reference>
     <Reference Include="Evolutility.Wizard">
       <HintPath>..\..\Libs\Evolutility\Evolutility.Wizard.dll</HintPath>
-    </Reference>
-    <Reference Include="Evolve.MailTemplates">
-      <HintPath>..\..\Libs\Evolve.MailTemplates.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=5.4.1.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -419,10 +390,6 @@
     <Reference Include="Westwind.Web.Controls, Version=2.2.2992.25894, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\Westwind.Web.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="yaf, Version=0.9.9.40749, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\yaf.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

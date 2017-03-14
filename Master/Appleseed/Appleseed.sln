@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{36955345
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Web.UI.WebControls", "Projects\Appleseed.Framework.Web.UI.WebControls\Appleseed.Framework.Web.UI.WebControls.csproj", "{38DA41AC-51C1-4E4D-9610-5370309C2C1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DUEMETRI.UI.WebControls.HWMenu", "Projects\DUEMETRI.UI.WebControls.HWMenu\HWMenu\DUEMETRI.UI.WebControls.HWMenu.csproj", "{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Web", "Projects\Appleseed.Framework\Appleseed.Framework.Web.csproj", "{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Core", "Projects\Appleseed.Framework.Core\Appleseed.Framework.Core.csproj", "{552CCD6F-0A37-4366-9E3E-22B2A0221584}"
@@ -63,10 +61,6 @@ Global
 		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38DA41AC-51C1-4E4D-9610-5370309C2C1E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3A33CF8-2AEB-4E6E-AC2E-01C676F33616}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -148,7 +142,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DCDA0619-FD70-42B6-B2DA-78EAFA4BE955} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
 		{552CCD6F-0A37-4366-9E3E-22B2A0221584} = {190E2A8B-228B-46C3-8F84-D532013C5E0F}
 		{6BC1E6D4-1DD7-4CDB-B362-F390D40DDFFC} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
 		{2F8EA798-5AD7-44BA-A062-8B5721D9CFD1} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
