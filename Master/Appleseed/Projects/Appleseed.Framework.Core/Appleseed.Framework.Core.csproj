@@ -83,13 +83,6 @@
     <Reference Include="CKEditor.NET">
       <HintPath>..\..\Libs\ckeditor_aspnet_3.6.6.2\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="DUEMETRI.UI.WebControls.HWMenu, Version=1.0.0.1335, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\DUEMETRI.UI.WebControls.HWMenu.dll</HintPath>
-    </Reference>
-    <Reference Include="DUEMETRI.UI.WebControls.Panes">
-      <HintPath>..\..\Libs\DUEMETRI.UI.WebControls.Panes.dll</HintPath>
-    </Reference>
     <Reference Include="FlashMovie, Version=1.0.1587.40940, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\FlashMovie.dll</HintPath>
@@ -393,8 +386,6 @@
     <Compile Include="UI\WebControls\INavigation.cs" />
     <Compile Include="UI\WebControls\IPaging.cs" />
     <Compile Include="UI\WebControls\ISearchable.cs" />
-    <Compile Include="UI\WebControls\ItemNavigation.cs" />
-    <Compile Include="UI\WebControls\MenuNavigation.cs" />
     <Compile Include="UI\WebControls\ModuleButton.cs" />
     <Compile Include="UI\WebControls\PageKeyPhrase.cs" />
     <Compile Include="UI\WebControls\Paging.cs" />
@@ -405,7 +396,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\WebControls\PowerGrid.cs" />
-    <Compile Include="UI\WebControls\ShopNavigation.cs" />
     <Compile Include="UI\WebControls\SignInControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
