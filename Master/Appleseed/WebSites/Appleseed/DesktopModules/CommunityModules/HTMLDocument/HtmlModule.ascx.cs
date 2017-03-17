@@ -212,19 +212,6 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
             }
         }
 
-        /// <summary>
-        /// Gets a value indicating whether current editor is aloha 
-        /// </summary>
-        /// <remarks>
-        /// Added by Ashish.patel@haptix.biz - 2015/1/07
-        /// </remarks>
-        public bool IsAlohaCurrentEditor
-        {
-            get
-            {
-                return this.Settings["Editor"].Value.ToString().ToLower() == "aloha editor";
-            }
-        }
 
         /// <summary>
         ///   Gets a value indicating whether permission for Compare and BackToStage buttons
@@ -411,10 +398,7 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
             this.HtmlLiteral.DataBind();
             if (HasEditPermission())
             {
-                if (this.IsAlohaCurrentEditor)
-                {
-                    this.HtmlLiteral.Text = "<div class='area-content' pageid='"+this.PageID+"' moduleid='" + this.ModuleID + "'>" + this.HtmlLiteral.Text + "</div>";
-                }
+                
                 this.HtmlHolder.Controls.Add(this.HtmlLiteral);
             }
             else
@@ -429,34 +413,7 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
         /// <param name="e"> The <see cref="System.EventsArgs"/> instance containing event data.</param>
         protected override void OnLoad(EventArgs e)
         {
-            if (Appleseed.Framework.Security.PortalSecurity.HasEditPermissions(this.ModuleID) && this.IsAlohaCurrentEditor)
-            {
-                bool isAlohaloaded = false;
-                foreach (object itemobj in this.Page.Header.Controls)
-                {
-                    if (itemobj is HtmlGenericControl)
-                    {
-                        HtmlGenericControl item = (HtmlGenericControl)itemobj;
-                        if (item.Attributes["AlohaCss"] != null && item.Attributes["AlohaCss"].ToString() == "yes")
-                        {
-                            isAlohaloaded = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (!isAlohaloaded)
-                {
-                    var IncludeAlohaCSS = new HtmlGenericControl("link");
-                    IncludeAlohaCSS.Attributes.Add("type", "text/css");
-                    IncludeAlohaCSS.Attributes.Add("rel", "stylesheet");
-                    IncludeAlohaCSS.Attributes.Add("AlohaCss", "yes");
-                    IncludeAlohaCSS.Attributes.Add("href", "/aspnet_client/AlohaHtmlEditor/css/aloha-common-extra.css");
-                    this.Page.Header.Controls.Add(IncludeAlohaCSS);
-                    this.plcAloha.Visible = true;
-                }
-                this.plcAlohaStartupJs.Visible = true;
-            }
+            
             base.OnLoad(e);
         }
 

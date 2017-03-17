@@ -60,7 +60,7 @@ namespace Appleseed.Framework.DataTypes
         {
             get
             {
-                return "Code Mirror Plain Text;CKeditor;Aloha Editor;Codewriter".Split(';');
+                return "Code Mirror Plain Text;CKeditor;Codewriter".Split(';');
             }
         }
 
