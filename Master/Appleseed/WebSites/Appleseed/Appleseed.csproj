@@ -1598,6 +1598,7 @@
     </Content>
     <Content Include="App_Browsers\safari.browser" />
     <Content Include="App_Browsers\w3cvalidator.browser" />
+    <Content Include="Areas\Password\Views\ForgotPassword\Index.aspx" />
     <Content Include="Areas\Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -3392,6 +3393,7 @@
     <Content Include="aspnet_client\Ext\Thumbs.db" />
     <Content Include="aspnet_client\FileManager\Thumbs.db" />
     <Content Include="aspnet_client\HtmlConentMerging\editor\editor2.php" />
+    <Content Include="Areas\Password\Views\ForgotPassword\EmailSubject.cshtml" />
     <None Include="aspnet_client\ie7\0_9\ie7-base64.php" />
     <Content Include="Design\DesktopLayouts\Readable.Bootstrap\DesktopAdmin.ascx" />
     <Content Include="Design\DesktopLayouts\Readable.Bootstrap\DesktopFooter.ascx" />
@@ -5031,6 +5033,13 @@
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js.map" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\MyUpload.ashx" />
     <Content Include="packages.config" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\InstallModule.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\UpdateModule.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\CreateProxy.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\ProxyList.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\ProxyList.cshtml1" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\Module.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\UserRegistry.cshtml" />
     <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
@@ -5060,6 +5069,8 @@
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.coffee.jpg" />
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.trade.jpg" />
     <Content Include="Portals\_Appleseed\MagicUrl\MagicUrlList.xml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\Module.ascx" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\PageManagerTree\Module.ascx" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xsl" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xml" />
