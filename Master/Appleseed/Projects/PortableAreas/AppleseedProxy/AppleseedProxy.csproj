@@ -174,7 +174,7 @@
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>echo F|xcopy /Y /E /S "$(ProjectDir)Views\Proxy\CreateProxy.cshtml" "$(SolutionDir)Websites\Appleseed\Portals\_Appleseed\MVCTemplates\Views\Proxy\CreateProxy.cshtml"
+echo F|xcopy /Y /E /S "$(ProjectDir)Views\Proxy\ProxyList.cshtml" "$(SolutionDir)Websites\Appleseed\Portals\_Appleseed\MVCTemplates\Views\Proxy\ProxyList.cshtml"</PostBuildEvent>
   </PropertyGroup>
 </Project>
