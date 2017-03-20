@@ -55,10 +55,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EasyListBox, Version=3.0.3296.0, Culture=neutral, PublicKeyToken=35f58cdf8e21380e">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\EasyListBox.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>

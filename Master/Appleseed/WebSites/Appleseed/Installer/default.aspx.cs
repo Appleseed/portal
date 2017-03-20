@@ -561,7 +561,7 @@ namespace Appleseed.Installer
                 var ns = new XmlNamespaceManager(doc.NameTable);
                 ns.AddNamespace("x", "http://schemas.microsoft.com/.NetConfiguration/v2.0");
 
-                var connectionStrings = doc.SelectSingleNode("/x:configuration/x:connectionStrings", ns);
+                var connectionStrings = doc.SelectSingleNode("/configuration/connectionStrings");
                 if (connectionStrings != null)
                 {
                     foreach (XmlNode connString in connectionStrings)
@@ -681,7 +681,7 @@ namespace Appleseed.Installer
                     }
                 }
 
-                var appSettings = doc.SelectSingleNode("/x:configuration/x:appSettings", ns);
+                var appSettings = doc.SelectSingleNode("/configuration/appSettings");
                 if (appSettings != null)
                 {
                     foreach (XmlNode setting in appSettings)
