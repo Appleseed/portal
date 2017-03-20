@@ -1,0 +1,69 @@
+﻿@model List<SelfUpdater.Models.InstallationState>
+@using MvcContrib
+ 
+<tr>
+    <th colspan="5"><span class="UpdateTitle ModuleTitle">Updates</span></th>
+</tr>
+
+    @if (Model.Any())
+    {
+        <tr>
+            <th></th>
+            <th>
+                Name
+            </th>
+            <th>
+                Current Version
+            </th>
+            <th>
+                Latest Version
+            </th>
+            <th><a href="javascript:void(0)" onclick="checkAllUpdates()">Update All</a></th>
+        </tr>
+    
+        foreach (var m in Model){
+            <tr class="installed_package">
+                <td class="package_icon">
+                    <img src="@m.Installed.IconUrl" alt="" />
+                </td>
+                <td class="package_info">
+                    <span>@m.Installed.Id</span>
+                </td>  
+                <td class="package_info">
+                    <span>@m.Installed.Version</span>
+                 </td>
+                <td class="package_update_info">
+                    @if(m.Update != null) {
+                        <span>@m.Update.Version</span>
+                    } else {
+                        <span>@m.Installed.Version</span>
+                    }
+                </td>
+                <td class="package_update_checks">
+                    @if(m.Update != null)
+                    {
+                        <input class="UpdateChecker" type="checkbox" />
+
+                        <input type="hidden" class="AppleseedUpdateisCheked" value="false"/>
+
+                        <input type="hidden" class="PackageName" value="@m.Update.Id"/>
+                    
+                        <input type="hidden" class="PackageSource" value="@m.Source"/>
+                    
+                        <input type="hidden" class="PackageVersion" value="@m.Update.Version"/>
+                    }
+                    else
+                    {
+                        <span  class="unchekedSpan" style="margin-left: 4px;"><img src="@Url.Resource("Content.unchecked.jpg")" style="margin-top: 3px;"/></span>
+                    }
+                
+                
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <td colspan="5">There are no installed packages.</td>
+    }
+   

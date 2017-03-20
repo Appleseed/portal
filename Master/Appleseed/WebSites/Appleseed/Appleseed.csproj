@@ -252,8 +252,7 @@
       <HintPath>..\..\Libs\Microsoft.Practices.ObjectBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Mvc.Build">
@@ -327,39 +326,33 @@
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DataVisualization.Design" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\System.Web.Helpers.dll</HintPath>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\System.Web.Razor.dll</HintPath>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\System.Web.WebPages.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\System.Web.WebPages.Deployment.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\MVC 4\System.Web.WebPages.Razor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -1605,6 +1598,7 @@
     </Content>
     <Content Include="App_Browsers\safari.browser" />
     <Content Include="App_Browsers\w3cvalidator.browser" />
+    <Content Include="Areas\Password\Views\ForgotPassword\Index.aspx" />
     <Content Include="Areas\Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -3399,6 +3393,7 @@
     <Content Include="aspnet_client\Ext\Thumbs.db" />
     <Content Include="aspnet_client\FileManager\Thumbs.db" />
     <Content Include="aspnet_client\HtmlConentMerging\editor\editor2.php" />
+    <Content Include="Areas\Password\Views\ForgotPassword\EmailSubject.cshtml" />
     <None Include="aspnet_client\ie7\0_9\ie7-base64.php" />
     <Content Include="Design\DesktopLayouts\Readable.Bootstrap\DesktopAdmin.ascx" />
     <Content Include="Design\DesktopLayouts\Readable.Bootstrap\DesktopFooter.ascx" />
@@ -5038,6 +5033,13 @@
     <Content Include="DesktopModules\CoreModules\FileBrowser\js\FileManager.min.js.map" />
     <Content Include="DesktopModules\CoreModules\FileBrowser\MyUpload.ashx" />
     <Content Include="packages.config" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\InstallModule.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\UpdateModule.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\CreateProxy.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\ProxyList.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\ProxyList.cshtml1" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\Module.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\UserRegistry.cshtml" />
     <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
@@ -5067,6 +5069,8 @@
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.coffee.jpg" />
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.trade.jpg" />
     <Content Include="Portals\_Appleseed\MagicUrl\MagicUrlList.xml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\Module.ascx" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\PageManagerTree\Module.ascx" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xsl" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xml" />
