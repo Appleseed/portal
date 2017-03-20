@@ -1,0 +1,93 @@
+﻿@using Appleseed.Framework
+
+
+<table border="0" cellpadding="10" cellspacing="0" >
+    <tbody>
+        <tr>
+            <td class="Normal" colspan="2">
+                 <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="NAME" >@General.GetString("Name")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_name"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                 </tr>  
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="EMAIL" >@General.GetString("email")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_email"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                 </tr> 
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="PASSWORD" >@General.GetString("Password")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_password"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                </tr> 
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="PASSWORD_AGAIN" >@General.GetString("PASSWORD_AGAIN")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_password_again"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                </tr> 
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="DATE_OF_BIRTH" >@General.GetString("DATE_OF_BIRTH")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_date_of_birth" class="field hasDatepicker"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                </tr> 
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="COMPANY" >@General.GetString("COMPANY")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_company"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                </tr> 
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="TELEPHONE" >@General.GetString("TELEPHONE")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="text" id="new_user_telephone"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                </tr> 
+                <tr>
+                    <td width="30%">
+                        <span id="Content_ctl00_lblName" textkey="RECEIVE_NEWS" >@General.GetString("RECEIVE_NEWS")</span>
+                    </td>
+                    <td width="69%">
+                        <input type="checkbox" id="new_user_news" checked="checked"><br><br>
+                        <span id="Content_ctl00_RequiredName" textkey="MUST_ENTER_NAME" style="color:Red;font-size:11px;display:none;">You must enter a name</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">
+                        
+                    </td>
+                    <td width="69%">
+                        <br><br>
+                        <a class="CommandButton">@General.GetString("SAVEUSER")</a>
+                    </td>
+                </tr>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

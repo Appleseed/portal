@@ -1,0 +1,92 @@
+﻿@model Appleseed.Framework.Configuration.Items.ProxyItem
+
+@{
+    Layout = null;
+}
+<style>
+    .tblProxySettings {
+        table-layout: fixed;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+        .tblProxySettings tr td {
+            padding: 7px 3px;
+        }
+</style>
+
+<form action="/ASProxy/Proxy/CreateProxy/@Model.ServiceId/" method="post">
+    @Html.Hidden("hdnReturnUrl")
+    @Html.ValidationSummary(true)
+    <hr />
+    <table class="tblProxySettings">
+        @if (Model.ServiceId > 0)
+        {
+            <tr>
+                <td>Service #</td>
+                <td>
+                    @Model.ServiceId
+                    <div style="display:none">
+                        @Html.EditorFor(model => model.ServiceId)
+                    </div>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td>Service Title</td>
+            <td>
+                @Html.EditorFor(model => model.ServiceTitle)
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Service Url</td>
+            <td>
+                @Html.EditorFor(model => model.ServiceUrl)
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Forward Headers</td>
+            <td>
+                @Html.EditorFor(model => model.ForwardHeaders)
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Enabled Content Access</td>
+            <td>
+                @Html.EditorFor(model => model.EnabledContentAccess)
+            </td>
+        </tr>
+
+        <tr id="trContentAccessRoles">
+            <td>
+                Content Access Roles
+            </td>
+            <td>
+                @foreach (var item in Model.AllAccessRoles)
+                {
+                    <input type="checkbox" id="@item.Id" name="@item.Name" class="chkCARole"  value="@item.Name" @((";" + Model.ContentAccessRoles + ";").Contains(";" + item.Name + ";") ? "checked" : "") />
+                    <label for="@item.Id">@item.Name</label><br />
+                }
+                @Html.HiddenFor(model => model.ContentAccessRoles)
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+                <button type="submit" onclick="return validateProxySettings();" id="btnSave" class="CommandButton">Save</button>
+                <button type="button" onclick="return closeProxySettings();" id="btnClose" class="CommandButton">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<script src="/aspnet_client/AppleseedProxy/Proxy.js"></script>
+<script type="text/javascript">
+    $("#hdnReturnUrl").val(window.location);
+</script>

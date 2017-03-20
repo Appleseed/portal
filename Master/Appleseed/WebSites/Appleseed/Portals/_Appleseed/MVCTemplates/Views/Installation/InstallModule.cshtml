@@ -1,0 +1,48 @@
+﻿@model List<SelfUpdater.Models.InstallPackagesModel>
+    
+<tr>
+    <th colspan="5">
+        <span class="UpdateTitle ModuleTitle">Available Packages</span>
+    </th>
+</tr>    
+    
+
+@if(Model.Any())
+{
+    <tr>
+        <th></th>
+        <th colspan="2">Name</th>
+        <th>Latest Version </th>
+        <th></th>
+    </tr>
+
+
+    foreach (var package in Model)
+    {
+        <tr>
+            <td>
+                <img src="@package.icon" alt="" />
+            </td>
+            <td colspan="2">
+                @package.name
+            </td>
+        
+            <td>
+                @package.version
+            </td>
+            <td>
+                <input class="InstallChecker" type="checkbox" />
+                <input type="hidden" class="PackageName" value="@package.name"/>
+                <input type="hidden" class="PackageSource" value="@package.source"/>
+                <input type="hidden" class="PackageVersion" value="@package.version"/>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <td colspan="5">There are no new available packages.</td>
+}
+
+    
+    
