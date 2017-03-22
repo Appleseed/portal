@@ -26,6 +26,7 @@ namespace Appleseed.Installer
     using Microsoft.Win32;
     using System.Web.Security;
     using System.Web.Profile;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// The default.
@@ -517,8 +518,8 @@ namespace Appleseed.Installer
 
                 if (!this.Page.IsPostBack)
                 {
-                    this.txtUserName.Text = defaultUserName;
-                    this.txtPassword.Text = txtPassword2.Text = "admin";
+                    //this.txtUserName.Text = defaultUserName;
+                    //this.txtPassword.Text = txtPassword2.Text = "admin";
                     this.txtFullName.Text = defaultFullName;
                     this.SetActivePanel(WizardPanel.PreInstall, this.PreInstall);
                     this.CheckEnvironment();
@@ -1226,14 +1227,17 @@ namespace Appleseed.Installer
             errorMessage = string.Empty;
             try
             {
-                if (!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassword.Text) && txtPassword.Text == txtPassword2.Text)
+                if (!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassword.Text) && txtPassword.Text == txtPassword2.Text && Regex.IsMatch(txtUserName.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
                     return true;
                 else if (string.IsNullOrEmpty(txtUserName.Text))
                     errorMessage = "Please enter user name";
+                else if (!Regex.IsMatch(txtUserName.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
+                    errorMessage = "Please enter valid Email in Username";
                 else if (string.IsNullOrEmpty(txtPassword.Text))
                     errorMessage = "Please enter password";
                 else if (txtPassword.Text != txtPassword2.Text)
                     errorMessage = "Entered password does not matched! Please try again.";
+                
                 return false;
             }
             catch (Exception e)
