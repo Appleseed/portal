@@ -45,7 +45,7 @@ ol, ul {
 }
 
 #contentpane ul {
-    list-style-type: disc;  
+    list-style-type: disc;
     list-style-position: inside;
 }
 
@@ -58,18 +58,18 @@ em, i {
 }
 
 sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
- 
+
 sup {
-  top: -0.5em;
+    top: -0.5em;
 }
- 
+
 sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 table {
@@ -122,6 +122,7 @@ a.Normal:active {
     text-decoration: none;
     cursor: pointer;
 }
+
 .center {
     margin: 0 auto;
 }
@@ -168,36 +169,30 @@ a.Normal:active {
 
 
 .DefaultLayoutDiv {
-
 }
 
 .Main_Table {
-
 }
 
 [class*="Logon"] .Main_Table table {
-    width: 100%
+    width: 100%;
 }
 
-[class*="Logon"] .Main_Table table #Table1 #Table1 {
-    width: auto
-}
+    [class*="Logon"] .Main_Table table #Table1 #Table1 {
+        width: auto;
+    }
 
 td.Main_Content_Table {
-
 }
 
 #Content_Table {
-
 }
 
     #Content_Table td {
-        
     }
 
 
 .banner_div {
-    
 }
 
 #leftpane,
@@ -205,7 +200,6 @@ td.Main_Content_Table {
 #rightpane,
 #toppane,
 #bottompane {
-
 }
 
 .tabPanelGroup {
@@ -225,14 +219,14 @@ td.Main_Content_Table {
 }
 
 .module_Body table {
-    border-spacing: 0px!important;
+    border-spacing: 0px !important;
 }
 
     .module_Body table td {
         padding: 3px 0px;
     }
 
-.ModuleTitle { 
+.ModuleTitle {
     color: #2c3e50;
 }
 
@@ -251,85 +245,81 @@ table.Control_Panel_Table td {
 /**********  Admin Modules Classes   ************/
 
 div.div_ev_Table input[type="submit"],
-div#Content_ctl00_pnlForm input[type="submit"]
-{
+div#Content_ctl00_pnlForm input[type="submit"] {
     color: #ffffff;
     background-color: #2c3e50;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     border: none;
-    display:inline-block!important;
-    font-size:15px!important;
-    font-weight:bold;
+    display: inline-block !important;
+    font-size: 15px !important;
+    font-weight: bold;
     text-decoration: none;
-    margin: 5px 10px 5px 0px;  
-    padding:5px 15px!important;
-}   
- 
-div.div_ev_Table input[type="submit"]:link,
-div.div_ev_Table input[type="submit"]:visited,
-div#Content_ctl00_pnlForm input[type="submit"]:link,
-div#Content_ctl00_pnlForm input[type="submit"]:visited
-{
-    color:#fff;
-    text-decoration: none;
+    margin: 5px 10px 5px 0px;
+    padding: 5px 15px !important;
 }
 
-div.div_ev_Table input[type="submit"]:hover,
-div.div_ev_Table input[type="submit"]:focus,
-div#Content_ctl00_pnlForm input[type="submit"]:hover,
-div#Content_ctl00_pnlForm input[type="submit"]:focus
-{
-    color:#fff;
-    cursor:pointer;
-    background-color: #1a242f;
-    text-decoration: none;
-}
+    div.div_ev_Table input[type="submit"]:link,
+    div.div_ev_Table input[type="submit"]:visited,
+    div#Content_ctl00_pnlForm input[type="submit"]:link,
+    div#Content_ctl00_pnlForm input[type="submit"]:visited {
+        color: #fff;
+        text-decoration: none;
+    }
 
-div.div_ev_Table input[type="submit"]:active,
-div#Content_ctl00_pnlForm input[type="submit"]:active
-{   
-    color:#fff;
-    background-color: #2c3e50;
-}
+    div.div_ev_Table input[type="submit"]:hover,
+    div.div_ev_Table input[type="submit"]:focus,
+    div#Content_ctl00_pnlForm input[type="submit"]:hover,
+    div#Content_ctl00_pnlForm input[type="submit"]:focus {
+        color: #fff;
+        cursor: pointer;
+        background-color: #1a242f;
+        text-decoration: none;
+    }
+
+    div.div_ev_Table input[type="submit"]:active,
+    div#Content_ctl00_pnlForm input[type="submit"]:active {
+        color: #fff;
+        background-color: #2c3e50;
+    }
 
 .admin-wrapper {
     margin-top: 160px;
     margin-bottom: 30px;
 }
 
-.admin-wrapper .ModuleContent{
-    margin-bottom: 20px;
-}
+    .admin-wrapper .ModuleContent {
+        margin-bottom: 20px;
+    }
 
 table.ModuleWrap {
     margin: 0 auto;
     width: 100%;
 }
 
-table.ModuleWrap td {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-right: 10px;
-}
+    table.ModuleWrap td {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 10px;
+    }
 
-table.ModuleWrap td hr {
-    margin: 0px;
-}
+        table.ModuleWrap td hr {
+            margin: 0px;
+        }
 
-table.ModuleWrap table table td {
-    vertical-align: top;
-}
+    table.ModuleWrap table table td {
+        vertical-align: top;
+    }
 
-table.ModuleWrap a:link,
-table.ModuleWrap a:visited,
-table.ModuleWrap a:hover,
-table.ModuleWrap a:focus,
-table.ModuleWrap a:active {
-    cursor: pointer;
-    text-decoration: none;
-}
+    table.ModuleWrap a:link,
+    table.ModuleWrap a:visited,
+    table.ModuleWrap a:hover,
+    table.ModuleWrap a:focus,
+    table.ModuleWrap a:active {
+        cursor: pointer;
+        text-decoration: none;
+    }
 
 table.signInBody td {
     vertical-align: bottom;
@@ -360,7 +350,7 @@ option {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    outline: 1px solid #06C!important;
+    outline: 1px solid #06C !important;
     background-color: #f7f7f7;
 }
 
@@ -380,7 +370,7 @@ select,
 select.NormalTextBox,
 textarea {
     background-color: #f2f2f2;
-    border: 1px solid #cccccc!important;
+    border: 1px solid #cccccc !important;
     min-height: 25px;
     font-size: 16px;
     line-height: 25px;
@@ -393,7 +383,7 @@ textarea {
 .contact-us input[type="password"],
 textarea {
     height: 56px;
-    border: 3px solid #b0bec5!important;
+    border: 3px solid #b0bec5 !important;
     text-shadow: none;
     outline: 0;
     background: transparent;
@@ -401,47 +391,47 @@ textarea {
     font-size: 20px;
     line-height: 56px;
     padding: 0px 24px;
-    color: #fff; 
+    color: #fff;
 }
 
 
-    select,
-    select.NormalTextBox {
-        height: 27px;
-        padding: 1px 0 0 1px !important;
-        margin-right: 10px;
-    }
-        /*select#Content_ContentPane_ctl01_EditTable_SITESETTINGS_LANGLIST{
+select,
+select.NormalTextBox {
+    height: 27px;
+    padding: 1px 0 0 1px !important;
+    margin-right: 10px;
+}
+    /*select#Content_ContentPane_ctl01_EditTable_SITESETTINGS_LANGLIST{
             height:125px!important;
         }*/
-        select.SelectList {
-            height: 250px!important;
-            max-height: 250px!important;
-        }
+    select.SelectList {
+        height: 250px !important;
+        max-height: 250px !important;
+    }
 
-        select.NormalTextBox {
-            margin-right: 5px!important;
-        }
+    select.NormalTextBox {
+        margin-right: 5px !important;
+    }
 
-        select#Content_ContentPane_ctl01_tabList {
-            height: 150px;
-        }
+    select#Content_ContentPane_ctl01_tabList {
+        height: 150px;
+    }
 
-        select.multiselect {
-            height: 280px!important;
-            max-height: 280px!important;
-            width: 470px!important;
-        }
+    select.multiselect {
+        height: 280px !important;
+        max-height: 280px !important;
+        width: 470px !important;
+    }
 
-        select#Content_ContentPane_ctl01_DestListBox,
-        select#Content_ContentPane_ctl01_SourceListBox {
-            height: 220px;
-            overflow: auto;
-        }
+    select#Content_ContentPane_ctl01_DestListBox,
+    select#Content_ContentPane_ctl01_SourceListBox {
+        height: 220px;
+        overflow: auto;
+    }
 
-        select#Content_ContentPane_ctl01_SourceListBox {
-            margin-right: 8px;
-        }
+    select#Content_ContentPane_ctl01_SourceListBox {
+        margin-right: 8px;
+    }
 
 td.rb_LangSw_sel img {
     padding-right: 5px;
@@ -457,68 +447,64 @@ td.rb_LangSw_sel img {
 /**************************************************/
 
 .CommandButton,
-a.CommandButton
-{
+a.CommandButton {
     color: #ffffff;
     background-color: #2c3e50;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    display:inline-block!important;
-    font-size:15px!important;
-    font-weight:bold;
+    display: inline-block !important;
+    font-size: 15px !important;
+    font-weight: bold;
     text-decoration: none;
-    margin: 5px 10px 5px 0px;  
-    padding:5px 15px!important;
-}   
- 
-a.CommandButton:link,
-a.CommandButton:visited,
-input.CommandButton a:link,
-input.CommandButton:visited
-{
-    color:#fff;
-    text-decoration: none;
+    margin: 5px 10px 5px 0px;
+    padding: 5px 15px !important;
 }
 
-a.CommandButton:hover,
-a.CommandButton:focus,
-input.CommandButton:hover,
-input.CommandButton:focus
-{
-    color:#fff;
-    cursor:pointer;
-    background: #1a242f;
-    text-decoration: none;
-}
+    a.CommandButton:link,
+    a.CommandButton:visited,
+    input.CommandButton a:link,
+    input.CommandButton:visited {
+        color: #fff;
+        text-decoration: none;
+    }
 
-a.CommandButton:active,
-input.CommandButton:active
-{   
-    color:#fff;
-    background-color: #1a242f;
-}
+    a.CommandButton:hover,
+    a.CommandButton:focus,
+    input.CommandButton:hover,
+    input.CommandButton:focus {
+        color: #fff;
+        cursor: pointer;
+        background: #1a242f;
+        text-decoration: none;
+    }
 
-a.CommandButton#Content_ContentPane_ctl01_DeleteLeft_Btn,
-a.CommandButton#Content_ContentPane_ctl01_MoveLeft_Btn,
-a.CommandButton#Content_ContentPane_ctl01_MoveRight_Btn,
-a.CommandButton#Content_ContentPane_ctl01_CopyRight_Btn,
-a.CommandButton#Content_ContentPane_ctl01_CopyAll_Btn,
-a.CommandButton#Content_ContentPane_ctl01_DeleteRight_Btn {
-    width: 60px!important;
-    text-align: center;
-}  
- 
-table a.CommandButton
-{
+    a.CommandButton:active,
+    input.CommandButton:active {
+        color: #fff;
+        background-color: #1a242f;
+    }
+
+    a.CommandButton#Content_ContentPane_ctl01_DeleteLeft_Btn,
+    a.CommandButton#Content_ContentPane_ctl01_MoveLeft_Btn,
+    a.CommandButton#Content_ContentPane_ctl01_MoveRight_Btn,
+    a.CommandButton#Content_ContentPane_ctl01_CopyRight_Btn,
+    a.CommandButton#Content_ContentPane_ctl01_CopyAll_Btn,
+    a.CommandButton#Content_ContentPane_ctl01_DeleteRight_Btn {
+        width: 60px !important;
+        text-align: center;
+    }
+
+table a.CommandButton {
     text-decoration: none;
 }
 
-.st-control input[type="submit"] {    
+.st-control input[type="submit"] {
     padding: 3px 0 !important;
     margin: 0px 5px;
     vertical-align: top;
-    height: 27px;;
+    height: 27px;
+    ;
 }
 
 /* Standard Appleseed Classes */
@@ -543,7 +529,7 @@ select#Content_contentPane,
 select#Content_rightPane,
 select#Content_bottomPane {
     width: 170px;
-    min-width: 170px!important;
+    min-width: 170px !important;
     height: 190px;
     background-color: #fefefe;
 }
@@ -566,17 +552,18 @@ select#Content_bottomPane {
 #Content_moduleType,
 #Content_viewPermissions,
 .meta_settings input[type="text"] {
-    width: 424px!important;
+    width: 424px !important;
 }
+
 @media(max-width:768px) {
     .meta_settings input[type="text"] {
-        width: 100%!important;
+        width: 100% !important;
     }
 }
 
 #Content_ContentPane_ctl01_moduleTitle,
 #Content_moduleTitle {
-    width: 417px!important;
+    width: 417px !important;
 }
 
 #Content_ctl00_startdate,
@@ -593,16 +580,16 @@ select#Content_bottomPane {
 #Content_cacheTime,
 #Content_ctl00_tfPwd,
 #Content_ctl00_tfPwdAgain {
-    width: 270px!important;
+    width: 270px !important;
 }
 
 #Content_ctl00_ddlDay,
 #Content_ctl00_ddlYear {
-    width: 70px!important;
+    width: 70px !important;
 }
 
 #Content_ctl00_ddlMonth {
-    width: 130px!important;
+    width: 130px !important;
 }
 
 #Content_ContentPane_ctl01_dgFile td {
@@ -668,7 +655,7 @@ div.error-wrapper {
 }
 
 #PortBanContainer {
-    margin-top: 99px!important;
+    margin-top: 99px !important;
     border-top: 1px solid #FFF;
 }
 
@@ -689,18 +676,18 @@ div.error-wrapper {
 /* Fixes for #AppleseedLogin */
 
 #AppleseedLogin {
-    height: 340px!important;
+    height: 340px !important;
     padding: 0;
 }
 
-#AppleseedLogin iframe#iframeAppleseedLogin {
-    height: 300px!important;
-    width: 340px;
-}
+    #AppleseedLogin iframe#iframeAppleseedLogin {
+        height: 300px !important;
+        width: 340px;
+    }
 
-#AppleseedLogin iframe#iframeAppleseedLogin hr {
-    display: none;
-}
+        #AppleseedLogin iframe#iframeAppleseedLogin hr {
+            display: none;
+        }
 
 /* SignIn Cool Styling */
 
@@ -709,34 +696,34 @@ div.error-wrapper {
     margin: 0 auto;
 }
 
-.signin-page .input-row {
-    margin-bottom: 10px;
-}
+    .signin-page .input-row {
+        margin-bottom: 10px;
+    }
 
-.signin-page input[type="text"],
-.signin-page input[type="password"] {
-    width: 300px;
-    height: 40px;
-}
+    .signin-page input[type="text"],
+    .signin-page input[type="password"] {
+        width: 300px;
+        height: 40px;
+    }
 
-.signin-page input[type="checkbox"]{
-    margin: 0px 5px 0px 10px;
-    vertical-align: -2px;
-}
+    .signin-page input[type="checkbox"] {
+        margin: 0px 5px 0px 10px;
+        vertical-align: -2px;
+    }
 
-.signin-page input[type="checkbox"] + label {
-    font-size: 15px;
-}
+        .signin-page input[type="checkbox"] + label {
+            font-size: 15px;
+        }
 
-.signin-page .forgot-link {
-    font-size: 15px;
-    text-decoration: none;
-}
+    .signin-page .forgot-link {
+        font-size: 15px;
+        text-decoration: none;
+    }
 
-.signin-page .login-button {
-    width: 300px;
-    height: 44px;
-}
+    .signin-page .login-button {
+        width: 300px;
+        height: 44px;
+    }
 
 /* Bootstrap Menu Fix */
 
@@ -764,9 +751,11 @@ div.error-wrapper {
     }
 }
 
-.desktopmodules_coremodules_signin_signincool_ascx .module_Body{
-    width:1000px;
+.desktopmodules_coremodules_signin_signincool_ascx .module_Body {
+    width: 1000px;
 }
+
 .editTitleForm {
     color: #000;
 }
+
