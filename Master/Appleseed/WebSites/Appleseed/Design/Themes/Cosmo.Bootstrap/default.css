@@ -800,3 +800,6 @@ div.error-wrapper {
 H1,H2{
 color:#333333 !important;
 }
+.editTitleForm {
+    color: #000;
+}

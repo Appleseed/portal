@@ -2898,7 +2898,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 string title;
                 if (PortalSecurity.HasEditPermissions(this.ModuleID))
                 {
-                    string callurl = string.Format("http://{0}{1}", Request.Url.Host, Page.ResolveUrl("~/Appleseed.Core/Home/SaveTitle"));
+                    string callurl = string.Format("//{0}{1}", Request.Url.Host, Page.ResolveUrl("~/Appleseed.Core/Home/SaveTitle"));
 
                     title = string.Format(
                        "<span id=\"mTitle_{0}\" class=\"editTitle\" onclick=EditTitleInLine(\'{2}\')>{1} </span>", this.ModuleID, this.titleText, callurl);

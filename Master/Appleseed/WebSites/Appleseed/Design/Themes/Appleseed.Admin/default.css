@@ -808,3 +808,6 @@ div.error-wrapper {
 .normal div.CodeMirror-vscrollbar {
     width: 15px !important;
 }
+.editTitleForm {
+    color: #000;
+}
