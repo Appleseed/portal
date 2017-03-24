@@ -199,6 +199,8 @@
                 /* Add main input element to form and store it in input. */
                 var input = element.apply(form, [settings, self]);
 
+                $(form).addClass('editTitleForm');
+
                 /* Set input content via POST, GET, given data or existing value. */
                 var input_content;
                 
