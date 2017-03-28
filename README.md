@@ -10,13 +10,13 @@ docked using Docker and run on any platform: https://github.com/Appleseed/portal
 
 ## Requirements
 
-###Docker
+### Docker
 The Portal Stack is released Open Source to host Appleseed.Portal in a Docker Container.
 https://github.com/Appleseed/portal-stack
 
 OR
 
-###Native Windows Platform
+### Native Windows Platform
 - Windows 7 | 8 | 10 | 2016 Physical or Cloud
 - SQL Server | Express 2005 | 2008 | 2012 | 2014
 - Visual Studio 2015 (Visual Studio 14) for Development
