@@ -1573,6 +1573,10 @@
       <Project>{e3439ce8-7e7c-49f1-8619-964707d1bd24}</Project>
       <Name>AppleseedProxy</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Projects\PortableAreas\MemberInvite\MemberInvite.csproj">
+      <Project>{f97233c1-b99f-40f3-a400-779de77be40b}</Project>
+      <Name>MemberInvite</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Projects\PortableAreas\PageManagerTree\PageManagerTree.csproj">
       <Project>{36310014-77B3-4DB6-B391-B4036D1BDDD3}</Project>
       <Name>PageManagerTree</Name>
@@ -2935,6 +2939,7 @@
     <Content Include="aspnet_client\js\jquery-1.3.2.min.js" />
     <Content Include="aspnet_client\js\jquery-ui-1.7.custom.min.js" />
     <Content Include="aspnet_client\js\jquery.anythingslider.js" />
+    <Content Include="aspnet_client\js\jquery.blockUI.js" />
     <Content Include="aspnet_client\js\jquery.cycle.min.js" />
     <Content Include="aspnet_client\jQuery\jquery.datepick.css" />
     <Content Include="aspnet_client\jQuery\jquery.datepick.js" />
@@ -3174,6 +3179,7 @@
     <Content Include="aspnet_client\js\themes\sand\images\up.gif" />
     <Content Include="aspnet_client\js\ui.jqgrid.css" />
     <Content Include="aspnet_client\logo_sml.gif" />
+    <Content Include="aspnet_client\MemberInvite\MemberInvite.js" />
     <Content Include="aspnet_client\popupHelper\popup.css" />
     <Content Include="aspnet_client\popupHelper\popup.js" />
     <Content Include="aspnet_client\SolpartWebControls_SolpartMenu\1_4_0_0\icon_arrow.gif" />
@@ -5040,6 +5046,7 @@
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\Proxy\ProxyList.cshtml1" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\Module.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\UserRegistry.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberInvite\Index.cshtml" />
     <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
