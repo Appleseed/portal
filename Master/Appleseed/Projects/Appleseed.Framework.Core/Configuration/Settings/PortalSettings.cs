@@ -1838,10 +1838,30 @@ namespace Appleseed.Framework.Site.Configuration
 
                     EnglishName = "Google Login",
                     Description = "Check if you want to see the google login",
-                    Order = groupOrderBase + 28,
+                    Order = groupOrderBase + 27,
                     Group = group
                 };
                 baseSettings.Add("SITESETTINGS_GOOGLE_LOGIN", googleLogin);
+
+                var googleLoginclientId = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "Google Client Id",
+                    Description = "Check if you want to see the google client id",
+                    Order = groupOrderBase + 28,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_GOOGLE_CLIENT_ID", googleLoginclientId);
+
+                var googleLoginsecretkey = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "Google Secret Key",
+                    Description = "Check if you want to see the google secret key",
+                    Order = groupOrderBase + 28,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_GOOGLE_SECRET_KEY", googleLoginsecretkey);
 
                 // LinkedIn keys
                 var linkedInAppId = new SettingItem<string, TextBox>()
