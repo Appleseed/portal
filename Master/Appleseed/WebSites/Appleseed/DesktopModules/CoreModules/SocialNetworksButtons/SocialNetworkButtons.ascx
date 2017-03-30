@@ -2,7 +2,7 @@
 
 <input type="hidden" runat="server" id="appidfacebook"/>
 <div id="fb-root"></div>
-<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
  
 <table cellpadding="0" cellspacing="0" id="signInContainer" class="signInContainer" runat="server">
     <tbody>
