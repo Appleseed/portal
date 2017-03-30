@@ -221,10 +221,22 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
             this.trPwdMessage.Visible = false;
         
         }
+        if (IsInvite)
+        {
+            if (!string.IsNullOrEmpty(InviteNameAndEmail))
+            {
+                this.tfName.Text = (Base64Decode(InviteNameAndEmail)).Split('#')[0];
+                this.tfEmail.Text = (Base64Decode(InviteNameAndEmail)).Split('#')[1];
+            }
+        }
 
     }
 
-   
+    public static string Base64Decode(string base64EncodedData)
+    {
+        var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+        return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+    }
 
     private DateTime BirthdayField
     {
@@ -338,6 +350,16 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
         }
     }
 
+    public bool IsInvite
+    {
+        get { return !string.IsNullOrEmpty(Request.QueryString["invite"]); }
+    }
+
+    public string InviteNameAndEmail
+    {
+        get { return Request.QueryString["invite"]; }
+    }
+
     #region IEditUserProfile Members
 
     public bool EditMode
@@ -365,7 +387,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
     {
         if (!EditMode) {
             Guid result = Guid.Empty;
-            if (Session["CameFromSocialNetwork"] == null) {
+            if (Session["CameFromSocialNetwork"] == null || IsInvite) {
                 MembershipCreateStatus status = MembershipCreateStatus.Success;
                 MembershipUser user = Membership.Provider.CreateUser(tfEmail.Text, tfPwd.Text, tfEmail.Text, "question", "answer", true, Guid.NewGuid(), out status);
                 this.lblError.Text = string.Empty;
