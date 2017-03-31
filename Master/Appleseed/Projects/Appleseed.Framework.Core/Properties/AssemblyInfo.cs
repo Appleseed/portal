@@ -12,7 +12,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed Portal")]
-[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2017")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2017")]
 [assembly: AssemblyCulture( "" )]
 
 
@@ -33,8 +33,8 @@ using System.Resources;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.3.69.342")]
-[assembly: AssemblyFileVersion("1.3.69.342")]
+[assembly: AssemblyVersion("1.4.98.383")]
+[assembly: AssemblyFileVersion("1.4.98.383")]
 
 // In order to sign your assembly you must specify a key to use. Refer to the 
 // Microsoft .NET Framework documentation for more information on assembly signing.

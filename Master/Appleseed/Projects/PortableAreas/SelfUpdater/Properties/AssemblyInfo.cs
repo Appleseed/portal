@@ -10,7 +10,7 @@ using System.Web;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("SelfUpdater")]
-[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2017")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,7 +31,7 @@ using System.Web;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.3.69.342")]
-[assembly: AssemblyFileVersion("1.3.69.342")]
+[assembly: AssemblyVersion("1.4.98.383")]
+[assembly: AssemblyFileVersion("1.4.98.383")]
 
 [assembly: PreApplicationStartMethod(typeof(SelfUpdater.Initializer), "Initialize")]

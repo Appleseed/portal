@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed Portal")]
-[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2017")]
+[assembly: AssemblyCopyright("Copyright © ANANT Corporation 2010-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -27,5 +27,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 // You can specify all the values or you can default the Revision and Build Numbers 
-[assembly: AssemblyVersion("1.3.69.342")]
-[assembly: AssemblyFileVersion("1.3.69.342")]
+[assembly: AssemblyVersion("1.4.98.383")]
+[assembly: AssemblyFileVersion("1.4.98.383")]
