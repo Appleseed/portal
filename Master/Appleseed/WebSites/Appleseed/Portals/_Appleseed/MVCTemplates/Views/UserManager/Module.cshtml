@@ -58,11 +58,11 @@
     $(document).ready(function () {
     $("#list5").jqGrid({
         //scroll: 1,
-            colNames: ["UserName", "Email", "Rol", "", ""],
+            colNames: ["UserName", "Email", "Role", "", ""],
             colModel: [
                 { name: 'UserName', index: 'UserName', sortable: false },
                 { name: 'Email',    index: 'Email',    width: 300, sortable: false },
-                { name: 'Rol',      index: 'Rol',      sortable: false },
+                { name: 'Role',      index: 'Role',      sortable: false },
                 { name: 'Edit',     index: 'Edit',     width: 50, align: "center", formatter: formatterLink },
                 { name: 'Delete',   index: 'Delete',   width: 50, align: "center", formatter: formatterDeleteLink },
             ],
