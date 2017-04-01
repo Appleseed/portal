@@ -5245,7 +5245,6 @@
     <Content Include="Shared\PanesMasterDefault.master" />
     <Content Include="Shared\SiteMasterDefault.master" />
     <Content Include="Styles\Site.css" />
-    <Content Include="UploadDialog.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
