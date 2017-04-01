@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle( "Appleseed.Tests" )]
-[assembly: AssemblyDescription( "" )]
+[assembly: AssemblyDescription( "Appleseed Portal and Content Management System" )]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "--" )]
-[assembly: AssemblyProduct( "Appleseed.Tests" )]
-[assembly: AssemblyCopyright( "Copyright © -- 2006" )]
+[assembly: AssemblyCompany( "ANANT Corporation" )]
+[assembly: AssemblyProduct( "Appleseed Portal" )]
+[assembly: AssemblyCopyright( "Copyright © ANANT Corporation 2010-2017" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion( "1.0.0.0" )]
-[assembly: AssemblyFileVersion( "1.0.0.0" )]
+[assembly: AssemblyVersion( "1.4.98.383" )]
+[assembly: AssemblyFileVersion( "1.4.98.383" )]
