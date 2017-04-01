@@ -671,15 +671,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IZWebFileManagerResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="app_support\FCK.filemanager\imagegallery.aspx.designer.cs">
-      <DependentUpon>imagegallery.aspx</DependentUpon>
-    </Compile>
     <Compile Include="API\IPortalServices.cs" />
     <Compile Include="API\Portal.svc.cs">
       <DependentUpon>Portal.svc</DependentUpon>
-    </Compile>
-    <Compile Include="app_support\FCK.filemanager\upload.aspx.designer.cs">
-      <DependentUpon>upload.aspx</DependentUpon>
     </Compile>
     <Compile Include="app_support\GeneralError.aspx.cs">
       <DependentUpon>GeneralError.aspx</DependentUpon>
@@ -1469,14 +1463,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Appleseed.resx</DependentUpon>
     </Compile>
-    <Compile Include="app_support\FCK.filemanager\imagegallery.aspx.cs">
-      <DependentUpon>imagegallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app_support\FCK.filemanager\upload.aspx.cs">
-      <DependentUpon>upload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="app_support\print.aspx.cs">
       <DependentUpon>print.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1810,8 +1796,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app_support\FCK.filemanager\imagegallery.aspx" />
-    <Content Include="app_support\FCK.filemanager\upload.aspx" />
     <Content Include="app_support\GeneralError.aspx" />
     <Content Include="app_support\GeneralError.html" />
     <Content Include="app_support\print.aspx" />
@@ -2253,11 +2237,6 @@
     <Content Include="aspnet_client\CSSControlAdapters\HtmlEditStyle.css" />
     <Content Include="aspnet_client\CSSControlAdapters\MenuAdapter.js" />
     <Content Include="aspnet_client\CSSControlAdapters\TreeViewAdapter.js" />
-    <Content Include="aspnet_client\DUEMETRI_UI_WebControls_HWMenu\1_0_0_0\1x1.gif" />
-    <Content Include="aspnet_client\DUEMETRI_UI_WebControls_HWMenu\1_0_0_0\menu_com.js" />
-    <Content Include="aspnet_client\DUEMETRI_UI_WebControls_HWMenu\1_0_0_0\tri.gif" />
-    <Content Include="aspnet_client\DUEMETRI_UI_WebControls_HWMenu\1_0_0_0\tridown.gif" />
-    <Content Include="aspnet_client\DUEMETRI_UI_WebControls_HWMenu\1_0_0_0\trileft.gif" />
     <Content Include="aspnet_client\EvolutilityAdvanced\dico\pix\ft-bool.gif" />
     <Content Include="aspnet_client\EvolutilityAdvanced\dico\pix\ft-color.gif" />
     <Content Include="aspnet_client\EvolutilityAdvanced\dico\pix\ft-date.gif" />
