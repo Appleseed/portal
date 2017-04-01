@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EvolutilityModuleList.aspx.cs" Inherits="Appleseed.DesktopModules.CoreModules.Evolutility_ModuleList.EvolutilityModuleList" %>
 
-<%@ Register TagPrefix="uc" TagName="Spinner" Src="/DesktopModules/CoreModules/Evolutility_ModuleList/EvolutilityModuleList.aspx" %>
+<%@ Register TagPrefix="uc" TagName="Spinner" Src="/DesktopModules/CoreModules/Evolutility_ModuleList/Evolutility_ModuleList.ascx" %>
 
 <!DOCTYPE html>
 

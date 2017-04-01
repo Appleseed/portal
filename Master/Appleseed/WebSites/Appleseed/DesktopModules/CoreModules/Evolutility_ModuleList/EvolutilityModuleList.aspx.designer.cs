@@ -28,6 +28,6 @@ namespace Appleseed.DesktopModules.CoreModules.Evolutility_ModuleList {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Appleseed.DesktopModules.CoreModules.Evolutility_ModuleList.EvolutilityModuleList Spinner1;
+        protected global::Appleseed.DesktopModules.CoreModules.Evolutility_ModuleList.Evolutility_ModuleList Spinner1;
     }
 }
