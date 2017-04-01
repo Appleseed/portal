@@ -22,7 +22,7 @@ namespace Appleseed.Framework.DataTypes
 
     using Appleseed.Framework.Web.UI.WebControls;
 
-    using FreeTextBoxControls;
+  
 
     using Syrinx.Gui.AspNet;
 
