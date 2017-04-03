@@ -99,6 +99,9 @@ $(document).ready(function () {
         }
 
     })
+    $('#cancel').on('click', function () {
+        $("#divmemberInvites").dialog('close');
+    })
 });
 
 
