@@ -5238,6 +5238,7 @@
     <Content Include="Setup\Scripts\2.0.0.1911.sql" />
     <Content Include="Setup\Scripts\2.0.0.1912.sql" />
     <Content Include="Setup\Scripts\2.0.0.1913.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1914.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>
