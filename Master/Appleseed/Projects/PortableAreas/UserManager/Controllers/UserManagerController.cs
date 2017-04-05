@@ -162,7 +162,7 @@ namespace UserManager.Controllers
                         {
                             UserName = m.UserName,
                             Email = m.UserEmail,
-                            Rol = m.UserRol,
+                            Role = m.UserRol,
                             Edit = General.GetString("EDIT_USER"),
                             UserId = m.UserId,
                             EditId = m.Edit,

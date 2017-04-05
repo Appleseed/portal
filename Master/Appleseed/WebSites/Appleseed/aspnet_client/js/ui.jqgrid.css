@@ -25,7 +25,7 @@
 .ui-jqgrid tr.jqgrow td {font-weight: normal; overflow: hidden; text-align:left; white-space:  nowrap; height: 22px;padding: 0 2px 0 2px;}
 .ui-jqgrid .ui-jqgrid-resize-mark{ width:2px; left:0; background-color:#777; cursor: e-resize; cursor: col-resize; position:absolute; top:0; height:100px; overflow:hidden; visibility:hidden;	border:0 none;}
 /* Pager*/
-.ui-jqgrid .ui-jqgrid-pager { border-left: 0px none !important;border-right: 0px none !important; border-bottom: 0px none !important; margin: 0px !important; padding: 0px !important; position: relative; height: 25px;white-space: nowrap;overflow: hidden;}
+.ui-jqgrid .ui-jqgrid-pager { border-left: 0px none !important;border-right: 0px none !important; border-bottom: 0px none !important; margin: 0px !important; padding: 0px !important; position: relative; height: 35px;white-space: nowrap;overflow: hidden;}
 .ui-jqgrid .ui-pager-control {position: relative;}
 .ui-jqgrid .ui-pg-table {position: relative; padding-bottom:2px;}
 .ui-jqgrid .ui-pg-table td {font-weight:normal; vertical-align:middle; padding:1px; overflow:hidden;}
