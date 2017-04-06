@@ -186,6 +186,11 @@ namespace Appleseed
         /// </param>
         private void DesktopDefault_Load(object sender, EventArgs e)
         {
+            if (this.PortalSettings.EnabledPrivateSite && !Request.IsAuthenticated)
+            {
+                PortalSecurity.AccessDenied();
+                return;
+            }
             int pageId = 0;
             string lnkid = Request.QueryString["lnkid"];
             if (!string.IsNullOrEmpty(lnkid))

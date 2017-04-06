@@ -25,6 +25,7 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
     using Appleseed.Framework.Settings;
 
     using Reader = Appleseed.Context.Reader;
+    using Site.Configuration;
 
     /// <summary>
     /// The appleseed sql site map provider.
@@ -200,6 +201,25 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                 // return _root;
                 // } else {
                 this.Clear();
+
+                var pS = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+                if (pS.CustomSettings["ENABLE_PRIVATE_SITE"].Value.ToString() == "True" && !HttpContext.Current.Request.IsAuthenticated)
+                {
+                    this.root = new SiteMapNode(
+                            this,
+                            RootNodeId.ToString(),
+                            HttpUrlBuilder.BuildUrl(),
+                            string.Empty,
+                            string.Empty,
+                            new[] { "All Users" },
+                            null,
+                            null,
+                            null);
+                    this.root["PortalID"] = PortalId;
+                    this.theNodes.Add(RootNodeId, this.root);
+                    this.AddNode(this.root, null);
+                    return this.root;
+                } 
 
                 // }
                 // }
