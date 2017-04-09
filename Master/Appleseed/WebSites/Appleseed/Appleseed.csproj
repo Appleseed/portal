@@ -207,9 +207,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\ForumModule.dll</HintPath>
     </Reference>
-    <Reference Include="FredCK.FCKeditorV2">
-      <HintPath>..\..\Libs\FredCK.FCKeditorV2.dll</HintPath>
-    </Reference>
     <Reference Include="FreeTextBox">
       <HintPath>..\..\Libs\FreeTextBox.dll</HintPath>
     </Reference>
