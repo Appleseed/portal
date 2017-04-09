@@ -3359,7 +3359,6 @@
     <Content Include="Design\DesktopLayouts\PrintFooter.ascx" />
     <Content Include="Design\DesktopLayouts\PrintHeader.ascx" />
     <None Include="Appleseed.nuspec" />
-    <None Include="AppleseedInstallation.nuspec" />
     <Content Include="aspnet_client\CKeditorV4.5.7\CHANGES.md" />
     <Content Include="aspnet_client\CKeditorV4.5.7\LICENSE.md" />
     <Content Include="aspnet_client\CKeditorV4.5.7\plugins\scayt\CHANGELOG.md" />
