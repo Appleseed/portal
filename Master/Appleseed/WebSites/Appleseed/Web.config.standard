@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <configuration>
   <configSections>
     <section name="dataConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.DatabaseSettings, Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -211,8 +212,12 @@
   <system.net>
     <mailSettings>
       <smtp deliveryMethod="network" from="info@Appleseedportal.net">
-        <network host="127.0.0.1">
-        </network>
+        <network
+         host="localhost"
+         port="25"
+         defaultCredentials="true"
+        />
+
       </smtp>
     </mailSettings>
   </system.net>
@@ -348,7 +353,6 @@
         <add tagPrefix="asp" namespace="System.Web.UI" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
         <add tagPrefix="ajaxtoolkit" namespace="AjaxControlToolkit" assembly="AjaxControlToolkit" />
         <add assembly="Appleseed.Framework.Core" namespace="Appleseed.Framework.Web.UI.WebControls" tagPrefix="rbfwebui" />
-        <!--<add assembly="Appleseed.Framework.Core" namespace="Appleseed.Framework.Web.UI.WebControls.WebParts" tagPrefix="rbfwebui"/>-->
         <add assembly="Appleseed.Framework.Web.UI.WebControls" namespace="Appleseed.Framework.Web.UI.WebControls" tagPrefix="rbfwebui" />
         <add tagPrefix="asp" namespace="System.Web.UI.WebControls" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
       </controls>
