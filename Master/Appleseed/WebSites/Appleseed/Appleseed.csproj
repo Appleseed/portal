@@ -5074,8 +5074,6 @@
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xsl" />
     <Content Include="Portals\_Appleseed\PortalIcon.ico" />
-    <Content Include="Portals\_Appleseed\Quiz\Demo1.xml" />
-    <Content Include="Portals\_Appleseed\Quiz\Demo2.xml" />
     <Content Include="Portals\_Appleseed\xml\sales.xml" />
     <Content Include="Portals\_Appleseed\xml\sales.xsl" />
     <Content Include="Portals\_Appleseed\xml\sales2.xml" />
