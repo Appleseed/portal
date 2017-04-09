@@ -5066,7 +5066,6 @@
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.business.jpg" />
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.coffee.jpg" />
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.trade.jpg" />
-    <Content Include="Portals\_Appleseed\MagicUrl\MagicUrlList.xml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\Module.ascx" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\PageManagerTree\Module.ascx" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xml" />
