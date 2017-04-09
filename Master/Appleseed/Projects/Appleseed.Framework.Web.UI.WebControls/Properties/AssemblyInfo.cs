@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Appleseed.Framework.Web.UI.WebControls")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Appleseed Portal and Content Management System : Framework Controls")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("Appleseed.Framework.Web.UI.WebControls")]
