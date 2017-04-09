@@ -6,7 +6,7 @@ using System.Web;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SelfUpdater")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Appleseed Portal and Content Management System : Portal Self Update")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("SelfUpdater")]
