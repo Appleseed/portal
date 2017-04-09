@@ -207,9 +207,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\ForumModule.dll</HintPath>
     </Reference>
-    <Reference Include="FreeTextBox">
-      <HintPath>..\..\Libs\FreeTextBox.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Apis, Version=1.23.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Google.Apis.1.23.0\lib\net45\Google.Apis.dll</HintPath>
       <Private>True</Private>
