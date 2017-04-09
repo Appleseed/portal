@@ -1512,7 +1512,6 @@
     <Folder Include="images\default\" />
     <Folder Include="packages\" />
     <Folder Include="Portals\_Appleseed\Album\" />
-    <Folder Include="Portals\_Appleseed\SecureDocuments\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Projects\Appleseed.Framework.Core\Appleseed.Framework.Core.csproj">
