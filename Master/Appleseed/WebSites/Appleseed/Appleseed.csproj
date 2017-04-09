@@ -5055,7 +5055,7 @@
     </None>
     <Content Include="Portals\_Appleseed\appleseed-logo-160x33.png" />
     <Content Include="Portals\_Appleseed\appleseed-logo-white-160x33.png" />
-    <Content Include="Portals\_Appleseed\documents\Documents.txt" />
+    <Content Include="Portals\_Appleseed\Documents\Documents.txt" />
     <Content Include="Portals\_Appleseed\FlashGallery\effect2-marquee.swf" />
     <Content Include="Portals\_Appleseed\History.xml" />
     <Content Include="Portals\_Appleseed\History.xsl" />
