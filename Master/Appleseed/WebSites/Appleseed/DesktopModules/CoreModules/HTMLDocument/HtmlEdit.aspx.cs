@@ -41,6 +41,9 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         protected IHtmlEditor DesktopText;
 
         public bool IsCodeWriter { get { return this.ModuleSettings["Editor"].ToString().ToLower() == "codewriter"; } }
+
+        private Framework.UI.WebControls.CKEditorTextbox cwCKEditor;
+
         #endregion
 
         #region Properties
@@ -106,6 +109,20 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                 this.PortalSettings);
             this.DesktopText.Width = new Unit(width);
             this.DesktopText.Height = new Unit(height);
+
+            if (editor.ToLower() == "codewriter")
+            {
+                var moduleImageFolder = Appleseed.Framework.Site.Configuration.ModuleSettings.GetModuleSettings(this.ModuleID)["MODULE_IMAGE_FOLDER"].ToString();
+                cwCKEditor = new Framework.UI.WebControls.CKEditorTextbox
+                {
+                    ImageFolder = moduleImageFolder,
+                    ResizeEnabled = false,
+                    Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
+                };
+                cwCKEditor.Height = 550;
+                cwCKEditor.BasePath = Appleseed.Framework.Settings.Path.WebPathCombine(Appleseed.Framework.Settings.Path.ApplicationRoot, "/aspnet_client/CKeditorV4.5.7");
+                this.plcCWCKEditor.Controls.Add((Control)cwCKEditor);
+            }
 
             if (showMobile)
             {
@@ -197,7 +214,9 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                         {
                             this.cwHTML.InnerText = this.DesktopText.Text;
                         }
+                        this.cwCKEditor.Text = this.cwHTML.InnerText;
                         this.DesktopText.Text = string.Empty;
+                        
                     }
                     else
                     {
@@ -399,12 +418,16 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         }
 
         [WebMethod]
-        public static string SaveData(string css, string html, string js, string pageId, string moduleId, string jscssref)
+        public static string SaveData(string css, string html, string js, string pageId, string moduleId, string jscssref, string cwckeditor, string iscwboxchanges)
         {
             string rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/preview.html";
             try
             {
                 string content = $"<!DOCTYPE html><html><head><title></title>{jscssref}<style type='text/css'>{css}</style></head><body>{html}</body><script type='text/javascript'>{js}</script></html>";
+                //if (iscwboxchanges != "1" && iscwboxchanges.ToLower() != "true")
+                //{
+                //    content = $"<!DOCTYPE html><html><head><title></title>{jscssref}<style type='text/css'>{css}</style></head><body>{cwckeditor}</body><script type='text/javascript'>{js}</script></html>";
+                //}
 
                 rootPath = HostingEnvironment.ApplicationPhysicalPath + @"/DesktopModules/CoreModules/HTMLDocument/PageModulePreview/P" + pageId + "M" + moduleId + ".html";
                 string folderPath = System.Web.HttpContext.Current.Server.MapPath("/DesktopModules/CoreModules/HTMLDocument/PageModulePreview");

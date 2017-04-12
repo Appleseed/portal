@@ -13,18 +13,18 @@
                 width: 100% !important;
                 /*height:100vh;*/
             }
-            .Content
-            {
-                height:485px !important;
+
+            .Content {
+                height: 485px !important;
             }
-            #cke_1_contents
-            {
-                height:347px !important;
+
+            #cke_1_contents {
+                height: 347px !important;
             }
-            textarea
-            {
-                line-height:20px;
-                color:#000000 !important;
+
+            textarea {
+                line-height: 20px;
+                color: #000000 !important;
             }
         </style>
     </asp:PlaceHolder>
@@ -103,50 +103,92 @@
                 }
 
                 .CodeMirror {
-                    height: 240px !important;
+                    height: 700px !important;
                 }
 
                 .divPreview {
-                    height: 240px;
+                    height: 700px;
                     border: 1px solid gray;
                 }
 
                 .myframe {
                     width: 100%;
-                    height: 240px;
+                    height: 690px;
+                }
+
+                .tabs .CommandButton {
+                    margin: 0px;
+                    border-radius: 0px;
+                }
+
+                .tabs .tbActive {
+                    font-size: 18px !important;
                 }
             </style>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('.tabs a').click(function () {
+                        $('.tabs a').each(function (itm) {
+                            $(this).removeClass('tbActive');
+                        });
+
+                        $(this).addClass('tbActive');
+
+                        $('.divTab').each(function (itm) {
+                            $(this).addClass('hide');
+                        });
+
+                        $('#' + $(this).attr('tabid')).removeClass('hide');
+                    });
+                    $("#tbPreview").click(function () {
+                        SaveData();
+                    });
+                    $("#tbHtml").click(function () {
+                        if (!isCWBoxChanges) {
+                            htmleditor.setValue(CKEDITOR.instances['Content_ctl02'].getData());
+                        }
+                    });
+                });
+            </script>
             <div class="col-lg-12">
                 <h2>Code Writer</h2>
             </div>
-             <div class="col-lg-6">
-                <h3>JS/CSS References</h3>
+            <div class="col-lg-12 tabs">
+                <a id="tbEditor" tabid="divEditor" class="CommandButton tbActive">Editor</a>
+                <a id="tbHtml" tabid="divHTML" class="CommandButton ">HTML</a>
+                <a id="tbJavaScript" tabid="divJS" class="CommandButton">JavaScript</a>
+                <a id="tbCSS" tabid="divCSS" class="CommandButton">CSS</a>
+                <a id="tbCSSJSRefs" tabid="divJSCSSRef" class="CommandButton">JS/CSS References</a>
+                <a id="tbPreview" tabid="divPreview" class="CommandButton">Preview</a>
+            </div>
+            <div class="col-lg-12 divTab " id="divEditor">
                 <div style="border: 1px solid gray">
-                    <textarea id="cwJSCSSRef" runat="server" cols="100" rows="5" style="width: 100%;"></textarea>
+                    <asp:PlaceHolder ID="plcCWCKEditor" runat="server"></asp:PlaceHolder>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <h3>CSS</h3>
+            <div class="col-lg-12 divTab" id="divJSCSSRef">
+                <div style="border: 1px solid gray">
+                    <textarea id="cwJSCSSRef" runat="server" cols="100" rows="12" style="width: 100%;"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-12 divTab" id="divCSS">
                 <div style="border: 1px solid gray">
                     <textarea id="cwCSS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
             </div>
-             <div class="col-lg-6">
-                <h3>JavaScript</h3>
+            <div class="col-lg-12 divTab" id="divJS">
                 <div style="border: 1px solid gray">
                     <textarea id="cwJS" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <h3>HTML</h3>
+            <div class="col-lg-12 divTab" id="divHTML">
                 <div style="border: 1px solid gray">
                     <textarea id="cwHTML" cols="100" rows="5" style="width: 100%;" runat="server"></textarea>
                 </div>
             </div>
-           
 
-            <div class="col-lg-12">
-                <h3>Preview</h3>
+
+            <div class="col-lg-12 divTab" id="divPreview">
                 <div class="divPreview">
                     <iframe id="ifrmPreview" class="myframe" name="myframe" src="/DesktopModules/CoreModules/HTMLDocument/preview.html"></iframe>
                 </div>
@@ -164,9 +206,46 @@
             <script src="/aspnet_client/CodeMirrorV5.12/mode/css/css.js" type="text/javascript"></script>
             <script src="/aspnet_client/CodeMirrorV5.12/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
             <script type="text/javascript">
+                var csseditor, htmleditor, jseditor, jscssRefeditor;
+                var isCWBoxChanges = false;
+
+                function SaveData() {
+                    if (!isCWBoxChanges) {
+                        htmleditor.setValue(CKEDITOR.instances['Content_ctl02'].getData());
+                    }
+                    var dt = {};
+                    dt.css = csseditor.getValue();
+                    dt.html = htmleditor.getValue();
+                    dt.js = jseditor.getValue();
+                    dt.pageId = $('#hdnPageId').val();
+                    dt.moduleId = $('#hdnModuleId').val();
+                    dt.jscssref = $('#hdnDefaultJSCSS').val() + jscssRefeditor.getValue();
+                    dt.cwckeditor = ''; //$('#Content_ctl02').val();
+                    dt.iscwboxchanges = isCWBoxChanges;
+
+                    $.ajax({
+                        url: "htmledit.aspx/SaveData",
+                        type: "POST",
+                        dataType: 'json',
+                        data: JSON.stringify(dt),
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            // var previewUrl = $('#ifrmPreview').attr('src');
+                            $('#ifrmPreview').attr('src', '');
+                            $('#ifrmPreview').attr('src', data.d);
+                        },
+                        error: function () {
+                            console.log("Error");
+                        }
+                    });
+                }
+
+
+
                 $(document).ready(function () {
+
                     $('#actionButtonWrapper').addClass("col-lg-12");
-                    var csseditor = CodeMirror.fromTextArea(document.getElementById('Content_cwCSS'),
+                    csseditor = CodeMirror.fromTextArea(document.getElementById('Content_cwCSS'),
                         {
                             mode: "text/css", extraKeys:
                                 {
@@ -177,7 +256,7 @@
                             indentWithTabs: true
                         });
 
-                    var htmleditor = CodeMirror.fromTextArea(document.getElementById('Content_cwHTML'),
+                    htmleditor = CodeMirror.fromTextArea(document.getElementById('Content_cwHTML'),
                        {
                            mode: "text/html", extraKeys:
                                {
@@ -188,7 +267,7 @@
                            indentWithTabs: true
                        });
 
-                    var jseditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJS'),
+                    jseditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJS'),
                        {
                            mode: "text/javascript", extraKeys:
                                {
@@ -199,7 +278,7 @@
                            indentWithTabs: true
                        });
 
-                    var jscssRefeditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJSCSSRef'),
+                    jscssRefeditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJSCSSRef'),
                      {
                          mode: "text/javascript", extraKeys:
                              {
@@ -210,71 +289,55 @@
                          indentWithTabs: true
                      });
 
-                    function SaveData() {
-                        var dt = {};
-                        dt.css = csseditor.getValue();
-                        dt.html = htmleditor.getValue();
-                        dt.js = jseditor.getValue();
-                        dt.pageId = $('#hdnPageId').val();
-                        dt.moduleId = $('#hdnModuleId').val();
-                        dt.jscssref = $('#hdnDefaultJSCSS').val() + jscssRefeditor.getValue();
-
-                        $.ajax({
-                            url: "htmledit.aspx/SaveData",
-                            type: "POST",
-                            dataType: 'json',
-                            data: JSON.stringify(dt),
-                            contentType: "application/json; charset=utf-8",
-                            success: function (data) {
-                                // var previewUrl = $('#ifrmPreview').attr('src');
-                                $('#ifrmPreview').attr('src', '');
-                                $('#ifrmPreview').attr('src', data.d);
-                            },
-                            error: function () {
-                                console.log("Error");
-                            }
-                        });
-                    }
                     var refreshTime;
                     var seconds = 3000;
 
                     csseditor.on("change", function () {
-                        clearTimeout(refreshTime);
-                        refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                        isCWBoxChanges = true;
+                        //clearTimeout(refreshTime);
+                        //refreshTime = setTimeout(function () { SaveData(); }, 3000);
                     });
 
-                    htmleditor.on("change", function () {
-                        clearTimeout(refreshTime);
-                        refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                    htmleditor.on("keyup", function () {
+                        isCWBoxChanges = true;
+                        htmleditorchange();
                     });
+
+                    function htmleditorchange() {
+                        isCWBoxChanges = true;
+                        CKEDITOR.instances['Content_ctl02'].setData(htmleditor.getValue());
+                        setTimeout(function () {
+                            CKEDITOR.instances['Content_ctl02'].document.on('keyup', CKEditorChange);
+                        }, 2000);
+                    }
 
                     jseditor.on("change", function () {
-                        clearTimeout(refreshTime);
-                        refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                        isCWBoxChanges = true;
+                        //clearTimeout(refreshTime);
+                        //refreshTime = setTimeout(function () { SaveData(); }, 3000);
                     });
 
                     jscssRefeditor.on("change", function () {
-                        clearTimeout(refreshTime);
-                        refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                        isCWBoxChanges = true;
+                        //clearTimeout(refreshTime);
+                        //refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                    });
+                    setTimeout(function () {
+                        CKEDITOR.instances['Content_ctl02'].document.on('keyup', CKEditorChange);
+                    }, 2000);
+
+                    function CKEditorChange() {
+                        isCWBoxChanges = false;
+                        htmleditor.setValue(CKEDITOR.instances['Content_ctl02'].getData());
+                        //clearTimeout(refreshTime);
+                        //refreshTime = setTimeout(function () { SaveData(); }, 3000);
+                    }
+
+                    $('.divTab').each(function (itm) {
+                        $(this).addClass('hide');
                     });
 
-                    //csseditor.on("blur", function () {
-
-                    //    SaveData();
-                    //});
-
-                    //htmleditor.on("blur", function () {
-                    //    SaveData();
-                    //});
-
-                    //jseditor.on("blur", function () {
-                    //    SaveData();
-                    //});
-
-                    $('#btnRefresh').click(function () {
-                        SaveData();
-                    });
-                    SaveData();
+                    $('#divEditor').removeClass('hide');
                 });
             </script>
         </asp:PlaceHolder>

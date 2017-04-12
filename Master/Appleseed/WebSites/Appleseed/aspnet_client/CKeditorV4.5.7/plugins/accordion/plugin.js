@@ -4,7 +4,7 @@
         init: function (editor) {
             var pluginName = 'accordion';
             var pluginDirectory = this.path;
-            editor.addContentsCss(pluginDirectory + 'accordion/CSSAccordion/accordion.css');
+            editor.addContentsCss(pluginDirectory + 'CSSAccordion/accordion.css');
 
             editor.ui.addButton('Accordion',
                 {
