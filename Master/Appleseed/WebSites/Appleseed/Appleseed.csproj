@@ -151,7 +151,7 @@
     </Reference>
     <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\builds\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\Libs\ckeditor_aspnet_3.6.6.2\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="Common.Logging">
       <HintPath>..\..\Libs\Common.Logging.dll</HintPath>
