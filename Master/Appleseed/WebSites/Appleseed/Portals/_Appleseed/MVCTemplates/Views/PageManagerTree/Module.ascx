@@ -270,7 +270,14 @@
                                 });
                             }
                         }
-                    },
+                },
+                "edit": {
+                    "label": 'Edit This Page',
+                    "action": function (data) {
+                        selectedpageid = node.id;
+                        openeditthispage();
+                    }
+                },
                 "rename": {
                     "label": '<%: General.GetString("RENAME") %>',
                     "action": function (data) {
