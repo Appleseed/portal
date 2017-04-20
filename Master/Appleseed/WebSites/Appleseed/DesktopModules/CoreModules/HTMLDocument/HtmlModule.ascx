@@ -8,7 +8,7 @@
     <script src="/aspnet_client/AlohaHtmlEditor/lib/aloha.js" data-aloha-plugins="common/ui,common/format,common/table,common/list,common/link,common/highlighteditables,common/undo,common/contenthandler,common/paste,common/characterpicker,common/save,common/version,common/commands,common/block,common/image,common/abbr,common/horizontalruler,common/align,common/dom-to-xhtml,extra/textcolor,extra/formatlesspaste,extra/hints,extra/toc,extra/headerids,extra/listenforcer,extra/metaview,extra/numerated-headers,extra/textcolor,extra/wai-lang,extra/linkbrowser,extra/imagebrowser,extra/cite"></script>
 </asp:PlaceHolder>
 <asp:PlaceHolder ID="plcCkEditorJS" runat="server" Visible="false">
-    <script src="/aspnet_client/CKeditorV4.5.7/ckeditor.js" type="text/javascript"></script>
+    <script src="/aspnet_client/CKEditorV4.6.2/ckeditor.js" type="text/javascript"></script>
 </asp:PlaceHolder>
 <div id="HTMLContainer" runat="server">
 
