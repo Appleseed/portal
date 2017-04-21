@@ -279,13 +279,6 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Web.Mvc.Build">
-      <HintPath>..\..\Libs\Microsoft.Web.Mvc.Build.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Preview, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\Microsoft.Web.Preview.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Security, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\Mono.Security.dll</HintPath>
@@ -1531,7 +1524,6 @@
     <Folder Include="images\default\" />
     <Folder Include="packages\" />
     <Folder Include="Portals\_Appleseed\Album\" />
-    <Folder Include="Portals\_Appleseed\SecureDocuments\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Projects\Appleseed.Framework.Core\Appleseed.Framework.Core.csproj">
@@ -3327,7 +3319,6 @@
     <Content Include="Design\DesktopLayouts\PrintFooter.ascx" />
     <Content Include="Design\DesktopLayouts\PrintHeader.ascx" />
     <None Include="Appleseed.nuspec" />
-    <None Include="AppleseedInstallation.nuspec" />
     <Content Include="aspnet_client\EvolutilityAdvanced\dico\pix\Thumbs.db" />
     <Content Include="aspnet_client\EvolutilityAdvanced\dist\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="aspnet_client\EvolutilityAdvanced\dist\fonts\glyphicons-halflings-regular.ttf" />
@@ -4998,7 +4989,6 @@
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\Module.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\UserRegistry.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberInvite\Index.cshtml" />
-    <None Include="Portals\_Appleseed\WebParts\sales.dwp" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
@@ -5018,7 +5008,7 @@
     </None>
     <Content Include="Portals\_Appleseed\appleseed-logo-160x33.png" />
     <Content Include="Portals\_Appleseed\appleseed-logo-white-160x33.png" />
-    <Content Include="Portals\_Appleseed\documents\Documents.txt" />
+    <Content Include="Portals\_Appleseed\Documents\Documents.txt" />
     <Content Include="Portals\_Appleseed\FlashGallery\effect2-marquee.swf" />
     <Content Include="Portals\_Appleseed\History.xml" />
     <Content Include="Portals\_Appleseed\History.xsl" />
@@ -5027,7 +5017,6 @@
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.business.jpg" />
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.coffee.jpg" />
     <Content Include="Portals\_Appleseed\images\default\slider\Appleseed.slider.trade.jpg" />
-    <Content Include="Portals\_Appleseed\MagicUrl\MagicUrlList.xml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\Installation\Module.ascx" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\PageManagerTree\Module.ascx" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales.xml" />
@@ -5035,8 +5024,6 @@
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\xml\sales2.xsl" />
     <Content Include="Portals\_Appleseed\PortalIcon.ico" />
-    <Content Include="Portals\_Appleseed\Quiz\Demo1.xml" />
-    <Content Include="Portals\_Appleseed\Quiz\Demo2.xml" />
     <Content Include="Portals\_Appleseed\xml\sales.xml" />
     <Content Include="Portals\_Appleseed\xml\sales.xsl" />
     <Content Include="Portals\_Appleseed\xml\sales2.xml" />

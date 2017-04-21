@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("UserManager")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Appleseed Portal and Content Management System : MVC User Manager")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ANANT Corporation")]
 [assembly: AssemblyProduct("UserManager")]
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.4.98.383")]
-[assembly: AssemblyFileVersion("1.4.98.383")]
+[assembly: AssemblyVersion("1.4.131.463")]
+[assembly: AssemblyFileVersion("1.4.131.463")]

@@ -1,30 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
-	<configSections>
-		<section name="dataConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.DatabaseSettings, Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
-		<section name="cachingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheManagerSettings, Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
-		<section name="facebookSettings" type="Facebook.FacebookConfigurationSection" />
-		<sectionGroup name="blowery.web">
-			<section name="httpCompress" type="blowery.Web.HttpCompress.SectionHandler, blowery.Web.HttpCompress" />
-		</sectionGroup>
-		<section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" requirePermission="false" />
-		<sectionGroup name="providers">
-			<section name="log" type="Appleseed.Framework.Provider.ProviderConfigurationHandler, Appleseed.Framework.Core" requirePermission="false" />
-			<section name="urlBuilder" type="Appleseed.Framework.Provider.ProviderConfigurationHandler, Appleseed.Framework.Core" requirePermission="false" />
-			<section name="geographic" type="Appleseed.Framework.Provider.ProviderConfigurationHandler, Appleseed.Framework.Core" requirePermission="false" />
-		</sectionGroup>
-		<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
-		<sectionGroup name="system.web.extensions" type="System.Web.Configuration.SystemWebExtensionsSectionGroup, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
-			<sectionGroup name="scripting" type="System.Web.Configuration.ScriptingSectionGroup, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
-			</sectionGroup>
-		</sectionGroup>
-		<sectionGroup name="system.web.webPages.razor" type="System.Web.WebPages.Razor.Configuration.RazorWebSectionGroup, System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
-		  <section name="host" type="System.Web.WebPages.Razor.Configuration.HostSection, System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" />
-		  <section name="pages" type="System.Web.WebPages.Razor.Configuration.RazorPagesSection, System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" />
-		</sectionGroup>
-	</configSections>
-	 <system.web.webPages.razor>
-    <host factoryType="System.Web.Mvc.MvcWebRazorHostFactory, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+
+<configuration>
+  <configSections>
+    <section name="dataConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.DatabaseSettings, Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <section name="cachingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheManagerSettings, Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <section name="facebookSettings" type="Facebook.FacebookConfigurationSection" />
+    <sectionGroup name="blowery.web">
+      <section name="httpCompress" type="blowery.Web.HttpCompress.SectionHandler, blowery.Web.HttpCompress" />
+    </sectionGroup>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" requirePermission="false" />
+    <sectionGroup name="providers">
+      <section name="log" type="Appleseed.Framework.Provider.ProviderConfigurationHandler, Appleseed.Framework.Core" requirePermission="false" />
+      <section name="urlBuilder" type="Appleseed.Framework.Provider.ProviderConfigurationHandler, Appleseed.Framework.Core" requirePermission="false" />
+      <section name="geographic" type="Appleseed.Framework.Provider.ProviderConfigurationHandler, Appleseed.Framework.Core" requirePermission="false" />
+    </sectionGroup>
+    <section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
+    <sectionGroup name="system.web.extensions" type="System.Web.Configuration.SystemWebExtensionsSectionGroup, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      <sectionGroup name="scripting" type="System.Web.Configuration.ScriptingSectionGroup, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      </sectionGroup>
+    </sectionGroup>
+    <sectionGroup name="system.web.webPages.razor" type="System.Web.WebPages.Razor.Configuration.RazorWebSectionGroup, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      <section name="host" type="System.Web.WebPages.Razor.Configuration.HostSection, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" />
+      <section name="pages" type="System.Web.WebPages.Razor.Configuration.RazorPagesSection, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" />
+    </sectionGroup>
+
+  </configSections>
+  <system.web.webPages.razor>
+    <host factoryType="System.Web.Mvc.MvcWebRazorHostFactory, System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
     <pages pageBaseType="System.Web.Mvc.WebViewPage">
       <namespaces>
         <add namespace="System.Web.Mvc" />
@@ -34,227 +36,245 @@
       </namespaces>
     </pages>
   </system.web.webPages.razor>
-	<blowery.web>
-		<httpCompress preferredAlgorithm="deflate" compressionLevel="normal">
-			<excludedMimeTypes>
-				<add type="image/jpeg" />
-				<add type="image/gif" />
-			</excludedMimeTypes>
-			<excludedPaths>
-				<add path="WebResource.axd" />
-				<add path="FtbWebResource.axd" />
-				<add path="NoCompress.aspx" />
-			</excludedPaths>
-		</httpCompress>
-	</blowery.web>
-	<connectionStrings>
-		<add name="ConnectionString" connectionString="foo" providerName="System.Data.SqlClient" />
-		<add name="AppleseedDBContext" connectionString="foo" providerName="System.Data.EntityClient" />
-		<add name="AppleseedMembershipEntities" connectionString="foo" providerName="System.Data.EntityClient" />
-		<add name="SelfUpdaterEntities" connectionString="metadata=res://*/Models.SelfUpdater.csdl|res://*/Models.SelfUpdater.ssdl|res://*/Models.SelfUpdater.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.;Initial Catalog=AppleseedGoogle;User ID=foo;Password=foo;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
-	</connectionStrings>
-	<cachingConfiguration defaultCacheManager="CacheManager">
-		<cacheManagers>
-			<add expirationPollFrequencyInSeconds="60" maximumElementsInCacheBeforeScavenging="1000" numberToRemoveWhenScavenging="10" backingStoreName="Null Storage" name="CacheManager" />
-		</cacheManagers>
-		<backingStores>
-			<add encryptionProviderName="" type="Microsoft.Practices.EnterpriseLibrary.Caching.BackingStoreImplementations.NullBackingStore, Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" name="Null Storage" />
-		</backingStores>
-	</cachingConfiguration>
-	<!-- Application specific settings -->
-	<appSettings file="Appleseed.config">
-		<add key="ChartImageHandler" value="Storage=file;Timeout=20;Url=~/images/;" />
-		<add key="CSSFriendly-JavaScript-Path" value="~/aspnet_client/CSSControlAdapters" />
-		<add key="GoogleMaps.ApiKey" value="" />
-		<!-- ########################################################### -->
-		<add key="AppleseedConfigUpdated" value="06/03/2006" />
-		<add key="EnableMultiDbSupport" value="false" />
-		<add key="SchedulerEnable" value="false" />
-		<add key="SchedulerCacheSize" value="100" />
-		<add key="SchedulerPeriod" value="60000" />
-		<add key="SmtpServer" value="" />
-		<add key="EmailFrom" value="" />
-		<add key="ADdns" value="LDAP://DomainControllerName/DC=MyDomain, DC=com; WinNT://MyDomain" />
-		<add key="ADAdministratorGroup" value="MyDomain\Administrators" />
-		<add key="EnableADUser" value="false" />
-		<add key="ADUserName" value="MyDomain\UserName" />
-		<add key="ADUserPassword" value="password" />
-		<add key="EncryptPassword" value="" />
-		<add key="DefaultLanguage" value="en" />
+  <blowery.web>
+    <httpCompress preferredAlgorithm="deflate" compressionLevel="normal">
+      <excludedMimeTypes>
+        <add type="image/jpeg" />
+        <add type="image/gif" />
+      </excludedMimeTypes>
+      <excludedPaths>
+        <add path="WebResource.axd" />
+        <add path="FtbWebResource.axd" />
+        <add path="NoCompress.aspx" />
+      </excludedPaths>
+    </httpCompress>
+  </blowery.web>
+ <connectionStrings>
+   <add name="ConnectionString" connectionString="foo" providerName="System.Data.SqlClient" />
+   <add name="AppleseedDBContext" connectionString="foo" providerName="System.Data.EntityClient" />
+   <add name="AppleseedMembershipEntities" connectionString="foo" providerName="System.Data.EntityClient" />
+   <add name="SelfUpdaterEntities" connectionString="foo" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+
+  <cachingConfiguration defaultCacheManager="CacheManager">
+    <cacheManagers>
+      <add expirationPollFrequencyInSeconds="60" maximumElementsInCacheBeforeScavenging="1000" numberToRemoveWhenScavenging="10" backingStoreName="Null Storage" name="CacheManager" />
+    </cacheManagers>
+    <backingStores>
+      <add encryptionProviderName="" type="Microsoft.Practices.EnterpriseLibrary.Caching.BackingStoreImplementations.NullBackingStore, Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" name="Null Storage" />
+    </backingStores>
+  </cachingConfiguration>
+  <!-- Application specific settings -->
+  <appSettings file="Appleseed.config">
+    <add key="ChartImageHandler" value="Storage=file;Timeout=20;Url=~/images/;" />
+    <add key="CSSFriendly-JavaScript-Path" value="~/aspnet_client/CSSControlAdapters" />
+    <add key="GoogleMaps.ApiKey" value="" />
+    <!-- ########################################################### -->
+    <add key="AppleseedConfigUpdated" value="06/03/2006" />
+    <add key="EnableMultiDbSupport" value="false" />
+    <add key="SchedulerEnable" value="false" />
+    <add key="SchedulerCacheSize" value="100" />
+    <add key="SchedulerPeriod" value="60000" />
+    <add key="SmtpServer" value="" />
+    <add key="EmailFrom" value="" />
+    <add key="ADdns" value="LDAP://DomainControllerName/DC=MyDomain, DC=com; WinNT://MyDomain" />
+    <add key="ADAdministratorGroup" value="MyDomain\Administrators" />
+    <add key="EnableADUser" value="false" />
+    <add key="ADUserName" value="MyDomain\UserName" />
+    <add key="ADUserPassword" value="password" />
+    <add key="EncryptPassword" value="" />
+    <add key="DefaultLanguage" value="en" />
     <add key="DefaultLanguageList" value="en;es;ar;bg;ca;cs;da;de;el;en-GB;en-US;es-ES;es-MX;fr;fr-FR;he;hi;hr;is;it;ja;ko;nl;nl-BE;no;pl;pt;ru;sl;sv;tr;uk;vi;zh-CN;zh-TW;" />
     <add key="ProxyServer" value="http://127.0.0.1" />
-		<add key="ProxyUserID" />
-		<add key="ProxyPassword" />
-		<add key="ProxyDomain" />
-		<add key="UseProxyServerForServerWebRequests" value="false" />
-		<add key="DefaultPortal" value="Appleseed" />
-		<add key="PortalTitlePrefix" value="" />
-		<add key="PortalsDirectory" value="Portals" />
-		<add key="RemoveDomainPrefixes" value="true" />
-		<add key="ForceFullRemoving" value="true" />
-		<add key="RemoveTLD" value="true" />
-		<add key="DomainPrefixes" value="www;local;test;dev" />
-		<add key="SecondLevelDomains" value="aero;biz;com;coop;info;museum;name;net;org;pro;gov;edu;mil;int;co;ac;sch;nhs;police;mod;ltd;plc;me;dyndns;uy" />
-		<add key="DefaultTheme" value="Default" />
-		<add key="UseSingleUserBase" value="false" />
-		<add key="EnableMonitoring" value="true" />
-		<add key="EnableWebCompile" value="false" />
-		<add key="AmazonPromoCode" value="" />
-		<add key="AmazonDevToken" />
-		<add key="ELBScriptPath" value="aspnet_client/ELB" />
-		<add key="UseSettingsGroupingTabs" value="true" />
-		<add key="SettingsGroupingWidth" value="600" />
-		<add key="SettingsGroupingHeight" value="350" />
-		<add key="UrlToleranceLevel" value="3" />
-		<add key="SmartErrorRedirect" value="~/app_support/SmartError.aspx" />
-		<add key="InvalidPageIdRedirect" value="~/app_support/SmartError.aspx" />
-		<add key="InvalidAliasRedirect" value="~/app_support/SmartError.aspx" />
-		<add key="DatabaseUpdateResponse" value="503" />
-		<add key="DatabaseUpdateRedirect" value="~/Installer/Update.aspx" />
-		<add key="InstallerRedirect" value="~/Installer/default.aspx" />
-		<add key="LockAllPortals" value="false" />
-		<add key="LockKeyHolders" value="127.0.0.1;::1" />
-		<add key="LockResponse" value="503" />
-		<add key="LockRedirect" value="~/app_support/ErrorLocked.aspx" />
-		<add key="CriticalErrorResponse" value="503" />
-		<add key="CriticalErrorRedirect" value="~/app_support/GeneralError.aspx" />
-		<add key="NoPortalErrorResponse" value="404" />
-		<add key="NoPortalErrorRedirect" value="~/app_support/ErrorNoPortal.aspx" />
-		<add key="CodeUpdateResponse" value="503" />
-		<add key="CodeUpdateRedirect" value="~/app_support/GeneralError.aspx" />
-		<add key="DatabaseErrorResponse" value="503" />
-		<add key="DatabaseErrorRedirect" value="~/app_support/GeneralError.aspx" />
-		<add key="ForceExpire" value="false" />
-		<add key="CookieExpire" value="60" />
-		<add key="AlternateLogLocation" />
-		<add key="LogMessageMode" value="Full" />
-		<add key="LogFileFormat" value="Daily" />
-		<add key="LogToFile" value="true" />
-		<add key="LogToFileErrorList" value="All" />
-		<add key="LogToEventLog" value="false" />
-		<add key="LogToEventLogErrorList" value="403 500" />
-		<add key="SupportEventLogSource" value="Application" />
-		<add key="LogToEmail" value="false" />
-		<add key="LogToEmailErrorList" value="403 500" />
-		<add key="SupportFromEmailAddress" value="portaladmin@localhost.com" />
-		<add key="SupportToEmailAddress" value="portaladmin@localhost.com" />
-		<add key="HandlerTargetUrl" value="DesktopDefault.aspx" />
-		<add key="enableSendMail" value="true"></add>
-		<add key="mailsToSend" value="10"></add>
-		<add key="WindowMgmtControls" value="true" />
-		<add key="WindowMgmtWantClose" value="false" />
-		<add key="CheckForFilePermission" value="false" />
-		<add key="Ie7Script" value="/aspnet_client/ie7/0_9/ie7-standard-p.js" />
-		<add key="DefaultDOCTYPE" value="&lt;!DOCTYPE HTML PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd' &gt;" />
-		<add key="PortalSettingCaching" value="0" />
-		<add key="ModuleOverrideCache" value="0" />
-		<add key="HandlerDefaultSplitter" value="__" />
-		<add key="HandlerFlag" value="site" />
-		<add key="UseAlias" value="false" />
-		<add key="LangInURL" value="false" />
-		<add key="FriendlyPageName" value="Default.aspx" />
-		<add key="PageIdNoSplitter" value="false" />
-		<add key="LANGUAGE_PT" value="BR"></add>
-		<add key="LANGUAGE_EN" value="GB"></add>
-		<add key="LANGUAGE_ES" value="ES"></add>
-		<add key="ImagesRepository" value="/Content/Uploads" />
-		<add key="ImagesRepositoryRelative" value="/Content/Uploads" />
-		<add key="RouteTesting" value="false" />
-		<add key="ScriptsModeDebug" value="false" />
-		<add key="PackageSource" value="http://www.myget.org/F/appleseed/" />
-		<add key="AddWwwToRequest" value="false" />
-		<add key="MaxTokenDays" value="7" /> <!-- In days -->
-		<add key="ViewEngineCacheTime" value="10" />
-		<add key="webpages:Version" value="2.0.0.0" />
-		<add key="PreserveLoginUrl" value="true" />
-		<add key="PortalSettingsCacheTime" value="0" />
-		<add key="SelfUpdaterTags" value="Appleseed" />
-		
-		
-		<add key="friendlyUrlExtension" value=".aspx" />              
-		<!--Connection string for Evolutility Database-->
-     
-		<add key="SQLConnection" value="Server=HARI;Database=Evolutility;uid=sa;pwd=123;Trusted_Connection=no;" />
-		<add key="SQLConnectionDico" value="Server=HARI;Database=Evolutility;uid=sa;pwd=123;Trusted_Connection=no;" />
+    <add key="ProxyUserID" />
+    <add key="ProxyPassword" />
+    <add key="ProxyDomain" />
+    <add key="UseProxyServerForServerWebRequests" value="false" />
+    <add key="DefaultPortal" value="Appleseed" />
+    <add key="PortalTitlePrefix" value="" />
+    <add key="PortalsDirectory" value="Portals" />
+    <add key="RemoveDomainPrefixes" value="true" />
+    <add key="ForceFullRemoving" value="true" />
+    <add key="RemoveTLD" value="true" />
+    <add key="DomainPrefixes" value="www;local;test;dev" />
+    <add key="SecondLevelDomains" value="aero;biz;com;coop;info;museum;name;net;org;pro;gov;edu;mil;int;co;ac;sch;nhs;police;mod;ltd;plc;me;dyndns;uy" />
+    <add key="DefaultTheme" value="Default" />
+    <add key="UseSingleUserBase" value="false" />
+    <add key="EnableMonitoring" value="true" />
+    <add key="EnableWebCompile" value="false" />
+    <add key="AmazonPromoCode" value="" />
+    <add key="AmazonDevToken" />
+    <add key="ELBScriptPath" value="aspnet_client/ELB" />
+    <add key="UseSettingsGroupingTabs" value="true" />
+    <add key="SettingsGroupingWidth" value="600" />
+    <add key="SettingsGroupingHeight" value="350" />
+    <add key="UrlToleranceLevel" value="3" />
+    <add key="SmartErrorRedirect" value="~/app_support/SmartError.aspx" />
+    <add key="InvalidPageIdRedirect" value="~/app_support/SmartError.aspx" />
+    <add key="InvalidAliasRedirect" value="~/app_support/SmartError.aspx" />
+    <add key="DatabaseUpdateResponse" value="503" />
+    <add key="DatabaseUpdateRedirect" value="~/Installer/Update.aspx" />
+    <add key="InstallerRedirect" value="~/Installer/default.aspx" />
+    <add key="LockAllPortals" value="false" />
+    <add key="LockKeyHolders" value="127.0.0.1;::1" />
+    <add key="LockResponse" value="503" />
+    <add key="LockRedirect" value="~/app_support/ErrorLocked.aspx" />
+    <add key="CriticalErrorResponse" value="503" />
+    <add key="CriticalErrorRedirect" value="~/app_support/GeneralError.aspx" />
+    <add key="NoPortalErrorResponse" value="404" />
+    <add key="NoPortalErrorRedirect" value="~/app_support/ErrorNoPortal.aspx" />
+    <add key="CodeUpdateResponse" value="503" />
+    <add key="CodeUpdateRedirect" value="~/app_support/GeneralError.aspx" />
+    <add key="DatabaseErrorResponse" value="503" />
+    <add key="DatabaseErrorRedirect" value="~/app_support/GeneralError.aspx" />
+    <add key="ForceExpire" value="false" />
+    <add key="CookieExpire" value="60" />
+    <add key="AlternateLogLocation" />
+    <add key="LogMessageMode" value="Full" />
+    <add key="LogFileFormat" value="Daily" />
+    <add key="LogToFile" value="true" />
+    <add key="LogToFileErrorList" value="All" />
+    <add key="LogToEventLog" value="false" />
+    <add key="LogToEventLogErrorList" value="403 500" />
+    <add key="SupportEventLogSource" value="Application" />
+    <add key="LogToEmail" value="false" />
+    <add key="LogToEmailErrorList" value="403 500" />
+    <add key="SupportFromEmailAddress" value="portaladmin@localhost.com" />
+    <add key="SupportToEmailAddress" value="portaladmin@localhost.com" />
+    <add key="HandlerTargetUrl" value="DesktopDefault.aspx" />
+    <add key="enableSendMail" value="true"></add>
+    <add key="mailsToSend" value="10"></add>
+    <add key="WindowMgmtControls" value="true" />
+    <add key="WindowMgmtWantClose" value="false" />
+    <add key="CheckForFilePermission" value="false" />
+    <add key="Ie7Script" value="/aspnet_client/ie7/0_9/ie7-standard-p.js" />
+    <add key="DefaultDOCTYPE" value="&lt;!DOCTYPE HTML PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd' &gt;" />
+    <add key="PortalSettingCaching" value="0" />
+    <add key="ModuleOverrideCache" value="0" />
+    <add key="HandlerDefaultSplitter" value="__" />
+    <add key="HandlerFlag" value="site" />
+    <add key="UseAlias" value="false" />
+    <add key="LangInURL" value="false" />
+    <add key="FriendlyPageName" value="Default.aspx" />
+    <add key="PageIdNoSplitter" value="false" />
+    <add key="LANGUAGE_PT" value="BR"></add>
+    <add key="LANGUAGE_EN" value="GB"></add>
+    <add key="LANGUAGE_ES" value="ES"></add>
+    <add key="ImagesRepository" value="/Content/Uploads" />
+    <add key="ImagesRepositoryRelative" value="/Content/Uploads" />
+    <add key="RouteTesting" value="false" />
+    <add key="ScriptsModeDebug" value="false" />
+    <add key="PackageSource" value="http://www.myget.org/F/appleseed/" />
+    <add key="AddWwwToRequest" value="false" />
+    <add key="MaxTokenDays" value="7" />
+    <!-- In days -->
+    <add key="ViewEngineCacheTime" value="0" />
+    <add key="webpages:Version" value="3.0.0.0" />
+    <add key="PreserveLoginUrl" value="true" />
+    <add key="PortalSettingsCacheTime" value="0" />
+    <add key="SelfUpdaterTags" value="Appleseed" />
 
-		<!-- Filemanager Default Listing view - SmallView / DetailView -->
-		<add key="FileManager.DefaultView" value="DetailView" />
+    <!-- Ashish.patel@haptix.biz - 2014/12/16 - Page Friendly URL Extension-->
+    <add key="friendlyUrlExtension" value=".aspx" />
 
-		<!-- Filemanager supported extenstion list for edit in file manager.
-        list must be comma separated -->
-              <add key="FileManager.Edit.SupportExtenstion" value="zip,7z,rar,rtf,wpd,wks,wps,gif,bmp,tif,tiff,doc,docx,png,jpeg,jpg,pdf,html,txt,aspx,ascx,css,js,xml"/>
+    <!--Connection string for Evolutility Database-->
+    <add key="SQLConnection" value="server=foo;uid=foo;pwd=foo;Trusted_Connection=no;database=foo" />
+    <add key="SQLConnectionDico" value="server=foo;uid=foo;pwd=foo;Trusted_Connection=no;database=foo" />
 
+    <!-- Filemanager Default Listing view - SmallView / DetailView -->
+    <add key="FileManager.DefaultView" value="DetailView" />
+
+    <!-- Filemanager supported extenstion list for edit in file manager.
+          list must be comma separated -->
+    <add key="FileManager.Edit.SupportExtenstion" value="doc,docx,png,jpeg,jpg,pdf,html,txt,aspx,ascx,css,js,xml" />
+
+    <!-- Filemanager supported extenstion list to ALLOW UPLOAD in file manager.
+          list must be comma separated -->
+    <add key="FileManager.Upload.SupportExtenstion" value="jpg,jpeg,doc,docx,zip,gif,png,pdf,rar,svg,svgz,xls,xlsx,ppt,pps,pptx,js,7z,rar,rtf,wpd,wks,wps,gif,bmp,tif,tiff" />
+    
     <!--File Manager - Allow folders in left side Tree-->
-             <add key="FileManager.AllowFolders.Tree" value="Portals|Design|DesktopModules|rb_logs"/>
+    <add key="FileManager.AllowFolders.Tree" value="Portals|Design|DesktopModules|rb_logs" />
 
-		<!--For loading default.css | True = load on top/false = leave as it is -->
-		<add key="CSSLoadTop" value="true" />
-		<!--Xslt file path -->
-		<add key="XsltFilePath" value="/Portals/_Appleseed/XsltSource.Xslt" />
-		 
-	</appSettings>
-	<system.net>
-		<mailSettings>
-			<smtp deliveryMethod="network" from="info@Appleseedportal.net">
-				<network host="127.0.0.1">
-				</network>
-			</smtp>
-		</mailSettings>
-	</system.net>
-	<system.web>
-		<anonymousIdentification enabled="true" />
-		<trust level="Full" />
-		<membership defaultProvider="AppleseedMembershipProvider">
-			<providers>
-				<clear />
-				<add name="AppleseedMembershipProvider" type="Appleseed.Framework.Providers.AppleseedMembershipProvider.AppleseedSqlMembershipProvider, Appleseed.Framework.Providers.AppleseedSqlMembershipProvider" connectionStringName="ConnectionString" applicationName="Appleseed" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="true" passwordFormat="Hashed" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="5" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" passwordStrengthRegularExpression="" />
-			</providers>
-		</membership>
-		<roleManager enabled="true" defaultProvider="AppleseedSqlRoleProvider" cacheRolesInCookie="false" cookieName=".AppleseedRolesCookie" cookieTimeout="30" cookieSlidingExpiration="true" cookieProtection="All">
-			<providers>
-				<clear />
-				<add name="AppleseedSqlRoleProvider" type="Appleseed.Framework.Providers.AppleseedRoleProvider.AppleseedSqlRoleProvider, Appleseed.Framework.Providers.AppleseedSqlRoleProvider" connectionStringName="ConnectionString" applicationName="Appleseed" />
-			</providers>
-		</roleManager>
-		<profile enabled="true" defaultProvider="TableProfileProvider">
-			<providers>
-				<clear />
-				<add name="AppleseedSqlProfileProvider" connectionStringName="ConnectionString" applicationName="Appleseed" type="System.Web.Profile.SqlProfileProvider" />
-				<add name="TableProfileProvider" type="Microsoft.Samples.SqlTableProfileProvider, Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider" connectionStringName="ConnectionString" table="aspnet_CustomProfile" applicationName="Appleseed" />
-			</providers>
-			<properties>
-				<add name="Name" customProviderData="Name;nvarchar" />
-				<add name="Company" customProviderData="Company;nvarchar" />
-				<add name="Address" customProviderData="Address;nvarchar" />
-				<add name="Zip" customProviderData="Zip;nvarchar" />
-				<add name="City" customProviderData="City;nvarchar" />
-				<!--<add name="CountryCode" customProviderData="CountryCode;nchar"/>-->
-				<add name="CountryID" customProviderData="CountryCode;nchar" />
-				<add name="StateId" customProviderData="StateId;int" type="System.Int32" />
-				<add name="Fax" customProviderData="Fax;nvarchar" />
-				<add name="Phone" customProviderData="Phone;nvarchar" />
-				<add name="SendNewsletter" customProviderData="SendNewsletter;bit" type="System.Boolean" />
-				<add name="CategoryId" type="System.Int32" customProviderData="CategoryId;int" />
-				<add name="Email" customProviderData="Email;nvarchar" />
-				<add name="BirthDate" customProviderData="BirthDate;datetime" type="System.DateTime" />
-				<!--<add name="StateID" type="System.Int32"/>-->
-			</properties>
-		</profile>
-		<siteMap enabled="true" defaultProvider="AppleseedSqlSiteMapProvider">
-			<providers>
-				<add name="AppleseedSqlSiteMapProvider" type="Appleseed.Framework.Providers.AppleseedSiteMapProvider.AppleseedSqlSiteMapProvider" securityTrimmingEnabled="true" connectionStringName="ConnectionString" description="Appleseed SQL Server site map provider" />
-			</providers>
-		</siteMap>
-		<caching>
-			<sqlCacheDependency enabled="true" pollTime="5000">
-				<databases>
-					<add name="Appleseed2.0-dev" connectionStringName="ConnectionString" />
-				</databases>
-			</sqlCacheDependency>
-		</caching>
-		<browserCaps>
-			<!-- AppleWebKit Based Browsers (Safari...) //-->
-			<case match="AppleWebKit/(?'version'(?'major'\d?)(?'minor'\d{2})(?'letters'\w*)?)">
+    <!--For loading default.css | True = load on top/false = leave as it is -->
+    <add key="CSSLoadTop" value="true" />
+
+    <!--Xslt file path -->
+    <add key="XsltFilePath" value="/Portals/_Appleseed/XsltSource.Xslt" />
+
+
+    <!--Default Country US-->
+    <add key="DefaultCountry_US" value="US" />
+
+    <!--Remember me session timeout -->
+    <add key="RememberMe.Session.TimeOut" value="-1" />
+
+  </appSettings>
+  <system.net>
+    <mailSettings>
+      <smtp deliveryMethod="network" from="info@Appleseedportal.net">
+        <network
+         host="localhost"
+         port="25"
+         defaultCredentials="true"
+        />
+
+      </smtp>
+    </mailSettings>
+  </system.net>
+  <system.web>
+    <anonymousIdentification enabled="true" />
+    <trust level="Full" />
+    <membership defaultProvider="AppleseedMembershipProvider">
+      <providers>
+        <clear />
+        <add name="AppleseedMembershipProvider" type="Appleseed.Framework.Providers.AppleseedMembershipProvider.AppleseedSqlMembershipProvider, Appleseed.Framework.Providers.AppleseedSqlMembershipProvider" connectionStringName="ConnectionString" applicationName="Appleseed" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="true" passwordFormat="Hashed" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="5" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" passwordStrengthRegularExpression="" />
+      </providers>
+    </membership>
+    <roleManager enabled="true" defaultProvider="AppleseedSqlRoleProvider" cacheRolesInCookie="false" cookieName=".AppleseedRolesCookie" cookieTimeout="30" cookieSlidingExpiration="true" cookieProtection="All">
+      <providers>
+        <clear />
+        <add name="AppleseedSqlRoleProvider" type="Appleseed.Framework.Providers.AppleseedRoleProvider.AppleseedSqlRoleProvider, Appleseed.Framework.Providers.AppleseedSqlRoleProvider" connectionStringName="ConnectionString" applicationName="Appleseed" />
+      </providers>
+    </roleManager>
+    <profile enabled="true" defaultProvider="TableProfileProvider">
+      <providers>
+        <clear />
+        <add name="AppleseedSqlProfileProvider" connectionStringName="ConnectionString" applicationName="Appleseed" type="System.Web.Profile.SqlProfileProvider" />
+        <add name="TableProfileProvider" type="Microsoft.Samples.SqlTableProfileProvider, Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider" connectionStringName="ConnectionString" table="aspnet_CustomProfile" applicationName="Appleseed" />
+      </providers>
+      <properties>
+        <add name="Name" customProviderData="Name;nvarchar" />
+        <add name="Company" customProviderData="Company;nvarchar" />
+        <add name="Address" customProviderData="Address;nvarchar" />
+        <add name="Zip" customProviderData="Zip;nvarchar" />
+        <add name="City" customProviderData="City;nvarchar" />
+        <!--<add name="CountryCode" customProviderData="CountryCode;nchar"/>-->
+        <add name="CountryID" customProviderData="CountryCode;nchar" />
+        <add name="StateId" customProviderData="StateId;int" type="System.Int32" />
+        <add name="Fax" customProviderData="Fax;nvarchar" />
+        <add name="Phone" customProviderData="Phone;nvarchar" />
+        <add name="SendNewsletter" customProviderData="SendNewsletter;bit" type="System.Boolean" />
+        <add name="CategoryId" type="System.Int32" customProviderData="CategoryId;int" />
+        <add name="Email" customProviderData="Email;nvarchar" />
+        <add name="BirthDate" customProviderData="BirthDate;datetime" type="System.DateTime" />
+        <!--<add name="StateID" type="System.Int32"/>-->
+      </properties>
+    </profile>
+    <siteMap enabled="true" defaultProvider="AppleseedSqlSiteMapProvider">
+      <providers>
+        <add name="AppleseedSqlSiteMapProvider" type="Appleseed.Framework.Providers.AppleseedSiteMapProvider.AppleseedSqlSiteMapProvider" securityTrimmingEnabled="true" connectionStringName="ConnectionString" description="Appleseed SQL Server site map provider" />
+      </providers>
+    </siteMap>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="5000">
+        <databases>
+          <add name="Appleseed2.0-dev" connectionStringName="ConnectionString" />
+        </databases>
+      </sqlCacheDependency>
+    </caching>
+    <browserCaps>
+      <!-- AppleWebKit Based Browsers (Safari...) //-->
+      <case match="AppleWebKit/(?'version'(?'major'\d?)(?'minor'\d{2})(?'letters'\w*)?)">
         browser=AppleWebKit
         version=${version}
         majorversion=0${major}
@@ -270,12 +290,12 @@
         css2=true
         xml=true
         tagwriter=System.Web.UI.HtmlTextWriter
-			<case match="AppleWebKit/(?'version'(?'major'\d)(?'minor'\d+)(?'letters'\w*))(.* )?(?'type'[^/\d]*)/.*( |$)">
-		type=${type}
-			</case>
-			</case>
-			<!-- Konqueror //-->
-			<case match=".+[K|k]onqueror/(?'version'(?'major'\d+)(?'minor'(\.[\d])*)(?'letters'[^;]*));\s+(?'platform'[^;\)]*)(;|\))">
+        <case match="AppleWebKit/(?'version'(?'major'\d)(?'minor'\d+)(?'letters'\w*))(.* )?(?'type'[^/\d]*)/.*( |$)">
+          type=${type}
+        </case>
+      </case>
+      <!-- Konqueror //-->
+      <case match=".+[K|k]onqueror/(?'version'(?'major'\d+)(?'minor'(\.[\d])*)(?'letters'[^;]*));\s+(?'platform'[^;\)]*)(;|\))">
         browser=Konqueror
         version=${version}
         majorversion=0${major}
@@ -293,56 +313,55 @@
         css2=true
         xml=true
         tagwriter=System.Web.UI.HtmlTextWriter
-			</case>
-			<!-- Opera //-->
-			<case match="Opera[ /](?'version'(?'major'\d+)(?'minor'\.(?'minorint'\d+))(?'letters'\w*))">
-				<filter match="[7-9]" with="${major}">
-					tagwriter=System.Web.UI.HtmlTextWriter
-				</filter>
-				<filter>
-					<case match="7" with="${major}">
-						<filter>
-							<case match="[5-9]" with="${minorint}">
+      </case>
+      <!-- Opera //-->
+      <case match="Opera[ /](?'version'(?'major'\d+)(?'minor'\.(?'minorint'\d+))(?'letters'\w*))">
+        <filter match="[7-9]" with="${major}">
+          tagwriter=System.Web.UI.HtmlTextWriter
+        </filter>
+        <filter>
+          <case match="7" with="${major}">
+            <filter>
+              <case match="[5-9]" with="${minorint}">
                 ecmascriptversion=1.5
               </case>
-							<case>
+              <case>
                 ecmascriptversion=1.4
               </case>
-						</filter>
-					</case>
-					<case match="[8-9]" with="${major}">
+            </filter>
+          </case>
+          <case match="[8-9]" with="${major}">
             ecmascriptversion=1.5
           </case>
-				</filter>
-			</case>
-		</browserCaps>
-		<!--  GLOBALIZATION
+        </filter>
+      </case>
+    </browserCaps>
+    <!--  GLOBALIZATION
           This section sets the globalization settings of the application. 
           Utf-8 is not supported on Netscape 4.x 
           If you need netscape compatiblity leave iso-8859-1.
           UTF-8 is recommended for complex languages
           ** Jes1111 - added culture, uiCulture and fileEncoding
     -->
-		<trace enabled="false" pageOutput="false" localOnly="true" />
-		<globalization requestEncoding="UTF-8" responseEncoding="UTF-8" fileEncoding="UTF-8" culture="auto:en-US" uiCulture="en-US" />
-		<!--<globalization culture="en-US" uiCulture="en"  fileEncoding="iso-8859-1" requestEncoding="iso-8859-1" responseEncoding="iso-8859-1"/>-->
-		<!--<pages validateRequest="false" viewStateEncryptionMode="Never" controlRenderingCompatibilityVersion="3.5">-->
-		<pages pageParserFilterType="System.Web.Mvc.ViewTypeParserFilter, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" pageBaseType="System.Web.Mvc.ViewPage, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" userControlBaseType="System.Web.Mvc.ViewUserControl, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validateRequest="false" viewStateEncryptionMode="Never" controlRenderingCompatibilityVersion="3.5">
-			<controls>
-				<add tagPrefix="asp" namespace="System.Web.UI.DataVisualization.Charting" assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-				<add tagPrefix="asp" namespace="System.Web.UI" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-				<add tagPrefix="ajaxtoolkit" namespace="AjaxControlToolkit" assembly="AjaxControlToolkit" />
-				<add assembly="Appleseed.Framework.Core" namespace="Appleseed.Framework.Web.UI.WebControls" tagPrefix="rbfwebui" />
-				<!--<add assembly="Appleseed.Framework.Core" namespace="Appleseed.Framework.Web.UI.WebControls.WebParts" tagPrefix="rbfwebui"/>-->
-				<add assembly="Appleseed.Framework.Web.UI.WebControls" namespace="Appleseed.Framework.Web.UI.WebControls" tagPrefix="rbfwebui" />
-				<add tagPrefix="asp" namespace="System.Web.UI.WebControls" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			</controls>
-			<namespaces>
-				<add namespace="Appleseed" />
-				<add namespace="Appleseed.Framework.Core" />
-				<add namespace="Appleseed.Framework" />
-				<add namespace="Appleseed.Framework.Site.Configuration" />
-				<add namespace="Appleseed.Framework.Web.UI.WebControls" />
+    <trace enabled="false" pageOutput="false" localOnly="true" />
+    <globalization requestEncoding="UTF-8" responseEncoding="UTF-8" fileEncoding="UTF-8" culture="auto:en-US" uiCulture="en-US" />
+    <!--<globalization culture="en-US" uiCulture="en"  fileEncoding="iso-8859-1" requestEncoding="iso-8859-1" responseEncoding="iso-8859-1"/>-->
+    <!--<pages validateRequest="false" viewStateEncryptionMode="Never" controlRenderingCompatibilityVersion="3.5">-->
+    <pages pageParserFilterType="System.Web.Mvc.ViewTypeParserFilter, System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" pageBaseType="System.Web.Mvc.ViewPage, System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" userControlBaseType="System.Web.Mvc.ViewUserControl, System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validateRequest="false" viewStateEncryptionMode="Never" controlRenderingCompatibilityVersion="3.5">
+      <controls>
+        <add tagPrefix="asp" namespace="System.Web.UI.DataVisualization.Charting" assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add tagPrefix="asp" namespace="System.Web.UI" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add tagPrefix="ajaxtoolkit" namespace="AjaxControlToolkit" assembly="AjaxControlToolkit" />
+        <add assembly="Appleseed.Framework.Core" namespace="Appleseed.Framework.Web.UI.WebControls" tagPrefix="rbfwebui" />
+        <add assembly="Appleseed.Framework.Web.UI.WebControls" namespace="Appleseed.Framework.Web.UI.WebControls" tagPrefix="rbfwebui" />
+        <add tagPrefix="asp" namespace="System.Web.UI.WebControls" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      </controls>
+      <namespaces>
+        <add namespace="Appleseed" />
+        <add namespace="Appleseed.Framework.Core" />
+        <add namespace="Appleseed.Framework" />
+        <add namespace="Appleseed.Framework.Site.Configuration" />
+        <add namespace="Appleseed.Framework.Web.UI.WebControls" />
 
         <add namespace="System.Web.Mvc" />
         <add namespace="System.Web.Mvc.Ajax" />
@@ -350,240 +369,240 @@
         <add namespace="System.Web.Routing" />
         <add namespace="System.Linq" />
         <add namespace="System.Collections.Generic" />
-        <add namespace="Microsoft.Web.Mvc" />
-			</namespaces>
-		</pages>
-		<!---->
-		<!-- Session state -->
-		<sessionState mode="InProc" />
-		<!-- set debugmode to false for running application -->
-		<compilation debug="true" defaultLanguage="c#" targetFramework="4.0">
+        
+      </namespaces>
+    </pages>
+    <!---->
+    <!-- Session state -->
+    <sessionState mode="InProc" />
+    <!-- set debugmode to false for running application -->
+    <compilation debug="true" defaultLanguage="c#" targetFramework="4.0">
       <assemblies>
         <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
         <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-        <add assembly="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
         <add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-		<add assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-		<add assembly="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-		<add assembly="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add assembly="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
 
-        <add assembly="SelfUpdater, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+        <add assembly="SelfUpdater, Version=1.0.9.0, Culture=neutral, PublicKeyToken=null" />
       </assemblies>
 
       <buildProviders>
-				<add extension="*.asbx" type="Microsoft.Web.Preview.Services.BridgeBuildProvider" />
-			</buildProviders>
-	</compilation>
-		<authentication mode="Forms">
-			<forms name=".ASPXAUTH" protection="All" timeout="525600" slidingExpiration="true" />
-		</authentication>
-		<!-- Set here max upload size -->
-		<httpRuntime waitChangeNotification="10" maxWaitChangeNotification="10" useFullyQualifiedRedirectUrl="true" maxRequestLength="50000" requestPathInvalidCharacters="" requestValidationMode="2.0" />
-		<customErrors defaultRedirect="~/app_support/GeneralError.aspx" mode="RemoteOnly" />
-		<httpHandlers>
+        <add extension="*.asbx" type="Microsoft.Web.Preview.Services.BridgeBuildProvider" />
+      </buildProviders>
+    </compilation>
+    <authentication mode="Forms">
+      <forms name=".ASPXAUTH" protection="All" timeout="525600" slidingExpiration="true" />
+    </authentication>
+    <!-- Set here max upload size -->
+    <httpRuntime waitChangeNotification="10" maxWaitChangeNotification="10" useFullyQualifiedRedirectUrl="true" maxRequestLength="50000" requestPathInvalidCharacters="" requestValidationMode="2.0" />
+    <customErrors defaultRedirect="~/app_support/GeneralError.aspx" mode="Off" />
+    <httpHandlers>
       <add verb="*" path="sitemap.axd" type="Newtonsoft.Sitemaps.SitemapHandler, Newtonsoft.Sitemaps" />
-			<add path="ChartImg.axd" verb="GET,HEAD, POST" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
-			<add verb="GET,HEAD,POST,DEBUG" path="*.jpg" type="System.Web.StaticFileHandler" />
-			<add verb="GET,HEAD,POST,DEBUG" path="*.gif" type="System.Web.StaticFileHandler" />
-			<add verb="GET,HEAD,POST,DEBUG" path="*.pdf" type="System.Web.StaticFileHandler" />
-			<remove verb="*" path="*.asmx" />
-			<add verb="*" path="*.asmx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-			<add verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
-			<add verb="GET,HEAD,POST" path="*.asbx" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
-			<add verb="GET" path="FtbWebResource.axd" type="FreeTextBoxControls.AssemblyResourceHandler, FreeTextBox" />
-			<add path="UploadDialog.aspx" verb="*" type="StaticDust.Web.UploadHandler, StaticDust.Web.UI.Controls.UploadDialog" validate="false" />
-			<!--MVC-->
-			<remove verb="*" path="*.asmx" />
-			<!--<add verb="*" path="*.asmx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>-->
-			<add verb="*" path="*_AppService.axd" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<!--<add verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false"/>-->
-			<add verb="*" path="*.mvc" validate="false" type="System.Web.Mvc.MvcHttpHandler, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-		</httpHandlers>
-		<!-- HttpURLHandler for handling url requests -->
-		<httpModules>
-			<add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-			<add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" />
-			<!--<add name="CompressionModule" type="blowery.Web.HttpCompress.HttpModule, blowery.web.HttpCompress"/>-->
-			<!--MVC -->
-			<add name="UrlRoutingModule" type="System.Web.Routing.UrlRoutingModule, System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-		</httpModules>
-		<webServices>
-			<protocols>
-				<add name="HttpGet" />
-				<add name="HttpPost" />
-			</protocols>
-		</webServices>
-	</system.web>
-	<system.webServer>
-		<security>
-			<requestFiltering>
-				<requestLimits maxAllowedContentLength="50000000">
-				</requestLimits>
-			</requestFiltering>
-		</security>
-		<validation validateIntegratedModeConfiguration="false" />
-		<modules runAllManagedModulesForAllRequests="true">
-			<!--<add name="ScriptModule" preCondition="integratedMode" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>-->
-			<remove name="ScriptModule" />
-			<remove name="UrlRoutingModule" />
-			<add name="ScriptModule" preCondition="managedHandler" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<add name="UrlRoutingModule" type="System.Web.Routing.UrlRoutingModule, System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" />
-			<remove name="Session" />
-			<add name="SessionStateModule" type="System.Web.SessionState.SessionStateModule" />
-		</modules>
-		<handlers>
-			<remove name="Wildcard" />
-			<remove name="WebServiceHandlerFactory-ISAPI-2.0" />
-			<remove name="ChartImageHandler" />
-			<add name="ChartImageHandler" preCondition="integratedMode" verb="GET,HEAD" path="ChartImg.axd" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-			<add name="ScriptHandlerFactory" verb="*" path="*.asmx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-			<add name="ScriptResource" verb="GET,HEAD" path="ScriptResource.axd" preCondition="integratedMode" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-			<add name="ASBXHandler" verb="GET,HEAD,POST" path="*.asbx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-			<remove name="WebServiceHandlerFactory-Integrated" />
-			<remove name="ScriptHandlerFactory" />
-			<remove name="ScriptHandlerFactoryAppServices" />
-			<remove name="ScriptResource" />
-			<remove name="MvcHttpHandler" />
-			<remove name="UrlRoutingHandler" />
-			<!--<add name="Wildcard" path="*" verb="*" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" preCondition="classicMode,runtimeVersionv2.0,bitness32"/>-->
-			<add name="ScriptHandlerFactory" verb="*" path="*.asmx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<add name="ScriptHandlerFactoryAppServices" verb="*" path="*_AppService.axd" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<add name="ScriptResource" preCondition="integratedMode" verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<add name="MvcHttpHandler" preCondition="integratedMode" verb="*" path="*.mvc" type="System.Web.Mvc.MvcHttpHandler, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-			<add name="UrlRoutingHandler" preCondition="integratedMode" verb="*" path="UrlRouting.axd" type="System.Web.HttpForbiddenHandler, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-			<add name="UploadDialog" path="UploadDialog.aspx" verb="*" type="StaticDust.Web.UploadHandler, StaticDust.Web.UI.Controls.UploadDialog" />
+      <add path="ChartImg.axd" verb="GET,HEAD, POST" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
+      <add verb="GET,HEAD,POST,DEBUG" path="*.jpg" type="System.Web.StaticFileHandler" />
+      <add verb="GET,HEAD,POST,DEBUG" path="*.gif" type="System.Web.StaticFileHandler" />
+      <add verb="GET,HEAD,POST,DEBUG" path="*.pdf" type="System.Web.StaticFileHandler" />
+      <remove verb="*" path="*.asmx" />
+      <add verb="*" path="*.asmx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <add verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
+      <add verb="GET,HEAD,POST" path="*.asbx" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
+      <add verb="GET" path="FtbWebResource.axd" type="FreeTextBoxControls.AssemblyResourceHandler, FreeTextBox" />
+      <add path="UploadDialog.aspx" verb="*" type="StaticDust.Web.UploadHandler, StaticDust.Web.UI.Controls.UploadDialog" validate="false" />
+      <!--MVC-->
+      <remove verb="*" path="*.asmx" />
+      <!--<add verb="*" path="*.asmx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>-->
+      <add verb="*" path="*_AppService.axd" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <!--<add verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false"/>-->
+      <add verb="*" path="*.mvc" validate="false" type="System.Web.Mvc.MvcHttpHandler, System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    </httpHandlers>
+    <!-- HttpURLHandler for handling url requests -->
+    <httpModules>
+      <add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" />
+      <!--<add name="CompressionModule" type="blowery.Web.HttpCompress.HttpModule, blowery.web.HttpCompress"/>-->
+      <!--MVC -->
+      <add name="UrlRoutingModule" type="System.Web.Routing.UrlRoutingModule, System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    </httpModules>
+    <webServices>
+      <protocols>
+        <add name="HttpGet" />
+        <add name="HttpPost" />
+      </protocols>
+    </webServices>
+  </system.web>
+  <system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="50000000">
+        </requestLimits>
+      </requestFiltering>
+    </security>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules runAllManagedModulesForAllRequests="true">
+      <!--<add name="ScriptModule" preCondition="integratedMode" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>-->
+      <remove name="ScriptModule" />
+      <remove name="UrlRoutingModule" />
+      <add name="ScriptModule" preCondition="managedHandler" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="UrlRoutingModule" type="System.Web.Routing.UrlRoutingModule, System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" />
+      <remove name="Session" />
+      <add name="SessionStateModule" type="System.Web.SessionState.SessionStateModule" />
+    </modules>
+    <handlers>
+      <remove name="Wildcard" />
+      <remove name="WebServiceHandlerFactory-ISAPI-2.0" />
+      <remove name="ChartImageHandler" />
+      <add name="ChartImageHandler" preCondition="integratedMode" verb="GET,HEAD" path="ChartImg.axd" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <add name="ScriptHandlerFactory" verb="*" path="*.asmx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <add name="ScriptResource" verb="GET,HEAD" path="ScriptResource.axd" preCondition="integratedMode" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <add name="ASBXHandler" verb="GET,HEAD,POST" path="*.asbx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <remove name="WebServiceHandlerFactory-Integrated" />
+      <remove name="ScriptHandlerFactory" />
+      <remove name="ScriptHandlerFactoryAppServices" />
+      <remove name="ScriptResource" />
+      <remove name="MvcHttpHandler" />
+      <remove name="UrlRoutingHandler" />
+      <!--<add name="Wildcard" path="*" verb="*" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" preCondition="classicMode,runtimeVersionv2.0,bitness32"/>-->
+      <add name="ScriptHandlerFactory" verb="*" path="*.asmx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="ScriptHandlerFactoryAppServices" verb="*" path="*_AppService.axd" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="ScriptResource" preCondition="integratedMode" verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="MvcHttpHandler" preCondition="integratedMode" verb="*" path="*.mvc" type="System.Web.Mvc.MvcHttpHandler, System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="UrlRoutingHandler" preCondition="integratedMode" verb="*" path="UrlRouting.axd" type="System.Web.HttpForbiddenHandler, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <add name="UploadDialog" path="UploadDialog.aspx" verb="*" type="StaticDust.Web.UploadHandler, StaticDust.Web.UI.Controls.UploadDialog" />
       <add name="Sitemap" preCondition="integratedMode" verb="*" path="sitemap.axd" type="Newtonsoft.Sitemaps.SitemapHandler, Newtonsoft.Sitemaps" />
-		</handlers>
-	</system.webServer>
-	<!-- Log 4 Net -->
-	<log4net>
-		<logger name="Appleseed">
-			<level value="ALL" />
-			<appender-ref ref="RollingFile" />
-			<appender-ref ref="SmartError" />
-			<!--<appender-ref ref="GenericAdoNetAppender" />-->
-			<!--<appender-ref ref="SmtpAppender"/>-->
-			<!--<appender-ref ref="SqlNetAppender" /> -->
-		</logger>
-		<!-- see: http://logging.apache.org/log4net/release/config-examples.html -->
-		<appender name="AdoNetAppender" type="log4net.Appender.AdoNetAppender">
-			<bufferSize value="1" />
-			<connectionString value="foo" />
-			<connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-			<commandText value="INSERT INTO Table ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)" />
-			<parameter>
-				<parameterName value="@log_date" />
-				<dbType value="DateTime" />
-				<layout type="log4net.Layout.RawTimeStampLayout" />
-			</parameter>
-			<parameter>
-				<parameterName value="@thread" />
-				<dbType value="String" />
-				<size value="255" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%thread" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@log_level" />
-				<dbType value="String" />
-				<size value="50" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%level" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@logger" />
-				<dbType value="String" />
-				<size value="255" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%logger" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@message" />
-				<dbType value="String" />
-				<size value="4000" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%message" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@exception" />
-				<dbType value="String" />
-				<size value="2000" />
-				<layout type="log4net.Layout.ExceptionLayout" />
-			</parameter>
-		</appender>
-		<appender name="GenericAdoNetAppender" type="log4net.Appender.AdoNetAppender">
-			<bufferSize value="1" />
-			<connectionString value="foo" />
-			<connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-			<commandText value="INSERT INTO Log4Net ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)" />
-			<parameter>
-				<parameterName value="@log_date" />
-				<dbType value="DateTime" />
-				<layout type="log4net.Layout.RawTimeStampLayout" />
-			</parameter>
-			<parameter>
-				<parameterName value="@thread" />
-				<dbType value="String" />
-				<size value="255" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%thread" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@log_level" />
-				<dbType value="String" />
-				<size value="50" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%level" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@logger" />
-				<dbType value="String" />
-				<size value="255" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%logger" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@message" />
-				<dbType value="String" />
-				<size value="4000" />
-				<layout type="log4net.Layout.PatternLayout">
-					<conversionPattern value="%message" />
-				</layout>
-			</parameter>
-			<parameter>
-				<parameterName value="@exception" />
-				<dbType value="String" />
-				<size value="2000" />
-				<layout type="log4net.Layout.ExceptionLayout" />
-			</parameter>
-		</appender>
-		<!-- see: http://logging.apache.org/log4net/release/config-examples.html -->
-		<appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
-			<!-- .resx extension is not served -->
-			<file value="rb_logs/rb_log.resx" />
-			<appendToFile value="true" />
-			<rollingStyle value="Date" />
-			<!-- starts new logfile each day -->
-			<datePattern value="yyyyMMdd" />
-			<layout type="log4net.Layout.PatternLayout">
-				<conversionPattern value="***Level: %level%n%date{ISO8601}%nAppl.Uptime: %timestamp ms%nLogger: %logger%n%message%nCode version: %property{CodeVersion}%n%property{RewrittenUrl}%n%exception" />
-			</layout>
-		</appender>
-		<appender name="SmartError" type="log4net.Appender.MemoryAppender">
-			<layout type="log4net.Layout.PatternLayout">
-				<conversionPattern value="&#xA;          &lt;table class='SmartErrorSupportInfo'&gt;&#xA;          &lt;tr&gt;&lt;td colspan='2'&gt;&lt;b&gt;%level&lt;/b&gt; %date{ISO8601} (Uptime: %timestampms)&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;Message&lt;/td&gt;&lt;td&gt;%message&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;RewrittenURL&lt;/td&gt;&lt;td&gt;&lt;a href='%property{RewrittenUrl}'&gt;%property{RewrittenUrl}&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;CodeVersion&lt;/td&gt;&lt;td&gt;%property{CodeVersion}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;User&lt;/td&gt;&lt;td&gt;%property{User}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;UserAgent&lt;/td&gt;&lt;td&gt;%property{UserAgent}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;UserIP&lt;/td&gt;&lt;td&gt;%property{UserIP}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;UserLanguages&lt;/td&gt;&lt;td&gt;%property{UserLanguages}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;Exception&lt;/td&gt;&lt;td&gt;%exception&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" />
-			</layout>
-		</appender>
-	</log4net>
-	<!--
+    </handlers>
+  </system.webServer>
+  <!-- Log 4 Net -->
+  <log4net>
+    <logger name="Appleseed">
+      <level value="ALL" />
+      <appender-ref ref="RollingFile" />
+      <appender-ref ref="SmartError" />
+      <!--<appender-ref ref="GenericAdoNetAppender" />-->
+      <!--<appender-ref ref="SmtpAppender"/>-->
+      <!--<appender-ref ref="SqlNetAppender" /> -->
+    </logger>
+    <!-- see: http://logging.apache.org/log4net/release/config-examples.html -->
+    <appender name="AdoNetAppender" type="log4net.Appender.AdoNetAppender">
+      <bufferSize value="1" />
+      <connectionString value="foo" />
+      <connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <commandText value="INSERT INTO Table ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)" />
+      <parameter>
+        <parameterName value="@log_date" />
+        <dbType value="DateTime" />
+        <layout type="log4net.Layout.RawTimeStampLayout" />
+      </parameter>
+      <parameter>
+        <parameterName value="@thread" />
+        <dbType value="String" />
+        <size value="255" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@log_level" />
+        <dbType value="String" />
+        <size value="50" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger" />
+        <dbType value="String" />
+        <size value="255" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message" />
+        <dbType value="String" />
+        <size value="4000" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@exception" />
+        <dbType value="String" />
+        <size value="2000" />
+        <layout type="log4net.Layout.ExceptionLayout" />
+      </parameter>
+    </appender>
+    <appender name="GenericAdoNetAppender" type="log4net.Appender.AdoNetAppender">
+      <bufferSize value="1" />
+      <connectionString value="foo" />
+      <connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <commandText value="INSERT INTO Log4Net ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)" />
+      <parameter>
+        <parameterName value="@log_date" />
+        <dbType value="DateTime" />
+        <layout type="log4net.Layout.RawTimeStampLayout" />
+      </parameter>
+      <parameter>
+        <parameterName value="@thread" />
+        <dbType value="String" />
+        <size value="255" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@log_level" />
+        <dbType value="String" />
+        <size value="50" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger" />
+        <dbType value="String" />
+        <size value="255" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message" />
+        <dbType value="String" />
+        <size value="4000" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@exception" />
+        <dbType value="String" />
+        <size value="2000" />
+        <layout type="log4net.Layout.ExceptionLayout" />
+      </parameter>
+    </appender>
+    <!-- see: http://logging.apache.org/log4net/release/config-examples.html -->
+    <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+      <!-- .resx extension is not served -->
+      <file value="rb_logs/rb_log.resx" />
+      <appendToFile value="true" />
+      <rollingStyle value="Date" />
+      <!-- starts new logfile each day -->
+      <datePattern value="yyyyMMdd" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="***Level: %level%n%date{ISO8601}%nAppl.Uptime: %timestamp ms%nLogger: %logger%n%message%nCode version: %property{CodeVersion}%n%property{RewrittenUrl}%n%exception" />
+      </layout>
+    </appender>
+    <appender name="SmartError" type="log4net.Appender.MemoryAppender">
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="&#xA;          &lt;table class='SmartErrorSupportInfo'&gt;&#xA;          &lt;tr&gt;&lt;td colspan='2'&gt;&lt;b&gt;%level&lt;/b&gt; %date{ISO8601} (Uptime: %timestampms)&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;Message&lt;/td&gt;&lt;td&gt;%message&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;RewrittenURL&lt;/td&gt;&lt;td&gt;&lt;a href='%property{RewrittenUrl}'&gt;%property{RewrittenUrl}&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;CodeVersion&lt;/td&gt;&lt;td&gt;%property{CodeVersion}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;User&lt;/td&gt;&lt;td&gt;%property{User}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;UserAgent&lt;/td&gt;&lt;td&gt;%property{UserAgent}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;UserIP&lt;/td&gt;&lt;td&gt;%property{UserIP}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;UserLanguages&lt;/td&gt;&lt;td&gt;%property{UserLanguages}&lt;/td&gt;&lt;/tr&gt;&#xA;          &lt;tr&gt;&lt;td&gt;Exception&lt;/td&gt;&lt;td&gt;%exception&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" />
+      </layout>
+    </appender>
+  </log4net>
+  <!--
   Name conventions for provider class:
   Specific type + Provider Type + "Provider" keyword
   eg: AccessLogProvider or SqlLogProvider or Log4NetLogProvider
@@ -596,77 +615,80 @@
   Specific type + Provider Type, remove "Provider" keyword
   eg: AccessLog or SqlLog or Log4NetLog
   -->
-	<providers>
-		<log defaultProvider="Log4NetLog">
-			<providers>
-				<clear />
-				<add name="Log4NetLog" type="Appleseed.Framework.Logging.Log4NetLogProvider, Appleseed.Framework.Core" />
-			</providers>
-		</log>
-		<urlBuilder defaultProvider="SqlUrlBuilder">
-			<providers>
-				<clear />
-				<add name="SqlUrlBuilder" type="Appleseed.Framework.Web.SqlUrlBuilderProvider, Appleseed.Framework.Core" handlerflag="site" handlersplitter="__" pageidnosplitter="true" friendlypagename="default.aspx" aliasinurl="false" langinurl="false" cacheminutes="5" ignoretargetpage="PageLayout.aspx" ShowHieranchy="true" friendlyUrlExtension=".aspx" />
-			</providers>
-		</urlBuilder>
-		<geographic defaultProvider="GeographicProvider">
-			<providers>
-				<clear />
-				<add name="GeographicProvider" type="Appleseed.Framework.Providers.Geographic.SqlGeographicProvider, Appleseed.Framework.Core" countriesFilter="" />
-			</providers>
-		</geographic>
-	</providers>
-	<urlrewritingnet xmlns="http://www.urlrewriting.net/schemas/config/2006/07">
-		<providers>
-			<add name="AppleseedUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
-			<add name="AppleseedSeoUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedSeoUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
-		</providers>
-    
-		<rewrites>
-			<!--<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />-->
-			<add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
-			<!--<add name="AppleseedSeoUrl" provider="AppleseedSeoUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="true" friendlyPageName="DesktopDefault.aspx" />-->
-			<add name="AppleseedSeoUrl" provider="AppleseedSeoUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
-		</rewrites>
-	</urlrewritingnet>
-	<system.codedom>
-	</system.codedom>
-	<runtime>
-		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-			<dependentAssembly>
-				<assemblyIdentity name="System.Web.Extensions" publicKeyToken="31bf3856ad364e35" />
-				<!--<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" />-->
-				<bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
-			</dependentAssembly>
-			<dependentAssembly>
-				<assemblyIdentity name="System.Web.Extensions.Design" publicKeyToken="31bf3856ad364e35" />
-				<!--<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" /> -->
-				<bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
-			</dependentAssembly>
+  <providers>
+    <log defaultProvider="Log4NetLog">
+      <providers>
+        <clear />
+        <add name="Log4NetLog" type="Appleseed.Framework.Logging.Log4NetLogProvider, Appleseed.Framework.Core" />
+      </providers>
+    </log>
+    <urlBuilder defaultProvider="SqlUrlBuilder">
+      <providers>
+        <clear />
+        <!-- Ashish.patel@haptix.biz - 2014/12/16 - Page Friendly URL Extension-->
+        <add name="SqlUrlBuilder" type="Appleseed.Framework.Web.SqlUrlBuilderProvider, Appleseed.Framework.Core" handlerflag="site" handlersplitter="__" pageidnosplitter="true" friendlypagename="default.aspx" aliasinurl="false" langinurl="false" cacheminutes="5" ignoretargetpage="PageLayout.aspx" ShowHieranchy="true" friendlyUrlExtension=".aspx" />
+      </providers>
+    </urlBuilder>
+    <geographic defaultProvider="GeographicProvider">
+      <providers>
+        <clear />
+        <add name="GeographicProvider" type="Appleseed.Framework.Providers.Geographic.SqlGeographicProvider, Appleseed.Framework.Core" countriesFilter="" />
+      </providers>
+    </geographic>
+  </providers>
+  <urlrewritingnet xmlns="http://www.urlrewriting.net/schemas/config/2006/07">
+    <providers>
+      <add name="AppleseedUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
+      <add name="AppleseedSeoUrlRewritingProvider" type="Appleseed.Framework.UrlRewriting.AppleseedSeoUrlRewritingProvider, Appleseed.Framework.UrlRewriting" />
+    </providers>
+    <rewrites>
+      <!-- Ashish.patel@haptix.biz - 2014/12/16 - Page Friendly URL Extension-->
+      <add name="AppleseedUrl" provider="AppleseedUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
+      <!-- Ashish.patel@haptix.biz - 2014/12/16 - Page Friendly URL Extension-->
+      <add name="AppleseedSeoUrl" provider="AppleseedSeoUrlRewritingProvider" rewriteUrlParameter="ExcludeFromClientQueryString" ignoreCase="true" handlerFlag="site" handlerSplitter="__" pageIdNoSplitter="false" friendlyPageName="DesktopDefault.aspx" friendlyUrlExtension=".aspx" />
+    </rewrites>
+  </urlrewritingnet>
+  <system.codedom>
+  </system.codedom>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
-        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />
+        <assemblyIdentity name="System.Web.Extensions" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="4.0.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />
+        <assemblyIdentity name="System.Web.Extensions.Design" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
       </dependentAssembly>
 
       <dependentAssembly>
         <assemblyIdentity name="System.Web.Routing" publicKeyToken="31bf3856ad364e35" />
         <bindingRedirect oldVersion="3.5.0.0" newVersion="4.0.0.0" />
-      </dependentAssembly>      
-	  <dependentAssembly>
-        <assemblyIdentity name="System.Web.DataVisualization" publicKeyToken="31bf3856ad364e35" />
-        <!--<bindingRedirect oldVersion="1.0.0.0-1.1.0.0-3.5.0.0" newVersion="4.0.0.0" /> -->
-		<bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
       </dependentAssembly>
-		</assemblyBinding>
-	</runtime>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.DataVisualization" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.5.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" />
+        <bindingRedirect oldVersion="0.0.0.0-7.0.0.0" newVersion="7.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.3.0" newVersion="5.2.3.0" />
+      </dependentAssembly>
+
+    </assemblyBinding>
+  </runtime>
   <system.serviceModel>
     <behaviors>
       <serviceBehaviors>
@@ -679,7 +701,5 @@
     <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />
   </system.serviceModel>
   <facebookSettings appId="1" appSecret="1" />
-</configuration>
-                                                                                                                                           
-                                                                                                                                    
-                        
+</configuration>          
+           
