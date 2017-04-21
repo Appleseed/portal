@@ -259,7 +259,7 @@ namespace Appleseed.Framework.DataTypes
                     };
 
                     CKfckv2.BasePath = Path.WebPathCombine(
-                        Path.ApplicationRoot, "/aspnet_client/CKeditorV4.5.7");
+                        Path.ApplicationRoot, "/aspnet_client/CKEditorV4.6.2");
 
                     desktopText = CKfckv2;
                     break;
