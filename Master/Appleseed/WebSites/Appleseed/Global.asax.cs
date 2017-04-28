@@ -131,13 +131,18 @@ namespace Appleseed
                     return;
                 }
             }
-            //Appleseed.Framework.Site.Data.PagesDB pagedb = new Framework.Site.Data.PagesDB();
-            //string redirectToUrl = pagedb.GetDynamicPageUrl(Request.RawUrl);
-            //if (!string.IsNullOrEmpty(redirectToUrl))
-            //{
-            //    Response.Redirect(redirectToUrl, true);
-            //    return;
-            //}
+            if (rawUrlLower.Contains("tkn=") && !string.IsNullOrEmpty(Request.QueryString["tkn"]) && Request.Url.LocalPath == "/")
+            {
+                Appleseed.Framework.Site.Data.PagesDB pagedb1 = new Framework.Site.Data.PagesDB();
+                var pageid = pagedb1.GetPageIdByToken(Request.QueryString["tkn"]);
+                string redirectToUrl1 = Appleseed.Framework.HttpUrlBuilder.BuildUrl(pageid);
+                if (!string.IsNullOrEmpty(redirectToUrl1))
+                {
+                    Response.Redirect(redirectToUrl1 + "?tkn=" + Request.QueryString["tkn"], true);
+                    return;
+                }
+            }
+            
             string Addwww = System.Configuration.ConfigurationManager.AppSettings.Get("AddWwwToRequest");
             if (Addwww != null && Addwww.Equals("true"))
             {

@@ -2,8 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Invite Members</h2>
+<input type="hidden" id="hdnPageId" value="@ViewBag.PageId" />
 <input type="button" id="addMember" class="CommandButton" value="Invite Members" />
 <div id="divmemberInvites">
     <table class="form-table hide" id="customFields">

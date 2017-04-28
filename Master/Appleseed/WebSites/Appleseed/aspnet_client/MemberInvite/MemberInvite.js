@@ -74,10 +74,12 @@ $(document).ready(function () {
 
             console.log("array", arr);
 
+            var reqData = { data : arr, pageid:$("#hdnPageId").val()}
+
             $.ajax({
                 url: "/MemberInvite/SendEmail",
                 type: "POST",
-                data: JSON.stringify(arr),
+                data: JSON.stringify(reqData),
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
