@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppleseedProxy", "Projects\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemberInvite", "Projects\PortableAreas\MemberInvite\MemberInvite.csproj", "{F97233C1-B99F-40F3-A400-779DE77BE40B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appleseed.Framework.Providers.ConnectedSourcesProvider", "Projects\Appleseed.Framework.Providers.ConnectedSourcesProvider\Appleseed.Framework.Providers.ConnectedSourcesProvider.csproj", "{344F1E24-093F-42E8-8EF3-DAE1186B7948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +145,10 @@ Global
 		{F97233C1-B99F-40F3-A400-779DE77BE40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F97233C1-B99F-40F3-A400-779DE77BE40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F97233C1-B99F-40F3-A400-779DE77BE40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{344F1E24-093F-42E8-8EF3-DAE1186B7948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{344F1E24-093F-42E8-8EF3-DAE1186B7948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{344F1E24-093F-42E8-8EF3-DAE1186B7948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{344F1E24-093F-42E8-8EF3-DAE1186B7948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,6 +172,7 @@ Global
 		{D6E88AA9-5288-4BAB-8186-1F958EF316EE} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 		{E3439CE8-7E7C-49F1-8619-964707D1BD24} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 		{F97233C1-B99F-40F3-A400-779DE77BE40B} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+		{344F1E24-093F-42E8-8EF3-DAE1186B7948} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Appleseed.ndproj"
