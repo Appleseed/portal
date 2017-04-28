@@ -48,9 +48,6 @@
     <Reference Include="Appleseed.Core">
       <HintPath>..\..\..\Libs\PortableAreas\Appleseed.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Appleseed.Framework.Core">
-      <HintPath>..\..\..\Libs\PortableAreas\Appleseed.Framework.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MvcContrib">
       <HintPath>..\..\..\Libs\PortableAreas\MvcContrib.dll</HintPath>
@@ -130,6 +127,12 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Appleseed.Framework.Core\Appleseed.Framework.Core.csproj">
+      <Project>{552ccd6f-0a37-4366-9e3e-22b2a0221584}</Project>
+      <Name>Appleseed.Framework.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -162,7 +165,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-   
   </Target>
   <Target Name="BeforeBuild">
     <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using Appleseed.Framework;
 using Appleseed.Framework.Helpers;
+using Appleseed.Framework.Settings;
 using Appleseed.Framework.Site.Configuration;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,43 @@ namespace MemberInvite.Controllers
         [ValidateInput(false)]
         public ActionResult Index()
         {
+            ViewBag.PageId = this.PortalSettings.ActivePage.PageID;
             return View();
+        }
+
+        private string GetToken(int pageid)
+        {
+            string tokenString = string.Empty;
+            var portalSettings = Appleseed.Framework.Site.Configuration.PortalSettings.GetPortalSettings(pageid, Config.DefaultPortal);
+            if (portalSettings.ActivePage.CustomSettings["PAGE_TOKEN"] != null && portalSettings.ActivePage.CustomSettings["PAGE_TOKEN"].Value != null && !string.IsNullOrEmpty(portalSettings.ActivePage.CustomSettings["PAGE_TOKEN"].Value.ToString()))
+            {
+                tokenString = portalSettings.ActivePage.CustomSettings["PAGE_TOKEN"].Value.ToString();
+            }
+            else
+            {
+                while (true)
+                {
+                    Guid g = Guid.NewGuid();
+                    tokenString = Convert.ToBase64String(g.ToByteArray());
+                    tokenString = tokenString.Replace("=", "");
+                    tokenString = tokenString.Replace("+", "");
+                    Appleseed.Framework.Site.Data.PagesDB pagedb1 = new Appleseed.Framework.Site.Data.PagesDB();
+                    var pid = pagedb1.GetPageIdByToken(tokenString);
+                    if (pid <= 0 && !tokenString.Contains("/"))
+                    {
+                        Appleseed.Framework.Site.Configuration.PageSettings.UpdatePageSettings(portalSettings.ActivePage.PageID, "PAGE_TOKEN", tokenString);
+                        break;
+                    }
+                }
+                
+            }
+
+            return tokenString;
         }
 
         [AcceptVerbs("GET", "HEAD", "POST", "PUT", "DELETE")]
         [HttpPost]
-        public JsonResult SendEmail(List<string> data)
+        public JsonResult SendEmail(List<string> data, string pageid)
         {
             var message = string.Empty;
 
@@ -29,12 +61,12 @@ namespace MemberInvite.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(item))
                 {
-                    //string strDecode = Base64Decode(strEncode);
-
+                    var pid = Convert.ToInt32(pageid);
+                    var portalSettings = Appleseed.Framework.Site.Configuration.PortalSettings.GetPortalSettings(pid, Config.DefaultPortal);
                     var email = item.Split('#')[1];
-                    string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/";
-                    string strEncode = Base64Encode(item);
-                    string url = baseUrl + "DesktopModules/CoreModules/Register/Register.aspx?invite=" + strEncode;
+                    string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/');
+                    string tokenString = GetToken(pid);
+                    string url = baseUrl + Appleseed.Framework.HttpUrlBuilder.BuildUrl(pid) + "?tkn=" + tokenString;
                     var mail = new MailMessage();
 
                     // we check the PortalSettings in order to get if it has an sender registered 
