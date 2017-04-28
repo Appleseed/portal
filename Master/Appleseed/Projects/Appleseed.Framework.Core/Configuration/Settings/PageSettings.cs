@@ -615,6 +615,16 @@ namespace Appleseed.Framework.Site.Configuration
             };
             baseSettings.Add("FB_LikeGate_Page", FB_LikeGate_Page);
 
+            var pageToken = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
+            {
+                Group = group,
+                Order = groupOrderBase + 5,
+                EnglishName = "Page Token",
+                Description =
+                        "This setting allows you to specify unique token for this page that allow user to view this page even if Private site is enabled"
+            };
+            baseSettings.Add("PAGE_TOKEN", pageToken);
+
             #region
 
             //Adding the CSS and JavaScript Section

@@ -982,6 +982,38 @@ namespace Appleseed.Framework.Site.Data
             }
         }
 
+        /// Get page id based on token
+        /// </summary>
+        /// <returns> returns page id based on provide token</returns>
+        public int GetPageIdByToken(string token)
+        {
+            int pageid = -1;
+            // Create Instance of Connection and Command Object
+            using (var sqlConnection = Config.SqlConnectionString)
+            {
+                string commandText = "select * from rb_TabSettings where TabID > 0 AND SettingName = 'PAGE_TOKEN' AND SettingValue = '" + token +"'";
+                var da = new SqlDataAdapter(commandText, sqlConnection);
+
+                var dataTable = new DataTable("rb_TabSettings");
+
+                // Read the result set
+                try
+                {
+                    da.Fill(dataTable);
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        pageid = Convert.ToInt32(dataTable.Rows[0]["TabID"]);
+                    }
+                }
+                finally
+                {
+                    da.Dispose();
+                }
+
+                return pageid;
+            }
+        }
+
         /// <summary>
         /// Delete friendly url
         /// </summary>

@@ -835,6 +835,13 @@
     <Compile Include="DesktopModules\CoreModules\AddModule\Viewer.ascx.designer.cs">
       <DependentUpon>Viewer.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\AdminConnectedSources\SearchAdminSettingsModule.ascx.cs">
+      <DependentUpon>SearchAdminSettingsModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\AdminConnectedSources\SearchAdminSettingsModule.ascx.designer.cs">
+      <DependentUpon>SearchAdminSettingsModule.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx.cs">
       <DependentUpon>AdminModuleInstances.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1557,6 +1564,10 @@
     <ProjectReference Include="..\..\Projects\Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider\Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider.csproj">
       <Project>{12AC9486-86E4-4436-80DB-24F696D407DC}</Project>
       <Name>Appleseed.Framework.Providers.AppleseedSqlTableProfileProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Projects\Appleseed.Framework.Providers.ConnectedSourcesProvider\Appleseed.Framework.Providers.ConnectedSourcesProvider.csproj">
+      <Project>{344f1e24-093f-42e8-8ef3-dae1186b7948}</Project>
+      <Name>Appleseed.Framework.Providers.ConnectedSourcesProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Projects\Appleseed.Framework.UrlRewriting\Appleseed.Framework.UrlRewriting.csproj">
       <Project>{10F33732-1ACA-492A-A737-DF8314CE7499}</Project>
@@ -4508,6 +4519,7 @@
     <Content Include="DesktopModules\CoreModules\AddModule\install.xml" />
     <Content Include="DesktopModules\CoreModules\AddModule\readme.txt" />
     <Content Include="DesktopModules\CoreModules\AddModule\Viewer.ascx" />
+    <Content Include="DesktopModules\CoreModules\AdminConnectedSources\SearchAdminSettingsModule.ascx" />
     <Content Include="DesktopModules\CoreModules\AdminModuleInstances\AdminModuleInstances.ascx" />
     <Content Include="DesktopModules\CoreModules\AdminModuleInstances\install.xml" />
     <Content Include="DesktopModules\CoreModules\AdminModuleInstances\readme.txt" />
@@ -5174,6 +5186,7 @@
     <Content Include="Setup\Scripts\2.0.0.1913.sql" />
     <Content Include="Setup\Scripts\2.0.0.1914.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1915.sql" />
     <Content Include="Setup\Scripts\History.xml">
       <SubType>Designer</SubType>
     </Content>

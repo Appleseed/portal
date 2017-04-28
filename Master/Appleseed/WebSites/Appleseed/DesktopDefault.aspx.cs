@@ -186,7 +186,7 @@ namespace Appleseed
         /// </param>
         private void DesktopDefault_Load(object sender, EventArgs e)
         {
-            if (this.PortalSettings.EnabledPrivateSite && !Request.IsAuthenticated)
+            if (this.PortalSettings.EnabledPrivateSite && !Request.IsAuthenticated && string.IsNullOrEmpty(Request.QueryString["tkn"]))
             {
                 PortalSecurity.AccessDenied();
                 return;
@@ -252,12 +252,8 @@ namespace Appleseed
             SecurePages page;
             Enum.TryParse<SecurePages>(pageId.ToString(), out page);
 
-            if (this.PortalSettings.EnabledPrivateSite && !Request.IsAuthenticated)
-            {
-                PortalSecurity.AccessDenied();
-            }
-            else if (!PortalSecurity.IsInRoles(this.PortalSettings.ActivePage.AuthorizedRoles) &&
-                !this.User.IsInRole("Admins") && !UserProfile.HasPageAccess(page))
+            if (!PortalSecurity.IsInRoles(this.PortalSettings.ActivePage.AuthorizedRoles) &&
+                 !this.User.IsInRole("Admins") && !UserProfile.HasPageAccess(page))
             {
                 PortalSecurity.AccessDenied();
             }
