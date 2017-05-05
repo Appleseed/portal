@@ -526,6 +526,11 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static bool IsInRole(string role)
         {
+            if(HttpContext.Current.User.IsInRole("Admins"))
+            {
+                return true;
+            }
+
             // Check if integrated windows authentication is used ?
             var useNTLM = HttpContext.Current.User is WindowsPrincipal;
 
@@ -567,6 +572,11 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static bool IsInRoles(string roles)
         {
+            if (HttpContext.Current.User.IsInRole("Admins"))
+            {
+                return true;
+            }
+
             var context = HttpContext.Current;
 
             // if (!context.User.Identity.IsAuthenticated || Membership.GetUser(context.User.Identity.Name) != null) {
