@@ -487,7 +487,7 @@ namespace Appleseed.Admin
             var unauthItem = new ListItem("Unauthenticated Users");
             listRoles.Items.Add(unauthItem);
 
-            listRoles.DataSource = roles;
+            listRoles.DataSource = roles.Where(rn => rn.Name.ToLower() != "admins");
             listRoles.DataTextField = "Name";
             listRoles.DataValueField = "Id";
             listRoles.DataBind();
