@@ -72,8 +72,7 @@ namespace Appleseed.Framework.Security
                 throw new HttpException(403, "Access Denied", 2);
             }
 
-            HttpContext.Current.Response.Redirect(
-                HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/Logon.aspx"));
+            HttpContext.Current.Response.Redirect("/DesktopModules/CoreModules/Admin/Logon.aspx?ReturnUrl=" + HttpContext.Current.Request.RawUrl);
         }
 
         /// <summary>
@@ -89,8 +88,7 @@ namespace Appleseed.Framework.Security
                 throw new HttpException(403, "Access Denied Edit", 3);
             }
 
-            HttpContext.Current.Response.Redirect(
-                HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/Logon.aspx"));
+            HttpContext.Current.Response.Redirect("/DesktopModules/CoreModules/Admin/Logon.aspx?ReturnUrl=" + HttpContext.Current.Request.RawUrl);
         }
 
         /// <summary>
@@ -786,6 +784,12 @@ namespace Appleseed.Framework.Security
                     {
                         CreateTicket(user, persistent, DateTime.Now.AddMinutes(minuteAdd));
                     }
+                }
+
+                //if we have returnurl in querystring, it should be redirect on it once logged in
+                if (string.IsNullOrEmpty(redirectPage) && !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["ReturnUrl"]))
+                {
+                    redirectPage = HttpContext.Current.Request.QueryString["ReturnUrl"];
                 }
 
                 if (string.IsNullOrEmpty(redirectPage))
