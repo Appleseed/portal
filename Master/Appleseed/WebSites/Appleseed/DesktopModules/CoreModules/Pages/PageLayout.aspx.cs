@@ -707,7 +707,7 @@ namespace Appleseed.Admin
             // Clear existing items in checkboxlist
             this.authRoles.Items.Clear();
 
-            foreach (var role in roles)
+            foreach (var role in roles.Where(rn=>rn.Name.ToLower() != "admins"))
             {
                 var item = new ListItem();
                 item.Text = role.Name;
