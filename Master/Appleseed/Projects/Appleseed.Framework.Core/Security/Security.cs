@@ -726,8 +726,7 @@ namespace Appleseed.Framework.Security
             // Thierry (tiptopweb), 12 Apr 2003: Save old ShoppingCartID
             // 			ShoppingCartDB shoppingCart = new ShoppingCartDB();
             // 			string tempCartID = ShoppingCartDB.GetCurrentShoppingCartID();
-
-            if (usr != null)
+            if (usr != null && usr.IsApproved)
             {
                 // Ender, 31 July 2003: Support for the monitoring module by Paul Yarrow
                 if (Config.EnableMonitoring)
