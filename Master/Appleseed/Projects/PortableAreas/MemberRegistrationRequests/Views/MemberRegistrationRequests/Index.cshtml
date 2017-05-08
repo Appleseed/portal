@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Appleseed.Framework.Providers.AppleseedMembershipProvider.AppleseedUser>
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .tbllist {
+        table-layout: fixed;
+        margin-top: 10px;
+    }
+
+        .tbllist .field-1 {
+            width: 10%;
+        }
+
+        .tbllist .field-2 {
+            width: 25%;
+        }
+
+        .tbllist tr, .tbllist td, .tbllist th {
+            border: 1px solid #000;
+            padding: 5px !important;
+        }
+</style>
+
+<table class="tbllist">
+    <tr>
+        <th class="field-2">Email</th>
+        <th class="field-2">Name</th>
+        <th class="field-2">Phone</th>
+        <th class="field-2"></th>
+    </tr>
+    @foreach (var user in Model)
+    {
+
+        <tr>
+            <td class="field-2">
+                @user.Profile.UserName
+            </td>
+            <td class="field-2">
+                @user.Name
+            </td>
+            <td class="field-2">
+                @user.Phone
+            </td>
+            <td class="field-2">
+                <a class="CommandButton" href="javascript:ApproveUser('@user.ProviderUserKey','@user.Profile.UserName')">Approve</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<script src="~/aspnet_client/js/jquery.blockUI.js"></script>
+<script type="text/javascript">
+    function ApproveUser(userid, email) {
+        if (confirm('Are you sure want to approve "' + email + '" user?')) {
+            var reqData = { "userid": userid }
+            $.blockUI();
+            $.ajax({
+                url: "/MemberRegistrationRequests/ApproveUser",
+                type: "POST",
+                data: JSON.stringify(reqData),
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $.unblockUI();
+                    console.log(data.Message);
+                    if (data.ok == true) {
+                        alert('User has been approved successfully');
+                        window.location = window.location;
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $.unblockUI();
+                    console.log("error", errorThrown);
+                }
+            });
+        }
+    }
+</script>

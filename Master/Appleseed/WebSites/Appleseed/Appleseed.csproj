@@ -1597,6 +1597,10 @@
       <Project>{f97233c1-b99f-40f3-a400-779de77be40b}</Project>
       <Name>MemberInvite</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Projects\PortableAreas\MemberRegistrationRequests\MemberRegistrationRequests.csproj">
+      <Project>{0d2dda6d-d1f8-45fe-b2a9-eecaec6a5e36}</Project>
+      <Name>MemberRegistrationRequests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Projects\PortableAreas\PageManagerTree\PageManagerTree.csproj">
       <Project>{36310014-77B3-4DB6-B391-B4036D1BDDD3}</Project>
       <Name>PageManagerTree</Name>
@@ -5001,6 +5005,7 @@
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\Module.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\UserRegistry.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberInvite\Index.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberRegistrationRequests\Index.cshtml" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
@@ -5185,6 +5190,7 @@
     <Content Include="Setup\Scripts\2.0.0.1912.sql" />
     <Content Include="Setup\Scripts\2.0.0.1913.sql" />
     <Content Include="Setup\Scripts\2.0.0.1914.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1916.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\2.0.0.1915.sql" />
     <Content Include="Setup\Scripts\History.xml">

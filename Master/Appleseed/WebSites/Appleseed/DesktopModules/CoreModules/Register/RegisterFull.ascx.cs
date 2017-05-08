@@ -389,7 +389,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
             Guid result = Guid.Empty;
             if (Session["CameFromSocialNetwork"] == null || IsInvite) {
                 MembershipCreateStatus status = MembershipCreateStatus.Success;
-                MembershipUser user = Membership.Provider.CreateUser(tfEmail.Text, tfPwd.Text, tfEmail.Text, "question", "answer", true, Guid.NewGuid(), out status);
+                MembershipUser user = Membership.Provider.CreateUser(tfEmail.Text, tfPwd.Text, tfEmail.Text, "question", "answer", PortalSettings.IsApprovedCreateUser(), Guid.NewGuid(), out status);
                 this.lblError.Text = string.Empty;
 
                 switch (status) {
@@ -422,7 +422,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
                     string password = GeneratePasswordHash(userName);
 
                     MembershipCreateStatus status = MembershipCreateStatus.Success;
-                    MembershipUser user = Membership.Provider.CreateUser(userName, password, tfEmail.Text, "question", "answer", true, Guid.NewGuid(), out status);
+                    MembershipUser user = Membership.Provider.CreateUser(userName, password, tfEmail.Text, "question", "answer", PortalSettings.IsApprovedCreateUser(), Guid.NewGuid(), out status);
                     this.lblError.Text = string.Empty;
 
                     switch (status) {
@@ -455,7 +455,7 @@ public partial class DesktopModules_CoreModules_Register_RegisterFull : PortalMo
                     string userName = tfEmail.Text;
                     string password = GeneratePasswordHash(userName);
                     MembershipCreateStatus status = MembershipCreateStatus.Success;
-                    MembershipUser user = Membership.Provider.CreateUser(userName, password, userName, "question", "answer", true, Guid.NewGuid(), out status);
+                    MembershipUser user = Membership.Provider.CreateUser(userName, password, userName, "question", "answer", PortalSettings.IsApprovedCreateUser(), Guid.NewGuid(), out status);
                     this.lblError.Text = string.Empty;
 
                     switch (status) {
