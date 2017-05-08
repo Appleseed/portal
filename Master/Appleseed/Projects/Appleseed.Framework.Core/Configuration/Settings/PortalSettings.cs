@@ -1351,6 +1351,30 @@ namespace Appleseed.Framework.Site.Configuration
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// To check whether creating new user/requestration required approval from Admin or not.
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsApprovedCreateUser()
+        {
+            var portalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+            if (portalSettings != null && !HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                if(portalSettings.Settings.ContainsKey("SITESETTINGS_ALLOW_USER_REQUESTS")
+                    && portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"] != null
+                    && portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"].Value != null
+                    && !string.IsNullOrEmpty(portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"].Value.ToString())
+                    )
+                {
+                    if (portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"].Value.ToString().ToLower() == "true" || portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"].Value.ToString().ToLower() == "1")
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
 
         /// <summary>
         /// Get portal settings by pageid and portal alias
@@ -1656,6 +1680,19 @@ namespace Appleseed.Framework.Site.Configuration
                             "Check this to allow users register themselves. Leave blank for register through User Manager only."
                 };
                 baseSettings.Add("SITESETTINGS_ALLOW_NEW_REGISTRATION", allowNewRegistrations);
+
+                // Allow new registrations?
+                var allowUserRequests = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 10,
+                    Group = group,
+                    Value = true,
+                    EnglishName = "Allow User Requests?",
+                    Description =
+                            "Check this to allow user request which will required to approved by Administrator before allow login them."
+                };
+                baseSettings.Add("SITESETTINGS_ALLOW_USER_REQUESTS", allowUserRequests);
+
 
                 // MH: added dynamic load of register types depending on the  content in the DesktopModules/Register/ folder
                 // Register
