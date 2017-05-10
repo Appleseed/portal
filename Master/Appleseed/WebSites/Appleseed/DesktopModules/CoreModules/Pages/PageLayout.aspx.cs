@@ -269,7 +269,7 @@ namespace Appleseed.Admin
         {
             if (!this.Page.IsPostBack)
             {
-                
+
                 // Invalidate settings cache
                 if (CurrentCache.Exists(Key.TabSettings(this.PageID)))
                 {
@@ -372,7 +372,7 @@ namespace Appleseed.Admin
                     // jviladiu@portalServices.net (05/10/2004)
                     CurrentCache.RemoveAll("_PageNavigationSettings_");
                     PortalSettings.RemovePortalSettingsCache(PageID, PortalSettings.PortalAlias);
-                    
+
                     // Clear AppleseedSiteMapCache
                     AppleseedSiteMapProvider.ClearAllAppleseedSiteMapCaches();
 
@@ -400,7 +400,7 @@ namespace Appleseed.Admin
 
                         Response.Write("<script type=\"text/javascript\">window.parent.location = '" + returnPage + "';</script>");
                     }
-                        
+
                     else
                     {
                         if (retPage != null)
@@ -707,7 +707,7 @@ namespace Appleseed.Admin
             // Clear existing items in checkboxlist
             this.authRoles.Items.Clear();
 
-            foreach (var role in roles.Where(rn=>rn.Name.ToLower() != "admins"))
+            foreach (var role in roles.Where(rn => rn.Name.ToLower() != "admins"))
             {
                 var item = new ListItem();
                 item.Text = role.Name;
@@ -721,6 +721,11 @@ namespace Appleseed.Admin
                 this.authRoles.Items.Add(item);
             }
 
+            //load users
+            UserPagePermissionDB userPp = new UserPagePermissionDB();
+            gdvUsersAuth.DataSource = userPp.GetAllUsers(this.PageID);
+            gdvUsersAuth.DataBind();
+
             // Populate the "Add Module" Data
             var m = new ModulesDB();
             var modules = new SortedList<string, string>();
@@ -730,11 +735,11 @@ namespace Appleseed.Admin
             {
                 foreach (var item in drCurrentModuleDefinitions)
                 {
-                     if ((!modules.ContainsKey(item.FriendlyName)) &&
-                        (PortalSecurity.IsInRoles("Admins") || !item.Admin))
+                    if ((!modules.ContainsKey(item.FriendlyName)) &&
+                       (PortalSecurity.IsInRoles("Admins") || !item.Admin))
                     {
                         modules.Add(
-                           
+
                            item.FriendlyName,
                            item.ModuleDefId.ToString());
                         if (item.FriendlyName.ToString().Equals("HTML Content"))
@@ -744,9 +749,9 @@ namespace Appleseed.Admin
             }
             finally
             {
-               
+
             }
-          
+
             this.moduleType.DataSource = modules;
             this.moduleType.DataBind();
             this.moduleType.SelectedValue = htmlId;
@@ -848,6 +853,13 @@ namespace Appleseed.Admin
                     this.mobilePageName.Text,
                     this.showMobile.Checked,
                     this.friendlyUrl.Text);
+                List<UserPagePermission> upPerms = new List<UserPagePermission>();
+                foreach (GridViewRow gdvRow in gdvUsersAuth.Rows)
+                {
+                    upPerms.Add(new UserPagePermission() { PageId = this.PageID, UserId = Guid.Parse(((HiddenField)gdvRow.FindControl("hidUserId")).Value), Permission = Convert.ToInt16(((DropDownList)gdvRow.FindControl("ddlUserAuthPermission")).SelectedValue) });
+                }
+                UserPagePermissionDB uppDB = new UserPagePermissionDB();
+                uppDB.UpdatePagePermissions(upPerms);
 
                 // Update custom settings in the database
                 this.EditTable.UpdateControls();
@@ -900,7 +912,7 @@ namespace Appleseed.Admin
             DateTime time;
             TimeSpan span;
             var guidsInUse = string.Empty;
-           // Guid guid;
+            // Guid guid;
 
             var mdb = new ModulesDB();
 
@@ -966,5 +978,14 @@ namespace Appleseed.Admin
             return "'" + url + "'";
         }
         #endregion
+
+        protected void gdvUsersAuth_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                UserInfo upp = (UserInfo)e.Row.DataItem;
+                ((DropDownList)e.Row.FindControl("ddlUserAuthPermission")).SelectedValue = upp.Permission.ToString();
+            }
+        }
     }
 }
