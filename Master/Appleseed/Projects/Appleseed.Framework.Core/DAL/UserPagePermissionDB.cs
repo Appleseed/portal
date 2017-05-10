@@ -1,4 +1,5 @@
 ﻿using Appleseed.Framework.Settings;
+using Appleseed.Framework.Site.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -49,7 +50,7 @@ namespace Appleseed.Framework.Site.Data
             return Appleseed.Framework.Data.DBHelper.DataReaderToObjectList<UserInfo>(query);
         }
 
-        public UserPagePermission GetUserPagePermission(int pageid, Guid UserId)
+        public static UserPagePermission GetUserPagePermission(int pageid, Guid UserId)
         {
             var pp = Appleseed.Framework.Data.DBHelper.DataReaderToObjectList<UserPagePermission>("select * from rb_userPagePermission WHERE PAGEID = " + pageid + " AND UserId = '" + UserId + "'");
             if (pp.Count > 0)
@@ -60,6 +61,34 @@ namespace Appleseed.Framework.Site.Data
             return new UserPagePermission() { Permission = 0, UserId = UserId, PageId = pageid };
         }
 
+        public static bool HasEditPermission(int pageid, Guid userId)
+        {
+            var upp = GetUserPagePermission(pageid, userId);
+            if (upp.Permission == 2 || System.Web.HttpContext.Current.User.IsInRole("Admins"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private static PortalSettings PortalSettings
+        {
+            get
+            {
+                return (PortalSettings)System.Web.HttpContext.Current.Items["PortalSettings"];
+            }
+        }
+
+        public static bool HasCurrentPageEditPermission()
+        {
+            var upp = GetUserPagePermission(PortalSettings.ActivePage.PageID, Guid.Parse(System.Web.Security.Membership.GetUser().ProviderUserKey.ToString()));
+            if (upp.Permission == 2 || System.Web.HttpContext.Current.User.IsInRole("Admins"))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void UpdatePagePermissions(List<UserPagePermission> permissions)
         {
             using (var connection = Config.SqlConnectionString)
@@ -67,7 +96,7 @@ namespace Appleseed.Framework.Site.Data
                 connection.Open();
                 foreach (var permis in permissions)
                 {
-                    using (var sqlCommand = new SqlCommand("UPDAET rb_userPagePermission SET Permission = " + permis.Permission + " WHERE PageId = " + permis.PageId + " and UserId = '" + permis.UserId + "'", connection))
+                    using (var sqlCommand = new SqlCommand("UPDATE rb_userPagePermission SET Permission = " + permis.Permission + " WHERE PageId = " + permis.PageId + " and UserId = '" + permis.UserId + "'", connection))
                     {
                         // Mark the Command as a SPROC
                         sqlCommand.CommandType = CommandType.Text;
