@@ -5154,6 +5154,7 @@
     <Content Include="Setup\Scripts\1.4.0.1807.sql" />
     <Content Include="Setup\Scripts\1.5.0.1871.sql" />
     <Content Include="Setup\Scripts\1.6.0.1873.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1917.sql" />
     <Content Include="Setup\Scripts\2.0.0.1881.sql" />
     <Content Include="Setup\Scripts\2.0.0.1881_GeographicProvider.sql" />
     <Content Include="Setup\Scripts\2.0.0.1881_MembershipRoleProviders.sql" />
