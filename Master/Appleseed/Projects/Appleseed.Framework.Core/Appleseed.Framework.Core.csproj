@@ -211,6 +211,7 @@
     <Compile Include="DAL\SliderDB.cs" />
     <Compile Include="DAL\SolutionModuleDefinition.cs" />
     <Compile Include="DAL\TabSettings.cs" />
+    <Compile Include="DAL\UserPagePermissionDB.cs" />
     <Compile Include="DAL\UsersDb.cs" />
     <Compile Include="DAL\WorkFlowDB.cs" />
     <Compile Include="DAL\XMLImportExportDB.cs" />

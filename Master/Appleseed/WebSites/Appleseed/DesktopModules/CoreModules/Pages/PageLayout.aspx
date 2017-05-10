@@ -2,7 +2,18 @@
     MasterPageFile="~/Shared/SiteMasterDefault.master" CodeBehind="PageLayout.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
+    <style>
+    #Content_gdvUsersAuth {
+        table-layout: fixed;
+        margin-top: 10px;
+    }
 
+      
+        #Content_gdvUsersAuth tr, #Content_gdvUsersAuth td, #Content_gdvUsersAuth th {
+            border: 1px solid #000;
+            padding: 5px !important;
+        }
+</style>
     <link type="text/css" rel="stylesheet" href="/aspnet_client/jQuery/jsTree/themes/proton/style.css" />
     <%-- <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap" style="height: 100%">
         <tr>
@@ -94,6 +105,33 @@
                         </tr>
                         <tr>
                             <td class="Normal" nowrap="nowrap">
+                                <rbfwebui:Localize ID="Localize4" runat="server" Text="Authorized Users" TextKey="AM_USERSAUTH">
+                                </rbfwebui:Localize>
+                            </td>
+                            <td colspan="3">
+                                <asp:GridView runat="server" ID="gdvUsersAuth" AutoGenerateColumns="false" OnRowDataBound="gdvUsersAuth_RowDataBound" >
+                                    <Columns>
+                                        <asp:BoundField DataField="Name" HeaderText="Name" />
+                                        <asp:BoundField DataField="Email" HeaderText ="Email" />
+                                        <asp:TemplateField HeaderText="Permission">
+                                            
+                                            <ItemTemplate>
+                                                <asp:HiddenField ID="hidUserId" runat="server" Value='<%# Eval("UserId") %>' />
+                                                <asp:HiddenField ID="hidPageId" runat="server" Value='<%# Eval("PageId") %>' />
+                                                <asp:DropDownList runat="server" ID="ddlUserAuthPermission">
+                                                    <asp:ListItem Text="View" Value="1"></asp:ListItem>
+                                                    <asp:ListItem Text="Edit" Value="2"></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                                <br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="Normal" nowrap="nowrap">
                                 <rbfwebui:Localize ID="tab_parent" runat="server" Text="Parent Page" TextKey="TAB_PARENT">
                                 </rbfwebui:Localize>
                             </td>
@@ -138,6 +176,7 @@
                         </tr>
                     </table>
                 </div>
+
                 <div id="Page_Modules" class="tabPanel">
                     <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap">
                         <tr>

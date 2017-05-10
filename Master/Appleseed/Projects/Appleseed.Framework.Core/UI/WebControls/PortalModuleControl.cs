@@ -3411,84 +3411,84 @@ namespace Appleseed.Framework.Web.UI.WebControls
             }
 
             // admin buttons
-            if (this.AddButton != null)
+            if (this.AddButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.AddButton);
             }
 
-            if (this.EditButton != null)
+            if (this.EditButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.EditButton);
             }
 
-            if (this.PropertiesButton != null)
+            if (this.PropertiesButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.PropertiesButton);
             }
 
-            if (this.SecurityButton != null)
+            if (this.SecurityButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.SecurityButton);
             }
 
-            if (this.DeleteModuleButton != null)
+            if (this.DeleteModuleButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.DeleteModuleButton);
             }
 
-            if (this.VersionButton != null)
+            if (this.VersionButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.VersionButton);
             }
 
-            if (this.PublishButton != null)
+            if (this.PublishButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.PublishButton);
             }
 
-            if (this.ApproveButton != null)
+            if (this.ApproveButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.ApproveButton);
             }
 
-            if (this.RejectButton != null)
+            if (this.RejectButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.RejectButton);
             }
 
-            if (this.ReadyToApproveButton != null)
+            if (this.ReadyToApproveButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.ReadyToApproveButton);
             }
 
-            if (this.RevertButton != null)
+            if (this.RevertButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.RevertButton);
             }
 
-            if (this.UpButton != null)
+            if (this.UpButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.UpButton);
             }
 
-            if (this.DownButton != null)
+            if (this.DownButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.DownButton);
             }
 
-            if (this.LeftButton != null)
+            if (this.LeftButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.LeftButton);
             }
 
-            if (this.RightButton != null)
+            if (this.RightButton != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.ButtonListAdmin.Add(this.RightButton);
             }
 
             // custom buttons
             // recover any CustomButtons set the 'old way'
-            if (this.ModuleTitle != null)
+            if (this.ModuleTitle != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 foreach (Control c in this.ModuleTitle.CustomButtons)
                 {
@@ -3502,12 +3502,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
             // ButtonListCustom.Add( CloseButton );
 
             // set image url for standard buttons edit & delete
-            if (this.DeleteBtn != null)
+            if (this.DeleteBtn != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.DeleteBtn.ImageUrl = this.CurrentTheme.GetImage("Buttons_Delete", "Delete.gif").ImageUrl;
             }
 
-            if (this.EditBtn != null)
+            if (this.EditBtn != null && UserPagePermissionDB.HasCurrentPageEditPermission())
             {
                 this.EditBtn.ImageUrl = this.CurrentTheme.GetImage("Buttons_Edit", "Edit.gif").ImageUrl;
             }

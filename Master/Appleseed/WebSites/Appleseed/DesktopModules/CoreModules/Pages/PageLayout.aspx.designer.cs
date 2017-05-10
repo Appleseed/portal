@@ -130,6 +130,24 @@ namespace Appleseed.Admin {
         protected global::System.Web.UI.WebControls.CheckBoxList authRoles;
         
         /// <summary>
+        /// Localize4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Appleseed.Framework.Web.UI.WebControls.Localize Localize4;
+        
+        /// <summary>
+        /// gdvUsersAuth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvUsersAuth;
+        
+        /// <summary>
         /// tab_parent control.
         /// </summary>
         /// <remarks>
