@@ -1,3 +1,28 @@
+# Appleseed.Portal 1.2.43.305 Release
+- Release Date: 12/19/2016
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6.1 to be installed.
+
+## Major Bug Fixes
+- Resolved some more connection strings not closing
+- Resolved User Manager issue not searching on first click
+- Resolve some performance issues on First Portal Load
+
+## Theme CSS Fixes
+- None
+
+## Features
+- New Codewriter HTML Editor type that allows separation of HTML / CSS / Javascript for portal widget creation
+- Administrators can now create a user and password on install instead of using the default admin
+- Portal Timeout for user login is now a portal setting instead of using the Web.config
+- This version is confirmed it works on Docker and as such can run on MacOS / Windows / Linux
+
+## Known bugs that need to be fixed
+- Web.config is being changed if write is left on for your App Pool user.  Please disable web.config write after install until we disable this.
+
+
+
 # Appleseed.Portal 1.1.0.0 Release
 - Release Date: 10/5/2016
 
