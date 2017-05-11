@@ -2774,10 +2774,6 @@
     <Content Include="aspnet_client\flags\flags_zh-MO.gif" />
     <Content Include="aspnet_client\flags\flags_zh-SG.gif" />
     <Content Include="aspnet_client\flags\flags_zh-TW.gif" />
-    <Content Include="aspnet_client\FlexSlider\css\flexslider.css" />
-    <Content Include="aspnet_client\FlexSlider\images\bg_direction_nav.png" />
-    <Content Include="aspnet_client\FlexSlider\js\jquery.flexslider-min.js" />
-    <Content Include="aspnet_client\FlexSlider\js\scopped.js" />
     <Content Include="aspnet_client\FlexSlider\owl.carousel.css" />
     <Content Include="aspnet_client\FlexSlider\owl.carousel.min.js" />
     <Content Include="aspnet_client\HtmlConentMerging\editor\editor.aspx" />
