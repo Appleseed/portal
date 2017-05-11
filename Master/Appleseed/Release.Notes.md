@@ -1,3 +1,32 @@
+# Appleseed Portal 1.0.8.0
+
+Release Date: 7/15/2016
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6 to be installed.
+
+## Major Bug Fixes
+- Edit this Page - Fixed the ability to move modules around in panes
+- Cleaned up warnings and bugs
+- Fixed Failed Password attempts field.  This field now collects when a failed password occurs
+- Access any page with /pagenumber or /site/pagenumber when friendly URLs are enabled
+
+## Themes
+- Theme CSS Fixes
+- Admin.Theme Add - A theme for the new consolidated admin area was added
+
+## Features
+- Consolidated Admin options into an Admin Theme
+- Consolidated HTML Editor Options to Three : Ckeditor / CodeMirror / Aloha
+- Improved Web Based Installation -- Updated SQL Section to fit better with default SQL Express install
+- Improved File Manager  -- Added new MVC based File Manager to Admin area
+- Added Short Links -  The ability to create links like www.domain.com/ShortLink for pages
+
+## Known bugs that need to be fixed
+- Default.css is not being pushed out from the theme on the page.  It is currently looking at the portal value in site settings.  This will be resolved in 1.0.9.x
+
+
+
 # Appleseed Portal 1.0.7.0
 
 Initial Github Release 
