@@ -104,6 +104,10 @@ $(document).ready(function () {
     $('#cancel').on('click', function () {
         $("#divmemberInvites").dialog('close');
     })
+
+    $("#btnCancelPopup").on('click', function () {
+        window.parent.location = window.parent.location;
+    });
 });
 
 
