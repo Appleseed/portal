@@ -1,3 +1,26 @@
+# Appleseed.Portal 1.0.9.1 Release
+- Release Date: 8/5/2016
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6 to be installed.
+
+## Major Bug Fixes
+- Default.css is not being pushed out from the theme on the page. It is currently looking at the portal value in site settings.  We have fixed this to look at the page if there is a page setting.
+- Cleaned up more warnings and bugs
+- Removed old File Manager from HTML Module
+- Resolved issues with Recycle bin sorting
+
+## Theme CSS Fixes
+- Admin.Theme - Tweaks to the admin theme now the default.css bug is resolved
+
+## Features
+- Private Site option in Site Settings.  Allows a site to instantly become a private site that requires login.
+- Google Analytics API Upgrade.  The Google Analytics API has been upgraded to work with the latest GA calls.
+- Improved Paged User Manager 
+- Recycled Pages - The ability to recover deleted pages
+
+## Known bugs that need to be fixed
+- N/A
 
 
 # Appleseed.Portal 1.0.9.0 Pre-Release
