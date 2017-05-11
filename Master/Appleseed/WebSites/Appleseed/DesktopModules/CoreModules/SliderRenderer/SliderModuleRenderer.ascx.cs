@@ -31,6 +31,31 @@ namespace Appleseed.DesktopModules.CoreModules.SliderRenderer
             get { return new Guid("{A8423224-230A-4561-AED0-1DF41850981B}"); }
         }
 
+        protected override void OnInit(EventArgs e)
+        {
+            this.EditUrl = "~/DesktopModules/CoreModules/SliderManager/SliderManager.aspx";
+            base.OnInit(e);
+        }
+
+        public string GetBackground(string BGUrl, string BGColor)
+        {
+            string bg = "";
+            if (!string.IsNullOrEmpty(BGUrl))
+            {
+                bg += "background-image: url('"+ BGUrl +"');";
+            }
+            if (!string.IsNullOrEmpty(BGColor))
+            {
+                bg += "background-color: '" + BGColor + "';";
+            }
+            if (!string.IsNullOrEmpty(bg))
+            {
+                bg = "style=\"" + bg + "\"";
+            }
+
+            return bg;
+        }
+
         /// <summary>
         /// Page Load Generates Html for slider
         /// </summary>
@@ -38,6 +63,10 @@ namespace Appleseed.DesktopModules.CoreModules.SliderRenderer
         /// <param name="e"> The <see cref="System.EventArgs"/> instance containing event data. </param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            SliderDB sdb = new SliderDB();
+            rptSliders.DataSource = sdb.AllSliders(this.ModuleID);
+            rptSliders.DataBind();
+
             bool isSliderloaded = false;
             foreach (object itemobj in this.Page.Header.Controls)
             {
@@ -58,38 +87,12 @@ namespace Appleseed.DesktopModules.CoreModules.SliderRenderer
                 IncludeSliderCSS.Attributes.Add("type", "text/css");
                 IncludeSliderCSS.Attributes.Add("rel", "stylesheet");
                 IncludeSliderCSS.Attributes.Add("SliderCss", "yes");
-                IncludeSliderCSS.Attributes.Add("href", "/aspnet_client/FlexSlider/css/flexslider.css");
+                IncludeSliderCSS.Attributes.Add("href", "/aspnet_client/FlexSlider/owl.carousel.css");
                 this.Page.Header.Controls.Add(IncludeSliderCSS);
                 this.plcLoadScripts.Visible = true;
             }
-
-            SliderDB sldDB = new SliderDB();
-            StringBuilder sbGenereateHtml = new StringBuilder();
-            int sliderID = 1;
-            if (this.Settings.ContainsKey("Sliders") && this.Settings["Sliders"].Value != null && !string.IsNullOrEmpty(this.Settings["Sliders"].Value.ToString()))
-            {
-                sliderID = Convert.ToInt32(this.Settings["Sliders"].Value.ToString());
-            }
-
-            foreach (var item in sldDB.SliderImages(sliderID, true))
-            {
-                sbGenereateHtml.AppendLine("<li>");
-                sbGenereateHtml.AppendLine("<img src=\"/images/sliders/" + item.SliderID + "/" + item.SliderImageID + item.SliderImageExt + " \"/>");
-                if (!string.IsNullOrEmpty(item.SliderCaption))
-                {
-                    sbGenereateHtml.AppendLine("<p class=\"flex-caption\">" + item.SliderCaption + "</p>");
-                }
-                sbGenereateHtml.AppendLine("</li>");
-            }
-            ltrSliderLi.Text = sbGenereateHtml.ToString();
+           
         }
 
-        //public override bool EnableSlider
-        //{
-        //    get
-        //    {
-        //        return true;
-        //    }
-        //}
     }
 }

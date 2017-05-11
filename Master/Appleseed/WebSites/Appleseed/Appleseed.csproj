@@ -1378,6 +1378,13 @@
     <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx.designer.cs">
       <DependentUpon>SliderManager.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.aspx.cs">
+      <DependentUpon>SliderManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.aspx.designer.cs">
+      <DependentUpon>SliderManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\SliderRenderer\SliderModuleRenderer.ascx.cs">
       <DependentUpon>SliderModuleRenderer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2778,6 +2785,8 @@
     <Content Include="aspnet_client\FlexSlider\images\bg_direction_nav.png" />
     <Content Include="aspnet_client\FlexSlider\js\jquery.flexslider-min.js" />
     <Content Include="aspnet_client\FlexSlider\js\scopped.js" />
+    <Content Include="aspnet_client\FlexSlider\owl.carousel.css" />
+    <Content Include="aspnet_client\FlexSlider\owl.carousel.min.js" />
     <Content Include="aspnet_client\HtmlConentMerging\editor\editor.aspx" />
     <Content Include="aspnet_client\HtmlConentMerging\editor\editor.css" />
     <Content Include="aspnet_client\HtmlConentMerging\editor\editor.js" />
@@ -4774,6 +4783,7 @@
     <Content Include="DesktopModules\CoreModules\SliderManager\install.xml" />
     <Content Include="DesktopModules\CoreModules\SliderManager\readme.txt" />
     <Content Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx" />
+    <Content Include="DesktopModules\CoreModules\SliderManager\SliderManager.aspx" />
     <Content Include="DesktopModules\CoreModules\SliderRenderer\install.xml" />
     <Content Include="DesktopModules\CoreModules\SliderRenderer\readme.txt" />
     <Content Include="DesktopModules\CoreModules\SliderRenderer\SliderModuleRenderer.ascx" />
@@ -5192,6 +5202,7 @@
     <Content Include="Setup\Scripts\2.0.0.1913.sql" />
     <Content Include="Setup\Scripts\2.0.0.1914.sql" />
     <Content Include="Setup\Scripts\2.0.0.1916.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1918.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\2.0.0.1915.sql" />
     <Content Include="Setup\Scripts\History.xml">
