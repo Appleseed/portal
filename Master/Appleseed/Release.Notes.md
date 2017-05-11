@@ -1,3 +1,28 @@
+# Appleseed.Portal 1.4.98.383 Release
+- Release Date: 03/31/2017
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6.1 to be installed.
+
+## Major Bug Fixes
+- Fixed Google Login with updating to oAuth 2.0
+- Fixed JavaScript Facebook include to work with http or https
+
+## Theme CSS Fixes
+-  Fixed CSS on Double click Module Title Edit
+
+## Features
+ - Created new Member Invites module that allows admins to invite users to their site 
+ - Updated ASP.NET MVC 5 and removed dependencies on MVC 4 and MVC 3
+-  Removed old modules
+-  Removed Aloha as an HTML Editor
+-  Removed old dependencies 
+
+## Known bugs that need to be fixed
+- Double click Module Title edit on normal http still has an issue
+- The monitoring page had some modules moved around.  Our team will resolve
+
+
 # Appleseed.Portal 1.3.69.342 Release
 - Release Date: 02/5/2017
 
