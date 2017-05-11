@@ -334,7 +334,6 @@
     <Compile Include="UI\DataTypes\Percentage.cs" />
     <Compile Include="UI\DataTypes\PortalUrlDataType.cs" />
     <Compile Include="UI\DataTypes\SettingOption.cs" />
-    <Compile Include="UI\DataTypes\SliderDataType.cs" />
     <Compile Include="UI\DataTypes\UploadedFileDataType.cs" />
     <Compile Include="UI\DataTypes\UrlDataType.cs" />
     <Compile Include="Localization\LanguageCultureCollection.cs" />

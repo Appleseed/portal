@@ -1,0 +1,22 @@
+﻿<link type="text/css" rel="stylesheet" href="@ViewBag.ThemeCSS" />
+<input type="hidden" id="hdnPageId" value="@ViewBag.PageId" />
+<div id="divmemberInvitesPage">
+    <table class="form-table" id="customFields">
+        <tr class="inviteRow" valign="top">
+            <th scope="row"><label for="customFieldName">Name &nbsp;</label></th>
+            <td>
+                <input type="text" class="code" id="txtFullName_1" name="customFieldName[]" value="" placeholder="Name" /> &nbsp;
+                Email
+                <input type="text" class="code" id="txtEmail_1" name="customFieldValue[]" value="" placeholder="Email" /> &nbsp;
+                <a href="javascript:void(0);" class="addNew CommandButton">Add</a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <input type="button" value="Send Invites" id="sendInvites" class="CommandButton" />
+    <input type="button" value="Cancel" id="cancel" class="CommandButton" />
+</div>
+<script type="text/javascript" src="/aspnet_client/jQuery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/aspnet_client/jQuery/jquery-ui-1.12.1.min.js"></script>
+<script src="~/aspnet_client/js/jquery.blockUI.js"></script>
+<script src="~/aspnet_client/MemberInvite/MemberInvite.js"></script>

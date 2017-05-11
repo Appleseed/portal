@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<Modules>
-	<Module>
-		<FriendlyName>Admin - Slider Manager</FriendlyName>
-		<DesktopSource>DesktopModules/CoreModules/SliderManager/SliderManager.ascx</DesktopSource>
-		<MobileSource></MobileSource>
-	</Module>
-</Modules>
-

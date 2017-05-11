@@ -343,6 +343,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             return sb.ToString();
         }
 
+
         /// <summary>
         /// Binds the control and all its child controls to the specified data source.
         /// </summary>
@@ -436,6 +437,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                                    General.GetString("HEADER_MANAGE_TAB", "Edit This Page", null) + "</a>";
                         list.Add(menuLink);
                     }
+
 
                     if (ShowDragNDrop && HasEditPermissionsOnTabs)
                     {
@@ -597,6 +599,19 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     list.Add(mb);
                 }
 
+                if (ShowTabMan && PortalSettings.IsAllowInviteMembers())
+                {
+                    menuLink = "<a";
+                    if (CssClass.Length != 0)
+                        menuLink = menuLink + " class=\"" + CssClass + "\"";
+
+                    // added mID by Mario Endara <mario@softworks.com.uy> to support security check (2004/11/09)
+                    var url = "/ASMemberInvite/MemberInvite/RenderView?pid=" +
+                               PortalSettings.ActivePage.PageID;
+                    menuLink = menuLink + " href='" + url + "' onclick=\"openInModal('" + url + "','" + General.GetString("HEADER_INVITE_MEMBERS", "Invite Members", null) + "');return false;\");>" +
+                               General.GetString("HEADER_INVITE_MEMBERS", "Invite Members", null) + "</a>";
+                    list.Add(menuLink);
+                }
                 innerDataSource = list;
             }
             base.DataBind();

@@ -1376,6 +1376,30 @@ namespace Appleseed.Framework.Site.Configuration
             return true;
         }
 
+        public static bool IsAllowInviteMembers()
+        {
+            var portalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+            if (portalSettings != null && HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                if (portalSettings.Settings != null
+                    && portalSettings.Settings.ContainsKey("SITESETTINGS_ALLOW_INVITE_MEMBER")
+                    && portalSettings.Settings["SITESETTINGS_ALLOW_INVITE_MEMBER"] != null
+                    && portalSettings.Settings["SITESETTINGS_ALLOW_INVITE_MEMBER"].Value != null
+                    && !string.IsNullOrEmpty(portalSettings.Settings["SITESETTINGS_ALLOW_INVITE_MEMBER"].Value.ToString())
+                    )
+                {
+                    if (portalSettings.Settings["SITESETTINGS_ALLOW_INVITE_MEMBER"].Value.ToString().ToLower() == "true" || portalSettings.Settings["SITESETTINGS_ALLOW_INVITE_MEMBER"].Value.ToString().ToLower() == "1")
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        
+
         /// <summary>
         /// Get portal settings by pageid and portal alias
         /// </summary>
@@ -1668,6 +1692,18 @@ namespace Appleseed.Framework.Site.Configuration
 
                 // jes1111 - PortalAdmins.Value = ConfigurationSettings.AppSettings["ADAdministratorGroup"];
                 baseSettings.Add("WindowsAdmins", portalAdmins);
+
+                var allowInviteMembers = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 9,
+                    Group = group,
+                    Value = true,
+                    EnglishName = "Invite Member",
+                    Description =
+                            "Check this to allow logged in user to invite other members"
+                };
+                baseSettings.Add("SITESETTINGS_ALLOW_INVITE_MEMBER", allowInviteMembers);
+
 
                 // Allow new registrations?
                 var allowNewRegistrations = new SettingItem<bool, CheckBox>

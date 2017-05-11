@@ -50,7 +50,7 @@ namespace Appleseed
                 int index = 0;
 
                 #region
-              
+
                 if (ConfigurationManager.AppSettings["CSSLoadTop"] != null && bool.Parse(ConfigurationManager.AppSettings["CSSLoadTop"]))
                 {
                     var psCSS = (PortalSettings)context.Items["PortalSettings"];
@@ -282,6 +282,8 @@ namespace Appleseed
             scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/ui.multiselect.js"));
             scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jQueryTabs.js"));
 
+            scripts.Add(page.ResolveUrl("/aspnet_client/MemberInvite/MemberInvite.js"));
+
             //scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jsTree/_lib/jquery.cookie.js"));
             //scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jsTree/_lib/jquery.hotkeys.js"));
             //scripts.Add(page.ResolveUrl("~/aspnet_client/jQuery/jsTree/jquery.jstree.js"));
@@ -290,7 +292,7 @@ namespace Appleseed
             return scripts;
         }
 
-        
+
         /// <summary>
         /// ModalChangeMaster=true
         /// </summary>

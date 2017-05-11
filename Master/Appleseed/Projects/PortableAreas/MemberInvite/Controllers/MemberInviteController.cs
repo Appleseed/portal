@@ -20,6 +20,13 @@ namespace MemberInvite.Controllers
             ViewBag.PageId = this.PortalSettings.ActivePage.PageID;
             return View();
         }
+        public ActionResult RenderView(int pid)
+        {
+            var portalSettings = Appleseed.Framework.Site.Configuration.PortalSettings.GetPortalSettings(pid, Config.DefaultPortal);
+            ViewBag.ThemeCSS = portalSettings.GetCurrentTheme().CssFile;
+            ViewBag.PageId = pid;
+            return View();
+        }
 
         private string GetToken(int pageid)
         {
