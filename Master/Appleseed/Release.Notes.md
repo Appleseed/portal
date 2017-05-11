@@ -1,4 +1,22 @@
-# Appleseed.Portal 1.4.98.383 Release
+# Appleseed.Portal 1.4.131.463 Release
+- Release Date: 04/08/2017
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6.1 to be installed.
+
+## Major Bug Fixes
+- Fixed Monitoring Page
+- Fixed Title double click to edit on http/https + port numbers
+- Fixes some issues in User Manager 
+
+## Features
+- Removed old dependencies 
+
+## Known bugs that need to be fixed
+- n/a
+
+
+# Appleseed.Portal 1.4.98.383 Pre-Release
 - Release Date: 03/31/2017
 
 ## Requirements
