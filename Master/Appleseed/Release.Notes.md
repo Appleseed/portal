@@ -1,3 +1,29 @@
+# Appleseed.Portal 1.3.69.342 Release
+- Release Date: 02/5/2017
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6.1 to be installed.
+
+## Major Bug Fixes
+- File Manager - Fixed an issues allowing the upload of certain file types : Main JavaScript
+- File Manager - Cleaned out hard-coded Spanish language to be put in resource files 
+- CKeditor - Fixed an issue where CKeditor was not saving the <section> element of html
+
+## Theme CSS Fixes
+-  Fixed Code Mirror CSS issues for all themes
+-  Cleaned up new Admin Theme Sections for Mobile Browsers
+
+## Features
+- Portal now locks users out who fail their password 5 times
+- Codewriter HTML Editor - Made sections 2 X 2 and gave more room for entering code / content
+- File Manager - Edit / Upload list now by web.config instead of in the code
+- Updated Log4Net to 2.0.7
+
+## Known bugs that need to be fixed
+- N/A
+
+
+
 # Appleseed.Portal 1.2.43.305 Release
 - Release Date: 12/19/2016
 
