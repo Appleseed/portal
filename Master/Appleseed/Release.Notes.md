@@ -1,3 +1,33 @@
+# Appleseed.Portal 1.1.0.0 Release
+- Release Date: 10/5/2016
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6.1 to be installed.
+
+## Major Bug Fixes
+- Cleaned up more warnings and bugs
+
+## Theme CSS Fixes
+-  Minor Script tweaks
+
+## Features
+- Install Module Instance manager on installation
+- Clean up all warnings and obsolete code  
+- Added Images for Sorting in Recycle Module  
+- Wrap HTML Module with Div Class Changes / Style changes of HTML Module  
+- Integrate MVC File Manager with HTML Module  
+- Expanded Width and Height on HTML Editing
+- Inline HTML edit with CKEditor.  
+- Proxy Module Implementation - Expose Private server resources by portal role  
+- Code changes to resolved - Bug - Iframe Settings  
+- Implementation of Environment check for 4.6.1 on install  
+- Edit this page module list alphabetical ordering  
+- Admin Theme Changes to show last logged in based on local timezone  
+
+## Known bugs that need to be fixed
+N/A 
+
+
 # Appleseed.Portal 1.0.9.1 Release
 - Release Date: 8/5/2016
 
