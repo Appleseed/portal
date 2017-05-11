@@ -1240,7 +1240,7 @@
       <Script>2.0.0.1899.sql</Script>
     </Scripts>
     <Modules>
-      <Installer>DesktopModules/CoreModules/SliderManager/install.xml</Installer>
+      <!--<Installer>DesktopModules/CoreModules/SliderManager/install.xml</Installer>-->
       <Installer>DesktopModules/CoreModules/SliderRenderer/install.xml</Installer>
     </Modules>
   </Release>

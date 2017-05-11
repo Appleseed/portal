@@ -1371,13 +1371,6 @@
     <Compile Include="DesktopModules\CoreModules\SiteSettings\SiteSettings.ascx.designer.cs">
       <DependentUpon>SiteSettings.ascx</DependentUpon>
     </Compile>
-    <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx.cs">
-      <DependentUpon>SliderManager.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx.designer.cs">
-      <DependentUpon>SliderManager.ascx</DependentUpon>
-    </Compile>
     <Compile Include="DesktopModules\CoreModules\SliderManager\SliderManager.aspx.cs">
       <DependentUpon>SliderManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4779,10 +4772,6 @@
     <Content Include="DesktopModules\CoreModules\SignIn\SignIn_readme.txt" />
     <Content Include="DesktopModules\CoreModules\SiteSettings\install.xml" />
     <Content Include="DesktopModules\CoreModules\SiteSettings\SiteSettings.ascx" />
-    <Content Include="DesktopModules\CoreModules\SliderManager\install.sql" />
-    <Content Include="DesktopModules\CoreModules\SliderManager\install.xml" />
-    <Content Include="DesktopModules\CoreModules\SliderManager\readme.txt" />
-    <Content Include="DesktopModules\CoreModules\SliderManager\SliderManager.ascx" />
     <Content Include="DesktopModules\CoreModules\SliderManager\SliderManager.aspx" />
     <Content Include="DesktopModules\CoreModules\SliderRenderer\install.xml" />
     <Content Include="DesktopModules\CoreModules\SliderRenderer\readme.txt" />
