@@ -1,3 +1,23 @@
+# Appleseed.Portal  1.5.142.485 Pre-Release
+- Release Date: 05/08/2017
+
+## Requirements
+- This version of Appleseed.Portal requires .NET 4.6.1 to be installed.
+
+## Major Bug Fixes
+- Admin - Page Manager - Added Edit to Context Menu Right click
+
+## Features
+- Connected Sources Module - Add of new module that manages connected sources in a Cassandra DB
+- Codewriter - Cleaned up Interface to enter content easier
+- Ckeditor - Update editor to 4.6.2
+- View Page Tokens - Allow tokens to be set on pages for users to instantly view regardless of permissions
+- Login Redirect - Redirect the user to the proper page if they were prompted for login 
+
+## Known bugs that need to be fixed
+- Cloud SQL Stored procedures need to be upgraded to support Azure SQL
+
+
 # Appleseed.Portal 1.4.131.463 Release
 - Release Date: 04/08/2017
 
