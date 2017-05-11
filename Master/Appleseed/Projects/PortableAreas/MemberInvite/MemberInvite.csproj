@@ -133,6 +133,9 @@
       <Name>Appleseed.Framework.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MemberInvite\RenderView.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -175,7 +178,8 @@
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>echo F|xcopy /Y /E /S "$(ProjectDir)Views\\MemberInvite\Index.cshtml" "$(SolutionDir)Websites\Appleseed\Portals\_Appleseed\MVCTemplates\Views\MemberInvite\Index.cshtml"</PostBuildEvent>
+    <PostBuildEvent>echo F|xcopy /Y /E /S "$(ProjectDir)Views\\MemberInvite\Index.cshtml" "$(SolutionDir)Websites\Appleseed\Portals\_Appleseed\MVCTemplates\Views\MemberInvite\Index.cshtml"
+echo F|xcopy /Y /E /S "$(ProjectDir)Views\\MemberInvite\RenderView.cshtml" "$(SolutionDir)Websites\Appleseed\Portals\_Appleseed\MVCTemplates\Views\MemberInvite\RenderView.cshtml"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

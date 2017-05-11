@@ -5001,6 +5001,7 @@
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\UserManager\UserRegistry.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberInvite\Index.cshtml" />
     <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberRegistrationRequests\Index.cshtml" />
+    <Content Include="Portals\_Appleseed\MVCTemplates\Views\MemberInvite\RenderView.cshtml" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
