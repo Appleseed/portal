@@ -247,8 +247,14 @@ namespace Appleseed.Error
                                 null));
                         break;
                 }
-
-                sb.AppendFormat("<p><a href=\"{0}\">{1}</a></p>", homeUrl, General.GetString("HOME", "Home Page", null));
+                if (AppleseedMaster.IsModalChangeMaster)
+                {
+                    sb.AppendFormat("<p><a href=\"javascript:void(0);\" onclick=\"window.parent.location='{0}';\">{1}</a></p>", homeUrl, General.GetString("HOME", "Home Page", null));
+                }
+                else
+                {
+                    sb.AppendFormat("<p><a href=\"{0}\">{1}</a></p>", homeUrl, General.GetString("HOME", "Home Page", null));
+                }
             }
             catch
             {
@@ -271,7 +277,15 @@ namespace Appleseed.Error
                         break;
                 }
 
-                sb.AppendFormat("<p><a href=\"{0}\">{1}</a></p>", homeUrl, "Home Page");
+                //sb.AppendFormat("<p><a href=\"{0}\">{1}</a></p>", homeUrl, "Home Page");
+                if (AppleseedMaster.IsModalChangeMaster)
+                {
+                    sb.AppendFormat("<p><a href=\"javascript:void(0);\" onclick=\"window.parent.location='{0}';\">{1}</a></p>", homeUrl, General.GetString("HOME", "Home Page", null));
+                }
+                else
+                {
+                    sb.AppendFormat("<p><a href=\"{0}\">{1}</a></p>", homeUrl, General.GetString("HOME", "Home Page", null));
+                }
             }
 
             // find out if user is on allowed IP Address
