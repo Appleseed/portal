@@ -251,6 +251,18 @@ namespace Appleseed.Framework
                 }
                 finally
                 {
+                    if (AppleseedMaster.IsModalChangeMaster)
+                    {
+                        if (redirectUrl.Contains("?"))
+                        {
+                            redirectUrl += "&ModalChangeMaster=true";
+                        }
+                        else
+                        {
+                            redirectUrl += "?ModalChangeMaster=true";
+                        }
+                    }
+
                     HttpContext.Current.Server.ClearError();
                     if (errModule != null)
                     {
