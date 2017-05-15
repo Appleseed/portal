@@ -534,20 +534,20 @@ WHERE FormID=@FormID AND Help<>'';
 
 GO
 
-CREATE VIEW  EvoDocV_Field AS 
-SELECT frm.id AS FormID, sc.colid AS ID, sc.name,
-	CASE 
-		WHEN sc.xtype = 231 THEN sc.length/2
-		ELSE sc.length
-	END AS length,
-	systypes.name AS typename, 
-	sc.isnullable  
-FROM EvoDico_Form (nolock) frm,  systypes (nolock), syscolumns (nolock) sc,  sysobjects (nolock) so
-WHERE so.id=sc.id 
-	AND sc.xtype=systypes.xtype  
-	AND systypes.length<>256
-	AND so.name=frm.dbtable 
-GO	
+--CREATE VIEW  EvoDocV_Field AS 
+--SELECT frm.id AS FormID, sc.colid AS ID, sc.name,
+--	CASE 
+--		WHEN sc.xtype = 231 THEN sc.length/2
+--		ELSE sc.length
+--	END AS length,
+--	systypes.name AS typename, 
+--	sc.isnullable  
+--FROM EvoDico_Form (nolock) frm,  systypes (nolock), syscolumns (nolock) sc,  sysobjects (nolock) so
+--WHERE so.id=sc.id 
+--	AND sc.xtype=systypes.xtype  
+--	AND systypes.length<>256
+--	AND so.name=frm.dbtable 
+--GO	
 
 SET IDENTITY_INSERT EvoDico_FieldType ON;
 
