@@ -86,7 +86,17 @@ namespace Appleseed
                 sb.AppendLine(SRJS[0].ToString());
                 sb.AppendLine("</script>");
             }
-            this.ClientScript.RegisterStartupScript(this.GetType(), "JS", sb.ToString());
+            if (this.PortalSettings.ActivePage.Settings.ContainsKey("TabLinkJSChk") &&
+               !(string.IsNullOrEmpty(this.PortalSettings.ActivePage.Settings["TabLinkJSChk"].ToString())) &&
+               (bool.Parse(this.PortalSettings.ActivePage.Settings["TabLinkJSChk"].ToString()))
+                )
+            {
+                this.Header.Controls.Add(new LiteralControl(sb + "\n"));
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "JS", sb.ToString());
+            }
         }
 
         /// <summary>
