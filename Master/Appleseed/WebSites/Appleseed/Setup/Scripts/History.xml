@@ -1414,4 +1414,12 @@
       <Script>2.0.0.1918.sql</Script>
     </Scripts>
   </Release>
+ <Release>
+    <ID>1919</ID>
+    <Version>2.0.0.1919</Version>
+    <Date>2017-05-16T00:00:00.0000000-00:00</Date>
+    <Scripts>
+      <Script>2.0.0.1919.sql</Script>
+    </Scripts>
+  </Release>
 </History>
