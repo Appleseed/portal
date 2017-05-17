@@ -723,7 +723,7 @@ namespace Appleseed.Admin
 
             //load users
             UserPagePermissionDB userPp = new UserPagePermissionDB();
-            gdvUsersAuth.DataSource = userPp.GetAllUsers(this.PageID);
+            gdvUsersAuth.DataSource = userPp.GetAllUsers(this.PageID, PortalSettings.CurrentUser.Identity.ProviderUserKey);
             gdvUsersAuth.DataBind();
 
             // Populate the "Add Module" Data
