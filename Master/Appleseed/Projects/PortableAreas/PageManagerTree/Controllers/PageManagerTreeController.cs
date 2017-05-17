@@ -93,18 +93,21 @@ namespace PageManagerTree.Controllers
             List<JsTreeModel> lstTree = new List<JsTreeModel>();
             foreach (PageStripDetails childPage in childPages)
             {
-                PageItem aux = new PageItem();
-                aux.ID = childPage.PageID;
-                aux.Name = childPage.PageName;
-                //JsTreeModel[] childs = getChildrenTree(aux);
-                JsTreeModel node = new JsTreeModel
+                if (PortalSecurity.IsInRole("Admins") || (!PortalSecurity.IsInRole("Admins") && (childPage.PageID != 100 || childPage.ParentPageID == 100)))
                 {
-                    data = aux.Name,
-                    attr = new JsTreeAttribute { id = "pjson_" + aux.ID.ToString() },
-                    //children = childs,
-                };
-                lstTree.Add(node);
-                count++;
+                    PageItem aux = new PageItem();
+                    aux.ID = childPage.PageID;
+                    aux.Name = childPage.PageName;
+                    //JsTreeModel[] childs = getChildrenTree(aux);
+                    JsTreeModel node = new JsTreeModel
+                    {
+                        data = aux.Name,
+                        attr = new JsTreeAttribute { id = "pjson_" + aux.ID.ToString() },
+                        //children = childs,
+                    };
+                    lstTree.Add(node);
+                    count++;
+                }
             }
             JsTreeModel[] tree = lstTree.ToArray<JsTreeModel>();
             return tree;
@@ -155,7 +158,17 @@ namespace PageManagerTree.Controllers
             List<JsTreeModel> pages = new List<JsTreeModel>();
             if (!isPane)
             {
-                List<PageStripDetails> childPages = new PagesDB().GetPagesinPage(this.PortalSettings.PortalID, Convert.ToInt32(pageid));
+                List<PageStripDetails> childBDPages = new PagesDB().GetPagesinPage(this.PortalSettings.PortalID, Convert.ToInt32(pageid));
+                List<PageStripDetails> childPages = new List<PageStripDetails>();
+                foreach (var childPage in childBDPages)
+                {
+                    if (PortalSecurity.IsInRole("Admins") || (!PortalSecurity.IsInRole("Admins") && (childPage.PageID != 100 || childPage.ParentPageID == 100)))
+                    {
+                        childPages.Add(childPage);
+                    }
+                }
+
+
                 int i = 0;
                 pages = (from page in childPages
                          orderby page.PageOrder
@@ -297,7 +310,7 @@ namespace PageManagerTree.Controllers
                         moduleDefinition =
                             new rb_ModuleDefinitions().All(where: "GeneralModDefID = @0 and PortalID = @1", args: queryargs).Single().ModuleDefID;
                     }
-                    catch 
+                    catch
                     {
                         // Shortcut module doesn't exist in current Portal
                         var modules = new ModulesDB();
