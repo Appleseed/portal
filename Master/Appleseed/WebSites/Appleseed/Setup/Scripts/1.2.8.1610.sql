@@ -380,7 +380,7 @@ GO
 
 --************************************************************************
 CREATE PROCEDURE [rb_UpdatePicture]
-	(@ItemID 	[int ],
+	(@ItemID 	[int],
 	 @ModuleID 	[int],
 	 @DisplayOrder	[int],
 	 @MetadataXml nvarchar(3000),

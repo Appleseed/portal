@@ -420,7 +420,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     }
 
                     // If user logged in and has Edit permission in the Tab module, reach tab management just one click
-                    if ((ShowTabMan) && (HasEditPermissionsOnTabs) && UserPagePermissionDB.HasCurrentPageEditPermission())
+                    if (
+                        ((ShowTabMan) && (HasEditPermissionsOnTabs) && UserPagePermissionDB.HasCurrentPageEditPermission() 
+                        && PortalSettings.ActivePage.ParentPageID != 100 && PortalSettings.ActivePage.PageID != 100)
+                        || ((PortalSettings.ActivePage.ParentPageID == 100 || PortalSettings.ActivePage.PageID == 100) && PortalSecurity.IsInRole("Admins"))
+                        )
                     {
                         // added by Mario Endara 2004/08/06 so PageLayout can return to this page
                         // added Class support by Mario Endara <mario@softworks.com.uy> 2004/10/04
@@ -439,7 +443,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     }
 
 
-                    if (ShowDragNDrop && HasEditPermissionsOnTabs)
+                    if (
+                       ((ShowTabMan) && (HasEditPermissionsOnTabs) && UserPagePermissionDB.HasCurrentPageEditPermission()
+                       && PortalSettings.ActivePage.ParentPageID != 100 && PortalSettings.ActivePage.PageID != 100)
+                       || ((PortalSettings.ActivePage.ParentPageID == 100 || PortalSettings.ActivePage.PageID == 100) && PortalSecurity.IsInRole("Admins"))
+                       )
                     {
 
                         menuLink = "<a";

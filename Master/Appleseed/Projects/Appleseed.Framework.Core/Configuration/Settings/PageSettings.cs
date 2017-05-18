@@ -627,6 +627,8 @@ namespace Appleseed.Framework.Site.Configuration
 
             #region
 
+
+
             //Adding the CSS and JavaScript Section
             var groupOrderCSSJS = (int)SettingItemGroup.ADD_CSS_JAVASCRIPT;
             var groupCSSJS = SettingItemGroup.ADD_CSS_JAVASCRIPT;
@@ -639,7 +641,6 @@ namespace Appleseed.Framework.Site.Configuration
                 Order = groupOrderCSSJS + 1,
                 EnglishName = "Enter CSS",
                 Description = "Allows this tab to add CS"
-                ,
             };
 
             ((TextBox)tabLinkCSS.EditControl).TextMode = TextBoxMode.MultiLine;
@@ -647,6 +648,14 @@ namespace Appleseed.Framework.Site.Configuration
             ((TextBox)tabLinkCSS.EditControl).Width = 400;
             baseSettings.Add("TabLinkCSS", tabLinkCSS);
 
+            var tabLinkJSchk = new SettingItem<bool, CheckBox>(new BaseDataType<bool, CheckBox>())
+            {
+                Group = groupCSSJS,
+                Order = groupOrderCSSJS + 1,
+                Value = false,
+                EnglishName = "Add JS to &lt;HEAD&gt;"
+            };
+            baseSettings.Add("TabLinkJSChk", tabLinkJSchk);
 
             var tabLinkJS = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
             {

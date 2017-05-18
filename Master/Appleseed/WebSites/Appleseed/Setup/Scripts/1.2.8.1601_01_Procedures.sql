@@ -4936,7 +4936,7 @@ GO
 
 --************************************************************************
 CREATE PROCEDURE [rb_UpdatePicture]
-	(@ItemID 	[int ],
+	(@ItemID 	[int],
 	 @ModuleID 	[int],
 	 @DisplayOrder	[int],
 	 @MetadataXml VARCHAR(6000),

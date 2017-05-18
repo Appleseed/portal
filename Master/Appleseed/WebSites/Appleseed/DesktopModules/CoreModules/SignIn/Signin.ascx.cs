@@ -388,14 +388,10 @@ Is not well formed. Check the setting SITESETTINGS_ON_REGISTER_SEND_FROM of port
                 ((SettingItem<bool, CheckBox>)this.Settings["MODULESETTINGS_SHOW_TITLE"]).Value = false;
             }
 
-            if (this.Settings.ContainsKey("SITESETTINGS_ALLOW_NEW_REGISTRATION") && !this.Settings["SITESETTINGS_ALLOW_NEW_REGISTRATION"].ToString().Equals(string.Empty))
-            //if (this.PortalSettings.CustomSettings["SITESETTINGS_ALLOW_NEW_REGISTRATION"] != null)
-            {
+            if (this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_ALLOW_NEW_REGISTRATION") &&
+                !(string.IsNullOrEmpty(this.PortalSettings.CustomSettings.ContainsKey("SITESETTINGS_ALLOW_NEW_REGISTRATION").ToString())))
                 if (!bool.Parse(this.PortalSettings.CustomSettings["SITESETTINGS_ALLOW_NEW_REGISTRATION"].ToString()))
-                {
-                    this.RegisterBtn.Visible = false;
-                }
-            }
+                    RegisterBtn.Visible = false;
 
             if (this.Settings.ContainsKey("SIGNIN_AUTOMATICALLYHIDE") && !this.Settings["SIGNIN_AUTOMATICALLYHIDE"].ToString().Equals(string.Empty))
             //if (this.Settings["SIGNIN_AUTOMATICALLYHIDE"] != null)

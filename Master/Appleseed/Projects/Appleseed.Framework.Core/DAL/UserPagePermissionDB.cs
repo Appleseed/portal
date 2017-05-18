@@ -37,15 +37,15 @@ namespace Appleseed.Framework.Site.Data
 
         }
 
-        public List<UserInfo> GetAllUsers(int pageId)
+        public List<UserInfo> GetAllUsers(int pageId, Guid userId)
         {
             string query = string.Format("SELECT m.ApplicationId, m.UserId, m.Email, cp.Name, ISNULL(upp.Permission,1) as Permission, {1} PageId " +
                                          "FROM aspnet_Membership as m LEFT JOIN aspnet_CustomProfile as cp " +
                                          "ON m.UserId = cp.UserId " +
                                          "inner join aspnet_Applications as a " +
                                          "on a.ApplicationName = '{0}'and a.ApplicationId = m.ApplicationId " +
-                                         "left join rb_userPagePermission upp on upp.UserId = m.UserId and upp.PageId = {1}" +
-                                         "order by cp.Name", Portal.UniqueID, pageId);
+                                         "left join rb_userPagePermission upp on upp.UserId = m.UserId and upp.PageId = {1} Where m.UserId != '{2}'" +
+                                         "order by cp.Name", Portal.UniqueID, pageId, userId);
 
             return Appleseed.Framework.Data.DBHelper.DataReaderToObjectList<UserInfo>(query);
         }
@@ -79,13 +79,24 @@ namespace Appleseed.Framework.Site.Data
             }
         }
 
-        public static bool HasCurrentPageEditPermission()
+        public static bool HasCurrentPageEditPermission(ModuleSettings moduleSettings = null)
         {
-            var upp = GetUserPagePermission(PortalSettings.ActivePage.PageID, Guid.Parse(System.Web.Security.Membership.GetUser().ProviderUserKey.ToString()));
-            if (upp.Permission == 2 || System.Web.HttpContext.Current.User.IsInRole("Admins"))
+            if (System.Web.HttpContext.Current.User.IsInRole("Admins"))
             {
                 return true;
             }
+
+            var upp = GetUserPagePermission(PortalSettings.ActivePage.PageID, Guid.Parse(System.Web.Security.Membership.GetUser().ProviderUserKey.ToString()));
+            if (upp.Permission == 2)
+            {
+                return true;
+            }
+            else if((upp.Permission == 0 && System.Web.HttpContext.Current.User.IsInRole("Builder") && moduleSettings != null && !moduleSettings.Admin) 
+                || ((upp.Permission == 0 && System.Web.HttpContext.Current.User.IsInRole("Builder") && moduleSettings == null)))
+            {
+                return true;
+            }
+
             return false;
         }
 
