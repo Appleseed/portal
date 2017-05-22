@@ -3,7 +3,7 @@ using System.Web.UI;
 using System.Web.Security;
 using Appleseed.Framework.Security;
 using System.Web;
-
+using Appleseed.Framework.Site.Configuration;
 
 namespace Appleseed
 {
@@ -15,6 +15,14 @@ namespace Appleseed
     /// </summary>
     public partial class Default : Page
     {
+        protected PortalSettings PortalSettings
+        {
+            get
+            {
+                return (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+            }
+        }
+
         /// <summary>
         /// Handles the Load event of the Page control.
         /// </summary>
@@ -22,7 +30,6 @@ namespace Appleseed
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             string user = Request.Params["u"];
             string pass = Request.Params["p"];
             
@@ -32,7 +39,19 @@ namespace Appleseed
                 int pageId = 0;
                 if (int.TryParse(lnkid, out pageId))
                 {
-                    this.Response.Redirect(Appleseed.Framework.HttpUrlBuilder.BuildUrl(pageId),true);
+
+                    var ps = Framework.Site.Configuration.PortalSettings.GetPortalSettings(pageId, this.PortalSettings.PortalAlias);
+                    string redirectUrl = string.Empty;
+                    if (ps.ActivePage.Settings["TabLink"] != null && !string.IsNullOrEmpty(ps.ActivePage.Settings["TabLink"].ToString()))
+                    {
+                        redirectUrl = ps.ActivePage.Settings["TabLink"].ToString();
+                    }
+                    else if (ps.ActivePage.CustomSettings["TabLink"] != null && !string.IsNullOrEmpty(ps.ActivePage.CustomSettings["TabLink"].ToString()))
+                    {
+                        redirectUrl = ps.ActivePage.CustomSettings["TabLink"].ToString();
+                    }
+
+                    this.Response.Redirect(redirectUrl, true);
                 }
             }
 
