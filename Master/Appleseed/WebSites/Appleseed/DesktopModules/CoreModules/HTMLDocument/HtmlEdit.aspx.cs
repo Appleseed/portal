@@ -119,7 +119,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     ResizeEnabled = false,
                     Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
                 };
-                cwCKEditor.Height = 550;
+                cwCKEditor.Height = 270;
                 cwCKEditor.BasePath = Appleseed.Framework.Settings.Path.WebPathCombine(Appleseed.Framework.Settings.Path.ApplicationRoot, "/aspnet_client/CKEditorV4.6.2");
                 this.plcCWCKEditor.Controls.Add((Control)cwCKEditor);
             }
