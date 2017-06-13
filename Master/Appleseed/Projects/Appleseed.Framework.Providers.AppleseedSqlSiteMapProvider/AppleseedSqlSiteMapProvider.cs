@@ -291,12 +291,12 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                                 {
                                     this.AddNode(node, parentNode);
                                 }
-                                catch
+                                catch(Exception ex)
                                 {
-                                    node.Url = node.Url.Contains("?")
-                                                   ? string.Format("{0}&lnkId={1}", node.Url, node.Key)
-                                                   : string.Format("{0}?lnkId={1}", node.Url, node.Key);
-
+                                    //node.Url = node.Url.Contains("?")
+                                    //               ? string.Format("{0}&lnkId={1}", node.Url, node.Key)
+                                    //               : string.Format("{0}?lnkId={1}", node.Url, node.Key);
+                                    node.Url = "/default.aspx?lnkId=" + node.Key;
                                     this.AddNode(node, parentNode);
                                 }
                             }

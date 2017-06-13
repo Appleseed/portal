@@ -103,17 +103,17 @@
                 }
 
                 .CodeMirror {
-                    height: 700px !important;
+                    height: 400px !important;
                 }
 
                 .divPreview {
-                    height: 700px;
+                    height: 400px;
                     border: 1px solid gray;
                 }
 
                 .myframe {
                     width: 100%;
-                    height: 690px;
+                    height: 390px;
                 }
 
                 .tabs .CommandButton {
@@ -151,10 +151,10 @@
                 });
             </script>
             <div class="col-lg-12">
-                <h2>Code Writer</h2>
+                <h2>Codewriter</h2>
             </div>
             <div class="col-lg-12 tabs">
-                <a id="tbEditor" tabid="divEditor" class="CommandButton tbActive">Editor</a>
+                <a id="tbEditor" tabid="divEditor" class="CommandButton tbActive">CKEditor</a>
                 <a id="tbHtml" tabid="divHTML" class="CommandButton ">HTML</a>
                 <a id="tbJavaScript" tabid="divJS" class="CommandButton">JavaScript</a>
                 <a id="tbCSS" tabid="divCSS" class="CommandButton">CSS</a>
