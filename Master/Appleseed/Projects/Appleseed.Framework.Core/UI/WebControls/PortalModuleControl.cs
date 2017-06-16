@@ -1619,7 +1619,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         else if (this.editButton.HRef.ToLower().Contains("/evoladvmodsettings.aspx"))
                             this.editButton.Attributes.Add("onclick", "openInModal('" + editButton.HRef + "','" + General.GetString("EVOL_ADVD_MODEL_SETTING_TITLE", "Evolutility Advanced Model Settings") + "');return false;");
                         else if (this.editButton.HRef.ToLower().Contains("/slidermanager.aspx"))
-                            this.editButton.Attributes.Add("onclick", "openInModal('" + editButton.HRef + "','Sliders');return false;");
+                            this.editButton.Attributes.Add("onclick", "openInModal('" + editButton.HRef + "','Slider Module');return false;");
 
                         this.editButton.Target = this.EditTarget;
                         this.editButton.Image = this.CurrentTheme.GetImage("Buttons_Edit", "Edit.gif");
