@@ -29,8 +29,8 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span>Admin</span>
                 </button>
-                <a href="/1" class="navbar-brand">
-                    <img alt='Appleseed' src='/Design/Themes/Appleseed.Admin/images/brick.png' class='admin-logo' height='16' width='16' />AS
+                <a href="/1" class="navbar-brand" id="hypHome">
+                   <i class="fa fa-home fa-2x" aria-hidden="true"></i>
                 </a>
                 <ul id="admin-left-menu" class="nav navbar-nav">
                     <li>

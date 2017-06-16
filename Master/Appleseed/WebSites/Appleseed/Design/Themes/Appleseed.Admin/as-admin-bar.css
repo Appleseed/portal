@@ -223,7 +223,34 @@
     padding:0 0;
 }
 
+.admin-menu-list #liAdminProfile ul li {
+    color: #7b8a8b;
+    float: none;
+    width: 100%;
+    padding: 5px 10px;
+    line-height: 25px;
+}
 
+    .admin-menu-list #liAdminProfile ul li hr {
+        margin: 0px;
+    }
+
+    .admin-menu-list #liAdminProfile ul li a {
+        line-height: 25px;
+        color: #7b8a8b;
+    }
+
+        .admin-menu-list #liAdminProfile ul li a:hover {
+            color: #fff;
+        }
+
+.dndActive {
+    font-weight: bold;
+    background-color: #999999;
+}
+#hypHome .fa {
+    display: inline-block;
+}
 /* MEDIA QUERIES */
 
 /* Large Devices, Wide Screens */

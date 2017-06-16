@@ -75,31 +75,6 @@ $(document).ready(function () {
                 added = 1;
             }
         }
-        //$("#Admin_HeaderMenu2 li").each(function (idx, itm) {
-        //    if ($(this).html().toLowerCase().indexOf("/register.aspx") > -1) {
-        //        $("#ulAdminProfileSubMenu").append($(this).html());
-        //    }
-        //});
-        /*
-        <li class="dropdown">
-                        <a href="/100" class="dropdown-toggle" data-toggle="" data-hover="dropdown"><span>Administration</span><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-
-                                <li><a href='/240'>Site Settings</a></li>
-                                <li><a href="/110">Page Manager</a></li>
-                                <li><a href="/280">User Manager</a></li>
-                                <li><a href="/155">File Manager</a></li>
-                                <!--<li><a href="/120">Global Modules</a></li>-->
-                                <li><a href="/215">Recycle Bin</a></li>
-
-
-                                <li><a href="/110">Page Manager</a></li>
-                                <li><a href="/155">File Manager</a></li>
-
-                        </ul>
-                    </li>
-        */
-    }
-    else {
+       
     }
 });
