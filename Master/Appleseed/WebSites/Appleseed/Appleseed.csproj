@@ -5191,6 +5191,7 @@
     <Content Include="Setup\Scripts\2.0.0.1918.sql" />
     <Content Include="Setup\Scripts\2.0.0.1919.sql" />
     <Content Include="Setup\Scripts\2.0.0.1920.sql" />
+    <Content Include="Setup\Scripts\2.0.0.1921.sql" />
     <Content Include="Setup\Scripts\ANANT.Evolutility.Advanced.DBScript.sql" />
     <Content Include="Setup\Scripts\2.0.0.1915.sql" />
     <Content Include="Setup\Scripts\History.xml">

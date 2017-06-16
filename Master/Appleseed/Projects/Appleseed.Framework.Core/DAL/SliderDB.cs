@@ -41,7 +41,7 @@ namespace Appleseed.Framework.Site.Data
         public void UpdateSlider(SliderItem item)
         {
             using (var connection = Config.SqlConnectionString)
-            using (var sqlCommand = new SqlCommand("update rb_sliders SET ClientWorkPosition = @ClientWorkPosition, ClientQuote = @ClientQuote, ClientFirstName = @ClientFirstName, ClientLastName = @ClientLastName, BackgroudImageUrl = @BackgroudImageUrl, BackgroudColor=@BackgroudColor  where Id = @Id", connection))
+            using (var sqlCommand = new SqlCommand("update rb_sliders SET ClientWorkPosition = @ClientWorkPosition, ClientQuote = @ClientQuote, ClientFirstName = @ClientFirstName, ClientLastName = @ClientLastName where Id = @Id", connection))
             {
                 // Mark the Command as a SPROC
                 sqlCommand.CommandType = CommandType.Text;
@@ -50,8 +50,6 @@ namespace Appleseed.Framework.Site.Data
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientQuote", SqlDbType.NVarChar, 2000) { Value = item.ClientQuote });
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientFirstName", SqlDbType.NVarChar, 100) { Value = item.ClientFirstName });
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientLastName", SqlDbType.NVarChar, 100) { Value = item.ClientLastName });
-                sqlCommand.Parameters.Add(new SqlParameter("@BackgroudImageUrl", SqlDbType.NVarChar, 1000) { Value = item.BackgroudImageUrl });
-                sqlCommand.Parameters.Add(new SqlParameter("@BackgroudColor", SqlDbType.NVarChar, 100) { Value = item.BackgroudColor });
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientWorkPosition", SqlDbType.NVarChar, 200) { Value = item.ClientWorkPosition });
 
                 connection.Open();
@@ -73,7 +71,7 @@ namespace Appleseed.Framework.Site.Data
         public string AddNewSlider(SliderItem item)
         {
             using (var connection = Config.SqlConnectionString)
-            using (var sqlCommand = new SqlCommand("INSERT INTO rb_sliders (ModuleId,ClientWorkPosition, ClientQuote, ClientFirstName, ClientLastName, BackgroudImageUrl, BackgroudColor) VALUES (@ModuleId, @ClientWorkPosition, @ClientQuote, @ClientFirstName, @ClientLastName, @BackgroudImageUrl, @BackgroudColor)", connection))
+            using (var sqlCommand = new SqlCommand("INSERT INTO rb_sliders (ModuleId,ClientWorkPosition, ClientQuote, ClientFirstName, ClientLastName) VALUES (@ModuleId, @ClientWorkPosition, @ClientQuote, @ClientFirstName, @ClientLastName)", connection))
             {
                 // Mark the Command as a SPROC
                 sqlCommand.CommandType = CommandType.Text;
@@ -81,8 +79,6 @@ namespace Appleseed.Framework.Site.Data
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientQuote", SqlDbType.NVarChar, 2000) { Value = item.ClientQuote });
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientFirstName", SqlDbType.NVarChar, 100) { Value = item.ClientFirstName });
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientLastName", SqlDbType.NVarChar, 100) { Value = item.ClientLastName });
-                sqlCommand.Parameters.Add(new SqlParameter("@BackgroudImageUrl", SqlDbType.NVarChar, 1000) { Value = item.BackgroudImageUrl });
-                sqlCommand.Parameters.Add(new SqlParameter("@BackgroudColor", SqlDbType.NVarChar, 100) { Value = item.BackgroudColor });
                 sqlCommand.Parameters.Add(new SqlParameter("@ClientWorkPosition", SqlDbType.NVarChar, 200) { Value = item.ClientWorkPosition });
 
                 connection.Open();

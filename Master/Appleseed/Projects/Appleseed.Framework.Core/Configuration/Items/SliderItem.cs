@@ -12,8 +12,6 @@
         public string ClientQuote { get; set; }
         public string ClientFirstName { get; set; }
         public string ClientLastName { get; set; }
-        public string BackgroudImageUrl { get; set; }
-        public string BackgroudColor { get; set; }
         public string ClientWorkPosition { get; set; }
     }
 }

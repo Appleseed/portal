@@ -31,8 +31,6 @@ namespace Appleseed.DesktopModules.CoreModules.SliderManager
         protected void lnkAddNew_Click(object sender, EventArgs e)
         {
             hidAddEditId.Value = 0.ToString();
-            txtBGColor.Text = string.Empty;
-            txtBGImageUrl.Text = string.Empty;
             txtClientFirstName.Text = string.Empty;
             txtClientLastName.Text = string.Empty;
             txtClientQuote.Text = string.Empty;
@@ -47,8 +45,6 @@ namespace Appleseed.DesktopModules.CoreModules.SliderManager
             {
                 SliderItem slider = new SliderItem()
                 {
-                    BackgroudColor = txtBGColor.Text,
-                    BackgroudImageUrl = txtBGImageUrl.Text,
                     ClientFirstName = txtClientFirstName.Text,
                     ClientLastName = txtClientLastName.Text,
                     ClientQuote = txtClientQuote.Text,
@@ -77,8 +73,6 @@ namespace Appleseed.DesktopModules.CoreModules.SliderManager
             {
                 var slider = sdb.GetSliderByID(Convert.ToInt32(e.CommandArgument.ToString()));
                 hidAddEditId.Value = slider.Id.ToString();
-                txtBGColor.Text = slider.BackgroudColor;
-                txtBGImageUrl.Text = slider.BackgroudImageUrl;
                 txtClientFirstName.Text = slider.ClientFirstName;
                 txtClientLastName.Text = slider.ClientLastName;
                 txtClientQuote.Text = slider.ClientQuote;
