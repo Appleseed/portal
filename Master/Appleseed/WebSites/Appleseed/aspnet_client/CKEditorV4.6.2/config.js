@@ -21,4 +21,7 @@ CKEDITOR.editorConfig = function (config) {
     config.filebrowserFlashBrowseUrl = '/DesktopModules/CoreModules/FileBrowser/FileBrowser.aspx';
 
     config.skin = 'moono-lisa';
+
+    // ALLOW <i></i>
+	config.protectedSource.push(/<i[^>]*><\/i>/g);
 };

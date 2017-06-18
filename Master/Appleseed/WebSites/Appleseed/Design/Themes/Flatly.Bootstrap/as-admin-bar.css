@@ -1,5 +1,5 @@
 .navbar-admin {
-    background-color: #2C3E50!important;
+    background-color: #2C3E50 !important;
     min-height: 50px;
     position: fixed;
     margin: 0;
@@ -25,7 +25,6 @@
 .navbar-admin .navbar-nav > li:hover > a {
     color: #18bc9c;
     background-color: transparent !IMPORTANT;
-   
 }
 
 .navbar-admin .navbar-nav > li > a {
@@ -61,6 +60,32 @@
         margin: 0;
         line-height: 50px;
     }
+
+.admin-menu-list #liAdminProfile ul li {
+    color: #7b8a8b;
+    float: none;
+    width: 100%;
+    padding: 5px 10px;
+    line-height: 25px;
+}
+
+    .admin-menu-list #liAdminProfile ul li hr {
+        margin: 0px;
+    }
+
+    .admin-menu-list #liAdminProfile ul li a {
+        line-height: 25px;
+        color: #7b8a8b;
+    }
+
+        .admin-menu-list #liAdminProfile ul li a:hover {
+            color: #fff;
+        }
+
+.dndActive {
+    font-weight: bold;
+    background-color: #999999;
+}
 
 .admin-logo {
     position: relative;
@@ -186,7 +211,7 @@
                 -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
                 box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
                 color: #333333;*/
-                background-color:#333;
+                background-color: #333;
             }
 
 .navbar-admin ul li ul li a {
@@ -284,7 +309,7 @@
     }
 
     #left_admin_menu {
-        display:none;
+        display: none;
     }
 }
 

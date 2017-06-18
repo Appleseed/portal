@@ -33,7 +33,7 @@
                     <span>Admin</span>
                 </button>
                 <a href="/1" class="navbar-brand">
-                    <img alt='Appleseed' src='/Design/Themes/Modern-Business.Bootstrap/images/brick.png' class='admin-logo' height='16' width='16' />AS
+                    <i class="fa fa-home fa-2x" aria-hidden="true"></i>
                 </a>
                 <ul id="left_admin_menu" class="nav navbar-nav">
                     <li class="dropdown">

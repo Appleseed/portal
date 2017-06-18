@@ -4516,7 +4516,7 @@
     <value>Your password has been sent to the email address you provided.</value>
   </data>
   <data name="SIGNIN_SEND_PWD" xml:space="preserve">
-    <value>Send Password</value>
+    <value>Forgot your password? Click here.</value>
   </data>
   <data name="SIGNIN_THANK_YOU" xml:space="preserve">
     <value>Thank you and we hope you enjoy your visit to</value>

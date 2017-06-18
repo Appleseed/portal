@@ -22,22 +22,15 @@
                 vertical-align:top;
             }
     </style>
-    <h3>Sliders</h3>
+   <%-- <h3>Slider Module</h3>--%>
     <asp:PlaceHolder ID="plcSliderList" runat="server">
-        <asp:LinkButton ID="lnkAddNew" runat="server" OnClick="lnkAddNew_Click">Add New</asp:LinkButton>
-        <asp:GridView runat="server" ID="gdvSliders" AutoGenerateColumns="false" EmptyDataText="No Slider Found" OnRowEditing="gdvSliders_RowEditing"  OnRowCommand="gdvSliders_RowCommand">
+        <asp:LinkButton ID="lnkAddNew" CssClass="CommandButton" runat="server" OnClick="lnkAddNew_Click" style="float:right">Add New Quote</asp:LinkButton>
+        <asp:GridView runat="server" ID="gdvSliders" AutoGenerateColumns="false" EmptyDataText="No Slider Found" OnRowEditing="gdvSliders_RowEditing"  OnRowCommand="gdvSliders_RowCommand" Width="100%">
             <Columns>
                 <asp:BoundField DataField="ClientFirstName" HeaderText="Client First Name" />
                 <asp:BoundField DataField="ClientLastName" HeaderText="Client List Name" />
                 <asp:BoundField DataField="ClientQuote" HeaderText="Quote" />
-                <asp:BoundField DataField="BackgroudColor" HeaderText="Background Color" />
-                <asp:TemplateField HeaderText="Background Image">
-                    <ItemTemplate>
-                        <asp:HiddenField ID="hidId" runat="server" Value='<%# Eval("Id") %>' />
-                        <asp:HiddenField ID="hidModuleId" runat="server" Value='<%# Eval("ModuleId") %>' />
-                        <asp:Image runat="server" ImageUrl='<%# Eval("BackgroudImageUrl") %>' ID="imgBGImage" Width="100" Height="100" />
-                    </ItemTemplate>
-                </asp:TemplateField>
+                
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:Button ID="btnEdit" Text="Edit" CssClass="CommandButton" CommandName="EDIT" CommandArgument='<%# Eval("Id") %>' runat="server" />
@@ -77,18 +70,7 @@
             <asp:TextBox ID="txtClientQuote" TextMode="MultiLine" Rows="3" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtClientQuote" ErrorMessage="Required!" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
-        <div>
-            Backgrond Image Url:
-        </div>
-        <div>
-            <asp:TextBox ID="txtBGImageUrl" runat="server"></asp:TextBox>
-        </div>
-        <div>
-            Backgrond Color:
-        </div>
-        <div>
-            <asp:TextBox ID="txtBGColor" runat="server"></asp:TextBox>
-        </div>
+ 
         <asp:Button ID="btnSave" Text="Save" CssClass="CommandButton" runat="server" OnClick="btnSave_Click" />
     </asp:PlaceHolder>
 </asp:Content>

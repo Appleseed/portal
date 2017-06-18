@@ -26,15 +26,16 @@
 
 <asp:Panel ID="BarPanel" runat="server" Visible="false">
     <div id="as-admin-bar" class="navbar navbar-admin navbar-fixed-top" role="navigation">
-    <%--    <div class="navbar navbar-default navbar-fixed-top" role="navigation">--%>          
+        <%--    <div class="navbar navbar-default navbar-fixed-top" role="navigation">--%>
         <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".userMenu">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".userMenu">
                     <span class="sr-only">Toggle navigation</span>
                     <span>Admin</span>
                 </button>
                 <a href="/1" class="navbar-brand">
-                    <img alt='Appleseed' src='/Design/Themes/Cosmo.Bootstrap/images/brick.png' class='admin-logo' height='16' width='16' />AS
+
+                    <i class="fa fa-home fa-2x" aria-hidden="true"></i>
                 </a>
                 <ul id="left_admin_menu" class="nav navbar-nav">
                     <li class="dropdown">

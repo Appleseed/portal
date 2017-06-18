@@ -11,7 +11,7 @@
     </section>
 </div>
 <div class="loadflexscript"></div>
-<div class="clearfix"></div>
+<div class="clearfix">&nbsp;</div>
 
 <asp:Repeater ID="rptSliders" runat="server">
     <HeaderTemplate>
@@ -20,7 +20,7 @@
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
     </HeaderTemplate>
     <ItemTemplate>
-        <div class="item" <%# GetBackground(Eval("BackgroudImageUrl").ToString(), Eval("BackgroudColor").ToString()) %>>
+        <div class="item">
             <div class="testimonial text-center dark-color">
                 <div class="container-icon"><i class="fa fa-quote-right"></i></div>
 
@@ -30,7 +30,7 @@
                     "
                 </p>
 
-                <div class="quote-author white"><%# Eval("ClientFirstName") %> <%# Eval("ClientLastName") %> <span style="font-weight: 400;">( <%# Eval("ClientWorkPosition") %> )</span></div>
+                <div class="quote-author white"><%# Eval("ClientFirstName") %> <%# Eval("ClientLastName") %> <span style="font-weight: 400;">(<%# Eval("ClientWorkPosition") %>)</span></div>
                 <br />
             </div>
         </div>

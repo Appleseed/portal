@@ -121,24 +121,6 @@ namespace Appleseed.DesktopModules.CoreModules.SliderManager {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// txtBGImageUrl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBGImageUrl;
-        
-        /// <summary>
-        /// txtBGColor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBGColor;
-        
-        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>

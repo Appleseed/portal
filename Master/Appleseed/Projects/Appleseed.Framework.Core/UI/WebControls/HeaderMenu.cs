@@ -12,7 +12,7 @@ using Appleseed.Framework.Site.Configuration;
 using Appleseed.Framework.Site.Data;
 using System.Globalization;
 using System.Threading;
-
+using System.Linq;
 
 namespace Appleseed.Framework.Web.UI.WebControls
 {
@@ -372,8 +372,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 {
                     if (ShowWelcome)
                     {
-                        list.Add(General.GetString("HEADER_WELCOME", "Welcome", this) + "&#160;" +
-                                 PortalSettings.CurrentUser.Identity.Name + "!");
+                        list.Add(PortalSettings.CurrentUser.Identity.Name + "(" + PortalSettings.CurrentUser.Identity.Email + ")");
+                    }
+
+                    var dashboardPage = PortalSettings.DesktopPages.FirstOrDefault(p => p.PageName == "Dashabord");
+                    if (dashboardPage != null)
+                    {
+                        list.Add(string.Format("<a href='{0}'>{1}</a>", Appleseed.Framework.HttpUrlBuilder.BuildUrl(dashboardPage.PageID), General.GetString("Dashabord", "Dashabord")));
                     }
 
                     if (ShowHome)
@@ -421,7 +426,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                     // If user logged in and has Edit permission in the Tab module, reach tab management just one click
                     if (
-                        ((ShowTabMan) && (HasEditPermissionsOnTabs) && UserPagePermissionDB.HasCurrentPageEditPermission() 
+                        ((ShowTabMan) && (HasEditPermissionsOnTabs) && UserPagePermissionDB.HasCurrentPageEditPermission()
                         && PortalSettings.ActivePage.ParentPageID != 100 && PortalSettings.ActivePage.PageID != 100)
                         || ((PortalSettings.ActivePage.ParentPageID == 100 || PortalSettings.ActivePage.PageID == 100) && PortalSecurity.IsInRole("Admins"))
                         )
@@ -454,7 +459,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         if (CssClass.Length != 0)
                             menuLink = menuLink + " class=\"" + CssClass + "\"";
 
-                        menuLink = menuLink + " href='javascript:DnD();'>" + General.GetString("DRAGNDROP", "DragNDrop", null) + "</a>";
+                        menuLink = menuLink + " href='javascript:DnD();' id='hypDND'>" + General.GetString("DRAGNDROP", "DragNDrop", null) + "</a>";
                         list.Add(menuLink);
                     }
 

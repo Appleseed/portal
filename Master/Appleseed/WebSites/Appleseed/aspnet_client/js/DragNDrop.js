@@ -6,6 +6,7 @@ var dnd = false;
 
 function DnD() {
     if (!dnd) {
+        $($("#hypDND").parent()).addClass('dndActive');
         $('.draggable-container').show();
         $('.draggable-container').css("border", "3px solid ForestGreen");
         $('.draggable-container').sortable({
@@ -33,6 +34,7 @@ function DnD() {
         });
 
     } else {
+        $($("#hypDND").parent()).removeClass('dndActive');
         var result = '';
         $('.draggable-container').css("border", "");
         $('.draggable-container .ModuleWrap').css("border", "");
