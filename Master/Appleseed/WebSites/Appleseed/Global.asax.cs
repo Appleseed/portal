@@ -470,7 +470,7 @@ namespace Appleseed
             // moved from PortalSettings
             var f = FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(Portal)).Location);
             HttpContext.Current.Application.Lock();
-            HttpContext.Current.Application["CodeVersion"] = 1921;
+            HttpContext.Current.Application["CodeVersion"] = 1922;
             HttpContext.Current.Application["NugetSelfUpdatesToInstall"] = false;
             HttpContext.Current.Application.UnLock();
 

@@ -5043,6 +5043,7 @@
     <Content Include="Portals\_Appleseed\xml\sales2.xsl" />
     <Content Include="rb_logs\rb_logs.txt" />
     <Content Include="robots.txt" />
+    <Content Include="Setup\Scripts\2.0.0.1922.sql" />
     <Content Include="Setup\Scripts\1.1.7.1111.sql" />
     <Content Include="Setup\Scripts\1.1.7.1111Z.sql" />
     <Content Include="Setup\Scripts\1.1.7.1111_Localization.sql" />
