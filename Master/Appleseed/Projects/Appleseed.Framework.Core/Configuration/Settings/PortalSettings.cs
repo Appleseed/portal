@@ -1360,7 +1360,7 @@ namespace Appleseed.Framework.Site.Configuration
             var portalSettings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
             if (portalSettings != null && !HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                if(portalSettings.Settings.ContainsKey("SITESETTINGS_ALLOW_USER_REQUESTS")
+                if (portalSettings.Settings.ContainsKey("SITESETTINGS_ALLOW_USER_REQUESTS")
                     && portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"] != null
                     && portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"].Value != null
                     && !string.IsNullOrEmpty(portalSettings.Settings["SITESETTINGS_ALLOW_USER_REQUESTS"].Value.ToString())
@@ -1398,7 +1398,7 @@ namespace Appleseed.Framework.Site.Configuration
             return false;
         }
 
-        
+
 
         /// <summary>
         /// Get portal settings by pageid and portal alias
@@ -1436,6 +1436,69 @@ namespace Appleseed.Framework.Site.Configuration
             }
 
             return portalSettings;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PortalSettings CurrentPortalSettings
+        {
+            get
+            {
+                var settings = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+                if (settings == null)
+                {
+                    settings = GetPortalSettingFromDB(1, Config.DefaultPortal, settings);
+                }
+                return settings;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static bool GetSettingBoolValue(string key)
+        {
+            bool keyVal = false;
+            if (CurrentPortalSettings.Settings[key] != null  && CurrentPortalSettings.Settings[key].Value != null)
+            {
+                bool.TryParse(CurrentPortalSettings.Settings[key].Value.ToString(), out keyVal);
+            }
+            if (CurrentPortalSettings.CustomSettings[key] != null && CurrentPortalSettings.CustomSettings[key].Value != null)
+            {
+                bool.TryParse(CurrentPortalSettings.CustomSettings[key].Value.ToString(), out keyVal);
+            }
+            return keyVal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static bool FriendlyUrlNoExtensionEnabled()
+        {
+            return (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"]) && System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"] == "1");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string GetSettingStringValue(string key)
+        {
+            string keyVal = string.Empty;
+            if (CurrentPortalSettings.Settings[key] != null && CurrentPortalSettings.Settings[key].Value != null)
+            {
+                keyVal = CurrentPortalSettings.Settings[key].Value.ToString();
+            }
+            if (CurrentPortalSettings.CustomSettings[key] != null && CurrentPortalSettings.CustomSettings[key].Value != null)
+            {
+                keyVal = CurrentPortalSettings.CustomSettings[key].Value.ToString();
+            }
+            return keyVal;
         }
 
         /// <summary>
@@ -2056,6 +2119,28 @@ namespace Appleseed.Framework.Site.Configuration
                     Value = false
                 };
                 baseSettings.Add("ENABLE_PAGE_FRIENDLY_URL", enableFriendlyURL);
+
+                //var friendlyURLExtention = new SettingItem<string, TextBox>
+                //{
+                //    Order = groupOrderBase + 28,
+                //    Group = group,
+                //    EnglishName = "Friendly URL Extension",
+                //    Description =
+                //        "Define url extension. Default extension is .aspx for all pages",
+                //    Value = ".aspx"
+                //};
+                //baseSettings.Add("PAGE_FRIENDLY_URL_EXTENSION", friendlyURLExtention);
+
+                //var friendlyURLNoExtension = new SettingItem<bool, CheckBox>
+                //{
+                //    Order = groupOrderBase + 29,
+                //    Group = group,
+                //    EnglishName = "No Friendly URL Extension?",
+                //    Description =
+                //       "Select this option if extension not required",
+                //    Value = false
+                //};
+                //baseSettings.Add("PAGE_FRIENDLY_URL_NO_EXTENSION", friendlyURLNoExtension);
 
                 var tabMetaOther = new SettingItem<string, TextBox>
                 {

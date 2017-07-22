@@ -37,6 +37,8 @@ namespace Appleseed.Framework.Web
         //Ashish.patel@haptix.biz - 2014/12/16 - Set default extension
         private string _friendlyUrlExtension = ".aspx";
 
+        //Ashish.patel@haptix.biz - 2017/07/20 - Set default NO Extension
+        private bool _friendlyUrlNoExtension = false;
 
         /// <summary> 
         /// Takes a Tab ID and builds the url for get the desidered page (non default)
@@ -68,7 +70,7 @@ namespace Appleseed.Framework.Web
                 // if it is a tab link it means it is a link to an external resource
                 //if (urlElements.TabLink.Length != 0) return urlElements.TabLink;
                 if (urlElements.TabLink.Length != 0)
-                { 
+                {
                     if (urlElements.TabLink.ToLower().Contains("http://") || urlElements.TabLink.ToLower().Contains("https://"))
                         return urlElements.TabLink;
                     else
@@ -301,51 +303,51 @@ namespace Appleseed.Framework.Web
                         sb.Append(urlElements.PageName);
                     else
                         if (!string.IsNullOrEmpty(urlElements.PageTitle))
+                    {
+                        string PageName = urlElements.PageTitle;
+                        // Write page Hieranchy
+                        if (Hieranchy)
                         {
-                            string PageName = urlElements.PageTitle;
-                            // Write page Hieranchy
-                            if (Hieranchy)
+
+                            int parentId = 0;
+
+                            bool found = false;
+                            //Get the parent pageId of the actual pageId
+                            for (int i = 0; i < settings.DesktopPages.Count && !found; i++)
                             {
-
-                                int parentId = 0;
-
-                                bool found = false;
-                                //Get the parent pageId of the actual pageId
-                                for (int i = 0; i < settings.DesktopPages.Count && !found; i++)
+                                if (settings.DesktopPages[i].PageID == pageID)
                                 {
-                                    if (settings.DesktopPages[i].PageID == pageID)
-                                    {
-                                        parentId = settings.DesktopPages[i].ParentPageID;
-                                        found = true;
-                                    }
-                                }
-                                if (found)
-                                {
-                                    bool exit = false;
-                                    // while the parentId it's diferent of 0 or the parentId isn't in settings
-                                    while (parentId != 0 && !exit)
-                                    {
-                                        found = false;
-                                        // find the parent in the setting
-                                        for (int i = 0; i < settings.DesktopPages.Count && !found; i++)
-                                        {
-                                            if (settings.DesktopPages[i].PageID == parentId)
-                                            {
-                                                PageName = UrlBuilderHelper.CleanNoAlphanumerics(settings.DesktopPages[i].PageName) + "/" + PageName;
-                                                parentId = settings.DesktopPages[i].ParentPageID;
-                                                found = true;
-                                            }
-                                        }
-                                        // If the parent isn't in settings the loop should stop
-                                        if (!found)
-                                            exit = true;
-                                    }
+                                    parentId = settings.DesktopPages[i].ParentPageID;
+                                    found = true;
                                 }
                             }
-                            sb.Append(PageName);
+                            if (found)
+                            {
+                                bool exit = false;
+                                // while the parentId it's diferent of 0 or the parentId isn't in settings
+                                while (parentId != 0 && !exit)
+                                {
+                                    found = false;
+                                    // find the parent in the setting
+                                    for (int i = 0; i < settings.DesktopPages.Count && !found; i++)
+                                    {
+                                        if (settings.DesktopPages[i].PageID == parentId)
+                                        {
+                                            PageName = UrlBuilderHelper.CleanNoAlphanumerics(settings.DesktopPages[i].PageName) + "/" + PageName;
+                                            parentId = settings.DesktopPages[i].ParentPageID;
+                                            found = true;
+                                        }
+                                    }
+                                    // If the parent isn't in settings the loop should stop
+                                    if (!found)
+                                        exit = true;
+                                }
+                            }
                         }
-                        else
-                            sb.Append(_friendlyPageName);
+                        sb.Append(PageName);
+                    }
+                    else
+                        sb.Append(_friendlyPageName);
 
                     #endregion
                 }
@@ -354,7 +356,7 @@ namespace Appleseed.Framework.Web
                 // check friendly URL is enabled and requested file is exist physically or not. 
                 // If not exists and friendly url is enabled, the extension will be appended.
                 if (settings.EnablePageFriendlyUrl
-                    && !System.IO.File.Exists(HttpContext.Current.Server.MapPath(sb.ToString())))
+                    && !System.IO.File.Exists(HttpContext.Current.Server.MapPath(sb.ToString())) && !_friendlyUrlNoExtension)
                 {
                     sb.Append(this._friendlyUrlExtension);
                 }
@@ -376,6 +378,7 @@ namespace Appleseed.Framework.Web
                 return url;
             }
         }
+
         /// <summary>
         /// The initialize method lets you retrieve provider specific settings from web.config
         /// </summary>
@@ -407,13 +410,20 @@ namespace Appleseed.Framework.Web
                 _handlerFlag = string.Empty;
             }
 
-            if (configValue["FriendlyUrlExtension"] != null)
+            //if (configValue["FriendlyUrlExtension"] != null)
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"]))
             {
-                _friendlyUrlExtension = configValue["FriendlyUrlExtension"].ToString();
+                _friendlyUrlExtension = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"];
             }
             else
             {
                 _friendlyUrlExtension = ".aspx";
+            }
+
+            //if (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"]) && System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"] == "1")
+            if (PortalSettings.FriendlyUrlNoExtensionEnabled())
+            {
+                _friendlyUrlNoExtension = true;
             }
 
             // For legacy support first check provider settings then web.config/Appleseed.config legacy settings

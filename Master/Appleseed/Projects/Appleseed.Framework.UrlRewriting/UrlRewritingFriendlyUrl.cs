@@ -53,13 +53,40 @@ namespace Appleseed.Framework.UrlRewriting
                 int requesetedPageId = Convert.ToInt32(splitpaths[index + 1]);
                 pagepath = HttpUrlBuilder.BuildUrl(requesetedPageId);
             }
+            string _friendlyUrlExtension = ".aspx";
+            bool _friendlyUrlNoExtension = false;
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"]))
+            {
+                _friendlyUrlExtension = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"];
+            }
 
+            //if (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"]) && System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"] == "1")
+            if (PortalSettings.FriendlyUrlNoExtensionEnabled())
+            {
+                _friendlyUrlNoExtension = true;
+            }
+
+            pagepath = pagepath.ToLower();
+            if (!pagepath.Contains(_friendlyUrlExtension) && !_friendlyUrlNoExtension)
+            {
+                pagepath += _friendlyUrlExtension;
+            }
+           
             foreach (DataRow pageRow in dtPages.Rows)
             {
                 int pageId = Convert.ToInt32(pageRow["PageID"]);
-                string url = HttpUrlBuilder.BuildUrl(pageId);
-                if (url.ToLower() == pagepath.ToLower())
+                string url = HttpUrlBuilder.BuildUrl(pageId).ToLower();
+                if (url == pagepath)
                     return pageId.ToString();
+                else
+                {
+                    if (!url.Contains(_friendlyUrlExtension))
+                    {
+                        url += _friendlyUrlExtension;
+                    }
+                    if (url == pagepath)
+                        return pageId.ToString();
+                }
             }
 
             string dynamicPage = DB.GetDynamicPageUrl(pagepath);

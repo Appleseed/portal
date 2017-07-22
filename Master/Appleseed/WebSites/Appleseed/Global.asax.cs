@@ -77,7 +77,7 @@ namespace Appleseed
             //Set the page extenstion from Web.Config
             routes.IgnoreRoute("UploadDialog.aspx");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("{resource}" + ConfigurationManager.AppSettings["FriendlyUrlExtension"].ToString() + "/{*pathInfo}");
+            routes.IgnoreRoute("{resource}" + System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"].ToString() + "/{*pathInfo}");
 
             routes.IgnoreRoute(string.Empty);
 
