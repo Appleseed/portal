@@ -71,7 +71,12 @@ namespace Appleseed.Framework.UrlRewriting
             {
                 pagepath += _friendlyUrlExtension;
             }
-           
+
+            if (pagepath.Contains(_friendlyUrlExtension) && _friendlyUrlNoExtension)
+            {
+                pagepath = pagepath.Replace(_friendlyUrlExtension, string.Empty);
+            }
+
             foreach (DataRow pageRow in dtPages.Rows)
             {
                 int pageId = Convert.ToInt32(pageRow["PageID"]);
