@@ -4,7 +4,7 @@ namespace Appleseed.Framework.UrlRewriting
     using System.Configuration;
     using System.Globalization;
     using System.Web;
-
+    using System.Linq;
     using UrlRewritingNet.Configuration;
     using UrlRewritingNet.Web;
     using System.Text.RegularExpressions;
@@ -38,6 +38,11 @@ namespace Appleseed.Framework.UrlRewriting
         /// The friendly url extension
         /// </summary>
         private string friendlyUrlExtension = ".aspx";
+
+        /// <summary>
+        /// The friendly url extension
+        /// </summary>
+        private bool friendlyUrlNoExtension = false;
 
         #endregion
 
@@ -81,9 +86,16 @@ namespace Appleseed.Framework.UrlRewriting
             }
 
             // Ashish.patel@haptix.biz - 2014/12/16 - Set friendlyURl from Web.config
-            if (!string.IsNullOrEmpty(rewriteSettings.Attributes["friendlyUrlExtension"]))
+            //if (!string.IsNullOrEmpty(rewriteSettings.Attributes["friendlyUrlExtension"]))
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"]))
             {
-                this.friendlyUrlExtension = rewriteSettings.Attributes["friendlyUrlExtension"];
+                this.friendlyUrlExtension = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"];
+            }
+
+            //if (!string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"]) && System.Configuration.ConfigurationManager.AppSettings["friendlyUrlNoExtension"] == "1")
+            if (PortalSettings.FriendlyUrlNoExtensionEnabled())
+            {
+                friendlyUrlNoExtension = true;
             }
         }
 
@@ -117,9 +129,34 @@ namespace Appleseed.Framework.UrlRewriting
                 return true;
             }
 
+            try
+            {
+                if (this.friendlyUrlNoExtension
+                    && !System.IO.File.Exists(HttpContext.Current.Server.MapPath(requestUrl))
+                    && !requestUrl.ToLower().Contains("/design/")
+                    && !requestUrl.ToLower().Contains("aspnet_client/")
+                    && !requestUrl.ToLower().Contains("browserLink")
+                    && !requestUrl.ToLower().Contains(".js")
+                    && !HasPathInRoutes(requestUrl.ToLower())
+                )
+                {
+                    return true;
+                }
+            }
+            catch { }
+
             return false;
         }
-
+        private static bool HasPathInRoutes(string path)
+        {
+            string routeController = path.Split('/')[0];
+            if (string.IsNullOrEmpty(routeController))
+            {
+                routeController = path.Split('/')[1];
+            }
+            var rtut = System.Web.Routing.RouteTable.Routes.Where(item=> item.GetType().FullName.ToLower() == "system.web.routing.route").FirstOrDefault(rt => ((System.Web.Routing.Route)rt).Url.ToLower().Contains(routeController));
+            return rtut != null;
+        }
         /// <summary>
         /// Rewrites the URL.
         /// </summary>
@@ -130,7 +167,7 @@ namespace Appleseed.Framework.UrlRewriting
             var handler = string.Format("/{0}", this.handlerFlag);
             var rewrittenUrl = "";
 
-            var settings = PortalSettings.GetPortalSettingsbyPageID(Portal.PageID,Config.DefaultPortal);
+            var settings = PortalSettings.GetPortalSettingsbyPageID(Portal.PageID, Config.DefaultPortal);
 
             // Ashish.patel@haptix.biz - 2014/12/16 -  Only when Url contains handler and EnablePageFriendlyUrl = false
             if (url.Contains(handler) && !settings.EnablePageFriendlyUrl)
@@ -138,7 +175,15 @@ namespace Appleseed.Framework.UrlRewriting
                 rewrittenUrl = url.Substring(0, url.IndexOf(handler));
             }
 
-            var parts = url.Substring(url.IndexOf(handler) + handler.Length).Split(new char[] { '/' }, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] parts;
+            if (url.IndexOf(handler) > -1)
+            {
+                parts = url.Substring(url.IndexOf(handler) + handler.Length).Split(new char[] { '/' }, System.StringSplitOptions.RemoveEmptyEntries);
+            }
+            else
+            {
+                parts = url.Split(new char[] { '/' }, System.StringSplitOptions.RemoveEmptyEntries);
+            }
 
             rewrittenUrl += string.Format("/{0}", this.friendlyPageName);
 
@@ -170,10 +215,24 @@ namespace Appleseed.Framework.UrlRewriting
             }
             else
             {
-                // Ashish.patel@haptix.biz - 2014/12/16 -  Set when EnableFriendlyUrl is true
-                pageId = UrlRewritingFriendlyUrl.GetPageIDFromPageName(url);
+                for (int i = 0; i < parts.Length && indexNumber == -1; i++)
+                {
+                    if (regex.IsMatch(parts[i]))
+                    {
+                        indexNumber = i;
+                    }
+                }
+                if (indexNumber != -1)
+                {
+                    pageId = parts[indexNumber];
+                }
+                else
+                {
+                    // Ashish.patel@haptix.biz - 2014/12/16 -  Set when EnableFriendlyUrl is true
+                    pageId = UrlRewritingFriendlyUrl.GetPageIDFromPageName(url);
+                }
             }
-            
+
             var queryString = string.Format("?pageId={0}", pageId);
 
             if (parts.Length > 2)

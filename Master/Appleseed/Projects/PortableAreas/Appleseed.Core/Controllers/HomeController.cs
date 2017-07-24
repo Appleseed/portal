@@ -34,7 +34,7 @@ namespace Appleseed.Core.Controllers
 
             List<string[]> datos = new List<string[]>();
             var settings = PortalSettings.HasEnablePageFriendlyUrl(Portal.PageID, Config.DefaultPortal);
-            var pageextenstion = System.Configuration.ConfigurationManager.AppSettings["friendlyUrlExtension"];
+            var pageextenstion = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"];
             foreach (Appleseed.Framework.Web.UI.WebControls.LanguageCultureItem l in lcc)
             {
                 string[] dato = new string[3];

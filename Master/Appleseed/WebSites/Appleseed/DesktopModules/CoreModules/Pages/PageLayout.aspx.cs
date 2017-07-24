@@ -276,7 +276,7 @@ namespace Appleseed.Admin
                     CurrentCache.Remove(Key.TabSettings(this.PageID));
                 }
 
-                lblFriendlyExtension.Text = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"].ToString();
+                lblFriendlyExtension.Text = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"];
             }
 
             base.OnLoad(e);

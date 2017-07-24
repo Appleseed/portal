@@ -65,7 +65,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
                 divSuccessMessage.Visible = false;
 
                 // Set the page extension from web.config file to display
-                lblFriendlyExtension.Text = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"].ToString();
+                lblFriendlyExtension.Text = System.Configuration.ConfigurationManager.AppSettings["FriendlyUrlExtension"];
 
                 LoadGrid();
             }
