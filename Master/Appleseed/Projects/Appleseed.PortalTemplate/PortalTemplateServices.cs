@@ -401,7 +401,7 @@ namespace Appleseed.PortalTemplate
         /// The content modules.
         /// </param>
         private void SaveModuleContent(
-            rb_Portals portal, IDictionary<Guid, string> desktopSources, IDictionary<int, string> contentModules)
+            rb_Portals portal, IDictionary<Guid, string> desktopSources, IDictionary<int, HtmlTextDTO> contentModules)
         {
             var modules = portal.rb_Pages.SelectMany(page => page.rb_Modules);
             SaveModuleContentAux(modules, desktopSources, contentModules);
@@ -409,14 +409,14 @@ namespace Appleseed.PortalTemplate
         }
 
         private void SaveModuleContentPage(
-            rb_Pages pages, IDictionary<Guid, string> desktopSources, IDictionary<int, string> contentModules)
+            rb_Pages pages, IDictionary<Guid, string> desktopSources, IDictionary<int, HtmlTextDTO> contentModules)
         {
             var modules = pages.rb_Modules;
             SaveModuleContentAux(modules, desktopSources, contentModules);
 
         }
 
-        private void SaveModuleContentAux(IEnumerable<rb_Modules> modules, IDictionary<Guid, string> desktopSources, IDictionary<int, string> contentModules)
+        private void SaveModuleContentAux(IEnumerable<rb_Modules> modules, IDictionary<Guid, string> desktopSources, IDictionary<int, HtmlTextDTO> contentModules)
         {
             var p = new Page();
             var moduleIndex = 0;
@@ -431,7 +431,7 @@ namespace Appleseed.PortalTemplate
                         var portalModule = (PortalModuleControl)p.LoadControl(portalModuleName);
                         if (portalModule is IModuleExportable)
                         {
-                            string content;
+                            HtmlTextDTO content;
                             if (!contentModules.TryGetValue(moduleIndex, out content) ||
                                 !((IModuleExportable)portalModule).SetContentData(module.ModuleID, content))
                             {
@@ -507,7 +507,7 @@ namespace Appleseed.PortalTemplate
             if (page != null)
             {
                 this.ModulesNotInserted = new Dictionary<int, string>();
-                translate.ContentModules = new Dictionary<int, string>();
+                translate.ContentModules = new Dictionary<int, HtmlTextDTO>();
                 translate.ModuleDefinitionsDeserialized = new Dictionary<Guid, rb_ModuleDefinition>();
                 
                 page.Modules.RemoveAll(m=> m.ShowEveryWhere == true);

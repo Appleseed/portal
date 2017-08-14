@@ -500,9 +500,9 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
             }
         }
 
-        public bool SetContentData(int moduleId, string content)
+        public bool SetContentData(int moduleId, HtmlTextDTO content)
         {
-            if (content == null || content.Equals(string.Empty))
+            if (content == null || content.DesktopHtml.Equals(string.Empty))
             {
                 //si el contenido es nullo es porque no existe ningun registro en htmltext para el modulo
                 return true;
@@ -510,12 +510,8 @@ namespace Appleseed.DesktopModules.CommunityModules.HTMLDocument
             else
             {
                 IPortalTemplateServices services = PortalTemplateFactory.GetPortalTemplateServices(new PortalTemplateRepository());
-                HtmlTextDTO _html = new HtmlTextDTO();
-                System.IO.StringReader xin = new System.IO.StringReader(content);
-                XmlSerializer xs = new XmlSerializer(typeof(HtmlTextDTO));
-                _html = (HtmlTextDTO)xs.Deserialize(xin);
 
-                return services.SaveHtmlText(moduleId, _html);
+                return services.SaveHtmlText(moduleId, content);
             }
         }
 
