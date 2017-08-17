@@ -14,6 +14,8 @@ using System.Xml.Serialization;
 using System.Web.UI;
 using Appleseed.Framework;
 using Appleseed.Framework.DataTypes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Appleseed.PortalTemplate
 {
@@ -188,7 +190,7 @@ namespace Appleseed.PortalTemplate
             _portal.rb_Pages = new EntitySet<rb_Pages>();
 
             moduleIndex = 0;
-            this.ContentModules = new Dictionary<int, string>();
+            this.ContentModules = new Dictionary<int, HtmlTextDTO>();
             this.ModulesNotInserted = new Dictionary<int, string>();
             this.PageList = new Dictionary<int, int>();
             this.ModuleDefinitionsDeserialized = new Dictionary<Guid, rb_ModuleDefinition>();
@@ -318,7 +320,7 @@ namespace Appleseed.PortalTemplate
                     PortalModuleControl portalModule = (PortalModuleControl)p.LoadControl(portalModuleName);
 
                     if (portalModule is IModuleExportable) {
-                        this.ContentModules.Add(moduleIndex, module.Content);
+                        this.ContentModules.Add(moduleIndex, GetHtmlTextDTO(module.ModuleID, WorkFlowVersion.Production));
                         //((IModuleExportable)portalModule).SetContentData(modules.ModuleID, modules.Content, this.PTDataContext);
                     }
                 }
@@ -331,6 +333,97 @@ namespace Appleseed.PortalTemplate
                 this.ModulesNotInserted.Add(module.ModuleID, module.ModuleTitle);
                 return null;
             }
+        }
+
+        public SqlDataReader GetHtmlTextRecord(int moduleID)
+        {
+            var connection = Config.SqlConnectionString;
+            SqlCommand myCommand = new SqlCommand("select * from rb_HtmlText_st where ModuleID=" + moduleID, connection);
+            myCommand.CommandType = CommandType.Text;
+            connection.Open();
+            return myCommand.ExecuteReader(CommandBehavior.CloseConnection);
+        }
+
+        public HtmlTextDTO GetHtmlTextDTO(int moduleId, WorkFlowVersion version)
+        {
+            var strDesktopHtml = new HtmlTextDTO();
+
+            // Create Instance of Connection and Command Object
+            using (var connection = Config.SqlConnectionString)
+            {
+                using (var command = new SqlCommand("rb_GetHtmlText", connection))
+                {
+                    // Mark the Command as a SPROC
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Add Parameters to SPROC
+                    var parameterModuleId = new SqlParameter("@ModuleID", SqlDbType.Int, 4) { Value = moduleId };
+                    command.Parameters.Add(parameterModuleId);
+
+                    // Change by Geert.Audenaert@Syntegra.Com
+                    // Date: 6/2/2003
+                    var parameterWorkflowVersion = new SqlParameter("@WorkflowVersion", SqlDbType.Int, 4)
+                    {
+                        Value = (int)version
+                    };
+                    command.Parameters.Add(parameterWorkflowVersion);
+
+                    //Add by Ashish.patel@haptix.biz
+                    // Date: 12/23/2014
+                    // Get published version content
+                    int publishedVersion = 1;
+                    SqlDataReader sqlDatard = this.GetHtmlTextRecord(moduleId);
+                    if (sqlDatard.HasRows)
+                    {
+                        while (sqlDatard.Read())
+                        {
+                            if (Convert.ToBoolean(sqlDatard["Published"]))
+                            {
+                                publishedVersion = Convert.ToInt32(sqlDatard["VersionNo"]);
+                                break;
+                            }
+                        }
+                    }
+                    // Added by Ashish - Connection Pool Issues
+                    if (sqlDatard != null)
+                    {
+                        sqlDatard.Close();
+                    }
+
+                    var moduleVersion = new SqlParameter("@VersionNo", SqlDbType.Int, 4) { Value = publishedVersion };
+                    command.Parameters.Add(moduleVersion);
+
+                    // End Change Geert.Audenaert@Syntegra.Com
+
+                    // Execute the command
+                    connection.Open();
+
+                    using (var result = command.ExecuteReader(CommandBehavior.CloseConnection))
+                    {
+                        try
+                        {
+                            if (result.Read())
+                            {
+                                strDesktopHtml.DesktopHtml = result["DesktopHtml"].ToString();
+                                strDesktopHtml.CWCSS = result["CWCSS"].ToString();
+                                strDesktopHtml.CWHTML = result["CWHTML"].ToString();
+                                strDesktopHtml.CWJS = result["CWJS"].ToString();
+                                strDesktopHtml.MobileDetails = result["MobileDetails"].ToString();
+                                strDesktopHtml.MobileSummary = result["MobileSummary"].ToString();
+                                strDesktopHtml.ModuleID = moduleId;
+
+                            }
+                        }
+                        finally
+                        {
+                            // Close the datareader
+                            result.Close();
+                        }
+                    }
+                }
+            }
+
+            return strDesktopHtml;
         }
 
         public rb_HtmlText TranslateHtmlTextDTOIntoRb_HtmlText(HtmlTextDTO html)
@@ -401,7 +494,7 @@ namespace Appleseed.PortalTemplate
             set;
         }
 
-        public Dictionary<int, string> ContentModules
+        public Dictionary<int, HtmlTextDTO> ContentModules
         {
             get;
             set;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Appleseed.PortalTemplate.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace Appleseed.PortalTemplate
     {
         string GetContentData(int moduleId);
 
-        bool SetContentData(int moduleId, string content);
+        bool SetContentData(int moduleId, HtmlTextDTO content);
     }
 }
