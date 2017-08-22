@@ -273,14 +273,15 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
             {
-                if (this.IsCodeWriter)
-                {
-                    Response.Redirect(this.PageID.ToString());
-                }
-                else
-                {
-                    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
-                }
+                Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+                //if (this.IsCodeWriter)
+                //{
+                //    Response.Redirect(this.PageID.ToString());
+                //}
+                //else
+                //{
+                //    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+                //}
             }
             else
                 this.RedirectBackToReferringPage();
@@ -289,10 +290,10 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         protected override void OnCancel(EventArgs e)
         {
             base.OnCancel(e);
-            if (this.IsCodeWriter)
-            {
-                Response.Redirect(this.PageID.ToString());
-            }
+            //if (this.IsCodeWriter)
+            //{
+            //    Response.Redirect(this.PageID.ToString());
+            //}
         }
 
 
