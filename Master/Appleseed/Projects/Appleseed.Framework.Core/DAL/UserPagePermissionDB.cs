@@ -81,6 +81,11 @@ namespace Appleseed.Framework.Site.Data
 
         public static bool HasCurrentPageEditPermission(ModuleSettings moduleSettings = null)
         {
+            if (!System.Web.HttpContext.Current.Request.IsAuthenticated)
+            {
+                return false;
+            }
+
             if (System.Web.HttpContext.Current.User.IsInRole("Admins"))
             {
                 return true;
