@@ -2,13 +2,13 @@
 DECLARE @PAGEID INT,
 		@ModuleDefId INT,
 		@ModuleID INT
-if not exists(select * from rb_pages where PageName='Dashabord')
+if not exists(select * from rb_pages where PageName='Dashboard')
 BEGIN
-	EXEC rb_AddTab 0,NULL,'Dashabord',100,'All Users;',1,'Dashabord', @PAGEID output
+	EXEC rb_AddTab 0,NULL,'Dashboard',100,'All Users;',1,'Dashboard', @PAGEID output
 END
 ELSE
 BEGIN
-	select @PAGEID = PageId from rb_pages where PageName='Dashabord'
+	select @PAGEID = PageId from rb_pages where PageName='Dashboard'
 END
 
 /* Add XML Feeds Module on new created page if not loaded */
