@@ -132,10 +132,10 @@ namespace Appleseed.Framework.UrlRewriting
             try
             {
                 if (this.friendlyUrlNoExtension
-                    && !System.IO.File.Exists(HttpContext.Current.Server.MapPath(requestUrl))
+                    && !System.IO.File.Exists(HttpContext.Current.Server.MapPath(requestUrl.Split('?').GetValue(0).ToString()))
                     && !requestUrl.ToLower().Contains("/design/")
                     && !requestUrl.ToLower().Contains("aspnet_client/")
-                    && !requestUrl.ToLower().Contains("browserLink")
+                    && !requestUrl.ToLower().Contains("browserlink")
                     && !requestUrl.ToLower().Contains(".js")
                     && !HasPathInRoutes(requestUrl.ToLower())
                 )
