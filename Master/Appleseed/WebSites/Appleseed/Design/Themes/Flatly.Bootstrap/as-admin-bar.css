@@ -36,7 +36,7 @@
     padding: 0px 20px 0px 0;
     margin: 0;
     color: #ffffff;
-    line-height: 49px;
+    line-height: 35px;
     display: block;
     float: left;
     font-weight: normal;
@@ -324,4 +324,8 @@
 
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: transparent !important;
+}
+
+#as-admin-bar .navbar-brand i {
+    margin-top:7px !important;
 }
