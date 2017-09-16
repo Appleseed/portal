@@ -2893,13 +2893,13 @@
     <value>Guid</value>
   </data>
   <data name="HEADER_EDIT_PROFILE" xml:space="preserve">
-    <value>Edit profile</value>
+    <value>Edit Profile</value>
   </data>
   <data name="HEADER_HELP" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="HEADER_LOGOFF" xml:space="preserve">
-    <value>Logoff</value>
+    <value>Log Off</value>
   </data>
   <data name="HEADER_MANAGE_TAB" xml:space="preserve">
     <value>Edit This Page</value>
