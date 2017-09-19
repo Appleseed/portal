@@ -104,12 +104,89 @@ namespace UserManager.Controllers
             }
             return GetRowsFromList(result.AsQueryable(), rows, page);
         }
+        public string getSearchCondition(string search)
+        {
+            string whereClase = "";
+            if (!string.IsNullOrEmpty(search))
+            {
+                whereClase = " where 1=2 ";
+                foreach (var kw in search.Split(' '))
+                {
+                    whereClase += " OR " + string.Format("cp.name like '%{0}%' or cp.email like '%{0}%'", kw);
+                }
+            }
+            return whereClase;
+        }
+
+        public class UserFormatedModel
+        {
+            public string UserName { get; set; }
+            public string Email { get; set; }
+            public string Role { get; set; }
+            public string Edit { get; set; }
+            public Guid UserId { get; set; }
+            public string EditId { get; set; }
+            public string Delete { get; set; }
+            public long TotalRows { get; set; }
+        }
 
         public JsonResult GridUser(int page, int rows, string search, string sidx, string sord)
         {
-            var data = new List<UserManagerModel>();
+            var start = (page * rows) - rows + 1;
+            var end = start + rows - 1;
+
+         var queryUsers =   "WITH YourCTE AS " +
+"(" +
+"SELECT ROW_NUMBER() OVER(ORDER BY cp.Name) AS RowIndx,au.UserName, m.ApplicationId, m.UserId, m.Email, cp.Name, (SELECT ',' + ar.RoleName FROM aspnet_Roles ar where ar.RoleId in (select RoleId from[dbo].[aspnet_UsersInRoles] ur where ur.UserId = m.UserId) FOR XML PATH('')) as UserRol " +
+                                       " FROM aspnet_Membership as m LEFT JOIN aspnet_CustomProfile as cp ON m.UserId = cp.UserId " +
+                                       " inner join aspnet_users au on au.UserId = m.UserId " +
+                                       " inner join aspnet_Applications as a " +
+                                       " on a.ApplicationName = '"+ Portal.UniqueID + "' and a.ApplicationId = m.ApplicationId " +
+                                       "  " + getSearchCondition(search) + " " +
+" ) " +
+" Select *, (SELECT MAX(RowIndx) FROM YourCTE) AS 'TotalRows' from YourCTE  where RowIndx between "+ start + " and " + end;
+
+            //ErrorHandler.Publish(LogLevel.Info, "User Query - " + queryUsers);
 
             var tbl = new DynamicModel("ConnectionString", "aspnet_CustomProfile", "UserId");
+            dynamic searchedUsers = tbl.Query(queryUsers);
+            var dataFormted = new List<UserFormatedModel>();
+            foreach (var m in searchedUsers)
+            {
+                var usr = new UserFormatedModel()
+                {
+                    UserName = m.UserName,
+                    Email = m.Email,
+                    Role = m.UserRol,
+                    Edit = General.GetString("EDIT_USER"),
+                    UserId = m.UserId,
+                    EditId = Builddir(m.Email),
+                    Delete = General.GetString("DELETE_USER"),
+                    TotalRows = m.TotalRows
+                };
+                if (!string.IsNullOrEmpty(usr.Role))
+                {
+                    usr.Role = usr.Role.TrimStart(',').TrimEnd(',');
+                }
+                dataFormted.Add(usr);
+            }
+              
+            var totalRecords = dataFormted[0].TotalRows;
+            var totalPages = (int)Math.Ceiling(totalRecords / (float)rows);
+            var jsonData = new
+            {
+                total = totalPages,
+                page = page,
+                currentPage = page,
+                records = totalRecords,
+                rows = dataFormted.AsQueryable()
+            };
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+
+
+            /*
+            var data = new List<UserManagerModel>();
+
             dynamic iduser = tbl.Query("SELECT m.ApplicationId, m.UserId, m.Email, cp.Name " +
                                        "FROM aspnet_Membership as m LEFT JOIN aspnet_CustomProfile as cp " +
                                        "ON m.UserId = cp.UserId " +
@@ -151,6 +228,7 @@ namespace UserManager.Controllers
             }
             var result = GetRowsFromList(data.AsQueryable(), rows, page);
             return result;
+            */
         }
 
 
