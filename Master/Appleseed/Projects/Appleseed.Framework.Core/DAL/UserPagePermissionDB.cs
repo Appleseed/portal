@@ -44,8 +44,23 @@ namespace Appleseed.Framework.Site.Data
                                          "ON m.UserId = cp.UserId " +
                                          "inner join aspnet_Applications as a " +
                                          "on a.ApplicationName = '{0}'and a.ApplicationId = m.ApplicationId " +
-                                         "left join rb_userPagePermission upp on upp.UserId = m.UserId and upp.PageId = {1} Where m.UserId != '{2}'" +
+                                         "inner join rb_userPagePermission upp on upp.UserId = m.UserId and upp.PageId = {1} Where m.UserId != '{2}'" +
                                          "order by cp.Name", Portal.UniqueID, pageId, userId);
+
+            return Appleseed.Framework.Data.DBHelper.DataReaderToObjectList<UserInfo>(query);
+        }
+
+        public List<UserInfo> GetUserToAdd(int pageId, string usernameOrEmail)
+        {
+            string query = string.Format("SELECT m.ApplicationId, m.UserId, m.Email, cp.Name, 1 as Permission, {1} PageId " +
+                                         "FROM aspnet_Membership as m LEFT JOIN aspnet_CustomProfile as cp " +
+                                         "ON m.UserId = cp.UserId " +
+                                         "inner join aspnet_Applications as a " +
+                                         "on a.ApplicationName = '{0}'and a.ApplicationId = m.ApplicationId " +
+                                         "inner join aspnet_Users as au on au.UserId = m.UserId " +
+                                         " where au.UserName = '{2}' OR m.Email = '{2}' " +
+                                         // "inner join rb_userPagePermission upp on upp.UserId = m.UserId and upp.PageId = {1} Where m.UserId != '{2}'" +
+                                         "order by cp.Name", Portal.UniqueID, pageId, usernameOrEmail);
 
             return Appleseed.Framework.Data.DBHelper.DataReaderToObjectList<UserInfo>(query);
         }
@@ -96,7 +111,7 @@ namespace Appleseed.Framework.Site.Data
             {
                 return true;
             }
-            else if((upp.Permission == 0 && System.Web.HttpContext.Current.User.IsInRole("Builder") && moduleSettings != null && !moduleSettings.Admin) 
+            else if ((upp.Permission == 0 && System.Web.HttpContext.Current.User.IsInRole("Builder") && moduleSettings != null && !moduleSettings.Admin)
                 || ((upp.Permission == 0 && System.Web.HttpContext.Current.User.IsInRole("Builder") && moduleSettings == null)))
             {
                 return true;
@@ -105,11 +120,14 @@ namespace Appleseed.Framework.Site.Data
             return false;
         }
 
-        public void UpdatePagePermissions(List<UserPagePermission> permissions)
+        public void UpdatePagePermissions(List<UserPagePermission> permissions, int pageId)
         {
             using (var connection = Config.SqlConnectionString)
             {
                 connection.Open();
+
+                
+
                 foreach (var permis in permissions)
                 {
                     using (var sqlCommand = new SqlCommand("UPDATE rb_userPagePermission SET Permission = " + permis.Permission + " WHERE PageId = " + permis.PageId + " and UserId = '" + permis.UserId + "'", connection))
@@ -130,6 +148,26 @@ namespace Appleseed.Framework.Site.Data
                         finally
                         {
                         }
+                    }
+                }
+
+                using (var sqlCommand = new SqlCommand())
+                {
+                    // Mark the Command as a SPROC
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.Connection = connection;
+                    try
+                    {
+                        sqlCommand.CommandText = "DELETE FROM rb_userPagePermission WHERE PageId = " + pageId + " and UserId not in (" + string.Join(",", permissions.Select(p => "'" + p.UserId.ToString() + "'")) + ")";
+
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                    catch(Exception ex)
+                    {
+                        ErrorHandler.Publish(LogLevel.Error, ex);
+                    }
+                    finally
+                    {
                     }
                 }
             }

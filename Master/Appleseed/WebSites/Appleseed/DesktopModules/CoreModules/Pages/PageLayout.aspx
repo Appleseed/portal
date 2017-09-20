@@ -13,6 +13,10 @@
             border: 1px solid #000;
             padding: 5px !important;
         }
+        .error
+        {
+            color:red;
+        }
 </style>
     <link type="text/css" rel="stylesheet" href="/aspnet_client/jQuery/jsTree/themes/proton/style.css" />
     <%-- <table border="0" cellpadding="2" cellspacing="1" class="ModuleWrap" style="height: 100%">
@@ -109,11 +113,16 @@
                                 </rbfwebui:Localize>
                             </td>
                             <td colspan="3">
-                                <asp:GridView runat="server" ID="gdvUsersAuth" AutoGenerateColumns="false" OnRowDataBound="gdvUsersAuth_RowDataBound" >
+                                <div>
+                                    <asp:TextBox ID="txtAuthUserFind" placeholder="Email Address" runat="server" CssClass="NormalTextBox" Width="300"/> <asp:Button ID="btnAuthUserAdd" runat="server" OnClick="btnAuthUserAdd_Click" Text="Add" />
+                                </div>
+                                <div><asp:Label runat="server" CssClass="error" ID="lblAuthUserError"></asp:Label></div>
+                                <div>
+                                <asp:GridView runat="server" ID="gdvUsersAuth" AutoGenerateColumns="false" OnRowCommand="gdvUsersAuth_RowCommand" OnRowDataBound="gdvUsersAuth_RowDataBound" >
                                     <Columns>
                                         <asp:BoundField DataField="Name" HeaderText="Name" />
                                         <asp:BoundField DataField="Email" HeaderText ="Email" />
-                                        <asp:TemplateField HeaderText="Permission">
+                                        <asp:TemplateField HeaderText="Permission" ItemStyle-Width="150">
                                             
                                             <ItemTemplate>
                                                 <asp:HiddenField ID="hidUserId" runat="server" Value='<%# Eval("UserId") %>' />
@@ -124,8 +133,14 @@
                                                 </asp:DropDownList>
                                             </ItemTemplate>
                                         </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Remove" >
+                                            <ItemTemplate>
+                                                <asp:Button ID="btnAuthUserRemove" ToolTip="Remove" runat="server" CommandArgument='<%# Eval("UserId") %>' CommandName="REMOVE" Text="X" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
+                                    </div>
                                 <br />
                             </td>
                         </tr>

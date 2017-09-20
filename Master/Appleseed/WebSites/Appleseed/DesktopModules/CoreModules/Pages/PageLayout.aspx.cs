@@ -267,6 +267,8 @@ namespace Appleseed.Admin
         /// </remarks>
         protected override void OnLoad(EventArgs e)
         {
+            lblAuthUserError.Text = string.Empty;
+
             if (!this.Page.IsPostBack)
             {
 
@@ -723,7 +725,8 @@ namespace Appleseed.Admin
 
             //load users
             UserPagePermissionDB userPp = new UserPagePermissionDB();
-            gdvUsersAuth.DataSource = userPp.GetAllUsers(this.PageID, PortalSettings.CurrentUser.Identity.ProviderUserKey);
+            Session["PageAuthUsers_" + this.PageID] = userPp.GetAllUsers(this.PageID, PortalSettings.CurrentUser.Identity.ProviderUserKey);
+            gdvUsersAuth.DataSource = Session["PageAuthUsers_" + this.PageID];
             gdvUsersAuth.DataBind();
 
             // Populate the "Add Module" Data
@@ -859,7 +862,7 @@ namespace Appleseed.Admin
                     upPerms.Add(new UserPagePermission() { PageId = this.PageID, UserId = Guid.Parse(((HiddenField)gdvRow.FindControl("hidUserId")).Value), Permission = Convert.ToInt16(((DropDownList)gdvRow.FindControl("ddlUserAuthPermission")).SelectedValue) });
                 }
                 UserPagePermissionDB uppDB = new UserPagePermissionDB();
-                uppDB.UpdatePagePermissions(upPerms);
+                uppDB.UpdatePagePermissions(upPerms, this.PageID);
 
                 // Update custom settings in the database
                 this.EditTable.UpdateControls();
@@ -985,6 +988,66 @@ namespace Appleseed.Admin
             {
                 UserInfo upp = (UserInfo)e.Row.DataItem;
                 ((DropDownList)e.Row.FindControl("ddlUserAuthPermission")).SelectedValue = upp.Permission.ToString();
+            }
+        }
+
+        protected void btnAuthUserAdd_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtAuthUserFind.Text))
+            {
+                List<UserInfo> users = (List<UserInfo>) Session["PageAuthUsers_" + this.PageID];
+                //add here
+                UserPagePermissionDB uppDB = new UserPagePermissionDB();
+                var usl = uppDB.GetUserToAdd(this.PageID, txtAuthUserFind.Text.Trim());
+                if (usl != null && usl.Count > 0)
+                {
+                    if (usl[0].UserId != PortalSettings.CurrentUser.Identity.ProviderUserKey)
+                    {
+                        var usr = users.FirstOrDefault(u => u.UserId == usl[0].UserId);
+                        if (usr == null)
+                        {
+                            users.Add(usl[0]);
+                            Session["PageAuthUsers_" + this.PageID] = users;
+                            gdvUsersAuth.DataSource = Session["PageAuthUsers_" + this.PageID];
+                            gdvUsersAuth.DataBind();
+                        }
+                        else
+                        {
+                            lblAuthUserError.Text = "User is already added";
+                        }
+                    }
+                    else
+                    {
+                        lblAuthUserError.Text = "You cannot add yourself";
+                    }
+                }
+                else
+                {
+                    lblAuthUserError.Text = "User not found";
+                }
+               
+            }
+            else
+            {
+                lblAuthUserError.Text = "Please enter username or email to add user";
+            }
+        }
+
+        protected void gdvUsersAuth_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "REMOVE")
+            {
+                List<UserInfo> users = (List<UserInfo>)Session["PageAuthUsers_" + this.PageID];
+                var userId = Guid.Parse(e.CommandArgument.ToString());
+                var usr = users.FirstOrDefault(u => u.UserId == userId);
+                if (usr != null)
+                {
+                    users.Remove(usr);
+
+                    Session["PageAuthUsers_" + this.PageID] = users;
+                    gdvUsersAuth.DataSource = Session["PageAuthUsers_" + this.PageID];
+                    gdvUsersAuth.DataBind();
+                }
             }
         }
     }
