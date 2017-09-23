@@ -490,7 +490,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                             menuLink = menuLink + " href='" +
                                        HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Register/Register.aspx") +
                                        "'>" +
-                                       General.GetString("HEADER_EDIT_PROFILE", "Edit profile", this) + "</a>";
+                                       General.GetString("HEADER_EDIT_PROFILE", "Edit Profile", this) + "</a>";
                             list.Add(menuLink);
                         }
                     }

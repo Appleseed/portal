@@ -8694,7 +8694,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit profile.
+        ///   Looks up a localized string similar to Edit Profile.
         /// </summary>
         internal static string HEADER_EDIT_PROFILE {
             get {
@@ -8712,7 +8712,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logoff.
+        ///   Looks up a localized string similar to Log Off.
         /// </summary>
         internal static string HEADER_LOGOFF {
             get {

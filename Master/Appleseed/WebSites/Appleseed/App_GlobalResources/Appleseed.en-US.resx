@@ -1183,7 +1183,7 @@
     <value>Edit profile</value>
   </data>
   <data name="HEADER_EDIT_PROFILE" xml:space="preserve">
-    <value>Edit profile</value>
+    <value>Edit Profile</value>
   </data>
   <data name="EDIT_THIS_ITEM" xml:space="preserve">
     <value>Edit this item</value>
@@ -1612,7 +1612,7 @@
     <value>Help</value>
   </data>
   <data name="HEADER_LOGOFF" xml:space="preserve">
-    <value>Logoff</value>
+    <value>Log Off</value>
   </data>
   <data name="LOGOFF" xml:space="preserve">
     <value>Logoff</value>
