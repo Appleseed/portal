@@ -85,8 +85,8 @@
             </div>
             <div class="input-row">
                 <span class="password-label login-label">
-                    <rbfwebui:Localize ID="PasswordLabel" runat="server" Text="Password:" TextKey="PASSWORD">
-                    </rbfwebui:Localize>:
+                    <rbfwebui:Localize ID="PasswordLabel" runat="server" Text="Password" TextKey="PASSWORD">
+                    </rbfwebui:Localize>
                 </span>
                 <span class="password-textbox login-textbox">
                     <asp:TextBox ID="password" runat="server" Columns="24" CssClass="NormalTextBox" TextMode="password"></asp:TextBox>
@@ -98,7 +98,7 @@
                 </span>
                 <span>
                     <p>
-                        <rbfwebui:Button ID="LoginBtn" runat="server" CssClass="CommandButton login-button" EnableViewState="False" Text="Login" TextKey="SIGNIN" />
+                        <rbfwebui:Button ID="LoginBtn" runat="server" CssClass="CommandButton login-button" EnableViewState="False" Text="Sign in" TextKey="SIGNIN" />
                     </p>
                 </span>
             </div>

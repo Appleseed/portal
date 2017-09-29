@@ -791,7 +791,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                                 width: ", dialogwidth, @",
                                 height: ", dialogheight, @",
                                 resizable: false,
-                                title: 'Sign In'
+                                title: 'Sign in'
                             });
 
                             $('#", this.ClientID, @"_logon_link').click(function () {

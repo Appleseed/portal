@@ -2728,7 +2728,7 @@
     <value>Show Flash Gallery</value>
   </data>
   <data name="SIGNIN" xml:space="preserve">
-    <value>Sign-in</value>
+    <value>Sign in</value>
   </data>
   <data name="SIGNIN_ALLOW_REMEMBER_LOGIN" xml:space="preserve">
     <value>Allow Remember Login</value>
