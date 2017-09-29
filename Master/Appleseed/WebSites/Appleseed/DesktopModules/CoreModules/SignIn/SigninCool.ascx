@@ -105,7 +105,7 @@
             <div class="send-register-box">
                 <span>
                     <rbfwebui:LinkButton ID="SendPasswordBtn" runat="server" CssClass="forgot-link"
-                        EnableViewState="False" Text="Forgot your password? Click here." TextKey="SIGNIN_SEND_PWD"></rbfwebui:LinkButton>
+                        EnableViewState="False" Text="Forgot your password? Click here."></rbfwebui:LinkButton>
                     <%-- <a href="/302" class="forgot-link">Forgot your password? Click here.</a> --%>
                 </span>
                 <span class="hide">
