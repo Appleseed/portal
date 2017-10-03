@@ -94,7 +94,28 @@
                     <% } %>
                 </table>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var editor1 = CKEDITOR.replace('Content_ctl01', {
+                        extraAllowedContent: 'div'
+                    });
+                    editor1.on('instanceReady', function () {
+                        // Output self-closing tags the HTML4 way, like <br>.
+                        this.dataProcessor.writer.selfClosingEnd = '>';
 
+                        // Use line breaks for block elements, tables, and lists.
+                        var dtd = CKEDITOR.dtd;
+                        for (var e in CKEDITOR.tools.extend({}, dtd.$nonBodyContent, dtd.$block, dtd.$listItem, dtd.$tableContent)) {
+                            this.dataProcessor.writer.setRules(e, {
+                                indent: true,
+                                breakBeforeOpen: true,
+                                breakAfterOpen: true,
+                                breakBeforeClose: true,
+                                breakAfterClose: true
+                            });
+                        }
+                    });                });
+            </script>
         </asp:PlaceHolder>
         <asp:PlaceHolder runat="server" ID="plcCodewriter" Visible="false">
             <style type="text/css">
@@ -248,46 +269,46 @@
                     csseditor = CodeMirror.fromTextArea(document.getElementById('Content_cwCSS'),
                         {
                             mode: "text/css", extraKeys:
-                                {
-                                    "Ctrl-Space": "autocomplete"
-                                },
+                            {
+                                "Ctrl-Space": "autocomplete"
+                            },
                             value: document.getElementById('Content_cwCSS').innerHTML,
                             lineNumbers: true,
                             indentWithTabs: true
                         });
 
                     htmleditor = CodeMirror.fromTextArea(document.getElementById('Content_cwHTML'),
-                       {
-                           mode: "text/html", extraKeys:
-                               {
-                                   "Ctrl-Space": "autocomplete"
-                               },
-                           value: document.getElementById('Content_cwHTML').innerHTML,
-                           lineNumbers: true,
-                           indentWithTabs: true
-                       });
+                        {
+                            mode: "text/html", extraKeys:
+                            {
+                                "Ctrl-Space": "autocomplete"
+                            },
+                            value: document.getElementById('Content_cwHTML').innerHTML,
+                            lineNumbers: true,
+                            indentWithTabs: true
+                        });
 
                     jseditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJS'),
-                       {
-                           mode: "text/javascript", extraKeys:
-                               {
-                                   "Ctrl-Space": "autocomplete"
-                               },
-                           value: document.getElementById('Content_cwJS').innerHTML,
-                           lineNumbers: true,
-                           indentWithTabs: true
-                       });
+                        {
+                            mode: "text/javascript", extraKeys:
+                            {
+                                "Ctrl-Space": "autocomplete"
+                            },
+                            value: document.getElementById('Content_cwJS').innerHTML,
+                            lineNumbers: true,
+                            indentWithTabs: true
+                        });
 
                     jscssRefeditor = CodeMirror.fromTextArea(document.getElementById('Content_cwJSCSSRef'),
-                     {
-                         mode: "text/javascript", extraKeys:
-                             {
-                                 "Ctrl-Space": "autocomplete"
-                             },
-                         value: document.getElementById('Content_cwJSCSSRef').innerHTML,
-                         lineNumbers: true,
-                         indentWithTabs: true
-                     });
+                        {
+                            mode: "text/javascript", extraKeys:
+                            {
+                                "Ctrl-Space": "autocomplete"
+                            },
+                            value: document.getElementById('Content_cwJSCSSRef').innerHTML,
+                            lineNumbers: true,
+                            indentWithTabs: true
+                        });
 
                     var refreshTime;
                     var seconds = 3000;
@@ -338,6 +359,26 @@
                     });
 
                     $('#divEditor').removeClass('hide');
+
+                    var editor1 = CKEDITOR.replace('Content_ctl02', {
+                        extraAllowedContent: 'div'
+                    });
+                    editor1.on('instanceReady', function () {
+                        // Output self-closing tags the HTML4 way, like <br>.
+                        this.dataProcessor.writer.selfClosingEnd = '>';
+
+                        // Use line breaks for block elements, tables, and lists.
+                        var dtd = CKEDITOR.dtd;
+                        for (var e in CKEDITOR.tools.extend({}, dtd.$nonBodyContent, dtd.$block, dtd.$listItem, dtd.$tableContent)) {
+                            this.dataProcessor.writer.setRules(e, {
+                                indent: true,
+                                breakBeforeOpen: true,
+                                breakAfterOpen: true,
+                                breakBeforeClose: true,
+                                breakAfterClose: true
+                            });
+                        }
+                    });
                 });
             </script>
         </asp:PlaceHolder>

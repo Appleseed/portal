@@ -1,21 +1,28 @@
 ﻿@using Appleseed.Framework
 @model UserManager.Models.UserManagerModel
 
-  
+
 <head id="Head1" runat="server">
     <meta charset="utf-8">
-    <title>User Manager</title>    
-<link href="@HttpUrlBuilder.BuildUrl("~/aspnet_client/js/ui.jqgrid.css")" rel="stylesheet" />
-<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/jQuery/grid.locale-en.js")"></script>
-<script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/UserManager/jquery.jqGrid.min.js")"></script>
-</head>  
+    <title>User Manager</title>
+    <link href="@HttpUrlBuilder.BuildUrl("~/aspnet_client/JQX/styles/jqx.base.css")" rel="stylesheet" />
+    <script src="@HttpUrlBuilder.BuildUrl("~/aspnet_client/JQX/jqx-all.js")"></script>
+    <style>
+        .aligncenter{
+            text-align:center;
+        }
+    </style>
+</head>
 
-<table id="list5">
-</table> 
-<div id="pager5"></div> 
 
-<script type= "text/javascript">
-    
+<div>
+    <div class="col-lg-6" style="padding-left:0px;"><input type="text" placeholder="Search Keyword" id="txtKeywords" /> <input type="button" id="btnSearch" class="CommandButton" value="Search" /></div>
+    <div class="col-lg-6 text-right"><input type="button" id="btnAddNew" class="CommandButton" value="Add New User" /></div>
+</div>
+<div id="jqxgrid"></div>
+
+<script type="text/javascript">
+
     function Edit(url) {
         openInModal(url.toString(), '@General.GetString("EDIT_USER")');
         return false;
@@ -29,108 +36,110 @@
                     "userID": id,
                 },
                 success: function (data) {
-                    $('#list5').trigger('reloadGrid');
+                    $("#jqxgrid").jqxGrid('updatebounddata');
                 },
             });
         }
-        
+
         return true;
 
     }
 
-    function search() {
-        var textVal = jQuery("#textSearch").val();
-        jQuery("#list5").jqGrid('setGridParam', { url: '@Url.Action("GridUser")?search=' + textVal, page: 1 });
-        $("#list5").trigger("reloadGrid");
-        
-    }
-
-    function searchBotton(event) {
-        if ((13 == event.keyCode) || (13 == event.which)) { event.preventDefault(); search(); }
-    }
-    
     $(document).ready(function () {
-    $("#list5").jqGrid({
-        //scroll: 1,
-            colNames: ["UserName", "Email", "Role", "", ""],
-            colModel: [
-                { name: 'UserName', index: 'UserName', sortable: false },
-                { name: 'Email',    index: 'Email',    width: 300, sortable: false },
-                { name: 'Role',      index: 'Role',      sortable: false },
-                { name: 'Edit',     index: 'Edit',     width: 50, align: "center", formatter: formatterLink },
-                { name: 'Delete',   index: 'Delete',   width: 50, align: "center", formatter: formatterDeleteLink },
-            ],
-            pager: "#pager5",
-            sortname: 'UserName',
-            rowNum: 15,
-            rowList: [15, 30, 45],
-            sortorder: "",
-            url: '@Url.Action("GridUser")',
-            datatype: "json",
-            mtype: "POST",
-            hiddengrid: true,
-            width: '100%',
-            height: "350",
-            toolbar: [true, "top"],
-      viewrecords: true,
-    }).navGrid("#pager5", { edit: false, add: false, del: false, search: false, refresh: false,  })
-        .navButtonAdd("#pager5",
-            {
-                caption: '',
-                buttonicon: "ui-icon ui-icon-refresh",
-                onClickButton: function () {
-                    jQuery("#list5").jqGrid('setGridParam', { url: '@Url.Action("GridUser")', page: 1 });
-                    $("#list5").trigger("reloadGrid");
+        $('#txtKeywords').live("keypress", function (e) {
+            if (e.keyCode == 13) {
+                $.ajax({
+                type: "GET",
+                url: '@Url.Action("jqxSetSearchKeyword")' + "?keyword=" + $("#txtKeywords").val(),
+                success: function (data) {
+                    $("#jqxgrid").jqxGrid('updatebounddata');
                 },
+            });
+                return false; // prevent the button click from happening
             }
-        )
-        .navButtonAdd("#pager5",
-            {
-                caption: '@General.GetString("ADD_NEW_USER")',
-                buttonicon: "ui-icon ui-icon-plus",
-                onClickButton: function () {
-                    openInModal("@Model.UserEmail", '@General.GetString("USER_REGISTRY")');
-                    return false;
+        });
+       
+        $("#btnSearch").click(function () {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("jqxSetSearchKeyword")' + "?keyword=" + $("#txtKeywords").val(),
+                success: function (data) {
+                    $("#jqxgrid").jqxGrid('updatebounddata');
                 },
-                position: "first"
-            }
-        ).jqGrid('setLabel', 'Email', '', { width: 300 }
-        ).jqGrid('setLabel', 'Edit', '', { width: 45 }
-        ).jqGrid('setLabel', 'Delete', '', { width: 45 });
+            });
+        });
 
-    //$(".ui-icon-circle-triangle-n").hide();
-        
-    $(".ui-jqgrid-titlebar-close").click(function () {
-        if (document.getElementsByClassName("ui-icon-circle-triangle-s").length == 0) {
-            $(".ui-state-default").hide();
-            $(".ui-jqgrid-bdiv").hide();
-            $(".ui-icon-circle-triangle-n").removeClass("ui-icon-circle-triangle-n").addClass("ui-icon-circle-triangle-s");
-        } else {
-            $(".ui-state-default").show();
-            $(".ui-jqgrid-bdiv").show();
-            $(".ui-icon-circle-triangle-s").removeClass("ui-icon-circle-triangle-s").addClass("ui-icon-circle-triangle-n");
+        $("#btnAddNew").click(function () {
+            openInModal("@Model.UserEmail", '@General.GetString("USER_REGISTRY")');
+        });
+        var source =
+            {
+                datatype: "json",
+                datafields: [
+                    { name: 'UserName', type: 'string' },
+                    { name: 'UserId', type: 'string' },
+                    { name: 'Role', type: 'string' },
+                    { name: 'EditId', type: 'string' },
+                ],
+                cache: false,
+                url: '@Url.Action("jqxSearch")',
+                filter: function () {
+                    // update the grid and send a request to the server.
+                    $("#jqxgrid").jqxGrid('updatebounddata', 'filter');
+                },
+                sort: function () {
+                    // update the grid and send a request to the server.
+                    $("#jqxgrid").jqxGrid('updatebounddata', 'sort');
+                },
+                root:"rows",
+                beforeprocessing: function (data) {
+                    console.log(data);
+                    if (data != null) {
+                        source.totalrecords = data[0].records;
+                    }
+                }
+            };
+        var dataadapter = new $.jqx.dataAdapter(source, {
+            loadError: function (xhr, status, error) {
+                alert(error);
+            }
         }
+        );
+
+        // initialize jqxGrid
+        $("#jqxgrid").jqxGrid(
+            {
+                width: '100%',
+                source: dataadapter,
+                filterable: false,
+                sortable: true,
+                autoheight: true,
+                pageable: true,
+                virtualmode: true,
+                rendergridrows: function (obj) {
+                    console.log(obj);
+                    return obj.data;
+                },
+                columns: [
+                    { text: 'User Name', datafield: 'UserName', width: "50%" },
+                    { text: 'Role', datafield: 'Role', width: "40%" },
+                    { text: '', width: "5%", columntype: '', cellsrenderer: formatterLink, cellclassname: "aligncenter", cellsalign: "center", align: 'center'},
+                    { text: '', width: "5%", columntype: '', cellsrenderer: formatterDeleteLink, cellclassname: "aligncenter", cellsalign: "center", align: 'center'},
+                ]
+            });
+
+
+        function formatterLink(row, column, value) {
+            var dataRecord = $("#jqxgrid").jqxGrid('getrowdata', row);
+            var result = "<a class='ui-icon ui-icon-pencil' href='#' onclick=\"Edit('" + dataRecord.EditId + "');return false;\" style= \"color: blue; text-decoration: none; \">" + "" + "</a>";
+            return result;
+        }
+        function formatterDeleteLink(row, column, value) {
+            var dataRecord = $("#jqxgrid").jqxGrid('getrowdata', row);
+            var result = "<a class='ui-icon ui-icon-trash' onclick=\"Delete('" + dataRecord.UserId + "', '" + dataRecord.UserName + "')\" href=\"#\" style= \"color: blue; text-decoration: none;  \">" + "" + "</a>";
+            return result;
+        }
+
     });
-        
-    var toolbarClone = $('#pager5_left').clone(true);
-    $('#t_list5').prepend(toolbarClone);
-
-    function formatterLink(cellValue, options, rowObject) { 
-        var result = "<a class='ui-icon ui-icon-pencil' href='#' onclick=\"Edit('" + rowObject.EditId + "');return false;\" style= \"color: blue; text-decoration: none;margin-left: 15px; \">" + cellValue + "</a>";
-        return result;
-    }
-    function formatterDeleteLink(cellValue, options, rowObject) {
-        var result = "<a class='ui-icon ui-icon-trash' onclick=\"Delete('" + rowObject.UserId + "', '" + rowObject.UserName + "')\" href=\"#\" style= \"color: blue; text-decoration: none; margin-left: 15px; \">" + cellValue + "</a>";
-        return result;
-    }
-
-    $("#list5").setCaption(
-        '<input type="search" onkeydown="searchBotton(event)" name="item_code" id="textSearch" placeholder=\'@General.GetString("search")\' />' +
-        '<span style="vertical-align:middle; display:inline-block;" class="ui-icon ui-icon-search" onclick="search();return false;"></span>');
-    });
-    
-   
-    
-
 
 </script>

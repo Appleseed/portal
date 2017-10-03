@@ -104,3 +104,8 @@
 .Register,
 [class*="logon"] {
     font-size: 14px;
+}
+
+.jqx-grid span {
+    color: #000 !important;
+}
