@@ -17,7 +17,7 @@
             UserPanel.Visible = true;
         }
         plcAdminMenu.Visible = Appleseed.Framework.Security.PortalSecurity.IsInRoles("Admins");
-        plcBuilderMenu.Visible = Appleseed.Framework.Security.PortalSecurity.IsInRoles("Builder");
+        plcBuilderMenu.Visible = Appleseed.Framework.Security.PortalSecurity.IsInRoles("Builder") && !Appleseed.Framework.Security.PortalSecurity.IsInRoles("Admins");
     }
 
     protected override void OnPreRender(EventArgs e)

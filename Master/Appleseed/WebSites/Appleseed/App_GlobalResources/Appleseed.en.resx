@@ -427,19 +427,19 @@
     <value>Apologise</value>
   </data>
   <data name="APPLY" xml:space="preserve">
-    <value>Apply changes</value>
+    <value>Apply Changes</value>
   </data>
   <data name="APPLYBUTTON" xml:space="preserve">
-    <value>Apply changes</value>
+    <value>Apply Changes</value>
   </data>
   <data name="APPLY_CHANGES" xml:space="preserve">
-    <value>Apply changes</value>
+    <value>Apply Changes</value>
   </data>
   <data name="APPLYMODULECHANGES" xml:space="preserve">
-    <value>Apply module changes</value>
+    <value>Apply Module Changes</value>
   </data>
   <data name="APPLY_MODULE_CHANGES" xml:space="preserve">
-    <value>Apply module changes</value>
+    <value>Apply Module Changes</value>
   </data>
   <data name="APPLYNAME" xml:space="preserve">
     <value>Apply Name and Password Changes</value>

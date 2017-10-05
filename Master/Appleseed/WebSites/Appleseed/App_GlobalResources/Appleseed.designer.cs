@@ -745,7 +745,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply changes.
+        ///   Looks up a localized string similar to Apply Changes.
         /// </summary>
         internal static string APPLYBUTTON {
             get {
@@ -754,7 +754,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply module changes.
+        ///   Looks up a localized string similar to Apply Module Changes.
         /// </summary>
         internal static string APPLYMODULECHANGES {
             get {
@@ -790,7 +790,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply changes.
+        ///   Looks up a localized string similar to Apply Changes.
         /// </summary>
         internal static string APPLY_CHANGES {
             get {
@@ -799,7 +799,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply module changes.
+        ///   Looks up a localized string similar to Apply Module Changes.
         /// </summary>
         internal static string APPLY_MODULE_CHANGES {
             get {

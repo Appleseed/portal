@@ -120,7 +120,8 @@
         <asp:PlaceHolder runat="server" ID="plcCodewriter" Visible="false">
             <style type="text/css">
                 textarea {
-                    height: auto !important;
+                    /*height: auto !important;*/
+                    line-height: 25px;
                 }
 
                 .CodeMirror {
@@ -387,7 +388,7 @@
                 <asp:PlaceHolder ID="PlaceHolderButtons" runat="server"></asp:PlaceHolder>
                 <asp:Button ID="btnCnVersion" Text="Create New Version" runat="server" OnClick="btnCreateNewVersion_Click" />
                 <asp:DropDownList ID="drpVirsionList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="drpVirsionList_SelectedIndexChanged" />
-                <asp:Button ID="btnPsVersion" Text="Publish this Version" runat="server" OnClick="btnPsVersion_Click" />
+                <asp:Button ID="btnPsVersion" Text="Publish Selected Version" runat="server" OnClick="btnPsVersion_Click" />
                 <asp:Button ID="btnHsVersion" Text="Version History" runat="server" OnClick="btnHsVersion_Click" />
             </div>
         </div>
