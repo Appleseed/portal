@@ -66,6 +66,13 @@
             margin-right: auto;
         }
     }
+    .Error{
+        color: red !important;
+        font-size: 20px;
+    }
+    #formSignIn hr{
+        display:none !important;
+    }
 </style>
 
 

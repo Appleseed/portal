@@ -152,7 +152,7 @@ a.Normal:active {
 }
 
 .Error /* Error and warning messages */ {
-    color: #b31212;
+    color: #b31212 !important;
     font-size: 12px;
 }
 
@@ -676,12 +676,12 @@ div.error-wrapper {
 /* Fixes for #AppleseedLogin */
 
 #AppleseedLogin {
-    height: 340px !important;
+    height: 370px !important;
     padding: 0;
 }
 
     #AppleseedLogin iframe#iframeAppleseedLogin {
-        height: 300px !important;
+        height: 342px !important;
         width: 340px;
     }
 

@@ -6993,7 +6993,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-Mail.
+        ///   Looks up a localized string similar to E-mail.
         /// </summary>
         internal static string EMAIL {
             get {

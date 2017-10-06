@@ -735,7 +735,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     dialogwidth = "350";
                     iframeheight = "250px";
                     dialogheightdiv = "260";
-                    dialogheight = "300";
+                    dialogheight = "550";
                 }
                 else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinwithsocialnetwork.ascx"))
                 {

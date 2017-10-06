@@ -2338,7 +2338,7 @@
     <value>Electronic Delivery Description</value>
   </data>
   <data name="EMAIL" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>E-mail</value>
   </data>
   <data name="EMAILORWINDOW" xml:space="preserve">
     <value>Email (or Windows domain name)</value>
