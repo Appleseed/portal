@@ -47,7 +47,7 @@
             color: #fff;
             cursor: pointer;
             background: #1a242f;
-            text-decoration: none;
+            font-size: 15px !important;
         }
 
     .desktopmodules_coremodules_signin_signincool_ascx .module_Body {
