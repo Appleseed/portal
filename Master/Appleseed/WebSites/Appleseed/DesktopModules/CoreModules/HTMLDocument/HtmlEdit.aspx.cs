@@ -415,7 +415,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         /// </param>
         protected void btnHsVersion_Click(object sender, EventArgs e)
         {
-            this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlVersonHistory.aspx?mID=" + this.ModuleID + "&ModalChangeMaster=", true);
+            this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlVersonHistory.aspx?mID=" + this.ModuleID + "&ModalChangeMaster=true&pageid=" + this.PageID, true);
         }
 
         [WebMethod]

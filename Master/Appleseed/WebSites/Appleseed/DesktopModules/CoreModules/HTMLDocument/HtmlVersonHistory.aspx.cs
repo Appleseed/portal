@@ -44,7 +44,7 @@
         [History("Ashish.patel@haptix.biz", "2014/11/20", "Send back to parent page")]
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlEdit.aspx?mID=" + this.ModuleID + "&ModalChangeMaster=", true);
+            this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlEdit.aspx?mID=" + this.ModuleID + "&ModalChangeMaster=true&pageid=" + this.PageID, true);
         }
 
         /// <summary>
