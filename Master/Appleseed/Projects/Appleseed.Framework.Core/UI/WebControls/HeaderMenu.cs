@@ -372,7 +372,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 {
                     if (ShowWelcome)
                     {
-                        list.Add(PortalSettings.CurrentUser.Identity.Name + "(" + PortalSettings.CurrentUser.Identity.Email + ")");
+                        list.Add(PortalSettings.CurrentUser.Identity.Name + " (" + PortalSettings.CurrentUser.Identity.Email + ")");
                     }
 
                     var dashboardPage = PortalSettings.DesktopPages.FirstOrDefault(p => p.PageName == "Dashabord");
