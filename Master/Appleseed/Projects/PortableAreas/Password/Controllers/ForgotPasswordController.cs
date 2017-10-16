@@ -46,7 +46,7 @@ namespace Password.Controllers
 
             if (memberUser == null) {
                 message = General.GetString(
-                    "SIGNIN_PWD_MISSING_IN_DB", "The email you specified does not exists on our database", this);
+                    "SIGNIN_PWD_MISSING_IN_DB", "The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.", this);
                 return Json(new { ok = false, Message = message });
                 //throw new Exception(message);
             }

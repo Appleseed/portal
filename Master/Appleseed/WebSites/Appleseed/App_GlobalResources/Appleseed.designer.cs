@@ -9027,7 +9027,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email is invalid.
+        ///   Looks up a localized string similar to The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user..
         /// </summary>
         internal static string InvalidEmail {
             get {
@@ -13077,7 +13077,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send Mail.
+        ///   Looks up a localized string similar to Send Password Recovery E-mail.
         /// </summary>
         internal static string SendEmail {
             get {
@@ -13959,7 +13959,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your password was not found in the database..
+        ///   Looks up a localized string similar to The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user..
         /// </summary>
         internal static string SIGNIN_PWD_MISSING_IN_DB {
             get {

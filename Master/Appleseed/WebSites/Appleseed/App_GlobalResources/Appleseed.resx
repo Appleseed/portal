@@ -4501,7 +4501,7 @@
     <value>Please enter an E-Mail address</value>
   </data>
   <data name="SIGNIN_PWD_MISSING_IN_DB" xml:space="preserve">
-    <value>Your password was not found in the database.</value>
+    <value>The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.</value>
   </data>
   <data name="SIGNIN_PWD_REQUESTED" xml:space="preserve">
     <value>The password you have requested is:</value>
@@ -5712,13 +5712,13 @@ function confirmDelete()
     <value>Email Address</value>
   </data>
   <data name="SendEmail" xml:space="preserve">
-    <value>Send Mail</value>
+    <value>Send Password Recovery E-mail</value>
   </data>
   <data name="CHANGE_PWD_INVALID_TOKEN_ERROR" xml:space="preserve">
     <value>The token is no longer valid.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
-    <value>The email is invalid</value>
+    <value>The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.</value>
   </data>
   <data name="EDIT_COMPONENTMODULE" xml:space="preserve">
     <value>Edit Component</value>

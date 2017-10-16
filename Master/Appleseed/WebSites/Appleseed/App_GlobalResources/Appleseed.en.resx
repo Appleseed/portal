@@ -2827,7 +2827,7 @@
     <value>Please enter an E-Mail address</value>
   </data>
   <data name="SIGNIN_PWD_MISSING_IN_DB" xml:space="preserve">
-    <value>Your password was not found in the database.</value>
+    <value>The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.</value>
   </data>
   <data name="SIGNIN_PWD_REQUESTED" xml:space="preserve">
     <value>The password you have requested is:</value>

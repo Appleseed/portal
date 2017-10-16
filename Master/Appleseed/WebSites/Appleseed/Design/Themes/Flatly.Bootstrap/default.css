@@ -152,13 +152,13 @@ a.Normal:active {
 }
 
 .Error /* Error and warning messages */ {
-    color: #b31212 !important;
-    font-size: 12px;
+    color: red !important;
+    font-size: 15px;
 }
 
 .Message /* Informative messages */ {
     font-weight: normal;
-    font-size: 12px;
+    font-size: 15px;
     color: #b31212;
     background-color: #ffcc00;
 }
