@@ -254,41 +254,22 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             // Create an instance of the HtmlTextDB component
             var text = new HtmlTextDB();
-            //if (this.IsCodeWriter)
-            //{
-            //    this.DesktopText.Text = string.Format("<style type='text/css'>{0}</style>{1}<script type='text/javascript'>{2}</script>", this.cwCSS.InnerText, this.cwHTML.InnerText, this.cwJS.InnerText);
-            //}
-
-            //// Update the text within the HtmlText table
-            //text.UpdateHtmlText(
-            //    this.ModuleID,
-            //    this.Server.HtmlEncode(this.DesktopText.Text),
-            //    this.Server.HtmlEncode(this.MobileSummary.Text),
-            //    this.Server.HtmlEncode(this.MobileDetails.Text),
-            //    Convert.ToInt32(drpVirsionList.SelectedItem.Value),
-            //    Convert.ToBoolean(drpVirsionList.SelectedItem.Text.Contains("Published") ? 1 : 0),
-            //    DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName, DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
-            //    this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText
-            //    );
-
-            int maxVersion = drpVirsionList.Items.Count + 1;
             if (this.IsCodeWriter)
             {
                 this.DesktopText.Text = string.Format("<style type='text/css'>{0}</style>{1}<script type='text/javascript'>{2}</script>", this.cwCSS.InnerText, this.cwHTML.InnerText, this.cwJS.InnerText);
             }
 
+            // Update the text within the HtmlText table
             text.UpdateHtmlText(
                 this.ModuleID,
                 this.Server.HtmlEncode(this.DesktopText.Text),
                 this.Server.HtmlEncode(this.MobileSummary.Text),
                 this.Server.HtmlEncode(this.MobileDetails.Text),
-                maxVersion,
-                 Convert.ToBoolean(1),
-                DateTime.Now,
-                Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
-                DateTime.Now,
-                Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName
-                , this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText);
+                Convert.ToInt32(drpVirsionList.SelectedItem.Value),
+                Convert.ToBoolean(drpVirsionList.SelectedItem.Text.Contains("Published") ? 1 : 0),
+                DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName, DateTime.Now, Appleseed.Framework.Site.Configuration.PortalSettings.CurrentUser.Identity.UserName,
+                this.cwCSS.InnerText, this.cwJS.InnerText, this.cwHTML.InnerText, this.cwJSCSSRef.InnerText
+                );
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
             {

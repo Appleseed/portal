@@ -4,7 +4,7 @@
     <div>
         <p>
             <asp:Button ID="btnCompareAndMarge" Text="Compare and Merge" CssClass="CommandButton" runat="server" OnClientClick="return CheckVersionSelection();" OnClick="btnCompareAndMarge_Click" />
-            <%--<asp:Button ID="btnCompareAndMarge" Text="Compare and Merge" runat="server" OnClientClick="CheckVersionSelection()" />--%>
+            <%--<asp:Button ID="btnCompareAndMarge" Text="Companre and Merge" runat="server" OnClientClick="CheckVersionSelection()" />--%>
             <asp:Button ID="btnBack" Text="Back" CssClass="CommandButton" runat="server" OnClick="btnBack_Click" />
             <asp:Button ID="btnDelete" Text="Delete" runat="server" CssClass="CommandButton" OnClientClick="return DeleteVersion();" OnClick="btnDelete_Click" />
         </p>
