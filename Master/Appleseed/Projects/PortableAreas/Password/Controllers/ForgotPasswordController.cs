@@ -67,7 +67,7 @@ namespace Password.Controllers
 
             String uri = HttpUrlBuilder.BuildUrl("~/Password/PasswordRecovery");
 
-            var changePasswordUrl = string.Concat(Request.Url.Host, uri,
+            var changePasswordUrl = Request.Url.Scheme + "://" + string.Concat(Request.Url.Host, uri,
                 "?usr=",
                 userId.ToString("N"),
                 "&tok=",
