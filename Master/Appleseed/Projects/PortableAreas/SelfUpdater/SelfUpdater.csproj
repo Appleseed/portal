@@ -78,10 +78,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libs\MvcContrib.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libs\SignalR\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libs\NuGet.Core.dll</HintPath>

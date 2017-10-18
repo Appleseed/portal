@@ -16,6 +16,8 @@
         <label id="Message" class="Error"></label>
         <br />
     </div>
+        <div id="divSuccess" style="color:green; font-size:15px"></div>
+
 
 
 
@@ -29,25 +31,26 @@
 
                 $.ajax({
                     url: '<%= Url.Action("sendPasswordToken")%>',
-                     type: 'POST',
-                     data: {
-                         "email": email
-                     },
-                     success: function (data) {
-                         $('#Message').text(data.Message);
-                         if (data.ok) {
-                             $('#Fields').hide();
-                         }
-                     },
-                     error: function (data) {
-                         $('#Message').text(data.Message);
+                    type: 'POST',
+                    data: {
+                        "email": email
+                    },
+                    success: function (data) {
+                        $('#Message').text(data.Message);
+                        if (data.ok) {
+                            $('#Fields').hide();
+                            $('#divSuccess').html('We have sent you an email to reset new password.');
+                        }
+                    },
+                    error: function (data) {
+                        $('#Message').text(data.Message);
 
-                     }
-                 });
-             }
-             else {
-                 $('#Message').text('<%= Appleseed.Framework.General.GetString("InvalidEmail", "The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.") %>');
-             }
+                    }
+                });
+            }
+            else {
+                $('#Message').text('<%= Appleseed.Framework.General.GetString("InvalidEmail", "The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.") %>');
+            }
         }
 
         function validateEmail(email) {
