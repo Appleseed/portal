@@ -745,7 +745,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply changes.
+        ///   Looks up a localized string similar to Apply Changes.
         /// </summary>
         internal static string APPLYBUTTON {
             get {
@@ -754,7 +754,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply module changes.
+        ///   Looks up a localized string similar to Apply Module Changes.
         /// </summary>
         internal static string APPLYMODULECHANGES {
             get {
@@ -790,7 +790,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply changes.
+        ///   Looks up a localized string similar to Apply Changes.
         /// </summary>
         internal static string APPLY_CHANGES {
             get {
@@ -799,7 +799,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply module changes.
+        ///   Looks up a localized string similar to Apply Module Changes.
         /// </summary>
         internal static string APPLY_MODULE_CHANGES {
             get {
@@ -6993,7 +6993,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-Mail.
+        ///   Looks up a localized string similar to E-mail.
         /// </summary>
         internal static string EMAIL {
             get {
@@ -9027,7 +9027,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email is invalid.
+        ///   Looks up a localized string similar to The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user..
         /// </summary>
         internal static string InvalidEmail {
             get {
@@ -13077,7 +13077,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send Mail.
+        ///   Looks up a localized string similar to Send Password Recovery E-mail.
         /// </summary>
         internal static string SendEmail {
             get {
@@ -13689,7 +13689,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign-in.
+        ///   Looks up a localized string similar to Sign in.
         /// </summary>
         internal static string SIGNIN {
             get {
@@ -13959,7 +13959,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your password was not found in the database..
+        ///   Looks up a localized string similar to The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user..
         /// </summary>
         internal static string SIGNIN_PWD_MISSING_IN_DB {
             get {

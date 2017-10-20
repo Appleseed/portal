@@ -427,19 +427,19 @@
     <value>Apologise</value>
   </data>
   <data name="APPLY" xml:space="preserve">
-    <value>Apply changes</value>
+    <value>Apply Changes</value>
   </data>
   <data name="APPLYBUTTON" xml:space="preserve">
-    <value>Apply changes</value>
+    <value>Apply Changes</value>
   </data>
   <data name="APPLY_CHANGES" xml:space="preserve">
-    <value>Apply changes</value>
+    <value>Apply Changes</value>
   </data>
   <data name="APPLYMODULECHANGES" xml:space="preserve">
-    <value>Apply module changes</value>
+    <value>Apply Module Changes</value>
   </data>
   <data name="APPLY_MODULE_CHANGES" xml:space="preserve">
-    <value>Apply module changes</value>
+    <value>Apply Module Changes</value>
   </data>
   <data name="APPLYNAME" xml:space="preserve">
     <value>Apply Name and Password Changes</value>
@@ -1210,7 +1210,7 @@
     <value>Electronic Delivery Description</value>
   </data>
   <data name="EMAIL" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>E-mail</value>
   </data>
   <data name="MAIL" xml:space="preserve">
     <value>E-Mail</value>
@@ -2809,7 +2809,7 @@
     <value>Show Flash Gallery</value>
   </data>
   <data name="SIGNIN" xml:space="preserve">
-    <value>Sign-in</value>
+    <value>Sign in</value>
   </data>
   <data name="SIGNIN_ALLOW_REMEMBER_LOGIN" xml:space="preserve">
     <value>Allow Remember Login</value>
@@ -2827,7 +2827,7 @@
     <value>Please enter an E-Mail address</value>
   </data>
   <data name="SIGNIN_PWD_MISSING_IN_DB" xml:space="preserve">
-    <value>Your password was not found in the database.</value>
+    <value>The e-mail address you entered could not be found. Make sure you are using the e-mail address associated with your user.</value>
   </data>
   <data name="SIGNIN_PWD_REQUESTED" xml:space="preserve">
     <value>The password you have requested is:</value>

@@ -17,7 +17,7 @@
             UserPanel.Visible = true;
         }
         plcAdminMenu.Visible = Appleseed.Framework.Security.PortalSecurity.IsInRoles("Admins");
-        plcBuilderMenu.Visible = Appleseed.Framework.Security.PortalSecurity.IsInRoles("Builder");
+        plcBuilderMenu.Visible = Appleseed.Framework.Security.PortalSecurity.IsInRoles("Builder") && !Appleseed.Framework.Security.PortalSecurity.IsInRoles("Admins");
     }
 </script>
 
@@ -41,7 +41,6 @@
                                 <li><a href="/110">Page Manager</a></li>
                                 <li><a href="/280">User Manager</a></li>
                                 <li><a href="/155">File Manager</a></li>
-                                <!--<li><a href="/120">Global Modules</a></li>-->
                                 <li><a href="/215">Recycle Bin</a></li>
                             </asp:PlaceHolder>
                             <asp:PlaceHolder ID="plcBuilderMenu" runat="server" Visible="false">

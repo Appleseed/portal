@@ -47,7 +47,7 @@
             color: #fff;
             cursor: pointer;
             background: #1a242f;
-            text-decoration: none;
+            font-size: 15px !important;
         }
 
     .desktopmodules_coremodules_signin_signincool_ascx .module_Body {
@@ -65,6 +65,13 @@
             margin-left: auto;
             margin-right: auto;
         }
+    }
+    .Error{
+        color: red !important;
+        font-size: 20px;
+    }
+    #formSignIn hr{
+        display:none !important;
     }
 </style>
 
@@ -85,8 +92,8 @@
             </div>
             <div class="input-row">
                 <span class="password-label login-label">
-                    <rbfwebui:Localize ID="PasswordLabel" runat="server" Text="Password:" TextKey="PASSWORD">
-                    </rbfwebui:Localize>:
+                    <rbfwebui:Localize ID="PasswordLabel" runat="server" Text="Password" TextKey="PASSWORD">
+                    </rbfwebui:Localize>
                 </span>
                 <span class="password-textbox login-textbox">
                     <asp:TextBox ID="password" runat="server" Columns="24" CssClass="NormalTextBox" TextMode="password"></asp:TextBox>
@@ -98,14 +105,14 @@
                 </span>
                 <span>
                     <p>
-                        <rbfwebui:Button ID="LoginBtn" runat="server" CssClass="CommandButton login-button" EnableViewState="False" Text="Login" TextKey="SIGNIN" />
+                        <rbfwebui:Button ID="LoginBtn" runat="server" CssClass="CommandButton login-button" EnableViewState="False" Text="Sign in" TextKey="SIGNIN" />
                     </p>
                 </span>
             </div>
             <div class="send-register-box">
                 <span>
                     <rbfwebui:LinkButton ID="SendPasswordBtn" runat="server" CssClass="forgot-link"
-                        EnableViewState="False" Text="Forgot your password? Click here." TextKey="SIGNIN_SEND_PWD"></rbfwebui:LinkButton>
+                        EnableViewState="False" Text="Forgot your password? Click here."></rbfwebui:LinkButton>
                     <%-- <a href="/302" class="forgot-link">Forgot your password? Click here.</a> --%>
                 </span>
                 <span class="hide">

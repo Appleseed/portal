@@ -372,7 +372,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 {
                     if (ShowWelcome)
                     {
-                        list.Add(PortalSettings.CurrentUser.Identity.Name + "(" + PortalSettings.CurrentUser.Identity.Email + ")");
+                        list.Add(PortalSettings.CurrentUser.Identity.Name + " (" + PortalSettings.CurrentUser.Identity.Email + ")");
                     }
 
                     var dashboardPage = PortalSettings.DesktopPages.FirstOrDefault(p => p.PageName == "Dashabord");
@@ -735,7 +735,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     dialogwidth = "350";
                     iframeheight = "250px";
                     dialogheightdiv = "260";
-                    dialogheight = "300";
+                    dialogheight = "550";
                 }
                 else if (PortalSettings.CustomSettings["SITESETTINGS_LOGIN_TYPE"].ToString().EndsWith("signinwithsocialnetwork.ascx"))
                 {
@@ -791,7 +791,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                                 width: ", dialogwidth, @",
                                 height: ", dialogheight, @",
                                 resizable: false,
-                                title: 'Sign In'
+                                title: 'Sign in'
                             });
 
                             $('#", this.ClientID, @"_logon_link').click(function () {

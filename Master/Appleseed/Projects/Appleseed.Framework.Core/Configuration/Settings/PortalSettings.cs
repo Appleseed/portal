@@ -1656,6 +1656,61 @@ namespace Appleseed.Framework.Site.Configuration
                     };
                 baseSettings.Add("SITESETTINGS_THEME", theme);
 
+                //var smtpssl =
+                //    new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
+                //    {
+                //        Required = true,
+                //        Order = groupOrderBase + 32,
+                //        Group = group,
+                //        EnglishName = "SMTP Enabled SSL?",
+                //        Description = "Specify the site level theme here."
+                //    };
+                //baseSettings.Add("SITESETTINGS_SMTP_SSL", smtpssl);
+
+                //var smtphost =
+                //    new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
+                //    {
+                //        Required = true,
+                //        Order = groupOrderBase + 33,
+                //        Group = group,
+                //        EnglishName = "SMTP Host",
+                //        Description = "Specify the site level theme here."
+                //    };
+                //baseSettings.Add("SITESETTINGS_SMTP_HOST", smtphost);
+
+                //var smtpport =
+                //    new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
+                //    {
+                //        Required = true,
+                //        Order = groupOrderBase + 34,
+                //        Group = group,
+                //        EnglishName = "SMTP Port",
+                //        Description = "Specify the site level theme here."
+                //    };
+                //baseSettings.Add("SITESETTINGS_SMTP_PORT", smtpport);
+
+                //var smtpusername =
+                //    new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
+                //    {
+                //        Required = true,
+                //        Order = groupOrderBase + 35,
+                //        Group = group,
+                //        EnglishName = "SMTP Username",
+                //        Description = "Specify the site level theme here."
+                //    };
+                //baseSettings.Add("SITESETTINGS_SMTP_USERNAME", smtpport);
+
+                //var smtppassword =
+                //    new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
+                //    {
+                //        Required = true,
+                //        Order = groupOrderBase + 36,
+                //        Group = group,
+                //        EnglishName = "SMTP Password",
+                //        Description = "Specify the site level theme here."
+                //    };
+                //baseSettings.Add("SITESETTINGS_SMTP_PASSWORD", smtppassword);
+
                 // SettingItem ThemeAlt = new SettingItem(new CustomListDataType(new ThemeManager(PortalPath).GetThemes(), strName, strName));
                 var themeAlt =
                     new SettingItem<string, ListControl>(new CustomListDataType(themeList, StringsName, StringsName))
@@ -1978,6 +2033,79 @@ namespace Appleseed.Framework.Site.Configuration
                     Group = group
                 };
                 baseSettings.Add("SITESETTINGS_GOOGLE_LOGIN", googleLogin);
+
+                var smtpSSL = new SettingItem<bool, CheckBox>()
+                {
+                    Required = false,
+                    Value = false,
+
+                    EnglishName = "SMTP Enabled SSL",
+                    Description = "Check if you want to see the SMTP SSL",
+                    Order = groupOrderBase + 32,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_SSL", smtpSSL);
+
+                var smtpHost = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "SMTP HOST",
+                    Description = "Check if you want to see the SMTP HOST",
+                    Order = groupOrderBase + 33,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_HOST", smtpHost);
+
+                var smtpPort = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "SMTP PORT",
+                    Description = "Check if you want to see the SMTP PORT",
+                    Order = groupOrderBase + 34,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_PORT", smtpPort);
+
+                var smtpUsername = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "SMTP USERNAME",
+                    Description = "Check if you want to see the SMTP USERNAME",
+                    Order = groupOrderBase + 35,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_USERNAME", smtpUsername);
+
+                var smtpPassword = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "SMTP PASSWORD",
+                    Description = "Check if you want to see the SMTP PASSWORD",
+                    Order = groupOrderBase + 36,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_PASSWORD", smtpPassword);
+
+                var smtpSendGrid = new SettingItem<string, TextBox>()
+                {
+                    Required = false,
+                    EnglishName = "SendGrid API KEY",
+                    Description = "Check if you want to see the SMTP SENDGRID",
+                    Order = groupOrderBase + 37,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_SENDGRID", smtpSendGrid);
+
+                var smtpSendGridToSend = new SettingItem<bool, CheckBox>()
+                {
+                    Required = false,
+                    Value = false,
+                    EnglishName = "Use SendGrid To Send Email?",
+                    Description = "Check if you want to see the SendGrid To Send Email?",
+                    Order = groupOrderBase + 38,
+                    Group = group
+                };
+                baseSettings.Add("SITESETTINGS_SMTP_SG_SENDEMAIL", smtpSendGridToSend);
 
                 var googleLoginclientId = new SettingItem<string, TextBox>()
                 {

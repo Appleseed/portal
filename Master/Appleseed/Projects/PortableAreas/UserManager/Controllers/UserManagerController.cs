@@ -22,6 +22,8 @@ namespace UserManager.Controllers
     {
         public ActionResult Module()
         {
+            Session["sKeywords"] = null;
+
             var segment = Request.Url.Segments;
             var pagenumber = getPageId(segment);
             var mid = (int)ControllerContext.RouteData.Values["moduleId"];
@@ -78,6 +80,16 @@ namespace UserManager.Controllers
             return Json("ok");
         }
 
+        public void jqxSetSearchKeyword(string keyword)
+        {
+            Session["sKeywords"] = keyword;
+        }
+
+        public JsonResult jqxSearch(int pagenum, int pagesize, string sortorder, string sortdatafield)
+        {
+            return GridUser(pagenum + 1, pagesize, "", sortorder, sortdatafield);
+        }
+
         public JsonResult Search(string text, int page, int rows, List<UserManagerModel> data)
         {
 
@@ -130,21 +142,43 @@ namespace UserManager.Controllers
             public long TotalRows { get; set; }
         }
 
-        public JsonResult GridUser(int page, int rows, string search, string sidx, string sord)
+        public class Result
         {
+            public int total { get; set; }
+            public int page { get; set; }
+            public int currentPage { get; set; }
+            public long records { get; set; }
+            public IQueryable<UserFormatedModel> rows { get; set; }
+        }
+
+        public JsonResult GridUser(int page, int rows, string search, string sortorder, string sortdatafield)
+        {
+            if (Session["sKeywords"] != null && !string.IsNullOrEmpty(Session["sKeywords"].ToString()) && string.IsNullOrEmpty(search))
+            {
+                search = Session["sKeywords"].ToString();
+            }
+            else if (!string.IsNullOrEmpty(search))
+            {
+                Session["sKeywords"] = search;
+            }
             var start = (page * rows) - rows + 1;
             var end = start + rows - 1;
+            string orderBY = "";
+            if (!string.IsNullOrEmpty(sortorder) && !string.IsNullOrEmpty(sortdatafield))
+            {
+                orderBY = " Order By " + (sortdatafield.ToUpper() == "ROLE" ? "UserRol" : sortdatafield) + " " + sortorder + " ";
+            }
 
-         var queryUsers =   "WITH YourCTE AS " +
-"(" +
-"SELECT ROW_NUMBER() OVER(ORDER BY cp.Name) AS RowIndx,au.UserName, m.ApplicationId, m.UserId, m.Email, cp.Name, (SELECT ',' + ar.RoleName FROM aspnet_Roles ar where ar.RoleId in (select RoleId from[dbo].[aspnet_UsersInRoles] ur where ur.UserId = m.UserId) FOR XML PATH('')) as UserRol " +
-                                       " FROM aspnet_Membership as m LEFT JOIN aspnet_CustomProfile as cp ON m.UserId = cp.UserId " +
-                                       " inner join aspnet_users au on au.UserId = m.UserId " +
-                                       " inner join aspnet_Applications as a " +
-                                       " on a.ApplicationName = '"+ Portal.UniqueID + "' and a.ApplicationId = m.ApplicationId " +
-                                       "  " + getSearchCondition(search) + " " +
-" ) " +
-" Select *, (SELECT MAX(RowIndx) FROM YourCTE) AS 'TotalRows' from YourCTE  where RowIndx between "+ start + " and " + end;
+            var queryUsers = "WITH YourCTE AS " +
+   "(" +
+   "SELECT ROW_NUMBER() OVER(ORDER BY cp.Name) AS RowIndx,au.UserName, m.ApplicationId, m.UserId, m.Email, cp.Name, (SELECT ',' + ar.RoleName FROM aspnet_Roles ar where ar.RoleId in (select RoleId from[dbo].[aspnet_UsersInRoles] ur where ur.UserId = m.UserId) FOR XML PATH('')) as UserRol " +
+                                          " FROM aspnet_Membership as m LEFT JOIN aspnet_CustomProfile as cp ON m.UserId = cp.UserId " +
+                                          " inner join aspnet_users au on au.UserId = m.UserId " +
+                                          " inner join aspnet_Applications as a " +
+                                          " on a.ApplicationName = '" + Portal.UniqueID + "' and a.ApplicationId = m.ApplicationId " +
+                                          "  " + getSearchCondition(search) + " " +
+   " ) " +
+   " Select *, (SELECT MAX(RowIndx) FROM YourCTE) AS 'TotalRows' from YourCTE   where RowIndx between " + start + " and " + end + orderBY;
 
             //ErrorHandler.Publish(LogLevel.Info, "User Query - " + queryUsers);
 
@@ -170,10 +204,11 @@ namespace UserManager.Controllers
                 }
                 dataFormted.Add(usr);
             }
-              
+
             var totalRecords = dataFormted[0].TotalRows;
             var totalPages = (int)Math.Ceiling(totalRecords / (float)rows);
-            var jsonData = new
+            List<Result> rusts = new List<Result>();
+            var jsonData = new Result
             {
                 total = totalPages,
                 page = page,
@@ -181,7 +216,8 @@ namespace UserManager.Controllers
                 records = totalRecords,
                 rows = dataFormted.AsQueryable()
             };
-            return Json(jsonData, JsonRequestBehavior.AllowGet);
+            rusts.Add(jsonData);
+            return Json(rusts, JsonRequestBehavior.AllowGet);
 
 
             /*
