@@ -153,5 +153,26 @@ namespace Appleseed.Framework.Security
                 || UserProfile.CurrentUser.HasPermission(AccessPermissions.PAGE_DELETION)
                 || UserProfile.CurrentUser.HasPermission(AccessPermissions.PAGE_EDITING);
         }
+
+
+        public static bool HasModuleAddEditAccess()
+        {
+            return UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_THEME_AND_LAYOUT_ADMINISTRATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_CREATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING);
+        }
+
+        public static bool HasModuleDeleteAccess()
+        {
+            return UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_THEME_AND_LAYOUT_ADMINISTRATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING);
+        }
+
+        public static bool HasPortalAdministrationAccess()
+        {
+            return UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION);
+        }
     }
 }

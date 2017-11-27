@@ -432,6 +432,12 @@ namespace Appleseed.Admin
         /// <param name="e">The <see cref="T:System.EventArgs"/> object that contains the event data.</param>
         protected override void OnLoad(EventArgs e)
         {
+            if (!UserProfile.HasPortalAdministrationAccess())
+            {
+                PortalSecurity.AccessDenied();
+                return;
+            }
+
             base.OnLoad(e);
         
             if (!this.Page.IsPostBack)

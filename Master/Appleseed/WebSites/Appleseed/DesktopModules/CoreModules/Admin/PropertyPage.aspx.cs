@@ -90,7 +90,10 @@ namespace Appleseed.Content.Web.Modules
             adminPropertiesButton.CssClass = "CommandButton";
             adminPropertiesButton.NavigateUrl = NavigateUrlPropertyPage;
 
-            PlaceHolderButtons.Controls.Add(adminPropertiesButton);
+            if (Framework.Security.UserProfile.HasPortalAdministrationAccess())
+            {
+                PlaceHolderButtons.Controls.Add(adminPropertiesButton);
+            }
 
             // jminond added to top of property page so no need to scroll for save
             HyperLink adminPropertiesButton2 = new HyperLink();
@@ -98,9 +101,11 @@ namespace Appleseed.Content.Web.Modules
             adminPropertiesButton2.Text = "Edit base settings";
             adminPropertiesButton2.CssClass = "CommandButton";
             adminPropertiesButton2.NavigateUrl = NavigateUrlPropertyPage;
-                
 
-            PlaceholderButtons2.Controls.Add(adminPropertiesButton2);
+            if (Framework.Security.UserProfile.HasPortalAdministrationAccess())
+            {
+                PlaceholderButtons2.Controls.Add(adminPropertiesButton2);
+            }
 
 //			PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
 //			PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));

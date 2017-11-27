@@ -476,7 +476,7 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
             {
                 if (context.User != null && context.User.Identity.IsAuthenticated)
                 {
-                    if (node.Roles.Contains("All Users") || node.Roles.Contains("Authenticated Users"))
+                    if (node.Roles.Contains("All Users") || node.Roles.Contains("Authenticated Users") || context.User.IsInRole("Admins"))
                     {
                         isVisible = true;
                     }
