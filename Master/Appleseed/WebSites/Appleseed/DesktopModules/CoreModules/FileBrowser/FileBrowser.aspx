@@ -241,6 +241,11 @@
                     }
                     break;
                 case 'editfile':
+                    var hasPermission = '<%= Appleseed.Framework.Security.UserProfile.HasFileAddEditRenameAccess() %>';
+                    if (hasPermission.toLowerCase()  != 'true') {
+                        alert("Access denied");
+                        return;
+                    }
                     var $dialog = $('#modelpageedit');
                     var fName = obj.data.replace('//', '/');
                     var extension = fName.substr(fName.lastIndexOf(".")).replace('.','');

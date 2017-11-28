@@ -174,5 +174,16 @@ namespace Appleseed.Framework.Security
         {
             return UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION);
         }
+        public static bool HasFileAddEditRenameAccess()
+        {
+            return UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.FILE_ADD_EDIT_RENAME);
+        }
+
+        public static bool HasFileDeleteAccess()
+        {
+            return UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION)
+                || UserProfile.CurrentUser.HasPermission(AccessPermissions.FILE_DELETE);
+        }
     }
 }

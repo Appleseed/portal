@@ -390,6 +390,43 @@ namespace Appleseed.Content.Web.Modules
                 }
             }
 
+            if (UserProfile.HasFileAddEditRenameAccess() && UserProfile.HasFileDeleteAccess())
+            {
+                FileManager1.DefaultAccessMode = AccessMode.Write;
+                FileManager1.Visible = true;
+                Panel_upload.Visible = true;
+                Panel_deny.Visible = false;
+                FileManager1.ReadOnly = false;
+                FileManager1.AllowDelete = true;
+                FileManager1.AllowOverwrite = true;
+            }
+            else if (UserProfile.HasFileAddEditRenameAccess() && !UserProfile.HasFileDeleteAccess())
+            {
+                FileManager1.DefaultAccessMode = AccessMode.Write;
+                FileManager1.Visible = true;
+                Panel_upload.Visible = true;
+                Panel_deny.Visible = false;
+                FileManager1.ReadOnly = false;
+                FileManager1.AllowDelete = false;
+                FileManager1.AllowOverwrite = false;
+            }
+            else
+            {
+                FileManager1.Visible = true;
+                Panel_upload.Visible = false;
+                Panel_deny.Visible = false;
+                FileManager1.ReadOnly = true;
+                if (HideCommands)
+                {
+                    FileManager1.ShowToolBar = false;
+                    FileManager1.EnableContextMenu = false;
+                    Panel_upload.Visible = true;
+                    Upload_button.Visible = false;
+                    DND_message.InnerText = FileManager1.Controller.GetResourceString("No_Command_Help", "DoubleClick to open a folder. DoubleClick to download a file.");
+                }
+            }
+
+            /*
             AccessMode fbAccessMode;
             if (MagicSession.Current.FileBrowserAccessMode == AccessMode.Default)
                 fbAccessMode = FileManager1.DefaultAccessMode;
@@ -442,7 +479,7 @@ namespace Appleseed.Content.Web.Modules
                 default:
                     break;
             }
-
+            */
 
         }
         public void RaiseCallbackEvent(String eventArgument)

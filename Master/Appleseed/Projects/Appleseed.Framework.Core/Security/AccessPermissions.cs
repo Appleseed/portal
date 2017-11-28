@@ -63,6 +63,16 @@ namespace Appleseed.Framework.Security
         /// <summary>
         /// Module Html content edition
         /// </summary>
-        MODULE_HTML_CONTENT_EDITING = 10
+        MODULE_HTML_CONTENT_EDITING = 10,
+
+        /// <summary>
+        /// Allow user to upload new files using File Manager
+        /// </summary>
+        FILE_ADD_EDIT_RENAME = 11,
+
+        /// <summary>
+        /// Allow user to delete file content using File Manager
+        /// </summary>
+        FILE_DELETE = 12
     }
 }
