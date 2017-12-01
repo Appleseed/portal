@@ -90,7 +90,7 @@ namespace Appleseed.Content.Web.Modules
             adminPropertiesButton.CssClass = "CommandButton";
             adminPropertiesButton.NavigateUrl = NavigateUrlPropertyPage;
 
-            if (Framework.Security.UserProfile.HasPortalAdministrationAccess())
+            if (Framework.Security.UserProfile.HasPortalAdministrationAccess() || Framework.Security.UserProfile.HasModuleAddEditAccess())
             {
                 PlaceHolderButtons.Controls.Add(adminPropertiesButton);
             }
@@ -102,7 +102,7 @@ namespace Appleseed.Content.Web.Modules
             adminPropertiesButton2.CssClass = "CommandButton";
             adminPropertiesButton2.NavigateUrl = NavigateUrlPropertyPage;
 
-            if (Framework.Security.UserProfile.HasPortalAdministrationAccess())
+            if (Framework.Security.UserProfile.HasPortalAdministrationAccess() || Framework.Security.UserProfile.HasModuleAddEditAccess())
             {
                 PlaceholderButtons2.Controls.Add(adminPropertiesButton2);
             }
