@@ -430,13 +430,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
             var groupOrderBase = (int)SettingItemGroup.THEME_LAYOUT_SETTINGS;
 
             var applyTheme = new SettingItem<bool, CheckBox>
-                {
-                    Order = groupOrderBase + 10,
-                    Group = group,
-                    Value = true,
-                    EnglishName = "Apply Theme",
-                    Description = "Check this box to apply theme to this module"
-                };
+            {
+                Order = groupOrderBase + 10,
+                Group = group,
+                Value = true,
+                EnglishName = "Apply Theme",
+                Description = "Check this box to apply theme to this module"
+            };
             this.BaseSettings.Add("MODULESETTINGS_APPLY_THEME", applyTheme);
 
             var themeOptions = new List<SettingOption>
@@ -445,13 +445,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     new SettingOption((int)ThemeList.Alt, General.GetString("MODULESETTINGS_THEME_ALT"))
                 };
             var theme = new SettingItem<string, ListControl>(new CustomListDataType(themeOptions, "Name", "Val"))
-                {
-                    Order = groupOrderBase + 20,
-                    Group = group,
-                    Value = ((int)ThemeList.Default).ToString(),
-                    EnglishName = "Theme",
-                    Description = "Choose theme for this module"
-                };
+            {
+                Order = groupOrderBase + 20,
+                Group = group,
+                Value = ((int)ThemeList.Default).ToString(),
+                EnglishName = "Theme",
+                Description = "Choose theme for this module"
+            };
             this.BaseSettings.Add("MODULESETTINGS_THEME", theme);
 
             if (HttpContext.Current != null)
@@ -479,12 +479,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         themeList.Insert(0, customThemeNo);
                         var moduleTheme =
                             new SettingItem<string, ListControl>(new CustomListDataType(themeList, "Name", "Name"))
-                                {
-                                    Order = groupOrderBase + 25,
-                                    Group = group,
-                                    EnglishName = "Custom Theme",
-                                    Description = "Set a custom theme for this module only"
-                                };
+                            {
+                                Order = groupOrderBase + 25,
+                                Group = group,
+                                EnglishName = "Custom Theme",
+                                Description = "Set a custom theme for this module only"
+                            };
                         this.BaseSettings.Add("MODULESETTINGS_MODULE_THEME", moduleTheme);
                     }
                 }
@@ -492,24 +492,24 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
             // switches title display on/off
             var showTitle = new SettingItem<bool, CheckBox>
-                {
-                    Order = groupOrderBase + 30,
-                    Group = group,
-                    Value = true,
-                    EnglishName = "Show Title",
-                    Description = "Switches title display on/off"
-                };
+            {
+                Order = groupOrderBase + 30,
+                Group = group,
+                Value = true,
+                EnglishName = "Show Title",
+                Description = "Switches title display on/off"
+            };
             this.BaseSettings.Add("MODULESETTINGS_SHOW_TITLE", showTitle);
 
             // switches last modified summary on/off
             var showModifiedBy = new SettingItem<bool, CheckBox>
-                {
-                    Order = groupOrderBase + 40,
-                    Group = group,
-                    Value = false,
-                    EnglishName = "Show Modified by",
-                    Description = "Switches 'Show Modified by' display on/off"
-                };
+            {
+                Order = groupOrderBase + 40,
+                Group = group,
+                Value = false,
+                EnglishName = "Show Modified by",
+                Description = "Switches 'Show Modified by' display on/off"
+            };
             this.BaseSettings.Add("MODULESETTINGS_SHOW_MODIFIED_BY", showModifiedBy);
 
             // gman3001: added 10/26/2004
@@ -517,53 +517,53 @@ namespace Appleseed.Framework.Web.UI.WebControls
             // - implement auto-stretch option
             // Windows height
             var controlHeight = new SettingItem<int, TextBox>
-                {
-                    Value = 0,
-                    MinValue = 0,
-                    MaxValue = 3000,
-                    Required = true,
-                    Order = groupOrderBase + 50,
-                    Group = group,
-                    EnglishName = "Content Height",
-                    Description = "Minimum height(in pixels) of the content area of this module. (0 for none)"
-                };
+            {
+                Value = 0,
+                MinValue = 0,
+                MaxValue = 3000,
+                Required = true,
+                Order = groupOrderBase + 50,
+                Group = group,
+                EnglishName = "Content Height",
+                Description = "Minimum height(in pixels) of the content area of this module. (0 for none)"
+            };
             this.BaseSettings.Add("MODULESETTINGS_CONTENT_HEIGHT", controlHeight);
 
             // Windows width
             var controlWidth = new SettingItem<int, TextBox>
-                {
-                    Value = 0,
-                    MinValue = 0,
-                    MaxValue = 3000,
-                    Required = true,
-                    Order = groupOrderBase + 60,
-                    Group = group,
-                    EnglishName = "Content Width",
-                    Description = "Minimum width(in pixels) of the content area of this module. (0 for none)"
-                };
+            {
+                Value = 0,
+                MinValue = 0,
+                MaxValue = 3000,
+                Required = true,
+                Order = groupOrderBase + 60,
+                Group = group,
+                EnglishName = "Content Width",
+                Description = "Minimum width(in pixels) of the content area of this module. (0 for none)"
+            };
             this.BaseSettings.Add("MODULESETTINGS_CONTENT_WIDTH", controlWidth);
 
             // Content scrolling option
             var scrollingSetting = new SettingItem<bool, CheckBox>
-                {
-                    Value = false,
-                    Order = groupOrderBase + 70,
-                    Group = group,
-                    EnglishName = "Content Scrolling",
-                    Description = "Set to enable/disable scrolling of Content based on height and width settings."
-                };
+            {
+                Value = false,
+                Order = groupOrderBase + 70,
+                Group = group,
+                EnglishName = "Content Scrolling",
+                Description = "Set to enable/disable scrolling of Content based on height and width settings."
+            };
             this.BaseSettings.Add("MODULESETTINGS_CONTENT_SCROLLING", scrollingSetting);
 
             // Module Stretching option
             var stretchSetting = new SettingItem<bool, CheckBox>
-                {
-                    Value = true,
-                    Order = groupOrderBase + 80,
-                    Group = group,
-                    EnglishName = "Module Auto Stretch",
-                    Description =
+            {
+                Value = true,
+                Order = groupOrderBase + 80,
+                Group = group,
+                EnglishName = "Module Auto Stretch",
+                Description =
                         "Set to enable/disable automatic stretching of the module's width to fill the empty area to the right of the module."
-                };
+            };
             this.BaseSettings.Add("MODULESETTINGS_WIDTH_STRETCHING", stretchSetting);
 
             // gman3001: END
@@ -574,25 +574,25 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
             // Show print button in view mode?
             var printButton1 = new SettingItem<bool, CheckBox>
-                {
-                    Value = false,
-                    Order = groupOrderBase + 20,
-                    Group = group,
-                    EnglishName = "Show Print Button",
-                    Description = "Show print button in view mode?"
-                };
+            {
+                Value = false,
+                Order = groupOrderBase + 20,
+                Group = group,
+                EnglishName = "Show Print Button",
+                Description = "Show print button in view mode?"
+            };
             this.BaseSettings.Add("MODULESETTINGS_SHOW_PRINT_BUTTION", printButton1);
 
             // added: Jes1111 2004-08-29 - choice! Default is 'true' for backward compatibility
             // Show Title for print?
             var showTitlePrint = new SettingItem<bool, CheckBox>
-                {
-                    Value = true,
-                    Order = groupOrderBase + 25,
-                    Group = group,
-                    EnglishName = "Show Title for Print",
-                    Description = "Show Title for this module in print popup?"
-                };
+            {
+                Value = true,
+                Order = groupOrderBase + 25,
+                Group = group,
+                EnglishName = "Show Title for Print",
+                Description = "Show Title for this module in print popup?"
+            };
             this.BaseSettings.Add("MODULESETTINGS_SHOW_TITLE_PRINT", showTitlePrint);
 
             // added: Jes1111 2004-08-02 - choices for Button display on module
@@ -613,14 +613,14 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 };
             var buttonDisplay =
                 new SettingItem<string, ListControl>(new CustomListDataType(buttonDisplayOptions, "Name", "Val"))
-                    {
-                        Order = groupOrderBase + 30,
-                        Group = group,
-                        Value = ((int)ModuleButton.RenderOptions.ImageOnly).ToString(),
-                        EnglishName = "Display Buttons as:",
-                        Description =
+                {
+                    Order = groupOrderBase + 30,
+                    Group = group,
+                    Value = ((int)ModuleButton.RenderOptions.ImageOnly).ToString(),
+                    EnglishName = "Display Buttons as:",
+                    Description =
                             "Choose how you want module buttons to be displayed. Note that settings other than 'Image only' may require Zen or special treatment in the Theme."
-                    };
+                };
             this.BaseSettings.Add("MODULESETTINGS_BUTTON_DISPLAY", buttonDisplay);
 
             // Jes1111 - not implemented yet
@@ -633,24 +633,24 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
             // Show arrows buttons to move modules (admin only, property authorize)
             var arrowButtons = new SettingItem<bool, CheckBox>
-                {
-                    Value = true,
-                    Order = groupOrderBase + 40,
-                    Group = group,
-                    EnglishName = "Show Arrow Admin Buttons",
-                    Description = "Show Arrow Admin buttons?"
-                };
+            {
+                Value = true,
+                Order = groupOrderBase + 40,
+                Group = group,
+                EnglishName = "Show Arrow Admin Buttons",
+                Description = "Show Arrow Admin buttons?"
+            };
             this.BaseSettings.Add("MODULESETTINGS_SHOW_ARROW_BUTTONS", arrowButtons);
 
             // Show help button if exists
             var helpButton1 = new SettingItem<bool, CheckBox>
-                {
-                    Value = true,
-                    Order = groupOrderBase + 50,
-                    Group = group,
-                    EnglishName = "Show Help Button",
-                    Description = "Show help button in title if exists documentation for this module"
-                };
+            {
+                Value = true,
+                Order = groupOrderBase + 50,
+                Group = group,
+                EnglishName = "Show Help Button",
+                Description = "Show help button in title if exists documentation for this module"
+            };
             this.BaseSettings.Add("MODULESETTINGS_SHOW_HELP_BUTTON", helpButton1);
 
             // LANGUAGE/CULTURE MANAGEMENT
@@ -661,14 +661,14 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
             var culture =
                 new SettingItem<string, ListControl>(new MultiSelectListDataType(cultureList, "DisplayName", "Name"))
-                    {
-                        Value = string.Empty,
-                        Order = groupOrderBase + 10,
-                        Group = group,
-                        EnglishName = "Culture",
-                        Description =
+                {
+                    Value = string.Empty,
+                    Order = groupOrderBase + 10,
+                    Group = group,
+                    EnglishName = "Culture",
+                    Description =
                             "Please choose the culture. Invariant cultures shows always the module, if you choose one or more cultures only when culture is selected this module will shown."
-                    };
+                };
             this.BaseSettings.Add("MODULESETTINGS_CULTURE", culture);
 
             // Localized module title
@@ -679,12 +679,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 cultureList.Where(c => c != CultureInfo.InvariantCulture && !this.BaseSettings.ContainsKey(c.Name)))
             {
                 var localizedTitle = new SettingItem<string, TextBox>
-                    {
-                        Order = counter,
-                        Group = group,
-                        EnglishName = string.Format("Title ({0})", c.Name),
-                        Description = string.Format("Set title for {0} culture.", c.EnglishName)
-                    };
+                {
+                    Order = counter,
+                    Group = group,
+                    EnglishName = string.Format("Title ({0})", c.Name),
+                    Description = string.Format("Set title for {0} culture.", c.EnglishName)
+                };
                 this.BaseSettings.Add(string.Format("MODULESETTINGS_TITLE_{0}", c.Name), localizedTitle);
                 counter++;
             }
@@ -696,16 +696,16 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 group = SettingItemGroup.MODULE_SPECIAL_SETTINGS;
 
                 var topicName = new SettingItem<string, TextBox>
-                    {
-                        Required = false,
-                        Value = string.Empty,
-                        // modified by Hongwei Shen(hongwei.shen@gmail.com) 11/9/2005
-                        // group base and order is not specified
-                        Group = group,
-                        Order = groupOrderBase,
-                        EnglishName = "Topic",
-                        Description = "Select a topic for this module. You may filter items by topic in Portal Search."
-                    };
+                {
+                    Required = false,
+                    Value = string.Empty,
+                    // modified by Hongwei Shen(hongwei.shen@gmail.com) 11/9/2005
+                    // group base and order is not specified
+                    Group = group,
+                    Order = groupOrderBase,
+                    EnglishName = "Topic",
+                    Description = "Select a topic for this module. You may filter items by topic in Portal Search."
+                };
 
                 // end of modification
                 this.BaseSettings.Add("TopicName", topicName);
@@ -717,13 +717,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
             this.moduleConfiguration = new ModuleSettings();
 
             var share = new SettingItem<bool, CheckBox>
-                {
-                    Value = false,
-                    Order = groupOrderBase + 51,
-                    Group = SettingItemGroup.MODULE_SPECIAL_SETTINGS,
-                    EnglishName = "ShareModule",
-                    Description = "Share Module"
-                };
+            {
+                Value = false,
+                Order = groupOrderBase + 51,
+                Group = SettingItemGroup.MODULE_SPECIAL_SETTINGS,
+                EnglishName = "ShareModule",
+                Description = "Share Module"
+            };
             this.BaseSettings.Add("SHARE_MODULE", share);
         }
 
@@ -781,11 +781,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.addButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.AddText,
-                                EnglishName = "Add"
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.AddText,
+                            EnglishName = "Add"
+                        };
                         if (this.AddUrl.IndexOf("?") >= 0)
                         {
                             // Do not change if  the query string is present
@@ -939,18 +939,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.approveButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.ApproveText,
-                                EnglishName = "Approve",
-                                HRef =
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.ApproveText,
+                            EnglishName = "Approve",
+                            HRef =
                                     HttpUrlBuilder.BuildUrl(
                                         "~/DesktopModules/Workflow/ApproveModuleContent.aspx",
                                         this.PageID,
                                         string.Format("mID={0}", this.ModuleID)),
-                                Image = this.CurrentTheme.GetImage("Buttons_Approve", "Approve.gif"),
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                            Image = this.CurrentTheme.GetImage("Buttons_Approve", "Approve.gif"),
+                            RenderAs = this.ButtonsRenderAs
+                        };
                     }
                 }
 
@@ -1009,14 +1009,14 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                         // create the button
                         this.backButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.User,
-                                TranslationKey = "BTN_BACK",
-                                EnglishName = "Back to previous page",
-                                HRef = urlReferrer,
-                                Image = this.CurrentTheme.GetImage("Buttons_Back", "Back.gif"),
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.User,
+                            TranslationKey = "BTN_BACK",
+                            EnglishName = "Back to previous page",
+                            HRef = urlReferrer,
+                            Image = this.CurrentTheme.GetImage("Buttons_Back", "Back.gif"),
+                            RenderAs = this.ButtonsRenderAs
+                        };
                     }
                 }
 
@@ -1150,7 +1150,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             {
                 return this.ModuleConfiguration != null && this.ModuleID != 0 &&
                        (this.SupportsArrows && this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
-                       (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedMoveModuleRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING))); 
+                       (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedMoveModuleRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)));
             }
         }
 
@@ -1205,7 +1205,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
-                return (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedDeleteModuleRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_DELETION)) && 
+                if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admins"))
+                {
+                    return true;
+                }
+
+                return (PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedDeleteModuleRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_DELETION)) &&
                        this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID;
             }
         }
@@ -1222,10 +1227,15 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
+                if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admins") && (!string.IsNullOrEmpty(this.EditUrl)))
+                {
+                    return true;
+                }
+
                 return this.ModuleConfiguration != null &&
                        this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                        (((this.SupportsWorkflow && this.Version == WorkFlowVersion.Staging) || !this.SupportsWorkflow) &&
-                        ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedEditRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_HTML_CONTENT_EDITING)) && 
+                        ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedEditRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_HTML_CONTENT_EDITING)) &&
                          (!string.IsNullOrEmpty(this.EditUrl)) &&
                          (this.WorkflowStatus == WorkflowState.Original || this.WorkflowStatus == WorkflowState.Working)));
             }
@@ -1322,7 +1332,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             get
             {
                 return this.ModuleConfiguration != null &&
-                        ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)) && 
+                        ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)) &&
                         this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                         !string.IsNullOrEmpty(this.PropertiesUrl));
             }
@@ -1382,8 +1392,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
+                if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admins"))
+                {
+                    return true;
+                }
+
                 return this.ModuleConfiguration != null &&
-                       ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)) &&
+                       ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION)) &&
                         this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                         !string.IsNullOrEmpty(this.SecurityUrl));
             }
@@ -1504,13 +1519,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.deleteModuleButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = "DELETEMODULE",
-                                EnglishName = "Delete this module",
-                                Image = this.CurrentTheme.GetImage("Buttons_DeleteModule", "Delete.gif"),
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = "DELETEMODULE",
+                            EnglishName = "Delete this module",
+                            Image = this.CurrentTheme.GetImage("Buttons_DeleteModule", "Delete.gif"),
+                            RenderAs = this.ButtonsRenderAs
+                        };
 
                         // TODO: This JavaScript Function Is used for different controls and should be in one place
                         // (it's also overweight considering that Javascript has a standard confirm() function - Jes1111)
@@ -1560,12 +1575,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                         {
                             // create the button
                             this.downButton = new ModuleButton
-                                {
-                                    Group = ModuleButton.ButtonGroup.Admin,
-                                    TranslationKey = "MOVE_DOWN",
-                                    EnglishName = "Move down",
-                                    Image = this.CurrentTheme.GetImage("Buttons_Down", "Down.gif")
-                                };
+                            {
+                                Group = ModuleButton.ButtonGroup.Admin,
+                                TranslationKey = "MOVE_DOWN",
+                                EnglishName = "Move down",
+                                Image = this.CurrentTheme.GetImage("Buttons_Down", "Down.gif")
+                            };
                             this.downButton.Attributes.Add("direction", "down");
                             this.downButton.Attributes.Add("pane", this.ModuleConfiguration.PaneName.ToLower());
                             this.downButton.RenderAs = this.ButtonsRenderAs;
@@ -1585,18 +1600,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
-                if (this.editButton == null && HttpContext.Current != null)
+                if (this.editButton == null && HttpContext.Current != null && this.ModuleID > 0)
                 {
                     // check authority
                     if (this.CanEdit)
                     {
                         // create the button
                         this.editButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.EditText,
-                                EnglishName = "Edit"
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.EditText,
+                            EnglishName = "Edit"
+                        };
                         if (this.EditUrl.IndexOf("?") >= 0)
                         {
                             // Do not change if  the query string is present
@@ -1772,18 +1787,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                         // create the button
                         this.helpButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.User,
-                                TranslationKey = "BTN_HELP",
-                                EnglishName = "Help",
-                                HRef = sb.ToString(),
-                                PopUp = true,
-                                Target = "AppleseedHelp",
-                                PopUpOptions =
+                        {
+                            Group = ModuleButton.ButtonGroup.User,
+                            TranslationKey = "BTN_HELP",
+                            EnglishName = "Help",
+                            HRef = sb.ToString(),
+                            PopUp = true,
+                            Target = "AppleseedHelp",
+                            PopUpOptions =
                                     "toolbar=1,location=0,directories=0,status=0,menubar=1,scrollbars=1,resizable=1,width=600,height=400,screenX=15,screenY=15,top=15,left=15",
-                                Image = this.CurrentTheme.GetImage("Buttons_Help", "Help.gif"),
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                            Image = this.CurrentTheme.GetImage("Buttons_Help", "Help.gif"),
+                            RenderAs = this.ButtonsRenderAs
+                        };
                     }
                 }
 
@@ -1946,6 +1961,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
+                if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admins") || UserProfile.HasPortalAdministrationAccess())
+                {
+                    this.canView = 1;
+                    return true;
+                }
                 if (this.moduleConfiguration == null || this.moduleConfiguration.AuthorizedViewRoles == null)
                 {
                     return false;
@@ -1955,7 +1975,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 // role lookup on every property access (instead caching the result)
                 if (this.canView == 0)
                 {
-                    this.canView = PortalSecurity.IsInRoles(this.moduleConfiguration.AuthorizedViewRoles) ? 1 : 2;
+                    this.canView = PortalSecurity.IsInRoles(this.moduleConfiguration.AuthorizedViewRoles) || Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admins") ? 1 : 2;
                 }
 
                 return this.canView == 1;
@@ -1987,12 +2007,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                         // create the button
                         this.leftButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = "MOVE_LEFT",
-                                EnglishName = "Move left",
-                                Image = this.CurrentTheme.GetImage("Buttons_Left", "Left.gif")
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = "MOVE_LEFT",
+                            EnglishName = "Move left",
+                            Image = this.CurrentTheme.GetImage("Buttons_Left", "Left.gif")
+                        };
                         this.leftButton.Attributes.Add("sourcepane", this.ModuleConfiguration.PaneName.ToLower());
                         this.leftButton.Attributes.Add("targetpane", leftButtonTargetPane);
                         this.leftButton.RenderAs = this.ButtonsRenderAs;
@@ -2213,18 +2233,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                         // create the button
                         this.printButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.User,
-                                Image = this.CurrentTheme.GetImage("Buttons_Print", "Print.gif"),
-                                TranslationKey = "BTN_PRINT",
-                                EnglishName = "Print this",
-                                HRef = url.ToString(),
-                                PopUp = true,
-                                Target = "AppleseedPrint",
-                                PopUpOptions =
+                        {
+                            Group = ModuleButton.ButtonGroup.User,
+                            Image = this.CurrentTheme.GetImage("Buttons_Print", "Print.gif"),
+                            TranslationKey = "BTN_PRINT",
+                            EnglishName = "Print this",
+                            HRef = url.ToString(),
+                            PopUp = true,
+                            Target = "AppleseedPrint",
+                            PopUpOptions =
                                     "toolbar=1,menubar=1,resizable=1,scrollbars=1,width=790,height=400,left=15,top=15",
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                            RenderAs = this.ButtonsRenderAs
+                        };
                     }
                 }
 
@@ -2251,12 +2271,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.propertiesButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                EnglishName = "Properties",
-                                TranslationKey = "PROPERTIES",
-                                Image = this.CurrentTheme.GetImage("Buttons_Properties", "Properties.gif")
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            EnglishName = "Properties",
+                            TranslationKey = "PROPERTIES",
+                            Image = this.CurrentTheme.GetImage("Buttons_Properties", "Properties.gif")
+                        };
                         if (this.PropertiesUrl.IndexOf("?") >= 0)
                         {
                             // Do not change if  the querystring is present (shortcut patch)
@@ -2355,11 +2375,11 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.publishButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.PublishText,
-                                EnglishName = "Publish"
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.PublishText,
+                            EnglishName = "Publish"
+                        };
 
                         // modified by Hongwei Shen
                         // publishButton.HRef = GetPublishUrl();
@@ -2394,18 +2414,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.readyToApproveButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.ReadyToApproveText,
-                                EnglishName = "Request approval",
-                                HRef =
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.ReadyToApproveText,
+                            EnglishName = "Request approval",
+                            HRef =
                                     HttpUrlBuilder.BuildUrl(
                                         "~/DesktopModules/Workflow/RequestModuleContentApproval.aspx",
                                         this.PageID,
                                         "mID=" + this.ModuleID),
-                                Image = this.CurrentTheme.GetImage("Buttons_ReadyToApprove", "ReadyToApprove.gif"),
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                            Image = this.CurrentTheme.GetImage("Buttons_ReadyToApprove", "ReadyToApprove.gif"),
+                            RenderAs = this.ButtonsRenderAs
+                        };
                     }
                 }
 
@@ -2432,18 +2452,18 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.rejectButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.RejectText,
-                                EnglishName = "Reject",
-                                HRef =
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.RejectText,
+                            EnglishName = "Reject",
+                            HRef =
                                     HttpUrlBuilder.BuildUrl(
                                         "~/DesktopModules/Workflow/RejectModuleContent.aspx",
                                         this.PageID,
                                         string.Format("mID={0}", this.ModuleID)),
-                                Image = this.CurrentTheme.GetImage("Buttons_Reject", "Reject.gif"),
-                                RenderAs = this.ButtonsRenderAs
-                            };
+                            Image = this.CurrentTheme.GetImage("Buttons_Reject", "Reject.gif"),
+                            RenderAs = this.ButtonsRenderAs
+                        };
                     }
                 }
 
@@ -2470,12 +2490,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.revertButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = this.RevertText,
-                                EnglishName = "Revert",
-                                Image = this.CurrentTheme.GetImage("Buttons_Revert", "Revert.gif")
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = this.RevertText,
+                            EnglishName = "Revert",
+                            Image = this.CurrentTheme.GetImage("Buttons_Revert", "Revert.gif")
+                        };
                         this.revertButton.ServerClick += this.RevertToProductionContent;
                         this.revertButton.RenderAs = this.ButtonsRenderAs;
                     }
@@ -2515,12 +2535,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
 
                         // create the button
                         this.rightButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = "MOVE_RIGHT",
-                                EnglishName = "Move right",
-                                Image = this.CurrentTheme.GetImage("Buttons_Right", "Right.gif")
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = "MOVE_RIGHT",
+                            EnglishName = "Move right",
+                            Image = this.CurrentTheme.GetImage("Buttons_Right", "Right.gif")
+                        };
                         this.rightButton.Attributes.Add("sourcepane", this.ModuleConfiguration.PaneName.ToLower());
                         this.rightButton.Attributes.Add("targetpane", rightButtonTargetPane);
                         this.rightButton.RenderAs = this.ButtonsRenderAs;
@@ -2560,12 +2580,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.securityButton = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                EnglishName = "Security",
-                                TranslationKey = "SECURITY",
-                                Image = this.CurrentTheme.GetImage("Buttons_Security", "Security.gif")
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            EnglishName = "Security",
+                            TranslationKey = "SECURITY",
+                            Image = this.CurrentTheme.GetImage("Buttons_Security", "Security.gif")
+                        };
                         if (this.SecurityUrl.IndexOf("?") >= 0)
                         {
                             // Do not change if  the querystring is present (shortcut patch)
@@ -2933,12 +2953,12 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     {
                         // create the button
                         this.buttonUp = new ModuleButton
-                            {
-                                Group = ModuleButton.ButtonGroup.Admin,
-                                TranslationKey = "MOVE_UP",
-                                EnglishName = "Move up",
-                                Image = this.CurrentTheme.GetImage("Buttons_Up", "Up.gif")
-                            };
+                        {
+                            Group = ModuleButton.ButtonGroup.Admin,
+                            TranslationKey = "MOVE_UP",
+                            EnglishName = "Move up",
+                            Image = this.CurrentTheme.GetImage("Buttons_Up", "Up.gif")
+                        };
                         this.buttonUp.Attributes.Add("direction", "up");
                         this.buttonUp.Attributes.Add("pane", this.ModuleConfiguration.PaneName.ToLower());
                         this.buttonUp.RenderAs = this.ButtonsRenderAs;
@@ -3433,7 +3453,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
             {
                 this.ButtonListAdmin.Add(this.SecurityButton);
             }
-            
+
             if (this.DeleteModuleButton != null && UserPagePermissionDB.HasCurrentPageEditPermission(this.ModuleConfiguration))
             {
                 this.ButtonListAdmin.Add(this.DeleteModuleButton);
@@ -4675,13 +4695,13 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     module.PaneName.ToLower() == pane.ToLower()).Select(
                         module =>
                         new ModuleItem
-                            {
-                                Title = module.ModuleTitle,
-                                ID = module.ModuleID,
-                                ModuleDefID = module.ModuleDefID,
-                                Order = module.ModuleOrder,
-                                PaneName = module.PaneName // tiptopweb
-                            }).ToList();
+                        {
+                            Title = module.ModuleTitle,
+                            ID = module.ModuleID,
+                            ModuleDefID = module.ModuleDefID,
+                            Order = module.ModuleOrder,
+                            PaneName = module.PaneName // tiptopweb
+                        }).ToList();
         }
 
         /// <summary>

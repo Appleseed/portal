@@ -116,6 +116,10 @@ namespace Appleseed.Framework.Site.Data
             {
                 return true;
             }
+            else if (Security.UserProfile.HasEditThisPageAccess() || Security.UserProfile.HasModuleAddEditAccess())
+            {
+                return true;
+            }
 
             return false;
         }
@@ -126,7 +130,7 @@ namespace Appleseed.Framework.Site.Data
             {
                 connection.Open();
 
-                
+
 
                 foreach (var permis in permissions)
                 {
@@ -162,7 +166,7 @@ namespace Appleseed.Framework.Site.Data
 
                         sqlCommand.ExecuteNonQuery();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         ErrorHandler.Publish(LogLevel.Error, ex);
                     }

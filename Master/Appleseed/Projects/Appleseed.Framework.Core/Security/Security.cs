@@ -396,7 +396,7 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static bool HasAddPermissions(int moduleId)
         {
-            return hasPermissions(moduleId, "rb_GetAuthAddRoles", "@AddRoles");
+            return UserProfile.HasModuleAddEditAccess() || hasPermissions(moduleId, "rb_GetAuthAddRoles", "@AddRoles");
         }
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static bool HasDeletePermissions(int moduleId)
         {
-            return hasPermissions(moduleId, "rb_GetAuthDeleteRoles", "@DeleteRoles");
+            return UserProfile.HasModuleDeleteAccess() || hasPermissions(moduleId, "rb_GetAuthDeleteRoles", "@DeleteRoles");
         }
 
         /// <summary>
@@ -453,7 +453,7 @@ namespace Appleseed.Framework.Security
             // 			if (RecyclerDB.ModuleIsInRecycler(moduleID))
             // 				return hasPermissions (moduleID, "rb_GetAuthEditRolesRecycler", "@EditRoles");
             // 			else
-            return hasPermissions(moduleId, "rb_GetAuthEditRoles", "@EditRoles");
+            return UserProfile.HasModuleAddEditAccess() || hasPermissions(moduleId, "rb_GetAuthEditRoles", "@EditRoles");
         }
 
         /// <summary>
@@ -471,7 +471,7 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static bool HasPropertiesPermissions(int moduleId)
         {
-            return hasPermissions(moduleId, "rb_GetAuthPropertiesRoles", "@PropertiesRoles");
+            return UserProfile.HasModuleAddEditAccess() || hasPermissions(moduleId, "rb_GetAuthPropertiesRoles", "@PropertiesRoles");
         }
 
         /// <summary>
@@ -508,7 +508,7 @@ namespace Appleseed.Framework.Security
         [History("JB - john@bowenweb.com", "2005/06/11", "Added support for module Recycle Bin")]
         public static bool HasViewPermissions(int moduleId)
         {
-            return hasPermissions(moduleId, "rb_GetAuthViewRoles", "@ViewRoles");
+            return UserProfile.HasPortalAdministrationAccess() || hasPermissions(moduleId, "rb_GetAuthViewRoles", "@ViewRoles");
         }
 
         /// <summary>
@@ -1037,6 +1037,11 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         private static bool hasPermissions(int moduleID, string procedureName, string parameterRol)
         {
+            if (Roles.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admins"))
+            {
+                return true;
+            }
+
             if (RecyclerDB.ModuleIsInRecycler(moduleID))
             {
                 procedureName = procedureName + "Recycler";
