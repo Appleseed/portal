@@ -1398,7 +1398,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
                 }
 
                 return this.ModuleConfiguration != null &&
-                       ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION)) &&
+                       ((PortalSecurity.IsInRoles(this.ModuleConfiguration.AuthorizedPropertiesRoles) || UserProfile.CurrentUser.HasPermission(AccessPermissions.PORTAL_ADMINISTRATION) || UserProfile.CurrentUser.HasPermission(AccessPermissions.MODULE_EDITING)) &&
                         this.PortalSettings.ActivePage.PageID == this.ModuleConfiguration.PageID &&
                         !string.IsNullOrEmpty(this.SecurityUrl));
             }
