@@ -1512,7 +1512,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
-                if (this.deleteModuleButton == null && HttpContext.Current != null)
+                if (this.deleteModuleButton == null && HttpContext.Current != null && this.Page != null)
                 {
                     // check authority
                     if (this.CanDeleteModule)
@@ -1600,7 +1600,7 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             get
             {
-                if (this.editButton == null && HttpContext.Current != null && this.ModuleID > 0)
+                if (this.editButton == null && HttpContext.Current != null && this.ModuleID > 0 && this.Page != null)
                 {
                     // check authority
                     if (this.CanEdit)
