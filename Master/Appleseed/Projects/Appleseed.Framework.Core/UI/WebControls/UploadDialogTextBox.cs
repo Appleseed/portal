@@ -186,11 +186,19 @@ namespace Appleseed.Framework.Web.UI.WebControls
         {
             RegisterSession();
             base.Render(writer);
-            Button myButton = new Button();
-            myButton.Text = m_Value;
-            myButton.Attributes.Add("OnClick", onClick);
-            myButton.Width = m_buttonWidth;
-            myButton.RenderControl(writer);
+            //Button myButton = new Button();
+            //myButton.Text = m_Value;
+            //myButton.Attributes.Add("OnClick", onClick);
+            //myButton.Width = m_buttonWidth;
+            //myButton.RenderControl(writer);
+
+            HyperLink link = new HyperLink();
+            link.Text = m_Value;
+            link.NavigateUrl = "javascript:;";
+            link.CssClass = "CommandButton";
+            link.Attributes.Add("OnClick", onClick);
+            link.Width = m_buttonWidth;
+            link.RenderControl(writer);
         }
 
         #region Properties
