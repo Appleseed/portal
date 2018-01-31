@@ -137,6 +137,7 @@ namespace Appleseed.Framework.UrlRewriting
                     && !requestUrl.ToLower().Contains("aspnet_client/")
                     && !requestUrl.ToLower().Contains("browserlink")
                     && !requestUrl.ToLower().Contains(".js")
+                    && !requestUrl.ToLower().Contains("sitemap.axd")
                     && !requestUrl.ToLower().Contains("webresource.axd")
                     && !requestUrl.ToLower().Contains("scriptresource.axd")
                     && !HasPathInRoutes(requestUrl.ToLower())

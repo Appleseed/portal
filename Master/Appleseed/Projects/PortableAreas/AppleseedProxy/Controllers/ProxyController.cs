@@ -189,7 +189,7 @@ namespace AppleseedProxy.Controllers
             var proxyList = proxyDB.GetAll();
             foreach (var item in proxyList)
             {
-                item.ASProxyUrl = HttpContext.Request.Url.ToString().Replace(HttpContext.Request.Url.PathAndQuery, string.Format("/ASProxy/Proxy/{0}/", item.ServiceId));
+                item.ASProxyUrl = HttpContext.Request.Url.ToString().Replace(HttpContext.Request.Url.PathAndQuery, string.Format("/ASProxy/Proxy/Index/{0}/", item.ServiceId));
             }
             return View(proxyList);
         }
