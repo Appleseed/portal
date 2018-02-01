@@ -36,7 +36,7 @@ namespace AppleseedProxy.Controllers
         private Appleseed.Framework.DAL.ProxyDB proxyDB = new Appleseed.Framework.DAL.ProxyDB();
 
         #region Invoke Proxy Call
-        
+
         [AcceptVerbs("GET", "HEAD", "POST", "PUT", "DELETE")]
         [ValidateInput(false)]
         public void Index([Bind(Prefix = "id")] int proxyid)
@@ -47,6 +47,7 @@ namespace AppleseedProxy.Controllers
             {
                 Response.StatusCode = 404;
                 Response.End();
+                return;
             }
 
             bool hasAccess = false;
@@ -56,10 +57,18 @@ namespace AppleseedProxy.Controllers
                 {
                     hasAccess = PortalSecurity.IsInRoles(proxy.ContentAccessRoles);
                 }
+                else
+                {
+                    Response.AddHeader("ERROR", "NOT_LOGGED_IN");
+                    Response.StatusCode = 401;
+                    Response.End();
+                    return;
+                }
 
                 if (!hasAccess)
                 {
-                    Response.Redirect("/app_support/SmartError.aspx?403");
+                    Response.StatusCode = 403;
+                    Response.End();
                     return;
                 }
             }
@@ -70,7 +79,7 @@ namespace AppleseedProxy.Controllers
                 return;
             }
 
-            var url = HttpContext.Request.Url.PathAndQuery.ToLower().Replace(string.Format("/asproxy/proxy/index/{0}", proxyid), string.Empty);
+            var url = HttpContext.Request.Url.PathAndQuery.Replace(string.Format("/ASProxy/Proxy/Index/{0}", proxyid), string.Empty);
 
             RelayContent(CombinePath(proxy.ServiceUrl, System.Web.HttpUtility.UrlDecode(url)), Request, Response, proxy.ForwardHeaders);
         }
