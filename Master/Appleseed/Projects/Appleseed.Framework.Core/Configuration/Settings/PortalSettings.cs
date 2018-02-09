@@ -1783,6 +1783,18 @@ namespace Appleseed.Framework.Site.Configuration
                 groupOrderBase = (int)SettingItemGroup.SECURITY_USER_SETTINGS;
                 group = SettingItemGroup.SECURITY_USER_SETTINGS;
 
+                // checkbox for enable Settion Timeout Alert
+                //Ashish.patel@haptix.biz - 2018/02/08
+                var enableSettionTimeoutAlert = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 4,
+                    Group = group,
+                    EnglishName = "Enable Settion Timeout Alert",
+                    Description = "This alert user when session is timeout and send to login",
+                    Value = false
+                };
+                baseSettings.Add("ENABLE_SETTION_TIMEOUT_ALERT", enableSettionTimeoutAlert);
+
                 // checkbox for enable private site
                 //Ashish.patel@haptix.biz - 2016/07/07 - To may site private
                 var enablePrivateSite = new SettingItem<bool, CheckBox>
@@ -2921,6 +2933,25 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     // return the true / false value
                     return Convert.ToBoolean(this.CustomSettings["ENABLE_PRIVATE_SITE"].Value);
+                }
+                catch { }
+
+                // If nothing then it's return false
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Whether Private Site is enabled or not
+        /// </summary>
+        public bool EnabledSessionTimeoutAlert
+        {
+            get
+            {
+                try
+                {
+                    // return the true / false value
+                    return Convert.ToBoolean(this.CustomSettings["ENABLE_SETTION_TIMEOUT_ALERT"].Value);
                 }
                 catch { }
 

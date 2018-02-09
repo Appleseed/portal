@@ -44,6 +44,7 @@ namespace Appleseed
             if (!page.ClientScript.IsClientScriptBlockRegistered("allscripts"))
             {
 
+                var portalSettings = (PortalSettings)context.Items["PortalSettings"];
 
                 var scripts = GetBaseScripts(page, context);
                 string datetimestamp = DateTime.Now.ToString("ddMMyyyyHHmmss");
@@ -124,7 +125,6 @@ namespace Appleseed
                         page.Header.Controls.AddAt(index++, include);
                     }
 
-                    var portalSettings = (PortalSettings)context.Items["PortalSettings"];
 
                     if (portalSettings != null)
                     {
@@ -199,6 +199,49 @@ namespace Appleseed
 
                 string extraScripts = GetExtraScripts();
                 page.ClientScript.RegisterClientScriptBlock(page.GetType(), "allscripts", extraScripts, false);
+
+                bool userlogin_persistent = false;
+                var userloginCookie = HttpContext.Current.Request.Cookies["userlogin"];
+                if (userloginCookie != null)
+                {
+                    userlogin_persistent = (!string.IsNullOrEmpty(userloginCookie["persistent"]) && userloginCookie["persistent"] == "1");
+                }
+
+                try
+                {
+                    
+                    userlogin_persistent = (bool)HttpContext.Current.Session["userlogin_persistent"];
+                }
+                catch { }
+
+                int minuteAdd = 0;
+                try
+                {
+                    int.TryParse(portalSettings.CustomSettings["SITESETTINGS_PORTALTIMEOUT"].ToString(), out minuteAdd);
+                }
+                catch { }
+
+                if (HttpContext.Current.Request.IsAuthenticated && portalSettings.EnabledSessionTimeoutAlert && !userlogin_persistent)
+                {
+                    extraScripts = @"
+<script>
+    var timeoutLimit = " + (minuteAdd * 60) + @";
+    var timeoutCounter = " + (minuteAdd * 60) + @";
+    function CheckSessionTime(){
+        timeoutCounter--;
+        if(timeoutCounter <= 0)
+        {
+            clearInterval(timerSessionCheck);
+            alert('Your session has timed out due to inactivity. Please log back in.');
+            window.location = '/DesktopModules/CoreModules/Admin/Logon.aspx';
+        }
+    }
+    var timerSessionCheck = setInterval(CheckSessionTime, 1000);
+</script>
+                                    ";
+
+                    page.ClientScript.RegisterClientScriptBlock(page.GetType(), "autoSessionTimeoutAlert", extraScripts, false);
+                }
             }
         }
 
