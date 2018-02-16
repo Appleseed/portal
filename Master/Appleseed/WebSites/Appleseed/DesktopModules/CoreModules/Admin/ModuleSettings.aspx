@@ -3,32 +3,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
     <div class="div_ev_Table">
+         <% if (Request.QueryString.GetValues("ModalChangeMaster") == null) {%>
+                                                <rbfwebui:Localize ID="Literal1" runat="server" Text="Module base settings" TextKey="MODULESETTINGS_BASE_SETTINGS">
+                                                </rbfwebui:Localize>
+                                        <% } %>
+                                            <asp:PlaceHolder ID="PlaceholderButtons2" Visible="false" runat="server"></asp:PlaceHolder>
+
         <table border="0" cellpadding="4" cellspacing="0" width="98%">
             <tr valign="top">
                 <td width="*">
                     <table border="0" cellpadding="2" cellspacing="1">
-                        <tr>
-                            <td colspan="4" height="20">
-                                <table cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <% if (Request.QueryString.GetValues("ModalChangeMaster") == null) {%>
-                                            <td align="left" class="Head" nowrap="true" width="1%">
-                                                <rbfwebui:Localize ID="Literal1" runat="server" Text="Module base settings" TextKey="MODULESETTINGS_BASE_SETTINGS">
-                                                </rbfwebui:Localize>
-                                            </td>
-                                        <% } %>
-                                        <td align="right" nowrap="true" width="99%">
-                                            <asp:PlaceHolder ID="PlaceholderButtons2" runat="server"></asp:PlaceHolder>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <hr noshade="noshade" size="1" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
                         <tr>
                             <td class="SubHead" height="50" width="200">
                                 <rbfwebui:Localize ID="Literal2" runat="server" Text="Module type" TextKey="MODULESETTINGS_MODULE_TYPE">

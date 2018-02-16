@@ -10197,7 +10197,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Module settings.
+        ///   Looks up a localized string similar to Module Settings.
         /// </summary>
         internal static string MODULESETTINGS_SETTINGS {
             get {

@@ -15,11 +15,11 @@
             }
 
             .Content {
-                height: 485px !important;
+                height: 680px !important;
             }
 
             #cke_1_contents {
-                height: 347px !important;
+                height: 540px !important;
             }
 
             textarea {
@@ -125,17 +125,19 @@
                 }
 
                 .CodeMirror {
-                    height: 400px !important;
+                    height: 600px !important;
                 }
-
+                 #cke_1_contents {
+                height: 462px !important;
+            }
                 .divPreview {
-                    height: 400px;
+                    height: 600px;
                     border: 1px solid gray;
                 }
 
                 .myframe {
                     width: 100%;
-                    height: 390px;
+                    height: 590px;
                 }
 
                 .tabs .CommandButton {

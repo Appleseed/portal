@@ -165,13 +165,13 @@ namespace Appleseed
                     page.Header.Controls.AddAt(index++, Include);
                 }
 
-                var fontsAwsome = page.ResolveUrl("http://fontawesome.io/assets/font-awesome/css/font-awesome.css");
+                //var fontsAwsome = page.ResolveUrl("http://fontawesome.io/assets/font-awesome/css/font-awesome.css");
 
-                HtmlGenericControl fntAws = new HtmlGenericControl("link");
-                fntAws.Attributes.Add("type", "text/css");
-                fntAws.Attributes.Add("rel", "stylesheet");
-                fntAws.Attributes.Add("href", fontsAwsome);
-                page.Header.Controls.AddAt(index++, fntAws);
+                //HtmlGenericControl fntAws = new HtmlGenericControl("link");
+                //fntAws.Attributes.Add("type", "text/css");
+                //fntAws.Attributes.Add("rel", "stylesheet");
+                //fntAws.Attributes.Add("href", fontsAwsome);
+                //page.Header.Controls.AddAt(index++, fntAws);
 
                 var uiculture = System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
                 var datepickerscript = "$(document).ready(function(){$.datepicker.setDefaults($.datepicker.regional['" + uiculture + "']);});";

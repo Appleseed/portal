@@ -46,30 +46,11 @@
 <div class="menus">
     <!-- wide sidebar -->
     <div id="left-wide" style="float: right;">
-        <div class="search-bar">
-            <div class="main-search" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Live Search ...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary text-muted" type="button">
-                            <i class="fa fa-search"></i>
-                            <!--<img class="fa-img search-icon" src="/Design/Themes/Appleseed.Admin/images/icons/fa-search.png" />-->
-                        </button>
-                    </span>
-                </div>
-            </div>
-            <!-- /.main-search -->
-        </div>
         <!-- /.search-bar -->
         <div class="media user-media bg-dark dker">
-            <div class="user-media-toggleHover">
-                <span class="fa fa-user"></span>
-            </div>
-            <div class="user-wrapper bg-dark">
-                <a class="user-link" href="javascript:;">
-                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="/Design/Themes/Appleseed.Admin/img/user.gif">
-                    <span class="label label-danger user-label">16</span>
-                </a>
+           
+            <div class="user-wrapper bg-dark" style="padding:10px;">
+              
                 <div class="media-body">
                     <h5 class="media-heading">
                         <asp:Literal ID="ltrLoggedInUserName" runat="server"></asp:Literal></h5>

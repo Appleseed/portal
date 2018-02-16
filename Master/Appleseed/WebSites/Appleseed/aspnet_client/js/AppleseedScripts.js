@@ -100,6 +100,31 @@ function openInModal(dir,modalTitle){
 	return false;
 }
 
+function openInModalWide(dir,modalTitle){
+    $('#iframemodal').remove();
+  //  var footer = '<div id="footerdiv" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" id="dialog_footer"></div>';
+  //  var dHeight = $(window).height();
+	$('<div id="iframemodal">').html("<iframe src='"+dir+"&ModalChangeMaster=true' width='100%' height='99%' > </iframe>").dialog({
+		width: "95%",
+		height: 800,
+		title: modalTitle,
+		resizable: false,
+		minWidth: 800,
+		minHeight: 800,
+		//stack: true,
+		//zIndex: 10000,
+		//position: ['center', 'top'],
+		//modal: false,
+		dialogClass: "myDialog",
+		//"show": true,
+		"modal": true,
+		"closeOnMaskClick": false
+        //,create: function () {
+		//    $(".myDialog").append(footer);
+		//}
+	});
+	return false;
+}
 
 function openModelInModal(dir, modalTitle) {
     $('#iframemodal').remove();

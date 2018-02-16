@@ -50,31 +50,9 @@ namespace Appleseed.Content.Web.Modules
             update2.Click += new EventHandler(UpdateButton_Click);
             PlaceholderButtons2.Controls.Add(update2);
 
-//			PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
-//			PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));
-
-            saveAndCloseButton = new LinkButton();
-            saveAndCloseButton.TextKey = "SAVE_AND_CLOSE";
-            saveAndCloseButton.Text = "Save and close";
-            saveAndCloseButton.CssClass = "CommandButton";
-            PlaceHolderButtons.Controls.Add(saveAndCloseButton);
-
-            // jminond added to top of property page so no need to scroll for save
-            LinkButton saveAndCloseButton2 = new LinkButton();
-            saveAndCloseButton2.TextKey = "SAVE_AND_CLOSE";
-            saveAndCloseButton2.Text = "Save and close";
-            saveAndCloseButton2.CssClass = "CommandButton";
-            saveAndCloseButton2.Click += new EventHandler(this.saveAndCloseButton_Click);
-            PlaceholderButtons2.Controls.Add(saveAndCloseButton2);
-
-            this.saveAndCloseButton.Click += new EventHandler(this.saveAndCloseButton_Click);
-
-//			PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
-//			PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));
-
-            // Removed by Mario Endara <mario@softworks.com.uy> (2004/11/04)
-//			if (Appleseed.Security.PortalSecurity.IsInRoles("Admins"))
-//			{
+            this.CancelButton = new LinkButton();
+            this.CancelButton.CssClass = "CommandButton";
+            PlaceHolderButtons.Controls.Add(this.CancelButton);
 
             string NavigateUrlPropertyPage = Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/ModuleSettings.aspx", PageID, ModuleID);
 
@@ -96,6 +74,14 @@ namespace Appleseed.Content.Web.Modules
             }
 
             // jminond added to top of property page so no need to scroll for save
+            LinkButton cancel2 = new LinkButton();
+            cancel2.CssClass = "CommandButton";
+            cancel2.TextKey = "Cancel";
+            cancel2.Text = "Cancel";
+            cancel2.Click += new EventHandler(CancelButton_Click);
+            PlaceholderButtons2.Controls.Add(cancel2);
+
+            // jminond added to top of property page so no need to scroll for save
             HyperLink adminPropertiesButton2 = new HyperLink();
             adminPropertiesButton2.TextKey = "MODULESETTINGS_BASE_SETTINGS";
             adminPropertiesButton2.Text = "Edit base settings";
@@ -106,32 +92,6 @@ namespace Appleseed.Content.Web.Modules
             {
                 PlaceholderButtons2.Controls.Add(adminPropertiesButton2);
             }
-
-//			PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
-//			PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));
-//			}
-
-            // jminond added to top of property page so no need to scroll for save
-            LinkButton cancel2 = new LinkButton();
-            cancel2.CssClass = "CommandButton";
-            cancel2.TextKey = "Cancel";
-            cancel2.Text = "Cancel";
-            cancel2.Click += new EventHandler(CancelButton_Click);
-            PlaceholderButtons2.Controls.Add(cancel2);
-
-            this.CancelButton = new LinkButton();
-            this.CancelButton.CssClass = "CommandButton";
-            PlaceHolderButtons.Controls.Add(this.CancelButton);
-
-//			if(((UI.Page)this.Page).IsCssFileRegistered("tabsControl") == false)
-//			{
-//				string themePath = Path.WebPathCombine(this.CurrentTheme.WebPath, "/tabControl.css");
-//				((UI.Page)this.Page).RegisterCssFile("tabsControl", themePath);
-//			}
-// Modified by Hongwei Shen 10/72005-- the css file will be inject with the main theme
-//			if(!((UI.Page)this.Page).IsCssFileRegistered("TabControl"))
-//				((UI.Page)this.Page).RegisterCssFile("TabControl");
-
 
             this.EditTable.UpdateControl += new UpdateControlEventHandler(this.EditTable_UpdateControl);
             this.Load += new EventHandler(this.PagePropertyPage_Load);
@@ -154,13 +114,6 @@ namespace Appleseed.Content.Web.Modules
             EditTable.CssClass = "st_control";
             EditTable.DataSource = new SortedList(this.ModuleSettings);
             EditTable.DataBind();
-        }
-
-        private void saveAndCloseButton_Click(object sender, EventArgs e)
-        {
-            OnUpdate(e);
-            if (Page.IsValid == true && Request.QueryString.GetValues("ModalChangeMaster") == null)
-                Response.Redirect(HttpUrlBuilder.BuildUrl("~/" + HttpUrlBuilder.DefaultPage, PageID));
         }
 
         /// <summary>
