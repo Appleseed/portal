@@ -17,10 +17,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1.23em;
-  font-weight: bold;
-  margin: .5em 0;
-  letter-spacing: -1px;
+    font-size: 1.23em;
+    font-weight: bold;
+    margin: .5em 0;
+    letter-spacing: -1px;
+    font-size: 17px;
+    line-height: 1.1;
 }
 
 h3 {

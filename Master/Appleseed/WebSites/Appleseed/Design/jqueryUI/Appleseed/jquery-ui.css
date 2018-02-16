@@ -506,6 +506,8 @@ button.ui-button::-moz-focus-inner {
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 1.42857143;
+        font-size: 15px;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 .ui-dialog .ui-dialog-titlebar-close {
 	position: absolute;
