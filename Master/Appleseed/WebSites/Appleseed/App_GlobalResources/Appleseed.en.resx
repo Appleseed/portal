@@ -1903,10 +1903,10 @@
     <value>Module name</value>
   </data>
   <data name="MODULESETTINGS" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Module Settings</value>
   </data>
   <data name="MODULESETTINGS_SETTINGS" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Module Settings</value>
   </data>
   <data name="MODULESETTINGS_BASE_SETTINGS" xml:space="preserve">
     <value>Security &amp; Workflow</value>
