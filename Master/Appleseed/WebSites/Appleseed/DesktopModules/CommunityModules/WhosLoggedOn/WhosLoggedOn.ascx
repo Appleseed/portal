@@ -8,8 +8,8 @@
 </rbfwebui:localize><br />
 --%><b>
     <rbfwebui:label id="LabelRegUsersOnlineCount" runat="server">xx</rbfwebui:label></b>
-<rbfwebui:localize id="Literal3" runat="server" text=" registered users online: "
-    textkey="WHOS_LOGGED_ON_3">
+<rbfwebui:localize id="Literal3" runat="server" text=" User(s) online: "
+    textkey="">
 </rbfwebui:localize>
 <b>
     <rbfwebui:label id="LabelRegUserNames" runat="server">users list</rbfwebui:label></b>

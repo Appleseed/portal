@@ -765,7 +765,7 @@ body:not(.sidebar-left-mini) .menu .nav-header {
 
 .admin-left-menu-inner {
   padding: 10px;
-  min-height: 600px;
+  min-height: 330px;
 }
 
 .admin-left-menu-inner a:link, 
@@ -2887,7 +2887,7 @@ body.error .logo h1 {
 }
 
 .Site-Settings #tpg1 {
-  width: 890px;
+  width: 95%;
 }
 
 .Site-Settings .SettingsTableGroup li.ui-state-default {
@@ -2896,7 +2896,7 @@ body.error .logo h1 {
 
 .Site-Settings #tpg1 .ui-state-default a,
 #jqtreePageManagement input[type="button"] {
-  color: #808080;
+  color: #fff;
 }
 
 .File-Manager #FileManagerContainter {
@@ -3069,3 +3069,7 @@ body.error .logo h1 {
     }
 
 /* --END DMIN PAGES TABLE STYLES */
+
+#mID0.desktopmodules_coremodules_admin_adminleftmenu_ascx .Control_Panel_Table {
+    display:none;
+}
