@@ -4069,7 +4069,7 @@
     <value />
   </data>
   <data name="Appleseed_RUNNING_VERSION" xml:space="preserve">
-    <value>The running Appleseed version is</value>
+    <value>The current Appleseed Portal version you are on is</value>
   </data>
   <data name="READ_FULL_ANNOUNCE" xml:space="preserve">
     <value>Read full story</value>

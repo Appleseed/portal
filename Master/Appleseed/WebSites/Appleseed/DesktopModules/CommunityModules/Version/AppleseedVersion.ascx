@@ -6,6 +6,6 @@
     <rbfwebui:Label ID="VersionLabel" runat="server" CssClass="Normal" EnableViewState="False"></rbfwebui:Label>
 </p>
 <p>
-    <rbfwebui:Label ID="currentUILanguage" runat="server" CssClass="Normal" EnableViewState="False"></rbfwebui:Label>/
+    Your portal language is: <rbfwebui:Label ID="currentUILanguage" runat="server" CssClass="Normal" EnableViewState="False"></rbfwebui:Label>/
     <rbfwebui:Label ID="currentLanguage" runat="server" CssClass="Normal" EnableViewState="False"></rbfwebui:Label>
 </p>

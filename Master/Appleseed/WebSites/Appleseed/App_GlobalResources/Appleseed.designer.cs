@@ -727,7 +727,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The running Appleseed version is.
+        ///   Looks up a localized string similar to The current Appleseed Portal version you are on is.
         /// </summary>
         internal static string Appleseed_RUNNING_VERSION {
             get {
