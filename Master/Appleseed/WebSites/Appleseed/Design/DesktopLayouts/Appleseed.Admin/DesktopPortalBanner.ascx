@@ -45,9 +45,9 @@
 
 <div class="menus">
     <!-- wide sidebar -->
-    <div id="left-wide" style="float: right;">
+    <div id="left-wide" style="float: right;" class="bg-dark dker">
         <!-- /.search-bar -->
-        <div class="media user-media bg-dark dk">
+        <div class="media user-media">
            
             <div class="user-wrapper" style="padding:10px;">
               
@@ -67,7 +67,7 @@
         </div>
 
         <!-- .wide-menu #home-menu-->
-        <div id="home-menu" class="wide-menu bg-dark dk">
+        <div id="home-menu" class="wide-menu">
 
             <!-- Admin Left Menu from separate control 2015-03-12 mlp -->
             <alm:AdminLeftMenu ID="adminMenuLeft" runat="server" />
