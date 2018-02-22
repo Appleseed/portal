@@ -31,7 +31,7 @@
     <asp:PlaceHolder runat="server" ID="plcCSSCMEditor" Visible="false">
         <style type="text/css">
             .normal {
-                width: 1000px !important;
+                /*width: 1000px !important;*/
                 /*height:100vh;*/
             }
         </style>
@@ -41,7 +41,7 @@
 
             <% if (Request.QueryString.GetValues("ModalChangeMaster") == null)
                 {%>
-            <table border="0" cellpadding="4" cellspacing="0" width="98%">
+            <table border="0" cellpadding="4" cellspacing="0" width="100%">
                 <tr>
                     <td align="left" class="Head">
                         <rbfwebui:Localize ID="Literal1" runat="server" Text="HTML Editor" TextKey="HTML_EDITOR">
@@ -56,7 +56,7 @@
             </table>
             <% } %>
             <div id="Content" class="Content">
-                <table border="0" cellpadding="4" cellspacing="0" width="98%">
+                <table border="0" cellpadding="4" cellspacing="0" width="100%">
                     <tr>
                         <td class="SubHead">
                             <%--<p>--%>
