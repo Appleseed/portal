@@ -727,7 +727,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The running Appleseed version is.
+        ///   Looks up a localized string similar to The current Appleseed Portal version you are on is.
         /// </summary>
         internal static string Appleseed_RUNNING_VERSION {
             get {
@@ -5895,7 +5895,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Culture settings.
+        ///   Looks up a localized string similar to Culture.
         /// </summary>
         internal static string CULTURE_SETTINGS {
             get {
@@ -9765,7 +9765,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Meta settings.
+        ///   Looks up a localized string similar to Meta.
         /// </summary>
         internal static string META_SETTINGS {
             get {
@@ -9846,7 +9846,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Miscellaneous settings.
+        ///   Looks up a localized string similar to Miscellaneous.
         /// </summary>
         internal static string MISC_SETTINGS {
             get {
@@ -10197,7 +10197,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Module settings.
+        ///   Looks up a localized string similar to Module Settings.
         /// </summary>
         internal static string MODULESETTINGS_SETTINGS {
             get {
@@ -13041,7 +13041,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Users and Security settings.
+        ///   Looks up a localized string similar to Users and Security.
         /// </summary>
         internal static string SECURITY_USER_SETTINGS {
             get {
@@ -15741,7 +15741,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theme and layout settings.
+        ///   Looks up a localized string similar to Theme and Layout.
         /// </summary>
         internal static string THEME_LAYOUT_SETTINGS {
             get {

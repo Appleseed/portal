@@ -15,11 +15,11 @@
             }
 
             .Content {
-                height: 485px !important;
+                height: 680px !important;
             }
 
             #cke_1_contents {
-                height: 347px !important;
+                height: 540px !important;
             }
 
             textarea {
@@ -31,7 +31,7 @@
     <asp:PlaceHolder runat="server" ID="plcCSSCMEditor" Visible="false">
         <style type="text/css">
             .normal {
-                width: 1000px !important;
+                /*width: 1000px !important;*/
                 /*height:100vh;*/
             }
         </style>
@@ -41,7 +41,7 @@
 
             <% if (Request.QueryString.GetValues("ModalChangeMaster") == null)
                 {%>
-            <table border="0" cellpadding="4" cellspacing="0" width="98%">
+            <table border="0" cellpadding="4" cellspacing="0" width="100%">
                 <tr>
                     <td align="left" class="Head">
                         <rbfwebui:Localize ID="Literal1" runat="server" Text="HTML Editor" TextKey="HTML_EDITOR">
@@ -56,7 +56,7 @@
             </table>
             <% } %>
             <div id="Content" class="Content">
-                <table border="0" cellpadding="4" cellspacing="0" width="98%">
+                <table border="0" cellpadding="4" cellspacing="0" width="100%">
                     <tr>
                         <td class="SubHead">
                             <%--<p>--%>
@@ -125,17 +125,19 @@
                 }
 
                 .CodeMirror {
-                    height: 400px !important;
+                    height: 600px !important;
                 }
-
+                 #cke_1_contents {
+                height: 462px !important;
+            }
                 .divPreview {
-                    height: 400px;
+                    height: 600px;
                     border: 1px solid gray;
                 }
 
                 .myframe {
                     width: 100%;
-                    height: 390px;
+                    height: 590px;
                 }
 
                 .tabs .CommandButton {

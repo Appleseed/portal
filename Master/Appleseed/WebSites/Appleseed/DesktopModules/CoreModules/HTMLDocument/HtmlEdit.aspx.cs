@@ -119,7 +119,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                     ResizeEnabled = false,
                     Language = PortalSettings.PortalUILanguage.TwoLetterISOLanguageName
                 };
-                cwCKEditor.Height = 270;
+                cwCKEditor.Height = 470;
                 cwCKEditor.BasePath = Appleseed.Framework.Settings.Path.WebPathCombine(Appleseed.Framework.Settings.Path.ApplicationRoot, "/aspnet_client/CKEditorV4.6.2");
                 this.plcCWCKEditor.Controls.Add((Control)cwCKEditor);
             }
@@ -216,7 +216,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
                         }
                         this.cwCKEditor.Text = this.cwHTML.InnerText;
                         this.DesktopText.Text = string.Empty;
-                        
+
                     }
                     else
                     {
@@ -377,14 +377,7 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
             {
-                if (IsCodeWriter)
-                {
-                    Response.Redirect(this.PageID.ToString());
-                }
-                else
-                {
-                    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
-                }
+                Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
             }
             else
                 this.RedirectBackToReferringPage();

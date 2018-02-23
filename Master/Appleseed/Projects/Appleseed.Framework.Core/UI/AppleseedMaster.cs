@@ -44,6 +44,7 @@ namespace Appleseed
             if (!page.ClientScript.IsClientScriptBlockRegistered("allscripts"))
             {
 
+                var portalSettings = (PortalSettings)context.Items["PortalSettings"];
 
                 var scripts = GetBaseScripts(page, context);
                 string datetimestamp = DateTime.Now.ToString("ddMMyyyyHHmmss");
@@ -124,7 +125,6 @@ namespace Appleseed
                         page.Header.Controls.AddAt(index++, include);
                     }
 
-                    var portalSettings = (PortalSettings)context.Items["PortalSettings"];
 
                     if (portalSettings != null)
                     {
@@ -165,13 +165,13 @@ namespace Appleseed
                     page.Header.Controls.AddAt(index++, Include);
                 }
 
-                var fontsAwsome = page.ResolveUrl("http://fontawesome.io/assets/font-awesome/css/font-awesome.css");
+                //var fontsAwsome = page.ResolveUrl("http://fontawesome.io/assets/font-awesome/css/font-awesome.css");
 
-                HtmlGenericControl fntAws = new HtmlGenericControl("link");
-                fntAws.Attributes.Add("type", "text/css");
-                fntAws.Attributes.Add("rel", "stylesheet");
-                fntAws.Attributes.Add("href", fontsAwsome);
-                page.Header.Controls.AddAt(index++, fntAws);
+                //HtmlGenericControl fntAws = new HtmlGenericControl("link");
+                //fntAws.Attributes.Add("type", "text/css");
+                //fntAws.Attributes.Add("rel", "stylesheet");
+                //fntAws.Attributes.Add("href", fontsAwsome);
+                //page.Header.Controls.AddAt(index++, fntAws);
 
                 var uiculture = System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
                 var datepickerscript = "$(document).ready(function(){$.datepicker.setDefaults($.datepicker.regional['" + uiculture + "']);});";
@@ -199,6 +199,49 @@ namespace Appleseed
 
                 string extraScripts = GetExtraScripts();
                 page.ClientScript.RegisterClientScriptBlock(page.GetType(), "allscripts", extraScripts, false);
+
+                bool userlogin_persistent = false;
+                var userloginCookie = HttpContext.Current.Request.Cookies["userlogin"];
+                if (userloginCookie != null)
+                {
+                    userlogin_persistent = (!string.IsNullOrEmpty(userloginCookie["persistent"]) && userloginCookie["persistent"] == "1");
+                }
+
+                try
+                {
+                    
+                    userlogin_persistent = (bool)HttpContext.Current.Session["userlogin_persistent"];
+                }
+                catch { }
+
+                int minuteAdd = 0;
+                try
+                {
+                    int.TryParse(portalSettings.CustomSettings["SITESETTINGS_PORTALTIMEOUT"].ToString(), out minuteAdd);
+                }
+                catch { }
+
+                if (HttpContext.Current.Request.IsAuthenticated && portalSettings.EnabledSessionTimeoutAlert && !userlogin_persistent)
+                {
+                    extraScripts = @"
+<script>
+    var timeoutLimit = " + (minuteAdd * 60) + @";
+    var timeoutCounter = " + (minuteAdd * 60) + @";
+    function CheckSessionTime(){
+        timeoutCounter--;
+        if(timeoutCounter <= 0)
+        {
+            clearInterval(timerSessionCheck);
+            alert('Your session has timed out due to inactivity. Please log back in.');
+            window.location = '/DesktopModules/CoreModules/Admin/Logon.aspx';
+        }
+    }
+    var timerSessionCheck = setInterval(CheckSessionTime, 1000);
+</script>
+                                    ";
+
+                    page.ClientScript.RegisterClientScriptBlock(page.GetType(), "autoSessionTimeoutAlert", extraScripts, false);
+                }
             }
         }
 

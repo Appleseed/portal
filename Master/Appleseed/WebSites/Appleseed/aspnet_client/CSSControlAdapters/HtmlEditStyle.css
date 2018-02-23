@@ -30,3 +30,7 @@
 	border-width:2px;
 	border-color: #000;
 }
+
+table.Control_Panel_Table{
+    margin-right:10px;
+}

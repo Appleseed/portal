@@ -496,7 +496,7 @@
     <value>Author</value>
   </data>
   <data name="Appleseed_RUNNING_VERSION" xml:space="preserve">
-    <value>The running Appleseed version is</value>
+    <value>The current Appleseed Portal version you are on is</value>
   </data>
   <data name="BACK" xml:space="preserve">
     <value>Back</value>
@@ -913,7 +913,7 @@
     <value>Choose culture. Invariant cultures shows the module always.</value>
   </data>
   <data name="CULTURE_SETTINGS" xml:space="preserve">
-    <value>Culture settings</value>
+    <value>Culture</value>
   </data>
   <data name="CUSTOMLAYOUT" xml:space="preserve">
     <value>Custom Layout</value>
@@ -1864,7 +1864,7 @@
     <value>Merchant ID</value>
   </data>
   <data name="META_SETTINGS" xml:space="preserve">
-    <value>Meta settings</value>
+    <value>Meta</value>
   </data>
   <data name="MIDDLE" xml:space="preserve">
     <value>Middle</value>
@@ -1882,7 +1882,7 @@
     <value>Status</value>
   </data>
   <data name="MISC_SETTINGS" xml:space="preserve">
-    <value>Miscellaneous settings</value>
+    <value>Miscellaneous</value>
   </data>
   <data name="MOBILEURL" xml:space="preserve">
     <value>Mobile Url</value>
@@ -1903,10 +1903,10 @@
     <value>Module name</value>
   </data>
   <data name="MODULESETTINGS" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Module Settings</value>
   </data>
   <data name="MODULESETTINGS_SETTINGS" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Module Settings</value>
   </data>
   <data name="MODULESETTINGS_BASE_SETTINGS" xml:space="preserve">
     <value>Security &amp; Workflow</value>
@@ -2683,7 +2683,7 @@
     <value>Only Admin Modules</value>
   </data>
   <data name="SECURITY_USER_SETTINGS" xml:space="preserve">
-    <value>Users and Security settings</value>
+    <value>Users and Security</value>
   </data>
   <data name="SELECT_ALL" xml:space="preserve">
     <value>Select all</value>
@@ -3217,7 +3217,7 @@
     <value>Test user ID</value>
   </data>
   <data name="THEME_LAYOUT_SETTINGS" xml:space="preserve">
-    <value>Theme and layout settings</value>
+    <value>Theme and Layout</value>
   </data>
   <data name="THUMBNAILHEIGHT" xml:space="preserve">
     <value>Thumbnail Height</value>

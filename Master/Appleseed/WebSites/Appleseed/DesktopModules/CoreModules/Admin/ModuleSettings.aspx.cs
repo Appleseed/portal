@@ -112,20 +112,17 @@ namespace Appleseed.Admin
             PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
             PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));
 
-            this.saveAndCloseButton = new LinkButton
-                {
-                    TextKey = "OK", Text = "Save and close", CssClass = "CommandButton" 
-                };
-            PlaceHolderButtons.Controls.Add(saveAndCloseButton);
-            this.saveAndCloseButton.Click += this.SaveAndCloseButtonClick;
+            this.CancelButton = new LinkButton { CssClass = "CommandButton" };
+            if (Request.QueryString.GetValues("ModalChangeMaster") != null)
+                this.CancelButton.ID = "SecurityCancelButton";
+            PlaceHolderButtons.Controls.Add(this.CancelButton);
 
             // jminond added to top of property page so no need to scroll for save
-            var saveAndCloseButton2 = new LinkButton
-                {
-                    TextKey = "OK", Text = "Save and close", CssClass = "CommandButton" 
-                };
-            PlaceholderButtons2.Controls.Add(saveAndCloseButton2);
-            saveAndCloseButton2.Click += this.SaveAndCloseButtonClick;
+            var cancel2 = new LinkButton { CssClass = "CommandButton", TextKey = "Cancel", Text = "Cancel" };
+            if (Request.QueryString.GetValues("ModalChangeMaster") != null)
+                cancel2.ID = "SecurityCancelButton2";
+            cancel2.Click += this.CancelButtonClick;
+            PlaceholderButtons2.Controls.Add(cancel2);
 
             PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
             PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));
@@ -163,27 +160,6 @@ namespace Appleseed.Admin
                 moduleSettingsButton2.Attributes.Add("onclick", "ChangeModalTitle('Module Settings');");
             PlaceholderButtons2.Controls.Add(moduleSettingsButton2);
 
-            PlaceHolderButtons.Controls.Add(new LiteralControl("&nbsp;"));
-            PlaceholderButtons2.Controls.Add(new LiteralControl("&nbsp;"));
-
-            this.CancelButton = new LinkButton { CssClass = "CommandButton" };
-            if (Request.QueryString.GetValues("ModalChangeMaster")!=null)
-                this.CancelButton.ID = "SecurityCancelButton";
-            PlaceHolderButtons.Controls.Add(this.CancelButton);
-
-            // jminond added to top of property page so no need to scroll for save
-            var cancel2 = new LinkButton { CssClass = "CommandButton", TextKey = "Cancel", Text = "Cancel" };
-            if (Request.QueryString.GetValues("ModalChangeMaster") != null)
-                cancel2.ID = "SecurityCancelButton2";
-            cancel2.Click += this.CancelButtonClick;
-            PlaceholderButtons2.Controls.Add(cancel2);
-
-            // if (((Page) this.Page).IsCssFileRegistered("tabsControl") == false)
-            // {
-            //     string themePath = Path.WebPathCombine(this.CurrentTheme.WebPath, "/tabControl.css");
-            //     ((Page) this.Page).RegisterCssFile("tabsControl", themePath);
-            // }
-           
 
             this.enableWorkflowSupport.CheckedChanged += this.EnableWorkflowSupportCheckedChanged;
             base.OnInit(e);

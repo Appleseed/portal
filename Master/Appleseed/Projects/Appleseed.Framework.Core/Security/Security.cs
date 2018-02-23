@@ -526,7 +526,7 @@ namespace Appleseed.Framework.Security
         /// </remarks>
         public static bool IsInRole(string role)
         {
-            if(HttpContext.Current.User.IsInRole("Admins"))
+            if (HttpContext.Current.User.IsInRole("Admins"))
             {
                 return true;
             }
@@ -780,6 +780,8 @@ namespace Appleseed.Framework.Security
                         var span = new TimeSpan(0, 0, minuteAdd, 0, 0);
                         hck.Expires = time.Add(span);
                     }
+
+                    HttpContext.Current.Response.Cookies.Add(hck);
                 }
 
                 // set session timeout from portal settings
@@ -794,6 +796,10 @@ namespace Appleseed.Framework.Security
                         CreateTicket(user, persistent, DateTime.Now.AddMinutes(minuteAdd));
                     }
                 }
+                HttpCookie userlogin = new HttpCookie("userlogin");
+                userlogin["persistent"] = persistent ? "1" : "0";
+                userlogin.Expires = DateTime.Now.AddYears(50);
+                HttpContext.Current.Response.Cookies.Add(userlogin);
 
                 //if we have returnurl in querystring, it should be redirect on it once logged in
                 if (string.IsNullOrEmpty(redirectPage) && !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["ReturnUrl"]))
@@ -826,7 +832,7 @@ namespace Appleseed.Framework.Security
         /// <param name="Type"></param>
         /// <param name="CookieTime"></param>
         /// <returns></returns>
-        public static bool CreateTicket(string UserName, bool StayLoggedIn,DateTime CookieTime)
+        public static bool CreateTicket(string UserName, bool StayLoggedIn, DateTime CookieTime)
         {
             FormsAuthentication.Initialize();
 
