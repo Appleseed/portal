@@ -1,7 +1,12 @@
 ﻿<%@ Page Language="C#" CodeBehind="HtmlVersonHistory.aspx.cs" Inherits="Appleseed.DesktopModules.CoreModules.HTMLDocument.HtmlVersonHistory" MasterPageFile="~/Shared/ModalMaster.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
-    <div>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
+    
+    <div class="">
+        <div class="">
+            <div class="col-lg-12">
         <p>
             <asp:Button ID="btnCompareAndMarge" Text="Compare and Merge" CssClass="CommandButton" runat="server" OnClientClick="return CheckVersionSelection();" OnClick="btnCompareAndMarge_Click" />
             <%--<asp:Button ID="btnCompareAndMarge" Text="Companre and Merge" runat="server" OnClientClick="CheckVersionSelection()" />--%>
@@ -10,32 +15,24 @@
         </p>
         <asp:Repeater ID="RptVersionHistory" runat="server">
             <HeaderTemplate>
-                <table id="TblVersionHistory" class="display tblclsVersion" border="1" cellspacing="1" style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000">
-                    <colgroup>
-                        <col style="width: 80px" />
-                        <col style="width: 80px" />
-                        <col style="width: 180px" />
-                        <col style="width: 160px" />
-                        <col style="width: 180px" />
-                        <col style="width: 160px" />
-                    </colgroup>
-                    <thead style="border: 1px solid #000;">
-                        <tr style="border: 1px solid #000;">
-                            <th>Select</th>
+                <table id="TblVersionHistory" class="display tblclsVersion">
+                   
+                    <thead>
+                        <tr>
+                            <th class="text-center">Select</th>
                             <th>VersionNo</th>
                             <th>Created By UserName</th>
                             <th>Created Date</th>
                             <th>Modified By UserName</th>
                             <th>Modified Date</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody style="border: 1px solid #000;">
             </HeaderTemplate>
             <ItemTemplate>
-                <tr style="border: 1px solid #000;">
-                    <td style="text-align: center;">
-                        <asp:CheckBox ID="chkVersion" verno='<%#Eval("VersionNo")%>' CssClass="chVersion" runat="server" onclick="CheckBoxCount()" />
+                <tr>
+                    <td class="text-center" style="width:80px;">
+                        <asp:CheckBox ID="chkVersion" verno='<%#Eval("VersionNo")%>' CssClass="chVersion" runat="server" onclick="CheckBoxCount(this)" />
                         <asp:HiddenField ID="hdnVersionNo" Value='<%#Eval("VersionNo")%>' runat="server" />
                     </td>
                     <td><%# Eval("VersionNo") %>                  </td>
@@ -57,10 +54,16 @@
         <p>
             Note: Published version will not be displayed in above version history.
         </p>
+        </div></div>
     </div>
     <script type="text/javascript">
         var verList = "";
-        function CheckBoxCount() {
+        $(document).ready(function () {
+            $('#TblVersionHistory').DataTable({ "paging": false, "order": [[1, "desc"]]});
+        });
+
+        function CheckBoxCount(chk) {
+            
             var verCount = 0;
             $('.tblclsVersion').find('tr').each(function () {
                 var row = $(this);

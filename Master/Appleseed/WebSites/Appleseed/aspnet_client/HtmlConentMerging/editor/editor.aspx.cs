@@ -99,7 +99,7 @@
         /// </param>
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Response.Redirect("/DesktopModules/CommunityModules/HTMLDocument/HtmlVersonHistory.aspx?mID=" + Request.QueryString["mID"].ToString() + "&ModalChangeMaster=", true);
+            this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlVersonHistory.aspx?mID=" + Request.QueryString["mID"].ToString() + "&ModalChangeMaster=true", true);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@
             SaveMergeData(Request.QueryString["mID"].ToString(), publishedData[0], hdnLhsText.Value, VrsionData[0]);
             SaveMergeData(Request.QueryString["mID"].ToString(), publishedData[1], hdnRhsText.Value, VrsionData[1]);
 
-            this.Response.Redirect("/DesktopModules/CommunityModules/HTMLDocument/HtmlEdit.aspx?mID=" + Request.QueryString["mID"].ToString() + "&ModalChangeMaster=", true);
+            this.Response.Redirect("/DesktopModules/CoreModules/HTMLDocument/HtmlEdit.aspx?mID=" + Request.QueryString["mID"].ToString() + "&ModalChangeMaster=true", true);
         }
     }
 }
