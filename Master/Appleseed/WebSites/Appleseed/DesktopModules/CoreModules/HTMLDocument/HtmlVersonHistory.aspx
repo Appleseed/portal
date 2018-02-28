@@ -6,7 +6,7 @@
 
     <div class="">
         <div class="">
-            <div class="col-lg-12">
+            <div class="col-lg-12" style="background-color:#fff">
                
                 <asp:Repeater ID="RptVersionHistory" runat="server">
                     <HeaderTemplate>
@@ -46,7 +46,7 @@
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
-                <div>
+                <div class="text-right">
                     *Published version will not be displayed in above version history.<br />
                     **<%= TimeZone.CurrentTimeZone.StandardName %> Timezone
                 </div>
