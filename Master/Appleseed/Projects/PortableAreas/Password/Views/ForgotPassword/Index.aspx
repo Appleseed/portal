@@ -2,23 +2,101 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
+    <style>
+        /* SignIn Cool Styling */
+        .signin-page {
+            width: 300px;
+            margin: 0 auto;
+            font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
 
-    <div id="Fields">
-        <%  string email = string.Empty;
+            .signin-page .input-row {
+                margin-bottom: 10px;
+            }
+
+            .signin-page input[type="text"],
+            .signin-page input[type="password"] {
+                width: 300px;
+                height: 40px;
+                font-size: 15px;
+                border: 1px solid #cccccc !important;
+                box-shadow: none;
+            }
+
+            .signin-page input[type="checkbox"] {
+                margin: 0px 5px 0px 10px;
+                vertical-align: -2px;
+            }
+
+                .signin-page input[type="checkbox"] + label {
+                    font-size: 15px;
+                }
+
+            .signin-page .forgot-link {
+                font-size: 15px;
+                text-decoration: none;
+            }
+
+                .signin-page .forgot-link:hover {
+                    color: #6696ff;
+                }
+
+            .signin-page .login-button {
+                width: 300px;
+                height: 44px;
+                color: #fff;
+                cursor: pointer;
+                background: #1a242f;
+                font-size: 15px !important;
+            }
+
+        .desktopmodules_coremodules_signin_signincool_ascx .module_Body {
+            width: 1000px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .desktopmodules_coremodules_signin_signincool_ascx .module_Body {
+                width: auto;
+            }
+
+            table {
+                border-collapse: separate;
+                border-spacing: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .Error {
+            color: red !important;
+            font-size: 20px;
+        }
+
+        #formSignIn hr {
+            display: none !important;
+        }
+    </style>
+    <div>
+        <div id="Fields" class="signin-page">
+            <%  string email = string.Empty;
             if (Request.QueryString["email"] != null) {
                 email = Request.QueryString["email"];
            } %>
-        <label id="EmailLabel"><%= Appleseed.Framework.General.GetString("EMAIL", "E-mail") %>: </label>
-        <input type="text" id="UsersEmail" class="NormalTextBox pwdClass" value="<%= email %>" />
-        <br />
-        <input type="button" id="SendPasswordBtn" class="CommandButton" value="<%= Appleseed.Framework.General.GetString("SendEmail", "Send Password Recovery E-mail") %>" onclick="sendPasswordToken()" />
-        <br />
-        <label id="Message" class="Error"></label>
-        <br />
+            <div class="input-row">
+                <label id="EmailLabel"><%= Appleseed.Framework.General.GetString("EMAIL", "E-mail") %> </label>
+                <br />
+                <input type="text" id="UsersEmail" class="" value="<%= email %>" />
+            </div>
+            <div class="input-row">
+                <input type="button" id="SendPasswordBtn" class="CommandButton" value="<%= Appleseed.Framework.General.GetString("SendEmail", "Send Password Recovery E-mail") %>" onclick="sendPasswordToken()" />
+            </div>
+            <label id="Message" class="Error"></label>
+            <br />
+        </div>
+        <div id="divSuccess" style="color: green; font-size: 20px"></div>
+
     </div>
-        <div id="divSuccess" style="color:green; font-size:15px"></div>
-
-
 
 
     <script type="text/javascript">
@@ -39,7 +117,7 @@
                         $('#Message').text(data.Message);
                         if (data.ok) {
                             $('#Fields').hide();
-                            $('#divSuccess').html('We have sent you an email to reset new password.');
+                            $('#divSuccess').html('Success! We have sent you an e-email to reset your password, please check your inbox or your SPAM folder.');
                         }
                     },
                     error: function (data) {
