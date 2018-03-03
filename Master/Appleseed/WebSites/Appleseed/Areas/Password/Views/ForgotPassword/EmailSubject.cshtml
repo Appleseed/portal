@@ -1,27 +1,12 @@
 ﻿@model PasswordModel
 @using Appleseed.Framework;
 @using Password.Models;
-            
+
 Dear @Model.UserName,
-<br/>
-<br/>
-@General.GetString(
-        "SIGNIN_PWD_LOST_REQUEST_RECEIVED",
-        "We received your request regarding the loss of your password.",
-        this)
-<br/>
-@General.GetString(
-        "SIGNIN_SET_NEW_PWD_MSG",
-        "You can set a new password for your account going to the following link:",
-        this) 
-<br/>@Model.url 
-<br/>
-<br/>
-@General.GetString("SIGNIN_THANK_YOU", "Thanks for your visit.", this) @Model.PortalName
 <br />
 <br />
+We received your password reset request. You can set a new password for your account by going to the following link:
+<br />@Model.url
 <br />
-@General.GetString(
-        "SIGNIN_URL_WARNING",
-        "NOTE: The address above may not show up on your screen as one line. This would prevent you from using the link to access the web page. If this happens, just use the 'cut' and 'paste' options to join the pieces of the URL.",
-        this)
+<br />
+Thank You

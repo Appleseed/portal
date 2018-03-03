@@ -13,6 +13,15 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
     public partial class HtmlVersonHistory {
         
         /// <summary>
+        /// RptVersionHistory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RptVersionHistory;
+        
+        /// <summary>
         /// btnCompareAndMarge control.
         /// </summary>
         /// <remarks>
@@ -38,14 +47,5 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDelete;
-        
-        /// <summary>
-        /// RptVersionHistory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptVersionHistory;
     }
 }

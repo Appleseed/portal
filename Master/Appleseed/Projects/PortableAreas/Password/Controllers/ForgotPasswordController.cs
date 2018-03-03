@@ -101,10 +101,12 @@ namespace Password.Controllers
 
             // if there is not a correct email in the portalSettings, we use the default sender specified on the web.config file in the mailSettings tag.
             mail.To.Add(new MailAddress(email));
-            mail.Subject = string.Format(
-                "{0} - {1}",
-                this.PortalSettings.PortalName,
-                General.GetString("SIGNIN_PWD_LOST", "I lost my password", this));
+            //mail.Subject = string.Format(
+            //    "{0} - {1}",
+            //    this.PortalSettings.PortalName,
+            //    General.GetString("SIGNIN_PWD_LOST", "I lost my password", this));
+
+            mail.Subject = General.GetString("SIGNIN_PWD_LOST_EMIAL_SUBJECT", "Reset Password", this);
 
             var viewToSend = EmailSubject(memberUser.UserName, changePasswordUrl, this.PortalSettings.PortalName) as ViewResult;
 
@@ -118,7 +120,7 @@ namespace Password.Controllers
 
 
             mail.Body = emailHtml;
-            mail.IsBodyHtml = false;
+            mail.IsBodyHtml = true;
             if (Convert.ToBoolean(PortalSettings.Settings["SITESETTINGS_SMTP_SG_SENDEMAIL"].Value.ToString()) == false)
             {
                 using (var client = new SmtpClient())
