@@ -1,71 +1,23 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PageFriendlyURL.ascx.cs" Inherits="Appleseed.DesktopModules.CoreModules.PageFriendlyURL.PageFriendlyURL" %>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+<script type="text/javascript" src="//cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
 
 <style>
-    .FixTop {
-        margin-top: 8px;
-        width: 100%;
+    #Content_ContentPane_ctl01_gdPages>tbody>tb>span{
+        color:#000 !important;
     }
-
-    .buttonMargin {
-        margin-top: 16px;
+    .tHead, .tHead span{
+        background-color:#fff;
+        color:#000 !important;
     }
-
-    .success {
-        color: #3c763d;
-        background-color: #dff0d8;
-        border-color: #d6e9c6;
+    .tHead span{
+        margin: 10px 18px;
     }
-
-    .danger {
-        color: #a94442;
-        background-color: #f2dede;
-        border-color: #ebccd1;
+    .dataTables_filter label{
+        color:#fff;
     }
-
-    .updatedelete {
-        table-layout: fixed;
-        margin-top: 10px;
-    }
-
-        .updatedelete .field-1 {
-            width: 10%;
-        }
-
-        .updatedelete .field-2 {
-            width: 31%;
-        }
-
-        .updatedelete .field-3 {
-            width: 30%;
-        }
-
-        .updatedelete .field-4 {
-            width: 15%;
-        }
-
-        .updatedelete .field-5 {
-            width: 14%;
-        }
-
-        .updatedelete td.field-2 {
-            word-wrap: break-word;
-        }
-
-        .updatedelete td.field-3 {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .updatedelete tr, .updatedelete td, .updatedelete th {
-            border: 1px solid #000;
-            padding: 5px !important;
-        }
-
-        .updatedelete tr, .updatedelete th {
-            font-weight: bold;
-            padding: 5px;
-        }
 </style>
+
 <div style="width: 100%">
 
 
@@ -125,7 +77,7 @@
         </div>
     </div>
 
-    <div class="module-row" style="clear:both;">
+    <div class="module-row" style="clear: both;">
         <br />
         <br />
         <h5>Update/Delete Short Url</h5>
@@ -133,22 +85,22 @@
     <br />
     <label>Pages</label>
     <div class="module-row">
-        <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowEditing="GdPages_RowEditing"
+        <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1"  OnRowEditing="GdPages_RowEditing"
             OnRowDeleting="gdPages_RowDeleting" OnRowCancelingEdit="gdPages_RowCancelingEdit" OnRowDataBound="gdPages_RowDataBound" OnRowUpdating="gdPages_RowUpdating" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="Page#">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Page#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageID" Text='<%# Eval("PageID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-2" ItemStyle-CssClass="field-2" HeaderText="Destination Page Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Destination Page Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFullName"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Short Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Short Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -158,11 +110,12 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:CommandField ShowEditButton="true" ButtonType="Button" ValidationGroup="EditFriendlyUrl" HeaderStyle-CssClass="field-4" ItemStyle-CssClass="field-4" ControlStyle-CssClass="CommandButton" runat="server" />
+                <asp:CommandField ShowEditButton="true" ButtonType="Button" ValidationGroup="EditFriendlyUrl" HeaderStyle-CssClass="tHead  no-sort" ItemStyle-CssClass="" ControlStyle-CssClass="CommandButton" runat="server" />
 
-                <asp:TemplateField HeaderStyle-CssClass="field-5" ItemStyle-CssClass="field-5">
+                <asp:TemplateField HeaderStyle-CssClass="no-sort tHead" ItemStyle-CssClass="">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>
+                        <%--<asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>--%>
+                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete" />
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -176,14 +129,14 @@
     <div class="module-row">
         <asp:GridView ID="gdDynamicPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowUpdating="gdDynamicPages_RowUpdating" OnRowCancelingEdit="gdDynamicPages_RowCancelingEdit" OnRowEditing="GdDynamicPages_RowEditing" OnRowDeleting="gdDynamicPages_RowDeleting" OnRowDataBound="gdDynamicPages_RowDataBound" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="field-1" ItemStyle-CssClass="field-1" HeaderText="SR#">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="SR#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblSrNo" Text='<%# Eval("SRINDEX") %>'></asp:Label>
-                       <asp:Label runat="server" ID="lblPageID"  Visible="false" Text='<%# Eval("DynamicPageId") %>'></asp:Label>
+                        <asp:Label runat="server" ID="lblPageID" Visible="false" Text='<%# Eval("DynamicPageId") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-2" ItemStyle-CssClass="field-2" HeaderText="Destination Page Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Destination Page Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFullName" Text='<%# Eval("RedirectToUrl") %>'></asp:Label>
                     </ItemTemplate>
@@ -193,7 +146,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="field-3" ItemStyle-CssClass="field-3" HeaderText="Short Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Short Url">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -203,11 +156,11 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:CommandField ShowEditButton="true" ButtonType="Button" ValidationGroup="EditFriendlyUrl" HeaderStyle-CssClass="field-4" ItemStyle-CssClass="field-4" ControlStyle-CssClass="CommandButton" runat="server" />
+                <asp:CommandField ShowEditButton="true" ButtonType="Button" ValidationGroup="EditFriendlyUrl" HeaderStyle-CssClass="tHead  no-sort" ItemStyle-CssClass="tHead" ControlStyle-CssClass="CommandButton" runat="server" />
 
-                <asp:TemplateField HeaderStyle-CssClass="field-5" ItemStyle-CssClass="field-5">
+                <asp:TemplateField HeaderStyle-CssClass="tHead no-sort" ItemStyle-CssClass="tHead">
                     <ItemTemplate>
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>
+                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:Button>
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -218,3 +171,25 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    var verList = "";
+    $(document).ready(function () {
+        var th = $('#Content_ContentPane_ctl01_gdPages tbody tr:first');
+        $('#Content_ContentPane_ctl01_gdPages').prepend($('<thead>').append(th));
+
+        var th = $('#Content_ContentPane_ctl01_gdDynamicPages tbody tr:first');
+        $('#Content_ContentPane_ctl01_gdDynamicPages').prepend($('<thead>').append(th));
+
+        $('#Content_ContentPane_ctl01_gdPages').DataTable({
+            "paging": false, "order": [[1, "desc"]],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false }
+            ]});
+        $('#Content_ContentPane_ctl01_gdDynamicPages').DataTable({
+            "paging": false, "order": [[1, "desc"]],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false }
+            ] });
+    });
+
+</script>
