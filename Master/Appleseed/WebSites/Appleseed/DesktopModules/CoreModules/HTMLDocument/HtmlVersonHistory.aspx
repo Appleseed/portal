@@ -102,6 +102,19 @@
         }
 
         function DeleteVersion() {
+            var verCount = 0;
+            $('.tblclsVersion').find('tr').each(function () {
+                var row = $(this);
+                if (row.find('input[type="checkbox"]').is(':checked')) {
+                    verCount += 1;
+                }
+            });
+
+            if (verCount == 0) {
+                alert("You haven't selected any versions to delete, please check the checkbox next to the version you wish to delete first.");
+                return false;
+            }
+
             if (confirm("Are you sure want to delete?")) {
                 return true;
             }

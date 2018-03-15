@@ -106,7 +106,7 @@ namespace Password.Controllers
             //    this.PortalSettings.PortalName,
             //    General.GetString("SIGNIN_PWD_LOST", "I lost my password", this));
 
-            mail.Subject = General.GetString("SIGNIN_PWD_LOST_EMIAL_SUBJECT", "Reset Password", this);
+            mail.Subject = General.GetString("SIGNIN_PWD_LOST_EMAIL_SUBJECT", "Password Reset", this);
 
             var viewToSend = EmailSubject(memberUser.UserName, changePasswordUrl, this.PortalSettings.PortalName) as ViewResult;
 
