@@ -11,45 +11,45 @@
             font-size: 15px;
         }
 
-            .signin-page .input-row {
-                margin-bottom: 10px;
-            }
+        .signin-page .input-row {
+            margin-bottom: 10px;
+        }
 
-            .signin-page input[type="text"],
-            .signin-page input[type="password"] {
-                width: 300px;
-                height: 40px;
+        .signin-page input[type="text"],
+        .signin-page input[type="password"] {
+            width: 300px;
+            height: 40px;
+            font-size: 15px;
+            border: 1px solid #cccccc !important;
+            box-shadow: none;
+        }
+
+        .signin-page input[type="checkbox"] {
+            margin: 0px 5px 0px 10px;
+            vertical-align: -2px;
+        }
+
+            .signin-page input[type="checkbox"] + label {
                 font-size: 15px;
-                border: 1px solid #cccccc !important;
-                box-shadow: none;
             }
 
-            .signin-page input[type="checkbox"] {
-                margin: 0px 5px 0px 10px;
-                vertical-align: -2px;
+        .signin-page .forgot-link {
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+            .signin-page .forgot-link:hover {
+                color: #6696ff;
             }
 
-                .signin-page input[type="checkbox"] + label {
-                    font-size: 15px;
-                }
-
-            .signin-page .forgot-link {
-                font-size: 15px;
-                text-decoration: none;
-            }
-
-                .signin-page .forgot-link:hover {
-                    color: #6696ff;
-                }
-
-            .signin-page .login-button {
-                width: 300px;
-                height: 44px;
-                color: #fff;
-                cursor: pointer;
-                background: #1a242f;
-                font-size: 15px !important;
-            }
+        .signin-page .login-button {
+            width: 300px;
+            height: 44px;
+            color: #fff;
+            cursor: pointer;
+            background: #1a242f;
+            font-size: 15px !important;
+        }
 
         .desktopmodules_coremodules_signin_signincool_ascx .module_Body {
             width: 1000px;
@@ -94,7 +94,7 @@
             <label id="Message" class="Error"></label>
             <br />
         </div>
-        <div id="divSuccess" style="color: green; font-size: 20px"></div>
+        <div id="divSuccess" style="color: green; font-size: 18px"></div>
 
     </div>
 
@@ -117,7 +117,7 @@
                         $('#Message').text(data.Message);
                         if (data.ok) {
                             $('#Fields').hide();
-                            $('#divSuccess').html('Success! We have sent you an e-email to reset your password, please check your inbox or your SPAM folder.');
+                            $('#divSuccess').html('Success! We have sent you an e-mail to reset your password, please check your inbox or SPAM folder.');
                         }
                     },
                     error: function (data) {
