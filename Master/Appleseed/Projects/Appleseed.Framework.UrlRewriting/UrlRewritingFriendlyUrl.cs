@@ -46,7 +46,7 @@ namespace Appleseed.Framework.UrlRewriting
 
             // Check requested page url contains the /site when friendly URL is on
             var handlerFlag = System.Configuration.ConfigurationManager.AppSettings["handlerFlag"];
-            if (pagepath.Contains("/" + handlerFlag))
+            if (pagepath.Contains("/" + handlerFlag + "/"))
             {
                 string[] splitpaths = pagepath.Split('/');
                 int index = Array.IndexOf(splitpaths, handlerFlag);
