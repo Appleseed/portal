@@ -16,6 +16,28 @@
     .dataTables_filter label{
         color:#fff;
     }
+    #Content_ContentPane_ctl01_gdPages_info span{
+        color:#000000 !important;
+    }
+    .dataTables_wrapper .dataTables_info{
+        color:#fff;
+    }
+    tr.odd{
+        background-color: #f9f9f9 !important;
+    }
+
+    tr.odd td, tr.even td
+    {
+        padding: 8px 10px !important;
+    }
+     tr.odd td span, tr.even td span
+    {
+        color:#000000 !important;
+    }
+     tr.odd:hover, tr.even:hover
+     {
+             background-color: #f6f6f6;
+     }
 </style>
 
 <div style="width: 100%">
@@ -76,31 +98,24 @@
             </div>
         </div>
     </div>
-
-    <div class="module-row" style="clear: both;">
-        <br />
-        <br />
-        <h5>Update/Delete Short Url</h5>
-    </div>
     <br />
-    <label>Pages</label>
     <div class="module-row">
         <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1"  OnRowEditing="GdPages_RowEditing"
             OnRowDeleting="gdPages_RowDeleting" OnRowCancelingEdit="gdPages_RowCancelingEdit" OnRowDataBound="gdPages_RowDataBound" OnRowUpdating="gdPages_RowUpdating" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Page#">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="Page ID">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageID" Text='<%# Eval("PageID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Destination Page Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="Destination Page URL">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFullName"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Short Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="Short URL">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -129,14 +144,14 @@
     <div class="module-row">
         <asp:GridView ID="gdDynamicPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowUpdating="gdDynamicPages_RowUpdating" OnRowCancelingEdit="gdDynamicPages_RowCancelingEdit" OnRowEditing="GdDynamicPages_RowEditing" OnRowDeleting="gdDynamicPages_RowDeleting" OnRowDataBound="gdDynamicPages_RowDataBound" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
-                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="SR#">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="SR#">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblSrNo" Text='<%# Eval("SRINDEX") %>'></asp:Label>
                         <asp:Label runat="server" ID="lblPageID" Visible="false" Text='<%# Eval("DynamicPageId") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Destination Page Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="Destination Page URL">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFullName" Text='<%# Eval("RedirectToUrl") %>'></asp:Label>
                     </ItemTemplate>
@@ -146,7 +161,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="tHead" HeaderText="Short Url">
+                <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="Short URL">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblPageFriendlyUrl"></asp:Label>
                     </ItemTemplate>
@@ -156,9 +171,9 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:CommandField ShowEditButton="true" ButtonType="Button" ValidationGroup="EditFriendlyUrl" HeaderStyle-CssClass="tHead  no-sort" ItemStyle-CssClass="tHead" ControlStyle-CssClass="CommandButton" runat="server" />
+                <asp:CommandField ShowEditButton="true" ButtonType="Button" ValidationGroup="EditFriendlyUrl" HeaderStyle-CssClass="tHead  no-sort" ItemStyle-CssClass="" ControlStyle-CssClass="CommandButton" runat="server" />
 
-                <asp:TemplateField HeaderStyle-CssClass="tHead no-sort" ItemStyle-CssClass="tHead">
+                <asp:TemplateField HeaderStyle-CssClass="tHead no-sort" ItemStyle-CssClass="">
                     <ItemTemplate>
                         <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:Button>
                     </ItemTemplate>
@@ -184,12 +199,17 @@
             "paging": false, "order": [[1, "desc"]],
             columnDefs: [
                 { targets: 'no-sort', orderable: false }
-            ]});
+            ]
+        });
+
+       
+
         $('#Content_ContentPane_ctl01_gdDynamicPages').DataTable({
             "paging": false, "order": [[1, "desc"]],
             columnDefs: [
                 { targets: 'no-sort', orderable: false }
             ] });
+
     });
 
 </script>
