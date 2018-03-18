@@ -1,0 +1,16 @@
+﻿{
+  "timezones": [
+    {
+      "name": "Coordinated Universal Time",
+      "code": "UTC"
+    },
+    {
+      "name": "Eastern Daylight Time",
+      "code": "EDT"
+    },
+    {
+      "name": "Indian Standard Time",
+      "code": "IST"
+    }
+  ]
+}

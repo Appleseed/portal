@@ -5312,6 +5312,7 @@
     <Content Include="aspnet_client\JQX\styles\images\start\Thumbs.db" />
     <Content Include="aspnet_client\JQX\styles\images\sunny\Thumbs.db" />
     <Content Include="aspnet_client\JQX\styles\images\Thumbs.db" />
+    <Content Include="Portals\_Appleseed\TimeZoneShortNames.json" />
     <None Include="Properties\PublishProfiles\Appleseed.Publish.Profile.pubxml" />
     <None Include="Properties\PublishProfiles\Custom.File.System.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />

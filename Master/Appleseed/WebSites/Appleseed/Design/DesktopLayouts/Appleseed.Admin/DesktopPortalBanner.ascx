@@ -6,13 +6,36 @@
     Src="~/DesktopModules/CoreModules/Admin/AdminLeftMenu.ascx" %>
 
 <script runat="server">
+    public class TimeZoneItem
+    {
+        public string name { get; set; }
+        public string code { get; set; }
+    }
+    public class TimeZones
+    {
+        public List<TimeZoneItem> timezones { get; set; }
+    }
+
     private void Page_Load(object sender, System.EventArgs e)
     {
         PortalTitle.DataBind();
         PortalImage.DataBind();
+        string tzCode = "";
+        using (System.IO.StreamReader r = new System.IO.StreamReader(Server.MapPath("/Portals/_Appleseed/TimeZoneShortNames.json")))
+        {
+            string json = r.ReadToEnd();
+            
+            var timeZones = Newtonsoft.Json.JsonConvert.DeserializeObject<TimeZones>(json);
+            var tzone = timeZones.timezones.FirstOrDefault(tz => tz.name.ToLower() == TimeZone.CurrentTimeZone.StandardName.ToLower());
+            if (tzone != null)
+            {
+                tzCode = tzone.code;
+            }
+        }
+
         ltrLoggedInUserName.Text = PortalSettings.CurrentUser.Identity.Name;
         var localLastLoginTime = TimeZoneInfo.ConvertTime(DateTime.SpecifyKind(PortalSettings.CurrentUser.Identity.LastLoginDate, DateTimeKind.Utc), TimeZoneInfo.Utc, TimeZoneInfo.Local);
-        ltrLoggedInUserLastActivityDate.Text = localLastLoginTime.ToString("dd MMM h:mmtt");
+        ltrLoggedInUserLastActivityDate.Text = localLastLoginTime.ToString("dd MMM h:mm tt") + " " + tzCode;
     }
 </script>
 
@@ -48,15 +71,14 @@
     <div id="left-wide" style="float: right;" class="bg-dark dker">
         <!-- /.search-bar -->
         <div class="media user-media">
-           
-            <div class="user-wrapper" style="padding:10px;">
-              
+
+            <div class="user-wrapper" style="padding: 10px;">
+
                 <div class="media-body">
                     <h5 class="media-heading">
                         <asp:Literal ID="ltrLoggedInUserName" runat="server"></asp:Literal></h5>
                     <ul class="list-unstyled user-info">
-                        <li>Last Access :
-              <br>
+                        <li>Last Access:<br>
                             <small>
                                 <i class="fa fa-calendar"></i>
                                 <span class="access-date">&nbsp;<asp:Literal ID="ltrLoggedInUserLastActivityDate" runat="server"></asp:Literal></span></small>
