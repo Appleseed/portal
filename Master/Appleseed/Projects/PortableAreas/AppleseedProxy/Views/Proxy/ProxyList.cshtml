@@ -52,7 +52,7 @@
         }
 
         tr.odd {
-            background-color: #f9f9f9 !important;
+            background-color: #e2e2e2 !important;
         }
 
             tr.odd td, tr.even td {
@@ -64,7 +64,7 @@
                 }
 
         .tblProxy tr.odd:hover, .tblProxy tr.even:hover {
-            background-color: #f6f6f6;
+            background-color: #c8c8c8 !important;
         }
 
         .tblProxy tb {
@@ -125,12 +125,12 @@
 
     <script src="/aspnet_client/AppleseedProxy/Proxy.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('#tblProxy').DataTable({
-            "paging": false, "order": [[0, "asc"]],
-            columnDefs: [
-                { targets: 'no-sort', orderable: false }
-            ]
+        $(document).ready(function () {
+            $('#tblProxy').DataTable({
+                "paging": false, "order": [[0, "asc"]],
+                columnDefs: [
+                    { targets: 'no-sort', orderable: false }
+                ]
+            });
         });
-    });
     </script>
