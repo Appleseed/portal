@@ -1597,10 +1597,6 @@
       <Project>{e3439ce8-7e7c-49f1-8619-964707d1bd24}</Project>
       <Name>AppleseedProxy</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Projects\PortableAreas\LeavesArticleWidget\LeavesArticleWidget.csproj">
-      <Project>{18dbbf27-ad3a-4a22-b983-9c59d32981e2}</Project>
-      <Name>LeavesArticleWidget</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Projects\PortableAreas\MemberInvite\MemberInvite.csproj">
       <Project>{f97233c1-b99f-40f3-a400-779de77be40b}</Project>
       <Name>MemberInvite</Name>
