@@ -23,7 +23,7 @@
         color:#fff;
     }
     tr.odd{
-        background-color: #f9f9f9 !important;
+        background-color: #e2e2e2 !important;
     }
 
     tr.odd td, tr.even td
@@ -36,7 +36,7 @@
     }
      tr.odd:hover, tr.even:hover
      {
-             background-color: #f6f6f6;
+             background-color: #c8c8c8 !important;
      }
 </style>
 

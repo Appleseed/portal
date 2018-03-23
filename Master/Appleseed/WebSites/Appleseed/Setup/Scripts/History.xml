@@ -1478,4 +1478,12 @@
       <Script>2.0.0.1926.sql</Script>
     </Scripts>
   </Release>
+  <Release>
+    <ID>1927</ID>
+    <Version>2.0.0.1927</Version>
+    <Date>2018-03-22T00:00:00.0000000-03:00</Date>
+    <Modules>
+      <Installer>DesktopModules/CoreModules/Leaves.Article.Listing/install.xml</Installer>
+    </Modules>
+  </Release>
 </History>

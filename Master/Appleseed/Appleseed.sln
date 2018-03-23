@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{B5258F28-F3D0-4E44-85DA-FB9545800BAF}"
 EndProject
@@ -180,6 +180,9 @@ Global
 		{F97233C1-B99F-40F3-A400-779DE77BE40B} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
 		{344F1E24-093F-42E8-8EF3-DAE1186B7948} = {B5258F28-F3D0-4E44-85DA-FB9545800BAF}
 		{0D2DDA6D-D1F8-45FE-B2A9-EECAEC6A5E36} = {E7F52803-87CE-4F80-8507-CF1C6EA1A46F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BB68792-D91C-4578-B32C-5DF8B306E620}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Appleseed.ndproj"

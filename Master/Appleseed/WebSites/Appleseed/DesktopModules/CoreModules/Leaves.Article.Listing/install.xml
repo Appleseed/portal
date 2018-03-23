@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Modules>
+  <Module>
+    <FriendlyName>Leaves Article Listing</FriendlyName>
+    <DesktopSource>DesktopModules/CoreModules/Leaves.Article.Listing/LeavesArticleListingModule.ascx</DesktopSource>
+    <MobileSource></MobileSource>
+  </Module>
+</Modules>
