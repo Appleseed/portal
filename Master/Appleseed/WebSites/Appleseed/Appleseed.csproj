@@ -1091,6 +1091,12 @@
     <Compile Include="DesktopModules\CoreModules\HTMLDocument\HtmlVersonHistory.aspx.designer.cs">
       <DependentUpon>HtmlVersonHistory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\Leaves.Article.Listing\LeavesArticleListingModule.ascx.cs">
+      <DependentUpon>LeavesArticleListingModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\Leaves.Article.Listing\LeavesArticleListingModule.ascx.designer.cs">
+      <DependentUpon>LeavesArticleListingModule.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\ModuleDefinitionsAll\ModuleDefsAll.ascx.cs">
       <DependentUpon>ModuleDefsAll.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1590,6 +1596,10 @@
     <ProjectReference Include="..\..\Projects\PortableAreas\AppleseedProxy\AppleseedProxy.csproj">
       <Project>{e3439ce8-7e7c-49f1-8619-964707d1bd24}</Project>
       <Name>AppleseedProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Projects\PortableAreas\LeavesArticleWidget\LeavesArticleWidget.csproj">
+      <Project>{18dbbf27-ad3a-4a22-b983-9c59d32981e2}</Project>
+      <Name>LeavesArticleWidget</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Projects\PortableAreas\MemberInvite\MemberInvite.csproj">
       <Project>{f97233c1-b99f-40f3-a400-779de77be40b}</Project>
@@ -4988,6 +4998,8 @@
     <Content Include="DesktopModules\CoreModules\HTMLDocument\preview.html" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\readme.txt" />
     <Content Include="DesktopModules\CoreModules\HTMLDocument\uninstall.sql" />
+    <Content Include="DesktopModules\CoreModules\Leaves.Article.Listing\install.xml" />
+    <Content Include="DesktopModules\CoreModules\Leaves.Article.Listing\LeavesArticleListingModule.ascx" />
     <Content Include="DesktopModules\CoreModules\ModuleDefinitionsAll\install.xml" />
     <Content Include="DesktopModules\CoreModules\ModuleDefinitionsAll\ModuleDefinitionsAll.xml" />
     <Content Include="DesktopModules\CoreModules\ModuleDefinitionsAll\ModuleDefsAll.ascx" />
