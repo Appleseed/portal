@@ -1097,6 +1097,12 @@
     <Compile Include="DesktopModules\CoreModules\Leaves.Article.Listing\LeavesArticleListingModule.ascx.designer.cs">
       <DependentUpon>LeavesArticleListingModule.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DesktopModules\CoreModules\LeavesArticleMosaic\LeavesArticleMosaicModule.ascx.cs">
+      <DependentUpon>LeavesArticleMosaicModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\CoreModules\LeavesArticleMosaic\LeavesArticleMosaicModule.ascx.designer.cs">
+      <DependentUpon>LeavesArticleMosaicModule.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DesktopModules\CoreModules\ModuleDefinitionsAll\ModuleDefsAll.ascx.cs">
       <DependentUpon>ModuleDefsAll.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4996,6 +5002,9 @@
     <Content Include="DesktopModules\CoreModules\HTMLDocument\uninstall.sql" />
     <Content Include="DesktopModules\CoreModules\Leaves.Article.Listing\install.xml" />
     <Content Include="DesktopModules\CoreModules\Leaves.Article.Listing\LeavesArticleListingModule.ascx" />
+    <Content Include="DesktopModules\CoreModules\LeavesArticleMosaic\install.xml" />
+    <Content Include="DesktopModules\CoreModules\LeavesArticleMosaic\LeavesArticleMosaicModule.ascx" />
+    <Content Include="DesktopModules\CoreModules\LeavesArticleMosaic\No_Image_Available.jpg" />
     <Content Include="DesktopModules\CoreModules\ModuleDefinitionsAll\install.xml" />
     <Content Include="DesktopModules\CoreModules\ModuleDefinitionsAll\ModuleDefinitionsAll.xml" />
     <Content Include="DesktopModules\CoreModules\ModuleDefinitionsAll\ModuleDefsAll.ascx" />

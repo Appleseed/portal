@@ -1,136 +1,136 @@
 ﻿@model IEnumerable<Appleseed.Framework.Configuration.Items.ProxyItem>
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
-<script type="text/javascript" src="//cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
-<style>
-    .tblProxy {
-        table-layout: fixed;
-        margin-top: 10px;
-    }
-
-        .tblProxy .field-1 {
-            width: 10%;
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="//cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
+    <style>
+        .tblProxy {
+            table-layout: fixed;
+            margin-top: 10px;
         }
 
-        .tblProxy .field-2 {
-            width: 25%;
-        }
+            .tblProxy .field-1 {
+                width: 10%;
+            }
 
-        .tblProxy .field-3 {
-            width: 36%;
-        }
+            .tblProxy .field-2 {
+                width: 25%;
+            }
 
-        .tblProxy .field-4 {
-            width: 15%;
-        }
+            .tblProxy .field-3 {
+                width: 36%;
+            }
 
-        .tblProxy .field-5 {
-            width: 14%;
-        }
+            .tblProxy .field-4 {
+                width: 15%;
+            }
 
-        .tblProxy td.field-2 {
-            word-wrap: break-word;
-        }
+            .tblProxy .field-5 {
+                width: 14%;
+            }
 
-    /*.tblProxy td.field-3 {
+            .tblProxy td.field-2 {
+                word-wrap: break-word;
+            }
+
+        /*.tblProxy td.field-3 {
             overflow: hidden;
             text-overflow: ellipsis;
         }*/
 
 
 
-    .field-3 {
-        word-break: break-all !important;
-    }
-
-    .tblProxy th {
-        background-color: #fff;
-        color: #000 !important;
-    }
-
-    .dataTables_wrapper .dataTables_info {
-        color: #fff;
-    }
-
-    tr.odd {
-        background-color: #e2e2e2 !important;
-    }
-
-        tr.odd td, tr.even td {
-            padding: 8px 10px !important;
+        .field-3 {
+            word-break: break-all !important;
         }
 
-            tr.odd td span, tr.even td span {
-                color: #000000 !important;
+        .tblProxy th {
+            background-color: #fff;
+            color: #000 !important;
+        }
+
+        .dataTables_wrapper .dataTables_info {
+            color: #fff;
+        }
+
+        tr.odd {
+            background-color: #e2e2e2 !important;
+        }
+
+            tr.odd td, tr.even td {
+                padding: 8px 10px !important;
             }
 
-    .tblProxy tr.odd:hover, .tblProxy tr.even:hover {
-        background-color: #c8c8c8 !important;
-    }
+                tr.odd td span, tr.even td span {
+                    color: #000000 !important;
+                }
 
-    .tblProxy tb {
-        color: #000 !important;
-    }
-
-    .field-3, .field-1, .field-2 {
-        color: #000 !important;
-    }
-
-    .dataTables_filter label {
-        color: #fff;
-    }
-</style>
-<b><a id="AddNewProxy" href="/Proxy/CreateProxy" class="CommandButton">Add New Proxy</a></b>
-
-<table style="width:100%" class="tblProxy" id="tblProxy">
-    <thead>
-        <tr>
-            <th class="field-1">Service #</th>
-            <th class="field-2">Service Title</th>
-            <th class="field-3">Service Url</th>
-            <th class="field-3">Proxy Url</th>
-            <th class="field-4 no-sort"></th>
-            <th class="field-5 no-sort"></th>
-        </tr>
-
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td class="field-1">
-                    @Html.DisplayFor(modelItem => item.ServiceId)
-                </td>
-                <td class="field-2">
-                    @Html.DisplayFor(modelItem => item.ServiceTitle)
-                </td>
-                <td class="field-3">
-                    @Html.DisplayFor(modelItem => item.ServiceUrl)
-                </td>
-                <td class="field-3">
-                    @Html.DisplayFor(modelItem => item.ASProxyUrl)
-                </td>
-                <td class="field-4">
-                    @Html.ActionLink("Edit", "CreateProxy", new { id = item.ServiceId }, new { @class = "editProxy CommandButton" })
-                </td>
-                <td class="field-5">
-                    @Html.ActionLink("Delete", "DeleteProxy", new { id = item.ServiceId }, new { @class = "deleteProxy CommandButton" })
-                </td>
-            </tr>
+        .tblProxy tr.odd:hover, .tblProxy tr.even:hover {
+            background-color: #c8c8c8 !important;
         }
-    </tbody>
-</table>
-<div id="dialog-edit" style="display: none">
 
-</div>
+        .tblProxy tb {
+            color: #000 !important;
+        }
 
-<script src="/aspnet_client/AppleseedProxy/Proxy.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#tblProxy').DataTable({
-            "paging": false, "order": [[0, "asc"]],
-            columnDefs: [
-                { targets: 'no-sort', orderable: false }
-            ]
+        .field-3, .field-1, .field-2 {
+            color: #000 !important;
+        }
+
+        .dataTables_filter label {
+            color: #fff;
+        }
+    </style>
+    <b><a id="AddNewProxy" href="/Proxy/CreateProxy" class="CommandButton">Add New Proxy</a></b>
+
+    <table style="width:100%" class="tblProxy" id="tblProxy">
+        <thead>
+            <tr>
+                <th class="field-1">Service #</th>
+                <th class="field-2">Service Title</th>
+                <th class="field-3">Service Url</th>
+                <th class="field-3">Proxy Url</th>
+                <th class="field-4 no-sort"></th>
+                <th class="field-5 no-sort"></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="field-1">
+                        @Html.DisplayFor(modelItem => item.ServiceId)
+                    </td>
+                    <td class="field-2">
+                        @Html.DisplayFor(modelItem => item.ServiceTitle)
+                    </td>
+                    <td class="field-3">
+                        @Html.DisplayFor(modelItem => item.ServiceUrl)
+                    </td>
+                    <td class="field-3">
+                        @Html.DisplayFor(modelItem => item.ASProxyUrl)
+                    </td>
+                    <td class="field-4">
+                        @Html.ActionLink("Edit", "CreateProxy", new { id = item.ServiceId }, new { @class = "editProxy CommandButton" })
+                    </td>
+                    <td class="field-5">
+                        @Html.ActionLink("Delete", "DeleteProxy", new { id = item.ServiceId }, new { @class = "deleteProxy CommandButton" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div id="dialog-edit" style="display: none">
+
+    </div>
+
+    <script src="/aspnet_client/AppleseedProxy/Proxy.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tblProxy').DataTable({
+                "paging": false, "order": [[0, "asc"]],
+                columnDefs: [
+                    { targets: 'no-sort', orderable: false }
+                ]
+            });
         });
-    });
-</script>
+    </script>
