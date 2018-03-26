@@ -39,6 +39,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
         {
             var group = SettingItemGroup.MODULE_SPECIAL_SETTINGS;
             var groupOrderBase = (int)SettingItemGroup.MODULE_SPECIAL_SETTINGS;
+
             var tags = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
             {
                 Order = (int)groupOrderBase + 1,

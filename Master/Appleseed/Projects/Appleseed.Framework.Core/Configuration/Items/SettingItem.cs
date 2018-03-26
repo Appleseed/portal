@@ -168,31 +168,31 @@ namespace Appleseed.Framework
                 switch (this.Group)
                 {
                     case SettingItemGroup.NONE:
-                        return "Generic settings";
+                        return "Generic Settings";
 
                     case SettingItemGroup.THEME_LAYOUT_SETTINGS:
                         return "Theme and layout settings";
 
                     case SettingItemGroup.SECURITY_USER_SETTINGS:
-                        return "Users and Security settings";
+                        return "Users and Security Settings";
 
                     case SettingItemGroup.CULTURE_SETTINGS:
-                        return "Culture settings";
+                        return "Culture Settings";
 
                     case SettingItemGroup.BUTTON_DISPLAY_SETTINGS:
-                        return "Buttons and Display settings";
+                        return "Buttons and Display Settings";
 
                     case SettingItemGroup.MODULE_SPECIAL_SETTINGS:
-                        return "Specific Module settings";
+                        return "Specific Module Settings";
 
                     case SettingItemGroup.META_SETTINGS:
-                        return "Meta settings";
+                        return "Meta Settings";
 
                     case SettingItemGroup.MISC_SETTINGS:
-                        return "Miscellaneous settings";
+                        return "Miscellaneous Settings";
 
                     case SettingItemGroup.NAVIGATION_SETTINGS:
-                        return "Navigation settings";
+                        return "Navigation Settings";
 
                     case SettingItemGroup.CUSTOM_USER_SETTINGS:
                         return "Custom User Settings";

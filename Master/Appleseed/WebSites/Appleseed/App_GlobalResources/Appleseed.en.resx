@@ -667,7 +667,7 @@
     <value>Print this</value>
   </data>
   <data name="BUTTON_DISPLAY_SETTINGS" xml:space="preserve">
-    <value>Buttons and Display settings</value>
+    <value>Buttons and Display Settings</value>
   </data>
   <data name="BUYNOW" xml:space="preserve">
     <value>Buy Now</value>
@@ -2119,7 +2119,7 @@
     <value>This folder is used for editor in this module to take and upload images</value>
   </data>
   <data name="MODULE_SPECIAL_SETTINGS" xml:space="preserve">
-    <value>Specific Module settings</value>
+    <value>Specific Module Settings</value>
   </data>
   <data name="MODULE_TITLE" xml:space="preserve">
     <value>New Module Name</value>
