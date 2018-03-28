@@ -562,6 +562,59 @@ namespace Appleseed.Framework.Web.UI.WebControls
             tabGroup.Attributes.Add("class", "tabGroup");
             tabPanelGroup.Controls.Add(tabGroup);
 
+            Dictionary<string, HtmlGenericControl> lIs = new Dictionary<string, HtmlGenericControl>();
+            Dictionary<string, Table> tbPs = new Dictionary<string, Table>();
+
+            foreach (string currentSetting in settingsOrder.GetValueList())
+            {
+                var currentItem = (ISettingItem)this.settings[currentSetting];
+                if (!lIs.ContainsKey(currentItem.Group.ToString()))
+                {
+                    var tabDefault1 = new HtmlGenericControl("li");
+                    tabDefault1.Attributes.Add("class", "tabDefault");
+
+                    // App_GlobalResources
+                    //tabDefault.InnerText = General.GetString(currentItem.Group.ToString());
+                    var aDefault1 = new HtmlGenericControl("a");
+                    aDefault1.Attributes.Add("href", "#" + currentItem.Group.ToString());
+                    aDefault1.InnerText = General.GetString(currentItem.Group.ToString());
+                    tabDefault1.Controls.Add(aDefault1);
+
+                    tabGroup.Controls.Add(tabDefault1);
+
+                    var fs = CreateNewFieldSet(currentItem);
+
+                    var tbl1 = new Table();
+                    tbl1.Attributes.Add("class", "SettingsTableGroup");
+                    tbl1.Attributes.Add("width", "100%");
+
+                    lIs.Add(currentItem.Group.ToString(), tabDefault1);
+                    tbPs.Add(currentItem.Group.ToString(), tbl1);
+
+                    fs.Controls.Add(tbl1);
+
+                    var tabPanel1 = new HtmlGenericControl("div");
+                    tabPanel1.Attributes.Add("class", "tabPanel");
+                    tabPanel1.Attributes.Add("id", currentItem.Group.ToString());
+
+                    tabPanel1.Controls.Add(fs);
+
+                    tabPanelGroup.Controls.Add(tabPanel1);
+                }
+
+                if (tbPs.ContainsKey(currentItem.Group.ToString()))
+                {
+                    Table tbl1 = tbPs[currentItem.Group.ToString()];
+                    tbl1.Rows.Add(this.CreateOneSettingRow(currentSetting, currentItem));
+                }
+            }
+
+            this.Controls.AddAt(0, tabPanelGroup);
+
+            this.groupingTabsCreated = true;
+
+            return;
+
             var tabPanel = new HtmlGenericControl("div");
             tabPanel.Attributes.Add("class", "tabPanel");
 
@@ -619,7 +672,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
                                 dicc.Add(TabName, TabName);
                                 tabGroup.Controls.Add(tabDefault);
                             }
-                            else {
+                            else
+                            {
                                 tabGroup.Controls.Add(tabDefault);
                             }
                         }
@@ -662,7 +716,8 @@ namespace Appleseed.Framework.Web.UI.WebControls
                     tabGroup.Controls.Add(tabDefault);
                 }
             }
-            else {
+            else
+            {
                 tabGroup.Controls.Add(tabDefault);
             }
 

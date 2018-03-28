@@ -1486,4 +1486,12 @@
       <Installer>DesktopModules/CoreModules/Leaves.Article.Listing/install.xml</Installer>
     </Modules>
   </Release>
+  <Release>
+    <ID>1928</ID>
+    <Version>2.0.0.1928</Version>
+    <Date>2018-03-24T00:00:00.0000000-03:00</Date>
+    <Modules>
+      <Installer>DesktopModules/CoreModules/LeavesArticleMosaic/install.xml</Installer>
+    </Modules>
+  </Release>
 </History>

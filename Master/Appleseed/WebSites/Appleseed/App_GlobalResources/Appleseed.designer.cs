@@ -1357,7 +1357,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Buttons and Display settings.
+        ///   Looks up a localized string similar to Buttons and Display Settings.
         /// </summary>
         internal static string BUTTON_DISPLAY_SETTINGS {
             get {
@@ -10665,7 +10665,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specific Module settings.
+        ///   Looks up a localized string similar to Specific Module Settings.
         /// </summary>
         internal static string MODULE_SPECIAL_SETTINGS {
             get {
