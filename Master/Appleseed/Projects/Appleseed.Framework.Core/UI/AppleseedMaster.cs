@@ -233,7 +233,7 @@ namespace Appleseed
         {
             clearInterval(timerSessionCheck);
             alert('Your session has timed out due to inactivity. Please log back in.');
-            window.location = '/DesktopModules/CoreModules/Admin/Logon.aspx';
+            window.location = '/1';
         }
     }
     var timerSessionCheck = setInterval(CheckSessionTime, 1000);
