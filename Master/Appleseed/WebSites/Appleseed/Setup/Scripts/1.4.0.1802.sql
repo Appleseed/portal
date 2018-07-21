@@ -27,7 +27,14 @@ FROM         rb_ModuleUserSettings
 WHERE     (ModuleID = @ModuleID AND UserID = @UserID)
 GO
 
-
+IF NOT EXISTS ( SELECT  *
+            FROM    sys.objects
+            WHERE   object_id = OBJECT_ID(N'rb_UpdateModuleUserSetting')
+                    AND type IN ( N'P', N'PC' ) ) 
+BEGIN
+	drop PROCEDURE rb_UpdateModuleUserSetting
+END
+GO
 
 CREATE  PROCEDURE rb_UpdateModuleUserSetting
 (
@@ -37,6 +44,7 @@ CREATE  PROCEDURE rb_UpdateModuleUserSetting
     @SettingValue  nvarchar(1500)
 )
 AS
+BEGIN
 IF NOT EXISTS (
     SELECT 
         * 
@@ -72,5 +80,7 @@ WHERE
     UserID = @UserID
   AND
     SettingName = @SettingName
+
+END
 GO
 
