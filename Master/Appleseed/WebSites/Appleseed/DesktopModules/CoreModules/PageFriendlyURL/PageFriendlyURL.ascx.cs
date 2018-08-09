@@ -58,7 +58,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
                 divDyanamicPage.Visible = false;
 
-                drpPageList.Items.Add(new ListItem() { Text = "Dynamic Page", Value = "-1" });
+                drpPageList.Items.Add(new ListItem() { Text = "Secondary Short URL", Value = "-1" });
 
                 //div for messages will be false when page is loaded
                 divErrorMessage.Visible = false;
@@ -152,14 +152,14 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
             if (drpPageList.SelectedValue != "-1")
             {
-                btnSaveWithoutExtension.Visible = false;
+                //btnSaveWithoutExtension.Visible = false;
                 PagesDB pages = new PagesDB();
                 // Get and Set friendlyURL from db to Textbox when change the dropdown value
                 txtFriendlyURL.Text = pages.GetFriendlyURl(Convert.ToInt32(drpPageList.SelectedValue));
             }
             else
             {
-                btnSaveWithoutExtension.Visible = true;
+                //btnSaveWithoutExtension.Visible = true;
             }
         }
 
