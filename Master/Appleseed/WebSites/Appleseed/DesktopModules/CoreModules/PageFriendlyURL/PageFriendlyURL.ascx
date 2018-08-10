@@ -50,7 +50,7 @@
 
     <div class="module-row">
         <div id="url-instructions">
-            <p>To create a single Short URL, please select the specific page for which you want to create a shortened URL for from the Page dropdown list. After selecting the page, add the Short URL in the Short URL field. </p>
+            <p>To create a single Short URL, please select the specific page for which you want to create a shortened URL for from the Page dropdown list. After selecting the page, add the Short URL in the “Short URL” field. </p>
             <p>To create a secondary Short URL for a page that already has a primary Short URL, please select "Secondary Short URL" from the Page dropdown list. Afterward, add the Primary Short URL that page already has in the "Primary Short URL" field. In the "Secondary Short URL" field please add the secondary short URL you desire.</p>
         </div>
     </div>
@@ -84,7 +84,7 @@
                 <h6>Primary Short URL</h6>
             </div>
             <div class="col-md-6">
-                <asp:TextBox ID="txtDyanmicPage" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Custom Destination Page URL" /><br />
+                <asp:TextBox ID="txtDyanmicPage" CssClass="FixTop" runat="server" Width="265" PlaceHolder="" /><br />
                 <asp:RequiredFieldValidator ID="rqvtxtDyanmicPage" runat="server" Display="Dynamic" ErrorMessage="Please enter valid URL " ControlToValidate="txtDyanmicPage" ValidationGroup="Save" />
             </div>
         </div>
@@ -93,10 +93,10 @@
     <div class="module-row">
         <div class="col-md-9">
             <div class="col-md-3">
-                <h6>Secondary Short URL</h6>
+                <h6 id="h6Label" runat="server">Primary Short URL</h6>
             </div>
             <div class="col-md-6">
-                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Short Page URL" />
+                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="" />
                 <asp:Label ID="lblFriendlyExtension" runat="server" /><br />
                 <asp:RequiredFieldValidator ID="rvftxtFriendlyUrl" runat="server" Display="Dynamic" ErrorMessage="Please enter valid URL " ControlToValidate="txtFriendlyURL" ValidationGroup="Save" />
             </div>
