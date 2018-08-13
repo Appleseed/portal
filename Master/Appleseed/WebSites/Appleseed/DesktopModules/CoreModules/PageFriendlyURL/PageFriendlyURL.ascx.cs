@@ -259,7 +259,7 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
                 FullPageName = string.Empty;
                 AppendFullPageName(Convert.ToInt32(((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageID")).Text));
-                ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFullName")).Text = FullPageName;
+                ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFullName")).Text = "/" + FullPageName;
 
                 if (e.Row.RowState == DataControlRowState.Normal || e.Row.RowState == DataControlRowState.Alternate)
                 {

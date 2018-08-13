@@ -64,7 +64,7 @@
                 <h5 style="color: green">Saved successfully</h5>
             </div>
             <div id="divErrorMessage" runat="server" role="alert" visible="false">
-                <h5 style="color: red">Specified Friedly URL is already exists. Please specify another/different.</h5>
+                <h5 style="color: red">This primary short URL already has a secondary short URL associated with it. Please use a different primary short URL or edit the already existing one.</h5>
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@
                 <asp:TemplateField HeaderStyle-CssClass="no-sort tHead" ItemStyle-CssClass="">
                     <ItemTemplate>
                         <%--<asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short URL?');" Text="Delete"></asp:LinkButton>--%>
-                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short URL?');" Text="Delete" />
+                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure want to delete this short URL entry?');" Text="Delete" />
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -187,7 +187,7 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="tHead no-sort" ItemStyle-CssClass="">
                     <ItemTemplate>
-                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:Button>
+                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure want to delete this short URL entry?');" Text="Delete"></asp:Button>
                     </ItemTemplate>
                 </asp:TemplateField>
 
