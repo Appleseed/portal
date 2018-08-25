@@ -52,6 +52,7 @@
         <div id="url-instructions">
             <p>To create a single Short URL, please select the specific page for which you want to create a shortened URL for from the Page dropdown list. After selecting the page, add the Short URL in the “Short URL” field. </p>
             <p>To create a secondary Short URL for a page that already has a primary Short URL, please select "Secondary Short URL" from the Page dropdown list. Afterward, add the Primary Short URL that page already has in the "Primary Short URL" field. In the "Secondary Short URL" field please add the secondary short URL you desire.</p>
+            <p>For the short URL(s) that you set please make sure to begin the short URL(s) with "/", "http://", or "https://"</p>
         </div>
     </div>
     <div class="module-row">
@@ -65,6 +66,12 @@
             </div>
             <div id="divErrorMessage" runat="server" role="alert" visible="false">
                 <h5 style="color: red">This primary short URL already has a secondary short URL associated with it. Please use a different primary short URL or edit the already existing one.</h5>
+            </div>
+            <div id="divValidationErrorMessage" runat="server" role="alert" visible="false">
+                <h5 style="color: red">For the short URL(s) that you set please make sure to begin the short URL(s) with "/", "http://", or "https://"</h5>
+            </div>
+            <div id="divValidationErrorMessage2" runat="server" role="alert" visible="false">
+                <h5 style="color: red">For the short URL(s) that you set please make sure to begin the short URL(s) with "/"</h5>
             </div>
         </div>
     </div>
