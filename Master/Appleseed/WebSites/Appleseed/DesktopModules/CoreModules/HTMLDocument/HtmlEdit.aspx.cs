@@ -324,7 +324,20 @@ namespace Appleseed.DesktopModules.CoreModules.HTMLDocument
         protected void btnCreateNewVersion_Click(object sender, EventArgs e)
         {
             HtmlTextDB versionDB = new HtmlTextDB();
-            int maxVersion = drpVirsionList.Items.Count + 1;
+            int maxVersion = 1;
+            foreach (ListItem item in drpVirsionList.Items)
+            {
+                int cvInt = 0;
+                if (int.TryParse(item.Value, out cvInt))
+                {
+                    if (cvInt > maxVersion)
+                    {
+                        maxVersion = cvInt;
+                    }
+                }
+            }
+            maxVersion++;
+            //int maxVersion = drpVirsionList.Items.Count + 1;
             if (this.IsCodeWriter)
             {
                 this.DesktopText.Text = string.Format("<style type='text/css'>{0}</style>{1}<script type='text/javascript'>{2}</script>", this.cwCSS.InnerText, this.cwHTML.InnerText, this.cwJS.InnerText);
