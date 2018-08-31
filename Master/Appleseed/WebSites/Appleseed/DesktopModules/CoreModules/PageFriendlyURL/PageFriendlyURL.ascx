@@ -3,41 +3,46 @@
 <script type="text/javascript" src="//cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
 
 <style>
-    #Content_ContentPane_ctl01_gdPages>tbody>tb>span{
-        color:#000 !important;
+    #Content_ContentPane_ctl01_gdPages > tbody > tb > span {
+        color: #000 !important;
     }
-    .tHead, .tHead span{
-        background-color:#fff;
-        color:#000 !important;
+
+    .tHead, .tHead span {
+        background-color: #fff;
+        color: #000 !important;
     }
-    .tHead span{
-        margin: 10px 18px;
+
+        .tHead span {
+            margin: 10px 18px;
+        }
+
+    .dataTables_filter label {
+        color: #fff;
     }
-    .dataTables_filter label{
-        color:#fff;
+
+    #Content_ContentPane_ctl01_gdPages_info span {
+        color: #000000 !important;
     }
-    #Content_ContentPane_ctl01_gdPages_info span{
-        color:#000000 !important;
+
+    .dataTables_wrapper .dataTables_info {
+        color: #fff;
     }
-    .dataTables_wrapper .dataTables_info{
-        color:#fff;
-    }
-    tr.odd{
+
+    tr.odd {
         background-color: #e2e2e2 !important;
     }
 
-    tr.odd td, tr.even td
-    {
-        padding: 8px 10px !important;
-    }
-     tr.odd td span, tr.even td span
-    {
-        color:#000000 !important;
-    }
-     tr.odd:hover, tr.even:hover
-     {
-             background-color: #c8c8c8 !important;
-     }
+        tr.odd td, tr.even td {
+            padding: 8px 10px !important;
+        }
+
+            tr.odd td span, tr.even td span {
+                color: #000000 !important;
+            }
+
+        tr.odd:hover, tr.even:hover {
+            background-color: #c8c8c8 !important;
+        }
 </style>
 
 <div style="width: 100%">
@@ -45,13 +50,14 @@
 
     <div class="module-row">
         <div id="url-instructions">
-            <p>To create a "Short" url, select the specific page to which the Short url should be applied from the Page dropdown list. </p>
-            <p>Then, in the Short URL text box, create the Short url.</p>
+            <p>To create a single Short URL, please select the specific page for which you want to create a shortened URL for from the Page dropdown list. After selecting the page, add the Short URL in the “Short URL” field. </p>
+            <p>To create a secondary Short URL for a page that already has a primary Short URL, please select "Secondary Short URL" from the Page dropdown list. Afterward, add the Primary Short URL that page already has in the "Primary Short URL" field. In the "Secondary Short URL" field please add the secondary short URL you desire.</p>
+            <p>For the short URL(s) that you set please make sure to begin the short URL(s) with "/", "http://", or "https://"</p>
         </div>
     </div>
     <div class="module-row">
         <br />
-        <h5>Add Short Url</h5>
+        <h5>Add Short URL</h5>
     </div>
     <div class="module-row">
         <div class="col-md-9">
@@ -59,7 +65,13 @@
                 <h5 style="color: green">Saved successfully</h5>
             </div>
             <div id="divErrorMessage" runat="server" role="alert" visible="false">
-                <h5 style="color: red">Specified Friedly Url is already exists. Please specify another/different.</h5>
+                <h5 style="color: red">This primary short URL already has a secondary short URL associated with it. Please use a different primary short URL or edit the already existing one.</h5>
+            </div>
+            <div id="divValidationErrorMessage" runat="server" role="alert" visible="false">
+                <h5 style="color: red">For the short URL(s) that you set please make sure to begin the short URL(s) with "/", "http://", or "https://"</h5>
+            </div>
+            <div id="divValidationErrorMessage2" runat="server" role="alert" visible="false">
+                <h5 style="color: red">For the short URL(s) that you set please make sure to begin the short URL(s) with "/"</h5>
             </div>
         </div>
     </div>
@@ -70,10 +82,17 @@
             </div>
             <div class="col-md-6">
                 <asp:DropDownList ID="drpPageList" CssClass="FixTop" runat="server" ViewStateMode="Enabled" Width="265" AutoPostBack="true" OnSelectedIndexChanged="drpPageList_SelectedIndexChanged" />
-                <div runat="server" id="divDyanamicPage">
-                    <asp:TextBox ID="txtDyanmicPage" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Custom Destination Page Url" /><br />
-                    <asp:RequiredFieldValidator ID="rqvtxtDyanmicPage" runat="server" Display="Dynamic" ErrorMessage="Please enter valid Url " ControlToValidate="txtDyanmicPage" ValidationGroup="Save" />
-                </div>
+            </div>
+        </div>
+    </div>
+    <div class="module-row" runat="server" id="divDyanamicPage">
+        <div class="col-md-9">
+            <div class="col-md-3">
+                <h6>Primary Short URL</h6>
+            </div>
+            <div class="col-md-6">
+                <asp:TextBox ID="txtDyanmicPage" CssClass="FixTop" runat="server" Width="265" PlaceHolder="" /><br />
+                <asp:RequiredFieldValidator ID="rqvtxtDyanmicPage" runat="server" Display="Dynamic" ErrorMessage="Please enter valid URL " ControlToValidate="txtDyanmicPage" ValidationGroup="Save" />
             </div>
         </div>
     </div>
@@ -81,12 +100,12 @@
     <div class="module-row">
         <div class="col-md-9">
             <div class="col-md-3">
-                <h6>Short URL</h6>
+                <h6 id="h6Label" runat="server">Primary Short URL</h6>
             </div>
             <div class="col-md-6">
-                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="Short Page Url" />
+                <asp:TextBox ID="txtFriendlyURL" CssClass="FixTop" runat="server" Width="265" PlaceHolder="" />
                 <asp:Label ID="lblFriendlyExtension" runat="server" /><br />
-                <asp:RequiredFieldValidator ID="rvftxtFriendlyUrl" runat="server" Display="Dynamic" ErrorMessage="Please enter valid Url " ControlToValidate="txtFriendlyURL" ValidationGroup="Save" />
+                <asp:RequiredFieldValidator ID="rvftxtFriendlyUrl" runat="server" Display="Dynamic" ErrorMessage="Please enter valid URL " ControlToValidate="txtFriendlyURL" ValidationGroup="Save" />
             </div>
         </div>
     </div>
@@ -94,13 +113,13 @@
         <div class="col-md-9">
             <div class="col-md-9">
                 <asp:Button ID="btnSave" Text="Save" CssClass="buttonMargin CommandButton" runat="server" OnClick="btnSave_Click" CausesValidation="true" ValidationGroup="Save" />
-                <asp:Button ID="btnSaveWithoutExtension" Text="Save Without Extension" CssClass="buttonMargin CommandButton" runat="server" OnClick="btnSaveWithoutExtension_Click" CausesValidation="true" ValidationGroup="Save" />
+                <asp:Button ID="btnSaveWithoutExtension" Visible="false" Text="Save Without Extension" CssClass="buttonMargin CommandButton" runat="server" OnClick="btnSaveWithoutExtension_Click" CausesValidation="true" ValidationGroup="Save" />
             </div>
         </div>
     </div>
     <br />
     <div class="module-row">
-        <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1"  OnRowEditing="GdPages_RowEditing"
+        <asp:GridView ID="gdPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" OnRowEditing="GdPages_RowEditing"
             OnRowDeleting="gdPages_RowDeleting" OnRowCancelingEdit="gdPages_RowCancelingEdit" OnRowDataBound="gdPages_RowDataBound" OnRowUpdating="gdPages_RowUpdating" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
                 <asp:TemplateField HeaderStyle-CssClass="tHead" ItemStyle-CssClass="" HeaderText="Page ID">
@@ -129,8 +148,8 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="no-sort tHead" ItemStyle-CssClass="">
                     <ItemTemplate>
-                        <%--<asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:LinkButton>--%>
-                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete" />
+                        <%--<asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short URL?');" Text="Delete"></asp:LinkButton>--%>
+                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure want to delete this short URL entry?');" Text="Delete" />
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -140,7 +159,7 @@
 
     </div>
     <br />
-    <label>Dynamic Pages</label>
+    <label>Secondary Short URL</label>
     <div class="module-row">
         <asp:GridView ID="gdDynamicPages" runat="server" Width="100%" class="updatedelete" AutoGenerateColumns="false" CellSpacing="1" BorderColor="Black" OnRowUpdating="gdDynamicPages_RowUpdating" OnRowCancelingEdit="gdDynamicPages_RowCancelingEdit" OnRowEditing="GdDynamicPages_RowEditing" OnRowDeleting="gdDynamicPages_RowDeleting" OnRowDataBound="gdDynamicPages_RowDataBound" AlternatingRowStyle-BorderStyle="Solid" Style="border: 1px solid #000; border-collapse: collapse; border-right: 1px solid #000" EmptyDataText="No Record Found">
             <Columns>
@@ -175,7 +194,7 @@
 
                 <asp:TemplateField HeaderStyle-CssClass="tHead no-sort" ItemStyle-CssClass="">
                     <ItemTemplate>
-                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure you want to delete short url?');" Text="Delete"></asp:Button>
+                        <asp:Button ID="lnkDelete" runat="server" CommandName="Delete" CssClass="CommandButton" OnClientClick="return confirm('Are you sure want to delete this short URL entry?');" Text="Delete"></asp:Button>
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -202,13 +221,14 @@
             ]
         });
 
-       
+
 
         $('#Content_ContentPane_ctl01_gdDynamicPages').DataTable({
             "paging": false, "order": [[1, "desc"]],
             columnDefs: [
                 { targets: 'no-sort', orderable: false }
-            ] });
+            ]
+        });
 
     });
 

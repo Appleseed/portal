@@ -26,7 +26,7 @@
                                 <tr>
                                     <td>
                                         <img class="editthispage" src="/aspnet_client/jQuery/jsTree/edit.png" title="Rename Page" onclick="openeditthispage();" /></td>
-                                    <td><a href="#" onclick="openeditthispage();">Edit This Page</a></td>
+                                    <td><a href="javascript:;" onclick="openeditthispage();">Edit This Page</a></td>
                                 </tr>
                             </table>
                         </td>
@@ -559,7 +559,7 @@
             });
         }
         function openeditthispage() {
-            openInModal('/DesktopModules/CoreModules/Pages/PageLayout.aspx?PageID=' + selectedpageid + '&mID=110', 'Edit This Page');
+            openInModal('/DesktopModules/CoreModules/Pages/PageLayout.aspx?keep=1&PageID=' + selectedpageid + '&mID=110', 'Edit This Page');
         }
     </script>
 </div>

@@ -386,8 +386,11 @@ namespace Appleseed.Admin
                     // Updated 6_Aug_2004 by Cory Isakson to accomodate addtional Page Management
                     var retPage = this.Request.QueryString["returnPageID"];
                     string returnPage;
-
-                    if (Request.QueryString.GetValues("ModalChangeMaster") != null)
+                    if (Request.QueryString.GetValues("keep") != null)
+                    {
+                        Response.Write("<script type=\"text/javascript\">window.parent.$('#iframemodal').dialog(\"close\");window.parent.location = window.parent.location;</script>");
+                    }
+                    else if (Request.QueryString.GetValues("ModalChangeMaster") != null)
                     {
                         if (retPage != null)
                         {
@@ -995,7 +998,7 @@ namespace Appleseed.Admin
         {
             if (!string.IsNullOrEmpty(txtAuthUserFind.Text))
             {
-                List<UserInfo> users = (List<UserInfo>) Session["PageAuthUsers_" + this.PageID];
+                List<UserInfo> users = (List<UserInfo>)Session["PageAuthUsers_" + this.PageID];
                 //add here
                 UserPagePermissionDB uppDB = new UserPagePermissionDB();
                 var usl = uppDB.GetUserToAdd(this.PageID, txtAuthUserFind.Text.Trim());
@@ -1025,7 +1028,7 @@ namespace Appleseed.Admin
                 {
                     lblAuthUserError.Text = "User not found";
                 }
-               
+
             }
             else
             {

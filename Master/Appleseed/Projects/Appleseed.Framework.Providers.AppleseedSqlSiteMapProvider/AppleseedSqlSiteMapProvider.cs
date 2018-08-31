@@ -553,7 +553,7 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                     PageName)  AS [PageName],[AuthorizedRoles], [PageLayout], [PageDescription]
                 FROM  [dbo].[rb_Pages] 
                 WHERE [PortalID] = @PortalID
-                ORDER BY [PageOrder]
+                ORDER BY ParentPageid, [PageOrder]
             ";
             return s;
         }

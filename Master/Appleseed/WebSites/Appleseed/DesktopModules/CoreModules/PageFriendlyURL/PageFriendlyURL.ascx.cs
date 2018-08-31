@@ -58,7 +58,14 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
                 divDyanamicPage.Visible = false;
 
-                drpPageList.Items.Add(new ListItem() { Text = "Dynamic Page", Value = "-1" });
+                for (int i = 0; i < drpPageList.Items.Count; i++)
+                {
+                    if (drpPageList.Items[i].Value == "345")
+                    {
+                        drpPageList.Items.Insert(i + 1, new ListItem() { Text = "---Secondary Short URL", Value = "-1" });
+                        break;
+                    }
+                }
 
                 //div for messages will be false when page is loaded
                 divErrorMessage.Visible = false;
@@ -111,18 +118,40 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             string result = string.Empty;
             if (drpPageList.SelectedValue == "-1")
             {
+                divValidationErrorMessage.Visible = false;
+                if ((!txtDyanmicPage.Text.StartsWith("/")
+                    && !txtDyanmicPage.Text.StartsWith("http://")
+                    && !txtDyanmicPage.Text.StartsWith("https://"))
+                    || (
+                    !txtFriendlyURL.Text.StartsWith("/")
+                    && !txtFriendlyURL.Text.StartsWith("http://")
+                    && !txtFriendlyURL.Text.StartsWith("https://")
+                    )
+                    )
+                {
+                    divValidationErrorMessage.Visible = true;
+                    return;
+                }
+
                 if (addExtension)
                 {
-                    result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text) + lblFriendlyExtension.Text, dynamicPageId);
+                    result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") || txtFriendlyURL.Text.StartsWith("http://") || txtFriendlyURL.Text.StartsWith("https://") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text) + lblFriendlyExtension.Text, dynamicPageId);
                 }
                 else
                 {
-                    result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text), dynamicPageId);
+                    result = pages.CreateFriendlyURL(txtDyanmicPage.Text, (txtFriendlyURL.Text.StartsWith("/") || txtFriendlyURL.Text.StartsWith("http://") || txtFriendlyURL.Text.StartsWith("https://") ? txtFriendlyURL.Text : "/" + txtFriendlyURL.Text), dynamicPageId);
                 }
 
             }
             else
             {
+                divValidationErrorMessage2.Visible = false;
+                if (!friendlyurl.StartsWith("/"))
+                {
+                    divValidationErrorMessage2.Visible = true;
+                    return;
+                }
+
                 //when friendlyURL saved, Set result as (0/1) 
                 result = pages.UpdateFriendlyURL(pageId, friendlyurl);
             }
@@ -152,14 +181,16 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
             if (drpPageList.SelectedValue != "-1")
             {
-                btnSaveWithoutExtension.Visible = false;
+                h6Label.InnerText = "Primary Short URL";
+                //btnSaveWithoutExtension.Visible = false;
                 PagesDB pages = new PagesDB();
                 // Get and Set friendlyURL from db to Textbox when change the dropdown value
                 txtFriendlyURL.Text = pages.GetFriendlyURl(Convert.ToInt32(drpPageList.SelectedValue));
             }
             else
             {
-                btnSaveWithoutExtension.Visible = true;
+                h6Label.InnerText = "Secondary Short URL";
+                //btnSaveWithoutExtension.Visible = true;
             }
         }
 
@@ -250,12 +281,20 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
 
                 FullPageName = string.Empty;
                 AppendFullPageName(Convert.ToInt32(((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageID")).Text));
-                ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFullName")).Text = FullPageName;
+                if (FullPageName.StartsWith("http://") || FullPageName.StartsWith("https://"))
+                {
+                    ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFullName")).Text = FullPageName;
+                }
+                else
+                {
+                    ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFullName")).Text = "/" + FullPageName;
+                }
 
                 if (e.Row.RowState == DataControlRowState.Normal || e.Row.RowState == DataControlRowState.Alternate)
                 {
+                    var frUrl = drv["FriendlyUrl"].ToString();
                     System.Web.UI.WebControls.Label lblPageFriendlyUrl = ((System.Web.UI.WebControls.Label)e.Row.FindControl("lblPageFriendlyUrl"));
-                    lblPageFriendlyUrl.Text = (drv["FriendlyUrl"].ToString().StartsWith("/") ? drv["FriendlyUrl"].ToString() : "/" + drv["FriendlyUrl"].ToString()) + lblFriendlyExtension.Text;
+                    lblPageFriendlyUrl.Text = (frUrl.StartsWith("/") || frUrl.StartsWith("http://") || frUrl.StartsWith("https://") ? frUrl : "/" + frUrl) + lblFriendlyExtension.Text;
                 }
 
             }
@@ -342,6 +381,8 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
             this.LoadGrid();
         }
 
+
+
         /// <summary>
         /// Add Update friendly url
         /// </summary>
@@ -350,20 +391,36 @@ namespace Appleseed.DesktopModules.CoreModules.PageFriendlyURL
         private void AddUpdateDaynamicPagesFriendlyUrl(int daynamicPageId, string redirectToUrl, string friendlyurl)
         {
             PagesDB pages = new PagesDB();
+            divValidationErrorMessage.Visible = false;
+            divErrorMessage.Visible = false;
+            divSuccessMessage.Visible = false;
 
-            //when friendlyURL saved, Set result as (0/1) 
-            //change this method for rb_Pages_DynamicRedirects Table.
-            string result = pages.UpdateFriendlyURL(redirectToUrl, friendlyurl, daynamicPageId);
+            if ((!redirectToUrl.StartsWith("/")
+                && !redirectToUrl.StartsWith("http://")
+                && !redirectToUrl.StartsWith("https://"))
+                || (!friendlyurl.StartsWith("/")
+                && !friendlyurl.StartsWith("http://")
+                && !friendlyurl.StartsWith("https://"))
+                )
+            {
+                divValidationErrorMessage.Visible = true;
+            }
+            else
+            {
+                //when friendlyURL saved, Set result as (0/1) 
+                //change this method for rb_Pages_DynamicRedirects Table.
+                string result = pages.UpdateFriendlyURL(redirectToUrl, friendlyurl, daynamicPageId);
 
-            //If result get 0 then error message will display
-            divErrorMessage.Visible = (result == "0");
+                //If result get 0 then error message will display
+                divErrorMessage.Visible = (result == "0");
 
-            //If result get 1 then success message will display
-            divSuccessMessage.Visible = (result != "0");
+                //If result get 1 then success message will display
+                divSuccessMessage.Visible = (result != "0");
 
-            //remove from cache
-            SqlUrlBuilderProvider.ClearCachePageUrl(daynamicPageId);
-            UrlBuilderHelper.ClearUrlElements(daynamicPageId);
+                //remove from cache
+                SqlUrlBuilderProvider.ClearCachePageUrl(daynamicPageId);
+                UrlBuilderHelper.ClearUrlElements(daynamicPageId);
+            }
         }
 
         protected void btnSaveWithoutExtension_Click(object sender, EventArgs e)
