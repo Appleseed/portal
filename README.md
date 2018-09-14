@@ -1,4 +1,4 @@
-# Appleseed Portal 1.6.160.540
+# Appleseed Portal 1.7
 
 [![Build status](https://ci.appveyor.com/api/projects/status/l34d30kqfnirw4ol?svg=true)](https://ci.appveyor.com/project/AnantCorporation/portal)
 
