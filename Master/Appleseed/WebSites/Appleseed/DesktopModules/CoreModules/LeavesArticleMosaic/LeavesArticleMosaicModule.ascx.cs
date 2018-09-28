@@ -234,7 +234,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 }
             }
 
-            string noImageUrl = string.Empty; //  "/desktopModules/CoreModules/LeavesArticleMosaic/No_Image_Available.jpg";
+            string noImageUrl = "/desktopModules/CoreModules/LeavesArticleMosaic/No_Image_Available.jpg";
             if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_NO_IMAGE_URL") && this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value.ToString()))
             {
                 noImageUrl = this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value.ToString();
@@ -268,15 +268,18 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                             title = title.Substring(0, titlecharLimit) + " ...";
                         }
 
-                        if (string.IsNullOrEmpty(item.preview_picture))
-                        {
-                            sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{3}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, desc));
-                        }
-                        else
-                        {
-                            sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div><img class='artItmImage' src='{3}' /></div><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, item.preview_picture, desc));
-                        }
-                        
+                        //if (string.IsNullOrEmpty(item.preview_picture))
+                        //{
+                        //    sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{3}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, desc));
+                        //}
+                        //else
+                        //{
+                        //    sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div><img class='artItmImage' src='{3}' /></div><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, item.preview_picture, desc));
+                        //}
+
+                        sbTabDtls.AppendLine(string.Format("<table class='{2} tblArtMscMod'><tr><td><img src='{3}' /></td><td><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></td></tr></table>", item.url, title, columnCSSClass, item.preview_picture, desc));
+
+
                     }
 
                     ltrResults.Text = sbTabDtls.ToString();

@@ -224,21 +224,21 @@ namespace Appleseed
                 if (HttpContext.Current.Request.IsAuthenticated && portalSettings.EnabledSessionTimeoutAlert && !userlogin_persistent)
                 {
                     extraScripts = @"
-<script>
-    var timeoutLimit = " + (minuteAdd * 60) + @";
-    var timeoutCounter = " + (minuteAdd * 60) + @";
-    function CheckSessionTime(){
-        timeoutCounter--;
-        if(timeoutCounter <= 0)
-        {
-            clearInterval(timerSessionCheck);
-            alert('Your session has timed out due to inactivity. Please log back in.');
-            window.location = '/1';
-        }
-    }
-    var timerSessionCheck = setInterval(CheckSessionTime, 1000);
-</script>
-                                    ";
+                        <script type='text/javascript'>" + @"
+                            var timeoutLimit = " + (minuteAdd * 60) + @";
+                            var timeoutCounter = " + (minuteAdd * 60) + @";
+                            function CheckSessionTime(){
+                                console.log('timeoutCounter:' + timeoutCounter + ', timeoutLimit:' + timeoutLimit);
+                                timeoutCounter--;
+                                if(timeoutCounter <= 0)
+                                {
+                                    clearInterval(timerSessionCheck);
+                                    alert('Your session has timed out due to inactivity. Please log back in.');
+                                    window.location = '/1';
+                                }
+                            }
+                            var timerSessionCheck = setInterval(CheckSessionTime, 1000);
+                        </script>";
 
                     page.ClientScript.RegisterClientScriptBlock(page.GetType(), "autoSessionTimeoutAlert", extraScripts, false);
                 }
