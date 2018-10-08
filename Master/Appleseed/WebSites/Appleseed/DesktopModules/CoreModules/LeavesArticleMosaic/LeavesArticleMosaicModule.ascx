@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LeavesArticleMosaicModule.ascx.cs" Inherits="Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic.LeavesArticleMosaicModule" %>
-<style>
+<style> 
     .artItmImage {
         width: 100%;
         height: 150px;
