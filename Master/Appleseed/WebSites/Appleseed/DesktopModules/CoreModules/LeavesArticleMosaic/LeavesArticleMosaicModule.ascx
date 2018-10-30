@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LeavesArticleMosaicModule.ascx.cs" Inherits="Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic.LeavesArticleMosaicModule" %>
-<style> 
+<style>
     .artItmImage {
         width: 100%;
         height: 150px;
@@ -31,8 +31,11 @@
             vertical-align: top;
             padding: 5px;
         }
+
+        .currentPage{
+            font-weight:bold;
+        }
 </style>
 <div id="divLeavesArticles" class="LeavesArticles">
-    <asp:Literal ID="ltrResults" runat="server"></asp:Literal>
-    <%--<table class='tblArtMscMod'><tr><td><img src='' /></td><td></td></tr></table>--%>
+    <asp:Literal ID="ltrResults" Visible="false" runat="server"></asp:Literal>
 </div>

@@ -39,7 +39,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
         {
             var group = SettingItemGroup.MODULE_SPECIAL_SETTINGS;
             var groupOrderBase = (int)SettingItemGroup.MODULE_SPECIAL_SETTINGS;
-             
+
             var tags = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
             {
                 Order = (int)groupOrderBase + 1,
@@ -149,6 +149,26 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
             };
 
             this.BaseSettings.Add("LEAVES_ARTICLE_LISTING_NO_IMAGE_URL", NoImageUrl);
+
+            var pageSizeLimit = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
+            {
+                Order = (int)groupOrderBase + 11,
+                Group = group,
+                EnglishName = "Page Size Limit",
+                Description = "Page Size Limit"
+            };
+
+            this.BaseSettings.Add("LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT", pageSizeLimit);
+
+            var enabledPaging = new SettingItem<bool, CheckBox>(new BaseDataType<bool, CheckBox>())
+            {
+                Order = (int)groupOrderBase + 11,
+                Group = group,
+                EnglishName = "Enable Paggination",
+                Description = "Enable Paggination"
+            };
+
+            this.BaseSettings.Add("LEAVES_ARTICLE_LISTING_ENABLED_PAGGING", enabledPaging);
         }
         /// <summary>
         /// GUID of module (mandatory)
@@ -157,6 +177,24 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
         public override Guid GuidID
         {
             get { return new Guid("{5AB6843E-5A24-4D36-BB3D-0AE815DDB3B1}"); }
+        }
+
+        public int CurrentPageIndex
+        {
+            get
+            {
+                int pageIndex = 0;
+                if (!string.IsNullOrEmpty(Request.QueryString["pi"]))
+                {
+                    int.TryParse(Request.QueryString["pi"], out pageIndex);
+                    if (pageIndex > 0)
+                    {
+                        pageIndex--;
+                    }
+                }
+
+                return pageIndex;
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -234,6 +272,22 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 }
             }
 
+            int pageSizeLimit = 10;
+            if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT") && this.Settings["LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT"].Value.ToString()))
+            {
+                int.TryParse(this.Settings["LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT"].Value.ToString(), out pageSizeLimit);
+                if (pageSizeLimit <= 0)
+                {
+                    pageSizeLimit = 10;
+                }
+            }
+
+            bool enabledPaggination = false;
+            if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_ENABLED_PAGGING") && this.Settings["LEAVES_ARTICLE_LISTING_ENABLED_PAGGING"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_ENABLED_PAGGING"].Value.ToString()))
+            {
+                enabledPaggination = Convert.ToBoolean(this.Settings["LEAVES_ARTICLE_LISTING_ENABLED_PAGGING"].Value.ToString());
+            }
+
             string noImageUrl = "/desktopModules/CoreModules/LeavesArticleMosaic/No_Image_Available.jpg";
             if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_NO_IMAGE_URL") && this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value.ToString()))
             {
@@ -250,8 +304,22 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                     string leavesAPI = string.Format("{5}access_token={0}&limit={1}&order={2}&page=1&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url);
 
                     LeavesResults results = GetResults(leavesAPI);
-                    foreach (var item in results._embedded.items)
+                    var pages = new List<PageItem>();
+                    int startIndex = 0;
+                    int endIndex = Convert.ToInt32(Limit);
+                    if (enabledPaggination)
                     {
+                        startIndex = CurrentPageIndex * pageSizeLimit;
+                        endIndex = startIndex + pageSizeLimit - 1;
+                        if (results._embedded.items.Count <= endIndex)
+                        {
+                            endIndex = results._embedded.items.Count - 1;
+                        }
+                    }
+                    for (int i = startIndex; i <= endIndex; i++)
+                    //foreach (var item in results._embedded.items)
+                    {
+                        var item = results._embedded.items[i];
                         string desc = StripHTML(item.content);
                         if (desc.Length > charLimit)
                         {
@@ -278,8 +346,30 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                         //}
 
                         sbTabDtls.AppendLine(string.Format("<table class='{2} tblArtMscMod'><tr><td><img src='{3}' /></td><td><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></td></tr></table>", item.url, title, columnCSSClass, item.preview_picture, desc));
+                    }
 
-
+                    if (enabledPaggination)
+                    {
+                        string pathQuery = Request.Url.PathAndQuery.Split('?').GetValue(0).ToString();
+                        var totalPages = results._embedded.items.Count / pageSizeLimit;
+                        if (results._embedded.items.Count % pageSizeLimit > 0)
+                        {
+                            totalPages++;
+                        }
+                        sbTabDtls.AppendLine("<div>");
+                        for (int i = 1; i <= totalPages; i++)
+                        {
+                            if (i-1 == CurrentPageIndex)
+                            {
+                                sbTabDtls.AppendLine(string.Format("<span class='currentPage'>{0}</span>", i, pathQuery));
+                            }
+                            else
+                            {
+                                sbTabDtls.AppendLine(string.Format("<a href='{1}?pi={0}'>{0}</a>", i, pathQuery));
+                            }
+                        }
+                        sbTabDtls.AppendLine("&nbsp;&nbsp;&nbsp;<span>Total: " + results._embedded.items.Count + "</span>");
+                        sbTabDtls.AppendLine("</div>");
                     }
 
                     ltrResults.Text = sbTabDtls.ToString();
@@ -290,6 +380,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 }
             }
         }
+
         private string StripHTML(string input)
         {
             return Regex.Replace(input, "<.*?>", String.Empty);
