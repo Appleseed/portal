@@ -37,5 +37,5 @@
         }
 </style>
 <div id="divLeavesArticles" class="LeavesArticles">
-    <asp:Literal ID="ltrResults" Visible="false" runat="server"></asp:Literal>
+    <asp:Literal ID="ltrResults" runat="server"></asp:Literal>
 </div>
