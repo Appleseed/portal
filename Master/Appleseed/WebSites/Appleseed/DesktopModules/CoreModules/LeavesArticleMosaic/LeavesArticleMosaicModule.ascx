@@ -70,7 +70,7 @@
             <a href='<%# Eval("Url") %>'><%# Eval("PageIndex") %></a>
         </ItemTemplate>
         <FooterTemplate>
-            <a href="<%= this.APIPagination.LastPageUrl %>">Last</a><span> | Total Pages: <%= this.APIPagination.TotalPages %></span>
+            <a href="<%= this.APIPagination.LastPageUrl %>">Last</a><span> | Total Pages: <%= this.APIPagination.TotalPages %></span><span> | Total Results: <%= this.APIPagination.TotalItems %></span>
         </FooterTemplate>
     </asp:Repeater>
 </div>
