@@ -32,10 +32,53 @@
             padding: 5px;
         }
 
-        .currentPage{
-            font-weight:bold;
-        }
+    .currentPage {
+        font-weight: bold;
+    }
 </style>
 <div id="divLeavesArticles" class="LeavesArticles">
-    <asp:Literal ID="ltrResults" runat="server"></asp:Literal>
+    <asp:Repeater ID="apiResults" runat="server">
+        <HeaderTemplate>
+            <table>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <tr>
+                <td>
+                    <table class='<%# Eval("ColumnCSS") %> tblArtMscMod'>
+                        <tr>
+                            <td>
+                                <img src='<%# Eval("ImageUrl") %>' /></td>
+                            <td>
+                                <div class='artItmTitle'><a href='<%# Eval("PageUrl") %>'><%# Eval("Title") %></a></div>
+                                <div class='artItmDesc'><%# Eval("Content") %></div>
+                                <div class='artItmReadMore'><a href='<%# Eval("PageUrl") %>'>Read More</a></div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </ItemTemplate>
+        <FooterTemplate>
+            </table>
+        </FooterTemplate>
+    </asp:Repeater>
+    <asp:Repeater ID="apiResultsPages" runat="server">
+        <HeaderTemplate>
+            <a href="<%= this.APIPagination.FirstPageUrl %>">First</a>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <a href='<%# Eval("Url") %>'><%# Eval("PageIndex") %></a>
+        </ItemTemplate>
+        <FooterTemplate>
+            <a href="<%= this.APIPagination.LastPageUrl %>">Last</a><span> | Total Pages: <%= this.APIPagination.TotalPages %></span>
+        </FooterTemplate>
+    </asp:Repeater>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (!$('.CenterCol').hasClass('container')) {
+            $(".CenterCol").addClass("admin-wrapper container");
+            $("#contentpane").addClass("row");
+        }
+    });
+</script>

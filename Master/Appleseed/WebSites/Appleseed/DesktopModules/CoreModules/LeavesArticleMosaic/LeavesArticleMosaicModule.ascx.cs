@@ -18,11 +18,29 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
     public class LeavesResults
     {
         public LeavesItems _embedded { get; set; }
+        public int total { get; set; }
+        public int pages { get; set; }
+    }
+
+    public class Pagination
+    {
+        public List<PaginationItem> Items { get; set; } = new List<PaginationItem>();
+        public int TotalPages { get; set; }
+        public int TotalItems { get; set; }
+        public string FirstPageUrl { get; set; }
+        public string LastPageUrl { get; set; }
+    }
+
+    public class PaginationItem
+    {
+        public int PageIndex { get; set; }
+        public bool Selected { get; set; }
+        public string Url { get; set; }
     }
 
     public class LeavesItems
     {
-        public List<LeavesItem> items { get; set; }
+        public List<LeavesItem> items { get; set; } = new List<LeavesItem>();
     }
 
     public class LeavesItem
@@ -31,6 +49,20 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
         public string url { get; set; }
         public string content { get; set; }
         public string preview_picture { get; set; }
+    }
+
+    public class APIResultItem
+    {
+        public string Title { get; set; }
+        public string PageUrl { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+        public string ColumnCSS { get; set; }
+    }
+
+    public class APIResult
+    {
+        public List<APIResultItem> Items { get; set; } = new List<APIResultItem>();
     }
 
     public partial class LeavesArticleMosaicModule : PortalModuleControl
@@ -197,6 +229,10 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
             }
         }
 
+        public APIResult APIResults { get; set; }
+
+        public Pagination APIPagination { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadResults();
@@ -204,6 +240,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
 
         private void LoadResults()
         {
+            #region Settings
             string tags = string.Empty;
             if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_TAGS") && this.Settings["LEAVES_ARTICLE_LISTING_TAGS"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_TAGS"].Value.ToString()))
             {
@@ -294,30 +331,20 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 noImageUrl = this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value.ToString();
             }
 
+            #endregion
+
             if (!string.IsNullOrEmpty(Leaves_entries_url) && !string.IsNullOrEmpty(Leaves_access_key) && !string.IsNullOrEmpty(tags))
             {
                 try
                 {
                     StringBuilder sbTabDtls = new StringBuilder();
-                    //<li><a href="#tabs-1"></a></li>
-
-                    string leavesAPI = string.Format("{5}access_token={0}&limit={1}&order={2}&page=1&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url);
+                    string leavesAPI = string.Format("{5}access_token={0}&limit={1}&order={2}&page={6}&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url, (CurrentPageIndex + 1));
 
                     LeavesResults results = GetResults(leavesAPI);
-                    var pages = new List<PageItem>();
-                    int startIndex = 0;
-                    int endIndex = Convert.ToInt32(Limit);
-                    if (enabledPaggination)
-                    {
-                        startIndex = CurrentPageIndex * pageSizeLimit;
-                        endIndex = startIndex + pageSizeLimit - 1;
-                        if (results._embedded.items.Count <= endIndex)
-                        {
-                            endIndex = results._embedded.items.Count - 1;
-                        }
-                    }
-                    for (int i = startIndex; i <= endIndex; i++)
-                    //foreach (var item in results._embedded.items)
+                    APIResults = new APIResult();
+                    APIPagination = new Pagination();
+                    
+                    for (int i = 0; i <= results._embedded.items.Count - 1; i++)
                     {
                         var item = results._embedded.items[i];
                         string desc = StripHTML(item.content);
@@ -336,43 +363,36 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                             title = title.Substring(0, titlecharLimit) + " ...";
                         }
 
-                        //if (string.IsNullOrEmpty(item.preview_picture))
-                        //{
-                        //    sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{3}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, desc));
-                        //}
-                        //else
-                        //{
-                        //    sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div><img class='artItmImage' src='{3}' /></div><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, item.preview_picture, desc));
-                        //}
-
-                        sbTabDtls.AppendLine(string.Format("<table class='{2} tblArtMscMod'><tr><td><img src='{3}' /></td><td><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></td></tr></table>", item.url, title, columnCSSClass, item.preview_picture, desc));
+                        this.APIResults.Items.Add(new APIResultItem() { Content = desc, ImageUrl = item.preview_picture, Title = title, PageUrl = item.url, ColumnCSS = columnCSSClass });
                     }
 
                     if (enabledPaggination)
                     {
                         string pathQuery = Request.Url.PathAndQuery.Split('?').GetValue(0).ToString();
-                        var totalPages = results._embedded.items.Count / pageSizeLimit;
-                        if (results._embedded.items.Count % pageSizeLimit > 0)
+                        this.APIPagination.TotalPages = results.pages;
+                        this.APIPagination.TotalItems = results.total;
+                        this.APIPagination.FirstPageUrl = pathQuery;
+                        this.APIPagination.LastPageUrl = pathQuery + "?pi=" + this.APIPagination.TotalPages;
+
+                        for (int i = 1; i <= this.APIPagination.TotalPages; i++)
                         {
-                            totalPages++;
-                        }
-                        sbTabDtls.AppendLine("<div>");
-                        for (int i = 1; i <= totalPages; i++)
-                        {
-                            if (i-1 == CurrentPageIndex)
+
+                            if (i - 1 == CurrentPageIndex)
                             {
-                                sbTabDtls.AppendLine(string.Format("<span class='currentPage'>{0}</span>", i, pathQuery));
+                                this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = true, Url = pathQuery + "?pi=" + i });
                             }
                             else
                             {
-                                sbTabDtls.AppendLine(string.Format("<a href='{1}?pi={0}'>{0}</a>", i, pathQuery));
+                                this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = false, Url = pathQuery + "?pi=" + i });
                             }
                         }
-                        sbTabDtls.AppendLine("&nbsp;&nbsp;&nbsp;<span>Total: " + results._embedded.items.Count + "</span>");
-                        sbTabDtls.AppendLine("</div>");
                     }
 
-                    ltrResults.Text = sbTabDtls.ToString();
+
+                    apiResults.DataSource = this.APIResults.Items;
+                    apiResults.DataBind();
+                    apiResultsPages.DataSource = this.APIPagination.Items;
+                    apiResultsPages.DataBind();
                 }
                 catch (Exception ex)
                 {

@@ -13,12 +13,21 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic {
     public partial class LeavesArticleMosaicModule {
         
         /// <summary>
-        /// ltrResults control.
+        /// apiResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrResults;
+        protected global::System.Web.UI.WebControls.Repeater apiResults;
+        
+        /// <summary>
+        /// apiResultsPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater apiResultsPages;
     }
 }
