@@ -338,7 +338,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 try
                 {
                     StringBuilder sbTabDtls = new StringBuilder();
-                    string leavesAPI = string.Format("{5}access_token={0}&limit={1}&order={2}&page={6}&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url, (CurrentPageIndex + 1));
+                    string leavesAPI = string.Format("{5}access_token={0}&perPage={1}&order={2}&page={6}&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url, (CurrentPageIndex + 1));
 
                     LeavesResults results = GetResults(leavesAPI);
                     APIResults = new APIResult();
