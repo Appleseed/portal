@@ -49,9 +49,9 @@
                             <td>
                                 <img src='<%# Eval("ImageUrl") %>' /></td>
                             <td>
-                                <div class='artItmTitle'><a href='<%# Eval("PageUrl") %>'><%# Eval("Title") %></a></div>
+                                <div class='artItmTitle'><a target="_blank" href='<%# Eval("PageUrl") %>'><%# Eval("Title") %></a></div>
                                 <div class='artItmDesc'><%# Eval("Content") %></div>
-                                <div class='artItmReadMore'><a href='<%# Eval("PageUrl") %>'>Read More</a></div>
+                                <div class='artItmReadMore'><a target="_blank" href='<%# Eval("PageUrl") %>'>Read More</a></div>
                             </td>
                         </tr>
                     </table>
