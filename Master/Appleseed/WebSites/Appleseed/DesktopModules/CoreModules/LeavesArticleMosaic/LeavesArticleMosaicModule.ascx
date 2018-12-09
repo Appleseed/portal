@@ -34,7 +34,9 @@
 
     .currentPage {
         font-weight: bold;
+        text-decoration:underline;
     }
+
 </style>
 <div id="divLeavesArticles" class="LeavesArticles">
     <asp:Repeater ID="apiResults" runat="server">
@@ -64,13 +66,13 @@
     </asp:Repeater>
     <asp:Repeater ID="apiResultsPages" runat="server">
         <HeaderTemplate>
-            <a href="<%= this.APIPagination.FirstPageUrl %>">First</a>
+            <%--<a  href="<%= this.APIPagination.FirstPageUrl %>">First</a>--%>
         </HeaderTemplate>
         <ItemTemplate>
-            <a href='<%# Eval("Url") %>'><%# Eval("PageIndex") %></a>
+            <a href='<%# Eval("Url") %>' class='<%# Eval("CssClass") %>' ><%# Eval("PageIndex") %></a>
         </ItemTemplate>
         <FooterTemplate>
-            <a href="<%= this.APIPagination.LastPageUrl %>">Last</a><span> | Total Pages: <%= this.APIPagination.TotalPages %></span><span> | Total Results: <%= this.APIPagination.TotalItems %></span>
+            <%--<a href="<%= this.APIPagination.LastPageUrl %>">Last</a><span> |--%> Total Pages: <%= this.APIPagination.TotalPages %></span><span> | Total Results: <%= this.APIPagination.TotalItems %></span>
         </FooterTemplate>
     </asp:Repeater>
 </div>

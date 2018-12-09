@@ -36,6 +36,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
         public int PageIndex { get; set; }
         public bool Selected { get; set; }
         public string Url { get; set; }
+        public string CssClass { get; set; }
     }
 
     public class LeavesItems
@@ -358,9 +359,13 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                         }
 
                         string title = item.title;
-                        if (title.Length > titlecharLimit)
+                        if (!string.IsNullOrEmpty(item.title) && title.Length > titlecharLimit)
                         {
                             title = title.Substring(0, titlecharLimit) + " ...";
+                        }
+                        else
+                        {
+                            title = string.Empty;
                         }
 
                         this.APIResults.Items.Add(new APIResultItem() { Content = desc, ImageUrl = item.preview_picture, Title = title, PageUrl = item.url, ColumnCSS = columnCSSClass });
@@ -377,11 +382,11 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
 
                         if (i - 1 == CurrentPageIndex)
                         {
-                            this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = true, Url = pathQuery + "?pi=" + i });
+                            this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = true, CssClass="currentPage", Url = pathQuery + "?pi=" + i });
                         }
                         else
                         {
-                            this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = false, Url = pathQuery + "?pi=" + i });
+                            this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = false, CssClass = "pageIndex", Url = pathQuery + "?pi=" + i });
                         }
                     }
 
@@ -399,7 +404,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
 
         private string StripHTML(string input)
         {
-            return Regex.Replace(input, "<.*?>", String.Empty);
+            return Regex.Replace((!string.IsNullOrEmpty(input) ? input : ""), "<.*?>", String.Empty);
         }
         private LeavesResults GetResults(string leavesAPI)
         {
