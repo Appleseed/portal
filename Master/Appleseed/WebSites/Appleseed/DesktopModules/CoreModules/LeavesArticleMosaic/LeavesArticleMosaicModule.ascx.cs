@@ -18,11 +18,30 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
     public class LeavesResults
     {
         public LeavesItems _embedded { get; set; }
+        public int total { get; set; }
+        public int pages { get; set; }
+    }
+
+    public class Pagination
+    {
+        public List<PaginationItem> Items { get; set; } = new List<PaginationItem>();
+        public int TotalPages { get; set; }
+        public int TotalItems { get; set; }
+        public string FirstPageUrl { get; set; }
+        public string LastPageUrl { get; set; }
+    }
+
+    public class PaginationItem
+    {
+        public int PageIndex { get; set; }
+        public bool Selected { get; set; }
+        public string Url { get; set; }
+        public string CssClass { get; set; }
     }
 
     public class LeavesItems
     {
-        public List<LeavesItem> items { get; set; }
+        public List<LeavesItem> items { get; set; } = new List<LeavesItem>();
     }
 
     public class LeavesItem
@@ -31,6 +50,20 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
         public string url { get; set; }
         public string content { get; set; }
         public string preview_picture { get; set; }
+    }
+
+    public class APIResultItem
+    {
+        public string Title { get; set; }
+        public string PageUrl { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+        public string ColumnCSS { get; set; }
+    }
+
+    public class APIResult
+    {
+        public List<APIResultItem> Items { get; set; } = new List<APIResultItem>();
     }
 
     public partial class LeavesArticleMosaicModule : PortalModuleControl
@@ -149,6 +182,26 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
             };
 
             this.BaseSettings.Add("LEAVES_ARTICLE_LISTING_NO_IMAGE_URL", NoImageUrl);
+
+            //var pageSizeLimit = new SettingItem<string, TextBox>(new BaseDataType<string, TextBox>())
+            //{
+            //    Order = (int)groupOrderBase + 11,
+            //    Group = group,
+            //    EnglishName = "Page Size Limit",
+            //    Description = "Page Size Limit"
+            //};
+
+            //this.BaseSettings.Add("LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT", pageSizeLimit);
+
+            //var enabledPaging = new SettingItem<bool, CheckBox>(new BaseDataType<bool, CheckBox>())
+            //{
+            //    Order = (int)groupOrderBase + 11,
+            //    Group = group,
+            //    EnglishName = "Enable Paggination",
+            //    Description = "Enable Paggination"
+            //};
+
+            //this.BaseSettings.Add("LEAVES_ARTICLE_LISTING_ENABLED_PAGGING", enabledPaging);
         }
         /// <summary>
         /// GUID of module (mandatory)
@@ -159,6 +212,28 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
             get { return new Guid("{5AB6843E-5A24-4D36-BB3D-0AE815DDB3B1}"); }
         }
 
+        public int CurrentPageIndex
+        {
+            get
+            {
+                int pageIndex = 0;
+                if (!string.IsNullOrEmpty(Request.QueryString["pi"]))
+                {
+                    int.TryParse(Request.QueryString["pi"], out pageIndex);
+                    if (pageIndex > 0)
+                    {
+                        pageIndex--;
+                    }
+                }
+
+                return pageIndex;
+            }
+        }
+
+        public APIResult APIResults { get; set; }
+
+        public Pagination APIPagination { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadResults();
@@ -166,6 +241,7 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
 
         private void LoadResults()
         {
+            #region Settings
             string tags = string.Empty;
             if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_TAGS") && this.Settings["LEAVES_ARTICLE_LISTING_TAGS"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_TAGS"].Value.ToString()))
             {
@@ -234,24 +310,44 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 }
             }
 
-            string noImageUrl = string.Empty; //  "/desktopModules/CoreModules/LeavesArticleMosaic/No_Image_Available.jpg";
+            //int pageSizeLimit = 10;
+            //if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT") && this.Settings["LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT"].Value.ToString()))
+            //{
+            //    int.TryParse(this.Settings["LEAVES_ARTICLE_LISTING_PAGE_SIZE_LIMIT"].Value.ToString(), out pageSizeLimit);
+            //    if (pageSizeLimit <= 0)
+            //    {
+            //        pageSizeLimit = 10;
+            //    }
+            //}
+
+            //bool enabledPaggination = false;
+            //if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_ENABLED_PAGGING") && this.Settings["LEAVES_ARTICLE_LISTING_ENABLED_PAGGING"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_ENABLED_PAGGING"].Value.ToString()))
+            //{
+            //    enabledPaggination = Convert.ToBoolean(this.Settings["LEAVES_ARTICLE_LISTING_ENABLED_PAGGING"].Value.ToString());
+            //}
+
+            string noImageUrl = "/desktopModules/CoreModules/LeavesArticleMosaic/No_Image_Available.jpg";
             if (this.Settings.ContainsKey("LEAVES_ARTICLE_LISTING_NO_IMAGE_URL") && this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value != null && !string.IsNullOrEmpty(this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value.ToString()))
             {
                 noImageUrl = this.Settings["LEAVES_ARTICLE_LISTING_NO_IMAGE_URL"].Value.ToString();
             }
+
+            #endregion
 
             if (!string.IsNullOrEmpty(Leaves_entries_url) && !string.IsNullOrEmpty(Leaves_access_key) && !string.IsNullOrEmpty(tags))
             {
                 try
                 {
                     StringBuilder sbTabDtls = new StringBuilder();
-                    //<li><a href="#tabs-1"></a></li>
-
-                    string leavesAPI = string.Format("{5}access_token={0}&limit={1}&order={2}&page=1&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url);
+                    string leavesAPI = string.Format("{5}access_token={0}&perPage={1}&order={2}&page={6}&sort={3}&tags={4}", Leaves_access_key, Limit, Order, Sort, tags, Leaves_entries_url, (CurrentPageIndex + 1));
 
                     LeavesResults results = GetResults(leavesAPI);
-                    foreach (var item in results._embedded.items)
+                    APIResults = new APIResult();
+                    APIPagination = new Pagination();
+
+                    for (int i = 0; i <= results._embedded.items.Count - 1; i++)
                     {
+                        var item = results._embedded.items[i];
                         string desc = StripHTML(item.content);
                         if (desc.Length > charLimit)
                         {
@@ -263,23 +359,41 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                         }
 
                         string title = item.title;
-                        if (title.Length > titlecharLimit)
+                        if (!string.IsNullOrEmpty(item.title) && title.Length > titlecharLimit)
                         {
                             title = title.Substring(0, titlecharLimit) + " ...";
                         }
-
-                        if (string.IsNullOrEmpty(item.preview_picture))
+                        else
                         {
-                            sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{3}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, desc));
+                            title = string.Empty;
+                        }
+
+                        this.APIResults.Items.Add(new APIResultItem() { Content = desc, ImageUrl = item.preview_picture, Title = title, PageUrl = item.url, ColumnCSS = columnCSSClass });
+                    }
+
+                    string pathQuery = Request.Url.PathAndQuery.Split('?').GetValue(0).ToString();
+                    this.APIPagination.TotalPages = results.pages;
+                    this.APIPagination.TotalItems = results.total;
+                    this.APIPagination.FirstPageUrl = pathQuery;
+                    this.APIPagination.LastPageUrl = pathQuery + "?pi=" + this.APIPagination.TotalPages;
+
+                    for (int i = 1; i <= this.APIPagination.TotalPages; i++)
+                    {
+
+                        if (i - 1 == CurrentPageIndex)
+                        {
+                            this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = true, CssClass="currentPage", Url = pathQuery + "?pi=" + i });
                         }
                         else
                         {
-                            sbTabDtls.AppendLine(string.Format("<div class='{2} artItm'><div><img class='artItmImage' src='{3}' /></div><div  class='artItmTitle' ><a href=\"{0}\">{1}</a></div><div  class='artItmDesc' >{4}</div><div class='artItmReadMore' ><a href='{0}'>Read More</a></div></div>", item.url, title, columnCSSClass, item.preview_picture, desc));
+                            this.APIPagination.Items.Add(new PaginationItem { PageIndex = i, Selected = false, CssClass = "pageIndex", Url = pathQuery + "?pi=" + i });
                         }
-                        
                     }
 
-                    ltrResults.Text = sbTabDtls.ToString();
+                    apiResults.DataSource = this.APIResults.Items;
+                    apiResults.DataBind();
+                    apiResultsPages.DataSource = this.APIPagination.Items;
+                    apiResultsPages.DataBind();
                 }
                 catch (Exception ex)
                 {
@@ -287,9 +401,10 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
                 }
             }
         }
+
         private string StripHTML(string input)
         {
-            return Regex.Replace(input, "<.*?>", String.Empty);
+            return Regex.Replace((!string.IsNullOrEmpty(input) ? input : ""), "<.*?>", String.Empty);
         }
         private LeavesResults GetResults(string leavesAPI)
         {
