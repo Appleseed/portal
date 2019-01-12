@@ -285,20 +285,28 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                             // Create another site map node and add it to the site map
                             var node = this.CreateSiteMapNodeFromDataReader(reader);
                             var parentNode = this.GetParentNodeFromDataReader(reader);
+                            //ErrorHandler.Publish(LogLevel.Info, node.Url);
                             if (parentNode != null)
                             {
                                 try
                                 {
                                     this.AddNode(node, parentNode);
+                                    //ErrorHandler.Publish(LogLevel.Info, "parentNode>"+ parentNode.Url);
+
                                 }
-                                catch(Exception ex)
+                                catch (Exception ex)
                                 {
+                                    //ErrorHandler.Publish(LogLevel.Info, "NOT Added Error - parentNode>" + parentNode.Url);
                                     //node.Url = node.Url.Contains("?")
                                     //               ? string.Format("{0}&lnkId={1}", node.Url, node.Key)
                                     //               : string.Format("{0}?lnkId={1}", node.Url, node.Key);
                                     node.Url = "/default.aspx?lnkId=" + node.Key;
                                     this.AddNode(node, parentNode);
                                 }
+                            }
+                            else
+                            {
+                                //ErrorHandler.Publish(LogLevel.Info, " parentNode NULL");
                             }
                         }
                         while (reader.Read());
