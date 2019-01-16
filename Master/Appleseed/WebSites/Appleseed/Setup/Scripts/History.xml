@@ -1494,4 +1494,12 @@
       <Installer>DesktopModules/CoreModules/LeavesArticleMosaic/install.xml</Installer>
     </Modules>
   </Release>
+  <Release>
+    <ID>1929</ID>
+    <Version>2.0.0.1929</Version>
+    <Date>2019-01-16T00:00:00.0000000-00:00</Date>
+    <Scripts>
+      <Script>2.0.0.1929.sql</Script>
+    </Scripts>
+  </Release>
 </History>

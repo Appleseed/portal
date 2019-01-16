@@ -230,11 +230,11 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                 try
                 {
                     var command = new SqlCommand(BuildSiteMapQuery(), connection) { CommandType = CommandType.Text };
-
+                    command.CommandType = CommandType.StoredProcedure;
                     var parameterPageId = new SqlParameter("@PortalID", SqlDbType.Int, 4) { Value = PortalId };
                     command.Parameters.Add(parameterPageId);
-                    var parameterCulture = new SqlParameter("@Culture", SqlDbType.VarChar, 5) { Value = Thread.CurrentThread.CurrentUICulture.ToString() };
-                    command.Parameters.Add(parameterCulture);
+                    //var parameterCulture = new SqlParameter("@Culture", SqlDbType.VarChar, 5) { Value = Thread.CurrentThread.CurrentUICulture.ToString() };
+                    //command.Parameters.Add(parameterCulture);
 
                     //Thread.CurrentThread.CurrentUICulture + PortalId
                 
@@ -255,7 +255,7 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                     var reader = command.ExecuteReader();
                     this.indexPageId = reader.GetOrdinal("PageID");
                     this.indexParentPageId = reader.GetOrdinal("ParentPageID");
-                    this.indexPageOrder = reader.GetOrdinal("PageOrder");
+                    this.indexPageOrder = reader.GetOrdinal("PageOrderInt");
                     this.indexPortalId = reader.GetOrdinal("PortalID");
                     this.indexPageName = reader.GetOrdinal("PageName");
                     this.indexAuthorizedRoles = reader.GetOrdinal("AuthorizedRoles");
@@ -563,6 +563,8 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                 WHERE [PortalID] = @PortalID
                 ORDER BY ParentPageid, [PageOrder]
             ";
+
+            s = "rb_GetPageTree";
             return s;
         }
 
