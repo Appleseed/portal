@@ -5,14 +5,14 @@
 Appleseed Portal is an open source Portal and Content Management System focused on 
 providing a high-performance, easy-to-use framework. The software gives designers, 
 developers, and modern entrepreneurs a singular system to build powerful applications 
-and intranets that run the modern enterprise on the Microsoft.NET.  This software can be
+and intranets that run the modern enterprise on the Microsoft.NET. This software can be
 docked using Docker and run on any platform: https://github.com/Appleseed/portal-stack ( Windows / Mac / Linux).  
  
 
 ## Requirements
 
 ### Docker
-The Portal Stack is released Open Source to host Appleseed.Portal in a Docker Container.
+The Portal Stack is released Open Source to host Appleseed. Portal in a Docker Container.
 https://github.com/Appleseed/portal-stack
 
 OR
@@ -21,19 +21,19 @@ OR
 - Windows 7 | 8 | 10 | 2016 Physical or Cloud
 - SQL Server | Express 2005 | 2008 | 2012 | 2014
 - Visual Studio 2015 (Visual Studio 14) for Development
-- Current Microsoft Framework vesion: .NET 4.6.1 | (.NET Core 1.0 in Development)
+- Current Microsoft Framework version: .NET 4.6.1 | (.NET Core 1.0 in Development)
 
 ## Quick Install -- Windows Native
  * Release
    * Grab the latest release: https://github.com/Appleseed/portal/releases   
  * Database
    * Create an Empty SQL Server Database in a SQL Server Instance
-     * Give a user access to your SQL Server Databse [Network Service is recommended]
+     * Give a user access to your SQL Server Database [Network Service is recommended]
      * Give this user db_owner in the user mapping section to your Database
  * IIS Hosting 
-   * Unzip the archive to a non-windows controled folder such as C:\Appleseed\ [ie : Not the Windows folder or folders locked]
+   * Unzip the archive to a non-windows controlled folder such as C:\Appleseed\ [ie : Not the Windows folder or folders locked]
    * Create a Site in IIS with a .NET 4.0 Application Pool
-     * Change the Identy on the Application Pool to Network Service [The site will run under this identity]
+     * Change the Identity on the Application Pool to Network Service [The site will run under this identity]
      * Point the IIS site folder to C:\Appleseed\  or where you unzipped your archive
      * Browse your Site which will cause a redirect to the Web Installer
  * Web Installer 
