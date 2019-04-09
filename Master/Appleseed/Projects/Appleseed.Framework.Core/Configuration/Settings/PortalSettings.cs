@@ -2260,6 +2260,17 @@ namespace Appleseed.Framework.Site.Configuration
                 };
                 baseSettings.Add("ENABLE_PAGE_FRIENDLY_URL", enableFriendlyURL);
 
+                var enableFriendlyURLSitemap = new SettingItem<bool, CheckBox>
+                {
+                    Order = groupOrderBase + 28,
+                    Group = group,
+                    EnglishName = "Enable Friendly URL Sitemap?",
+                    Description =
+                        "Allow user to enable friendly URL Sitemap functionality.",
+                    Value = false
+                };
+                baseSettings.Add("ENABLE_PAGE_FRIENDLY_URL_SITEMAP", enableFriendlyURLSitemap);
+
                 //var friendlyURLExtention = new SettingItem<string, TextBox>
                 //{
                 //    Order = groupOrderBase + 28,
@@ -2914,6 +2925,27 @@ namespace Appleseed.Framework.Site.Configuration
                 {
                     // return the true / false value
                     return Convert.ToBoolean(this.CustomSettings["ENABLE_PAGE_FRIENDLY_URL"].Value);
+                }
+                catch { }
+
+                // If nothing then it's return false
+                return false;
+            }
+        }
+
+        // Get the value of Enable portal friendly URL sitemap value 
+        //value if either true/false
+        /// <summary>
+        /// Eanble page friendly URL sitemap
+        /// </summary>
+        public bool EnablePageFriendlyUrlSitemap
+        {
+            get
+            {
+                try
+                {
+                    // return the true / false value
+                    return Convert.ToBoolean(this.CustomSettings["ENABLE_PAGE_FRIENDLY_URL_SITEMAP"].Value);
                 }
                 catch { }
 

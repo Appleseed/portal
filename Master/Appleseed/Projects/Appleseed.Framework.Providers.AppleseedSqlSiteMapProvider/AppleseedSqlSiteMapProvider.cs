@@ -178,6 +178,14 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
             }
         }
 
+        public PortalSettings PortalSettings
+        {
+            get
+            {
+                // Obtain PortalSettings from page else Current Context else null
+                return (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+            }
+        }
         #endregion
 
         #region Public Methods
@@ -201,25 +209,30 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                 // return _root;
                 // } else {
                 this.Clear();
+                string defaultPagePermissons = "All Users";
+                if (HttpContext.Current.Request.Url.PathAndQuery.ToLower().Contains("sitemap.axd") && !this.PortalSettings.EnablePageFriendlyUrlSitemap)
+                {
+                    defaultPagePermissons = "Admins";
+                }
 
-                var pS = (PortalSettings)HttpContext.Current.Items["PortalSettings"];
+                var pS = this.PortalSettings;
                 if (pS.CustomSettings["ENABLE_PRIVATE_SITE"].Value.ToString() == "True" && !HttpContext.Current.Request.IsAuthenticated)
                 {
                     this.root = new SiteMapNode(
-                            this,
-                            RootNodeId.ToString(),
-                            HttpUrlBuilder.BuildUrl(),
-                            string.Empty,
-                            string.Empty,
-                            new[] { "All Users" },
-                            null,
-                            null,
-                            null);
+                        this,
+                        RootNodeId.ToString(),
+                        HttpUrlBuilder.BuildUrl(),
+                        string.Empty,
+                        string.Empty,
+                        new[] { defaultPagePermissons },
+                        null,
+                        null,
+                        null);
                     this.root["PortalID"] = PortalId;
                     this.theNodes.Add(RootNodeId, this.root);
                     this.AddNode(this.root, null);
                     return this.root;
-                } 
+                }
 
                 // }
                 // }
@@ -237,7 +250,7 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                     //command.Parameters.Add(parameterCulture);
 
                     //Thread.CurrentThread.CurrentUICulture + PortalId
-                
+
                     // Create a SQL cache dependency if requested
                     SqlCacheDependency dependency = null;
 
@@ -266,14 +279,14 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                     {
                         // Create an empty root node and add it to the site map
                         this.root = new SiteMapNode(
-                            this, 
-                            RootNodeId.ToString(), 
-                            HttpUrlBuilder.BuildUrl(), 
-                            string.Empty, 
-                            string.Empty, 
-                            new[] { "All Users" }, 
-                            null, 
-                            null, 
+                            this,
+                            RootNodeId.ToString(),
+                            HttpUrlBuilder.BuildUrl(),
+                            string.Empty,
+                            string.Empty,
+                            new[] { defaultPagePermissons },
+                            null,
+                            null,
                             null);
                         this.root["PortalID"] = PortalId;
                         this.theNodes.Add(RootNodeId, this.root);
@@ -286,22 +299,30 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                             var node = this.CreateSiteMapNodeFromDataReader(reader);
                             var parentNode = this.GetParentNodeFromDataReader(reader);
                             //ErrorHandler.Publish(LogLevel.Info, node.Url);
-                            if (parentNode != null)
+                            if (parentNode != null && node != null)
                             {
                                 try
                                 {
                                     this.AddNode(node, parentNode);
-                                    //ErrorHandler.Publish(LogLevel.Info, "parentNode>"+ parentNode.Url);
-
                                 }
                                 catch (Exception ex)
                                 {
-                                    //ErrorHandler.Publish(LogLevel.Info, "NOT Added Error - parentNode>" + parentNode.Url);
-                                    //node.Url = node.Url.Contains("?")
-                                    //               ? string.Format("{0}&lnkId={1}", node.Url, node.Key)
-                                    //               : string.Format("{0}?lnkId={1}", node.Url, node.Key);
-                                    node.Url = "/default.aspx?lnkId=" + node.Key;
-                                    this.AddNode(node, parentNode);
+                                    if (node != null)
+                                    {
+                                        if (HttpContext.Current.Request.Url.PathAndQuery.ToLower().Contains("sitemap.axd"))
+                                        {
+                                            if (!this.PortalSettings.EnablePageFriendlyUrlSitemap)
+                                            {
+                                                node.Url = "/default.aspx?lnkId=" + node.Key;
+                                                this.AddNode(node, parentNode);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            node.Url = "/default.aspx?lnkId=" + node.Key;
+                                            this.AddNode(node, parentNode);
+                                        }
+                                    }
                                 }
                             }
                             else
@@ -312,7 +333,8 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                         while (reader.Read());
 
                         // Use the SQL cache dependency
-                        if (dependency != null) {
+                        if (dependency != null)
+                        {
                             HttpRuntime.Cache.Insert(
                                 CacheDependencyName + PortalId,
                                 new object(),
@@ -321,7 +343,9 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                                 Cache.NoSlidingExpiration,
                                 CacheItemPriority.NotRemovable,
                                 this.OnSiteMapChanged);
-                        } else { 
+                        }
+                        else
+                        {
 
                         }
                     }
@@ -548,7 +572,7 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
         /// </returns>
         /// <remarks>
         /// </remarks>
-        private static string BuildSiteMapQuery()
+        public static string BuildSiteMapQuery()
         {
             var s =
                 @"
@@ -638,11 +662,23 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
             // Create a SiteMapNode
             var node = new SiteMapNode(this, id.ToString(), url, name, description, rolelist, null, null, null);
 
-            // Record the node in the theNodes dictionary
-            this.theNodes.Add(id, node);
+            if (HttpContext.Current.Request.Url.PathAndQuery.ToLower().Contains("sitemap.axd"))
+            {
+                if (!this.PortalSettings.EnablePageFriendlyUrlSitemap || (!url.ToLower().Contains("default.aspx") && this.PortalSettings.EnablePageFriendlyUrlSitemap))
+                {
+                    // Record the node in the theNodes dictionary
+                    this.theNodes.Add(id, node);
+                    return node;
+                }
+            }
+            else
+            {
+                this.theNodes.Add(id, node);
+                return node;
+            }
 
             // Return the node        
-            return node;
+            return null;
         }
 
         /// <summary>
