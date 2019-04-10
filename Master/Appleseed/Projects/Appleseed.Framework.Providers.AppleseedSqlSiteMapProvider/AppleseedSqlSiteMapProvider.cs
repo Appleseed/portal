@@ -210,10 +210,6 @@ namespace Appleseed.Framework.Providers.AppleseedSiteMapProvider
                 // } else {
                 this.Clear();
                 string defaultPagePermissons = "All Users";
-                if (HttpContext.Current.Request.Url.PathAndQuery.ToLower().Contains("sitemap.axd") && !this.PortalSettings.EnablePageFriendlyUrlSitemap)
-                {
-                    defaultPagePermissons = "Admins";
-                }
 
                 var pS = this.PortalSettings;
                 if (pS.CustomSettings["ENABLE_PRIVATE_SITE"].Value.ToString() == "True" && !HttpContext.Current.Request.IsAuthenticated)

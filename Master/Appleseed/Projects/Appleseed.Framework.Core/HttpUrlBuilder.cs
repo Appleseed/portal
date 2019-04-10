@@ -361,9 +361,13 @@ namespace Appleseed.Framework
             }
             
             */
-            
-            return Provider.BuildUrl(
+            string url = Provider.BuildUrl(
                 targetPage, pageId, modId, culture, completeCustomAttributes, currentAlias, urlKeywords);
+            if (url.ToLower() == "/default.aspx")
+            {
+                url = "/";
+            }
+            return url;
         }
 
         /// <summary>
