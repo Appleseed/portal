@@ -367,6 +367,16 @@ namespace Appleseed.Framework
             {
                 url = "/";
             }
+            if (url.Contains("?"))
+            {
+                var urlparts = url.Split('?');
+                url = urlparts[0].ToLower() + "?" + urlparts[1];
+            }
+            else
+            {
+                url = url.ToLower();
+            }
+
             return url;
         }
 
