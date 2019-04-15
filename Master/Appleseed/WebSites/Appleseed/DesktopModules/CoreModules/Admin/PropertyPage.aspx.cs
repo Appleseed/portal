@@ -56,7 +56,8 @@ namespace Appleseed.Content.Web.Modules
 
             string NavigateUrlPropertyPage = Appleseed.Framework.HttpUrlBuilder.BuildUrl("~/DesktopModules/CoreModules/Admin/ModuleSettings.aspx", PageID, ModuleID);
 
-            if (Request.QueryString.GetValues("ModalChangeMaster") != null) {
+            if (Request.QueryString.GetValues("ModalChangeMaster") != null)
+            {
                 NavigateUrlPropertyPage += "&ModalChangeMaster=true";
                 if (Request.QueryString.GetValues("camefromEditPage") != null)
                     NavigateUrlPropertyPage += "&camefromEditPage=true";
@@ -131,7 +132,12 @@ namespace Appleseed.Content.Web.Modules
             }
 
             if (Request.QueryString.GetValues("ModalChangeMaster") != null)
-                Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+            {
+                if (this.Module.GuidID == new Guid("{5AB6843E-5A24-4D36-BB3D-0AE815DDB3B1}"))
+                    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href.split('?')[0];</script>");
+                else
+                    Response.Write("<script type=\"text/javascript\">window.parent.location = window.parent.location.href;</script>");
+            }
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)

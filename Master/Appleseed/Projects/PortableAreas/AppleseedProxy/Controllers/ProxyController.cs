@@ -146,6 +146,9 @@ namespace AppleseedProxy.Controllers
             //get and push output
             try
             {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                ServicePointManager.DefaultConnectionLimit = 9999;
                 using (var resourceResponse = (System.Net.HttpWebResponse)serviceRequest.GetResponse())
                 {
                     using (var resourceStream = resourceResponse.GetResponseStream())

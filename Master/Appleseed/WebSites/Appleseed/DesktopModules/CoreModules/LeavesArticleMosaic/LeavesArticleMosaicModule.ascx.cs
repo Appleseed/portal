@@ -347,6 +347,8 @@ namespace Appleseed.DesktopModules.CoreModules.LeavesArticleMosaic
 
                     for (int i = 0; i <= results._embedded.items.Count - 1; i++)
                     {
+                        ErrorHandler.Publish(LogLevel.Info, "Article:i=" + i + ", url:" + leavesAPI);
+
                         var item = results._embedded.items[i];
                         string desc = StripHTML(item.content);
                         if (desc.Length > charLimit)
