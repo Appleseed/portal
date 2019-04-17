@@ -13,3 +13,5 @@
 *.tmp
 /Master/Appleseed/builds
 /Master/Appleseed/.vs
+/Master/Appleseed/Libs/PortableAreas
+/Master/Appleseed/WebSites/Appleseed/rb_logs
